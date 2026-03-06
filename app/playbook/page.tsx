@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Users, Lightbulb, ShieldCheck, Zap, Mic } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "The Playbook",
+  description:
+    "A battle-tested 5-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
+  openGraph: {
+    title: "The Playbook",
+    description:
+      "A battle-tested 5-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
+  },
+};
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
   Card,
@@ -16,13 +28,15 @@ export default function PlaybookPage() {
   return (
     <div className="space-y-16">
       <header className="stagger-children space-y-6">
-        <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
-          5-PHASE SYSTEM
-        </Badge>
-        <h1 className="inline-block font-display text-5xl font-extrabold tracking-tighter md:text-7xl">
+        <h1 className="font-display text-5xl font-extrabold leading-[0.9] tracking-tight md:text-7xl lg:text-8xl">
           The
           <br />
-          <span className="text-primary">Playbook</span>
+          <span className="inline-flex items-baseline gap-3 md:gap-4">
+            <span className="text-primary">Playbook</span>
+            <Badge className="translate-y-[-0.15em] border-volt/30 bg-volt/10 text-volt font-code text-[10px] leading-normal md:text-xs">
+              5-PHASE SYSTEM
+            </Badge>
+          </span>
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           A battle-tested system for winning hackathons, distilled from{" "}

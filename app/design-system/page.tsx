@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Design System",
+  description:
+    "Live preview of the Hackathon Starter Kit design system — colors, typography, components, and patterns.",
+  openGraph: {
+    title: "Design System",
+    description:
+      "Live preview of the Hackathon Starter Kit design system — colors, typography, components, and patterns.",
+  },
+};
 import {
   Card,
   CardContent,

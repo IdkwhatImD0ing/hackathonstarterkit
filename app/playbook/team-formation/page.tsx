@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Palette,
   Mic,
@@ -14,10 +15,16 @@ import {
   Calendar,
   Share2,
   Quote,
+  Beaker,
+  BookOpen,
+  Brain,
+  Compass,
+  FlaskConical,
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { PersonaQuiz } from "@/components/persona-quiz";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
+
 import {
   Card,
   CardContent,
@@ -29,6 +36,12 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 const section = PLAYBOOK_SECTIONS[0];
+
+export const metadata: Metadata = {
+  title: section.title,
+  description: section.subtitle,
+  openGraph: { title: section.title, description: section.subtitle },
+};
 
 function SectionHeading({
   title,
@@ -402,6 +415,49 @@ export default function TeamFormationPage() {
               </CardContent>
             </Card>
           </div>
+
+          <div className="animate-glow-pulse glass rounded-xl border border-volt/10 p-6">
+            <div className="flex items-start gap-4">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-volt/10">
+                <Beaker className="size-5 text-volt" />
+              </div>
+              <div className="space-y-2">
+                <p className="font-display font-semibold">
+                  Meredith Belbin — Team Role Theory
+                </p>
+                <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
+                  &ldquo;Nobody is perfect, but a team can be. A team is not a
+                  bunch of people with job titles, but a congregation of
+                  individuals, each of whom has a role which is understood by
+                  other members.&rdquo;
+                </blockquote>
+                <p className="font-body text-sm text-foreground/60">
+                  Belbin&apos;s research at Cambridge identified nine distinct
+                  team roles and found that teams with complementary role
+                  coverage consistently outperformed teams of equally talented
+                  individuals with overlapping strengths. Our four personas map
+                  directly: the Designer is Belbin&apos;s{" "}
+                  <span className="font-semibold text-foreground">Plant</span>{" "}
+                  (creative thinker), the Pitcher is the{" "}
+                  <span className="font-semibold text-foreground">
+                    Resource Investigator
+                  </span>{" "}
+                  (external communicator), the Architect is the{" "}
+                  <span className="font-semibold text-foreground">
+                    Monitor Evaluator
+                  </span>{" "}
+                  (analytical judge), and the Strategist is the{" "}
+                  <span className="font-semibold text-foreground">
+                    Co-ordinator
+                  </span>{" "}
+                  (team leader).
+                </p>
+                <p className="font-code text-xs text-volt/60">
+                  — Management Teams: Why They Succeed or Fail, 1981
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* ============================================================
@@ -557,8 +613,118 @@ export default function TeamFormationPage() {
               — it&apos;s how well you work together under extreme time pressure.
               A varsity teammate might be a worse programmer than a JV one, but
               they communicate better, pivot faster, and never go silent at 3AM
-              when everything breaks.
+              when everything breaks. This mirrors what psychologist Anders
+              Ericsson calls{" "}
+              <span className="font-semibold text-foreground">
+                deliberate practice
+              </span>
+              : improvement requires repeated, structured effort with feedback —
+              not just showing up.
             </p>
+            <p className="mt-2 font-code text-xs text-muted-foreground/60">
+              — Anders Ericsson, Peak: Secrets from the New Science of
+              Expertise, 2016
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <Card className="glow-hover border-volt/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                    <BookOpen className="size-5 text-volt" />
+                  </div>
+                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                    BRUCE TUCKMAN
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-volt">
+                  Tuckman&apos;s Group Development
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
+                  &ldquo;Groups move through forming, storming, norming, and
+                  performing — each stage must be navigated before a team can
+                  reach peak effectiveness.&rdquo;
+                </blockquote>
+                <p className="font-body text-sm text-foreground/60">
+                  Tuckman&apos;s 1965 model maps directly to the JV/Varsity
+                  system. JV teammates are in the{" "}
+                  <span className="font-semibold text-foreground">
+                    forming and storming
+                  </span>{" "}
+                  phases — learning each other&apos;s styles, navigating
+                  disagreements, and building trust. Varsity teammates have
+                  reached{" "}
+                  <span className="font-semibold text-foreground">
+                    norming and performing
+                  </span>{" "}
+                  — they have shared norms, execute fluidly, and spend zero
+                  energy on coordination overhead.
+                </p>
+                <p className="font-code text-xs text-volt/60">
+                  — Developmental Sequence in Small Groups, 1965
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-spark/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                    <FlaskConical className="size-5 text-spark" />
+                  </div>
+                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                    MAPPED TO HACKATHONS
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-spark">
+                  The Progression Path
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                    <p className="font-display text-sm font-semibold text-volt">
+                      Forming → JV List
+                    </p>
+                    <p className="font-body text-xs text-foreground/60">
+                      First hackathon together. Learning how each person works,
+                      setting expectations, figuring out communication styles.
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                    <p className="font-display text-sm font-semibold text-volt">
+                      Storming → Training Hackathons
+                    </p>
+                    <p className="font-body text-xs text-foreground/60">
+                      Disagreements about scope, tech stack, and approach
+                      surface. This friction is necessary — working through it
+                      builds real trust.
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                    <p className="font-display text-sm font-semibold text-spark">
+                      Norming → Late JV / Early Varsity
+                    </p>
+                    <p className="font-body text-xs text-foreground/60">
+                      Shared norms emerge. You know who handles what. Code
+                      reviews happen naturally. Communication shortcuts develop.
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                    <p className="font-display text-sm font-semibold text-spark">
+                      Performing → Varsity
+                    </p>
+                    <p className="font-body text-xs text-foreground/60">
+                      Peak effectiveness. The team executes as a unit — shared
+                      toolkits, minimal coordination overhead, maximum output.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -734,6 +900,45 @@ export default function TeamFormationPage() {
               </CardContent>
             </Card>
           </div>
+
+          <div className="animate-glow-pulse glass rounded-xl border border-primary/10 p-6">
+            <div className="flex items-start gap-4">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <Compass className="size-5 text-primary" />
+              </div>
+              <div className="space-y-2">
+                <p className="font-display font-semibold">
+                  J. Richard Hackman — Leading Teams
+                </p>
+                <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
+                  &ldquo;The single most important condition for team
+                  effectiveness is having a compelling direction — a purpose that
+                  is clear, challenging, and consequential.&rdquo;
+                </blockquote>
+                <p className="font-body text-sm text-foreground/60">
+                  Hackman&apos;s research at Harvard explains why the three
+                  categories above exist. Fun hackathons have{" "}
+                  <span className="font-semibold text-foreground">
+                    no shared direction
+                  </span>{" "}
+                  — you&apos;re exploring. Training hackathons have{" "}
+                  <span className="font-semibold text-foreground">
+                    a learning direction
+                  </span>{" "}
+                  — the purpose is growth. Competitive hackathons have{" "}
+                  <span className="font-semibold text-foreground">
+                    a winning direction
+                  </span>{" "}
+                  — the purpose is clear, challenging, and consequential. The
+                  sharper the direction, the better the team performs.
+                </p>
+                <p className="font-code text-xs text-primary/60">
+                  — Leading Teams: Setting the Stage for Great Performances,
+                  2002
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* ============================================================
@@ -786,6 +991,60 @@ export default function TeamFormationPage() {
                     They stay positive at 3AM when everything is breaking
                   </li>
                 </ul>
+
+                <Separator className="bg-primary/20" />
+
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-success/10">
+                      <Brain className="size-4 text-success" />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="font-display text-sm font-semibold">
+                        Amy Edmondson — Harvard Business School
+                      </p>
+                      <blockquote className="border-l-2 border-success/30 pl-4 font-body text-sm italic text-foreground/80">
+                        &ldquo;Psychological safety is a belief that one will not
+                        be punished or humiliated for speaking up with ideas,
+                        questions, concerns, or mistakes.&rdquo;
+                      </blockquote>
+                      <p className="font-body text-sm text-foreground/60">
+                        Edmondson&apos;s research confirms that teams where
+                        members feel safe to take risks dramatically outperform
+                        those ruled by fear or ego — even when the
+                        &ldquo;fearful&rdquo; team has more raw talent.
+                      </p>
+                      <p className="font-code text-xs text-success/60">
+                        — The Fearless Organization, 2018
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-volt/10">
+                      <Beaker className="size-4 text-volt" />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="font-display text-sm font-semibold">
+                        Google Project Aristotle
+                      </p>
+                      <p className="font-body text-sm text-foreground/60">
+                        Google studied 180+ internal teams over two years and
+                        found that{" "}
+                        <span className="font-semibold text-foreground">
+                          psychological safety was the #1 predictor of team
+                          performance
+                        </span>
+                        , ahead of dependability, structure, meaning, or impact.
+                        Who is on the team matters less than how team members
+                        interact.
+                      </p>
+                      <p className="font-code text-xs text-volt/60">
+                        — Google re:Work, 2015
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

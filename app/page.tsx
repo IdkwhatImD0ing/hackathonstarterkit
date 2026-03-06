@@ -1,4 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  description:
+    "The ultimate hackathon playbook — guides, templates, and strategies from 36+ hackathon wins.",
+  openGraph: {
+    title: "Hackathon Starter Kit",
+    description:
+      "The ultimate hackathon playbook — guides, templates, and strategies from 36+ hackathon wins.",
+  },
+  twitter: {
+    title: "Hackathon Starter Kit",
+    description:
+      "The ultimate hackathon playbook — guides, templates, and strategies from 36+ hackathon wins.",
+  },
+};
 
 export default function Home() {
   return (

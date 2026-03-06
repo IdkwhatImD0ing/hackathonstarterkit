@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Beaker,
   Flame,
@@ -36,6 +37,12 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 const section = PLAYBOOK_SECTIONS[1];
+
+export const metadata: Metadata = {
+  title: section.title,
+  description: section.subtitle,
+  openGraph: { title: section.title, description: section.subtitle },
+};
 
 function SectionHeading({
   title,
