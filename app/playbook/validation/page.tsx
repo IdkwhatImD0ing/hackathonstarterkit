@@ -379,7 +379,7 @@ export default function ValidationPage() {
                 code.&rdquo;
               </blockquote>
               <p className="font-code text-xs text-volt/60">
-                — <a href="https://www.oreilly.com/library/view/extreme-programming-explained/0201616416/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Kent Beck, Extreme Programming</a>
+                — <a href="https://www.goodreads.com/book/show/67833.Extreme_Programming_Explained" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Kent Beck, Extreme Programming</a>
               </p>
 
               <div className="space-y-2">
@@ -755,7 +755,7 @@ export default function ValidationPage() {
                 not coming back.&rdquo;
               </blockquote>
               <p className="font-code text-xs text-spark/60">
-                — <a href="https://www.inc.com/minda-zetlin/jeff-bezos-just-revealed-his-best-leadership-secret-and-its-something-anyone-can-do.html" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Jeff Bezos, founder of Amazon</a>
+                — <a href="https://en.wikipedia.org/wiki/Jeff_Bezos" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Jeff Bezos, founder of Amazon</a>
               </p>
             </CardContent>
           </Card>

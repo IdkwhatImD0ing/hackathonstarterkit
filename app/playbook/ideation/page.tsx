@@ -551,7 +551,7 @@ export default function IdeationPage() {
                   — a new API, a freshly released model, a just-opened dataset.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — <a href="https://www.stevenberlinjohnson.com/where-good-ideas-come-from" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Where Good Ideas Come From, 2010</a>
+                  — <a href="https://en.wikipedia.org/wiki/Where_Good_Ideas_Come_From" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Where Good Ideas Come From, 2010</a>
                 </p>
               </CardContent>
             </Card>

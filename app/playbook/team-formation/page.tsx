@@ -664,7 +664,7 @@ export default function TeamFormationPage() {
                   energy on coordination overhead.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — <a href="https://psycnet.apa.org/record/1966-04329-001" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Developmental Sequence in Small Groups, 1965</a>
+                  — <a href="https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Developmental Sequence in Small Groups, 1965</a>
                 </p>
               </CardContent>
             </Card>
@@ -933,7 +933,7 @@ export default function TeamFormationPage() {
                   sharper the direction, the better the team performs.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — <a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=12356" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Leading Teams: Setting the Stage for Great Performances,
+                  — <a href="https://www.goodreads.com/book/show/84913.Leading_Teams" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Leading Teams: Setting the Stage for Great Performances,
                   2002</a>
                 </p>
               </div>
@@ -955,7 +955,7 @@ export default function TeamFormationPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — <a href="https://www.goodreads.com/quotes/687571-hire-character-train-skill" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Peter Schutz, former CEO of Porsche</a>
+                — <a href="https://en.wikipedia.org/wiki/Peter_Schutz" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Peter Schutz, former CEO of Porsche</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
@@ -1001,7 +1001,7 @@ export default function TeamFormationPage() {
                     </div>
                     <div className="space-y-1">
                       <p className="font-display text-sm font-semibold">
-                        <a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=6451" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Amy Edmondson — Harvard Business School</a>
+                        <a href="https://en.wikipedia.org/wiki/Amy_Edmondson" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Amy Edmondson — Harvard Business School</a>
                       </p>
                       <blockquote className="border-l-2 border-success/30 pl-4 font-body text-sm italic text-foreground/80">
                         &ldquo;Psychological safety is a belief that one will not

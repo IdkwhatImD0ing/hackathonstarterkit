@@ -749,7 +749,7 @@ export default function PitchingPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  <a href="https://www.andyraskin.com/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Andy Raskin — Strategic Narrative Expert</a>
+                  <a href="https://www.linkedin.com/in/andyraskin/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Andy Raskin — Strategic Narrative Expert</a>
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;Your prospect is Luke, and you&apos;re Obi-Wan,
@@ -1086,7 +1086,7 @@ export default function PitchingPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — <a href="https://www.goodreads.com/quotes/8129-your-purpose-is-to-make-your-audience-see-what-you" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Dale Carnegie, pioneer of public speaking</a>
+                — <a href="https://en.wikiquote.org/wiki/Dale_Carnegie" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Dale Carnegie, pioneer of public speaking</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">

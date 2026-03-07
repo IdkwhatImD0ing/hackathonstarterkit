@@ -470,7 +470,7 @@ export default function ExecutionPage() {
                   refining the story.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — <a href="https://www.linkedin.com/pulse/if-youre-not-embarrassed-first-version-your-product-youve-reid-hoffman/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Reid Hoffman, co-founder of LinkedIn</a>
+                  — <a href="https://en.wikipedia.org/wiki/Reid_Hoffman" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Reid Hoffman, co-founder of LinkedIn</a>
                 </p>
               </CardContent>
             </Card>
@@ -564,7 +564,7 @@ export default function ExecutionPage() {
                   ))}
                 </ol>
                 <p className="font-code text-xs text-success/60">
-                  — <a href="https://www.wired.com/story/elon-musk-rules-for-rockets/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Elon Musk, SpaceX Starbase</a>
+                  — <a href="https://www.goodreads.com/book/show/122765395-elon-musk" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Elon Musk, SpaceX Starbase</a>
                 </p>
               </CardContent>
             </Card>
@@ -863,7 +863,7 @@ export default function ExecutionPage() {
                   <span className="font-display font-semibold text-foreground">
                     Timeboxing
                   </span>{" "}
-                  — <a href="https://hbr.org/2020/12/5-strategies-to-manage-your-time-more-effectively" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Harvard Business Review</a> ranks it among the most effective
+                  — <a href="https://en.wikipedia.org/wiki/Timeboxing" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Harvard Business Review</a> ranks it among the most effective
                   productivity techniques. Assign fixed time blocks and stop when
                   time is up, regardless of completion.
                 </p>
@@ -994,7 +994,7 @@ export default function ExecutionPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  <a href="https://nav.al/rich" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Naval Ravikant — AngelList Co-founder</a>
+                  <a href="https://www.navalmanack.com/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Naval Ravikant — AngelList Co-founder</a>
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;Code and media are permissionless leverage. They&apos;re
