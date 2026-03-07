@@ -76,7 +76,7 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Lego Method"
-            subtitle="Don't try to validate the whole idea at once. Build small, tested building blocks — like Legos — and snap them together into a winning project."
+            subtitle="Don't try to validate the whole idea at once. Build small, tested building blocks, just like Legos, and snap them together into a winning project."
           />
 
           <p className="font-body text-foreground/80">
@@ -86,7 +86,7 @@ export default function ValidationPage() {
             <span className="font-display font-semibold text-foreground">
               validate one piece at a time, in isolation.
             </span>{" "}
-            Make each block solid. Then combine them — and the project assembles
+            Make each block solid. Once you combine them, the project assembles
             itself.
           </p>
 
@@ -232,13 +232,13 @@ export default function ValidationPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    OpenAI streaming responses — test latency, token limits,
-                    error handling
+                    OpenAI streaming responses, including latency, token limits,
+                    and error handling
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Twilio voice calls — triggering, receiving, and processing
-                    audio
+                    Twilio voice calls, from triggering and receiving to
+                    processing audio
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
@@ -300,17 +300,17 @@ export default function ValidationPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Combine proven blocks into the new idea — focus on the novel
-                    integration
+                    Combine proven blocks into the new idea and focus on the
+                    novel integration
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Spike only the one NEW risky piece — the part that&apos;s
-                    never been tested
+                    Spike only the one NEW risky piece, the part that&apos;s
+                    never been tested before
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Skip re-validating proven tools — trust the blocks you
+                    Skip re-validating proven tools and trust the blocks you
                     already built
                   </li>
                   <li className="flex items-start gap-2">
@@ -379,7 +379,8 @@ export default function ValidationPage() {
                 code.&rdquo;
               </blockquote>
               <p className="font-code text-xs text-volt/60">
-                — Kent Beck, Extreme Programming
+                —{" "}
+                <a href="https://en.wikipedia.org/wiki/Extreme_programming" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Kent Beck, Extreme Programming</a>
               </p>
 
               <div className="space-y-2">
@@ -463,7 +464,7 @@ export default function ValidationPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  Richard Feynman — Nobel Laureate in Physics
+                  <a href="https://en.wikiquote.org/wiki/Richard_Feynman" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Richard Feynman</a> — Nobel Laureate in Physics
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;What I cannot create, I do not understand.&rdquo;
@@ -471,7 +472,7 @@ export default function ValidationPage() {
                 <p className="font-body text-sm text-foreground/60">
                   If you can&apos;t build the smallest version of the riskiest
                   piece, you don&apos;t fully understand the problem. The spike
-                  is how you earn that understanding — fast.
+                  lets you earn that understanding quickly.
                 </p>
               </div>
             </div>
@@ -484,7 +485,7 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Why This Works — The Science of Rapid Validation"
-            subtitle="The Lego method isn't just intuition — it's backed by decades of engineering and design research on how to validate fast and build with confidence."
+            subtitle="The Lego method goes beyond intuition. It's backed by decades of engineering and design research on how to validate fast and build with confidence."
           />
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -514,7 +515,8 @@ export default function ValidationPage() {
                   them, you&apos;ve already learned what matters.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — The Lean Startup, 2011
+                  —{" "}
+                  <a href="http://theleanstartup.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">The Lean Startup, 2011</a>
                 </p>
               </CardContent>
             </Card>
@@ -545,7 +547,8 @@ export default function ValidationPage() {
                   don&apos;t debate.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — David Kelley, IDEO founder
+                  —{" "}
+                  <a href="https://www.ideo.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">David Kelley, IDEO founder</a>
                 </p>
               </CardContent>
             </Card>
@@ -573,11 +576,12 @@ export default function ValidationPage() {
                 <p className="font-body text-sm text-foreground/60">
                   Before adding features, get one path working from UI to logic
                   to data. The skeleton proves your architecture works. Once
-                  it&apos;s walking, flesh it out — but never start with the
-                  flesh.
+                  it&apos;s walking, you can flesh it out. Just never start
+                  with the flesh.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — Alistair Cockburn, Agile Manifesto co-author
+                  —{" "}
+                  <a href="https://wiki.c2.com/?WalkingSkeleton" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Alistair Cockburn, Agile Manifesto co-author</a>
                 </p>
               </CardContent>
             </Card>
@@ -605,11 +609,12 @@ export default function ValidationPage() {
                 <p className="font-body text-sm text-foreground/60">
                   Like tracer rounds that show where shots land, tracer code
                   implements one narrow path through all layers. It gives you
-                  real feedback on whether your architecture works — before you
-                  commit to building everything.
+                  real feedback on whether your architecture actually works,
+                  well before you commit to building everything.
                 </p>
                 <p className="font-code text-xs text-success/60">
-                  — The Pragmatic Programmer, 1999
+                  —{" "}
+                  <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/" target="_blank" rel="noopener noreferrer" className="underline decoration-success/30 hover:decoration-success">The Pragmatic Programmer, 1999</a>
                 </p>
               </CardContent>
             </Card>
@@ -632,7 +637,7 @@ export default function ValidationPage() {
                 title: "Proof of Concept",
                 question: "Can we technically do it?",
                 description:
-                  "Internal experiment, 1-2 hours, one person. Test the hardest integration — the piece most likely to kill the idea. Throwaway code is fine. You're testing feasibility, not building product.",
+                  "Internal experiment, 1-2 hours, one person. Test the hardest integration, the piece most likely to kill the idea. Throwaway code is fine. You're testing feasibility, not building product.",
                 time: "1-2 hours",
                 accent: "volt" as const,
               },
@@ -641,7 +646,7 @@ export default function ValidationPage() {
                 title: "Walking Skeleton",
                 question: "Can we connect all the pieces?",
                 description:
-                  "The tiniest end-to-end path through UI, logic, and data. User clicks a button, backend processes something, result shows on screen. It doesn't need to be pretty — it needs to be connected.",
+                  "The tiniest end-to-end path through UI, logic, and data. User clicks a button, backend processes something, result shows on screen. It doesn't need to be pretty, but it does need to be connected.",
                 time: "2-4 hours",
                 accent: "spark" as const,
               },
@@ -650,7 +655,7 @@ export default function ValidationPage() {
                 title: "Prototype",
                 question: "Does the flow feel right?",
                 description:
-                  "Clickable, interactive, shows the user journey. Test it with a teammate — can they use it without explanation? If they're confused, the flow needs work before you add more features.",
+                  "Clickable, interactive, shows the user journey. Test it with a teammate and see if they can use it without explanation. If they're confused, the flow needs work before you add more features.",
                 time: "4-8 hours",
                 accent: "primary" as const,
               },
@@ -659,7 +664,7 @@ export default function ValidationPage() {
                 title: "Demo-Ready MVP",
                 question: "Can a judge use it and understand it?",
                 description:
-                  "Working product with a polished happy path. The core flow is smooth, the UI is clean on the main screens, and the demo tells a story. Edge cases don't matter — the golden path does.",
+                  "Working product with a polished happy path. The core flow is smooth, the UI is clean on the main screens, and the demo tells a story. Edge cases don't matter. The golden path does.",
                 time: "By submission",
                 accent: "success" as const,
               },
@@ -731,8 +736,8 @@ export default function ValidationPage() {
                 You don&apos;t have to climb every rung at the hackathon.
               </span>{" "}
               If your Lego library is strong, you might start at step 2 or 3 on
-              day one. Pre-validation compresses the ladder — that&apos;s the
-              whole advantage.
+              day one. Pre-validation compresses the ladder, and that&apos;s
+              the whole advantage.
             </p>
           </div>
         </section>
@@ -755,7 +760,8 @@ export default function ValidationPage() {
                 not coming back.&rdquo;
               </blockquote>
               <p className="font-code text-xs text-spark/60">
-                — Jeff Bezos, founder of Amazon
+                —{" "}
+                <a href="https://en.wikipedia.org/wiki/Jeff_Bezos" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Jeff Bezos, founder of Amazon</a>
               </p>
             </CardContent>
           </Card>
@@ -779,19 +785,19 @@ export default function ValidationPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Tech stack choice — can always swap a library
+                    Tech stack choices, since you can always swap a library
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Feature scope — add or cut as you go
+                    Feature scope, which you can add to or cut as you go
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    UI layout — iterate quickly
+                    UI layout that you can iterate on quickly
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    API choice — test one, swap if it fails
+                    API choice, where you test one and swap if it fails
                   </li>
                 </ul>
                 <div className="rounded-lg bg-volt/5 p-3 text-center">
@@ -823,19 +829,19 @@ export default function ValidationPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    The core idea — pivoting mid-hackathon costs hours
+                    The core idea, because pivoting mid-hackathon costs hours
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Team composition — roles set the trajectory
+                    Team composition, since roles set the trajectory
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    The problem you&apos;re solving — shapes everything
+                    The problem you&apos;re solving, which shapes everything
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Which prize track to target — determines constraints
+                    Which prize track to target, because it determines your constraints
                   </li>
                 </ul>
                 <div className="rounded-lg bg-spark/5 p-3 text-center">
@@ -867,14 +873,14 @@ export default function ValidationPage() {
                 <p className="font-body text-sm text-foreground/80">
                   Spend 80% of your decision-making energy on one-way doors.
                   Make two-way doors in under 5 minutes. The teams that lose
-                  aren&apos;t the ones who pick the wrong framework — they&apos;re
+                  aren&apos;t the ones who pick the wrong framework. They&apos;re
                   the ones who spent 2 hours debating which framework to use.
                 </p>
                 <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
                   <p className="font-code text-xs text-primary/80">
                     Reid Hoffman: &ldquo;If you aren&apos;t embarrassed by the
                     first version of your product, you shipped too late.&rdquo;
-                    Perfect decisions aren&apos;t the goal — fast, reversible
+                    Perfect decisions aren&apos;t the goal. Fast, reversible
                     decisions are.
                   </p>
                 </div>
@@ -899,7 +905,8 @@ export default function ValidationPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Richard Feynman, Nobel Laureate in Physics
+                —{" "}
+                <a href="https://en.wikiquote.org/wiki/Richard_Feynman" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Richard Feynman, Nobel Laureate in Physics</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
@@ -909,7 +916,7 @@ export default function ValidationPage() {
                   </span>{" "}
                   Build the smallest possible version of each piece. If you
                   can&apos;t make it work in isolation, it won&apos;t work in the
-                  full project. Don&apos;t assume — prove it with code.
+                  full project. Don&apos;t assume. Prove it with code.
                 </p>
                 <p className="font-body text-foreground/80">
                   Your Lego library is your competitive advantage. Every block
@@ -920,7 +927,7 @@ export default function ValidationPage() {
                 </p>
                 <p className="font-body text-foreground/80">
                   <span className="font-display font-semibold text-foreground">
-                    The team with the most pre-validated blocks wins — because
+                    The team with the most pre-validated blocks wins because
                     they spend the hackathon creating, not discovering.
                   </span>
                 </p>
@@ -946,27 +953,27 @@ export default function ValidationPage() {
                   accent: "volt",
                 },
                 {
-                  text: "Identify the riskiest technical assumption in your idea — spike it first, in 30-60 minutes",
+                  text: "Identify the riskiest technical assumption in your idea and spike it first, in 30-60 minutes",
                   accent: "spark",
                 },
                 {
-                  text: "Get a walking skeleton working in the first 2 hours — one path, end to end, UI to data",
+                  text: "Get a walking skeleton working in the first 2 hours, covering one path end to end from UI to data",
                   accent: "primary",
                 },
                 {
-                  text: "Validate each block in isolation before combining — never test two unknowns at once",
+                  text: "Validate each block in isolation before combining, and never test two unknowns at once",
                   accent: "success",
                 },
                 {
-                  text: "Make two-way door decisions in under 5 minutes — save deliberation for one-way doors",
+                  text: "Make two-way door decisions in under 5 minutes and save your deliberation for one-way doors",
                   accent: "volt",
                 },
                 {
-                  text: "If the spike fails, pivot the idea immediately — don't sink more time into a broken assumption",
+                  text: "If the spike fails, pivot the idea immediately instead of sinking more time into a broken assumption",
                   accent: "spark",
                 },
                 {
-                  text: "\"What I cannot create, I do not understand\" — if you can't build the smallest version, rethink the approach",
+                  text: "\"What I cannot create, I do not understand.\" If you can't build the smallest version, rethink the approach",
                   accent: "primary",
                 },
               ].map((item) => {
@@ -998,8 +1005,8 @@ export default function ValidationPage() {
               <span className="font-display font-semibold text-foreground">
                 Remember:
               </span>{" "}
-              The goal of validation isn&apos;t to prove your idea is perfect —
-              it&apos;s to find out what&apos;s broken before you&apos;re 18
+              The goal of validation isn&apos;t to prove your idea is perfect.
+              It&apos;s to find out what&apos;s broken before you&apos;re 18
               hours deep with no backup plan. Test early, test in isolation, and
               trust the blocks you&apos;ve already proven.
             </p>

@@ -77,16 +77,16 @@ export default function PitchingPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Storytelling is the Secret Weapon"
-            subtitle="The most valuable skill at hackathons isn't coding — it's storytelling. 28 hackathon wins and $100K+ in prizes later, the secret weapon has always been narrative."
+            subtitle="The most valuable skill at hackathons isn't coding. It's storytelling. 28 hackathon wins and $100K+ in prizes later, the secret weapon has always been narrative."
           />
 
           <p className="font-body text-foreground/80">
             When people see a stack of hackathon wins they think &ldquo;Wow,
             that&apos;s a lot of code!&rdquo; What they don&apos;t see is that
-            the real edge was never technical — it was the ability to craft a
-            compelling narrative.{" "}
+            the real edge was never technical. It was always the ability to
+            craft a compelling narrative.{" "}
             <span className="font-display font-semibold text-foreground">
-              You&apos;re not selling what you built in 24 hours — you&apos;re
+              You&apos;re not selling what you built in 24 hours. You&apos;re
               selling the dream of what it could become.
             </span>
           </p>
@@ -108,8 +108,8 @@ export default function PitchingPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  A hackathon isn&apos;t about showcasing a finished product —
-                  it&apos;s about pitching potential. The backend can be held
+                  A hackathon isn&apos;t about showcasing a finished product.
+                  It&apos;s about pitching potential. The backend can be held
                   together with duct tape and hope, but if your story of how it
                   could change the world is irresistible, judges will lean in.
                 </p>
@@ -140,13 +140,15 @@ export default function PitchingPage() {
                 <p className="font-body text-sm text-foreground/80">
                   Judges aren&apos;t a monolith. At a recent hackathon, the same
                   project was pitched three different ways to three different
-                  judges — emphasizing the tech for the engineer, the market for
-                  the VC, and the UX for the designer. First place.
+                  judges, each time tailored to their expertise: the tech for
+                  the engineer, the market for the VC, and the UX for the
+                  designer. First place.
                 </p>
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
-                    Show passion — enthusiasm is contagious. Be ready to pivot
-                    your story based on judges&apos; reactions in real time.
+                    Show genuine passion because enthusiasm is contagious. Be
+                    ready to pivot your story based on judges&apos; reactions in
+                    real time.
                   </p>
                 </div>
               </CardContent>
@@ -168,8 +170,8 @@ export default function PitchingPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  The storytelling skill transfers everywhere — startup pitches,
-                  product management, technical interviews. One job was landed by
+                  The storytelling skill transfers everywhere, from startup
+                  pitches to product management to technical interviews. One job was landed by
                   telling the story of a hackathon project that didn&apos;t even
                   win anything. The story mattered more than the result.
                 </p>
@@ -190,7 +192,7 @@ export default function PitchingPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Appendix Strategy"
-            subtitle="Assume your pitch will be incomplete. Design it that way — on purpose. This counterintuitive technique is what separates good pitchers from great ones."
+            subtitle="Assume your pitch will be incomplete. Design it that way on purpose. This counterintuitive technique is what separates good pitchers from great ones."
           />
 
           <p className="font-body text-foreground/80">
@@ -210,7 +212,7 @@ export default function PitchingPage() {
                 </CardTitle>
                 <CardDescription className="font-body text-base">
                   Put the stuff ~90% of judges care about in the main pitch.
-                  Problem, solution, demo, impact — the essentials.
+                  Just the essentials: problem, solution, demo, and impact.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -445,7 +447,8 @@ export default function PitchingPage() {
                   supporters.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Start With Why, 2009
+                  —{" "}
+                  <a href="https://simonsinek.com/books/start-with-why/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Start With Why, 2009</a>
                 </p>
               </CardContent>
             </Card>
@@ -474,11 +477,12 @@ export default function PitchingPage() {
                   reality (&ldquo;what is&rdquo;) and the desired future
                   (&ldquo;what could be&rdquo;). This tension builds throughout
                   the pitch and resolves with your solution. Avoid spending the
-                  whole time on either the problem or the future — oscillate
-                  between both.
+                  whole time on either the problem or the future. Instead,
+                  oscillate between both.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — Resonate, 2010
+                  —{" "}
+                  <a href="https://www.duarte.com/resonate/" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Resonate, 2010</a>
                 </p>
               </CardContent>
             </Card>
@@ -531,7 +535,8 @@ export default function PitchingPage() {
                   </div>
                 </div>
                 <p className="font-code text-xs text-primary/60">
-                  — Rhetoric, 4th century BCE
+                  —{" "}
+                  <a href="https://en.wikipedia.org/wiki/Rhetoric_(Aristotle)" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Rhetoric, 4th century BCE</a>
                 </p>
               </CardContent>
             </Card>
@@ -553,8 +558,9 @@ export default function PitchingPage() {
               <CardContent className="space-y-4">
                 <p className="font-body text-sm text-foreground/80">
                   Six principles from Chip and Dan Heath that make ideas
-                  unforgettable — and make judges remember your project hours
-                  later during deliberation:
+                  unforgettable, which is exactly what you need when judges are
+                  trying to remember your project hours later during
+                  deliberation:
                 </p>
                 <div className="space-y-2">
                   {[
@@ -566,7 +572,7 @@ export default function PitchingPage() {
                     {
                       letter: "U",
                       word: "Unexpected",
-                      desc: "Surprise them — violate expectations",
+                      desc: "Surprise them by violating expectations",
                     },
                     {
                       letter: "C",
@@ -576,7 +582,7 @@ export default function PitchingPage() {
                     {
                       letter: "C",
                       word: "Credible",
-                      desc: "Proof — demo it, don't claim it",
+                      desc: "Proof through demos, not claims",
                     },
                     {
                       letter: "E",
@@ -606,7 +612,8 @@ export default function PitchingPage() {
                   ))}
                 </div>
                 <p className="font-code text-xs text-success/60">
-                  — Made to Stick, 2007
+                  —{" "}
+                  <a href="https://heathbrothers.com/made-to-stick/" target="_blank" rel="noopener noreferrer" className="underline decoration-success/30 hover:decoration-success">Made to Stick, 2007</a>
                 </p>
               </CardContent>
             </Card>
@@ -631,7 +638,7 @@ export default function PitchingPage() {
                 description:
                   "Don't open with your product or team. Name the change in the world that creates stakes and urgency. When you assert a problem, judges can resist. When you describe a shift, they open up.",
                 example:
-                  '"Every year, 240 million 911 calls are placed in the US — and dispatcher shortages mean some go unanswered."',
+                  '"Every year, 240 million 911 calls are placed in the US, yet dispatcher shortages mean some go unanswered."',
                 accent: "volt" as const,
               },
               {
@@ -639,7 +646,7 @@ export default function PitchingPage() {
                 title: "Show the Stakes",
                 time: "~20 seconds",
                 description:
-                  "Paint two futures: what happens if nothing changes (the losing path) versus what becomes possible (the winning path). Use loss aversion — people fear losing more than they desire gaining.",
+                  "Paint two futures: what happens if nothing changes (the losing path) versus what becomes possible (the winning path). Lean into loss aversion, since people fear losing more than they desire gaining.",
                 example:
                   '"Lives are lost to hold music. But what if every call was answered instantly, by an AI that never sleeps?"',
                 accent: "spark" as const,
@@ -659,7 +666,7 @@ export default function PitchingPage() {
                 title: "The Magic — How It Works",
                 time: "~20 seconds",
                 description:
-                  "Brief technical overview. You're the guide, not the hero — your product is the \"magic gift\" that gets users to the promised land. Position your tech as the enabler, not the star.",
+                  "Brief technical overview. You're the guide, not the hero, and your product is the \"magic gift\" that gets users to the promised land. Position your tech as the enabler, not the star.",
                 example:
                   '"Under the hood: GPT-4 for triage, Twilio for telephony, and a custom priority queue that routes by severity."',
                 accent: "success" as const,
@@ -669,7 +676,7 @@ export default function PitchingPage() {
                 title: "Vision and Close",
                 time: "~15 seconds",
                 description:
-                  "End with where this goes. Not a feature roadmap — a glimpse of the future your project enables. Leave judges with a feeling, not a feature list.",
+                  "End with where this goes. Instead of a feature roadmap, offer a glimpse of the future your project enables. Leave judges with a feeling, not a feature list.",
                 example:
                   '"Imagine a world where no 911 call goes unanswered. We built the first step."',
                 accent: "volt" as const,
@@ -749,7 +756,7 @@ export default function PitchingPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  Andy Raskin — Strategic Narrative Expert
+                  <a href="https://medium.com/the-mission/the-greatest-sales-deck-ive-ever-seen-4f4ef3391ba0" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Andy Raskin</a> — Strategic Narrative Expert
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;Your prospect is Luke, and you&apos;re Obi-Wan,
@@ -793,7 +800,7 @@ export default function PitchingPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   Code hidden behind a GitHub repo or plain README rarely stands
-                  out. A demo video puts your project on stage — judges see it,
+                  out. A demo video puts your project on stage. Judges see it,
                   feel it, and most importantly, remember it.
                 </p>
                 <div className="rounded-lg bg-volt/5 p-3 text-center">
@@ -824,9 +831,9 @@ export default function PitchingPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   Your presentation is often rushed or forgotten in busy
-                  hackathons. A demo video follows judges into deliberation. When
-                  they forget your project — which happens more than you&apos;d
-                  expect — your video serves as a visual reminder.
+                  hackathons. A demo video follows judges into deliberation.
+                  Judges forget projects more often than you&apos;d expect, and
+                  when they do, your video serves as a visual reminder.
                 </p>
                 <div className="rounded-lg bg-spark/5 p-3 text-center">
                   <p className="font-display text-lg font-bold text-spark">
@@ -901,7 +908,7 @@ export default function PitchingPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Pitching Under Pressure"
-            subtitle="Hackathons broke the overpreparing-for-presentations habit. Here's what pitching on no sleep actually teaches you — and why it makes you better."
+            subtitle="Hackathons broke the overpreparing-for-presentations habit. Here's what pitching on no sleep actually teaches you, and why it ultimately makes you better."
           />
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -928,7 +935,7 @@ export default function PitchingPage() {
                 <p className="font-body text-sm text-foreground/60">
                   Pitching on no sleep strips away the polish. You show up
                   half-delirious, click through your slides, and explain what you
-                  built — flaws and all. It forces you to be honest and concise.
+                  built honestly, flaws included. It forces you to be honest and concise.
                   You stop trying to impress and start trying to communicate.
                   And that makes you more convincing.
                 </p>
@@ -938,7 +945,8 @@ export default function PitchingPage() {
                   what you didn&apos;t know makes you more human and credible.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — The Power of Vulnerability, TED 2010
+                  —{" "}
+                  <a href="https://www.ted.com/talks/brene_brown_the_power_of_vulnerability" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">The Power of Vulnerability, TED 2010</a>
                 </p>
               </CardContent>
             </Card>
@@ -966,8 +974,8 @@ export default function PitchingPage() {
                   Carnegie&apos;s timeless principle: speak{" "}
                   <span className="font-semibold text-foreground">with</span>{" "}
                   judges, not at them. Draw from real experiences. The most
-                  powerful pitch moments come from genuine stories — the 3AM
-                  breakthrough, the pivot that saved the project, the user
+                  powerful pitch moments come from genuine stories like the 3AM
+                  breakthrough, the pivot that saved the project, or the user
                   interview that changed everything.
                 </p>
                 <div className="space-y-2">
@@ -996,7 +1004,8 @@ export default function PitchingPage() {
                   </ol>
                 </div>
                 <p className="font-code text-xs text-volt/60">
-                  — How to Win Friends and Influence People
+                  —{" "}
+                  <a href="https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">How to Win Friends and Influence People</a>
                 </p>
               </CardContent>
             </Card>
@@ -1086,7 +1095,8 @@ export default function PitchingPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Dale Carnegie, pioneer of public speaking
+                —{" "}
+                <a href="https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Dale Carnegie, pioneer of public speaking</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
@@ -1096,21 +1106,22 @@ export default function PitchingPage() {
                     the pitch.
                   </span>{" "}
                   It&apos;s about being ready for the conversation after. The
-                  teams that win aren&apos;t always the most technical — they&apos;re
-                  the ones who make judges feel something, believe in the vision,
-                  and walk away thinking &ldquo;that team gets it.&rdquo;
+                  teams that win aren&apos;t always the most technical. They&apos;re
+                  the ones who make judges feel something, believe in the
+                  vision, and walk away thinking &ldquo;that team gets
+                  it.&rdquo;
                 </p>
                 <p className="font-body text-foreground/80">
                   Practice your pitch as much as you practice your code. Use
-                  analogies to make complex tech relatable. Show passion —
+                  analogies to make complex tech relatable. Show passion because
                   enthusiasm is contagious. And above all, be ready to pivot your
                   story based on judges&apos; reactions. The best pitchers
-                  don&apos;t recite — they converse.
+                  don&apos;t recite. They converse.
                 </p>
                 <p className="font-body text-foreground/80">
                   <span className="font-display font-semibold text-foreground">
                     In hackathons and in life, it&apos;s not just about what you
-                    build — it&apos;s about the story you tell.
+                    build. It&apos;s about the story you tell.
                   </span>
                 </p>
               </div>
@@ -1131,35 +1142,35 @@ export default function PitchingPage() {
             <CardContent className="space-y-4 pt-6">
               {[
                 {
-                  text: "Start with WHY — lead with the problem and why it matters to you, not what you built",
+                  text: "Start with WHY by leading with the problem and why it matters to you, not what you built",
                   accent: "volt",
                 },
                 {
-                  text: "Build your main pitch around the 90% — problem, solution, live demo, impact",
+                  text: "Build your main pitch around the 90%, covering problem, solution, live demo, and impact",
                   accent: "spark",
                 },
                 {
-                  text: "Prep appendix slides — architecture, tradeoffs, edge cases, roadmap, cost at scale",
+                  text: "Prep appendix slides covering architecture, tradeoffs, edge cases, roadmap, and cost at scale",
                   accent: "primary",
                 },
                 {
-                  text: "Allocate 60-70% of pitch time to the live demo — show it working, don't just describe it",
+                  text: "Allocate 60-70% of pitch time to the live demo so judges can see it working instead of just hearing about it",
                   accent: "success",
                 },
                 {
-                  text: "Record a demo video — it follows judges into deliberation when you can't",
+                  text: "Record a demo video because it follows judges into deliberation when you can't",
                   accent: "volt",
                 },
                 {
-                  text: "Practice Q&A — anticipate every question, have a prepared answer, navigate to the right slide",
+                  text: "Practice Q&A by anticipating every question, preparing an answer, and knowing which slide to navigate to",
                   accent: "spark",
                 },
                 {
-                  text: "Tailor to your judges — research backgrounds, adapt emphasis (tech for engineers, market for VCs, UX for designers)",
+                  text: "Tailor to your judges by researching their backgrounds and adapting emphasis (tech for engineers, market for VCs, UX for designers)",
                   accent: "primary",
                 },
                 {
-                  text: "End with the vision — leave judges with a feeling, not a feature list",
+                  text: "End with the vision and leave judges with a feeling, not a feature list",
                   accent: "success",
                 },
               ].map((item) => {
@@ -1191,7 +1202,7 @@ export default function PitchingPage() {
               <span className="font-display font-semibold text-foreground">
                 Remember:
               </span>{" "}
-              The pitch isn&apos;t a summary of what you built — it&apos;s a
+              The pitch isn&apos;t a summary of what you built. It&apos;s a
               performance that makes judges believe in what you could build. Master
               storytelling and you&apos;ll not only win hackathons but also hearts,
               minds, and maybe even your dream job.

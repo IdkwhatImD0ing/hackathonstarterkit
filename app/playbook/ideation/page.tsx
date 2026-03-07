@@ -127,13 +127,13 @@ export default function IdeationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Little Alchemy Method"
-            subtitle="The ideation methodology behind $100K+ in hackathon prizes. Inspired by the game Little Alchemy — start with basic elements, combine them, and discover winning ideas."
+            subtitle="The ideation methodology behind $100K+ in hackathon prizes. Inspired by the game Little Alchemy, you start with basic elements, combine them, and discover winning ideas."
           />
 
           <p className="font-body text-foreground/80">
-            In Little Alchemy, you start with four basic elements — fire, water,
-            earth, and air — and combine them to create new items like steam,
-            lava, or life. You keep mixing your discoveries to unlock hundreds of
+            In Little Alchemy, you start with four basic elements like fire,
+            water, earth, and air, then combine them to create new items like
+            steam, lava, or life. You keep mixing your discoveries to unlock hundreds of
             different things, from windmills to the internet.
           </p>
 
@@ -254,8 +254,8 @@ export default function IdeationPage() {
                 The method is simple:
               </span>{" "}
               Start with 20-30 different elements and just try randomly combining
-              things together. The magic is in the volume of combinations — most
-              won&apos;t work, but the ones that do are often brilliant.
+              things together. Most combinations won&apos;t work, but the magic
+              is in the volume, because the ones that do are often brilliant.
             </p>
           </div>
         </section>
@@ -317,7 +317,7 @@ export default function IdeationPage() {
               <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                 <p className="font-code text-xs text-volt/80">
                   Seems simple right? That&apos;s the point. The best hackathon
-                  ideas aren&apos;t complex — they&apos;re clear combinations
+                  ideas aren&apos;t complex. They&apos;re clear combinations
                   that nobody else thought to make.
                 </p>
               </div>
@@ -441,9 +441,9 @@ export default function IdeationPage() {
               <span className="font-display font-semibold text-foreground">
                 All three projects
               </span>{" "}
-              were born from the same method — list elements, start combining,
-              and let unexpected connections emerge. The method works because it
-              forces you to think across boundaries instead of within them.
+              were born from the same method of listing elements, combining
+              them, and letting unexpected connections emerge. It works because
+              it forces you to think across boundaries instead of within them.
             </p>
           </div>
         </section>
@@ -454,7 +454,7 @@ export default function IdeationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Why This Works — The Science of Combinatorial Creativity"
-            subtitle="The Little Alchemy method isn't just a personal hack — it's backed by decades of research from the world's best thinkers on creativity and innovation."
+            subtitle="The Little Alchemy method isn't just a personal hack. It's backed by decades of research from the world's best thinkers on creativity and innovation."
           />
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -482,10 +482,12 @@ export default function IdeationPage() {
                 <p className="font-body text-sm text-foreground/60">
                   Jobs argued that broader experiences give you more
                   &ldquo;dots&rdquo; to connect. The more diverse your element
-                  list, the more unexpected — and powerful — your combinations.
+                  list, the more unexpected and powerful your combinations
+                  become.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Wired interview, 1996
+                  —{" "}
+                  <a href="https://www.wired.com/1996/02/jobs-2/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Wired interview, 1996</a>
                 </p>
               </CardContent>
             </Card>
@@ -517,7 +519,8 @@ export default function IdeationPage() {
                   &ldquo;LLMs&rdquo; with &ldquo;Defense.&rdquo;
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — The Act of Creation, 1964
+                  —{" "}
+                  <a href="https://en.wikipedia.org/wiki/The_Act_of_Creation" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">The Act of Creation, 1964</a>
                 </p>
               </CardContent>
             </Card>
@@ -547,11 +550,13 @@ export default function IdeationPage() {
                   The best hackathon ideas use tools that{" "}
                   <span className="font-semibold text-foreground">
                     just became possible
-                  </span>{" "}
-                  — a new API, a freshly released model, a just-opened dataset.
+                  </span>
+                  , like a new API, a freshly released model, or a just-opened
+                  dataset.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — Where Good Ideas Come From, 2010
+                  —{" "}
+                  <a href="https://en.wikipedia.org/wiki/Where_Good_Ideas_Come_From" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Where Good Ideas Come From, 2010</a>
                 </p>
               </CardContent>
             </Card>
@@ -583,7 +588,8 @@ export default function IdeationPage() {
                   elements.
                 </p>
                 <p className="font-code text-xs text-success/60">
-                  — How to Get Startup Ideas, 2012
+                  —{" "}
+                  <a href="https://paulgraham.com/startupideas.html" target="_blank" rel="noopener noreferrer" className="underline decoration-success/30 hover:decoration-success">How to Get Startup Ideas, 2012</a>
                 </p>
               </CardContent>
             </Card>
@@ -614,8 +620,9 @@ export default function IdeationPage() {
                   Tech Elements
                 </CardTitle>
                 <CardDescription className="font-body">
-                  APIs, AI models, hardware, protocols, research papers — things
-                  that <span className="font-semibold">do</span> something.
+                  APIs, AI models, hardware, protocols, and research papers.
+                  Things that <span className="font-semibold">do</span>{" "}
+                  something.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -662,7 +669,7 @@ export default function IdeationPage() {
                   Domain Elements
                 </CardTitle>
                 <CardDescription className="font-body">
-                  Industries, user groups, and problem spaces — things that{" "}
+                  Industries, user groups, and problem spaces. Things that{" "}
                   <span className="font-semibold">need</span> something.
                 </CardDescription>
               </CardHeader>
@@ -753,7 +760,7 @@ export default function IdeationPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  Linus Pauling — Two-Time Nobel Laureate
+                  <a href="https://en.wikipedia.org/wiki/Linus_Pauling" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Linus Pauling</a> — Two-Time Nobel Laureate
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;The best way to have a good idea is to have a lot of
@@ -775,7 +782,7 @@ export default function IdeationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Wandering Mind"
-            subtitle="The best hackathon ideas don't come from staring at a blank screen. They come when you let your brain wander — and there's hard science behind why."
+            subtitle="The best hackathon ideas don't come from staring at a blank screen. They come when you let your brain wander, and there's hard science behind why."
           />
 
           <Card className="glow-hover border-spark/20">
@@ -804,9 +811,9 @@ export default function IdeationPage() {
                 <p className="font-body text-sm text-foreground/80">
                   TFT forces you to switch gears constantly. One second
                   you&apos;re focusing on your board, the next you&apos;re
-                  back to your idea list. This rapid mental shift sparks
-                  unexpected connections — exactly how the best hackathon ideas
-                  emerge.
+                  back to your idea list. This rapid mental shifting is what
+                  sparks the unexpected connections that lead to the best
+                  hackathon ideas.
                 </p>
               </div>
               <div className="space-y-2">
@@ -815,7 +822,7 @@ export default function IdeationPage() {
                 </p>
                 <p className="font-body text-sm text-foreground/80">
                   Unlike Valorant or League, TFT gives you long pauses between
-                  rounds — perfect for jotting down quick ideas. Ever tried
+                  rounds that are perfect for jotting down quick ideas. Ever tried
                   thinking up a startup idea while mid-clutch in Valorant?
                   Doesn&apos;t work.
                 </p>
@@ -824,7 +831,7 @@ export default function IdeationPage() {
                 <p className="font-code text-xs text-spark/80">
                   You don&apos;t have to play TFT. The principle is: pair
                   ideation with any activity that keeps your hands busy and your
-                  brain free — cooking, cleaning, gymming, walking. Let your
+                  brain free, like cooking, cleaning, gymming, or walking. Let your
                   brain wander, and the best ideas will come to you.
                 </p>
               </div>
@@ -878,7 +885,8 @@ export default function IdeationPage() {
                   when learning something new.&rdquo;
                 </blockquote>
                 <p className="font-code text-xs text-primary/60">
-                  — Learning How to Learn
+                  —{" "}
+                  <a href="https://www.coursera.org/learn/learning-how-to-learn" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Learning How to Learn</a>
                 </p>
               </CardContent>
             </Card>
@@ -906,7 +914,7 @@ export default function IdeationPage() {
                   {[
                     {
                       step: "Gather",
-                      desc: "Collect raw material — specific knowledge of the problem and general knowledge from other fields",
+                      desc: "Collect raw material, both specific knowledge of the problem and general knowledge from other fields",
                     },
                     {
                       step: "Digest",
@@ -918,7 +926,7 @@ export default function IdeationPage() {
                     },
                     {
                       step: "Eureka",
-                      desc: "The idea appears — usually when you're not forcing it",
+                      desc: "The idea appears, usually when you're not forcing it",
                     },
                     {
                       step: "Verify",
@@ -943,13 +951,14 @@ export default function IdeationPage() {
                 </ol>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
-                    Step 3 is the one most people skip — and it&apos;s the most
-                    important. Building your element list is gathering. Playing
+                    Step 3 is the one most people skip, but it happens to be
+                    the most important. Building your element list is gathering. Playing
                     TFT is incubation.
                   </p>
                 </div>
                 <p className="font-code text-xs text-volt/60">
-                  — A Technique for Producing Ideas, 1939
+                  —{" "}
+                  <a href="https://en.wikipedia.org/wiki/A_Technique_for_Producing_Ideas" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">A Technique for Producing Ideas, 1939</a>
                 </p>
               </CardContent>
             </Card>
@@ -963,8 +972,8 @@ export default function IdeationPage() {
               </span>{" "}
               Schedule real breaks during ideation. Walk, cook, play a game,
               hit the gym. Your subconscious keeps working even when your
-              conscious mind steps away — and it&apos;s often better at finding
-              the non-obvious connections.
+              conscious mind steps away. In fact, it&apos;s often better at
+              finding the non-obvious connections.
             </p>
           </div>
         </section>
@@ -993,7 +1002,7 @@ export default function IdeationPage() {
                   SCAMPER Method
                 </CardTitle>
                 <CardDescription className="font-body">
-                  Bob Eberle&apos;s structured checklist for expanding any idea
+                  <a href="https://en.wikipedia.org/wiki/S.C.A.M.P.E.R" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Bob Eberle&apos;s</a> structured checklist for expanding any idea
                   in seven directions.
                 </CardDescription>
               </CardHeader>
@@ -1051,7 +1060,7 @@ export default function IdeationPage() {
                   Random Input
                 </CardTitle>
                 <CardDescription className="font-body">
-                  Edward de Bono&apos;s technique for provoking new connections
+                  <a href="https://en.wikipedia.org/wiki/Lateral_thinking" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Edward de Bono&apos;s</a> technique for provoking new connections
                   through randomness.
                 </CardDescription>
               </CardHeader>
@@ -1061,8 +1070,8 @@ export default function IdeationPage() {
                     <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-spark/10 font-code text-xs text-spark">
                       1
                     </span>
-                    Pick a random noun — open a dictionary, use a generator, or
-                    point at something in the room
+                    Pick a random noun by opening a dictionary, using a
+                    generator, or pointing at something in the room
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-spark/10 font-code text-xs text-spark">
@@ -1075,7 +1084,7 @@ export default function IdeationPage() {
                     <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-spark/10 font-code text-xs text-spark">
                       3
                     </span>
-                    Follow the unexpected associations — the weirder the
+                    Follow the unexpected associations, because the weirder the
                     connection, the more original the idea
                   </li>
                 </ol>
@@ -1083,7 +1092,7 @@ export default function IdeationPage() {
                   <p className="font-code text-xs text-spark/80">
                     When your team is stuck in a loop of similar ideas, random
                     input is the fastest way to break out. De Bono argued the
-                    risk is never being too random — it&apos;s not being random
+                    real risk isn&apos;t being too random, but not being random
                     enough.
                   </p>
                 </div>
@@ -1104,7 +1113,7 @@ export default function IdeationPage() {
                   Antidisciplinary Thinking
                 </CardTitle>
                 <CardDescription className="font-body">
-                  Joi Ito&apos;s framework for finding innovation in the white
+                  <a href="https://joi.ito.com/weblog/2014/10/02/antidisciplinar.html" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Joi Ito&apos;s</a> framework for finding innovation in the white
                   space between fields.
                 </CardDescription>
               </CardHeader>
@@ -1126,7 +1135,7 @@ export default function IdeationPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
-                      Does this idea feel uncategorizable? Good — pursue it.
+                      Does this idea feel uncategorizable? Good. Pursue it.
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
@@ -1164,7 +1173,8 @@ export default function IdeationPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Steve Jobs, co-founder of Apple
+                —{" "}
+                <a href="https://www.wired.com/1996/02/jobs-2/" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Steve Jobs, co-founder of Apple</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
@@ -1174,9 +1184,9 @@ export default function IdeationPage() {
                     at a blank screen.
                   </span>{" "}
                   They come from having a broad inventory of
-                  &ldquo;elements&rdquo; — technologies you&apos;ve explored,
-                  industries you understand, problems you&apos;ve felt — and the
-                  courage to combine them in ways nobody else would.
+                  &ldquo;elements&rdquo; like technologies you&apos;ve explored,
+                  industries you understand, and problems you&apos;ve felt, along
+                  with the courage to combine them in ways nobody else would.
                 </p>
                 <p className="font-body text-foreground/80">
                   The Little Alchemy method works because it mirrors how
@@ -1209,31 +1219,31 @@ export default function IdeationPage() {
             <CardContent className="space-y-4 pt-6">
               {[
                 {
-                  text: "Build your element list — aim for 20-30 tech + domain + wild cards",
+                  text: "Build your element list with at least 20-30 tech + domain + wild cards",
                   accent: "volt",
                 },
                 {
-                  text: "Start combining randomly — don't filter, don't judge, just mix",
+                  text: "Start combining randomly without filtering or judging. Just mix.",
                   accent: "spark",
                 },
                 {
-                  text: "Step away and let diffuse thinking work — walk, play, cook, gym",
+                  text: "Step away and let diffuse thinking work by walking, playing, cooking, or hitting the gym",
                   accent: "primary",
                 },
                 {
-                  text: "Generate volume first — aim for 15-20 unique combinations",
+                  text: "Generate volume first and aim for 15-20 unique combinations",
                   accent: "success",
                 },
                 {
-                  text: "Apply SCAMPER to your top 3 ideas — push them in all 7 directions",
+                  text: "Apply SCAMPER to your top 3 ideas and push them in all 7 directions",
                   accent: "volt",
                 },
                 {
-                  text: "Pick the idea at the edge of the adjacent possible — what just became feasible?",
+                  text: "Pick the idea at the edge of the adjacent possible, asking yourself what just became feasible",
                   accent: "spark",
                 },
                 {
-                  text: "Validate with your team — does it excite everyone? Can you build it in 24-48 hours?",
+                  text: "Validate with your team by asking if it excites everyone and whether you can build it in 24-48 hours",
                   accent: "primary",
                 },
               ].map((item) => {

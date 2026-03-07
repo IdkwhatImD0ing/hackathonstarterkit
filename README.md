@@ -1,19 +1,19 @@
 # Hackathon Starter Kit
 
-The ultimate hackathon playbook — guides, templates, and battle-tested strategies from **36+ hackathon victories** and **$100K+ in prizes**.
+The ultimate hackathon playbook with guides, templates, and battle-tested strategies from **36+ hackathon victories** and **$100K+ in prizes**.
 
 ## About the Author
 
-**Bill Zhang** ([@IdkwhatImD0ing](https://github.com/IdkwhatImD0ing)) — one of the most decorated hackathon competitors in the US college scene.
+**Bill Zhang** ([@IdkwhatImD0ing](https://github.com/IdkwhatImD0ing)), one of the most decorated hackathon competitors in the US college scene.
 
 - **36+ hackathon wins** across 50+ hackathons attended
 - **$100K+ in total prizes** won
 - **First place at 1,000+ person events**: HackUTD (largest 24hr hackathon in the US), UC Berkeley AI Hackathon (largest AI hackathon in the US), LA Hacks
 - **Google Developer Student Challenge** Top 10 Global Finalist (only US team in top 10 in three years)
-- **Co-founder of [WeCracked](https://wecracked.com/)** — a 4,000+ member hackathon community with sponsor backing
+- **Co-founder of [WeCracked](https://wecracked.com/)**, a 4,000+ member hackathon community with sponsor backing
 - **Applied AI Engineer at [Scale AI](https://scale.com/)** (Enterprise, Post-Training Research Agentics)
 - **USC** MS in Computer Science (AI), **UCSC** undergrad
-- **Co-founder of Dispatch AI** — AI-powered 911 system, valued at $1M, funded by Berkeley SkyDeck
+- **Co-founder of Dispatch AI**, an AI-powered 911 system valued at $1M and funded by Berkeley SkyDeck
 
 ### Notable Hackathon Wins
 

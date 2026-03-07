@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Design System",
   description:
-    "Live preview of the Hackathon Starter Kit design system — colors, typography, components, and patterns.",
+    "Live preview of the Hackathon Starter Kit design system: colors, typography, components, and patterns.",
   openGraph: {
     title: "Design System",
     description:
-      "Live preview of the Hackathon Starter Kit design system — colors, typography, components, and patterns.",
+      "Live preview of the Hackathon Starter Kit design system: colors, typography, components, and patterns.",
   },
 };
 import {
@@ -78,7 +78,7 @@ export default function DesignSystemPage() {
             <span className="text-primary">Starter Kit</span>
           </h1>
           <p className="max-w-2xl font-body text-lg text-muted-foreground md:text-xl">
-            The ultimate playbook for winning hackathons — guides, templates,
+            The ultimate playbook for winning hackathons: guides, templates,
             and battle-tested strategies from{" "}
             <span className="animate-shimmer font-semibold">
               36+ hackathon victories

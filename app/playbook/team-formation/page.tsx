@@ -75,7 +75,7 @@ export default function TeamFormationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Four Personas"
-            subtitle="Every winning hackathon team needs four key roles. You don't need a big team — you need the right composition. One person can fill multiple roles."
+            subtitle="Every winning hackathon team needs four key roles. You don't need a big team, just the right composition. One person can fill multiple roles."
           />
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -96,7 +96,7 @@ export default function TeamFormationPage() {
                 <CardDescription className="font-body text-base">
                   In a sea of terminal-output demos, a polished UI instantly
                   signals quality. The Designer turns your 4AM code into
-                  something that looks intentional — and in hackathons, first
+                  something that looks intentional. In hackathons, first
                   impressions are everything.
                 </CardDescription>
               </CardHeader>
@@ -130,7 +130,7 @@ export default function TeamFormationPage() {
                   <ul className="space-y-1.5 font-body text-sm text-foreground/80">
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                      Judges form opinions in seconds — a beautiful interface
+                      Judges form opinions in seconds, and a beautiful interface
                       buys credibility before you say a word
                     </li>
                     <li className="flex items-start gap-2">
@@ -148,8 +148,8 @@ export default function TeamFormationPage() {
                     Watch Out For
                   </p>
                   <p className="font-body text-sm text-foreground/60">
-                    Perfectionism under time pressure — may spend too long
-                    polishing when &quot;good enough&quot; ships.
+                    Perfectionism under time pressure can lead to over-polishing
+                    when &quot;good enough&quot; ships.
                   </p>
                 </div>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
@@ -178,9 +178,9 @@ export default function TeamFormationPage() {
                 <CardDescription className="font-body text-base">
                   Your project could cure cancer, but if you can&apos;t explain
                   it in 60 seconds, you lose. The Pitcher translates engineering
-                  into impact — they know when to lead with the problem, when to
-                  show the demo, and how to handle the &quot;so what?&quot;
-                  question.
+                  into impact because they know when to lead with the problem,
+                  when to show the demo, and how to handle the &quot;so
+                  what?&quot; question.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-5">
@@ -213,7 +213,7 @@ export default function TeamFormationPage() {
                   <ul className="space-y-1.5 font-body text-sm text-foreground/80">
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                      Most demos get 2-5 minutes — the Pitcher makes every
+                      Most demos get 2-5 minutes, and the Pitcher makes every
                       second count
                     </li>
                     <li className="flex items-start gap-2">
@@ -261,8 +261,8 @@ export default function TeamFormationPage() {
                 </CardTitle>
                 <CardDescription className="font-body text-base">
                   The Architect sees the whole board. While others go deep on
-                  features, they ensure everything connects — API to frontend, ML
-                  model to UI, auth to database. They&apos;re the technical glue
+                  features, they ensure everything connects, from API to
+                  frontend, ML model to UI, and auth to database. They&apos;re the technical glue
                   that holds the project together.
                 </CardDescription>
               </CardHeader>
@@ -296,8 +296,8 @@ export default function TeamFormationPage() {
                   <ul className="space-y-1.5 font-body text-sm text-foreground/80">
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
-                      The #1 killer of hackathon projects is integration failure
-                      — they prevent it
+                      Integration failure is the #1 killer of hackathon
+                      projects, and the Architect is the one who prevents it
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
@@ -315,7 +315,7 @@ export default function TeamFormationPage() {
                     Watch Out For
                   </p>
                   <p className="font-body text-sm text-foreground/60">
-                    Over-engineering for a 48-hour sprint — building for scale
+                    Over-engineering for a 48-hour sprint by building for scale
                     when you need to build for demo.
                   </p>
                 </div>
@@ -391,8 +391,8 @@ export default function TeamFormationPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-success" />
-                      Acts as a buffer so builders can focus — handles logistics,
-                      submissions, and scope
+                      Acts as a buffer so builders can focus by handling
+                      logistics, submissions, and scope
                     </li>
                   </ul>
                 </div>
@@ -401,8 +401,8 @@ export default function TeamFormationPage() {
                     Watch Out For
                   </p>
                   <p className="font-body text-sm text-foreground/60">
-                    Over-planning and rigidity — too much process in a 48-hour
-                    sprint slows everyone down.
+                    Over-planning and rigidity, since too much process in a
+                    48-hour sprint slows everyone down.
                   </p>
                 </div>
                 <div className="rounded-lg border border-success/10 bg-success/5 p-3">
@@ -423,7 +423,7 @@ export default function TeamFormationPage() {
               </div>
               <div className="space-y-2">
                 <p className="font-display font-semibold">
-                  Meredith Belbin — Team Role Theory
+                  <a href="https://www.belbin.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Meredith Belbin</a> — Team Role Theory
                 </p>
                 <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
                   &ldquo;Nobody is perfect, but a team can be. A team is not a
@@ -453,7 +453,8 @@ export default function TeamFormationPage() {
                   (team leader).
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Management Teams: Why They Succeed or Fail, 1981
+                  —{" "}
+                  <a href="https://www.belbin.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Management Teams: Why They Succeed or Fail, 1981</a>
                 </p>
               </div>
             </div>
@@ -481,9 +482,9 @@ export default function TeamFormationPage() {
           />
 
           <p className="font-body text-foreground/80">
-            Think of it like a sports team. You don&apos;t put rookies in the
-            championship game — you train them through the season first. The
-            same applies to hackathons.
+            Think of it like a sports team. You train rookies through the
+            season before putting them in the championship game. The same
+            applies to hackathons.
           </p>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr]">
@@ -509,8 +510,8 @@ export default function TeamFormationPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Still developing hackathon skills — time management, rapid
-                    prototyping, pitching
+                    Still developing hackathon skills like time management,
+                    rapid prototyping, and pitching
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
@@ -574,7 +575,7 @@ export default function TeamFormationPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Proven through 3-8+ hackathons together — deep trust and
+                    Proven through 3-8+ hackathons together with deep trust and
                     rhythm
                   </li>
                   <li className="flex items-start gap-2">
@@ -584,8 +585,8 @@ export default function TeamFormationPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Shared toolkit — pre-built templates, favorite APIs,
-                    deployment pipeline
+                    Shared toolkit including pre-built templates, favorite APIs,
+                    and a deployment pipeline
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
@@ -610,7 +611,7 @@ export default function TeamFormationPage() {
               <span className="font-display font-semibold text-foreground">
                 The key factor isn&apos;t skill level
               </span>{" "}
-              — it&apos;s how well you work together under extreme time pressure.
+              but rather how well you work together under extreme time pressure.
               A varsity teammate might be a worse programmer than a JV one, but
               they communicate better, pivot faster, and never go silent at 3AM
               when everything breaks. This mirrors what psychologist Anders
@@ -618,12 +619,13 @@ export default function TeamFormationPage() {
               <span className="font-semibold text-foreground">
                 deliberate practice
               </span>
-              : improvement requires repeated, structured effort with feedback —
-              not just showing up.
+              : improvement requires repeated, structured effort with intentional
+              feedback rather than just showing up.
             </p>
             <p className="mt-2 font-code text-xs text-muted-foreground/60">
-              — Anders Ericsson, Peak: Secrets from the New Science of
-              Expertise, 2016
+              —{" "}
+              <a href="https://en.wikipedia.org/wiki/Peak:_Secrets_from_the_New_Science_of_Expertise" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Anders Ericsson, Peak: Secrets from the New Science of
+              Expertise, 2016</a>
             </p>
           </div>
 
@@ -654,17 +656,18 @@ export default function TeamFormationPage() {
                   <span className="font-semibold text-foreground">
                     forming and storming
                   </span>{" "}
-                  phases — learning each other&apos;s styles, navigating
+                  phases, where they&apos;re learning each other&apos;s styles, navigating
                   disagreements, and building trust. Varsity teammates have
                   reached{" "}
                   <span className="font-semibold text-foreground">
                     norming and performing
                   </span>{" "}
-                  — they have shared norms, execute fluidly, and spend zero
+                  where they have shared norms, execute fluidly, and spend zero
                   energy on coordination overhead.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Developmental Sequence in Small Groups, 1965
+                  —{" "}
+                  <a href="https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Developmental Sequence in Small Groups, 1965</a>
                 </p>
               </CardContent>
             </Card>
@@ -700,8 +703,8 @@ export default function TeamFormationPage() {
                     </p>
                     <p className="font-body text-xs text-foreground/60">
                       Disagreements about scope, tech stack, and approach
-                      surface. This friction is necessary — working through it
-                      builds real trust.
+                      surface. This friction is necessary because working through
+                      it builds real trust.
                     </p>
                   </div>
                   <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
@@ -718,8 +721,8 @@ export default function TeamFormationPage() {
                       Performing → Varsity
                     </p>
                     <p className="font-body text-xs text-foreground/60">
-                      Peak effectiveness. The team executes as a unit — shared
-                      toolkits, minimal coordination overhead, maximum output.
+                      Peak effectiveness. The team executes as a unit with shared
+                      toolkits, minimal coordination overhead, and maximum output.
                     </p>
                   </div>
                 </div>
@@ -808,8 +811,8 @@ export default function TeamFormationPage() {
                 </CardTitle>
                 <CardDescription className="font-body">
                   Exclusively with your JV list. Focus on developing technical
-                  and soft skills together. Practice your full workflow —
-                  ideation, architecture, execution, pitching.
+                  and soft skills together. Practice your full workflow from
+                  ideation through architecture, execution, and pitching.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -821,8 +824,8 @@ export default function TeamFormationPage() {
                     </span>
                   </div>
                   <p className="font-body text-sm text-foreground/80">
-                    JV teammates only — the whole point is building chemistry and
-                    shared muscle memory
+                    JV teammates only, because the whole point is building
+                    chemistry and shared muscle memory
                   </p>
                 </div>
                 <div className="space-y-2">
@@ -875,8 +878,8 @@ export default function TeamFormationPage() {
                     </span>
                   </div>
                   <p className="font-body text-sm text-foreground/80">
-                    Varsity only — pre-planned roles, shared templates, rapid
-                    deployment of proven tools and APIs
+                    Varsity only, with pre-planned roles, shared templates, and
+                    rapid deployment of proven tools and APIs
                   </p>
                 </div>
                 <div className="space-y-2">
@@ -908,7 +911,7 @@ export default function TeamFormationPage() {
               </div>
               <div className="space-y-2">
                 <p className="font-display font-semibold">
-                  J. Richard Hackman — Leading Teams
+                  <a href="https://en.wikipedia.org/wiki/J._Richard_Hackman" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">J. Richard Hackman</a> — Leading Teams
                 </p>
                 <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
                   &ldquo;The single most important condition for team
@@ -921,20 +924,21 @@ export default function TeamFormationPage() {
                   <span className="font-semibold text-foreground">
                     no shared direction
                   </span>{" "}
-                  — you&apos;re exploring. Training hackathons have{" "}
+                  because you&apos;re still exploring. Training hackathons have{" "}
                   <span className="font-semibold text-foreground">
                     a learning direction
                   </span>{" "}
-                  — the purpose is growth. Competitive hackathons have{" "}
+                  where the purpose is growth. Competitive hackathons have{" "}
                   <span className="font-semibold text-foreground">
                     a winning direction
                   </span>{" "}
-                  — the purpose is clear, challenging, and consequential. The
-                  sharper the direction, the better the team performs.
+                  with a purpose that is clear, challenging, and consequential.
+                  The sharper the direction, the better the team performs.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — Leading Teams: Setting the Stage for Great Performances,
-                  2002
+                  —{" "}
+                  <a href="https://en.wikipedia.org/wiki/J._Richard_Hackman" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Leading Teams: Setting the Stage for Great Performances,
+                  2002</a>
                 </p>
               </div>
             </div>
@@ -955,7 +959,8 @@ export default function TeamFormationPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Peter Schutz, former CEO of Porsche
+                —{" "}
+                <a href="https://en.wikipedia.org/wiki/Peter_W._Schutz" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Peter Schutz, former CEO of Porsche</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
@@ -1011,11 +1016,12 @@ export default function TeamFormationPage() {
                       <p className="font-body text-sm text-foreground/60">
                         Edmondson&apos;s research confirms that teams where
                         members feel safe to take risks dramatically outperform
-                        those ruled by fear or ego — even when the
+                        those ruled by fear or ego. This holds true even when the
                         &ldquo;fearful&rdquo; team has more raw talent.
                       </p>
                       <p className="font-code text-xs text-success/60">
-                        — The Fearless Organization, 2018
+                        —{" "}
+                        <a href="https://fearlessorganization.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-success/30 hover:decoration-success">The Fearless Organization, 2018</a>
                       </p>
                     </div>
                   </div>
@@ -1040,7 +1046,8 @@ export default function TeamFormationPage() {
                         interact.
                       </p>
                       <p className="font-code text-xs text-volt/60">
-                        — Google re:Work, 2015
+                        —{" "}
+                        <a href="https://rework.withgoogle.com/guides/understanding-team-effectiveness/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Google re:Work, 2015</a>
                       </p>
                     </div>
                   </div>
@@ -1065,7 +1072,7 @@ export default function TeamFormationPage() {
                 icon: MessageCircle,
                 title: "Hackathon Discords",
                 description:
-                  "Most hackathons have team-matching channels. Jump in early — the best teammates get claimed fast.",
+                  "Most hackathons have team-matching channels. Jump in early because the best teammates get claimed fast.",
                 accent: "volt" as const,
               },
               {
@@ -1086,7 +1093,7 @@ export default function TeamFormationPage() {
                 icon: Globe,
                 title: "Devpost Scouting",
                 description:
-                  "Browse winners of past hackathons. Reach out to people whose projects impress you — most are happy to connect.",
+                  "Browse winners of past hackathons. Reach out to people whose projects impress you, since most are happy to connect.",
                 accent: "volt" as const,
               },
               {
@@ -1162,10 +1169,9 @@ export default function TeamFormationPage() {
                 Remember:
               </span>{" "}
               The right attitude and strong communication skills are the
-              foundation of any successful hackathon team. Skills can be taught
-              — but the willingness to learn, adapt, and support each other
-              under pressure? That&apos;s what separates good teams from
-              winning ones.
+              foundation of any successful hackathon team.               You can teach skills, but the willingness to learn, adapt, and
+              support each other under pressure is what truly separates good
+              teams from winning ones.
             </p>
           </div>
         </section>

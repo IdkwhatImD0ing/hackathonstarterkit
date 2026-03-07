@@ -2,7 +2,7 @@
 
 ## Vision
 
-A website for hackathon people, built by someone who has won 36+ hackathons. The Hackathon Starter Kit provides guides for every aspect of a hackathon — from ideation and team formation to pitching and post-hackathon follow-up. It is backed by real experience: 50+ hackathons attended, $100K+ in prizes, first place at some of the biggest hackathons in the US (HackUTD, UC Berkeley AI Hackathon, LA Hacks — all 1,000+ participants).
+A website for hackathon people, built by someone who has won 36+ hackathons. The Hackathon Starter Kit provides guides for every aspect of a hackathon, from ideation and team formation to pitching and post-hackathon follow-up. It is backed by real experience: 50+ hackathons attended, $100K+ in prizes, first place at some of the biggest hackathons in the US (HackUTD, UC Berkeley AI Hackathon, and LA Hacks, all with 1,000+ participants).
 
 ## About the Author
 
@@ -29,7 +29,7 @@ A website for hackathon people, built by someone who has won 36+ hackathons. The
 
 ## Aesthetic Direction: "Neon Terminal"
 
-A fusion of **hacker-terminal energy** and **premium dark-mode polish**. Late-night coding sessions, glowing screens in dark rooms, the adrenaline of a 36-hour sprint — elevated with editorial-quality typography and deliberate spatial design. Not generic "dark mode with purple" — this is opinionated, high-contrast, and kinetic.
+A fusion of **hacker-terminal energy** and **premium dark-mode polish**. Late-night coding sessions, glowing screens in dark rooms, the adrenaline of a 36-hour sprint, elevated with editorial-quality typography and deliberate spatial design. Not generic "dark mode with purple." This is opinionated, high-contrast, and kinetic.
 
 The personal color theme is **dark purple**.
 
@@ -115,7 +115,7 @@ Three-font system loaded via `next/font/google`, registered as CSS variables and
 - **Max content width**: 1200px (6xl)
 - **Section padding**: 6rem vertical, 1.5rem horizontal (mobile), 4rem horizontal (desktop)
 - **Card padding**: 1.5rem–2rem
-- **Layout style**: Asymmetric grids, overlapping elements, diagonal section dividers — not a boring centered stack
+- **Layout style**: Asymmetric grids, overlapping elements, diagonal section dividers, not a boring centered stack
 
 ---
 
