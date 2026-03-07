@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================================
-   THEME INLINE  -  Tailwind v4 token registration
+   THEME INLINE, Tailwind v4 token registration
    Maps CSS vars → utility classes (bg-primary, text-muted, etc.)
    Also registers custom hackathon tokens (volt, spark, glow, surface)
    ============================================================ */
@@ -70,7 +70,7 @@
 }
 
 /* ============================================================
-   LIGHT MODE (fallback  -  site defaults to dark)
+   LIGHT MODE (fallback, site defaults to dark)
    ============================================================ */
 :root {
   --radius: 0.625rem;
@@ -120,7 +120,7 @@
 }
 
 /* ============================================================
-   DARK MODE  -  The primary hackathon theme
+   DARK MODE, The primary hackathon theme
    Deep purple void with electric accents
    ============================================================ */
 .dark {
@@ -263,7 +263,7 @@
   animation: float 4s ease-in-out infinite;
 }
 
-/* Stagger children  -  apply to parent, children get .animate-fade-in-up */
+/* Stagger children, apply to parent, children get .animate-fade-in-up */
 .stagger-children > * {
   opacity: 0;
   animation: fade-in-up 0.5s ease-out both;
@@ -292,7 +292,7 @@
   transform: translateY(-2px);
 }
 
-/* CRT scanline overlay  -  apply to a ::after pseudo-element */
+/* CRT scanline overlay, apply to a ::after pseudo-element */
 .scanlines::after {
   content: "";
   position: absolute;
