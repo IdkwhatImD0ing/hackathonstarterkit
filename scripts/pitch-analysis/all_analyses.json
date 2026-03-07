@@ -1,0 +1,317 @@
+{
+  "dispatch_ai": {
+    "pitch_duration_seconds": 272,
+    "opening_hook": {
+      "type": "statistic",
+      "quote": "In the United States, over 80% of 911 call centers are critically understaffed.",
+      "timestamp": "0:17",
+      "why_effective": "A concise, high-impact statistic that immediately communicates scale and urgency. It establishes a clear problem statement (logos) and primes the audience for a high-value solution."
+    },
+    "phases": [
+      {
+        "phase_name": "Big Shift",
+        "timestamp_start": "0:00",
+        "timestamp_end": "0:39",
+        "duration_seconds": 39,
+        "percentage_of_total": 14.34,
+        "key_quote": "In the United States, over 80% of 911 call centers are critically understaffed.",
+        "technique_used": "Statistic-led opener + concrete local example (Oakland) to define a broken status quo. This sets context and makes the problem measurable and urgent (logos)."
+      },
+      {
+        "phase_name": "Stakes",
+        "timestamp_start": "0:39",
+        "timestamp_end": "1:03",
+        "duration_seconds": 24,
+        "percentage_of_total": 8.82,
+        "key_quote": "Now, in an emergency, every second counts, and this could be literally the difference between life and death.",
+        "technique_used": "Pathos amplification: converts abstract understaffing into human cost. The speaker then issues moral clarity ('This is unacceptable') to justify action and pivot to the solution."
+      },
+      {
+        "phase_name": "Magic",
+        "timestamp_start": "1:03",
+        "timestamp_end": "2:55",
+        "duration_seconds": 112,
+        "percentage_of_total": 41.18,
+        "key_quote": "The voice AI will step into calls when all human agents are busy, and it will work with the caller to evaluate their situation, extract the location, and optionally dispatch first responders directly to the scene.",
+        "technique_used": "Product-first explanation of the 'how': concrete mechanisms (voice AI, location extraction, triage dashboard, one-click dispatch) + human-centered features (emotion detection). This is the secret-sauce section that builds credibility and differentiates the approach."
+      },
+      {
+        "phase_name": "Vision",
+        "timestamp_start": "2:55",
+        "timestamp_end": "3:17",
+        "duration_seconds": 22,
+        "percentage_of_total": 8.09,
+        "key_quote": "Our mission is to make requesting emergency services more effective and efficient.",
+        "technique_used": "Concise mission statement that ties the technical product back to social impact (AI For Good). It reframes the product as civic infrastructure and prepares the audience emotionally for the demo."
+      },
+      {
+        "phase_name": "Demo",
+        "timestamp_start": "3:17",
+        "timestamp_end": "4:32",
+        "duration_seconds": 75,
+        "percentage_of_total": 27.57,
+        "key_quote": "See, you can see that our call updates in real time on the dashboard, and our transcription is on the right.",
+        "technique_used": "Live, concrete demonstration: real-time transcription, location capture and UI-driven dispatch. The brief glitch ('It didn't seem to work this time') and quick recovery increase perceived authenticity and demonstrate resilience."
+      }
+    ],
+    "frameworks_used": [
+      {
+        "framework": "Sinek Start With Why",
+        "evidence": "Direct 'why' line: 'This is unacceptable, and that's why we built Dispatch AI, the world's first AI 911 call operator, designed to eliminate these wait times.' (0:51) \u2014 ties problem to mission and product."
+      },
+      {
+        "framework": "Duarte Sparkline",
+        "evidence": "Sparkline structure: status quo ('over 80% ... understaffed' 0:17), tension/stakes ('difference between life and death' 0:44), pivot to solution ('we built Dispatch AI' 0:51) and narrative payoff via a live demo (3:17\u20134:32)."
+      },
+      {
+        "framework": "Aristotle Appeals",
+        "evidence": "Logos: 'over 80%...' (0:17) and 'average wait time was over 60 seconds' (0:34). Pathos: 'difference between life and death' (0:44) and the Golden Gate Bridge demo (3:50). Ethos: technical credibility through 'fine-tuning a model on over 500 911 calls' (2:26) and a productized dashboard (1:25\u20131:56)."
+      },
+      {
+        "framework": "Heath SUCCESs",
+        "evidence": "Simple: mission line 'make requesting emergency services more effective and efficient' (3:08). Unexpected: 'world's first AI 911 call operator' (0:51). Concrete: live transcript and dashboard shown in the demo (3:43\u20133:55). Credible: 'fine-tuning a model on over 500 911 calls' (2:26). Emotional & Story-driven: life-or-death stakes and the live call story."
+      },
+      {
+        "framework": "Raskin Strategic Narrative",
+        "evidence": "Raskin arc present: Big Shift (widespread understaffing 'over 80%' 0:17) -> Enemy (long wait times / overloaded dispatch, 'over 60 seconds' 0:34) -> Magic (voice AI + dashboard 1:03\u20132:55) -> Vision ('make requesting emergency services more effective and efficient' 3:08)."
+      }
+    ],
+    "sponsor_alignment": "Strong alignment: the pitch directly matches 'AI For Good' (public-safety mission, human-centered design, ethical safeguards) and 'Best Use of Intel AI' \u2014 the team cites fine-tuning a model (transcript: 'fine-tuning a model on over 500 911 calls' at 2:26) and the Devpost notes use of Intel Dev Cloud for fine-tuning. The SkyDeck investment fits given a scalable, founder-led product addressing civic infrastructure and open-source commitments (Devpost: open-sourced model and published dataset).",
+    "strongest_moment": {
+      "timestamp": "3:43\u20133:50",
+      "quote": "See, you can see that our call updates in real time on the dashboard, and our transcription is on the right.",
+      "why": "The demo makes the product tangible \u2014 real-time transcription + dashboard visualization turns abstract claims into observable behavior. It couples emotional content ('Golden Gate Bridge' injured people) with interface proof, building trust quickly. The small glitch and recovery add authenticity rather than undermining confidence."
+    },
+    "why_it_won": "DispatchAI combined a high-impact, quantifiable problem (80%+ understaffed centers; local example: Oakland) with concrete technical execution (voice AI, live triage dashboard, location extraction, emotion-aware handling, fine-tuning on real 911 data) and a clear human-in-the-loop safety posture. The pitch used a crisp mission statement and a live demo that showcased product viability. Those elements \u2014 social impact, technical credibility (and explicit Intel usage), demoed product, and open-source / dataset commitments \u2014 aligned tightly with the judges' priorities for AI For Good, Best Use of Intel AI, and investment readiness, making it the natural Grand Prize winner.",
+    "key_techniques": [
+      "Statistic-led opener to establish scale and urgency ('over 80%...' 0:17).",
+      "Localizing the problem (Oakland wait times) to make stakes concrete.",
+      "Life-or-death framing to convert data into moral urgency ('difference between life and death' 0:44).",
+      "Clear, repeated pivot to solution with a single-sentence mission ('This is unacceptable...' 0:51).",
+      "Detailed 'magic' explanation: describe mechanism (voice AI + dashboard + location extraction + one-click dispatch).",
+      "Human-centered safety framing (emotion detection + human-in-the-loop).",
+      "Live demo to make claims tangible (real-time transcription, dashboard updates).",
+      "Technical credibility cues (fine-tuning on 500+ calls) and explicit mention of stack/components.",
+      "Ethical & open-source positioning to align with AI-for-good values (fine-tuning + safeguides).",
+      "Authenticity through recovery: brief demo hiccup then retry, which increases perceived realism and robustness."
+    ],
+    "meta": {
+      "project_name": "DispatchAI",
+      "hackathon": "UC Berkeley AI Hackathon 2024",
+      "prize": "Grand Prize ($25K SkyDeck investment + AI For Good + Best Use of Intel AI)",
+      "total_value": "$62K+",
+      "video_url": "https://www.youtube.com/watch?v=hdpdgxrilQM",
+      "devpost_url": "https://devpost.com/software/dispatch-ai",
+      "had_transcript": true
+    }
+  },
+  "talktuahbank": {
+    "pitch_duration_seconds": 126,
+    "opening_hook": {
+      "type": "statistic",
+      "quote": "Did you know that over 1.7 billion adults worldwide don't have access to traditional banking services?",
+      "timestamp": "0:00",
+      "why_effective": "A single, concrete metric (1.7 billion) creates instant scale and urgency. It functions as a 'Why' statement (Sinek) \u2014 it tells judges why this problem matters before introducing the product. The statistic is simple, credible and emotionally resonant, priming the listener to care about a solution."
+    },
+    "phases": [
+      {
+        "phase_name": "Big Shift",
+        "timestamp_start": "0:00",
+        "timestamp_end": "0:05",
+        "duration_seconds": 5,
+        "percentage_of_total": 3.97,
+        "key_quote": "Did you know that over 1.7 billion adults worldwide don't have access to traditional banking services?",
+        "technique_used": "Problem-first framing: start with an attention-grabbing statistic to define the landscape and create a 'why now' urgency. This is a Sinek-style opening (start with Why) and a Raskin-style Big Shift setup (a large-scale change/need)."
+      },
+      {
+        "phase_name": "Stakes",
+        "timestamp_start": "0:05",
+        "timestamp_end": "0:14",
+        "duration_seconds": 9,
+        "percentage_of_total": 7.14,
+        "key_quote": "It's an AI-powered telephonic banking service that brings financial management to anyone with a phone, no internet, or smartphone needed.",
+        "technique_used": "Problem\u2192solution framing that makes the stakes concrete: shows who is excluded and immediately explains how the product changes that reality (low-barrier access). The 'no internet or smartphone needed' line lowers adoption friction and increases perceived impact."
+      },
+      {
+        "phase_name": "Demo",
+        "timestamp_start": "0:14",
+        "timestamp_end": "1:10",
+        "duration_seconds": 56,
+        "percentage_of_total": 44.44,
+        "key_quote": "Hey, I can help with things like checking your account balance, transferring funds, and even getting you started on a loan application.",
+        "technique_used": "Show\u2011don't\u2011tell role-play demo: a simulated phone conversation (persona 'Warren Yun') walks through balance check, transfer and loan initiation. Uses concrete details (account IDs, amounts) to build credibility and let judges mentally simulate real users."
+      },
+      {
+        "phase_name": "Magic",
+        "timestamp_start": "1:10",
+        "timestamp_end": "1:49",
+        "duration_seconds": 39,
+        "percentage_of_total": 30.95,
+        "key_quote": "Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.",
+        "technique_used": "Tangible proof point / 'wow' moment: a completed money transfer and seamless handoff into a loan application. This is the technical credibility payoff \u2014 it demonstrates end\u2011to\u2011end functionality (authentication \u2192 action \u2192 confirmation) rather than abstract claims."
+      },
+      {
+        "phase_name": "Vision",
+        "timestamp_start": "1:49",
+        "timestamp_end": "2:06",
+        "duration_seconds": 17,
+        "percentage_of_total": 13.49,
+        "key_quote": "If there's anything else you need, feel free to let me know.",
+        "technique_used": "Concise close that implies an always-on, helpful service and normalizes conversational banking. Although the pitch lacks an extended forward-looking manifesto, this closing line gestures at ongoing accessibility and service continuity."
+      }
+    ],
+    "frameworks_used": [
+      {
+        "framework": "Sinek Start With Why",
+        "evidence": "The pitch opens with a 'why' \u2014 \"Did you know that over 1.7 billion adults worldwide don't have access to traditional banking services?\" [0:00]. The team leads with purpose/problem before the product, a direct application of Sinek's approach."
+      },
+      {
+        "framework": "Duarte Sparkline",
+        "evidence": "The arc is classic Sparkline: identify the problem ('Did you know...' [0:00]), present the solution promise ('Meet TalkToA Bank...' [0:05] / 'It's an AI-powered telephonic banking service...' [0:10]), then show the demonstration ('Hey Warren Yun... I'm the TalkToA Bank AI' \u2192 demo [0:20\u20131:10]) and finish with concrete payoff ('Awesome, you've successfully transferred $200...' [1:15])."
+      },
+      {
+        "framework": "Aristotle Appeals",
+        "evidence": "Logos: concrete numbers appear throughout ('1.7 billion', 'Your balance is $2,500', '$200 transferred'). Ethos: the working demo and specific account details build credibility ('I'm the TalkToA Bank AI' [0:20]). Pathos: the micro-story 'loan for college' (\"I'd like to request a loan for $2,000 for college tuition for four years\" [1:42]) evokes emotional impact."
+      },
+      {
+        "framework": "Heath SUCCESs",
+        "evidence": "Simple: single-sentence value prop ('brings financial management to anyone with a phone' [0:10]). Unexpected: banking without internet or smartphone. Concrete: account IDs and dollar amounts. Credible: a completed transfer confirmation. Emotional/story: 'loan for college' humanizes the benefit."
+      },
+      {
+        "framework": "Raskin Strategic Narrative",
+        "evidence": "The pitch establishes a Big Shift (scale of unbanked at [0:00]) and 'why now' (AI + telephony enabling access; 'AI-powered telephonic banking' [0:10]), shows the specific mission (inclusion via phone), demonstrates capabilities (working transfer & loan flow [1:15\u20131:49]), and links to a larger mission of financial inclusion."
+      }
+    ],
+    "sponsor_alignment": "Clear alignment with a financial\u2011inclusion brief (Goldman Sachs challenge). The pitch centers on the 1.7 billion unbanked and emphasizes low\u2011barrier access: \"no internet, or smartphone needed\" [0:10], and demonstrates real banking actions (balance, transfer, loan), directly addressing the sponsor's goals around expanding access to financial services.",
+    "strongest_moment": {
+      "timestamp": "1:15",
+      "quote": "Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.",
+      "why": "This single line converts the concept into a verifiable outcome: money moved. It turns abstract claims about 'voice banking' into an immediately believable, tangible result \u2014 exactly what judges want to see in a hackathon demo. It signals both functional completeness and trustworthiness."
+    },
+    "why_it_won": "TalkToA Bank wins because it combines high-impact problem selection (1.7B unbanked) with an accessible, low\u2011cost channel (phone calls) and a working, concrete demo that executes real financial operations. The team uses specific, credible details (account IDs, $ amounts, a loan use-case) to prove feasibility; they also lower adoption friction by explicitly saying it needs 'no internet, or smartphone' [0:10], which scales to the target users. Judges rewarded both social impact and technical execution \u2014 a product that addresses an urgent, measurable need and demonstrably works.",
+    "key_techniques": [
+      "Statistic hook to establish scale and urgency (1.7 billion) [0:00]",
+      "Start\u2011with\u2011Why problem framing (Sinek)",
+      "Show\u2011don't\u2011tell live role\u2011play demo (phone conversation) [0:20\u20131:10]",
+      "Concrete numbers and artifacts (account IDs, balances, $ amounts) to build credibility",
+      "Micro-story to humanize impact (loan for college) [1:40\u20131:49]",
+      "Immediate transaction confirmation as 'proof' (transfer success) [1:15]",
+      "Emphasis on low adoption friction ('no internet, or smartphone needed') to broaden addressable market [0:10]",
+      "Short, simple closing that normalizes the service (always\u2011on help) [1:52]"
+    ],
+    "meta": {
+      "project_name": "TalkTuahBank",
+      "hackathon": "HackUTD 2024 (Ripple Effect)",
+      "prize": "1st Overall + Goldman Sachs Challenge Winner",
+      "total_value": "Won largest 24-hour hackathon in the US",
+      "video_url": "https://www.youtube.com/watch?v=YsH_z1azXSA",
+      "devpost_url": "https://devpost.com/software/talktuahbank",
+      "had_transcript": true
+    }
+  },
+  "adapted": {
+    "pitch_duration_seconds": null,
+    "opening_hook": {
+      "type": "personal_story",
+      "quote": "Inspired by teammate's experience as K-12 Kumon tutor seeing impact of 1:1 tutoring.",
+      "timestamp": null,
+      "why_effective": "A first-person tutoring anecdote does three persuasive jobs at once: it establishes ethos (the team has ground-level insight), it creates emotional connection (concrete human outcome that judges care about), and it supplies a clear 'why' that motivates the rest of the pitch. Anchoring the problem in lived experience makes the later technical solution feel necessary and morally justified rather than merely clever."
+    },
+    "phases": [
+      {
+        "phase_name": "Big Shift",
+        "timestamp_start": null,
+        "timestamp_end": null,
+        "duration_seconds": null,
+        "percentage_of_total": null,
+        "key_quote": "Instead of students adapting to system, AI lecturer adapts to students.",
+        "technique_used": "Contrarian, single-line reframe (big-shift tagline). This reverses the default mental model and positions AdaptEd as systemic innovation rather than incremental improvement; it is concise, memorizable, and sets the audience up to see the product as the logical next step."
+      },
+      {
+        "phase_name": "Stakes",
+        "timestamp_start": null,
+        "timestamp_end": null,
+        "duration_seconds": null,
+        "percentage_of_total": null,
+        "key_quote": "50% of 16M US university students falling behind. Less than 3% have access to quality tutoring.",
+        "technique_used": "Quantified pain + injustice framing. Giving both a percentage and an absolute population anchors scale and urgency (logos) while the 'less than 3%' stat creates moral pressure (pathos). This combination turns a classroom problem into a large, solvable social problem."
+      },
+      {
+        "phase_name": "Demo",
+        "timestamp_start": null,
+        "timestamp_end": null,
+        "duration_seconds": null,
+        "percentage_of_total": null,
+        "key_quote": "Features: responsive AI conversation, dynamic slide/whiteboard content, emotion detection.",
+        "technique_used": "Show-don't-tell micro-scenario: map concrete features to classroom outcomes. A demo or narrated user-flow (student asks question \u2192 voice AI responds \u2192 slides adapt \u2192 emotion detector adjusts pace) converts conceptual claims into observable plausibility and immediate benefit."
+      },
+      {
+        "phase_name": "Magic",
+        "timestamp_start": null,
+        "timestamp_end": null,
+        "duration_seconds": null,
+        "percentage_of_total": null,
+        "key_quote": "Tech: Gemini 1.5 Pro for multi-source aggregation (YouTube, podcasts, textbooks), Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection, Google Search for images, MongoDB, Auth0.",
+        "technique_used": "Technical transparency: enumerate each component and its role. Judges want to know 'how' \u2014 this list assigns responsibilities (knowledge aggregation, emotion sensing, orchestration, fine-tuning, storage, auth) and demonstrates engineering depth and feasibility while signaling direct sponsor-technology usage."
+      },
+      {
+        "phase_name": "Vision",
+        "timestamp_start": null,
+        "timestamp_end": null,
+        "duration_seconds": null,
+        "percentage_of_total": null,
+        "key_quote": "AdaptEd: interactive and personalized lectures through conversational voice AI.",
+        "technique_used": "Concise product vision paired with scale implication. Ends the pitch by moving from prototype to impact \u2014 democratizing tutoring, improving retention \u2014 which helps judges see product-market fit and a path to real-world adoption."
+      }
+    ],
+    "frameworks_used": [
+      {
+        "framework": "Sinek Start With Why",
+        "evidence": "The pitch leads with motivation: \"Inspired by teammate's experience as K-12 Kumon tutor...\" and quantifies the need: \"50% of 16M US university students falling behind.\" This is classic Start With Why \u2014 establish purpose and urgency before the solution, which aligns the audience behind the mission."
+      },
+      {
+        "framework": "Duarte Sparkline",
+        "evidence": "The writeup sets up 'what is' (students falling behind; <3% access to quality tutoring) and contrasts it with a clear 'what could be' (\"Instead of students adapting to system, AI lecturer adapts to students.\"). That before/after contrast plus a narrated demo trajectory follows Duarte's Sparkline arc."
+      },
+      {
+        "framework": "Aristotle Appeals",
+        "evidence": "Ethos: explicit tech stack and the Google award (\"Won Google Company Challenge\") establish credibility. Logos: hard numbers about scale (50% of 16M). Pathos: the Kumon tutor story and the equity angle (lack of access) provide emotional weight. The pitch uses all three appeals deliberately."
+      },
+      {
+        "framework": "Heath SUCCESs",
+        "evidence": "Simple: short product line \"AdaptEd: interactive and personalized lectures through conversational voice AI.\" Unexpected: a voice AI that drives slides/whiteboard and adapts to emotion. Concrete: named features (responsive conversation, dynamic slides, emotion detection). Credible: named enterprise tech (Gemini 1.5 Pro, Intel). Emotional + Story-driven: tutor origin story and student-impact framing."
+      },
+      {
+        "framework": "Raskin Strategic Narrative",
+        "evidence": "The pitch advances a strategic narrative: a failing system (students forced to adapt) meets a new force (adaptive AI lecturer) that promises systemic change. The 'Instead of students adapting...' line is the pivot around which the strategic narrative \u2014 mission, enemy, and new world \u2014 is constructed."
+      }
+    ],
+    "sponsor_alignment": "Strong. The team explicitly used Gemini 1.5 Pro for multi-source aggregation and credited that usage in winning the Google Company Challenge: \"Won Google Company Challenge for heavy use of Gemini.\" Emphasizing Gemini (plus other Google tech like Search for images) aligned the solution with the sponsor's strategic priorities \u2014 demonstrable, high-impact use of their model \u2014 and materially increased the project's attractiveness to Google judges.",
+    "strongest_moment": {
+      "timestamp": null,
+      "quote": "Instead of students adapting to system, AI lecturer adapts to students.",
+      "why": "This is the pitch's cognitive pivot: a crisp, counterintuitive reframe that immediately communicates differentiation and mission. It converts abstract ed\u2011tech claims into a single mental image (an adaptive lecturer) that judges can hold onto, which is exactly the kind of memorable positioning that wins short-form competitions."
+    },
+    "why_it_won": "AdaptEd neatly combined three judge priorities: an urgent, measurable problem (large population + inequitable access), a plausible, productized technical solution (working feature set and clear component roles), and explicit sponsor alignment (heavy use of Gemini). The team opened with a human story to generate empathy, quantified scale to show impact, demonstrated a believable prototype workflow (voice + adaptive slides + emotion detection), and then listed the exact tech integrations to prove they could execute. The result is a pitch that felt both emotionally necessary and technically credible \u2014 and for Google judges, directly useful to showcase their model's capabilities.",
+    "key_techniques": [
+      "Open with a brief personal anecdote to create ethos and emotional investment",
+      "Use crisp, contrarian 'big shift' tagline to reframe the problem and stake a claim",
+      "Quantify the problem with both percentage and population numbers to make scale concrete",
+      "Show, don't just describe: map features to a single micro user-journey in the demo",
+      "List the tech stack and assign each component a role to build engineering credibility",
+      "Align explicitly with sponsor technology (Gemini) and call out the award to signal validation",
+      "Close with a concise, aspirational vision that ties product features to social impact",
+      "Keep language concrete (features and sources) rather than abstract buzzwords to increase believability",
+      "Use emotional inequity framing (access to tutoring) to broaden impact appeal beyond technical novelty"
+    ],
+    "meta": {
+      "project_name": "AdaptEd",
+      "hackathon": "LA Hacks 2024",
+      "prize": "Google Company Challenge Winner (1st among 142 projects)",
+      "total_value": "1st place Google Challenge",
+      "video_url": "https://www.youtube.com/watch?v=8o1YJUFBcAw",
+      "devpost_url": "https://devpost.com/software/teachme-3p7bw1",
+      "had_transcript": false
+    }
+  }
+}

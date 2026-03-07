@@ -1,0 +1,60 @@
+[0:00] Hi everyone, my name is Spike and I'm with Dispatch AI.
+[0:17] In the United States, over 80% of 911 call centers are critically understaffed.
+[0:22] This means that in a crisis, people with real emergencies aren't able to get the support
+[0:27] they need because all the human agents are busy, and they're often put on hold.
+[0:34] This is particularly an issue in our neighboring city of Oakland, where last year, the average
+[0:39] wait time was over 60 seconds to pick up a 911 call.
+[0:44] Now, in an emergency, every second counts, and this could be literally the difference
+[0:49] between life and death.
+[0:51] This is unacceptable, and that's why we built Dispatch AI, the world's first AI 911 call
+[0:58] operator, designed to eliminate these wait times.
+[1:03] Our system is powered by two key components.
+[1:06] First is the voice AI.
+[1:07] The voice AI will step into calls when all human agents are busy, and it will work with
+[1:14] the caller to evaluate their situation, extract the location, and optionally dispatch first
+[1:21] responders directly to the scene.
+[1:25] And the second part is our powerful dashboard for the operator themselves.
+[1:30] So the operator will have access to a bird's eye view of all of the ongoing calls, which
+[1:36] will be automatically triaged by the AI into different forms of severity or priority.
+[1:42] Further, they'll see that the AI will automatically extract the location and will provide a live
+[1:49] transcript of the call so that they can quickly see what's going on and even step into the
+[1:54] call once they're available.
+[1:56] Further, they have buttons that allow them to directly, with just one click because the
+[2:01] location's already fetched, dispatch police, firefighters, or paramedics.
+[2:06] All of this is done from a human-centric angle, and the way how we achieve this is by taking
+[2:12] into account the caller's emotions.
+[2:15] So for instance, when a caller shows signs of anxiety or fear, the system can work more
+[2:20] to calm them down and make them feel at ease before taking the next safe step.
+[2:26] This system is fully designed with ethical safeguides in mind, and part of that was fine-tuning
+[2:33] a model on over 500 911 calls so that it could understand the proper protocols and have a
+[2:41] wide, or be knowledgeable on a wide variety of possible scenarios in which a 911 operator
+[2:48] could assist, including fake calls or instances where it may not need assistance.
+[2:55] This is all powered by our innovative tech stack that utilizes a variety of AI components,
+[3:00] including the voice AI, the emotional analysis, and of course a key component of this, the
+[3:07] fine-tuning itself.
+[3:08] Our mission is to make requesting emergency services more effective and efficient.
+[3:14] Thank you.
+[3:17] So talking about this is hard, so why not try to do a demo?
+[3:22] I have my phone here with me, and I will call our agent.
+[3:25] Now, in this situation, we're simulating that the AI lines are all busy, and we'll get redirected
+[3:29] to an AI.
+[3:30] So let's do a call.
+[3:35] 911, what's your emergency?
+[3:37] There's currently an earthquake.
+[3:39] Send help, please.
+[3:43] See, you can see that our call updates in real time on the dashboard, and our transcription
+[3:49] is on the right.
+[3:50] I am currently at the Golden Gate Bridge, and there's a lot of people injured.
+[3:53] Please send help.
+[3:55] See, we get the transcript live on the right side, and we have a summary on the left side
+[4:02] that also shows the location, as well as the summary, and location, as well as how
+[4:09] critical it is.
+[4:10] It didn't seem to work this time.
+[4:11] Let's try again.
+[4:12] I'm currently at the Golden Gate Bridge, and we need help.
+[4:15] There's a lot of people here that are injured.
+[4:20] Is there immediate danger where you are?
+[4:22] Yep.
+[4:23] And here, now you can see that we have it shown in real time, and dispatchers can either
+[4:28] People can dispatch first responders, or also transfer the calls.
+[4:32] Thank you for watching.

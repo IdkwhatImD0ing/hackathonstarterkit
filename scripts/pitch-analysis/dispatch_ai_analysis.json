@@ -1,0 +1,106 @@
+{
+  "pitch_duration_seconds": 272,
+  "opening_hook": {
+    "type": "statistic",
+    "quote": "In the United States, over 80% of 911 call centers are critically understaffed.",
+    "timestamp": "0:17",
+    "why_effective": "A concise, high-impact statistic that immediately communicates scale and urgency. It establishes a clear problem statement (logos) and primes the audience for a high-value solution."
+  },
+  "phases": [
+    {
+      "phase_name": "Big Shift",
+      "timestamp_start": "0:00",
+      "timestamp_end": "0:39",
+      "duration_seconds": 39,
+      "percentage_of_total": 14.34,
+      "key_quote": "In the United States, over 80% of 911 call centers are critically understaffed.",
+      "technique_used": "Statistic-led opener + concrete local example (Oakland) to define a broken status quo. This sets context and makes the problem measurable and urgent (logos)."
+    },
+    {
+      "phase_name": "Stakes",
+      "timestamp_start": "0:39",
+      "timestamp_end": "1:03",
+      "duration_seconds": 24,
+      "percentage_of_total": 8.82,
+      "key_quote": "Now, in an emergency, every second counts, and this could be literally the difference between life and death.",
+      "technique_used": "Pathos amplification: converts abstract understaffing into human cost. The speaker then issues moral clarity ('This is unacceptable') to justify action and pivot to the solution."
+    },
+    {
+      "phase_name": "Magic",
+      "timestamp_start": "1:03",
+      "timestamp_end": "2:55",
+      "duration_seconds": 112,
+      "percentage_of_total": 41.18,
+      "key_quote": "The voice AI will step into calls when all human agents are busy, and it will work with the caller to evaluate their situation, extract the location, and optionally dispatch first responders directly to the scene.",
+      "technique_used": "Product-first explanation of the 'how': concrete mechanisms (voice AI, location extraction, triage dashboard, one-click dispatch) + human-centered features (emotion detection). This is the secret-sauce section that builds credibility and differentiates the approach."
+    },
+    {
+      "phase_name": "Vision",
+      "timestamp_start": "2:55",
+      "timestamp_end": "3:17",
+      "duration_seconds": 22,
+      "percentage_of_total": 8.09,
+      "key_quote": "Our mission is to make requesting emergency services more effective and efficient.",
+      "technique_used": "Concise mission statement that ties the technical product back to social impact (AI For Good). It reframes the product as civic infrastructure and prepares the audience emotionally for the demo."
+    },
+    {
+      "phase_name": "Demo",
+      "timestamp_start": "3:17",
+      "timestamp_end": "4:32",
+      "duration_seconds": 75,
+      "percentage_of_total": 27.57,
+      "key_quote": "See, you can see that our call updates in real time on the dashboard, and our transcription is on the right.",
+      "technique_used": "Live, concrete demonstration: real-time transcription, location capture and UI-driven dispatch. The brief glitch ('It didn't seem to work this time') and quick recovery increase perceived authenticity and demonstrate resilience."
+    }
+  ],
+  "frameworks_used": [
+    {
+      "framework": "Sinek Start With Why",
+      "evidence": "Direct 'why' line: 'This is unacceptable, and that's why we built Dispatch AI, the world's first AI 911 call operator, designed to eliminate these wait times.' (0:51) \u2014 ties problem to mission and product."
+    },
+    {
+      "framework": "Duarte Sparkline",
+      "evidence": "Sparkline structure: status quo ('over 80% ... understaffed' 0:17), tension/stakes ('difference between life and death' 0:44), pivot to solution ('we built Dispatch AI' 0:51) and narrative payoff via a live demo (3:17\u20134:32)."
+    },
+    {
+      "framework": "Aristotle Appeals",
+      "evidence": "Logos: 'over 80%...' (0:17) and 'average wait time was over 60 seconds' (0:34). Pathos: 'difference between life and death' (0:44) and the Golden Gate Bridge demo (3:50). Ethos: technical credibility through 'fine-tuning a model on over 500 911 calls' (2:26) and a productized dashboard (1:25\u20131:56)."
+    },
+    {
+      "framework": "Heath SUCCESs",
+      "evidence": "Simple: mission line 'make requesting emergency services more effective and efficient' (3:08). Unexpected: 'world's first AI 911 call operator' (0:51). Concrete: live transcript and dashboard shown in the demo (3:43\u20133:55). Credible: 'fine-tuning a model on over 500 911 calls' (2:26). Emotional & Story-driven: life-or-death stakes and the live call story."
+    },
+    {
+      "framework": "Raskin Strategic Narrative",
+      "evidence": "Raskin arc present: Big Shift (widespread understaffing 'over 80%' 0:17) -> Enemy (long wait times / overloaded dispatch, 'over 60 seconds' 0:34) -> Magic (voice AI + dashboard 1:03\u20132:55) -> Vision ('make requesting emergency services more effective and efficient' 3:08)."
+    }
+  ],
+  "sponsor_alignment": "Strong alignment: the pitch directly matches 'AI For Good' (public-safety mission, human-centered design, ethical safeguards) and 'Best Use of Intel AI' \u2014 the team cites fine-tuning a model (transcript: 'fine-tuning a model on over 500 911 calls' at 2:26) and the Devpost notes use of Intel Dev Cloud for fine-tuning. The SkyDeck investment fits given a scalable, founder-led product addressing civic infrastructure and open-source commitments (Devpost: open-sourced model and published dataset).",
+  "strongest_moment": {
+    "timestamp": "3:43\u20133:50",
+    "quote": "See, you can see that our call updates in real time on the dashboard, and our transcription is on the right.",
+    "why": "The demo makes the product tangible \u2014 real-time transcription + dashboard visualization turns abstract claims into observable behavior. It couples emotional content ('Golden Gate Bridge' injured people) with interface proof, building trust quickly. The small glitch and recovery add authenticity rather than undermining confidence."
+  },
+  "why_it_won": "DispatchAI combined a high-impact, quantifiable problem (80%+ understaffed centers; local example: Oakland) with concrete technical execution (voice AI, live triage dashboard, location extraction, emotion-aware handling, fine-tuning on real 911 data) and a clear human-in-the-loop safety posture. The pitch used a crisp mission statement and a live demo that showcased product viability. Those elements \u2014 social impact, technical credibility (and explicit Intel usage), demoed product, and open-source / dataset commitments \u2014 aligned tightly with the judges' priorities for AI For Good, Best Use of Intel AI, and investment readiness, making it the natural Grand Prize winner.",
+  "key_techniques": [
+    "Statistic-led opener to establish scale and urgency ('over 80%...' 0:17).",
+    "Localizing the problem (Oakland wait times) to make stakes concrete.",
+    "Life-or-death framing to convert data into moral urgency ('difference between life and death' 0:44).",
+    "Clear, repeated pivot to solution with a single-sentence mission ('This is unacceptable...' 0:51).",
+    "Detailed 'magic' explanation: describe mechanism (voice AI + dashboard + location extraction + one-click dispatch).",
+    "Human-centered safety framing (emotion detection + human-in-the-loop).",
+    "Live demo to make claims tangible (real-time transcription, dashboard updates).",
+    "Technical credibility cues (fine-tuning on 500+ calls) and explicit mention of stack/components.",
+    "Ethical & open-source positioning to align with AI-for-good values (fine-tuning + safeguides).",
+    "Authenticity through recovery: brief demo hiccup then retry, which increases perceived realism and robustness."
+  ],
+  "meta": {
+    "project_name": "DispatchAI",
+    "hackathon": "UC Berkeley AI Hackathon 2024",
+    "prize": "Grand Prize ($25K SkyDeck investment + AI For Good + Best Use of Intel AI)",
+    "total_value": "$62K+",
+    "video_url": "https://www.youtube.com/watch?v=hdpdgxrilQM",
+    "devpost_url": "https://devpost.com/software/dispatch-ai",
+    "had_transcript": true
+  }
+}

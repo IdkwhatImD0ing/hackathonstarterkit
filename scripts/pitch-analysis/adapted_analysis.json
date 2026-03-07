@@ -1,0 +1,105 @@
+{
+  "pitch_duration_seconds": null,
+  "opening_hook": {
+    "type": "personal_story",
+    "quote": "Inspired by teammate's experience as K-12 Kumon tutor seeing impact of 1:1 tutoring.",
+    "timestamp": null,
+    "why_effective": "A first-person tutoring anecdote does three persuasive jobs at once: it establishes ethos (the team has ground-level insight), it creates emotional connection (concrete human outcome that judges care about), and it supplies a clear 'why' that motivates the rest of the pitch. Anchoring the problem in lived experience makes the later technical solution feel necessary and morally justified rather than merely clever."
+  },
+  "phases": [
+    {
+      "phase_name": "Big Shift",
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "duration_seconds": null,
+      "percentage_of_total": null,
+      "key_quote": "Instead of students adapting to system, AI lecturer adapts to students.",
+      "technique_used": "Contrarian, single-line reframe (big-shift tagline). This reverses the default mental model and positions AdaptEd as systemic innovation rather than incremental improvement; it is concise, memorizable, and sets the audience up to see the product as the logical next step."
+    },
+    {
+      "phase_name": "Stakes",
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "duration_seconds": null,
+      "percentage_of_total": null,
+      "key_quote": "50% of 16M US university students falling behind. Less than 3% have access to quality tutoring.",
+      "technique_used": "Quantified pain + injustice framing. Giving both a percentage and an absolute population anchors scale and urgency (logos) while the 'less than 3%' stat creates moral pressure (pathos). This combination turns a classroom problem into a large, solvable social problem."
+    },
+    {
+      "phase_name": "Demo",
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "duration_seconds": null,
+      "percentage_of_total": null,
+      "key_quote": "Features: responsive AI conversation, dynamic slide/whiteboard content, emotion detection.",
+      "technique_used": "Show-don't-tell micro-scenario: map concrete features to classroom outcomes. A demo or narrated user-flow (student asks question \u2192 voice AI responds \u2192 slides adapt \u2192 emotion detector adjusts pace) converts conceptual claims into observable plausibility and immediate benefit."
+    },
+    {
+      "phase_name": "Magic",
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "duration_seconds": null,
+      "percentage_of_total": null,
+      "key_quote": "Tech: Gemini 1.5 Pro for multi-source aggregation (YouTube, podcasts, textbooks), Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection, Google Search for images, MongoDB, Auth0.",
+      "technique_used": "Technical transparency: enumerate each component and its role. Judges want to know 'how' \u2014 this list assigns responsibilities (knowledge aggregation, emotion sensing, orchestration, fine-tuning, storage, auth) and demonstrates engineering depth and feasibility while signaling direct sponsor-technology usage."
+    },
+    {
+      "phase_name": "Vision",
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "duration_seconds": null,
+      "percentage_of_total": null,
+      "key_quote": "AdaptEd: interactive and personalized lectures through conversational voice AI.",
+      "technique_used": "Concise product vision paired with scale implication. Ends the pitch by moving from prototype to impact \u2014 democratizing tutoring, improving retention \u2014 which helps judges see product-market fit and a path to real-world adoption."
+    }
+  ],
+  "frameworks_used": [
+    {
+      "framework": "Sinek Start With Why",
+      "evidence": "The pitch leads with motivation: \"Inspired by teammate's experience as K-12 Kumon tutor...\" and quantifies the need: \"50% of 16M US university students falling behind.\" This is classic Start With Why \u2014 establish purpose and urgency before the solution, which aligns the audience behind the mission."
+    },
+    {
+      "framework": "Duarte Sparkline",
+      "evidence": "The writeup sets up 'what is' (students falling behind; <3% access to quality tutoring) and contrasts it with a clear 'what could be' (\"Instead of students adapting to system, AI lecturer adapts to students.\"). That before/after contrast plus a narrated demo trajectory follows Duarte's Sparkline arc."
+    },
+    {
+      "framework": "Aristotle Appeals",
+      "evidence": "Ethos: explicit tech stack and the Google award (\"Won Google Company Challenge\") establish credibility. Logos: hard numbers about scale (50% of 16M). Pathos: the Kumon tutor story and the equity angle (lack of access) provide emotional weight. The pitch uses all three appeals deliberately."
+    },
+    {
+      "framework": "Heath SUCCESs",
+      "evidence": "Simple: short product line \"AdaptEd: interactive and personalized lectures through conversational voice AI.\" Unexpected: a voice AI that drives slides/whiteboard and adapts to emotion. Concrete: named features (responsive conversation, dynamic slides, emotion detection). Credible: named enterprise tech (Gemini 1.5 Pro, Intel). Emotional + Story-driven: tutor origin story and student-impact framing."
+    },
+    {
+      "framework": "Raskin Strategic Narrative",
+      "evidence": "The pitch advances a strategic narrative: a failing system (students forced to adapt) meets a new force (adaptive AI lecturer) that promises systemic change. The 'Instead of students adapting...' line is the pivot around which the strategic narrative \u2014 mission, enemy, and new world \u2014 is constructed."
+    }
+  ],
+  "sponsor_alignment": "Strong. The team explicitly used Gemini 1.5 Pro for multi-source aggregation and credited that usage in winning the Google Company Challenge: \"Won Google Company Challenge for heavy use of Gemini.\" Emphasizing Gemini (plus other Google tech like Search for images) aligned the solution with the sponsor's strategic priorities \u2014 demonstrable, high-impact use of their model \u2014 and materially increased the project's attractiveness to Google judges.",
+  "strongest_moment": {
+    "timestamp": null,
+    "quote": "Instead of students adapting to system, AI lecturer adapts to students.",
+    "why": "This is the pitch's cognitive pivot: a crisp, counterintuitive reframe that immediately communicates differentiation and mission. It converts abstract ed\u2011tech claims into a single mental image (an adaptive lecturer) that judges can hold onto, which is exactly the kind of memorable positioning that wins short-form competitions."
+  },
+  "why_it_won": "AdaptEd neatly combined three judge priorities: an urgent, measurable problem (large population + inequitable access), a plausible, productized technical solution (working feature set and clear component roles), and explicit sponsor alignment (heavy use of Gemini). The team opened with a human story to generate empathy, quantified scale to show impact, demonstrated a believable prototype workflow (voice + adaptive slides + emotion detection), and then listed the exact tech integrations to prove they could execute. The result is a pitch that felt both emotionally necessary and technically credible \u2014 and for Google judges, directly useful to showcase their model's capabilities.",
+  "key_techniques": [
+    "Open with a brief personal anecdote to create ethos and emotional investment",
+    "Use crisp, contrarian 'big shift' tagline to reframe the problem and stake a claim",
+    "Quantify the problem with both percentage and population numbers to make scale concrete",
+    "Show, don't just describe: map features to a single micro user-journey in the demo",
+    "List the tech stack and assign each component a role to build engineering credibility",
+    "Align explicitly with sponsor technology (Gemini) and call out the award to signal validation",
+    "Close with a concise, aspirational vision that ties product features to social impact",
+    "Keep language concrete (features and sources) rather than abstract buzzwords to increase believability",
+    "Use emotional inequity framing (access to tutoring) to broaden impact appeal beyond technical novelty"
+  ],
+  "meta": {
+    "project_name": "AdaptEd",
+    "hackathon": "LA Hacks 2024",
+    "prize": "Google Company Challenge Winner (1st among 142 projects)",
+    "total_value": "1st place Google Challenge",
+    "video_url": "https://www.youtube.com/watch?v=8o1YJUFBcAw",
+    "devpost_url": "https://devpost.com/software/teachme-3p7bw1",
+    "had_transcript": false
+  }
+}

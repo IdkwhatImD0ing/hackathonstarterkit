@@ -24,6 +24,9 @@ import {
   CheckCircle2,
   Swords,
   CircleDot,
+  ExternalLink,
+  Play,
+  Zap,
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
@@ -77,7 +80,7 @@ export default function PitchingPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Storytelling is the Secret Weapon"
-            subtitle="The most valuable skill at hackathons isn't coding. It's storytelling. 28 hackathon wins and $100K+ in prizes later, the secret weapon has always been narrative."
+            subtitle="The most valuable skill at hackathons isn't coding. It's storytelling. 36+ hackathon wins and $100K+ in prizes later, the secret weapon has always been narrative."
           />
 
           <p className="font-body text-foreground/80">
@@ -183,229 +186,6 @@ export default function PitchingPage() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-        </section>
-
-        {/* ============================================================
-            THE APPENDIX STRATEGY
-            ============================================================ */}
-        <section className="space-y-8">
-          <SectionHeading
-            title="The Appendix Strategy"
-            subtitle="Assume your pitch will be incomplete. Design it that way on purpose. This counterintuitive technique is what separates good pitchers from great ones."
-          />
-
-          <p className="font-body text-foreground/80">
-            Hackathon pitches are short. Judges are tired. There&apos;s no world
-            where you explain everything in 3 minutes and still keep the room.
-            So be selective.
-          </p>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr]">
-            <Card className="glow-hover border-volt/20">
-              <CardHeader>
-                <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
-                  MAIN PITCH
-                </Badge>
-                <CardTitle className="font-display text-2xl text-volt">
-                  The 90% Slides
-                </CardTitle>
-                <CardDescription className="font-body text-base">
-                  Put the stuff ~90% of judges care about in the main pitch.
-                  Just the essentials: problem, solution, demo, and impact.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 font-body text-sm text-foreground/80">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Problem statement — why this matters
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Solution overview — what you built
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Live demo — the main event
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Impact and vision — what could be
-                  </li>
-                </ul>
-                <div className="rounded-lg bg-volt/5 p-3 text-center">
-                  <p className="font-display text-2xl font-bold text-volt">
-                    60-70%
-                  </p>
-                  <p className="font-code text-xs text-volt/70">
-                    of your time on the live demo
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Desktop connector */}
-            <div className="hidden items-center md:flex">
-              <div className="flex flex-col items-center gap-2">
-                <div className="h-16 w-px bg-gradient-to-b from-volt to-spark" />
-                <ArrowRight className="size-6 text-spark" />
-                <div className="h-16 w-px bg-gradient-to-b from-spark to-spark/0" />
-                <p className="font-code text-xs text-muted-foreground [writing-mode:vertical-lr]">
-                  Q&A triggers
-                </p>
-              </div>
-            </div>
-
-            {/* Mobile connector */}
-            <div className="flex items-center justify-center py-2 md:hidden">
-              <div className="flex items-center gap-3">
-                <div className="h-px w-12 bg-gradient-to-r from-volt to-spark" />
-                <ArrowRight className="size-5 text-spark" />
-                <p className="font-code text-xs text-muted-foreground">
-                  Q&A triggers
-                </p>
-              </div>
-            </div>
-
-            <Card className="glow-hover border-spark/20">
-              <CardHeader>
-                <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
-                  APPENDIX
-                </Badge>
-                <CardTitle className="font-display text-2xl text-spark">
-                  The 20% Slides
-                </CardTitle>
-                <CardDescription className="font-body text-base">
-                  Slides you don&apos;t plan to show unless asked. Pre-built
-                  answers to the questions judges are likely to ask.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 font-body text-sm text-foreground/80">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Architecture diagram — how it actually works
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Tradeoffs — what you chose and why
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Edge cases — what breaks at scale
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    What&apos;s next — roadmap beyond the hackathon
-                  </li>
-                </ul>
-                <div className="rounded-lg bg-spark/5 p-3 text-center">
-                  <p className="font-display text-2xl font-bold text-spark">
-                    Instant
-                  </p>
-                  <p className="font-code text-xs text-spark/70">
-                    navigate to the right slide when asked
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="space-y-4">
-            <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Why This Works
-            </p>
-            <div className="stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {[
-                {
-                  icon: Sparkles,
-                  title: "Shows Extra Preparation",
-                  description:
-                    "When you pull up a clearly prepared slide for a follow-up question, judges notice. It signals you thought deeper than the pitch.",
-                  accent: "volt" as const,
-                },
-                {
-                  icon: Clock,
-                  title: "Keeps the Pitch Short",
-                  description:
-                    "A shorter main pitch means more time for the live demo. Judges care more about seeing it work than hearing you describe it.",
-                  accent: "spark" as const,
-                },
-                {
-                  icon: MessageSquare,
-                  title: "Wins the Q&A",
-                  description:
-                    "The real evaluation happens in follow-up questions. That last 1-2 minutes is where judges figure out if you actually understand what you built.",
-                  accent: "primary" as const,
-                },
-                {
-                  icon: Target,
-                  title: "Looks Like Confidence",
-                  description:
-                    "It looks like confidence. But it's really just preparation while extremely sleep-deprived. Navigate to the right slide, answer clearly, move on.",
-                  accent: "success" as const,
-                },
-              ].map((item) => {
-                const colors = {
-                  volt: {
-                    bg: "bg-volt/10",
-                    text: "text-volt",
-                    border: "border-volt/20",
-                  },
-                  spark: {
-                    bg: "bg-spark/10",
-                    text: "text-spark",
-                    border: "border-spark/20",
-                  },
-                  primary: {
-                    bg: "bg-primary/10",
-                    text: "text-primary",
-                    border: "border-primary/20",
-                  },
-                  success: {
-                    bg: "bg-success/10",
-                    text: "text-success",
-                    border: "border-success/20",
-                  },
-                };
-                const c = colors[item.accent];
-                return (
-                  <div
-                    key={item.title}
-                    className={`glow-hover rounded-xl border ${c.border} bg-card p-5 transition-all`}
-                  >
-                    <div className="flex items-start gap-3">
-                      <div
-                        className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${c.bg}`}
-                      >
-                        <item.icon className={`size-4 ${c.text}`} />
-                      </div>
-                      <div className="space-y-1">
-                        <p className="font-display text-sm font-semibold">
-                          {item.title}
-                        </p>
-                        <p className="font-body text-sm text-muted-foreground">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                The failure pattern:
-              </span>{" "}
-              Strong projects lose in Q&A every hackathon. A fair question. A
-              pause. &ldquo;Good question.&rdquo; Time&apos;s up. When you prep
-              a pitch, prep answers. The conversation after the pitch is where
-              winners are decided.
-            </p>
           </div>
         </section>
 
@@ -774,6 +554,693 @@ export default function PitchingPage() {
         </section>
 
         {/* ============================================================
+            WINNING PITCHES DISSECTED
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="Winning Pitches Dissected"
+            subtitle="Theory is great, but seeing real pitches broken down is better. Here are three hackathon-winning pitches analyzed against the frameworks above, with timestamps, exact quotes, and AI-powered structural analysis."
+          />
+
+          <p className="font-body text-foreground/80">
+            Each pitch below was transcribed from its actual presentation video
+            and analyzed using GPT-5 to identify structural phases, storytelling
+            techniques, and the specific moments that won judges over. These
+            aren&apos;t hypothetical examples; they are real pitches that won
+            real prizes at major hackathons.
+          </p>
+
+          {/* --- CASE STUDY 1: DispatchAI --- */}
+          <Card className="glow-hover overflow-hidden border-volt/20">
+            <CardHeader>
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                  <Trophy className="size-5 text-volt" />
+                </div>
+                <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                  CASE STUDY 1
+                </Badge>
+                <Badge
+                  variant="outline"
+                  className="border-volt/20 text-volt font-code text-xs"
+                >
+                  $62K+ IN PRIZES
+                </Badge>
+              </div>
+              <CardTitle className="font-display text-2xl text-volt">
+                DispatchAI — UC Berkeley AI Hackathon
+              </CardTitle>
+              <CardDescription className="font-body text-base">
+                Grand Prize ($25K SkyDeck investment) + AI For Good + Best Use
+                of Intel AI. The largest AI hackathon in the US.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="overflow-hidden rounded-lg border border-volt/10">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/hdpdgxrilQM"
+                    title="DispatchAI Pitch Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="size-full"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Pitch Structure Breakdown (4 min 32 sec)
+                </p>
+                <div className="space-y-2">
+                  {[
+                    {
+                      phase: "Big Shift",
+                      time: "0:00 – 0:39",
+                      pct: 14,
+                      quote:
+                        "In the United States, over 80% of 911 call centers are critically understaffed.",
+                      technique: "Statistic-led opener + local example (Oakland)",
+                    },
+                    {
+                      phase: "Stakes",
+                      time: "0:39 – 1:03",
+                      pct: 9,
+                      quote:
+                        "This could be literally the difference between life and death.",
+                      technique: "Loss aversion, moral clarity",
+                    },
+                    {
+                      phase: "How It Works",
+                      time: "1:03 – 2:55",
+                      pct: 41,
+                      quote:
+                        "The voice AI will step into calls when all human agents are busy.",
+                      technique:
+                        "Concrete mechanism walkthrough with human-centered safety framing",
+                    },
+                    {
+                      phase: "Vision",
+                      time: "2:55 – 3:17",
+                      pct: 8,
+                      quote:
+                        "Our mission is to make requesting emergency services more effective and efficient.",
+                      technique: "Mission statement tying product to social impact",
+                    },
+                    {
+                      phase: "Live Demo",
+                      time: "3:17 – 4:32",
+                      pct: 28,
+                      quote:
+                        "Our call updates in real time on the dashboard, and our transcription is on the right.",
+                      technique:
+                        "Live phone call to AI dispatcher with real-time UI",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.phase}
+                      className="rounded-lg border border-volt/10 bg-card p-4"
+                    >
+                      <div className="flex flex-wrap items-center gap-3">
+                        <Badge className="bg-volt/10 text-volt font-code text-xs">
+                          {item.phase}
+                        </Badge>
+                        <span className="font-code text-xs text-muted-foreground">
+                          {item.time}
+                        </span>
+                        <span className="font-code text-xs text-volt/60">
+                          {item.pct}% of pitch
+                        </span>
+                      </div>
+                      <blockquote className="mt-2 border-l-2 border-volt/30 pl-3 font-body text-sm italic text-foreground/80">
+                        &ldquo;{item.quote}&rdquo;
+                      </blockquote>
+                      <p className="mt-1 font-code text-xs text-foreground/50">
+                        Technique: {item.technique}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Frameworks Identified
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Sinek Start With Why",
+                    "Duarte Sparkline",
+                    "Aristotle Appeals",
+                    "Heath SUCCESs",
+                    "Raskin Strategic Narrative",
+                  ].map((fw) => (
+                    <Badge
+                      key={fw}
+                      variant="outline"
+                      className="border-volt/20 text-volt font-code text-xs"
+                    >
+                      {fw}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Strongest Moment
+                </p>
+                <div className="rounded-lg border border-volt/10 bg-volt/5 p-4">
+                  <div className="flex items-start gap-3">
+                    <Zap className="mt-0.5 size-4 shrink-0 text-volt" />
+                    <div className="space-y-1">
+                      <p className="font-code text-xs text-volt/60">
+                        @ 3:43 – 3:50
+                      </p>
+                      <blockquote className="font-body text-sm italic text-foreground/80">
+                        &ldquo;See, you can see that our call updates in real
+                        time on the dashboard, and our transcription is on the
+                        right.&rdquo;
+                      </blockquote>
+                      <p className="font-body text-xs text-foreground/60">
+                        The demo makes the product tangible: real-time
+                        transcription + dashboard visualization turns abstract
+                        claims into observable behavior. The small glitch and
+                        quick recovery actually increased perceived authenticity.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                <p className="font-code text-xs text-volt/80">
+                  <span className="font-semibold">Why it won:</span>{" "}
+                  High-impact, quantifiable problem (80%+ understaffed centers)
+                  combined with concrete technical execution (voice AI, live
+                  triage dashboard, emotion-aware handling, fine-tuning on real
+                  911 data) and a clear human-in-the-loop safety posture.
+                  Aligned tightly with AI For Good, Best Use of Intel AI, and
+                  investment readiness.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://devpost.com/software/dispatch-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 font-code text-xs text-volt/60 underline decoration-volt/30 hover:decoration-volt"
+                >
+                  <ExternalLink className="size-3" />
+                  View on Devpost
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=hdpdgxrilQM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 font-code text-xs text-volt/60 underline decoration-volt/30 hover:decoration-volt"
+                >
+                  <Play className="size-3" />
+                  Watch pitch
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* --- CASE STUDY 2: TalkTuahBank --- */}
+          <Card className="glow-hover overflow-hidden border-spark/20">
+            <CardHeader>
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                  <Trophy className="size-5 text-spark" />
+                </div>
+                <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                  CASE STUDY 2
+                </Badge>
+                <Badge
+                  variant="outline"
+                  className="border-spark/20 text-spark font-code text-xs"
+                >
+                  1ST OVERALL
+                </Badge>
+              </div>
+              <CardTitle className="font-display text-2xl text-spark">
+                TalkTuahBank — HackUTD 2024
+              </CardTitle>
+              <CardDescription className="font-body text-base">
+                1st Overall + Goldman Sachs Challenge Winner. The largest
+                24-hour hackathon in the US.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="overflow-hidden rounded-lg border border-spark/10">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/YsH_z1azXSA"
+                    title="TalkTuahBank Pitch Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="size-full"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Pitch Structure Breakdown (2 min 6 sec)
+                </p>
+                <div className="space-y-2">
+                  {[
+                    {
+                      phase: "Big Shift",
+                      time: "0:00 – 0:05",
+                      pct: 4,
+                      quote:
+                        "Did you know that over 1.7 billion adults worldwide don't have access to traditional banking services?",
+                      technique:
+                        "Statistic hook to establish global scale and urgency",
+                    },
+                    {
+                      phase: "Stakes",
+                      time: "0:05 – 0:14",
+                      pct: 7,
+                      quote:
+                        "It's an AI-powered telephonic banking service that brings financial management to anyone with a phone, no internet, or smartphone needed.",
+                      technique:
+                        "Low-barrier access framing to maximize perceived impact",
+                    },
+                    {
+                      phase: "Live Demo",
+                      time: "0:14 – 1:10",
+                      pct: 44,
+                      quote:
+                        "Hey, I can help with things like checking your account balance, transferring funds, and even getting you started on a loan application.",
+                      technique:
+                        "Show-don't-tell role-play demo with concrete details",
+                    },
+                    {
+                      phase: "How It Works",
+                      time: "1:10 – 1:49",
+                      pct: 31,
+                      quote:
+                        "Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.",
+                      technique:
+                        "Tangible proof point: completed real transaction",
+                    },
+                    {
+                      phase: "Vision",
+                      time: "1:49 – 2:06",
+                      pct: 14,
+                      quote:
+                        "If there's anything else you need, feel free to let me know.",
+                      technique:
+                        "Always-on service vision, normalizing conversational banking",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.phase}
+                      className="rounded-lg border border-spark/10 bg-card p-4"
+                    >
+                      <div className="flex flex-wrap items-center gap-3">
+                        <Badge className="bg-spark/10 text-spark font-code text-xs">
+                          {item.phase}
+                        </Badge>
+                        <span className="font-code text-xs text-muted-foreground">
+                          {item.time}
+                        </span>
+                        <span className="font-code text-xs text-spark/60">
+                          {item.pct}% of pitch
+                        </span>
+                      </div>
+                      <blockquote className="mt-2 border-l-2 border-spark/30 pl-3 font-body text-sm italic text-foreground/80">
+                        &ldquo;{item.quote}&rdquo;
+                      </blockquote>
+                      <p className="mt-1 font-code text-xs text-foreground/50">
+                        Technique: {item.technique}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Frameworks Identified
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Sinek Start With Why",
+                    "Duarte Sparkline",
+                    "Aristotle Appeals",
+                    "Heath SUCCESs",
+                    "Raskin Strategic Narrative",
+                  ].map((fw) => (
+                    <Badge
+                      key={fw}
+                      variant="outline"
+                      className="border-spark/20 text-spark font-code text-xs"
+                    >
+                      {fw}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Strongest Moment
+                </p>
+                <div className="rounded-lg border border-spark/10 bg-spark/5 p-4">
+                  <div className="flex items-start gap-3">
+                    <Zap className="mt-0.5 size-4 shrink-0 text-spark" />
+                    <div className="space-y-1">
+                      <p className="font-code text-xs text-spark/60">
+                        @ 1:15
+                      </p>
+                      <blockquote className="font-body text-sm italic text-foreground/80">
+                        &ldquo;Awesome, you&apos;ve successfully transferred
+                        $200 to account A, capital C, 4, 5, 6.&rdquo;
+                      </blockquote>
+                      <p className="font-body text-xs text-foreground/60">
+                        This single line converts the concept into a verifiable
+                        outcome: money moved. It turns abstract claims about
+                        &ldquo;voice banking&rdquo; into an immediately
+                        believable, tangible result.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                <p className="font-code text-xs text-spark/80">
+                  <span className="font-semibold">Why it won:</span> Combined
+                  high-impact problem selection (1.7B unbanked) with an
+                  accessible, low-cost channel (phone calls) and a working,
+                  concrete demo that executes real financial operations.
+                  Specific, credible details (account IDs, dollar amounts, a
+                  &ldquo;loan for college&rdquo; micro-story) proved feasibility
+                  while aligning perfectly with Goldman Sachs&apos; financial
+                  inclusion brief.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://devpost.com/software/talktuahbank"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 font-code text-xs text-spark/60 underline decoration-spark/30 hover:decoration-spark"
+                >
+                  <ExternalLink className="size-3" />
+                  View on Devpost
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=YsH_z1azXSA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 font-code text-xs text-spark/60 underline decoration-spark/30 hover:decoration-spark"
+                >
+                  <Play className="size-3" />
+                  Watch pitch
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* --- CASE STUDY 3: AdaptEd --- */}
+          <Card className="glow-hover overflow-hidden border-primary/20">
+            <CardHeader>
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                  <Trophy className="size-5 text-primary" />
+                </div>
+                <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
+                  CASE STUDY 3
+                </Badge>
+                <Badge
+                  variant="outline"
+                  className="border-primary/20 text-primary font-code text-xs"
+                >
+                  1ST AMONG 142 PROJECTS
+                </Badge>
+              </div>
+              <CardTitle className="font-display text-2xl text-primary">
+                AdaptEd — LA Hacks 2024
+              </CardTitle>
+              <CardDescription className="font-body text-base">
+                Google Company Challenge Winner. First place among 142 projects.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-3">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Pitch Structure (Reconstructed from Devpost)
+                </p>
+                <div className="space-y-2">
+                  {[
+                    {
+                      phase: "Big Shift",
+                      quote:
+                        "Instead of students adapting to the system, our AI lecturer adapts to students.",
+                      technique:
+                        "Contrarian, single-line reframe that reverses expectations",
+                    },
+                    {
+                      phase: "Stakes",
+                      quote:
+                        "50% of 16M US university students are falling behind. Less than 3% have access to quality tutoring.",
+                      technique:
+                        "Quantified pain + inequity framing with both percentage and population",
+                    },
+                    {
+                      phase: "Live Demo",
+                      quote:
+                        "Responsive AI conversation, dynamic slide and whiteboard content, emotion detection.",
+                      technique:
+                        "Show-don't-tell micro-scenario mapping features to outcomes",
+                    },
+                    {
+                      phase: "How It Works",
+                      quote:
+                        "Gemini 1.5 Pro for multi-source aggregation, Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection.",
+                      technique:
+                        "Technical transparency: each component assigned a clear role",
+                    },
+                    {
+                      phase: "Vision",
+                      quote:
+                        "AdaptEd: interactive and personalized lectures through conversational voice AI.",
+                      technique:
+                        "Concise product vision paired with scale implication",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.phase}
+                      className="rounded-lg border border-primary/10 bg-card p-4"
+                    >
+                      <div className="flex flex-wrap items-center gap-3">
+                        <Badge className="bg-primary/10 text-primary font-code text-xs">
+                          {item.phase}
+                        </Badge>
+                      </div>
+                      <blockquote className="mt-2 border-l-2 border-primary/30 pl-3 font-body text-sm italic text-foreground/80">
+                        &ldquo;{item.quote}&rdquo;
+                      </blockquote>
+                      <p className="mt-1 font-code text-xs text-foreground/50">
+                        Technique: {item.technique}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Frameworks Identified
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Sinek Start With Why",
+                    "Duarte Sparkline",
+                    "Aristotle Appeals",
+                    "Heath SUCCESs",
+                    "Raskin Strategic Narrative",
+                  ].map((fw) => (
+                    <Badge
+                      key={fw}
+                      variant="outline"
+                      className="border-primary/20 text-primary font-code text-xs"
+                    >
+                      {fw}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Strongest Moment
+                </p>
+                <div className="rounded-lg border border-primary/10 bg-primary/5 p-4">
+                  <div className="flex items-start gap-3">
+                    <Zap className="mt-0.5 size-4 shrink-0 text-primary" />
+                    <div className="space-y-1">
+                      <blockquote className="font-body text-sm italic text-foreground/80">
+                        &ldquo;Instead of students adapting to the system, our
+                        AI lecturer adapts to students.&rdquo;
+                      </blockquote>
+                      <p className="font-body text-xs text-foreground/60">
+                        A crisp, counterintuitive reframe that immediately
+                        communicates differentiation and mission. It converts
+                        abstract ed-tech claims into a single mental image that
+                        judges can hold onto, which is exactly the kind of
+                        memorable positioning that wins short-form competitions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
+                <p className="font-code text-xs text-primary/80">
+                  <span className="font-semibold">Why it won:</span> Combined
+                  an urgent, measurable problem (large population + inequitable
+                  access to tutoring) with a plausible, productized technical
+                  solution and explicit sponsor alignment (heavy use of
+                  Gemini). Opened with a human story to generate empathy,
+                  quantified scale to show impact, demonstrated a believable
+                  prototype workflow, and listed exact tech integrations to
+                  prove execution capability.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://devpost.com/software/teachme-3p7bw1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 font-code text-xs text-primary/60 underline decoration-primary/30 hover:decoration-primary"
+                >
+                  <ExternalLink className="size-3" />
+                  View on Devpost
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* --- PATTERNS ACROSS WINNERS --- */}
+          <div className="space-y-6">
+            <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              Patterns Across Winners
+            </p>
+
+            <div className="stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  icon: Target,
+                  title: "Lead With a Number",
+                  description:
+                    'All three pitches opened with a concrete statistic or quantified problem: "80% understaffed," "1.7 billion unbanked," "50% falling behind." Numbers create immediate scale and urgency.',
+                  accent: "volt" as const,
+                },
+                {
+                  icon: Monitor,
+                  title: "Demo is the Main Event",
+                  description:
+                    "DispatchAI allocated 28% and TalkTuahBank allocated 44% of total pitch time to live demo. Judges remember what they saw, not what they heard.",
+                  accent: "spark" as const,
+                },
+                {
+                  icon: Users,
+                  title: "Align With Sponsors",
+                  description:
+                    "Each winning project explicitly used sponsor technology and called it out: Intel Dev Cloud, Goldman Sachs financial inclusion, Google Gemini. Sponsor alignment is a multiplier.",
+                  accent: "primary" as const,
+                },
+                {
+                  icon: Heart,
+                  title: "Emotional Stakes",
+                  description:
+                    '"Life and death" (DispatchAI), "1.7B excluded" (TalkTuahBank), "students falling behind" (AdaptEd). Every winning pitch converted data into human cost.',
+                  accent: "spark" as const,
+                },
+                {
+                  icon: Lightbulb,
+                  title: "One-Line Reframe",
+                  description:
+                    'Each pitch had a single sentence that encapsulated the entire vision: "world\'s first AI 911 operator," "talk to your own personalized bank," "AI lecturer adapts to students."',
+                  accent: "volt" as const,
+                },
+                {
+                  icon: Layers,
+                  title: "All 5 Frameworks Present",
+                  description:
+                    "GPT-5 identified all five persuasion frameworks (Sinek, Duarte, Aristotle, Heath, Raskin) in each pitch. Winning pitches don't use one framework; they layer all of them.",
+                  accent: "primary" as const,
+                },
+              ].map((item) => {
+                const colors = {
+                  volt: {
+                    bg: "bg-volt/10",
+                    text: "text-volt",
+                    border: "border-volt/20",
+                  },
+                  spark: {
+                    bg: "bg-spark/10",
+                    text: "text-spark",
+                    border: "border-spark/20",
+                  },
+                  primary: {
+                    bg: "bg-primary/10",
+                    text: "text-primary",
+                    border: "border-primary/20",
+                  },
+                };
+                const c = colors[item.accent];
+                return (
+                  <div
+                    key={item.title}
+                    className={`glow-hover rounded-xl border ${c.border} bg-card p-5 transition-all`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div
+                        className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${c.bg}`}
+                      >
+                        <item.icon className={`size-4 ${c.text}`} />
+                      </div>
+                      <div className="space-y-1">
+                        <p className="font-display text-sm font-semibold">
+                          {item.title}
+                        </p>
+                        <p className="font-body text-sm text-muted-foreground">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="rounded-lg border border-border bg-surface p-4">
+              <p className="font-body text-sm text-muted-foreground">
+                <span className="font-display font-semibold text-foreground">
+                  The pattern is clear:
+                </span>{" "}
+                Winning pitches aren&apos;t random. They follow a consistent
+                formula: open with a quantified problem, reframe with a
+                one-liner, spend most of the time on a working demo, align with
+                sponsor priorities, and close with a vision that makes judges
+                feel something. The frameworks taught earlier on this page
+                aren&apos;t academic theory; they are exactly what winners use.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================================
             THE DEMO VIDEO
             ============================================================ */}
         <section className="space-y-8">
@@ -898,6 +1365,229 @@ export default function PitchingPage() {
               Never underestimate the power of a good show-and-tell. Code makes
               your project great, but a compelling demo video and pitch seal the
               deal. Don&apos;t let poor presentation overshadow your hard work.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================================
+            THE APPENDIX STRATEGY
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="The Appendix Strategy"
+            subtitle="Assume your pitch will be incomplete. Design it that way on purpose. This counterintuitive technique is what separates good pitchers from great ones."
+          />
+
+          <p className="font-body text-foreground/80">
+            Hackathon pitches are short. Judges are tired. There&apos;s no world
+            where you explain everything in 3 minutes and still keep the room.
+            So be selective.
+          </p>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr]">
+            <Card className="glow-hover border-volt/20">
+              <CardHeader>
+                <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                  MAIN PITCH
+                </Badge>
+                <CardTitle className="font-display text-2xl text-volt">
+                  The 90% Slides
+                </CardTitle>
+                <CardDescription className="font-body text-base">
+                  Put the stuff ~90% of judges care about in the main pitch.
+                  Just the essentials: problem, solution, demo, and impact.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-2 font-body text-sm text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Problem statement — why this matters
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Solution overview — what you built
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Live demo — the main event
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Impact and vision — what could be
+                  </li>
+                </ul>
+                <div className="rounded-lg bg-volt/5 p-3 text-center">
+                  <p className="font-display text-2xl font-bold text-volt">
+                    60-70%
+                  </p>
+                  <p className="font-code text-xs text-volt/70">
+                    of your time on the live demo
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Desktop connector */}
+            <div className="hidden items-center md:flex">
+              <div className="flex flex-col items-center gap-2">
+                <div className="h-16 w-px bg-gradient-to-b from-volt to-spark" />
+                <ArrowRight className="size-6 text-spark" />
+                <div className="h-16 w-px bg-gradient-to-b from-spark to-spark/0" />
+                <p className="font-code text-xs text-muted-foreground [writing-mode:vertical-lr]">
+                  Q&A triggers
+                </p>
+              </div>
+            </div>
+
+            {/* Mobile connector */}
+            <div className="flex items-center justify-center py-2 md:hidden">
+              <div className="flex items-center gap-3">
+                <div className="h-px w-12 bg-gradient-to-r from-volt to-spark" />
+                <ArrowRight className="size-5 text-spark" />
+                <p className="font-code text-xs text-muted-foreground">
+                  Q&A triggers
+                </p>
+              </div>
+            </div>
+
+            <Card className="glow-hover border-spark/20">
+              <CardHeader>
+                <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                  APPENDIX
+                </Badge>
+                <CardTitle className="font-display text-2xl text-spark">
+                  The 20% Slides
+                </CardTitle>
+                <CardDescription className="font-body text-base">
+                  Slides you don&apos;t plan to show unless asked. Pre-built
+                  answers to the questions judges are likely to ask.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-2 font-body text-sm text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    Architecture diagram — how it actually works
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    Tradeoffs — what you chose and why
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    Edge cases — what breaks at scale
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    What&apos;s next — roadmap beyond the hackathon
+                  </li>
+                </ul>
+                <div className="rounded-lg bg-spark/5 p-3 text-center">
+                  <p className="font-display text-2xl font-bold text-spark">
+                    Instant
+                  </p>
+                  <p className="font-code text-xs text-spark/70">
+                    navigate to the right slide when asked
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="space-y-4">
+            <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              Why This Works
+            </p>
+            <div className="stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {[
+                {
+                  icon: Sparkles,
+                  title: "Shows Extra Preparation",
+                  description:
+                    "When you pull up a clearly prepared slide for a follow-up question, judges notice. It signals you thought deeper than the pitch.",
+                  accent: "volt" as const,
+                },
+                {
+                  icon: Clock,
+                  title: "Keeps the Pitch Short",
+                  description:
+                    "A shorter main pitch means more time for the live demo. Judges care more about seeing it work than hearing you describe it.",
+                  accent: "spark" as const,
+                },
+                {
+                  icon: MessageSquare,
+                  title: "Wins the Q&A",
+                  description:
+                    "The real evaluation happens in follow-up questions. That last 1-2 minutes is where judges figure out if you actually understand what you built.",
+                  accent: "primary" as const,
+                },
+                {
+                  icon: Target,
+                  title: "Looks Like Confidence",
+                  description:
+                    "It looks like confidence. But it's really just preparation while extremely sleep-deprived. Navigate to the right slide, answer clearly, move on.",
+                  accent: "success" as const,
+                },
+              ].map((item) => {
+                const colors = {
+                  volt: {
+                    bg: "bg-volt/10",
+                    text: "text-volt",
+                    border: "border-volt/20",
+                  },
+                  spark: {
+                    bg: "bg-spark/10",
+                    text: "text-spark",
+                    border: "border-spark/20",
+                  },
+                  primary: {
+                    bg: "bg-primary/10",
+                    text: "text-primary",
+                    border: "border-primary/20",
+                  },
+                  success: {
+                    bg: "bg-success/10",
+                    text: "text-success",
+                    border: "border-success/20",
+                  },
+                };
+                const c = colors[item.accent];
+                return (
+                  <div
+                    key={item.title}
+                    className={`glow-hover rounded-xl border ${c.border} bg-card p-5 transition-all`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div
+                        className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${c.bg}`}
+                      >
+                        <item.icon className={`size-4 ${c.text}`} />
+                      </div>
+                      <div className="space-y-1">
+                        <p className="font-display text-sm font-semibold">
+                          {item.title}
+                        </p>
+                        <p className="font-body text-sm text-muted-foreground">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface p-4">
+            <p className="font-body text-sm text-muted-foreground">
+              <span className="font-display font-semibold text-foreground">
+                The failure pattern:
+              </span>{" "}
+              Strong projects lose in Q&A every hackathon. A fair question. A
+              pause. &ldquo;Good question.&rdquo; Time&apos;s up. When you prep
+              a pitch, prep answers. The conversation after the pitch is where
+              winners are decided.
             </p>
           </div>
         </section>

@@ -35,6 +35,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { AlchemyGame } from "./alchemy-game";
 
 const section = PLAYBOOK_SECTIONS[1];
 
@@ -257,6 +258,22 @@ export default function IdeationPage() {
               things together. Most combinations won&apos;t work, but the magic
               is in the volume, because the ones that do are often brilliant.
             </p>
+          </div>
+
+          <div className="space-y-4 pt-4">
+            <div className="space-y-1">
+              <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                INTERACTIVE
+              </Badge>
+              <h3 className="font-display text-2xl font-bold tracking-tight">
+                Try It Yourself
+              </h3>
+              <p className="font-body text-sm text-muted-foreground">
+                Drag elements from the shelf into the workspace, then drop them
+                on top of each other to discover winning hackathon ideas.
+              </p>
+            </div>
+            <AlchemyGame />
           </div>
         </section>
 

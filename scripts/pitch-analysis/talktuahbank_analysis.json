@@ -1,0 +1,104 @@
+{
+  "pitch_duration_seconds": 126,
+  "opening_hook": {
+    "type": "statistic",
+    "quote": "Did you know that over 1.7 billion adults worldwide don't have access to traditional banking services?",
+    "timestamp": "0:00",
+    "why_effective": "A single, concrete metric (1.7 billion) creates instant scale and urgency. It functions as a 'Why' statement (Sinek) \u2014 it tells judges why this problem matters before introducing the product. The statistic is simple, credible and emotionally resonant, priming the listener to care about a solution."
+  },
+  "phases": [
+    {
+      "phase_name": "Big Shift",
+      "timestamp_start": "0:00",
+      "timestamp_end": "0:05",
+      "duration_seconds": 5,
+      "percentage_of_total": 3.97,
+      "key_quote": "Did you know that over 1.7 billion adults worldwide don't have access to traditional banking services?",
+      "technique_used": "Problem-first framing: start with an attention-grabbing statistic to define the landscape and create a 'why now' urgency. This is a Sinek-style opening (start with Why) and a Raskin-style Big Shift setup (a large-scale change/need)."
+    },
+    {
+      "phase_name": "Stakes",
+      "timestamp_start": "0:05",
+      "timestamp_end": "0:14",
+      "duration_seconds": 9,
+      "percentage_of_total": 7.14,
+      "key_quote": "It's an AI-powered telephonic banking service that brings financial management to anyone with a phone, no internet, or smartphone needed.",
+      "technique_used": "Problem\u2192solution framing that makes the stakes concrete: shows who is excluded and immediately explains how the product changes that reality (low-barrier access). The 'no internet or smartphone needed' line lowers adoption friction and increases perceived impact."
+    },
+    {
+      "phase_name": "Demo",
+      "timestamp_start": "0:14",
+      "timestamp_end": "1:10",
+      "duration_seconds": 56,
+      "percentage_of_total": 44.44,
+      "key_quote": "Hey, I can help with things like checking your account balance, transferring funds, and even getting you started on a loan application.",
+      "technique_used": "Show\u2011don't\u2011tell role-play demo: a simulated phone conversation (persona 'Warren Yun') walks through balance check, transfer and loan initiation. Uses concrete details (account IDs, amounts) to build credibility and let judges mentally simulate real users."
+    },
+    {
+      "phase_name": "Magic",
+      "timestamp_start": "1:10",
+      "timestamp_end": "1:49",
+      "duration_seconds": 39,
+      "percentage_of_total": 30.95,
+      "key_quote": "Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.",
+      "technique_used": "Tangible proof point / 'wow' moment: a completed money transfer and seamless handoff into a loan application. This is the technical credibility payoff \u2014 it demonstrates end\u2011to\u2011end functionality (authentication \u2192 action \u2192 confirmation) rather than abstract claims."
+    },
+    {
+      "phase_name": "Vision",
+      "timestamp_start": "1:49",
+      "timestamp_end": "2:06",
+      "duration_seconds": 17,
+      "percentage_of_total": 13.49,
+      "key_quote": "If there's anything else you need, feel free to let me know.",
+      "technique_used": "Concise close that implies an always-on, helpful service and normalizes conversational banking. Although the pitch lacks an extended forward-looking manifesto, this closing line gestures at ongoing accessibility and service continuity."
+    }
+  ],
+  "frameworks_used": [
+    {
+      "framework": "Sinek Start With Why",
+      "evidence": "The pitch opens with a 'why' \u2014 \"Did you know that over 1.7 billion adults worldwide don't have access to traditional banking services?\" [0:00]. The team leads with purpose/problem before the product, a direct application of Sinek's approach."
+    },
+    {
+      "framework": "Duarte Sparkline",
+      "evidence": "The arc is classic Sparkline: identify the problem ('Did you know...' [0:00]), present the solution promise ('Meet TalkToA Bank...' [0:05] / 'It's an AI-powered telephonic banking service...' [0:10]), then show the demonstration ('Hey Warren Yun... I'm the TalkToA Bank AI' \u2192 demo [0:20\u20131:10]) and finish with concrete payoff ('Awesome, you've successfully transferred $200...' [1:15])."
+    },
+    {
+      "framework": "Aristotle Appeals",
+      "evidence": "Logos: concrete numbers appear throughout ('1.7 billion', 'Your balance is $2,500', '$200 transferred'). Ethos: the working demo and specific account details build credibility ('I'm the TalkToA Bank AI' [0:20]). Pathos: the micro-story 'loan for college' (\"I'd like to request a loan for $2,000 for college tuition for four years\" [1:42]) evokes emotional impact."
+    },
+    {
+      "framework": "Heath SUCCESs",
+      "evidence": "Simple: single-sentence value prop ('brings financial management to anyone with a phone' [0:10]). Unexpected: banking without internet or smartphone. Concrete: account IDs and dollar amounts. Credible: a completed transfer confirmation. Emotional/story: 'loan for college' humanizes the benefit."
+    },
+    {
+      "framework": "Raskin Strategic Narrative",
+      "evidence": "The pitch establishes a Big Shift (scale of unbanked at [0:00]) and 'why now' (AI + telephony enabling access; 'AI-powered telephonic banking' [0:10]), shows the specific mission (inclusion via phone), demonstrates capabilities (working transfer & loan flow [1:15\u20131:49]), and links to a larger mission of financial inclusion."
+    }
+  ],
+  "sponsor_alignment": "Clear alignment with a financial\u2011inclusion brief (Goldman Sachs challenge). The pitch centers on the 1.7 billion unbanked and emphasizes low\u2011barrier access: \"no internet, or smartphone needed\" [0:10], and demonstrates real banking actions (balance, transfer, loan), directly addressing the sponsor's goals around expanding access to financial services.",
+  "strongest_moment": {
+    "timestamp": "1:15",
+    "quote": "Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.",
+    "why": "This single line converts the concept into a verifiable outcome: money moved. It turns abstract claims about 'voice banking' into an immediately believable, tangible result \u2014 exactly what judges want to see in a hackathon demo. It signals both functional completeness and trustworthiness."
+  },
+  "why_it_won": "TalkToA Bank wins because it combines high-impact problem selection (1.7B unbanked) with an accessible, low\u2011cost channel (phone calls) and a working, concrete demo that executes real financial operations. The team uses specific, credible details (account IDs, $ amounts, a loan use-case) to prove feasibility; they also lower adoption friction by explicitly saying it needs 'no internet, or smartphone' [0:10], which scales to the target users. Judges rewarded both social impact and technical execution \u2014 a product that addresses an urgent, measurable need and demonstrably works.",
+  "key_techniques": [
+    "Statistic hook to establish scale and urgency (1.7 billion) [0:00]",
+    "Start\u2011with\u2011Why problem framing (Sinek)",
+    "Show\u2011don't\u2011tell live role\u2011play demo (phone conversation) [0:20\u20131:10]",
+    "Concrete numbers and artifacts (account IDs, balances, $ amounts) to build credibility",
+    "Micro-story to humanize impact (loan for college) [1:40\u20131:49]",
+    "Immediate transaction confirmation as 'proof' (transfer success) [1:15]",
+    "Emphasis on low adoption friction ('no internet, or smartphone needed') to broaden addressable market [0:10]",
+    "Short, simple closing that normalizes the service (always\u2011on help) [1:52]"
+  ],
+  "meta": {
+    "project_name": "TalkTuahBank",
+    "hackathon": "HackUTD 2024 (Ripple Effect)",
+    "prize": "1st Overall + Goldman Sachs Challenge Winner",
+    "total_value": "Won largest 24-hour hackathon in the US",
+    "video_url": "https://www.youtube.com/watch?v=YsH_z1azXSA",
+    "devpost_url": "https://devpost.com/software/talktuahbank",
+    "had_transcript": true
+  }
+}
