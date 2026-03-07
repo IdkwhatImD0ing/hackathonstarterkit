@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Design System",
   description:
-    "Live preview of the Hackathon Starter Kit design system — colors, typography, components, and patterns.",
+    "Live preview of the Hackathon Starter Kit design system  -  colors, typography, components, and patterns.",
   openGraph: {
     title: "Design System",
     description:
-      "Live preview of the Hackathon Starter Kit design system — colors, typography, components, and patterns.",
+      "Live preview of the Hackathon Starter Kit design system  -  colors, typography, components, and patterns.",
   },
 };
 import {
@@ -78,7 +78,7 @@ export default function DesignSystemPage() {
             <span className="text-primary">Starter Kit</span>
           </h1>
           <p className="max-w-2xl font-body text-lg text-muted-foreground md:text-xl">
-            The ultimate playbook for winning hackathons — guides, templates,
+            The ultimate playbook for winning hackathons  -  guides, templates,
             and battle-tested strategies from{" "}
             <span className="animate-shimmer font-semibold">
               36+ hackathon victories
@@ -163,7 +163,7 @@ export default function DesignSystemPage() {
             <div className="space-y-10">
               <div className="space-y-6">
                 <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-                  Display — JetBrains Mono
+                  Display  -  JetBrains Mono
                 </h3>
                 <div className="space-y-3">
                   <p className="font-display text-7xl font-extrabold tracking-tighter">
@@ -184,19 +184,19 @@ export default function DesignSystemPage() {
 
               <div className="space-y-6">
                 <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-                  Body — Outfit
+                  Body  -  Outfit
                 </h3>
                 <div className="space-y-3">
                   <p className="font-body text-lg">
-                    body-lg — The quick brown fox jumps over the lazy dog.
+                    body-lg  -  The quick brown fox jumps over the lazy dog.
                     Hackathons are 24-48 hour sprints of pure creation.
                   </p>
                   <p className="font-body text-base">
-                    body — The quick brown fox jumps over the lazy dog. Ship
+                    body  -  The quick brown fox jumps over the lazy dog. Ship
                     fast, break things, iterate. That&apos;s the hackathon way.
                   </p>
                   <p className="font-body text-sm text-muted-foreground">
-                    body-sm — The quick brown fox jumps over the lazy dog. 36
+                    body-sm  -  The quick brown fox jumps over the lazy dog. 36
                     wins. 50+ hackathons. $100K+ in prizes.
                   </p>
                 </div>
@@ -204,7 +204,7 @@ export default function DesignSystemPage() {
 
               <div className="space-y-6">
                 <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-                  Code — Fira Code
+                  Code  -  Fira Code
                 </h3>
                 <div className="rounded-lg border border-border bg-surface p-4">
                   <pre className="font-code text-sm leading-relaxed text-foreground">
@@ -610,7 +610,7 @@ export default function DesignSystemPage() {
         {/* ============ FOOTER ============ */}
         <footer className="mt-24 border-t border-border pt-8 text-center">
           <p className="font-code text-xs text-muted-foreground">
-            Hackathon Starter Kit — Design System v1.0
+            Hackathon Starter Kit  -  Design System v1.0
           </p>
         </footer>
       </div>

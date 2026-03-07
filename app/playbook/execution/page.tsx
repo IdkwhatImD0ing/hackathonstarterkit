@@ -77,7 +77,7 @@ export default function ExecutionPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Speed Mindset"
-            subtitle="Hackathons are time-limited events. Anything that can be sped up, should be sped up. The winning edge isn't working harder — it's eliminating everything that slows you down."
+            subtitle="Hackathons are time-limited events. Anything that can be sped up, should be sped up. The winning edge isn't working harder  -  it's eliminating everything that slows you down."
           />
 
           <p className="font-body text-foreground/80">
@@ -89,7 +89,7 @@ export default function ExecutionPage() {
             <span className="font-display font-semibold text-spark">
               code curation
             </span>
-            . We&apos;re no longer just writing code — we&apos;re guiding AI
+            . We&apos;re no longer just writing code  -  we&apos;re guiding AI
             tools to build it smarter and faster. At most hackathons, AI
             generates the boilerplate. From there, you modify and optimize it to
             fit your project.
@@ -150,7 +150,7 @@ export default function ExecutionPage() {
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
                     The engineer who ships fastest isn&apos;t the fastest typist
-                    — they&apos;re the best curator of tools.
+                     -  they&apos;re the best curator of tools.
                   </p>
                 </div>
               </CardContent>
@@ -201,7 +201,7 @@ export default function ExecutionPage() {
                   completion.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  — Cyril Northcote Parkinson, 1955. The tighter the deadline,
+                   -  Cyril Northcote Parkinson, 1955. The tighter the deadline,
                   the more focused the output. Use timeboxing to create
                   artificial urgency within the hackathon itself.
                 </p>
@@ -242,12 +242,12 @@ export default function ExecutionPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Context-aware code generation — far better than GitHub
+                    Context-aware code generation  -  far better than GitHub
                     Copilot because it indexes the whole project
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Inline edits with Command+K — editing your code rather than
+                    Inline edits with Command+K  -  editing your code rather than
                     generating from scratch
                   </li>
                   <li className="flex items-start gap-2">
@@ -298,7 +298,7 @@ export default function ExecutionPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Already uses Next.js, shadcn, and Tailwind — zero
+                    Already uses Next.js, shadcn, and Tailwind  -  zero
                     translation needed
                   </li>
                 </ul>
@@ -335,7 +335,7 @@ export default function ExecutionPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
-                    Live code previews in an easy-to-navigate tab — see results
+                    Live code previews in an easy-to-navigate tab  -  see results
                     instantly
                   </li>
                   <li className="flex items-start gap-2">
@@ -403,12 +403,12 @@ export default function ExecutionPage() {
         </section>
 
         {/* ============================================================
-            WHY THIS WORKS — THE SCIENCE
+            WHY THIS WORKS  -  THE SCIENCE
             ============================================================ */}
         <section className="space-y-8">
           <SectionHeading
-            title="Why This Works — The Science of Constrained Execution"
-            subtitle="The best hackathon teams don't just move fast — they follow principles refined by decades of engineering and entrepreneurship research."
+            title="Why This Works  -  The Science of Constrained Execution"
+            subtitle="The best hackathon teams don't just move fast  -  they follow principles refined by decades of engineering and entrepreneurship research."
           />
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -432,13 +432,13 @@ export default function ExecutionPage() {
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   The creator of Extreme Programming laid out the order that
-                  matters. First get the flow working end-to-end — even if
+                  matters. First get the flow working end-to-end  -  even if
                   it&apos;s ugly. Then refactor only what&apos;s needed for the
-                  demo. In 24 hours, most teams never get past step one — and
+                  demo. In 24 hours, most teams never get past step one  -  and
                   that&apos;s fine.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Kent Beck, creator of XP and TDD
+                   -  Kent Beck, creator of XP and TDD
                 </p>
               </CardContent>
             </Card>
@@ -470,7 +470,7 @@ export default function ExecutionPage() {
                   refining the story.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — Reid Hoffman, co-founder of LinkedIn
+                   -  Reid Hoffman, co-founder of LinkedIn
                 </p>
               </CardContent>
             </Card>
@@ -501,7 +501,7 @@ export default function ExecutionPage() {
                   half-built features.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — Vilfredo Pareto, 1906 / Joseph Juran
+                   -  Vilfredo Pareto, 1906 / Joseph Juran
                 </p>
               </CardContent>
             </Card>
@@ -522,7 +522,7 @@ export default function ExecutionPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="font-body text-sm text-foreground/80">
-                  From SpaceX engineering — applied in order:
+                  From SpaceX engineering  -  applied in order:
                 </p>
                 <ol className="space-y-2 font-body text-sm text-foreground/80">
                   {[
@@ -536,7 +536,7 @@ export default function ExecutionPage() {
                     },
                     {
                       step: "Simplify or optimize",
-                      desc: "Only after deleting — don't optimize what shouldn't exist",
+                      desc: "Only after deleting  -  don't optimize what shouldn't exist",
                     },
                     {
                       step: "Accelerate cycle time",
@@ -544,7 +544,7 @@ export default function ExecutionPage() {
                     },
                     {
                       step: "Automate",
-                      desc: "Automate last — never automate a broken process",
+                      desc: "Automate last  -  never automate a broken process",
                     },
                   ].map((item, i) => (
                     <li key={item.step} className="flex items-start gap-3">
@@ -557,14 +557,14 @@ export default function ExecutionPage() {
                         </span>
                         <span className="text-foreground/60">
                           {" "}
-                          — {item.desc}
+                           -  {item.desc}
                         </span>
                       </div>
                     </li>
                   ))}
                 </ol>
                 <p className="font-code text-xs text-success/60">
-                  — Elon Musk, SpaceX Starbase
+                   -  Elon Musk, SpaceX Starbase
                 </p>
               </CardContent>
             </Card>
@@ -577,7 +577,7 @@ export default function ExecutionPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Scope Hammering"
-            subtitle="Fixed time, variable scope. You don't extend the hackathon — you cut features until what's left fits. This is the discipline that separates shipping teams from unfinished messes."
+            subtitle="Fixed time, variable scope. You don't extend the hackathon  -  you cut features until what's left fits. This is the discipline that separates shipping teams from unfinished messes."
           />
 
           <p className="font-body text-foreground/80">
@@ -609,7 +609,7 @@ export default function ExecutionPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    One core user flow — end to end, fully working
+                    One core user flow  -  end to end, fully working
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
@@ -617,7 +617,7 @@ export default function ExecutionPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Polished UI on the happy path — first impressions matter
+                    Polished UI on the happy path  -  first impressions matter
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
@@ -675,7 +675,7 @@ export default function ExecutionPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Auth and login flows — hardcode a user, skip the signup
+                    Auth and login flows  -  hardcode a user, skip the signup
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
@@ -753,7 +753,7 @@ export default function ExecutionPage() {
                 title: "Ideation and Architecture",
                 time: "Hour 0-2",
                 description:
-                  "Finalize the idea, assign roles, sketch the architecture on a whiteboard, and set up the repo with a boilerplate. Deploy to staging immediately — you should be able to demo 'hello world' within the first hour.",
+                  "Finalize the idea, assign roles, sketch the architecture on a whiteboard, and set up the repo with a boilerplate. Deploy to staging immediately  -  you should be able to demo 'hello world' within the first hour.",
                 accent: "volt" as const,
               },
               {
@@ -769,7 +769,7 @@ export default function ExecutionPage() {
                 title: "Build Sprint",
                 time: "Hour 4-16",
                 description:
-                  "Heads-down feature work in timeboxed 2-3 hour blocks. Checkpoint after each block: 'Can we demo right now?' If a feature is taking too long, cut it. Sleep in shifts if you can — exhaustion kills productivity faster than lost hours.",
+                  "Heads-down feature work in timeboxed 2-3 hour blocks. Checkpoint after each block: 'Can we demo right now?' If a feature is taking too long, cut it. Sleep in shifts if you can  -  exhaustion kills productivity faster than lost hours.",
                 accent: "primary" as const,
               },
               {
@@ -777,7 +777,7 @@ export default function ExecutionPage() {
                 title: "Integration and Polish",
                 time: "Hour 16-20",
                 description:
-                  "Connect all the pieces. Fix critical bugs only. Polish the happy path UI — this is what judges will see. Don't start new features. If it's not working by hour 16, it's not going to work.",
+                  "Connect all the pieces. Fix critical bugs only. Polish the happy path UI  -  this is what judges will see. Don't start new features. If it's not working by hour 16, it's not going to work.",
                 accent: "success" as const,
               },
               {
@@ -785,7 +785,7 @@ export default function ExecutionPage() {
                 title: "Demo Prep",
                 time: "Hour 20-22",
                 description:
-                  "Record the demo video. Build the pitch deck. Prep appendix slides for Q&A. This is not optional — it's the highest-ROI activity of the entire hackathon. A polished pitch with a working demo beats a perfect codebase with a bad presentation.",
+                  "Record the demo video. Build the pitch deck. Prep appendix slides for Q&A. This is not optional  -  it's the highest-ROI activity of the entire hackathon. A polished pitch with a working demo beats a perfect codebase with a bad presentation.",
                 accent: "volt" as const,
               },
               {
@@ -793,7 +793,7 @@ export default function ExecutionPage() {
                 title: "Rehearse and Submit",
                 time: "Hour 22-24",
                 description:
-                  "Practice the pitch 3+ times. Time it. Submit all deliverables early — Devpost, video, repo. Don't make changes after submission. Use remaining time to rest and prepare mentally for judging.",
+                  "Practice the pitch 3+ times. Time it. Submit all deliverables early  -  Devpost, video, repo. Don't make changes after submission. Use remaining time to rest and prepare mentally for judging.",
                 accent: "spark" as const,
               },
             ].map((item) => {
@@ -863,7 +863,7 @@ export default function ExecutionPage() {
                   <span className="font-display font-semibold text-foreground">
                     Timeboxing
                   </span>{" "}
-                  — Harvard Business Review ranks it among the most effective
+                   -  Harvard Business Review ranks it among the most effective
                   productivity techniques. Assign fixed time blocks and stop when
                   time is up, regardless of completion.
                 </p>
@@ -876,7 +876,7 @@ export default function ExecutionPage() {
                   <span className="font-display font-semibold text-foreground">
                     Brooks&apos;s Law
                   </span>{" "}
-                  — &ldquo;Adding manpower to a late software project makes it
+                   -  &ldquo;Adding manpower to a late software project makes it
                   later.&rdquo; When you&apos;re behind, resist adding scope or
                   people. Cut features instead.
                 </p>
@@ -907,7 +907,7 @@ export default function ExecutionPage() {
                 icon: Layout,
                 title: "Component Libraries",
                 description:
-                  "shadcn/ui, Radix, Material UI — don't build UI primitives from scratch. Import, customize, ship. The fastest code is code you didn't write.",
+                  "shadcn/ui, Radix, Material UI  -  don't build UI primitives from scratch. Import, customize, ship. The fastest code is code you didn't write.",
                 accent: "spark" as const,
               },
               {
@@ -921,7 +921,7 @@ export default function ExecutionPage() {
                 icon: Radio,
                 title: "API-First Approach",
                 description:
-                  "Use managed services — Supabase, Firebase, Auth0 — instead of building infrastructure. Let someone else handle auth, storage, and databases.",
+                  "Use managed services  -  Supabase, Firebase, Auth0  -  instead of building infrastructure. Let someone else handle auth, storage, and databases.",
                 accent: "success" as const,
               },
               {
@@ -994,7 +994,7 @@ export default function ExecutionPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  Naval Ravikant — AngelList Co-founder
+                  Naval Ravikant  -  AngelList Co-founder
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;Code and media are permissionless leverage. They&apos;re
@@ -1003,7 +1003,7 @@ export default function ExecutionPage() {
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   Use leverage: templates, AI, APIs, no-code where it fits.
-                  Focus human effort on what only humans can do — vision,
+                  Focus human effort on what only humans can do  -  vision,
                   design, and high-impact decisions.
                 </p>
               </div>
@@ -1012,7 +1012,7 @@ export default function ExecutionPage() {
         </section>
 
         {/* ============================================================
-            GOLDEN RULE — EXECUTION QUOTE
+            GOLDEN RULE  -  EXECUTION QUOTE
             ============================================================ */}
         <section className="space-y-8">
           <div className="animate-glow-pulse glass rounded-2xl border border-primary/10 p-8 md:p-12">
@@ -1026,23 +1026,23 @@ export default function ExecutionPage() {
                 <span className="animate-shimmer">Make it fast.</span>&rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Kent Beck, creator of Extreme Programming
+                 -  Kent Beck, creator of Extreme Programming
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
                 <p className="font-body text-foreground/80">
                   <span className="font-display font-semibold text-foreground">
                     In a 24-48 hour sprint, most teams never get past &ldquo;make
-                    it work&rdquo; — and that&apos;s perfectly fine.
+                    it work&rdquo;  -  and that&apos;s perfectly fine.
                   </span>{" "}
                   A working demo that tells a clear story beats a half-finished
                   masterpiece every time. The teams that win aren&apos;t the ones
-                  with the cleanest code — they&apos;re the ones who shipped
+                  with the cleanest code  -  they&apos;re the ones who shipped
                   something that works and told a compelling story about it.
                 </p>
                 <p className="font-body text-foreground/80">
                   The role of a hackathon engineer is evolving. You&apos;re no
-                  longer measured by lines of code written — you&apos;re measured
+                  longer measured by lines of code written  -  you&apos;re measured
                   by the quality of the experience you deliver. Use every tool,
                   template, and AI assistant at your disposal. Curate, don&apos;t
                   create from scratch. Ship, then polish.
@@ -1071,19 +1071,19 @@ export default function ExecutionPage() {
             <CardContent className="space-y-4 pt-6">
               {[
                 {
-                  text: "Set up repo, boilerplate, and deploy pipeline in the first hour — never demo from localhost",
+                  text: "Set up repo, boilerplate, and deploy pipeline in the first hour  -  never demo from localhost",
                   accent: "volt",
                 },
                 {
-                  text: "Get end-to-end flow working before adding any features — ugly is fine, broken is not",
+                  text: "Get end-to-end flow working before adding any features  -  ugly is fine, broken is not",
                   accent: "spark",
                 },
                 {
-                  text: "Timebox every task — if it takes more than 2 hours, cut scope or switch approach",
+                  text: "Timebox every task  -  if it takes more than 2 hours, cut scope or switch approach",
                   accent: "primary",
                 },
                 {
-                  text: "Use AI tools for boilerplate — focus human effort on core logic, design, and integration",
+                  text: "Use AI tools for boilerplate  -  focus human effort on core logic, design, and integration",
                   accent: "success",
                 },
                 {
@@ -1091,11 +1091,11 @@ export default function ExecutionPage() {
                   accent: "volt",
                 },
                 {
-                  text: "Stop building 4 hours before submission — polish UI, record demo video, rehearse pitch",
+                  text: "Stop building 4 hours before submission  -  polish UI, record demo video, rehearse pitch",
                   accent: "spark",
                 },
                 {
-                  text: "\"Done is better than perfect\" — ship what works, cut what doesn't, tell the story of what it could become",
+                  text: "\"Done is better than perfect\"  -  ship what works, cut what doesn't, tell the story of what it could become",
                   accent: "primary",
                 },
               ].map((item) => {
@@ -1127,7 +1127,7 @@ export default function ExecutionPage() {
               <span className="font-display font-semibold text-foreground">
                 Remember:
               </span>{" "}
-              The goal isn&apos;t to build the best software — it&apos;s to
+              The goal isn&apos;t to build the best software  -  it&apos;s to
               deliver the best demo. Every minute should serve that outcome.
               Build less, leverage more, and always be ready to show what
               you&apos;ve got.

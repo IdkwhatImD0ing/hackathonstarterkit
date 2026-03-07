@@ -11,20 +11,20 @@ export const metadata: Metadata = {
     template: "%s | Hackathon Starter Kit",
   },
   description:
-    "The ultimate hackathon playbook — guides, templates, and strategies from 36+ hackathon wins.",
+    "The ultimate hackathon playbook  -  guides, templates, and strategies from 36+ hackathon wins.",
   openGraph: {
     type: "website",
     siteName: "Hackathon Starter Kit",
     locale: "en_US",
     title: "Hackathon Starter Kit",
     description:
-      "The ultimate hackathon playbook — guides, templates, and strategies from 36+ hackathon wins.",
+      "The ultimate hackathon playbook  -  guides, templates, and strategies from 36+ hackathon wins.",
   },
   twitter: {
     card: "summary",
     title: "Hackathon Starter Kit",
     description:
-      "The ultimate hackathon playbook — guides, templates, and strategies from 36+ hackathon wins.",
+      "The ultimate hackathon playbook  -  guides, templates, and strategies from 36+ hackathon wins.",
   },
 };
 
