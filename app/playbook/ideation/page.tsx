@@ -18,7 +18,6 @@ import {
   Shuffle,
   Dices,
   Atom,
-  ListChecks,
   Cpu,
   Globe,
   Sparkles,
@@ -35,6 +34,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { AlchemyMiniGame } from "@/components/alchemy-mini-game";
 
 const section = PLAYBOOK_SECTIONS[1];
 
@@ -112,6 +112,306 @@ function CombinationRow({
     </div>
   );
 }
+
+type WinAlchemyRecipe = {
+  event: string;
+  project: string;
+  base: [string, string];
+  mid: string;
+  final: string;
+  note: string;
+};
+
+const WIN_ALCHEMY_RECIPES: WinAlchemyRecipe[] = [
+  {
+    event: "Cruzhacks 2023",
+    project: "Covinet",
+    base: ["Public health data", "Forecasting model"],
+    mid: "COVID risk intelligence",
+    final: "Covinet",
+    note: "Inferred from project name and event context.",
+  },
+  {
+    event: "PeddieHacks 2022",
+    project: "Remote Trainer",
+    base: ["Computer vision", "Workout coaching"],
+    mid: "Form-aware virtual coaching",
+    final: "Remote Trainer",
+    note: "Inferred from project framing.",
+  },
+  {
+    event: "Wildhacks",
+    project: "Wonder",
+    base: ["Discovery UX", "Creative prompts"],
+    mid: "Curiosity engine",
+    final: "Wonder",
+    note: "Inferred from title and hackathon theme.",
+  },
+  {
+    event: "Funathon",
+    project: "Tetris Hacks",
+    base: ["Game mechanics", "Puzzle balancing"],
+    mid: "Adaptive Tetris gameplay",
+    final: "Tetris Hacks",
+    note: "Inferred from title.",
+  },
+  {
+    event: "GraceHacks",
+    project: "Pool Party",
+    base: ["Social coordination", "Event logistics"],
+    mid: "Group activity planner",
+    final: "Pool Party",
+    note: "Inferred from title.",
+  },
+  {
+    event: "Opportunity Hacks",
+    project: "Volunteer Hub",
+    base: ["Volunteer matching", "Local org datasets"],
+    mid: "Opportunity recommendation",
+    final: "Volunteer Hub",
+    note: "Inferred from civic-tech naming.",
+  },
+  {
+    event: "Hackrithmitic",
+    project: "PaddyPlantPrognosis",
+    base: ["Crop signals", "Yield prediction"],
+    mid: "Paddy health prognosis",
+    final: "PaddyPlantPrognosis",
+    note: "Inferred from project name.",
+  },
+  {
+    event: "AI Hacks",
+    project: "Progno D",
+    base: ["Diagnostic patterns", "ML classification"],
+    mid: "Disease prognosis assistant",
+    final: "Progno D",
+    note: "Inferred from title.",
+  },
+  {
+    event: "Planit Unity",
+    project: "Sink or Swim",
+    base: ["Scenario simulation", "Decision support"],
+    mid: "Crisis gameplay simulator",
+    final: "Sink or Swim",
+    note: "Inferred from title.",
+  },
+  {
+    event: "ACMHacks 2023",
+    project: "Assistance",
+    base: ["Accessibility tools", "AI assistant"],
+    mid: "Task support copilot",
+    final: "Assistance",
+    note: "Inferred from project naming.",
+  },
+  {
+    event: "CitrusHacks 2023",
+    project: "MonkeySign",
+    base: ["Hand tracking", "Sign-language mapping"],
+    mid: "Gesture-to-text layer",
+    final: "MonkeySign",
+    note: "Inferred from title.",
+  },
+  {
+    event: "SBHacks 2023",
+    project: "GitPT",
+    base: ["Git workflow", "LLM guidance"],
+    mid: "Pull-request copilot",
+    final: "GitPT",
+    note: "Inferred from title and open-source context.",
+  },
+  {
+    event: "HackDavis 2023",
+    project: "IntelliConverse",
+    base: ["Conversation AI", "Context memory"],
+    mid: "Intelligent dialogue engine",
+    final: "IntelliConverse",
+    note: "Inferred from title.",
+  },
+  {
+    event: "Web3Apps",
+    project: "Fundraiser",
+    base: ["Blockchain wallet rails", "Donation workflows"],
+    mid: "On-chain fundraising",
+    final: "Fundraiser",
+    note: "Inferred from event and project title.",
+  },
+  {
+    event: "Hack for Hackers",
+    project: "Architect",
+    base: ["System design", "Code generation"],
+    mid: "Architecture planning copilot",
+    final: "Architect",
+    note: "Inferred from title.",
+  },
+  {
+    event: "Cruzhacks 2023",
+    project: "SlugLoop",
+    base: ["Campus workflows", "Productivity automation"],
+    mid: "Student loop optimizer",
+    final: "SlugLoop",
+    note: "Referenced in repo + inferred from naming.",
+  },
+  {
+    event: "AIATL 2024",
+    project: "WebWeaver",
+    base: ["Generative UI", "Prompt-to-site tooling"],
+    mid: "Automated web composition",
+    final: "WebWeaver",
+    note: "Inferred from title.",
+  },
+  {
+    event: "IrvineHacks 2024",
+    project: "XPlore",
+    base: ["Location data", "Recommendation model"],
+    mid: "Exploration planner",
+    final: "XPlore",
+    note: "Inferred from title.",
+  },
+  {
+    event: "QWER Hacks",
+    project: "Talking Terry",
+    base: ["Voice interface", "Persona design"],
+    mid: "Character conversation agent",
+    final: "Talking Terry",
+    note: "Inferred from title.",
+  },
+  {
+    event: "HackMerced 2024",
+    project: "PyPointer",
+    base: ["Python analysis", "Developer education"],
+    mid: "Code guidance tool",
+    final: "PyPointer",
+    note: "Inferred from title.",
+  },
+  {
+    event: "Uncommon Hacks 2024",
+    project: "Mad Lyrics",
+    base: ["Multiplayer prompts", "Music generation"],
+    mid: "Mad-libs music game",
+    final: "Mad Lyrics",
+    note: "From Devpost tagline: multiplayer music + mad libs.",
+  },
+  {
+    event: "HackDavis 2024",
+    project: "Doggo AI",
+    base: ["Interactive storytelling", "Kid-safe AI companion"],
+    mid: "Conversational pet companion",
+    final: "Doggo AI",
+    note: "From Devpost tagline: interactive children's companion.",
+  },
+  {
+    event: "FullyHacks",
+    project: "CyberTanks",
+    base: ["Multiplayer game loop", "Cyber strategy"],
+    mid: "Competitive tank battle sim",
+    final: "CyberTanks",
+    note: "Inferred from title.",
+  },
+  {
+    event: "YaleHacks",
+    project: "Tidbits",
+    base: ["Lecture transcripts", "Short-form storytelling"],
+    mid: "Lecture-to-short-video pipeline",
+    final: "Tidbits",
+    note: "From Devpost tagline: TikToks for university lectures.",
+  },
+  {
+    event: "LAHacks 2024",
+    project: "AdaptED",
+    base: ["Voice AI", "Personalized education"],
+    mid: "Conversational lesson engine",
+    final: "AdaptED",
+    note: "From Devpost tagline: interactive personalized lectures.",
+  },
+  {
+    event: "DiamondHacks 2024",
+    project: "ABSeas",
+    base: ["Music + dance", "Early childhood content"],
+    mid: "Movement-based learning",
+    final: "ABSeas",
+    note: "From Devpost tagline: teach ABCs through music and dance.",
+  },
+  {
+    event: "Berkeley AI Hackathon",
+    project: "DispatchAI",
+    base: ["Empathic LLM", "Emergency call routing"],
+    mid: "AI 911 dispatcher",
+    final: "DispatchAI",
+    note: "From Devpost tagline and existing case study on this page.",
+  },
+  {
+    event: "VTHacks",
+    project: "linguify",
+    base: ["AR translation", "Real-world context clues"],
+    mid: "Immersive language practice",
+    final: "linguify",
+    note: "From Devpost tagline: live language through real-world interaction.",
+  },
+  {
+    event: "HackDearborn",
+    project: "SwarmAID",
+    base: ["Food inventory data", "Swarm optimization"],
+    mid: "Waste-aware food routing",
+    final: "SwarmAID",
+    note: "From Devpost tagline: feed communities, reduce waste.",
+  },
+  {
+    event: "HackUTD",
+    project: "TalkTuahBank",
+    base: ["Voice agent", "Personal finance workflows"],
+    mid: "Conversational banking assistant",
+    final: "TalkTuahBank",
+    note: "From Devpost tagline: personalized bank you can talk to.",
+  },
+  {
+    event: "AIATL 2025",
+    project: "SoundSearch",
+    base: ["Voice navigation", "Phone-call interface"],
+    mid: "Call-in web guidance",
+    final: "SoundSearch",
+    note: "From Devpost tagline: navigate websites via real-time voice guidance.",
+  },
+  {
+    event: "SoCalTechWeek",
+    project: "SplatNFT",
+    base: ["Gaussian splats", "NFT marketplace rails"],
+    mid: "3D asset tokenization",
+    final: "SplatNFT",
+    note: "From Devpost tagline: Gaussian Splatting + Web3.",
+  },
+  {
+    event: "SpartaHacks",
+    project: "Team food tactics",
+    base: ["Group preferences", "Restaurant recommendation AI"],
+    mid: "Team meal matching",
+    final: "Team food tactics",
+    note: "From Devpost project TFT: AI that finds you food.",
+  },
+  {
+    event: "HackMerced 2025",
+    project: "Vocalyze",
+    base: ["Accessibility-first UX", "Banking voice workflows"],
+    mid: "Inclusive finance voice assistant",
+    final: "Vocalyze",
+    note: "From Devpost tagline: simplify finance for every voice.",
+  },
+  {
+    event: "Cruzhacks 2025",
+    project: "SlugMeditate",
+    base: ["Calm journaling", "VR immersion"],
+    mid: "Mindfulness-to-VR pipeline",
+    final: "SlugMeditate",
+    note: "From Devpost tagline: calm thoughts into immersive VR journeys.",
+  },
+  {
+    event: "HackDavis 2025",
+    project: "SentinelAI",
+    base: ["Audio monitoring", "Public-safety agenting"],
+    mid: "Real-time emergency detection",
+    final: "SentinelAI",
+    note: "From Devpost tagline: real-time public safety AI.",
+  },
+];
 
 export default function IdeationPage() {
   return (
@@ -446,6 +746,27 @@ export default function IdeationPage() {
               forces you to think across boundaries instead of within them.
             </p>
           </div>
+        </section>
+
+        {/* ============================================================
+            WINNING PROJECT ALCHEMY ATLAS
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="Winning Project Alchemy Atlas"
+            subtitle="A Little Alchemy-style recipe book built from your wins. Start with two base ingredients, synthesize a mid-level component, then unlock the final project."
+          />
+
+          <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
+            <p className="font-body text-sm text-muted-foreground">
+              I mapped each project into a 3-step alchemy chain. Entries marked
+              <span className="font-semibold text-foreground"> inferred </span>
+              are best-effort decompositions based on project names + event context,
+              while the rest are grounded in Devpost taglines.
+            </p>
+          </div>
+
+          <AlchemyMiniGame recipes={WIN_ALCHEMY_RECIPES} />
         </section>
 
         {/* ============================================================
