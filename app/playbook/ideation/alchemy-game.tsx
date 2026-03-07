@@ -39,6 +39,41 @@ import {
   Sparkles,
   RotateCcw,
   GripVertical,
+  Radio,
+  Podcast,
+  MonitorPlay,
+  ShieldAlert,
+  Film,
+  Scissors,
+  Fingerprint,
+  Coins,
+  BadgeCheck,
+  Mic,
+  Mic2,
+  FileHeart,
+  Presentation,
+  Target,
+  TrendingUp,
+  Play,
+  HeartPulse,
+  AudioLines,
+  Volume2,
+  BarChart3,
+  Speaker,
+  ClipboardCheck,
+  Radar,
+  ScanLine,
+  SmilePlus,
+  Flag,
+  Database,
+  ShieldCheck,
+  Package,
+  Ticket,
+  Crown,
+  Stethoscope,
+  Footprints,
+  Dices,
+  Wand2,
 } from "lucide-react";
 
 // ---------------------------------------------------------------------------
@@ -96,6 +131,56 @@ const ELEMENTS: Record<string, AlchemyElement> = {
   medical_imaging: { id: "medical_imaging", name: "Medical Imaging AI", icon: Microscope, category: "final", description: "AI diagnostic scans" },
   defi_advisor: { id: "defi_advisor", name: "DeFi Advisor", icon: PiggyBank, category: "final", description: "AI-powered DeFi guidance" },
   sports_coach: { id: "sports_coach", name: "AI Sports Coach", icon: Trophy, category: "final", description: "Analytics-driven coaching" },
+
+  // new intermediates (tech + tech)
+  live_stream: { id: "live_stream", name: "Live Streaming AI", icon: Radio, category: "intermediate", description: "AI-enhanced live video" },
+  podcast_studio: { id: "podcast_studio", name: "AI Podcast Studio", icon: Podcast, category: "intermediate", description: "Record calls, auto-produce podcasts" },
+  video_call_ai: { id: "video_call_ai", name: "Video Call AI", icon: MonitorPlay, category: "intermediate", description: "Smart video calls with vision" },
+  verified_caller: { id: "verified_caller", name: "Verified Caller", icon: ShieldAlert, category: "intermediate", description: "Blockchain-verified caller ID" },
+  music_video: { id: "music_video", name: "AI Music Video Maker", icon: Film, category: "intermediate", description: "Generate video + original music" },
+  video_editor: { id: "video_editor", name: "AI Video Editor", icon: Scissors, category: "intermediate", description: "Smart editing with scene analysis" },
+  content_provenance: { id: "content_provenance", name: "Content Provenance AI", icon: Fingerprint, category: "intermediate", description: "Prove video authenticity" },
+  film_scorer: { id: "film_scorer", name: "AI Film Scorer", icon: Clapperboard, category: "intermediate", description: "Auto-compose matching soundtracks" },
+  music_royalties: { id: "music_royalties", name: "AI Music Royalties", icon: Coins, category: "intermediate", description: "Generate music + split royalties" },
+  nft_auth: { id: "nft_auth", name: "NFT Authenticator", icon: BadgeCheck, category: "intermediate", description: "Scan items, verify on-chain" },
+
+  // new finals (phone_agent gaps)
+  celebrity_voice: { id: "celebrity_voice", name: "Celebrity Voice Chat", icon: Mic, category: "final", description: "AI celebrity impersonation calls" },
+  sports_commentator: { id: "sports_commentator", name: "AI Sports Commentator", icon: Mic2, category: "final", description: "Real-time AI play-by-play" },
+
+  // new finals (video_gen gaps)
+  health_explainer: { id: "health_explainer", name: "AI Health Explainer", icon: FileHeart, category: "final", description: "Auto-generate medical explainers" },
+  lecture_creator: { id: "lecture_creator", name: "AI Lecture Creator", icon: Presentation, category: "final", description: "Notes to video lectures" },
+  tactical_sim: { id: "tactical_sim", name: "Tactical Simulator", icon: Target, category: "final", description: "AI training scenarios" },
+  market_report: { id: "market_report", name: "AI Market Analyst", icon: TrendingUp, category: "final", description: "Video portfolio reports" },
+  highlight_reel: { id: "highlight_reel", name: "AI Highlights Reel", icon: Play, category: "final", description: "Auto-generate highlight montages" },
+
+  // new finals (music_prod gaps)
+  music_therapy: { id: "music_therapy", name: "Music Therapy AI", icon: HeartPulse, category: "final", description: "Personalized therapeutic music" },
+  music_teacher: { id: "music_teacher", name: "AI Music Teacher", icon: AudioLines, category: "final", description: "Learn through generated exercises" },
+  morale_booster: { id: "morale_booster", name: "Morale Booster AI", icon: Volume2, category: "final", description: "Motivational anthems on demand" },
+  market_mood: { id: "market_mood", name: "Market Mood Music", icon: BarChart3, category: "final", description: "Stock market as a symphony" },
+  stadium_dj: { id: "stadium_dj", name: "AI Stadium DJ", icon: Speaker, category: "final", description: "Game-aware crowd music" },
+
+  // new finals (image_analyzer gaps)
+  grading_ai: { id: "grading_ai", name: "AI Grading Assistant", icon: ClipboardCheck, category: "final", description: "Scan and grade handwritten work" },
+  search_rescue: { id: "search_rescue", name: "Search & Rescue Vision", icon: Radar, category: "final", description: "Spot survivors in drone footage" },
+  fraud_detector: { id: "fraud_detector", name: "AI Fraud Detector", icon: ScanLine, category: "final", description: "Detect document forgery" },
+  meme_generator: { id: "meme_generator", name: "AI Meme Generator", icon: SmilePlus, category: "final", description: "Analyze images, generate memes" },
+  ai_referee: { id: "ai_referee", name: "AI Referee", icon: Flag, category: "final", description: "Computer vision judges plays" },
+
+  // new finals (smart_contract gaps)
+  medical_records: { id: "medical_records", name: "Medical Records Chain", icon: Database, category: "final", description: "Blockchain-secured health data" },
+  credential_verify: { id: "credential_verify", name: "Credential Verifier", icon: ShieldCheck, category: "final", description: "Verify degrees on-chain" },
+  supply_chain: { id: "supply_chain", name: "Supply Chain Tracker", icon: Package, category: "final", description: "Blockchain defense logistics" },
+  ticket_nft: { id: "ticket_nft", name: "Ticket NFT Platform", icon: Ticket, category: "final", description: "Anti-scalping blockchain tickets" },
+  fantasy_chain: { id: "fantasy_chain", name: "Fantasy League Chain", icon: Crown, category: "final", description: "Decentralized fantasy sports" },
+
+  // new finals (sports_analytics gaps)
+  injury_predictor: { id: "injury_predictor", name: "Injury Predictor", icon: Stethoscope, category: "final", description: "Predict injury risk from movement" },
+  tactical_movement: { id: "tactical_movement", name: "Tactical Movement AI", icon: Footprints, category: "final", description: "Analyze squad formations" },
+  betting_ai: { id: "betting_ai", name: "Sports Betting AI", icon: Dices, category: "final", description: "AI-powered sports predictions" },
+  fantasy_ai: { id: "fantasy_ai", name: "Fantasy Sports AI", icon: Wand2, category: "final", description: "AI manages your fantasy team" },
 };
 
 // ---------------------------------------------------------------------------
@@ -118,13 +203,84 @@ const RECIPES: Recipe[] = [
   { a: "image_analyzer", b: "health", result: "medical_imaging" },
   { a: "smart_contract", b: "finance", result: "defi_advisor" },
   { a: "sports_analytics", b: "education", result: "sports_coach" },
+
+  // new tech + tech → intermediate
+  { a: "twilio", b: "veo", result: "live_stream" },
+  { a: "twilio", b: "suno", result: "podcast_studio" },
+  { a: "twilio", b: "vision", result: "video_call_ai" },
+  { a: "twilio", b: "blockchain", result: "verified_caller" },
+  { a: "veo", b: "suno", result: "music_video" },
+  { a: "veo", b: "vision", result: "video_editor" },
+  { a: "veo", b: "blockchain", result: "content_provenance" },
+  { a: "suno", b: "vision", result: "film_scorer" },
+  { a: "suno", b: "blockchain", result: "music_royalties" },
+  { a: "vision", b: "blockchain", result: "nft_auth" },
+
+  // new intermediate + industry → final (phone_agent)
+  { a: "phone_agent", b: "entertainment", result: "celebrity_voice" },
+  { a: "phone_agent", b: "sports", result: "sports_commentator" },
+
+  // new intermediate + industry → final (video_gen)
+  { a: "video_gen", b: "health", result: "health_explainer" },
+  { a: "video_gen", b: "education", result: "lecture_creator" },
+  { a: "video_gen", b: "defense", result: "tactical_sim" },
+  { a: "video_gen", b: "finance", result: "market_report" },
+  { a: "video_gen", b: "sports", result: "highlight_reel" },
+
+  // new intermediate + industry → final (music_prod)
+  { a: "music_prod", b: "health", result: "music_therapy" },
+  { a: "music_prod", b: "education", result: "music_teacher" },
+  { a: "music_prod", b: "defense", result: "morale_booster" },
+  { a: "music_prod", b: "finance", result: "market_mood" },
+  { a: "music_prod", b: "sports", result: "stadium_dj" },
+
+  // new intermediate + industry → final (image_analyzer)
+  { a: "image_analyzer", b: "education", result: "grading_ai" },
+  { a: "image_analyzer", b: "defense", result: "search_rescue" },
+  { a: "image_analyzer", b: "finance", result: "fraud_detector" },
+  { a: "image_analyzer", b: "entertainment", result: "meme_generator" },
+  { a: "image_analyzer", b: "sports", result: "ai_referee" },
+
+  // new intermediate + industry → final (smart_contract)
+  { a: "smart_contract", b: "health", result: "medical_records" },
+  { a: "smart_contract", b: "education", result: "credential_verify" },
+  { a: "smart_contract", b: "defense", result: "supply_chain" },
+  { a: "smart_contract", b: "entertainment", result: "ticket_nft" },
+  { a: "smart_contract", b: "sports", result: "fantasy_chain" },
+
+  // new intermediate + industry → final (sports_analytics)
+  { a: "sports_analytics", b: "health", result: "injury_predictor" },
+  { a: "sports_analytics", b: "defense", result: "tactical_movement" },
+  { a: "sports_analytics", b: "finance", result: "betting_ai" },
+  { a: "sports_analytics", b: "entertainment", result: "fantasy_ai" },
+
+  // shortcut recipes (tech + industry → existing elements)
+  { a: "veo", b: "entertainment", result: "video_gen" },
+  { a: "suno", b: "entertainment", result: "music_prod" },
+  { a: "blockchain", b: "finance", result: "smart_contract" },
+  { a: "vision", b: "defense", result: "search_rescue" },
+  { a: "twilio", b: "defense", result: "dispatch_ai" },
+  { a: "veo", b: "sports", result: "highlight_reel" },
+  { a: "suno", b: "health", result: "music_therapy" },
+  { a: "blockchain", b: "entertainment", result: "ticket_nft" },
+  { a: "blockchain", b: "sports", result: "fantasy_chain" },
+  { a: "twilio", b: "health", result: "mental_health" },
+
+  // alternate paths (intermediate + intermediate)
+  { a: "phone_agent", b: "video_gen", result: "live_stream" },
+  { a: "image_analyzer", b: "smart_contract", result: "nft_auth" },
+  { a: "phone_agent", b: "smart_contract", result: "verified_caller" },
+  { a: "video_gen", b: "music_prod", result: "music_video" },
+  { a: "image_analyzer", b: "sports_analytics", result: "ai_referee" },
 ];
 
 const BASE_IDS = Object.values(ELEMENTS)
   .filter((e) => e.category === "tech" || e.category === "industry")
   .map((e) => e.id);
 
-const TOTAL_DISCOVERIES = RECIPES.length;
+const TOTAL_DISCOVERIES = Object.values(ELEMENTS).filter(
+  (e) => e.category !== "tech" && e.category !== "industry",
+).length;
 const STORAGE_KEY = "alchemy-discoveries";
 
 function findRecipe(a: string, b: string): string | null {
