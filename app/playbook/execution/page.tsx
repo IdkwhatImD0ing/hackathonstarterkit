@@ -201,7 +201,7 @@ export default function ExecutionPage() {
                   completion.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  — Cyril Northcote Parkinson, 1955. The tighter the deadline,
+                  — <a href="https://en.wikipedia.org/wiki/Parkinson%27s_law" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Cyril Northcote Parkinson, 1955</a>. The tighter the deadline,
                   the more focused the output. Use timeboxing to create
                   artificial urgency within the hackathon itself.
                 </p>
@@ -438,7 +438,7 @@ export default function ExecutionPage() {
                   that&apos;s fine.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Kent Beck, creator of XP and TDD
+                  — <a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Kent Beck, creator of XP and TDD</a>
                 </p>
               </CardContent>
             </Card>
@@ -470,7 +470,7 @@ export default function ExecutionPage() {
                   refining the story.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — Reid Hoffman, co-founder of LinkedIn
+                  — <a href="https://www.linkedin.com/pulse/if-youre-not-embarrassed-first-version-your-product-youve-reid-hoffman/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Reid Hoffman, co-founder of LinkedIn</a>
                 </p>
               </CardContent>
             </Card>
@@ -501,7 +501,7 @@ export default function ExecutionPage() {
                   half-built features.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — Vilfredo Pareto, 1906 / Joseph Juran
+                  — <a href="https://en.wikipedia.org/wiki/Pareto_principle" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Vilfredo Pareto, 1906 / Joseph Juran</a>
                 </p>
               </CardContent>
             </Card>
@@ -564,7 +564,7 @@ export default function ExecutionPage() {
                   ))}
                 </ol>
                 <p className="font-code text-xs text-success/60">
-                  — Elon Musk, SpaceX Starbase
+                  — <a href="https://www.wired.com/story/elon-musk-rules-for-rockets/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Elon Musk, SpaceX Starbase</a>
                 </p>
               </CardContent>
             </Card>
@@ -863,7 +863,7 @@ export default function ExecutionPage() {
                   <span className="font-display font-semibold text-foreground">
                     Timeboxing
                   </span>{" "}
-                  — Harvard Business Review ranks it among the most effective
+                  — <a href="https://hbr.org/2020/12/5-strategies-to-manage-your-time-more-effectively" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Harvard Business Review</a> ranks it among the most effective
                   productivity techniques. Assign fixed time blocks and stop when
                   time is up, regardless of completion.
                 </p>
@@ -994,7 +994,7 @@ export default function ExecutionPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  Naval Ravikant — AngelList Co-founder
+                  <a href="https://nav.al/rich" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Naval Ravikant — AngelList Co-founder</a>
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;Code and media are permissionless leverage. They&apos;re
@@ -1026,7 +1026,7 @@ export default function ExecutionPage() {
                 <span className="animate-shimmer">Make it fast.</span>&rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Kent Beck, creator of Extreme Programming
+                — <a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Kent Beck, creator of Extreme Programming</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">

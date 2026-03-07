@@ -445,7 +445,7 @@ export default function PitchingPage() {
                   supporters.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Start With Why, 2009
+                  — <a href="https://simonsinek.com/books/start-with-why/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Start With Why, 2009</a>
                 </p>
               </CardContent>
             </Card>
@@ -478,7 +478,7 @@ export default function PitchingPage() {
                   between both.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — Resonate, 2010
+                  — <a href="https://www.duarte.com/resources/books/resonate/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Resonate, 2010</a>
                 </p>
               </CardContent>
             </Card>
@@ -531,7 +531,7 @@ export default function PitchingPage() {
                   </div>
                 </div>
                 <p className="font-code text-xs text-primary/60">
-                  — Rhetoric, 4th century BCE
+                  — <a href="https://classics.mit.edu/Aristotle/rhetoric.html" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Rhetoric, 4th century BCE</a>
                 </p>
               </CardContent>
             </Card>
@@ -606,7 +606,7 @@ export default function PitchingPage() {
                   ))}
                 </div>
                 <p className="font-code text-xs text-success/60">
-                  — Made to Stick, 2007
+                  — <a href="https://heathbrothers.com/books/made-to-stick/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Made to Stick, 2007</a>
                 </p>
               </CardContent>
             </Card>
@@ -749,7 +749,7 @@ export default function PitchingPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  Andy Raskin — Strategic Narrative Expert
+                  <a href="https://www.andyraskin.com/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Andy Raskin — Strategic Narrative Expert</a>
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;Your prospect is Luke, and you&apos;re Obi-Wan,
@@ -938,7 +938,7 @@ export default function PitchingPage() {
                   what you didn&apos;t know makes you more human and credible.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — The Power of Vulnerability, TED 2010
+                  — <a href="https://www.ted.com/talks/brene_brown_the_power_of_vulnerability" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">The Power of Vulnerability, TED 2010</a>
                 </p>
               </CardContent>
             </Card>
@@ -996,7 +996,7 @@ export default function PitchingPage() {
                   </ol>
                 </div>
                 <p className="font-code text-xs text-volt/60">
-                  — How to Win Friends and Influence People
+                  — <a href="https://www.goodreads.com/book/show/4865.How_to_Win_Friends_and_Influence_People" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">How to Win Friends and Influence People</a>
                 </p>
               </CardContent>
             </Card>
@@ -1086,7 +1086,7 @@ export default function PitchingPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Dale Carnegie, pioneer of public speaking
+                — <a href="https://www.goodreads.com/quotes/8129-your-purpose-is-to-make-your-audience-see-what-you" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Dale Carnegie, pioneer of public speaking</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">

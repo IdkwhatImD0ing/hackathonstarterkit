@@ -379,7 +379,7 @@ export default function ValidationPage() {
                 code.&rdquo;
               </blockquote>
               <p className="font-code text-xs text-volt/60">
-                — Kent Beck, Extreme Programming
+                — <a href="https://www.oreilly.com/library/view/extreme-programming-explained/0201616416/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Kent Beck, Extreme Programming</a>
               </p>
 
               <div className="space-y-2">
@@ -463,7 +463,7 @@ export default function ValidationPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  Richard Feynman — Nobel Laureate in Physics
+                  <a href="https://en.wikiquote.org/wiki/Richard_Feynman" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Richard Feynman — Nobel Laureate in Physics</a>
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;What I cannot create, I do not understand.&rdquo;
@@ -514,7 +514,7 @@ export default function ValidationPage() {
                   them, you&apos;ve already learned what matters.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — The Lean Startup, 2011
+                  — <a href="https://theleanstartup.com/book" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">The Lean Startup, 2011</a>
                 </p>
               </CardContent>
             </Card>
@@ -545,7 +545,7 @@ export default function ValidationPage() {
                   don&apos;t debate.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — David Kelley, IDEO founder
+                  — <a href="https://designthinking.ideo.com/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">David Kelley, IDEO founder</a>
                 </p>
               </CardContent>
             </Card>
@@ -577,7 +577,7 @@ export default function ValidationPage() {
                   flesh.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — Alistair Cockburn, Agile Manifesto co-author
+                  — <a href="https://agilemanifesto.org/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Alistair Cockburn, Agile Manifesto co-author</a>
                 </p>
               </CardContent>
             </Card>
@@ -609,7 +609,7 @@ export default function ValidationPage() {
                   commit to building everything.
                 </p>
                 <p className="font-code text-xs text-success/60">
-                  — The Pragmatic Programmer, 1999
+                  — <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">The Pragmatic Programmer, 1999</a>
                 </p>
               </CardContent>
             </Card>
@@ -755,7 +755,7 @@ export default function ValidationPage() {
                 not coming back.&rdquo;
               </blockquote>
               <p className="font-code text-xs text-spark/60">
-                — Jeff Bezos, founder of Amazon
+                — <a href="https://www.inc.com/minda-zetlin/jeff-bezos-just-revealed-his-best-leadership-secret-and-its-something-anyone-can-do.html" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Jeff Bezos, founder of Amazon</a>
               </p>
             </CardContent>
           </Card>
@@ -899,7 +899,7 @@ export default function ValidationPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Richard Feynman, Nobel Laureate in Physics
+                — <a href="https://en.wikiquote.org/wiki/Richard_Feynman" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Richard Feynman, Nobel Laureate in Physics</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">

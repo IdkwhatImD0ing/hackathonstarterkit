@@ -485,7 +485,7 @@ export default function IdeationPage() {
                   list, the more unexpected — and powerful — your combinations.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Wired interview, 1996
+                  — <a href="https://www.wired.com/1996/02/jobs-2/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Wired interview, 1996</a>
                 </p>
               </CardContent>
             </Card>
@@ -517,7 +517,7 @@ export default function IdeationPage() {
                   &ldquo;LLMs&rdquo; with &ldquo;Defense.&rdquo;
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — The Act of Creation, 1964
+                  — <a href="https://archive.org/details/in.ernet.dli.2015.461706" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">The Act of Creation, 1964</a>
                 </p>
               </CardContent>
             </Card>
@@ -551,7 +551,7 @@ export default function IdeationPage() {
                   — a new API, a freshly released model, a just-opened dataset.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — Where Good Ideas Come From, 2010
+                  — <a href="https://www.stevenberlinjohnson.com/where-good-ideas-come-from" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Where Good Ideas Come From, 2010</a>
                 </p>
               </CardContent>
             </Card>
@@ -583,7 +583,7 @@ export default function IdeationPage() {
                   elements.
                 </p>
                 <p className="font-code text-xs text-success/60">
-                  — How to Get Startup Ideas, 2012
+                  — <a href="https://paulgraham.com/startupideas.html" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">How to Get Startup Ideas, 2012</a>
                 </p>
               </CardContent>
             </Card>
@@ -878,7 +878,7 @@ export default function IdeationPage() {
                   when learning something new.&rdquo;
                 </blockquote>
                 <p className="font-code text-xs text-primary/60">
-                  — Learning How to Learn
+                  — <a href="https://www.coursera.org/learn/learning-how-to-learn" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Learning How to Learn</a>
                 </p>
               </CardContent>
             </Card>
@@ -949,7 +949,7 @@ export default function IdeationPage() {
                   </p>
                 </div>
                 <p className="font-code text-xs text-volt/60">
-                  — A Technique for Producing Ideas, 1939
+                  — <a href="https://www.goodreads.com/book/show/58819.A_Technique_for_Producing_Ideas" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">A Technique for Producing Ideas, 1939</a>
                 </p>
               </CardContent>
             </Card>
@@ -1164,7 +1164,7 @@ export default function IdeationPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Steve Jobs, co-founder of Apple
+                — <a href="https://www.wired.com/1996/02/jobs-2/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Steve Jobs, co-founder of Apple</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">

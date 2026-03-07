@@ -423,7 +423,7 @@ export default function TeamFormationPage() {
               </div>
               <div className="space-y-2">
                 <p className="font-display font-semibold">
-                  Meredith Belbin — Team Role Theory
+                  <a href="https://www.belbin.com/about/belbin-team-roles" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Meredith Belbin — Team Role Theory</a>
                 </p>
                 <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
                   &ldquo;Nobody is perfect, but a team can be. A team is not a
@@ -453,7 +453,7 @@ export default function TeamFormationPage() {
                   (team leader).
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Management Teams: Why They Succeed or Fail, 1981
+                  — <a href="https://www.goodreads.com/book/show/716729.Management_Teams" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Management Teams: Why They Succeed or Fail, 1981</a>
                 </p>
               </div>
             </div>
@@ -622,8 +622,8 @@ export default function TeamFormationPage() {
               not just showing up.
             </p>
             <p className="mt-2 font-code text-xs text-muted-foreground/60">
-              — Anders Ericsson, Peak: Secrets from the New Science of
-              Expertise, 2016
+              — <a href="https://www.goodreads.com/book/show/26312997-peak" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Anders Ericsson, Peak: Secrets from the New Science of
+              Expertise, 2016</a>
             </p>
           </div>
 
@@ -664,7 +664,7 @@ export default function TeamFormationPage() {
                   energy on coordination overhead.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Developmental Sequence in Small Groups, 1965
+                  — <a href="https://psycnet.apa.org/record/1966-04329-001" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Developmental Sequence in Small Groups, 1965</a>
                 </p>
               </CardContent>
             </Card>
@@ -933,8 +933,8 @@ export default function TeamFormationPage() {
                   sharper the direction, the better the team performs.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — Leading Teams: Setting the Stage for Great Performances,
-                  2002
+                  — <a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=12356" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Leading Teams: Setting the Stage for Great Performances,
+                  2002</a>
                 </p>
               </div>
             </div>
@@ -955,7 +955,7 @@ export default function TeamFormationPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Peter Schutz, former CEO of Porsche
+                — <a href="https://www.goodreads.com/quotes/687571-hire-character-train-skill" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Peter Schutz, former CEO of Porsche</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
@@ -1001,7 +1001,7 @@ export default function TeamFormationPage() {
                     </div>
                     <div className="space-y-1">
                       <p className="font-display text-sm font-semibold">
-                        Amy Edmondson — Harvard Business School
+                        <a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=6451" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Amy Edmondson — Harvard Business School</a>
                       </p>
                       <blockquote className="border-l-2 border-success/30 pl-4 font-body text-sm italic text-foreground/80">
                         &ldquo;Psychological safety is a belief that one will not
@@ -1015,7 +1015,7 @@ export default function TeamFormationPage() {
                         &ldquo;fearful&rdquo; team has more raw talent.
                       </p>
                       <p className="font-code text-xs text-success/60">
-                        — The Fearless Organization, 2018
+                        — <a href="https://www.wiley.com/en-us/The+Fearless+Organization%3A+Creating+Psychological+Safety+in+the+Workplace+for+Learning%2C+Innovation%2C+and+Growth-p-9781119477242" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">The Fearless Organization, 2018</a>
                       </p>
                     </div>
                   </div>
@@ -1040,7 +1040,7 @@ export default function TeamFormationPage() {
                         interact.
                       </p>
                       <p className="font-code text-xs text-volt/60">
-                        — Google re:Work, 2015
+                        — <a href="https://rework.withgoogle.com/print/guides/5721312655835136/" target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">Google re:Work, 2015</a>
                       </p>
                     </div>
                   </div>
