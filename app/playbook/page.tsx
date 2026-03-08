@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Users, Lightbulb, ShieldCheck, Zap, Mic } from "lucide-react";
+import { Users, Lightbulb, ShieldCheck, Zap, Mic, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "The Playbook",
   description:
-    "A battle-tested 5-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
+    "A battle-tested 6-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
   openGraph: {
     title: "The Playbook",
     description:
-      "A battle-tested 5-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
+      "A battle-tested 6-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
   },
 };
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-const SECTION_ICONS = [Users, Lightbulb, ShieldCheck, Zap, Mic];
+const SECTION_ICONS = [Users, Lightbulb, ShieldCheck, Zap, Mic, FileText];
 
 export default function PlaybookPage() {
   return (
@@ -34,7 +34,7 @@ export default function PlaybookPage() {
           <span className="inline-flex items-baseline gap-3 md:gap-4">
             <span className="text-primary">Playbook</span>
             <Badge className="translate-y-[-0.15em] border-volt/30 bg-volt/10 text-volt font-code text-[10px] leading-normal md:text-xs">
-              5-PHASE SYSTEM
+              6-PHASE SYSTEM
             </Badge>
           </span>
         </h1>
@@ -57,13 +57,11 @@ export default function PlaybookPage() {
       <div className="stagger-children grid grid-cols-1 gap-4 md:grid-cols-3">
         {PLAYBOOK_SECTIONS.map((section, i) => {
           const Icon = SECTION_ICONS[i];
-          const spanTwo = i === 0 || i === 3;
-
           return (
             <Link
               key={section.slug}
               href={`/playbook/${section.slug}`}
-              className={spanTwo ? "md:col-span-2" : "md:col-span-1"}
+              className="md:col-span-1"
             >
               <Card className="glow-hover group h-full cursor-pointer transition-all hover:border-volt/30">
                 <CardHeader>

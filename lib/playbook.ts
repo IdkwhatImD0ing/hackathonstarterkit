@@ -34,6 +34,13 @@ export const PLAYBOOK_SECTIONS = [
     subtitle:
       "Craft a pitch that wins judges over in the first 30 seconds.",
   },
+  {
+    step: 6,
+    slug: "submission",
+    title: "Submission",
+    subtitle:
+      "Write READMEs, record demos, and submit deliverables that make judges remember you.",
+  },
 ] as const;
 
 export type PlaybookSection = (typeof PLAYBOOK_SECTIONS)[number];
