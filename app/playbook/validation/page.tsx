@@ -23,6 +23,12 @@ import {
   Route,
   Layers,
   Sparkles,
+  Globe,
+  Search,
+  Trophy,
+  Database,
+  Server,
+  Package,
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
@@ -339,6 +345,559 @@ export default function ValidationPage() {
               small experiments with their tools during side projects. When the
               hackathon starts, you already know what works, what breaks, and
               where the free credits run out.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================================
+            SPONSOR RECON
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="Sponsor Recon"
+            subtitle="Before the hackathon, research every sponsor. Visit their docs, sign up for their APIs, and run a quick validation. The teams that win sponsor prizes are the ones who showed up already knowing the tech."
+          />
+
+          <p className="font-body text-foreground/80">
+            Most hackathons publish their sponsor list weeks before the event.
+            That&apos;s your window.{" "}
+            <span className="font-display font-semibold text-foreground">
+              Every sponsor is a potential prize category, a set of free credits,
+              and a technology you might build on.
+            </span>{" "}
+            The teams that walk in cold, reading docs for the first time at the
+            event, are already behind.
+          </p>
+
+          <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
+            <Card className="glow-hover border-volt/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                    <Globe className="size-5 text-volt" />
+                  </div>
+                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                    STEP 1
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-volt">
+                  Read the Docs
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="font-body text-sm text-foreground/80">
+                  Visit every sponsor&apos;s developer docs. Sign up for their
+                  API. Read the quickstart. Can you get a &ldquo;hello
+                  world&rdquo; running in 30 minutes? If not, that&apos;s a red
+                  flag you need to know about before the event, not during it.
+                </p>
+                <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                  <p className="font-code text-xs text-volt/80">
+                    If the docs are bad or the API requires manual approval, plan
+                    around it.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-spark/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                    <AlertTriangle className="size-5 text-spark" />
+                  </div>
+                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                    STEP 2
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-spark">
+                  Check for Gotchas
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="font-body text-sm text-foreground/80">
+                  Rate limits, approval wait times, missing SDKs for your
+                  language, deprecated endpoints, pricing tiers that cap out
+                  mid-demo. These are the things that kill projects at 2AM. Find
+                  them in advance so they don&apos;t surprise you.
+                </p>
+                <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                  <p className="font-code text-xs text-spark/80">
+                    Run the API end-to-end in a throwaway project. Trust working
+                    code, not marketing pages.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-primary/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                    <CheckCircle2 className="size-5 text-primary" />
+                  </div>
+                  <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
+                    STEP 3
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-primary">
+                  Validate the Integration
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="font-body text-sm text-foreground/80">
+                  Build a tiny proof-of-concept with the sponsor&apos;s tech. If
+                  it works, you now have a validated Lego block ready for
+                  hackathon day. If it doesn&apos;t, you saved yourself from
+                  building your entire project on a broken foundation.
+                </p>
+                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
+                  <p className="font-code text-xs text-primary/80">
+                    A 30-minute test now saves 3 hours of debugging at the event.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface p-4">
+            <p className="font-body text-sm text-muted-foreground">
+              <span className="font-display font-semibold text-foreground">
+                Bonus:
+              </span>{" "}
+              Sponsors notice when you use their tech well. Some judges are
+              sponsor employees evaluating how deeply teams engaged with their
+              platform. Showing up with pre-existing knowledge of their API
+              signals that you&apos;re serious.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================================
+            PICK YOUR STACK
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="Pick Your Stack"
+            subtitle="Lock in your tech stack before the hackathon. Your default should be tools you've used before. Only swap components when a sponsor makes it worth it."
+          />
+
+          <p className="font-body text-foreground/80">
+            The best hackathon stack isn&apos;t the most cutting-edge one.{" "}
+            <span className="font-display font-semibold text-foreground">
+              It&apos;s the one you can build fastest with.
+            </span>{" "}
+            Have a default stack you&apos;ve battle-tested in side projects, and
+            only deviate when there&apos;s a strategic reason (like a sponsor
+            prize).
+          </p>
+
+          <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
+            <Card className="glow-hover border-volt/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                    <Code className="size-5 text-volt" />
+                  </div>
+                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                    FRONTEND
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-volt">
+                  Next.js
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="font-body text-sm text-foreground/80">
+                  App Router, React 19, TypeScript. Server components for speed,
+                  client components for interactivity. Pair with shadcn/ui and
+                  Tailwind for a polished UI in minutes.
+                </p>
+                <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                  <p className="font-code text-xs text-volt/80">
+                    Swap when: The hackathon requires a specific framework, or
+                    you&apos;re building a mobile app (use React Native or
+                    Flutter).
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-spark/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                    <Server className="size-5 text-spark" />
+                  </div>
+                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                    BACKEND
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-spark">
+                  FastAPI
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="font-body text-sm text-foreground/80">
+                  Python backend with async support, automatic OpenAPI docs, and
+                  first-class compatibility with every AI/ML library. Most AI
+                  sponsor SDKs ship Python-first, so your backend should too.
+                </p>
+                <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                  <p className="font-code text-xs text-spark/80">
+                    Swap when: You need real-time WebSockets at scale (use Node),
+                    or the project is frontend-only (use Next.js API routes).
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-primary/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                    <Database className="size-5 text-primary" />
+                  </div>
+                  <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
+                    DATA
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-primary">
+                  Supabase
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="font-body text-sm text-foreground/80">
+                  Postgres database, auth, storage, and real-time subscriptions
+                  in one service. The free tier is generous enough for any
+                  hackathon. Set up auth in 10 minutes instead of building it
+                  from scratch.
+                </p>
+                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
+                  <p className="font-code text-xs text-primary/80">
+                    Swap when: MongoDB is a sponsor (use MongoDB Atlas), or you
+                    need a vector DB for RAG (add Pinecone or pgvector).
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface p-4">
+            <p className="font-body text-sm text-muted-foreground">
+              <span className="font-display font-semibold text-foreground">
+                The swap rule:
+              </span>{" "}
+              Only replace a component in your default stack if (1) a sponsor is
+              offering a prize for using their tech and you&apos;re targeting
+              that prize, or (2) the project genuinely requires it. Never swap
+              just because something is trendy. The hackathon is not the time to
+              learn a new database.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================================
+            TARGET YOUR PRIZE
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="Target Your Prize"
+            subtitle="Before the hackathon starts, study the prize categories and pick 1-2 to aim for. This decision shapes your idea, your tech stack, and your pitch."
+          />
+
+          <p className="font-body text-foreground/80">
+            Most teams show up, build something cool, and then figure out which
+            prize to submit for at the end. That&apos;s backwards.{" "}
+            <span className="font-display font-semibold text-foreground">
+              The winning teams pick their target prize first and
+              reverse-engineer everything from there.
+            </span>{" "}
+            The prize description tells you exactly what the judges want. Read it
+            like a rubric.
+          </p>
+
+          <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
+            <Card className="glow-hover border-volt/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                    <Trophy className="size-5 text-volt" />
+                  </div>
+                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                    SPONSOR PRIZES
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-volt">
+                  Less Competition, More Focused
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="font-body text-sm text-foreground/80">
+                  Sponsor prizes typically require using a specific API or
+                  platform. Fewer teams submit for these because they require
+                  research and integration effort. If you&apos;ve already
+                  validated the sponsor&apos;s tech (see Sponsor Recon above),
+                  you have a real advantage.
+                </p>
+                <ul className="space-y-2 font-body text-sm text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Read the prize description like a scoring rubric
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Make the sponsor&apos;s tech central to your demo, not a side
+                    feature
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Mention the sponsor by name in your pitch
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-spark/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                    <Crosshair className="size-5 text-spark" />
+                  </div>
+                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                    BEST OVERALL
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-spark">
+                  Highest Stakes, Widest Pool
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="font-body text-sm text-foreground/80">
+                  Every team is implicitly competing for &ldquo;Best
+                  Overall.&rdquo; This is the hardest prize to win because
+                  you&apos;re up against everyone. To win it, your project needs
+                  to be impressive across the board: technical depth, polished
+                  UI, strong pitch, and a compelling problem.
+                </p>
+                <ul className="space-y-2 font-body text-sm text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    Optimize for &ldquo;wow factor&rdquo; in the demo
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    Your pitch needs to be airtight since every judge sees it
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    Polish matters more here than in sponsor categories
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface p-4">
+            <p className="font-body text-sm text-muted-foreground">
+              <span className="font-display font-semibold text-foreground">
+                Pro strategy:
+              </span>{" "}
+              Target one sponsor prize as your primary and &ldquo;Best
+              Overall&rdquo; as your stretch. Build for the sponsor category,
+              then polish enough to be competitive overall. This doubles your
+              chances without splitting your effort.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================================
+            THE GO BAG
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="The Go Bag"
+            subtitle="A curated set of pre-built, pre-validated components you bring to every hackathon. These are the Lego blocks you've already tested, ready to snap in on day one."
+          />
+
+          <p className="font-body text-foreground/80">
+            Experienced hackathon teams don&apos;t start from scratch.{" "}
+            <span className="font-display font-semibold text-foreground">
+              They show up with a go bag of reusable scaffolds, configs, and
+              components
+            </span>{" "}
+            that they&apos;ve already battle-tested in side projects. The go bag
+            isn&apos;t pre-built features for the hackathon project; it&apos;s
+            infrastructure that every project needs, already solved.
+          </p>
+
+          <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
+            <Card className="glow-hover border-volt/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                    <Shield className="size-5 text-volt" />
+                  </div>
+                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                    AUTH
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-volt">
+                  Authentication
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <ul className="space-y-2 font-body text-sm text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Supabase Auth with Google/GitHub OAuth pre-configured
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Protected route middleware you can drop into any Next.js app
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                    Login/signup pages that already look polished
+                  </li>
+                </ul>
+                <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                  <p className="font-code text-xs text-volt/80">
+                    Auth is the #1 time sink at hackathons. Never build it from
+                    scratch.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-spark/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                    <Layers className="size-5 text-spark" />
+                  </div>
+                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                    UI
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-spark">
+                  Interface Components
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <ul className="space-y-2 font-body text-sm text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    A shadcn/ui navbar, sidebar, and dashboard layout ready to go
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    Dark mode toggle, responsive breakpoints, and a consistent
+                    color palette
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                    Loading states, error boundaries, and toast notifications
+                  </li>
+                </ul>
+                <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                  <p className="font-code text-xs text-spark/80">
+                    A polished UI in the first hour makes the whole project feel
+                    real.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-primary/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                    <Sparkles className="size-5 text-primary" />
+                  </div>
+                  <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
+                    AI
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-primary">
+                  Agent Scaffolds
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <ul className="space-y-2 font-body text-sm text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                    An OpenAI Agents SDK scaffold with tool-calling and streaming
+                    already wired up
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                    Prompt templates for common patterns: summarization,
+                    extraction, classification
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                    RAG pipeline with chunking, embeddings, and vector search
+                  </li>
+                </ul>
+                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
+                  <p className="font-code text-xs text-primary/80">
+                    Most hackathon projects now involve AI. Have the plumbing
+                    ready.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-success/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
+                    <Wrench className="size-5 text-success" />
+                  </div>
+                  <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
+                    INFRA
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-success">
+                  Deployment &amp; Config
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <ul className="space-y-2 font-body text-sm text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-success" />
+                    Vercel deployment config with environment variables templated
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-success" />
+                    Docker Compose for local development with hot reload
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-success" />
+                    A .env.example with every API key slot you commonly use
+                  </li>
+                </ul>
+                <div className="rounded-lg border border-success/10 bg-success/5 p-3">
+                  <p className="font-code text-xs text-success/80">
+                    Deploy in the first hour. A live URL makes everything feel
+                    real to judges.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface p-4">
+            <p className="font-body text-sm text-muted-foreground">
+              <span className="font-display font-semibold text-foreground">
+                Build your go bag during side projects, not the night before.
+              </span>{" "}
+              Every component in the go bag should be something you&apos;ve used
+              at least once in a real project. If you haven&apos;t tested it,
+              it&apos;s not a Lego block; it&apos;s an unknown. Keep the go bag
+              in a private repo and update it after every hackathon with what you
+              wish you&apos;d had.
             </p>
           </div>
         </section>
@@ -950,6 +1509,22 @@ export default function ValidationPage() {
               {[
                 {
                   text: "Build a \"Lego library\" of tested blocks during side projects before the hackathon",
+                  accent: "volt",
+                },
+                {
+                  text: "Research every sponsor's API and docs before the event, and run at least one validation test per sponsor",
+                  accent: "spark",
+                },
+                {
+                  text: "Lock in your default tech stack (Next.js + FastAPI + Supabase) and only swap components when a sponsor prize justifies it",
+                  accent: "primary",
+                },
+                {
+                  text: "Pick your target prize category and reverse-engineer the judging criteria from the prize description",
+                  accent: "success",
+                },
+                {
+                  text: "Pack your go bag: pre-validated auth, UI components, agent scaffolds, and deployment configs",
                   accent: "volt",
                 },
                 {

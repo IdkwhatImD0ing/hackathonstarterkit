@@ -27,6 +27,9 @@ import {
   ExternalLink,
   Play,
   Zap,
+  Globe,
+  Building2,
+  Compass,
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
@@ -1241,6 +1244,293 @@ export default function PitchingPage() {
         </section>
 
         {/* ============================================================
+            KNOW YOUR JUDGES
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="Know Your Judges"
+            subtitle="Not all prizes are judged the same way. Track prizes and sponsor prizes reward completely different things. Understanding who's evaluating you and what they care about is the difference between a good pitch and a winning one."
+          />
+
+          <p className="font-body text-foreground/80">
+            The same project, pitched the same way, will win one prize and lose
+            another. That&apos;s not bad luck.{" "}
+            <span className="font-display font-semibold text-foreground">
+              It&apos;s a failure to read the room.
+            </span>{" "}
+            Every prize category has a different audience with different values.
+            Learn to identify what each audience cares about, and adjust your
+            pitch accordingly.
+          </p>
+
+          <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
+            <Card className="glow-hover border-volt/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                    <Globe className="size-5 text-volt" />
+                  </div>
+                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                    TRACK PRIZES
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-volt">
+                  Sell the Vision, Tug the Heartstrings
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="font-body text-sm text-foreground/80">
+                  Track prizes (like &ldquo;Best AI for Good,&rdquo;
+                  &ldquo;Best Sustainability Hack,&rdquo; or &ldquo;Best
+                  Education Project&rdquo;) are judged on{" "}
+                  <span className="font-display font-semibold text-foreground">
+                    impact, vision, and societal benefit.
+                  </span>{" "}
+                  The judges are often academics, nonprofit leaders, or
+                  organizers who care about the &ldquo;why&rdquo; more than the
+                  &ldquo;how.&rdquo;
+                </p>
+
+                <div className="space-y-2">
+                  <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                    What Track Judges Want to Hear
+                  </p>
+                  <ul className="space-y-2 font-body text-sm text-foreground/80">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                      The bigger picture: how does this benefit society,
+                      underserved communities, children, the environment?
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                      Real human stories that make judges feel the problem, not
+                      just understand it
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                      The &ldquo;what if this scaled?&rdquo; vision: paint the
+                      world where your project reaches millions
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                      Sustainability, accessibility, and equity as design
+                      principles, not afterthoughts
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                  <p className="font-code text-xs text-volt/80">
+                    Lead with pathos. Make them care before you explain how it
+                    works. The technical depth is a supporting argument, not the
+                    headline.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glow-hover border-spark/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                    <Building2 className="size-5 text-spark" />
+                  </div>
+                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                    SPONSOR PRIZES
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-spark">
+                  Showcase Their Software, Think Like a Stockholder
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="font-body text-sm text-foreground/80">
+                  Sponsor prizes are judged by{" "}
+                  <span className="font-display font-semibold text-foreground">
+                    company employees
+                  </span>{" "}
+                  who are thinking about their product. They want to see creative,
+                  deep usage of their platform, something they can point to
+                  internally and say &ldquo;look what someone built with our
+                  tech.&rdquo;
+                </p>
+
+                <div className="space-y-2">
+                  <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                    What Sponsor Judges Want to See
+                  </p>
+                  <ul className="space-y-2 font-body text-sm text-foreground/80">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                      Their tech used in a unique way they hadn&apos;t
+                      considered, not just a basic &ldquo;hello world&rdquo;
+                      integration
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                      A use case that demonstrates a novel monetization path or
+                      market for their product
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                      Their platform as the centerpiece of your demo, not a
+                      footnote at the end
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                      Evidence that you actually read the docs, understood the
+                      API, and pushed it beyond the quickstart
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                  <p className="font-code text-xs text-spark/80">
+                    Think like a stockholder. The question in their head is
+                    &ldquo;does this project show our software can do something
+                    valuable?&rdquo; Make the answer obvious.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="glow-hover border-primary/20">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                  <Compass className="size-5 text-primary" />
+                </div>
+                <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
+                  REAL-TIME ADAPTATION
+                </Badge>
+              </div>
+              <CardTitle className="font-display text-2xl text-primary">
+                Read the Room
+              </CardTitle>
+              <CardDescription className="font-body text-base">
+                The best pitchers don&apos;t deliver the same pitch every time.
+                They adapt in real time based on who&apos;s sitting in front of
+                them.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-5">
+              <p className="font-body text-sm text-foreground/80">
+                If the format allows, ask the judges a simple question at the
+                start: &ldquo;Are you all in the engineering field?&rdquo; Their
+                answer tells you everything about how to weight your pitch.
+              </p>
+
+              <div className="stagger-children grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div className="rounded-lg border border-volt/20 bg-volt/5 p-4">
+                  <div className="flex items-center gap-2">
+                    <Brain className="size-4 text-volt" />
+                    <p className="font-display text-sm font-semibold text-volt">
+                      Engineers
+                    </p>
+                  </div>
+                  <ul className="mt-3 space-y-2 font-body text-xs text-foreground/80">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-volt" />
+                      Lead with architecture and system design
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-volt" />
+                      Highlight novel algorithms or clever technical tradeoffs
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-volt" />
+                      Talk scalability, latency, and edge cases
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-volt" />
+                      Show the code if they want to see it
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-lg border border-spark/20 bg-spark/5 p-4">
+                  <div className="flex items-center gap-2">
+                    <Heart className="size-4 text-spark" />
+                    <p className="font-display text-sm font-semibold text-spark">
+                      Non-Technical
+                    </p>
+                  </div>
+                  <ul className="mt-3 space-y-2 font-body text-xs text-foreground/80">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-spark" />
+                      Lead with the human problem and who it helps
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-spark" />
+                      Emphasize UX, market opportunity, and user stories
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-spark" />
+                      Use analogies to make the tech feel intuitive
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-spark" />
+                      Focus on what it does, not how it works
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
+                  <div className="flex items-center gap-2">
+                    <Scale className="size-4 text-primary" />
+                    <p className="font-display text-sm font-semibold text-primary">
+                      Unknown / Mixed
+                    </p>
+                  </div>
+                  <ul className="mt-3 space-y-2 font-body text-xs text-foreground/80">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
+                      Lead with impact and vision (universally resonant)
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
+                      Let the demo speak for itself
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
+                      Pivot to technical depth only if follow-up questions go
+                      that direction
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
+                      Have both versions rehearsed so you can switch mid-pitch
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
+                <p className="font-code text-xs text-primary/80">
+                  This is a rehearsed skill, not improvisation. Practice your
+                  pitch two ways: one version that leads with technical depth,
+                  and one that leads with impact. Switch between them based on
+                  who you&apos;re talking to.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="rounded-lg border border-border bg-surface p-4">
+            <p className="font-body text-sm text-muted-foreground">
+              <span className="font-display font-semibold text-foreground">
+                The meta-skill:
+              </span>{" "}
+              Winning teams don&apos;t just prepare one pitch. They prepare a
+              pitch that can bend. The core story stays the same, but the
+              emphasis shifts based on the audience. A 30-second adjustment in
+              framing can be the difference between &ldquo;interesting
+              project&rdquo; and first place.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================================
             THE DEMO VIDEO
             ============================================================ */}
         <section className="space-y-8">
@@ -1840,28 +2130,40 @@ export default function PitchingPage() {
                   accent: "spark",
                 },
                 {
-                  text: "Prep appendix slides covering architecture, tradeoffs, edge cases, roadmap, and cost at scale",
+                  text: "Identify whether your target prize is a track or sponsor category, and adjust pitch emphasis accordingly",
                   accent: "primary",
                 },
                 {
-                  text: "Allocate 60-70% of pitch time to the live demo so judges can see it working instead of just hearing about it",
+                  text: "For track prizes, lead with societal impact, heartstrings, and the bigger picture; for sponsor prizes, make their tech the hero of your demo",
                   accent: "success",
                 },
                 {
-                  text: "Record a demo video because it follows judges into deliberation when you can't",
+                  text: "Ask judges about their background at the start and adapt in real time: technical depth for engineers, vision and impact for everyone else",
                   accent: "volt",
                 },
                 {
-                  text: "Practice Q&A by anticipating every question, preparing an answer, and knowing which slide to navigate to",
+                  text: "Prep appendix slides covering architecture, tradeoffs, edge cases, roadmap, and cost at scale",
                   accent: "spark",
                 },
                 {
-                  text: "Tailor to your judges by researching their backgrounds and adapting emphasis (tech for engineers, market for VCs, UX for designers)",
+                  text: "Allocate 60-70% of pitch time to the live demo so judges can see it working instead of just hearing about it",
                   accent: "primary",
                 },
                 {
-                  text: "End with the vision and leave judges with a feeling, not a feature list",
+                  text: "Record a demo video because it follows judges into deliberation when you can't",
                   accent: "success",
+                },
+                {
+                  text: "Practice Q&A by anticipating every question, preparing an answer, and knowing which slide to navigate to",
+                  accent: "volt",
+                },
+                {
+                  text: "Rehearse two versions of your pitch: one that leads with technical depth and one that leads with impact, so you can switch mid-presentation",
+                  accent: "spark",
+                },
+                {
+                  text: "End with the vision and leave judges with a feeling, not a feature list",
+                  accent: "primary",
                 },
               ].map((item) => {
                 const colorMap: Record<string, string> = {
