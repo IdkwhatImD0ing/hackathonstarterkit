@@ -24,30 +24,35 @@ const NOTABLE_WINS = [
     prize: "1st Place Grand Prize",
     project: "TalkTuahBank",
     accent: "volt" as const,
+    url: "https://devpost.com/software/talktuahbank",
   },
   {
     hackathon: "UC Berkeley AI",
     prize: "Grand Prize ($60K+)",
     project: "Dispatch AI",
     accent: "spark" as const,
+    url: "https://devpost.com/software/dispatch-ai",
   },
   {
     hackathon: "LA Hacks 2024",
     prize: "1st Place Google",
     project: "AdaptED",
     accent: "primary" as const,
+    url: "https://devpost.com/software/teachme-3p7bw1",
   },
   {
     hackathon: "Google DSC",
     prize: "Top 10 Global",
     project: "SlugLoop",
     accent: "volt" as const,
+    url: "https://www.universityofcalifornia.edu/news/uc-santa-cruz-students-behind-bus-tracking-app-selected-only-us-team-google-solution",
   },
   {
     hackathon: "VTHacks 12",
     prize: "Best Startup Award",
     project: "Linguify",
     accent: "spark" as const,
+    url: "https://devpost.com/software/linguify-katunw",
   },
 ];
 
@@ -177,9 +182,14 @@ export default function Home() {
                 </p>
                 <h2 className="font-display text-2xl font-bold md:text-3xl">
                   Bill Zhang{" "}
-                  <span className="font-code text-base font-normal text-muted-foreground">
+                  <a
+                    href="https://github.com/IdkwhatImD0ing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-code text-base font-normal text-muted-foreground transition-colors hover:text-volt"
+                  >
                     @IdkwhatImD0ing
-                  </span>
+                  </a>
                 </h2>
                 <p className="font-body text-muted-foreground">
                   One of the most decorated hackathon competitors in the US
@@ -251,9 +261,12 @@ export default function Home() {
                   {NOTABLE_WINS.map((win) => {
                     const a = accentMap[win.accent];
                     return (
-                      <div
+                      <a
                         key={win.hackathon}
-                        className={`glow-hover rounded-xl border ${a.border} ${a.bg} p-4 space-y-2`}
+                        href={win.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`glow-hover rounded-xl border ${a.border} ${a.bg} p-4 space-y-2 block`}
                       >
                         <div className="flex items-center gap-2">
                           <Trophy className={`size-4 ${a.text}`} />
@@ -270,7 +283,7 @@ export default function Home() {
                         <p className="font-code text-xs text-muted-foreground">
                           {win.project}
                         </p>
-                      </div>
+                      </a>
                     );
                   })}
                   <a
