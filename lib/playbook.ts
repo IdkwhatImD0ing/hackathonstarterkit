@@ -41,6 +41,13 @@ export const PLAYBOOK_SECTIONS = [
     subtitle:
       "Write READMEs, record demos, and submit deliverables that make judges remember you.",
   },
+  {
+    step: 7,
+    slug: "post-hackathon",
+    title: "Post-Hackathon",
+    subtitle:
+      "Share your work, follow up with contacts, and turn weekend projects into career-changing portfolio pieces.",
+  },
 ] as const;
 
 export type PlaybookSection = (typeof PLAYBOOK_SECTIONS)[number];

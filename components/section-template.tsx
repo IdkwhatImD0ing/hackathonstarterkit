@@ -17,7 +17,7 @@ export function SectionTemplate({
     <div className="space-y-12">
       <header className="stagger-children space-y-4">
         <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
-          PHASE {step} OF 6
+          PHASE {step} OF 7
         </Badge>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           {title}
