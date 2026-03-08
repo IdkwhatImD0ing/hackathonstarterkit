@@ -76,7 +76,7 @@ export default function PostHackathonPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Tree Falls in a Forest"
-            subtitle="Most teams pack up and move on after the hackathon. The ones who win careers — not just prizes — know the real work starts when the event ends."
+            subtitle="Most teams pack up and move on after the hackathon. The ones who win careers (not just prizes) know the real work starts when the event ends."
           />
 
           <p className="font-body text-foreground/80">
@@ -108,14 +108,14 @@ export default function PostHackathonPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   Post it on LinkedIn. Share the demo video. Pin the GitHub repo.
-                  You never know who&apos;s watching — a recruiter, a founder, a
+                  You never know who&apos;s watching: a recruiter, a founder, a
                   future co-founder. The project that sits in a private repo
                   helps no one, least of all you.
                 </p>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
                     Within the first 4 hackathons, a LinkedIn post about a
-                    project led to an interview — which led to a first
+                    project led to an interview, which led to a first
                     internship.
                   </p>
                 </div>
@@ -140,7 +140,7 @@ export default function PostHackathonPage() {
                 <p className="font-body text-sm text-foreground/80">
                   Judges, sponsors, and fellow hackers are warm contacts right
                   now. In a week, they&apos;re strangers again. Follow up within
-                  48 hours while the connection is fresh — a short message
+                  48 hours while the connection is fresh. A short message
                   referencing your conversation goes further than you think.
                 </p>
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
@@ -170,7 +170,7 @@ export default function PostHackathonPage() {
                 <p className="font-body text-sm text-foreground/80">
                   You already have half the work done. Most people don&apos;t
                   have long-term projects because getting started feels
-                  insurmountable. But you already started — at the hackathon.
+                  insurmountable. But you already started at the hackathon.
                   Why not spend the next 6 months making it outstanding?
                 </p>
                 <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
@@ -190,7 +190,7 @@ export default function PostHackathonPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  If a Tree Falls in a Forest&hellip;
+                  The Visibility Principle
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;If a tree falls in a forest and no one is around to
@@ -199,7 +199,7 @@ export default function PostHackathonPage() {
                 <p className="font-body text-sm text-foreground/60">
                   If a project is made but no one knows about it, was the
                   project actually made? The project sitting in a private repo
-                  helps no one — least of all you.
+                  helps no one, least of all you.
                 </p>
               </div>
             </div>
@@ -314,7 +314,7 @@ export default function PostHackathonPage() {
               Within the first 4 hackathons, sharing projects publicly led to an
               interview and a first internship. After that, even without
               actively job searching, 2 expedited interviews + 1 direct offer
-              arrived — plus countless hundreds of recruiting DMs on LinkedIn.
+              arrived, plus countless hundreds of recruiting DMs on LinkedIn.
               All from visibility, not LeetCode.{" "}
               <span className="font-display font-semibold text-foreground">
                 You don&apos;t do hackathons to win. You do them to network.
@@ -342,7 +342,7 @@ export default function PostHackathonPage() {
                   Who to Follow Up With
                 </CardTitle>
                 <CardDescription className="font-body text-base">
-                  Anyone you had a real conversation with — not just winners or
+                  Anyone you had a real conversation with, not just winners or
                   VIPs.
                 </CardDescription>
               </CardHeader>
@@ -416,21 +416,21 @@ export default function PostHackathonPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Personalize — reference the specific conversation you had
+                    Personalize: reference the specific conversation you had
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Add value — share the project link, demo video, or a
+                    Add value: share the project link, demo video, or a
                     resource they&apos;d find useful
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    One clear ask — coffee chat, feedback on the project, or
+                    One clear ask: coffee chat, feedback on the project, or
                     future collaboration
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Keep it short — 3-5 sentences max
+                    Keep it short: 3-5 sentences max
                   </li>
                 </ul>
                 <div className="rounded-lg bg-spark/5 p-3 text-center">
@@ -458,10 +458,10 @@ export default function PostHackathonPage() {
                   <p className="font-body text-sm italic text-foreground/70">
                     Casual contacts are more valuable than close friends for
                     finding jobs. Hackathon judges, sponsors, and fellow hackers
-                    are weak ties — and weak ties open doors.
+                    are weak ties, and weak ties open doors.
                   </p>
                   <p className="font-code text-xs text-muted-foreground">
-                    Stanford, 1973 — one of the most cited sociology papers ever
+                    Stanford, 1973; one of the most cited sociology papers ever
                   </p>
                 </div>
               </div>
@@ -478,7 +478,7 @@ export default function PostHackathonPage() {
                   <p className="font-body text-sm italic text-foreground/70">
                     &ldquo;Your network is your net worth.&rdquo; Your 170
                     connections can reach millions of people. The best
-                    connections often happen over shared struggles — like
+                    connections often happen over shared struggles, like
                     debugging at 3AM.
                   </p>
                 </div>
@@ -493,7 +493,7 @@ export default function PostHackathonPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Turn It Into a Long-Term Project"
-            subtitle="You already have half the work done. Most people can't start long-term projects because it feels insurmountable. But you already started — at the hackathon."
+            subtitle="You already have half the work done. Most people can't start long-term projects because it feels insurmountable. But you already started at the hackathon."
           />
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -513,7 +513,7 @@ export default function PostHackathonPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  A winning hackathon project is already validated — judges
+                  A winning hackathon project is already validated: judges
                   believed in it, it beat the competition, and you have a
                   working prototype. Spend the next 6 months making it
                   outstanding. Put it on your resume as the centerpiece project
@@ -546,14 +546,14 @@ export default function PostHackathonPage() {
                 <p className="font-body text-sm text-foreground/80">
                   You have a working prototype, a team, and momentum.
                   That&apos;s more than most side projects ever get. The
-                  knowledge you gained — even from a &ldquo;loss&rdquo; — is
+                  knowledge you gained, even from a &ldquo;loss,&rdquo; is
                   rocket fuel. One hackathon spent learning vector databases
                   didn&apos;t win anything, but that knowledge landed an
                   internship and a full-time job.
                 </p>
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
-                    Losing hackathons is better than winning them — the
+                    Losing hackathons is better than winning them; the
                     &ldquo;losses&rdquo; are where the real growth happens.
                   </p>
                 </div>
@@ -573,7 +573,7 @@ export default function PostHackathonPage() {
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
                     &ldquo;Real artists ship.&rdquo; Don&apos;t let the project
-                    die in a private repo. Keep shipping iterations — each one
+                    die in a private repo. Keep shipping iterations; each one
                     makes the project more impressive and more useful.
                   </p>
                 </div>
@@ -693,14 +693,14 @@ export default function PostHackathonPage() {
               <CardContent className="space-y-4">
                 <p className="font-body text-sm text-foreground/80">
                   Mark Granovetter&apos;s landmark 1973 Stanford study found
-                  that casual contacts — people you don&apos;t see every day —
+                  that casual contacts (people you don&apos;t see every day)
                   are more valuable than close friends for finding jobs and
                   opportunities. They connect you to networks outside your own
                   circle.
                 </p>
                 <p className="font-body text-sm text-foreground/60">
                   Hackathon judges, sponsors, and fellow hackers are weak ties.
-                  Cultivate them — they open doors that your close friends
+                  Cultivate them. They open doors that your close friends
                   can&apos;t.
                 </p>
                 <p className="font-code text-xs text-primary/60">
@@ -758,7 +758,7 @@ export default function PostHackathonPage() {
                 step: 1,
                 title: "Day 1 — Within 24 Hours",
                 description:
-                  "Send follow-up messages to judges, sponsors, and contacts you met. Pin the GitHub repo to your profile. Update your LinkedIn headline if you won a prize. The connections are warmest right now — don't let them cool off.",
+                  "Send follow-up messages to judges, sponsors, and contacts you met. Pin the GitHub repo to your profile. Update your LinkedIn headline if you won a prize. The connections are warmest right now, so don't let them cool off.",
                 accent: "volt" as const,
               },
               {
@@ -779,7 +779,7 @@ export default function PostHackathonPage() {
                 step: 4,
                 title: "Month 1-6 — Keep Building",
                 description:
-                  "If the project has legs, keep going. Set a monthly milestone. Treat it like a real product — the hackathon gave you the MVP. Add features, get users, iterate based on feedback. This is how weekend projects become portfolio centerpieces.",
+                  "If the project has legs, keep going. Set a monthly milestone. Treat it like a real product; the hackathon gave you the MVP. Add features, get users, iterate based on feedback. This is how weekend projects become portfolio centerpieces.",
                 accent: "success" as const,
               },
             ].map((item) => {
@@ -872,7 +872,7 @@ export default function PostHackathonPage() {
                 </p>
                 <p className="font-body text-foreground/80">
                   <span className="font-display font-semibold text-foreground">
-                    You never know — and that&apos;s the whole point.
+                    You never know. And that&apos;s the whole point.
                   </span>
                 </p>
               </div>
@@ -886,7 +886,7 @@ export default function PostHackathonPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Post-Hackathon Checklist"
-            subtitle="A step-by-step summary for maximizing the value of every hackathon. The event is over — now the real work begins."
+            subtitle="A step-by-step summary for maximizing the value of every hackathon. The event is over. Now the real work begins."
           />
 
           <Card className="glow-hover border-volt/20">
@@ -897,7 +897,7 @@ export default function PostHackathonPage() {
                   accent: "volt",
                 },
                 {
-                  text: "Write a LinkedIn post about the project — tag teammates, sponsors, and the hackathon org",
+                  text: "Write a LinkedIn post about the project and tag teammates, sponsors, and the hackathon org",
                   accent: "spark",
                 },
                 {
@@ -905,19 +905,19 @@ export default function PostHackathonPage() {
                   accent: "primary",
                 },
                 {
-                  text: "Share the demo video on social media — it's the highest-signal content you can post",
+                  text: "Share the demo video on social media (it's the highest-signal content you can post)",
                   accent: "success",
                 },
                 {
-                  text: "Open-source the project if possible — it becomes a living portfolio piece",
+                  text: "Open-source the project if possible; it becomes a living portfolio piece",
                   accent: "volt",
                 },
                 {
-                  text: "If the project has potential, set monthly milestones and keep building — you already have the MVP",
+                  text: "If the project has potential, set monthly milestones and keep building (you already have the MVP)",
                   accent: "spark",
                 },
                 {
-                  text: "\"If your work isn't online, it doesn't exist\" — make sure everything is findable",
+                  text: "\"If your work isn't online, it doesn't exist\": make sure everything is findable",
                   accent: "primary",
                 },
               ].map((item) => {
