@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { fontDisplay, fontBody, fontCode } from "@/lib/fonts";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({
         className={`${fontDisplay.variable} ${fontBody.variable} ${fontCode.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
