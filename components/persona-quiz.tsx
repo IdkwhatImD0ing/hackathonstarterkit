@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { Palette, Mic, Code, Crosshair, RotateCcw } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -159,6 +159,15 @@ function QuestionView({
   onAnswer: (persona: Persona) => void;
   animating: boolean;
 }) {
+  const shuffledOptions = useMemo(() => {
+    const arr = [...question.options];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }, [question.id]);
+
   return (
     <div
       key={question.id}
@@ -189,7 +198,7 @@ function QuestionView({
 
       {/* Options */}
       <div className="grid gap-3 sm:grid-cols-2">
-        {question.options.map((opt) => (
+        {shuffledOptions.map((opt) => (
           <button
             key={opt.persona}
             onClick={() => onAnswer(opt.persona)}
