@@ -36,6 +36,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { TimelineSimulator } from "./timeline-simulator";
 
 const section = PLAYBOOK_SECTIONS[3];
 
@@ -888,6 +889,25 @@ export default function ExecutionPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* ============================================================
+            INTERACTIVE: TIMELINE SIMULATOR
+            ============================================================ */}
+        <section className="space-y-8">
+          <div className="space-y-1">
+            <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+              INTERACTIVE
+            </Badge>
+            <h3 className="font-display text-2xl font-bold tracking-tight">
+              Plan Your 24 Hours
+            </h3>
+            <p className="font-body text-sm text-muted-foreground">
+              Allocate hours across each phase and see real-time feedback on
+              your plan. Feel the tradeoffs that come with a fixed time budget.
+            </p>
+          </div>
+          <TimelineSimulator />
         </section>
 
         {/* ============================================================
