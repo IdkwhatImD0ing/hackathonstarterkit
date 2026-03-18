@@ -31,6 +31,7 @@ import {
   Package,
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
+import { GoBagAssembler } from "./go-bag-assembler";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
   Card,
@@ -899,6 +900,19 @@ export default function ValidationPage() {
               in a private repo and update it after every hackathon with what you
               wish you&apos;d had.
             </p>
+          </div>
+
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <h3 className="font-display text-xl font-bold tracking-tight">
+                Assemble Your Go Bag
+              </h3>
+              <p className="font-body text-sm text-muted-foreground">
+                Pick one tool per category to build your personal hackathon
+                loadout. Click a tool, then click its slot. Or drag and drop.
+              </p>
+            </div>
+            <GoBagAssembler />
           </div>
         </section>
 

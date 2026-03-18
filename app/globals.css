@@ -232,6 +232,13 @@
   50% { transform: translateY(-8px); }
 }
 
+/* Scale bounce for slot lock-in */
+@keyframes scale-bounce {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 /* Shake for failed combination */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
