@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Terminal, Download, FolderOpen } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -76,8 +76,6 @@ export default async function SkillDetailPage({
   if (!skill) notFound();
 
   const a = accentStyles[skill.accent];
-  const rawUrl = `https://raw.githubusercontent.com/IdkwhatImD0ing/hackathonstarterkit/main/.cursor/skills/non-coders/${skill.slug}/SKILL.md`;
-
   const lines = skill.content.split("\n");
   const bodyStartIndex = lines.findIndex(
     (line, i) => i > 0 && line.startsWith("---")
@@ -117,64 +115,46 @@ export default async function SkillDetailPage({
         </p>
       </header>
 
+      {/* Slash command */}
+      <div className={`rounded-xl border ${a.border} ${a.bgSubtle} p-5`}>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="space-y-1">
+            <p className="font-display text-sm font-semibold">Slash Command</p>
+            <p className="font-body text-xs text-muted-foreground">
+              Type this directly in Cursor or Claude Code chat
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="rounded-lg bg-background/50 px-4 py-2">
+              <code className={`font-code text-sm font-bold ${a.text}`}>
+                {skill.command.usage}
+              </code>
+            </div>
+            <CopyButton text={skill.command.usage} />
+          </div>
+        </div>
+      </div>
+
       <Separator className="bg-primary/20" />
 
       {/* Install section */}
       <section className="space-y-6">
         <h2 className="font-display text-2xl font-bold">Install This Skill</h2>
+        <p className="font-body text-sm text-muted-foreground">
+          Copy this prompt and paste it into Cursor (Ctrl+I) or Claude Code.
+          The AI will handle the installation.
+        </p>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="rounded-lg border border-volt/20 bg-volt/5 p-4 space-y-3">
-            <div className="flex items-center gap-2">
-              <Terminal className="size-4 text-volt" />
-              <p className="font-code text-xs font-bold text-volt">
-                ONE-LINER
-              </p>
-            </div>
-            <div className="rounded bg-background/50 p-2">
-              <code className="font-code text-xs text-foreground/80 break-all">
-                npx add-skill hackathonstarterkit --skill {skill.slug}
-              </code>
-            </div>
-            <CopyButton
-              text={`npx add-skill hackathonstarterkit --skill ${skill.slug}`}
-            />
-          </div>
+        <div className={`rounded-lg border ${a.border} ${a.bgSubtle} p-4 space-y-3`}>
+          <pre className="overflow-x-auto font-code text-xs leading-relaxed text-foreground/80 whitespace-pre-wrap">{`Install the ${skill.title} skill from this GitHub repo: https://github.com/IdkwhatImD0ing/hackathonstarterkit
 
-          <div className="rounded-lg border border-spark/20 bg-spark/5 p-4 space-y-3">
-            <div className="flex items-center gap-2">
-              <Download className="size-4 text-spark" />
-              <p className="font-code text-xs font-bold text-spark">
-                RAW URL
-              </p>
-            </div>
-            <div className="rounded bg-background/50 p-2">
-              <code className="font-code text-[10px] text-foreground/80 break-all">
-                {rawUrl}
-              </code>
-            </div>
-            <CopyButton text={rawUrl} />
-          </div>
+Run this command in the terminal:
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill ${skill.slug}
 
-          <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-3">
-            <div className="flex items-center gap-2">
-              <FolderOpen className="size-4 text-primary" />
-              <p className="font-code text-xs font-bold text-primary">
-                MANUAL
-              </p>
-            </div>
-            <p className="font-body text-xs text-foreground/70">
-              Copy the{" "}
-              <code className="font-code text-[10px]">
-                .cursor/skills/non-coders/{skill.slug}/
-              </code>{" "}
-              folder into your project or{" "}
-              <code className="font-code text-[10px]">
-                ~/.cursor/skills/
-              </code>
-              .
-            </p>
-          </div>
+Then confirm the installation when prompted.`}</pre>
+          <CopyButton
+            text={`Install the ${skill.title} skill from this GitHub repo: https://github.com/IdkwhatImD0ing/hackathonstarterkit\n\nRun this command in the terminal:\nnpx skills add IdkwhatImD0ing/hackathonstarterkit --skill ${skill.slug}\n\nThen confirm the installation when prompted.`}
+          />
         </div>
       </section>
 

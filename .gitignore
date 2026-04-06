@@ -33,6 +33,16 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# agent skills (treat installed skills like node_modules)
+.agents/skills/*
+!.agents/skills/non-coder-mode/
+!.agents/skills/feature-builder/
+!.agents/skills/bugfix-doctor/
+!.agents/skills/scaffold-app/
+!.agents/skills/demo-prep/
+!.agents/skills/domain-to-spec/
+# .agents/commands/ is fully committed (all authored, no installed third-party commands)
+
 # vercel
 .vercel
 

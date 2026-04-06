@@ -10,6 +10,12 @@ import type { LucideIcon } from "lucide-react";
 
 export type SkillCategory = "foundation" | "building" | "fixing" | "shipping";
 
+export interface SkillCommand {
+  name: string;
+  usage: string;
+  hint: string;
+}
+
 export interface NonCoderSkill {
   slug: string;
   name: string;
@@ -19,6 +25,7 @@ export interface NonCoderSkill {
   categoryLabel: string;
   icon: LucideIcon;
   accent: "volt" | "spark" | "primary" | "success";
+  command: SkillCommand;
   content: string;
 }
 
@@ -43,6 +50,11 @@ export const NON_CODER_SKILLS: NonCoderSkill[] = [
     categoryLabel: CATEGORY_META.foundation.label,
     accent: CATEGORY_META.foundation.accent,
     icon: Shield,
+    command: {
+      name: "/non-coder-mode",
+      usage: "/non-coder-mode",
+      hint: "Activates non-coder guardrails for the session",
+    },
     content: `---
 name: non-coder-mode
 description: "Core guardrails for non-coders using Cursor or Claude Code. Tells the AI to explain everything in plain English, break tasks into small steps, never assume coding knowledge, and include safety rails. Use when working with someone who has zero programming experience."
@@ -104,6 +116,11 @@ For each task, return:
     categoryLabel: CATEGORY_META.building.label,
     accent: CATEGORY_META.building.accent,
     icon: Hammer,
+    command: {
+      name: "/feature-builder",
+      usage: "/feature-builder [describe the feature you want]",
+      hint: "Structured feature implementation workflow",
+    },
     content: `---
 name: feature-builder
 description: "Structured workflow for implementing a new feature when you have no coding experience. Returns a plan, files list, commands, manual test steps, and rollback plan. Use when the user wants to add a feature to their project."
@@ -166,6 +183,11 @@ After implementation:
     categoryLabel: CATEGORY_META.fixing.label,
     accent: CATEGORY_META.fixing.accent,
     icon: Bug,
+    command: {
+      name: "/bugfix-doctor",
+      usage: "/bugfix-doctor [paste the error or describe the symptom]",
+      hint: "Systematic bug-fixing with plain English explanations",
+    },
     content: `---
 name: bugfix-doctor
 description: "Systematic bug-fixing workflow for non-coders. Walks through reproduce, isolate, fix, test, and verify. Explains all errors in plain English. Use when something is broken and the user does not understand why."
@@ -232,6 +254,11 @@ Return exactly these sections:
     categoryLabel: CATEGORY_META.building.label,
     accent: CATEGORY_META.building.accent,
     icon: Rocket,
+    command: {
+      name: "/scaffold-app",
+      usage: "/scaffold-app [describe what you want to build]",
+      hint: "Creates a new app from scratch with one working page",
+    },
     content: `---
 name: scaffold-app
 description: "Creates a new application from scratch with one working route and one visible page. Solves the blank canvas problem for non-coders. Use when starting a brand new project and the user does not know where to begin."
@@ -299,6 +326,11 @@ Return exactly:
     categoryLabel: CATEGORY_META.shipping.label,
     accent: CATEGORY_META.shipping.accent,
     icon: Presentation,
+    command: {
+      name: "/demo-prep",
+      usage: "/demo-prep [app name or description]",
+      hint: "Generates a timed demo script with backup plan",
+    },
     content: `---
 name: demo-prep
 description: "Produces a step-by-step live demo script for hackathon presentations. Covers the problem, the app walkthrough, and the outcome. Includes a backup plan. Use before presenting at a hackathon or demo day."
@@ -371,6 +403,11 @@ Return:
     categoryLabel: CATEGORY_META.building.label,
     accent: CATEGORY_META.building.accent,
     icon: Compass,
+    command: {
+      name: "/domain-to-spec",
+      usage: "/domain-to-spec [your profession] [what you want to build]",
+      hint: "Translates domain expertise into a buildable spec",
+    },
     content: `---
 name: domain-to-spec
 description: "Turns domain expertise into a technical specification. Takes your profession and desired outcome, lists constraints, identifies error-prone steps, and proposes the simplest buildable flow. Modeled after hackathon-winning approaches from lawyers and doctors. Use when a domain expert wants to build something from their field."
@@ -444,6 +481,19 @@ This skill is modeled after two hackathon-winning approaches:
 
 Both winners succeeded because they understood the problem domain better than any developer could. Your domain expertise is the most valuable input.`,
   },
+];
+
+export const STANDALONE_COMMANDS: SkillCommand[] = [
+  {
+    name: "/explain",
+    usage: "/explain [paste code, an error, or describe what you want to understand]",
+    hint: "Explains code or errors in plain English for non-coders",
+  },
+];
+
+export const ALL_COMMANDS: SkillCommand[] = [
+  ...NON_CODER_SKILLS.map((s) => s.command),
+  ...STANDALONE_COMMANDS,
 ];
 
 export function getSkillBySlug(slug: string): NonCoderSkill | undefined {
