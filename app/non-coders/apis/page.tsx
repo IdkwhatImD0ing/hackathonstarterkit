@@ -368,6 +368,85 @@ export default function ApisPage() {
         </Card>
       </section>
 
+      {/* ── MCP TIP: SUPABASE ── */}
+      <div className="rounded-xl border border-spark/10 bg-card p-5">
+        <div className="flex items-start gap-4">
+          <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-spark/10">
+            <Zap className="size-4 text-spark" />
+          </div>
+          <div className="space-y-2">
+            <p className="font-display text-sm font-semibold">
+              Power User Tip: Supabase MCP
+            </p>
+            <p className="font-body text-sm text-foreground/60">
+              Supabase also has an MCP server. Once installed, the AI can
+              create tables, run queries, and manage your database directly
+              without you pasting credentials into every prompt.
+            </p>
+            <div className="rounded-lg border border-spark/20 bg-spark/5 p-3">
+              <pre className="overflow-x-auto font-code text-xs leading-relaxed text-foreground/70 whitespace-pre-wrap">{`Search for and install the Supabase MCP server so you can manage my database directly. Add it to my project's MCP configuration.`}</pre>
+            </div>
+            <CopyButton
+              text="Search for and install the Supabase MCP server so you can manage my database directly. Add it to my project's MCP configuration."
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ── WHAT IS AN MCP ── */}
+      <section className="space-y-8">
+        <div className="space-y-3">
+          <h2 className="font-display text-3xl font-bold tracking-tight">
+            What Is an MCP?
+          </h2>
+          <p className="max-w-3xl font-body text-muted-foreground">
+            For power users who want the AI to remember how to use a service
+            permanently.
+          </p>
+          <Separator className="bg-primary/20" />
+        </div>
+
+        <div className="glass rounded-xl border border-primary/10 p-6">
+          <div className="flex items-start gap-4">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+              <Zap className="size-6 text-primary" />
+            </div>
+            <div className="space-y-3">
+              <p className="font-body text-foreground/80">
+                <span className="font-display font-semibold text-foreground">
+                  MCP stands for Model Context Protocol.
+                </span>{" "}
+                It&apos;s a way to give your AI a permanent connection to a
+                service. Instead of pasting your API key and docs link every
+                time, you install an MCP server once and the AI can use that
+                service whenever it needs to.
+              </p>
+              <p className="font-body text-foreground/80">
+                Think of the difference like this: the API prompt pattern is
+                like giving someone a recipe card each time you want them to
+                cook. An MCP is like hiring a chef who already knows the
+                recipe.
+              </p>
+              <p className="font-body text-foreground/80">
+                You don&apos;t need MCPs to get started. The API key + docs
+                pattern works perfectly. But as you get comfortable, MCPs make
+                repeated tasks faster. Many popular services (Supabase, GitHub,
+                ElevenLabs, Stripe, Figma) offer MCP servers.
+              </p>
+              <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 space-y-2">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  To find and install any MCP
+                </p>
+                <pre className="overflow-x-auto font-code text-xs leading-relaxed text-foreground/70 whitespace-pre-wrap">{`Search for an MCP server for [SERVICE NAME] and install it. Add it to my project's MCP configuration so you can use it in future conversations.`}</pre>
+                <CopyButton
+                  text={`Search for an MCP server for [SERVICE NAME] and install it. Add it to my project's MCP configuration so you can use it in future conversations.`}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── KEY TAKEAWAY ── */}
       <section>
         <div className="animate-glow-pulse glass rounded-xl border border-success/10 p-6">
