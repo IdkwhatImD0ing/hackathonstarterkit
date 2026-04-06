@@ -147,12 +147,18 @@ export default function Home() {
           <p className="font-body text-lg text-muted-foreground">
             Guides, templates, and strategies from 36+ hackathon wins.
           </p>
-          <div>
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/playbook"
               className="inline-block rounded-lg bg-volt px-6 py-3 font-display text-sm font-semibold text-volt-foreground glow-hover transition-all hover:bg-volt/90"
             >
               Open Playbook →
+            </Link>
+            <Link
+              href="/non-coders"
+              className="inline-block rounded-lg border border-spark/30 bg-spark/10 px-6 py-3 font-display text-sm font-semibold text-spark glow-hover transition-all hover:bg-spark/20"
+            >
+              For Non-Coders →
             </Link>
           </div>
         </div>
