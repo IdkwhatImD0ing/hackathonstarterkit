@@ -294,14 +294,137 @@ Then immediately create:
 2. A second page linked from the landing page (the core feature page, even if empty)
 3. A clean layout with navigation between the two pages
 
-## Step 3: Configure for Non-Coders
+## Step 3: Generate AGENTS.md
+
+AGENTS.md is a "README for agents": a dedicated, predictable place to provide context and instructions that help AI coding agents work on the project. It works across Cursor, Claude Code, OpenAI Codex, Google Jules, Aider, Windsurf, GitHub Copilot, and many more tools (see agents.md for the full list).
+
+Create an \`AGENTS.md\` file at the project root with these sections, filled in based on the user's project:
+
+\`\`\`markdown
+# AGENTS.md
+
+## Project Overview
+[One paragraph: what this project does and who it's for]
+
+## Setup Commands
+- Install deps: \\\`pnpm install\\\`
+- Start dev server: \\\`pnpm dev\\\`
+- Build for production: \\\`pnpm build\\\`
+- Run linter: \\\`pnpm lint\\\`
+- Run tests: \\\`pnpm test\\\`
+
+## Tech Stack
+- Framework: [e.g., Next.js 15 with App Router]
+- Language: [e.g., TypeScript]
+- Styling: [e.g., Tailwind CSS v4]
+- Database: [e.g., Supabase, or "None yet"]
+- Auth: [e.g., NextAuth.js, or "None yet"]
+- Deployment: [e.g., Vercel]
+
+## File Structure
+- \\\`app/\\\` — Pages and layouts (App Router)
+- \\\`components/\\\` — Reusable UI components
+- \\\`lib/\\\` — Utility functions and shared logic
+- \\\`types/\\\` — TypeScript type definitions
+- \\\`public/\\\` — Static assets (images, fonts)
+
+## Code Style
+- TypeScript strict mode
+- Functional components with hooks; no class components
+- Server components by default; add "use client" only when needed
+- kebab-case for file names, PascalCase for component names
+- Validate all user input with Zod
+- Use descriptive variable names (no abbreviations)
+
+## Testing Instructions
+- Run \\\`pnpm test\\\` to execute the full test suite
+- Add or update tests for any code you change
+- Fix any test or type errors until the suite is green
+- After moving files or changing imports, run \\\`pnpm lint\\\`
+
+## Security Considerations
+- Never hardcode secrets or API keys; use \\\`.env.local\\\` and environment variables
+- Never commit \\\`.env.local\\\` to version control
+- Ask before database writes or destructive operations
+- Ask before deploying to production
+- Propose plans before large refactors
+
+## PR Instructions
+- Title format: \\\`[feature/fix/chore] Short description\\\`
+- Always run \\\`pnpm lint\\\` and \\\`pnpm test\\\` before committing
+- Keep diffs small and focused on a single change
+- Include a manual test path in the PR description
+\`\`\`
+
+### Why AGENTS.md matters
+
+- README.md is for humans. AGENTS.md complements it with the extra context coding agents need: build steps, test commands, and conventions.
+- One AGENTS.md works across many agents, so the user is not locked into a single tool.
+
+### Nested AGENTS.md for larger projects
+
+If the project grows into a monorepo, place an additional AGENTS.md inside each package. Agents read the nearest file in the directory tree, so the closest one takes precedence.
+
+## Step 4: Generate PRD.md
+
+Create a \`PRD.md\` (Product Requirements Document) at the project root. This is the user's plain-English blueprint. The AI references it as the source of truth for what to build.
+
+\`\`\`markdown
+# Product Requirements Document
+
+## What Is This?
+[One sentence: "An app that helps [who] do [what] by [how]"]
+
+## Who Is It For?
+[Describe the target user in 2-3 sentences.]
+
+## Core Features (MVP)
+1. [Feature 1: one sentence description]
+2. [Feature 2: one sentence description]
+3. [Feature 3: one sentence description]
+
+## What This Is NOT
+- Not a [thing it could be confused with]
+- Does not handle [out-of-scope functionality]
+- V1 does not include [future feature]
+
+## User Flow
+1. User opens the app and sees [what]
+2. User clicks [what] to [do what]
+3. The system [responds how]
+4. User can then [next action]
+
+## Pages / Screens
+| Page | Purpose | Key Elements |
+|------|---------|-------------|
+| Landing | First impression, explains value | Heading, subtitle, CTA button |
+| [Core Feature] | Where the main action happens | [Describe inputs/outputs] |
+
+## Success Criteria
+- [ ] User can [core action 1]
+- [ ] User can [core action 2]
+- [ ] App handles [edge case] gracefully
+- [ ] App is deployed and accessible via a public URL
+
+## Domain Constraints
+[List any regulations, compliance requirements, or professional rules.]
+
+## Out of Scope (Save for Later)
+- [Feature to add in V2]
+- [Integration to add later]
+\`\`\`
+
+Tell the user: "Fill this out before we start building. Even one sentence per section is enough."
+
+## Step 5: Add Remaining Config Files
 
 Add these files to the project root:
 - \`.cursorrules\` with the non-coder guardrails (from the non-coder-mode skill)
-- \`AGENTS.md\` with the project overview, tech stack, and commands
-- \`PRD.md\` as a template for the user to fill out
+- \`.cursor/rules/beginner-mode.mdc\` for communication style
+- \`.cursor/rules/safety.mdc\` for deletion/deployment safety rules
+- \`.gitignore\` that excludes \`.env.local\`, \`node_modules\`, \`.next\`, etc.
 
-## Step 4: Run and Verify
+## Step 6: Run and Verify
 
 - Start the dev server: \`npm run dev\`
 - Open the browser at \`localhost:3000\`
@@ -314,7 +437,9 @@ Return exactly:
 1. **Commands**: Every terminal command to run (copy-paste ready)
 2. **Files Created**: List of every file with a one-line description
 3. **What You See**: Description of what the app looks like in the browser
-4. **Next Steps**: 2-3 suggested features to build first`,
+4. **AGENTS.md**: Confirm it was created and explain that it works across all major AI coding tools
+5. **PRD.md**: Remind the user to fill it out before building features
+6. **Next Steps**: 2-3 suggested features to build first`,
   },
   {
     slug: "demo-prep",

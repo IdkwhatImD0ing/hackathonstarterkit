@@ -279,38 +279,66 @@ Never use jargon without defining it first.
 
 ### `AGENTS.md` Template
 
+AGENTS.md is a "README for agents": a dedicated, predictable place to provide the context and instructions to help AI coding agents work on your project. Think of it as the complement to README.md, which is for humans. AGENTS.md contains the extra, sometimes detailed context coding agents need: build steps, tests, and conventions that might clutter a README or aren't relevant to human contributors.
+
+One AGENTS.md works across many AI coding tools: Cursor, Claude Code, OpenAI Codex, Google Jules, Aider, Windsurf, GitHub Copilot, and many more (see [agents.md](https://agents.md/) for the full ecosystem). Over 60,000 open-source projects already use it.
+
 ```markdown
 # AGENTS.md
 
 ## Project Overview
 [One paragraph describing what this project does and who it's for]
 
+## Setup Commands
+- Install deps: `pnpm install`
+- Start dev server: `pnpm dev`
+- Build for production: `pnpm build`
+- Run linter: `pnpm lint`
+- Run tests: `pnpm test`
+
 ## Tech Stack
-- Frontend: Next.js 15, React 19, TypeScript
+- Framework: Next.js 15 with App Router
+- Language: TypeScript (strict mode)
 - Styling: Tailwind CSS v4
-- Backend: [your choice]
-- Database: [your choice]
-- Auth: [your choice]
+- Database: [your choice, e.g., Supabase]
+- Auth: [your choice, e.g., NextAuth.js]
 - Deployment: Vercel
 
 ## File Structure
-- `app/` - Pages and layouts (Next.js App Router)
-- `components/` - Reusable UI components
-- `lib/` - Utility functions and shared logic
-- `types/` - TypeScript type definitions
-- `public/` - Static assets (images, fonts)
+- `app/` — Pages and layouts (Next.js App Router)
+- `components/` — Reusable UI components
+- `lib/` — Utility functions and shared logic
+- `types/` — TypeScript type definitions
+- `public/` — Static assets (images, fonts)
 
-## Commands
-- `pnpm dev` - Start development server
-- `pnpm build` - Build for production
-- `pnpm lint` - Run linter
-
-## Conventions
-- Use functional components with hooks
-- Server components by default, "use client" only when needed
-- kebab-case for files, PascalCase for components
+## Code Style
+- TypeScript strict mode
+- Functional components with hooks; no class components
+- Server components by default; add "use client" only when needed
+- kebab-case for file names, PascalCase for component names
 - Validate all user input with Zod
-- Never hardcode secrets or API keys
+- Use descriptive variable names (no abbreviations)
+- Use functional patterns where possible
+
+## Testing Instructions
+- Run `pnpm test` to execute the full test suite
+- Add or update tests for any code you change
+- Fix any test or type errors until the suite is green
+- After moving files or changing imports, run `pnpm lint`
+- To focus on one test: `pnpm vitest run -t "test name"`
+
+## Security Considerations
+- Never hardcode secrets or API keys; use `.env.local` and environment variables
+- Never commit `.env.local` to version control
+- Ask before database writes or destructive operations
+- Ask before deploying to production
+- Propose plans before large refactors
+
+## PR Instructions
+- Title format: `[feature/fix/chore] Short description`
+- Always run `pnpm lint` and `pnpm test` before committing
+- Keep diffs small and focused on a single change
+- Include a manual test path in the PR description
 
 ## Safety Rules
 - Ask before deleting files
@@ -320,7 +348,11 @@ Never use jargon without defining it first.
 - Keep changes minimal and reversible
 ```
 
+**Large monorepo?** Place an additional AGENTS.md inside each package directory. Agents automatically read the nearest file in the directory tree, so the closest one takes precedence and every subproject can ship tailored instructions.
+
 ### `PRD.md` Template (Fill This Out Before Coding)
+
+The PRD is your plain-English blueprint. Fill it out before any code gets generated. The AI references it as the source of truth for what to build. Even one sentence per section is enough to get started.
 
 ```markdown
 # Product Requirements Document
@@ -329,7 +361,8 @@ Never use jargon without defining it first.
 [One sentence: "An app that helps [who] do [what] by [how]"]
 
 ## Who Is It For?
-[Describe the target user in 2-3 sentences]
+[Describe the target user in 2-3 sentences. Include their role, the context
+they use this in, and what frustrates them about the current process.]
 
 ## Core Features (MVP)
 1. [Feature 1: one sentence description]
@@ -347,10 +380,27 @@ Never use jargon without defining it first.
 3. The system [responds how]
 4. User can then [next action]
 
+## Pages / Screens
+| Page | Purpose | Key Elements |
+|------|---------|-------------|
+| Landing | First impression, explains value | Heading, subtitle, CTA button |
+| [Core Feature] | Where the main action happens | [Describe inputs/outputs] |
+| [Optional] | Supporting page | [Describe purpose] |
+
 ## Success Criteria
 - [ ] User can [core action 1]
 - [ ] User can [core action 2]
 - [ ] App handles [edge case] gracefully
+- [ ] App is deployed and accessible via a public URL
+
+## Domain Constraints
+[List any regulations, compliance requirements, industry standards,
+or professional rules that the app must respect. Leave blank if none.]
+
+## Out of Scope (Save for Later)
+- [Feature to add in V2]
+- [Integration to add later]
+- [Nice-to-have that is not essential for demo]
 ```
 
 ### Reusable Skill Templates (Save in `skills/` folder)
