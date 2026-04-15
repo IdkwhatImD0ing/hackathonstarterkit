@@ -41,9 +41,17 @@ import { TimelineSimulator } from "./timeline-simulator";
 const section = PLAYBOOK_SECTIONS[3];
 
 export const metadata: Metadata = {
-  title: section.title,
-  description: section.subtitle,
-  openGraph: { title: section.title, description: section.subtitle },
+  title: "Hackathon Execution — Best Tech Stack, Time Management & MVP Strategy",
+  description:
+    "Master hackathon execution: choose the best tech stack, manage your time effectively, build an MVP that impresses judges, and coordinate your team. Includes timeline simulator.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/execution`,
+  },
+  openGraph: {
+    title: "Hackathon Execution: Best Tech Stack & MVP Strategy",
+    description:
+      "Time management, tech stack selection, MVP strategy, and team coordination for hackathons. From the 36-win playbook.",
+  },
 };
 
 function SectionHeading({

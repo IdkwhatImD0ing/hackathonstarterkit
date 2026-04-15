@@ -3,13 +3,22 @@ import Link from "next/link";
 import { Users, Lightbulb, ShieldCheck, Zap, Mic, FileText, Megaphone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "The Playbook",
+  title:
+    "Hackathon Playbook — 7-Phase System to Win Any Hackathon",
   description:
-    "A battle-tested 7-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
+    "A battle-tested 7-phase system for winning hackathons: team formation, ideation, validation, execution, pitching, submission, and post-hackathon strategy. Distilled from 36+ victories and $100K+ in prizes.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook`,
+  },
   openGraph: {
-    title: "The Playbook",
+    title: "Hackathon Playbook — 7-Phase System to Win Any Hackathon",
     description:
       "A battle-tested 7-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
+  },
+  twitter: {
+    title: "Hackathon Playbook — 7-Phase Winning System",
+    description:
+      "Team formation, ideation, validation, execution, pitching, submission, and post-hackathon strategy from 36+ wins.",
   },
 };
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";

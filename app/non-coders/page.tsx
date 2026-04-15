@@ -13,13 +13,21 @@ import { Separator } from "@/components/ui/separator";
 import { NON_CODER_SECTIONS } from "@/lib/non-coder-sections";
 
 export const metadata: Metadata = {
-  title: "For Non-Coders",
+  title: "Hackathons for Non-Coders — Win Without Coding Experience",
   description:
-    "Proven strategies and installable AI skills for professionals who build with Cursor and Claude Code. No coding experience required.",
+    "Non-coders are winning hackathons with AI tools. Proven strategies, installable AI skills, and step-by-step guides for doctors, lawyers, and professionals who build with Cursor and Claude Code.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/non-coders`,
+  },
   openGraph: {
-    title: "For Non-Coders | Hackathon Starter Kit",
+    title: "Hackathons for Non-Coders — Win Without Coding Experience",
     description:
-      "Proven strategies and installable AI skills for professionals who build with Cursor and Claude Code.",
+      "Proven strategies and installable AI skills for professionals who build with Cursor and Claude Code. No coding experience required.",
+  },
+  twitter: {
+    title: "Non-Coders Are Winning Hackathons — Here's How",
+    description:
+      "Doctors, lawyers, and professionals are beating developers at hackathons using AI tools. Learn the strategies.",
   },
 };
 

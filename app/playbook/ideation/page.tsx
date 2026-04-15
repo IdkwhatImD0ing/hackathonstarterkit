@@ -40,9 +40,17 @@ import { AlchemyGame } from "./alchemy-game";
 const section = PLAYBOOK_SECTIONS[1];
 
 export const metadata: Metadata = {
-  title: section.title,
-  description: section.subtitle,
-  openGraph: { title: section.title, description: section.subtitle },
+  title: "Hackathon Ideation — How to Come Up With Winning Hackathon Ideas",
+  description:
+    "Brainstorm, evaluate, and select hackathon project ideas that judges love and you can actually build. Frameworks for generating innovative ideas under time pressure.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/ideation`,
+  },
+  openGraph: {
+    title: "How to Come Up With Winning Hackathon Ideas",
+    description:
+      "Frameworks for brainstorming and selecting hackathon ideas that impress judges. From the 36-win playbook.",
+  },
 };
 
 function SectionHeading({

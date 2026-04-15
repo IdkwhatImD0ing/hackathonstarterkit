@@ -46,9 +46,17 @@ import { Separator } from "@/components/ui/separator";
 const section = PLAYBOOK_SECTIONS[2];
 
 export const metadata: Metadata = {
-  title: section.title,
-  description: section.subtitle,
-  openGraph: { title: section.title, description: section.subtitle },
+  title: "Hackathon Validation — How to Validate Your Hackathon Idea Fast",
+  description:
+    "Validate your hackathon idea against real constraints, available APIs, and judging criteria before you start building. Includes a go-bag assembler for essential tools and templates.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/validation`,
+  },
+  openGraph: {
+    title: "How to Validate Your Hackathon Idea Fast",
+    description:
+      "Quick validation techniques for hackathon ideas against time constraints and judging criteria. From the 36-win playbook.",
+  },
 };
 
 function SectionHeading({

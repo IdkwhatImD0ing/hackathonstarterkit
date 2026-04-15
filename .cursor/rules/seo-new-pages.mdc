@@ -1,0 +1,93 @@
+---
+description: SEO requirements for any new page or route added to the site
+alwaysApply: true
+---
+
+# SEO Plan for New Pages
+
+Every new page or route added to this site **must** follow the SEO plan documented in `docs/seo-implementation.md`. The checklist below covers the minimum requirements.
+
+## 1. Metadata (required on every page)
+
+Export a `metadata` object (or `generateMetadata` for dynamic routes) with:
+
+- **title**: Keyword-rich, targeting a specific search query. Use the layout template (`%s | Hackathon Starter Kit`) by keeping the title short.
+- **description**: 150-160 characters. Include the primary keyword naturally within the first sentence.
+- **alternates.canonical**: Full canonical URL for the page (`${BASE_URL}/your-route`).
+- **openGraph**: At minimum `title`, `description`, and `url`.
+- **twitter**: At minimum `title` and `description`.
+
+Example pattern (see any existing `app/playbook/*/page.tsx` for reference):
+
+```ts
+export const metadata: Metadata = {
+  title: "Your Keyword-Rich Title Here",
+  description: "150-char description with primary keyword early in the sentence.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/your-route`,
+  },
+  openGraph: {
+    title: "Your Title",
+    description: "Your description.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/your-route`,
+  },
+  twitter: {
+    title: "Your Title",
+    description: "Your description.",
+  },
+};
+```
+
+## 2. Sitemap (auto-handled for data-driven routes)
+
+The sitemap at `app/sitemap.ts` dynamically imports from:
+- `lib/playbook.ts` (playbook phases)
+- `lib/non-coder-sections.ts` (non-coder sub-pages)
+- `lib/non-coder-skills.ts` (skill detail pages)
+- `lib/blog.ts` (blog posts)
+
+**If your new page is data-driven** (i.e., its slug comes from one of these files), adding an entry to the data file is sufficient; the sitemap picks it up automatically.
+
+**If your new page is a standalone route** (e.g., `app/about/page.tsx`), you must add it manually to `app/sitemap.ts`.
+
+## 3. JSON-LD Structured Data (required for content-heavy pages)
+
+Use the `<JsonLd>` component from `components/json-ld.tsx` to add structured data:
+
+- **Blog posts**: Use `Article` + `BreadcrumbList` schemas (see `app/blog/[slug]/page.tsx`).
+- **How-to or guide pages**: Use `HowTo` schema if the content describes a step-by-step process.
+- **FAQ-style content**: Use `FAQPage` schema for pages with question/answer pairs.
+- **List pages**: Use `CollectionPage` + `ItemList` (see `app/blog/page.tsx`).
+
+Not every page needs JSON-LD, but any page with educational, guide, or FAQ content should have it.
+
+## 4. Blog Posts
+
+When adding a new blog post:
+1. Add the post data to `lib/blog.ts` (the `BLOG_POSTS` array).
+2. Include `slug`, `title`, `description`, `date`, `readingTime`, `keywords`, and `content`.
+3. The `app/blog/[slug]/page.tsx` template handles rendering, metadata, and JSON-LD automatically.
+4. The sitemap picks up new posts automatically.
+5. Choose a slug that matches a target search query (e.g., `how-to-win-hackathons` targets "how to win hackathons").
+
+## 5. Semantic HTML
+
+- Use a single `<h1>` per page.
+- Use `<h2>` for major sections, `<h3>` for subsections.
+- Use `<article>` for blog posts and self-contained content.
+- Use `<nav>` for navigation elements.
+- Use `<section>` for thematic groupings.
+
+## 6. Internal Linking
+
+New pages should link to related existing pages (playbook phases, blog posts, non-coder sections) where relevant. Internal links help search engines discover content and pass authority between pages.
+
+## Quick Reference
+
+| What you're adding | Sitemap | Metadata | JSON-LD |
+|---|---|---|---|
+| New playbook phase | Add to `lib/playbook.ts` | Required | Optional (HowTo if step-by-step) |
+| New non-coder section | Add to `lib/non-coder-sections.ts` | Required | Optional |
+| New non-coder skill | Add to `lib/non-coder-skills.ts` | Required | Optional |
+| New blog post | Add to `lib/blog.ts` | Auto-generated | Auto-generated |
+| New standalone route | Add to `app/sitemap.ts` manually | Required | Recommended for content pages |

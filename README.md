@@ -45,26 +45,46 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see the site. Visit [http://localhost:3000/design-system](http://localhost:3000/design-system) to see the full design system preview.
+Open [http://localhost:3000](http://localhost:3000) to see the site.
 
 ## Project Structure
 
 ```
 app/
-  layout.tsx          # Root layout (fonts, dark mode, metadata)
-  globals.css         # Full design system (colors, animations, effects)
-  page.tsx            # Home page
-  design-system/
-    page.tsx          # Live design system preview
+  layout.tsx              # Root layout (fonts, dark mode, metadata, JSON-LD)
+  globals.css             # Full design system (colors, animations, effects)
+  page.tsx                # Home page with FAQ + HowTo schema
+  sitemap.ts              # Dynamic XML sitemap for search engines
+  robots.ts               # robots.txt configuration
+  playbook/               # 7-phase hackathon playbook
+  non-coders/             # Non-coder guides and AI skills
+  blog/                   # SEO blog with keyword-targeted articles
+    [slug]/page.tsx       # Individual blog posts with Article schema
 components/
-  ui/                 # shadcn/ui components (auto-themed)
+  ui/                     # shadcn/ui components (auto-themed)
+  json-ld.tsx             # JSON-LD structured data component
 lib/
-  fonts.ts            # Font configuration (JetBrains Mono, Outfit, Fira Code)
-  utils.ts            # shadcn utility (cn function)
+  fonts.ts                # Font configuration (JetBrains Mono, Outfit, Fira Code)
+  blog.ts                 # Blog post data and content
+  playbook.ts             # Playbook section definitions
+  non-coder-sections.ts   # Non-coder section definitions
+  non-coder-skills.ts     # Installable AI skill definitions
+  utils.ts                # shadcn utility (cn function)
 ```
+
+## SEO
+
+The site includes comprehensive search engine optimization:
+
+- **Dynamic sitemap** (`/sitemap.xml`) covering all routes
+- **robots.txt** allowing full crawling
+- **JSON-LD structured data** (WebSite, Organization, FAQPage, HowTo, Article, BreadcrumbList schemas)
+- **Keyword-optimized metadata** on every page targeting queries like "how to win hackathons," "best tech stack for hackathons," "hackathon tips for beginners"
+- **Open Graph and Twitter Card** metadata for social sharing
+- **Canonical URLs** preventing duplicate content issues
+- **Blog section** with 5 keyword-targeted articles for organic search traffic
+- **Security headers** (X-Content-Type-Options, X-Frame-Options, Referrer-Policy)
 
 ## Design System
 
 See [PLAN.md](./PLAN.md) for the full design system specification including color palette, typography, animations, and component patterns.
-
-Preview it live at `/design-system` when running the dev server.

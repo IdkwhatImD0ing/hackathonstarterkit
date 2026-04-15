@@ -39,9 +39,17 @@ import { Separator } from "@/components/ui/separator";
 const section = PLAYBOOK_SECTIONS[6];
 
 export const metadata: Metadata = {
-  title: section.title,
-  description: section.subtitle,
-  openGraph: { title: section.title, description: section.subtitle },
+  title: "Post-Hackathon — Turn Hackathon Projects into Career Opportunities",
+  description:
+    "Share your hackathon work, follow up with sponsors and contacts, and turn weekend projects into career-changing portfolio pieces, startups, and open-source contributions.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/post-hackathon`,
+  },
+  openGraph: {
+    title: "Post-Hackathon: Turn Projects into Career Opportunities",
+    description:
+      "Follow up with contacts and turn weekend hackathon projects into career-changing portfolio pieces. From the 36-win playbook.",
+  },
 };
 
 function SectionHeading({

@@ -38,9 +38,17 @@ import { Separator } from "@/components/ui/separator";
 const section = PLAYBOOK_SECTIONS[0];
 
 export const metadata: Metadata = {
-  title: section.title,
-  description: section.subtitle,
-  openGraph: { title: section.title, description: section.subtitle },
+  title: "Hackathon Team Formation — How to Build a Winning Hackathon Team",
+  description:
+    "Learn how to form the perfect hackathon team. Find the right people, define roles, balance skills, and create a team dynamic that wins prizes. Proven strategies from 36+ hackathon victories.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/team-formation`,
+  },
+  openGraph: {
+    title: "How to Build a Winning Hackathon Team",
+    description:
+      "Find the right people, define roles, and create a winning hackathon team dynamic. From the 36-win playbook.",
+  },
 };
 
 function SectionHeading({
