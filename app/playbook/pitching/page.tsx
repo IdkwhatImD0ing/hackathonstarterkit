@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   description:
     "Craft a hackathon pitch that wins judges over in the first 30 seconds. Learn pitch structure, demo techniques, storytelling frameworks, and how to handle Q&A from judges.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/pitching`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/pitching`,
   },
   openGraph: {
     title: "How to Pitch at a Hackathon and Win",

@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/json-ld";
 import "./globals.css";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com";
+  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

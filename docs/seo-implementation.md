@@ -104,7 +104,7 @@ A Cursor rule at `.cursor/rules/seo-new-pages.mdc` (always applied) enforces tha
 After deploying, verify the domain in Google Search Console:
 
 1. Go to https://search.google.com/search-console
-2. Add property for `hackathonstarterkit.com`
+2. Add property for `thehackathonplaybook.dev`
 3. Verify ownership (DNS TXT record or HTML file)
-4. Submit the sitemap URL: `https://hackathonstarterkit.com/sitemap.xml`
+4. Submit the sitemap URL: `https://thehackathonplaybook.dev/sitemap.xml`
 5. Use the URL Inspection tool to request indexing of key pages

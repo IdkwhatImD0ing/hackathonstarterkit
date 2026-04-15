@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com";
+  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
 
 export default function robots(): MetadataRoute.Robots {
   return {

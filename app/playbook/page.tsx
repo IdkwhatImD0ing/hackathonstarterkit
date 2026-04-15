@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "A battle-tested 7-phase system for winning hackathons: team formation, ideation, validation, execution, pitching, submission, and post-hackathon strategy. Distilled from 36+ victories and $100K+ in prizes.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook`,
   },
   openGraph: {
     title: "Hackathon Playbook — 7-Phase System to Win Any Hackathon",

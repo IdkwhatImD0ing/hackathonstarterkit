@@ -5,7 +5,7 @@ import { NON_CODER_SKILLS } from "@/lib/non-coder-skills";
 import { BLOG_POSTS } from "@/lib/blog";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com";
+  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

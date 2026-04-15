@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com";
+  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
 
 export const metadata: Metadata = {
   title:
