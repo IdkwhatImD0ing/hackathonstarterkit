@@ -17,10 +17,14 @@ Maximize organic search visibility for hackathon-related queries, particularly:
 
 ### 1. Dynamic Sitemap (`app/sitemap.ts`)
 
-Generates `/sitemap.xml` automatically with all routes, including:
-- Home, playbook index, all 7 playbook phases
-- Non-coders index, all sub-pages, all skill pages
-- Blog index and all blog posts
+Generates `/sitemap.xml` automatically with all routes. The sitemap **imports directly** from the data source files so new entries are picked up automatically:
+
+- `lib/playbook.ts` (`PLAYBOOK_SECTIONS`) for playbook phases
+- `lib/non-coder-sections.ts` (`NON_CODER_SECTIONS`) for non-coder sub-pages
+- `lib/non-coder-skills.ts` (`NON_CODER_SKILLS`) for skill detail pages
+- `lib/blog.ts` (`BLOG_POSTS`) for blog posts
+
+**Adding a new entry to any of these data files automatically includes it in the sitemap.** No manual sitemap edits are needed for data-driven routes. For standalone routes (e.g., a new `app/about/page.tsx`), add the URL to `app/sitemap.ts` manually.
 
 Each entry includes `lastModified`, `changeFrequency`, and `priority` signals.
 
@@ -90,6 +94,10 @@ To continue improving search rankings:
 3. **Submit the sitemap** to Google Search Console at https://search.google.com/search-console
 4. **Monitor rankings** using Google Search Console to see which queries drive traffic
 5. **Update content regularly** as search engines favor fresh content
+
+## Cursor Rule for New Pages
+
+A Cursor rule at `.cursor/rules/seo-new-pages.mdc` (always applied) enforces that any AI agent creating new pages follows this SEO plan. It covers required metadata fields, sitemap registration, JSON-LD schemas, semantic HTML, and internal linking. See that file for the full checklist.
 
 ## Google Search Console Setup
 
