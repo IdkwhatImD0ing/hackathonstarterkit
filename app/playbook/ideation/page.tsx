@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   description:
     "Brainstorm, evaluate, and select hackathon project ideas that judges love and you can actually build. Frameworks for generating innovative ideas under time pressure.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/ideation`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/ideation`,
   },
   openGraph: {
     title: "How to Come Up With Winning Hackathon Ideas",

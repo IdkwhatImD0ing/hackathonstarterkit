@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Non-coders are winning hackathons with AI tools. Proven strategies, installable AI skills, and step-by-step guides for doctors, lawyers, and professionals who build with Cursor and Claude Code.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/non-coders`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/non-coders`,
   },
   openGraph: {
     title: "Hackathons for Non-Coders — Win Without Coding Experience",

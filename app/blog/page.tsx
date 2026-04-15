@@ -14,7 +14,7 @@ import { BLOG_POSTS } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com";
+  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
 
 export const metadata: Metadata = {
   title: "Hackathon Blog — Tips, Strategies & Guides to Win Hackathons",

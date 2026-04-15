@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   description:
     "Learn how to form the perfect hackathon team. Find the right people, define roles, balance skills, and create a team dynamic that wins prizes. Proven strategies from 36+ hackathon victories.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/team-formation`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/team-formation`,
   },
   openGraph: {
     title: "How to Build a Winning Hackathon Team",
