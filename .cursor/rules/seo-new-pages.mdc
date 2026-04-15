@@ -82,6 +82,22 @@ When adding a new blog post:
 
 New pages should link to related existing pages (playbook phases, blog posts, non-coder sections) where relevant. Internal links help search engines discover content and pass authority between pages.
 
+## 7. Blog Content Blocks
+
+When adding a new blog post, use the `blocks` array (instead of plain `paragraphs`) to create visually rich content. Available block types are defined as the `ContentBlock` union type in `lib/blog.ts`:
+
+- **`paragraph`**: Standard text paragraph.
+- **`callout`**: Highlighted box with icon. Variants: `tip`, `warning`, `info`, `success`.
+- **`stat-row`**: Grid of key metrics (value + label pairs).
+- **`step-list`**: Numbered vertical timeline of steps (title + description).
+- **`quote`**: Styled blockquote with optional attribution.
+- **`pro-con`**: Two-column do/don't comparison.
+- **`code-snippet`**: Code block with syntax label, filename, and copy button.
+- **`checklist`**: Interactive checklist with progress bar.
+- **`link-card`**: Internal navigation card with title, description, href, and optional tag.
+
+Use a mix of 3-5 different block types per article to break up walls of text and keep readers engaged.
+
 ## Quick Reference
 
 | What you're adding | Sitemap | Metadata | JSON-LD |

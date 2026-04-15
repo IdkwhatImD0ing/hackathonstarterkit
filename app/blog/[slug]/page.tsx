@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { BLOG_POSTS, getBlogBySlug } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
+import { BlogBlock } from "@/components/blog-blocks";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com";
@@ -173,14 +174,18 @@ export default async function BlogPostPage({
             <h2 className="font-display text-2xl font-bold tracking-tight">
               {section.heading}
             </h2>
-            {section.paragraphs.map((paragraph, i) => (
-              <p
-                key={i}
-                className="font-body text-foreground/85 leading-relaxed"
-              >
-                {paragraph}
-              </p>
-            ))}
+            {section.blocks
+              ? section.blocks.map((block, i) => (
+                  <BlogBlock key={i} block={block} />
+                ))
+              : section.paragraphs.map((paragraph, i) => (
+                  <p
+                    key={i}
+                    className="font-body text-foreground/85 leading-relaxed"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
           </section>
         ))}
       </div>

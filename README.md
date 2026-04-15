@@ -62,10 +62,11 @@ app/
     [slug]/page.tsx       # Individual blog posts with Article schema
 components/
   ui/                     # shadcn/ui components (auto-themed)
+  blog-blocks.tsx         # Rich blog content blocks (callouts, stats, checklists, etc.)
   json-ld.tsx             # JSON-LD structured data component
 lib/
   fonts.ts                # Font configuration (JetBrains Mono, Outfit, Fira Code)
-  blog.ts                 # Blog post data and content
+  blog.ts                 # Blog post data, content blocks, and type definitions
   playbook.ts             # Playbook section definitions
   non-coder-sections.ts   # Non-coder section definitions
   non-coder-skills.ts     # Installable AI skill definitions
@@ -82,7 +83,7 @@ The site includes comprehensive search engine optimization:
 - **Keyword-optimized metadata** on every page targeting queries like "how to win hackathons," "best tech stack for hackathons," "hackathon tips for beginners"
 - **Open Graph and Twitter Card** metadata for social sharing
 - **Canonical URLs** preventing duplicate content issues
-- **Blog section** with 5 keyword-targeted articles for organic search traffic
+- **Blog section** with 5 keyword-targeted articles using rich content blocks (callouts, stats, step lists, checklists, code snippets, quotes, pro/con tables, link cards)
 - **Security headers** (X-Content-Type-Options, X-Frame-Options, Referrer-Policy)
 
 ## Design System
