@@ -2,19 +2,29 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Trophy, ExternalLink, Github, Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { JsonLd } from "@/components/json-ld";
+
+const BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com";
 
 export const metadata: Metadata = {
+  title:
+    "Hackathon Starter Kit — How to Win Hackathons | Complete Guide from 36+ Wins",
   description:
-    "The ultimate hackathon playbook with guides, templates, and strategies from 36+ hackathon wins.",
+    "Learn how to win hackathons with the ultimate playbook from 36+ victories and $100K+ in prizes. Battle-tested guides on team formation, ideation, the best tech stack, pitching, and submission strategies.",
+  alternates: {
+    canonical: BASE_URL,
+  },
   openGraph: {
-    title: "Hackathon Starter Kit",
+    title: "Hackathon Starter Kit — How to Win Hackathons",
     description:
-      "The ultimate hackathon playbook with guides, templates, and strategies from 36+ hackathon wins.",
+      "The ultimate hackathon playbook with battle-tested guides, templates, and strategies from 36+ wins and $100K+ in prizes.",
+    url: BASE_URL,
   },
   twitter: {
-    title: "Hackathon Starter Kit",
+    title: "Hackathon Starter Kit — How to Win Hackathons",
     description:
-      "The ultimate hackathon playbook with guides, templates, and strategies from 36+ hackathon wins.",
+      "Battle-tested strategies from 36+ hackathon victories. Learn team formation, ideation, best tech stack, pitching, and more.",
   },
 };
 
@@ -133,9 +143,111 @@ const accentMap = {
   },
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do you win a hackathon?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Winning a hackathon requires a strategic approach across 7 phases: (1) Build a balanced team with complementary skills, (2) Ideate around judge criteria and sponsor challenges, (3) Validate your idea against time constraints, (4) Execute an MVP-first strategy with clear task delegation, (5) Craft a pitch that hooks judges in 30 seconds, (6) Submit polished deliverables with a great README and demo video, (7) Follow up post-hackathon to maximize career impact. This playbook distills strategies from 36+ hackathon wins and $100K+ in prizes.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the best tech stack for hackathons?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The best hackathon tech stack prioritizes speed of development over perfection. Top choices include: Next.js or Vite + React for frontend, Python (Flask/FastAPI) or Node.js for backend, Firebase or Supabase for instant database and auth, Vercel or Railway for one-click deployment, and AI APIs like OpenAI, Anthropic Claude, or Google Gemini for quick AI features. The key is using tools your team already knows rather than learning something new during the hackathon.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you prepare for a hackathon as a beginner?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Beginner hackathon preparation includes: (1) Form or join a team with diverse skills early, (2) Set up your development environment beforehand (IDE, Git, deployment tools), (3) Research past winning projects on Devpost for inspiration, (4) Prepare a go-bag of reusable templates and boilerplates, (5) Study the sponsor challenges and judging criteria before the event, (6) Practice your pitching skills, and (7) Focus on a working demo over a feature-complete product.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can non-coders win hackathons?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, non-coders are increasingly winning hackathons. At the 2026 Anthropic hackathon, a personal injury lawyer won 1st place and a cardiologist placed 3rd, both using AI coding tools like Cursor and Claude Code. Domain expertise (in law, medicine, finance, etc.) combined with AI-assisted development can produce more innovative solutions than pure technical skill alone.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you pitch at a hackathon?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An effective hackathon pitch follows this structure: (1) Open with the problem and hook judges in the first 30 seconds, (2) Show your solution with a live demo, not slides, (3) Highlight the technical innovation and what makes it unique, (4) Show traction or validation if possible, (5) End with impact and next steps. Keep it under 3 minutes. Practice beforehand and prepare for common judge questions about scalability, business model, and technical challenges.",
+      },
+    },
+  ],
+};
+
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Win a Hackathon: 7-Phase System",
+  description:
+    "A battle-tested 7-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
+  totalTime: "PT24H",
+  step: [
+    {
+      "@type": "HowToStep",
+      name: "Team Formation",
+      text: "Find the right people, define roles, and create a winning team dynamic with complementary skills.",
+      url: `${BASE_URL}/playbook/team-formation`,
+    },
+    {
+      "@type": "HowToStep",
+      name: "Ideation",
+      text: "Brainstorm, evaluate, and select ideas that judges love and you can actually build in the time available.",
+      url: `${BASE_URL}/playbook/ideation`,
+    },
+    {
+      "@type": "HowToStep",
+      name: "Validation",
+      text: "Validate your idea quickly against real constraints, available APIs, and judging criteria.",
+      url: `${BASE_URL}/playbook/validation`,
+    },
+    {
+      "@type": "HowToStep",
+      name: "Execution",
+      text: "Manage time effectively, select the right tech stack, build an MVP, and coordinate your team.",
+      url: `${BASE_URL}/playbook/execution`,
+    },
+    {
+      "@type": "HowToStep",
+      name: "Pitching",
+      text: "Craft a pitch that wins judges over in the first 30 seconds with a compelling demo.",
+      url: `${BASE_URL}/playbook/pitching`,
+    },
+    {
+      "@type": "HowToStep",
+      name: "Submission",
+      text: "Write READMEs, record demo videos, and submit deliverables that make judges remember you.",
+      url: `${BASE_URL}/playbook/submission`,
+    },
+    {
+      "@type": "HowToStep",
+      name: "Post-Hackathon",
+      text: "Share your work, follow up with contacts, and turn weekend projects into career-changing portfolio pieces.",
+      url: `${BASE_URL}/playbook/post-hackathon`,
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div className="flex flex-col">
+      <JsonLd data={faqJsonLd} />
+      <JsonLd data={howToJsonLd} />
       {/* ============================================================
           HERO
           ============================================================ */}
@@ -159,6 +271,12 @@ export default function Home() {
               className="inline-block rounded-lg border border-spark/30 bg-spark/10 px-6 py-3 font-display text-sm font-semibold text-spark glow-hover transition-all hover:bg-spark/20"
             >
               For Non-Coders →
+            </Link>
+            <Link
+              href="/blog"
+              className="inline-block rounded-lg border border-primary/30 bg-primary/10 px-6 py-3 font-display text-sm font-semibold text-primary glow-hover transition-all hover:bg-primary/20"
+            >
+              Read the Blog →
             </Link>
           </div>
         </div>

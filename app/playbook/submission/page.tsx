@@ -41,9 +41,17 @@ import { Separator } from "@/components/ui/separator";
 const section = PLAYBOOK_SECTIONS[5];
 
 export const metadata: Metadata = {
-  title: section.title,
-  description: section.subtitle,
-  openGraph: { title: section.title, description: section.subtitle },
+  title: "Hackathon Submission — How to Write a Winning Devpost & Demo Video",
+  description:
+    "Write hackathon READMEs, record compelling demo videos, and submit deliverables that make judges remember you. Templates and examples from 36+ winning submissions.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/submission`,
+  },
+  openGraph: {
+    title: "How to Write a Winning Hackathon Submission",
+    description:
+      "README templates, demo video tips, and submission strategies that win hackathon prizes. From the 36-win playbook.",
+  },
 };
 
 function SectionHeading({
