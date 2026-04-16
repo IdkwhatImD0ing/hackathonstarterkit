@@ -36,12 +36,14 @@ The ultimate hackathon playbook with guides, templates, and battle-tested strate
 
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router, React 19, TypeScript)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) (new-york style, CSS variables)
+- **Analytics**: [Vercel Analytics](https://vercel.com/docs/analytics) (Web Vitals) + [PostHog](https://posthog.com/) (product analytics, blog engagement tracking)
 - **Fonts**: JetBrains Mono (display), Outfit (body), Fira Code (code) via `next/font/google`
 
 ## Getting Started
 
 ```bash
 npm install
+cp .env.example .env.local   # fill in your PostHog API key (optional)
 npm run dev
 ```
 
@@ -63,6 +65,8 @@ app/
 components/
   ui/                     # shadcn/ui components (auto-themed)
   blog-blocks.tsx         # Rich blog content blocks (callouts, stats, checklists, etc.)
+  blog-analytics.tsx      # Blog engagement tracking (scroll depth, reading time)
+  posthog-provider.tsx    # PostHog SPA page view tracker
   json-ld.tsx             # JSON-LD structured data component
 lib/
   fonts.ts                # Font configuration (JetBrains Mono, Outfit, Fira Code)
@@ -81,6 +85,15 @@ lib/
     non-coder-mode/       # Non-coder guardrails
     scaffold-app/         # New project scaffolding
 ```
+
+## Analytics
+
+The site uses a two-layer analytics approach. See [`docs/analytics-setup.md`](./docs/analytics-setup.md) for details.
+
+- **Vercel Analytics**: Zero-config Web Vitals monitoring (LCP, CLS, FID per route)
+- **PostHog** (free tier, 1M events/month): Custom event tracking, blog engagement metrics (scroll depth, reading time, completion rate), session recordings, funnels
+
+PostHog is optional; the site works without it. Set `NEXT_PUBLIC_POSTHOG_KEY` in `.env.local` to enable it.
 
 ## SEO
 
