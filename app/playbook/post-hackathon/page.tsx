@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   description:
     "Share your hackathon work, follow up with sponsors and contacts, and turn weekend projects into career-changing portfolio pieces, startups, and open-source contributions.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/post-hackathon`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/post-hackathon`,
   },
   openGraph: {
     title: "Post-Hackathon: Turn Projects into Career Opportunities",

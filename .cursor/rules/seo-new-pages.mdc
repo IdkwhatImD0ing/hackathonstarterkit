@@ -24,12 +24,12 @@ export const metadata: Metadata = {
   title: "Your Keyword-Rich Title Here",
   description: "150-char description with primary keyword early in the sentence.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/your-route`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/your-route`,
   },
   openGraph: {
     title: "Your Title",
     description: "Your description.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/your-route`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/your-route`,
   },
   twitter: {
     title: "Your Title",

@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   description:
     "Write hackathon READMEs, record compelling demo videos, and submit deliverables that make judges remember you. Templates and examples from 36+ winning submissions.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/submission`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/submission`,
   },
   openGraph: {
     title: "How to Write a Winning Hackathon Submission",

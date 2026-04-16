@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   description:
     "Master hackathon execution: choose the best tech stack, manage your time effectively, build an MVP that impresses judges, and coordinate your team. Includes timeline simulator.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com"}/playbook/execution`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/execution`,
   },
   openGraph: {
     title: "Hackathon Execution: Best Tech Stack & MVP Strategy",

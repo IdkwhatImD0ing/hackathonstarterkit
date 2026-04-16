@@ -8,7 +8,7 @@ import { BLOG_POSTS, getBlogBySlug } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://hackathonstarterkit.com";
+  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
 
 export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
