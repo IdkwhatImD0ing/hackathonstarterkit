@@ -1,0 +1,13 @@
+---
+description: All quotes must have proper attributions
+alwaysApply: true
+---
+
+# Quote Attributions Required
+
+Every blockquote or quoted text in the playbook must include a proper attribution with:
+- The person's full name
+- Their credential or title (e.g., "co-founder of Apple", "Nobel Laureate in Physics")
+- The source work and year when applicable (e.g., "The Lean Startup, 2011")
+
+Format: "Person Name, credential" or "Person Name, Source Work, Year"
