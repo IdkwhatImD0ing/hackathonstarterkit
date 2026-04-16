@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { fontDisplay, fontBody, fontCode } from "@/lib/fonts";
 import { Analytics } from "@vercel/analytics/next";
+import { PostHogPageViewTracker } from "@/components/posthog-provider";
 import { JsonLd } from "@/components/json-ld";
 import "./globals.css";
 
@@ -136,6 +137,7 @@ export default function RootLayout({
         className={`${fontDisplay.variable} ${fontBody.variable} ${fontCode.variable} antialiased`}
       >
         {children}
+        <PostHogPageViewTracker />
         <Analytics />
       </body>
     </html>

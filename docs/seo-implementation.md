@@ -118,6 +118,10 @@ To continue improving search rankings:
 
 A Cursor rule at `.cursor/rules/seo-new-pages.mdc` (always applied) enforces that any AI agent creating new pages follows this SEO plan. It covers required metadata fields, sitemap registration, JSON-LD schemas, semantic HTML, and internal linking. See that file for the full checklist.
 
+## Analytics
+
+The site uses **Vercel Analytics** for Web Vitals and **PostHog** for behavioral analytics (custom events, blog engagement tracking, funnels). See [`docs/analytics-setup.md`](./analytics-setup.md) for full setup instructions and tracked events.
+
 ## Google Search Console Setup
 
 After deploying, verify the domain in Google Search Console:

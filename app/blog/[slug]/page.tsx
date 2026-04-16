@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { BLOG_POSTS, getBlogBySlug } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
 import { BlogBlock } from "@/components/blog-blocks";
+import { BlogAnalytics } from "@/components/blog-analytics";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
@@ -117,6 +118,11 @@ export default async function BlogPostPage({
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 space-y-12">
+      <BlogAnalytics
+        slug={post.slug}
+        title={post.title}
+        readingTime={post.readingTime}
+      />
       <JsonLd data={articleJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
 
