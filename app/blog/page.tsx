@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Clock, ArrowRight } from "lucide-react";
+import { Clock, ArrowRight, Home } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -58,6 +58,18 @@ export default function BlogPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 space-y-16">
       <JsonLd data={blogListJsonLd} />
+
+      <nav className="flex items-center gap-3">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 font-code text-xs text-muted-foreground transition-colors hover:text-volt"
+        >
+          <Home className="size-3" />
+          Home
+        </Link>
+        <span className="text-muted-foreground/40 font-code text-xs">/</span>
+        <span className="font-code text-xs text-foreground">Blog</span>
+      </nav>
 
       <header className="stagger-children space-y-6">
         <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">

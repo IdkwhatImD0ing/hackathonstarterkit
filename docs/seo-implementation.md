@@ -73,9 +73,28 @@ Five keyword-targeted articles designed to capture organic search traffic:
 Each article includes:
 - Article JSON-LD schema with author attribution
 - Breadcrumb navigation schema
-- Internal links to the playbook
+- Internal links to the playbook and related articles
 - Keyword tags visible on the page
 - Previous/next navigation between articles
+- Rich content blocks for visual variety and engagement (see below)
+
+### 5a. Blog Content Blocks (`components/blog-blocks.tsx`)
+
+Blog sections can use a `blocks` array (in addition to or instead of plain `paragraphs`) to render rich, visually distinct content types:
+
+| Block Type | Purpose |
+|---|---|
+| `paragraph` | Standard paragraph text |
+| `callout` | Highlighted tip, warning, info, or success box with icon |
+| `stat-row` | Grid of key metrics/numbers |
+| `step-list` | Numbered vertical timeline of steps |
+| `quote` | Styled blockquote with optional attribution |
+| `pro-con` | Two-column do/don't comparison table |
+| `code-snippet` | Syntax-highlighted code block with copy button |
+| `checklist` | Interactive checklist with progress bar |
+| `link-card` | Internal link card with description and tag |
+
+These blocks are defined in `lib/blog.ts` via the `ContentBlock` union type and rendered by the `BlogBlock` component. When a section has a `blocks` array, those are rendered instead of the plain `paragraphs` array, maintaining backward compatibility.
 
 ### 6. Security Headers (`next.config.ts`)
 

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock, ArrowRight } from "lucide-react";
+import { ArrowLeft, Clock, ArrowRight, Home } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { BLOG_POSTS, getBlogBySlug } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
+import { BlogBlock } from "@/components/blog-blocks";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
@@ -120,13 +121,26 @@ export default async function BlogPostPage({
       <JsonLd data={breadcrumbJsonLd} />
 
       <div className="space-y-6">
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-1.5 font-code text-xs text-muted-foreground transition-colors hover:text-volt"
-        >
-          <ArrowLeft className="size-3" />
-          Back to Blog
-        </Link>
+        <nav className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 font-code text-xs text-muted-foreground transition-colors hover:text-volt"
+          >
+            <Home className="size-3" />
+            Home
+          </Link>
+          <span className="text-muted-foreground/40 font-code text-xs">/</span>
+          <Link
+            href="/blog"
+            className="font-code text-xs text-muted-foreground transition-colors hover:text-volt"
+          >
+            Blog
+          </Link>
+          <span className="text-muted-foreground/40 font-code text-xs">/</span>
+          <span className="font-code text-xs text-foreground line-clamp-1 max-w-[200px]">
+            {post.title.split(":")[0]}
+          </span>
+        </nav>
 
         <header className="space-y-4">
           <div className="flex items-center gap-3">
@@ -173,14 +187,18 @@ export default async function BlogPostPage({
             <h2 className="font-display text-2xl font-bold tracking-tight">
               {section.heading}
             </h2>
-            {section.paragraphs.map((paragraph, i) => (
-              <p
-                key={i}
-                className="font-body text-foreground/85 leading-relaxed"
-              >
-                {paragraph}
-              </p>
-            ))}
+            {section.blocks
+              ? section.blocks.map((block, i) => (
+                  <BlogBlock key={i} block={block} />
+                ))
+              : section.paragraphs.map((paragraph, i) => (
+                  <p
+                    key={i}
+                    className="font-body text-foreground/85 leading-relaxed"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
           </section>
         ))}
       </div>

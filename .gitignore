@@ -41,6 +41,7 @@ yarn-error.log*
 !.agents/skills/scaffold-app/
 !.agents/skills/demo-prep/
 !.agents/skills/domain-to-spec/
+!.agents/skills/blog-writer/
 # .agents/commands/ is fully committed (all authored, no installed third-party commands)
 
 # vercel
