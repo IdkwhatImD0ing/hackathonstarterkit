@@ -71,6 +71,15 @@ lib/
   non-coder-sections.ts   # Non-coder section definitions
   non-coder-skills.ts     # Installable AI skill definitions
   utils.ts                # shadcn utility (cn function)
+.agents/
+  skills/
+    blog-writer/          # Agent skill for writing new blog posts with rich blocks
+    bugfix-doctor/        # Systematic bug-fixing workflow
+    demo-prep/            # Live demo script generator
+    domain-to-spec/       # Domain expertise to technical spec
+    feature-builder/      # New feature implementation guide
+    non-coder-mode/       # Non-coder guardrails
+    scaffold-app/         # New project scaffolding
 ```
 
 ## SEO
