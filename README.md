@@ -84,6 +84,7 @@ lib/
     feature-builder/      # New feature implementation guide
     non-coder-mode/       # Non-coder guardrails
     scaffold-app/         # New project scaffolding
+    v0-prompt-crafter/    # PRD to Vercel v0 prompt generator
 ```
 
 ## Analytics
