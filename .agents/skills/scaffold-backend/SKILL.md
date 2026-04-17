@@ -330,8 +330,8 @@ Return exactly:
 3. **Supabase Wired Up?**: Yes or No (with the reason the user gave).
 4. **Verification**: Confirmation that `/health` responded, auto-docs listed every route, and tests passed.
 5. **Next Steps**:
-   - "Update `clients/.env.local` with `NEXT_PUBLIC_API_URL=http://localhost:8000`."
-   - "Run both servers together: `cd server && uvicorn app.main:app --reload` in one terminal, `cd clients && pnpm dev` in another."
+   - "Update `client/.env.local` with `NEXT_PUBLIC_API_URL=http://localhost:8000`."
+   - "Run both servers together: `cd server && uvicorn app.main:app --reload` in one terminal, `cd client && pnpm dev` in another."
    - "Use the `feature-builder` skill to connect the first frontend page to the first backend route."
 
 ## Rules

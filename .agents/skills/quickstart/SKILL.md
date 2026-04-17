@@ -1,6 +1,6 @@
 ---
 name: quickstart
-description: "One-shot project bootstrapper. Runs domain-to-spec, scaffold-frontend, and (if needed) scaffold-backend sequentially, with user confirmation between steps. Produces AGENTS.md, PRD.md, a Next.js app in clients/, and optionally a FastAPI app in server/. Use when starting a brand new project and the user wants the full stack in one go."
+description: "One-shot project bootstrapper. Runs domain-to-spec, scaffold-frontend, and (if needed) scaffold-backend sequentially, with user confirmation between steps. Produces AGENTS.md, PRD.md, a Next.js app in client/, and optionally a FastAPI app in server/. Use when starting a brand new project and the user wants the full stack in one go."
 ---
 
 # Quickstart
@@ -12,7 +12,7 @@ The pipeline is:
 ```
   domain-to-spec   →   scaffold-frontend   →   scaffold-backend (optional)
   (writes PRD)        (reads PRD, builds       (reads PRD, builds
-                       clients/)                server/ if needed)
+                       client/)                 server/ if needed)
 ```
 
 ## Preflight
@@ -22,11 +22,11 @@ Before starting, check the repo state:
 ```bash
 test -f AGENTS.md && echo "AGENTS_EXISTS"
 test -f PRD.md && echo "PRD_EXISTS"
-test -d clients && echo "CLIENTS_EXISTS"
+test -d client && echo "CLIENT_EXISTS"
 test -d server && echo "SERVER_EXISTS"
 ```
 
-If any of `AGENTS.md`, `PRD.md`, `clients/`, or `server/` already exist, STOP and show the user what was found. Ask:
+If any of `AGENTS.md`, `PRD.md`, `client/`, or `server/` already exist, STOP and show the user what was found. Ask:
 
 > "I found existing files from a previous run. Do you want to (a) skip steps whose output already exists, (b) overwrite everything and start fresh, or (c) cancel?"
 
@@ -62,14 +62,14 @@ If the user pastes corrections, update `PRD.md` in place, then re-show the secti
 
 Invoke the `scaffold-frontend` skill end-to-end. It will:
 - Preflight that `AGENTS.md` and `PRD.md` exist (they will, from Step 1).
-- Run `pnpm create next-app` into `clients/`.
+- Run `pnpm create next-app` into `client/`.
 - Generate pages, layout, types, and (if backend is needed) an API client.
 - Start `pnpm dev` and verify the landing page renders.
 
 When the skill finishes, verify:
 
 ```bash
-test -d clients/app && test -f clients/package.json && echo "STEP_3_OK" || echo "STEP_3_FAILED"
+test -d client/app && test -f client/package.json && echo "STEP_3_OK" || echo "STEP_3_FAILED"
 ```
 
 If the check fails, STOP and hand off to `bugfix-doctor`. Do not proceed to Step 4.
@@ -101,11 +101,11 @@ If the check fails, STOP and hand off to `bugfix-doctor`.
 
 If `server/` was scaffolded:
 
-1. Ensure `clients/.env.local` contains `NEXT_PUBLIC_API_URL=http://localhost:8000` (create or append).
+1. Ensure `client/.env.local` contains `NEXT_PUBLIC_API_URL=http://localhost:8000` (create or append).
 2. Start both dev servers (in separate terminals):
    ```bash
    cd server && source .venv/bin/activate && uvicorn app.main:app --reload
-   cd clients && pnpm dev
+   cd client && pnpm dev
    ```
 3. Verify the frontend can reach the backend by loading the landing page in the browser and checking the network tab.
 
@@ -122,7 +122,7 @@ Return exactly:
 2. **Files and Folders Created**:
    - `AGENTS.md` (repo root)
    - `PRD.md` (repo root)
-   - `clients/` with X pages
+   - `client/` with X pages
    - `server/` with X routes (if applicable)
 3. **Live Endpoints**:
    - Frontend: `http://localhost:3000`

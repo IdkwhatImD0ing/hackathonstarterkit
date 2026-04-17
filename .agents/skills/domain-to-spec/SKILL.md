@@ -65,7 +65,7 @@ Write the decision into `PRD.md` under a new section called `## Backend Needed?`
 
 ## Step 5: Write `AGENTS.md` to the Repo Root
 
-Create `AGENTS.md` at the repository root (not inside `clients/` or `server/`). Fill in the placeholders based on the user's answers. This is the template:
+Create `AGENTS.md` at the repository root (not inside `client/` or `server/`). Fill in the placeholders based on the user's answers. This is the template:
 
 ```markdown
 # AGENTS.md
@@ -74,17 +74,17 @@ Create `AGENTS.md` at the repository root (not inside `clients/` or `server/`). 
 [One paragraph: what this project does and who it is for.]
 
 ## Repo Layout
-- `clients/` — Frontend (Next.js). Created by the `scaffold-frontend` skill.
+- `client/` — Frontend (Next.js). Created by the `scaffold-frontend` skill.
 - `server/` — Backend (FastAPI, optional). Created by the `scaffold-backend` skill.
 - `AGENTS.md` — This file. Shared instructions for every agent working in the repo.
 - `PRD.md` — Product Requirements Document. The source of truth for what to build.
 
 ## Setup Commands
-### Frontend (`clients/`)
-- Install: `cd clients && pnpm install`
-- Dev: `cd clients && pnpm dev`
-- Build: `cd clients && pnpm build`
-- Lint: `cd clients && pnpm lint`
+### Frontend (`client/`)
+- Install: `cd client && pnpm install`
+- Dev: `cd client && pnpm dev`
+- Build: `cd client && pnpm build`
+- Lint: `cd client && pnpm lint`
 
 ### Backend (`server/`), if present
 - Create venv: `cd server && python -m venv .venv && source .venv/bin/activate`
@@ -100,7 +100,7 @@ Create `AGENTS.md` at the repository root (not inside `clients/` or `server/`). 
 - Deployment: Vercel (frontend), Fly.io or Railway (backend)
 
 ## Code Style
-- TypeScript strict mode in `clients/`
+- TypeScript strict mode in `client/`
 - Python type hints everywhere in `server/`
 - Functional React components with hooks, no class components
 - Server components by default in Next.js; add `"use client"` only when needed
@@ -109,12 +109,12 @@ Create `AGENTS.md` at the repository root (not inside `clients/` or `server/`). 
 - Validate all user input with Zod (frontend) and Pydantic (backend)
 
 ## Testing Instructions
-- Frontend: `cd clients && pnpm lint && pnpm test`
+- Frontend: `cd client && pnpm lint && pnpm test`
 - Backend: `cd server && pytest`
 - Fix any test or type errors before committing.
 
 ## Security Considerations
-- Never hardcode secrets. Use `.env.local` in `clients/` and `.env` in `server/`.
+- Never hardcode secrets. Use `.env.local` in `client/` and `.env` in `server/`.
 - Never commit either env file. They are in `.gitignore`.
 - Ask before database writes, destructive operations, or deploys.
 - Propose a plan before large refactors.
