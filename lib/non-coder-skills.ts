@@ -5,6 +5,7 @@ import {
   Rocket,
   Presentation,
   Compass,
+  Sparkles,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -517,6 +518,194 @@ Return:
 2. **Click Path**: Exact sequence of actions to perform during the demo
 3. **Backup Plan**: What to do if the live demo breaks
 4. **Q&A Prep**: 3-5 likely questions judges will ask, with suggested answers`,
+  },
+  {
+    slug: "v0-prompt-crafter",
+    name: "v0-prompt-crafter",
+    title: "v0 Prompt Crafter",
+    description:
+      "Turn a PRD or product description into a production-grade Vercel v0 prompt. Researches the industry, commits to a bold aesthetic, picks fancy UI libraries (shadcn, Aceternity, Magic UI, Motion), and assembles a copy-paste prompt.",
+    category: "building",
+    categoryLabel: CATEGORY_META.building.label,
+    accent: CATEGORY_META.building.accent,
+    icon: Sparkles,
+    command: {
+      name: "/v0-prompt-crafter",
+      usage: "/v0-prompt-crafter [paste your PRD or one-line product description]",
+      hint: "Turns a PRD into a production-grade Vercel v0 prompt",
+    },
+    content: `---
+name: v0-prompt-crafter
+description: "Turn a PRD or product description into a production-grade Vercel v0 prompt. Researches industry conventions, picks a bold aesthetic direction, selects fancy UI libraries (shadcn/ui, Aceternity UI, Magic UI, Motion), and assembles a specific, high-signal prompt using v0's product-surface + context-of-use + constraints framework. Use when the user wants to generate a website or app UI with Vercel v0."
+---
+
+# v0 Prompt Crafter
+
+The user has a product idea, PRD, or rough description and wants a **Vercel v0** prompt that produces a distinctive, production-grade UI on the first try. This skill takes that description, does industry and aesthetic research, chooses fancy UI libraries, and assembles a single copy-paste prompt that v0 can execute without asking clarifying questions.
+
+Vercel v0 is Vercel's AI text-to-UI product. It defaults to Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS v4, and \`shadcn/ui\` components. Prompts are plain English; better prompts give 30-40% faster generations, cleaner code, and fewer follow-up iterations.
+
+## Core Principle
+
+Garbage in, garbage out. v0's defaults are generic (Inter, purple gradients, centered hero, "clean modern design"). To get an UNFORGETTABLE interface, the prompt must commit to a specific aesthetic direction and specify components, layout, motion, typography, and color down to hex codes and font names. Aim for the floor of a good result to be "memorable," not "acceptable."
+
+## Step 1: Parse the PRD
+
+Extract these seven facts from the user's input. If any are missing, propose 2-3 concrete options and ask the user to pick. Never invent facts silently.
+
+1. **Product name** and a one-line elevator pitch.
+2. **What it does**: core features, data shown, actions taken.
+3. **Who uses it**: role, technical comfort, domain.
+4. **When and where they use it**: desktop during work, mobile while commuting, tablet in-field, etc.
+5. **What decision or outcome** the UI drives (the moment of value).
+6. **Industry / vertical**: finance, healthtech, legaltech, dev tools, consumer social, creator economy, e-commerce, SaaS admin, AI agents, etc.
+7. **Scope**: single landing page, marketing site, full app with dashboard, single component, or artifact.
+
+If the user gave a full PRD, map it into this shape before moving on. If they gave a one-liner, propose 2-3 interpretations and confirm before researching.
+
+## Step 2: Industry + Aesthetic Research
+
+Before picking a design direction, study what leading products in the vertical look like in 2026.
+
+For each target vertical, identify:
+
+- **Visual vocabulary of leaders**: Linear (dark, neutral, precise), Stripe (gradient clouds, generous whitespace), Vercel (monochrome, Geist font), Anthropic (warm taupe, serif display), Bloomberg Terminal (dense, monospace, cyan/amber on black), Perplexity (dark navy, teal accent), Figma (vibrant, playful).
+- **Color conventions** that signal trust in that vertical. Finance leans dark navy + semantic green/red. Healthtech leans clinical white with warm accent. Dev tools lean monochrome + one vivid accent. Creator products lean saturated gradients.
+- **Typographic conventions**. Editorial sites pair a serif display with a grotesque body. Dev tools use monospace display. Consumer products use warm humanist sans.
+- **Layout conventions**. Dashboards use card grids and sidebars. Landing pages use hero + social proof + feature trio + CTA. Docs use three-pane layouts.
+
+Output a one-paragraph **Industry Read** summarizing what top products in the vertical look like.
+
+## Step 3: Commit to a Bold Aesthetic Direction
+
+**CRITICAL**: Do not default to "clean modern minimalist." Pick a direction with a clear conceptual center.
+
+Examples (pick ONE, not a closed list):
+
+- Brutalist / editorial
+- Retro-futuristic terminal
+- Soft luxury
+- Neo-brutalist / memphis
+- Glassmorphic depth
+- Organic / biomorphic
+- Industrial / technical
+- Playful toy-like
+- Minimal Swiss / grid
+- Ink / editorial print
+
+Write a 2-3 sentence **Aesthetic Statement** naming the direction, the feeling, and the single unforgettable detail.
+
+Then lock in concrete tokens:
+
+- **Color palette**: 1 background, 1 surface, 1 foreground, 1-2 accents. Hex codes. Dominant-color + sharp-accent, not evenly distributed. Decide light vs dark.
+- **Typography**: display font and body font. Avoid Inter, Roboto, Arial, Space Grotesk. Good 2026 picks: Fraunces, Instrument Serif, PP Editorial New, Geist, Geist Mono, JetBrains Mono, IBM Plex Mono/Serif, Bricolage Grotesque, Manrope, Outfit, Unbounded, Clash Display, Satoshi.
+- **Radius + density**: sharp (0-2px) for editorial/brutalist, medium (8-12px) for SaaS, pill (9999px) for playful.
+- **Motion language**: still, subtle, or dramatic. Name the signature motion.
+- **Backgrounds & texture**: gradient mesh, noise overlay, grid lines, scanlines, paper grain, aurora blob, dot pattern. One or two, not all.
+
+## Step 4: Pick the Component Library Stack
+
+v0 defaults to \`shadcn/ui\`. Layer in fancier libraries via the shadcn CLI 3.0 namespaced registries.
+
+- **\`shadcn/ui\`** (always): forms, dialogs, selects, tables. Default app chrome.
+- **\`@aceternity\`** (landing pages, hero sections): spotlight, aurora, 3D card, bento grid, infinite moving cards, tracing beam, sparkles, background beams, lamp, meteors, wavy background, vortex, macbook scroll, animated tooltip.
+- **\`@magicui\`** (marketing + micro-interactions): animated beam, number ticker, orbiting circles, retro grid, neon gradient card, shimmer button, dock, marquee, terminal, ripple, globe, animated grid pattern, border beam, bento grid.
+- **\`motion/react\`** (Motion library): custom page-load staggers, scroll-triggered reveals, spring-eased hover.
+- **\`lucide-react\`**: default icon set.
+- **\`react-three-fiber\` + \`@react-three/drei\`**: for 3D hero scenes when the aesthetic calls for it.
+- **\`recharts\`** or **\`tremor\`**: for dashboards with real charts.
+- **\`cmdk\`**: command palettes.
+
+Match library intensity to aesthetic intensity. Minimalist Swiss should NOT import Aceternity spotlights. Maximalist retro-futuristic SHOULD layer Aceternity + Magic UI + a custom canvas shader.
+
+## Step 5: Assemble the v0 Prompt
+
+Use Vercel's official three-input framework (product surface + context of use + constraints & taste).
+
+### Template
+
+\`\`\`markdown
+Build [product surface: every section, component, data field, and action].
+
+Used by [who],
+in [what moment, device, environment],
+to [what decision or outcome they reach].
+
+Aesthetic direction: [named direction from Step 3].
+The feeling is [2-3 adjectives]. The signature detail is [the one unforgettable thing].
+
+Visual system:
+- Theme: [light | dark], based on [#bg hex] background, [#surface hex] surface, [#fg hex] foreground.
+- Accents: [#accent1 hex] primary, [#accent2 hex] secondary. Use accents sparingly; never evenly distributed.
+- Typography: [Display Font] for headings ([weight], [tracking]), [Body Font] for body, [Mono Font] for code or numerics. Import via next/font/google.
+- Radius: [0px | 4px | 12px | 9999px] globally.
+- Spacing: [4 | 6 | 8]px base unit, generous vertical rhythm.
+- Density: [dense data-forward | balanced | generous whitespace].
+- Backgrounds & texture: [gradient mesh | noise overlay | grid lines | scanlines | aurora blob | paper grain | none].
+
+Components & libraries:
+- Use shadcn/ui for forms, dialogs, selects, tables, tooltips, command palette.
+- Pull [named components] from the Aceternity registry (@aceternity/[name]).
+- Pull [named components] from the Magic UI registry (@magicui/[name]).
+- Use motion/react for [named animations].
+- Icons from lucide-react.
+
+Layout (top to bottom):
+1. [Section 1: name, purpose, key elements, any data, any CTA]
+2. [Section 2: ...]
+N. [Section N: ...]
+
+Motion:
+- One orchestrated page-load stagger across hero elements.
+- Hover states: spring-eased lift on cards.
+- Avoid decorative motion that slows time-to-content.
+
+Responsive: [mobile-first | desktop-first]. Breakpoints: sm 640, md 768, lg 1024, xl 1280.
+Accessibility: semantic HTML, aria-labels on icon-only buttons, visible focus rings in [#accent1], passes WCAG AA contrast.
+
+What to AVOID:
+- Generic AI aesthetics: Inter, Space Grotesk, purple-on-white gradients, centered hero with a single button, lorem ipsum, emoji-only feature icons.
+- Evenly distributed accent colors.
+- Decorative motion on every element.
+- Non-functional placeholder buttons.
+\`\`\`
+
+### Expansion rules
+
+- **Product surface**: exhaustive. List every section, field, CTA. Specific data beats vague descriptions.
+- **Context of use**: real physical context. "Sales managers on desktop monitors during morning standups, glancing for 90 seconds to spot underperformers."
+- **Constraints**: every hex code, every font name, every radius value, every spacing unit.
+- **Layout**: number sections top to bottom. List purpose + 2-5 concrete elements per section.
+- **Avoid list**: always include. v0's defaults need explicit negatives.
+
+### Length guidance
+
+- Single component: 80-150 words.
+- Landing page: 250-450 words.
+- Full app with multiple screens: 500-900 words. Past 900, split into one prompt per screen.
+
+## Step 6: Deliver the Output
+
+Return exactly:
+
+1. **Industry Read** (1 paragraph): what leading products in the vertical look like and user visual expectations.
+2. **Aesthetic Statement** (2-3 sentences): direction, feeling, signature detail.
+3. **Design Tokens** (bullet list): palette hex codes, exact font names, radius, spacing, density, background texture, motion language.
+4. **Library Stack** (bullet list): shadcn/ui plus Aceternity, Magic UI, Motion, recharts, r3f components with one-line purposes.
+5. **The v0 Prompt** (single fenced code block): the complete, copy-paste-ready prompt. The main deliverable.
+6. **How to Use It** (3 bullets): paste into v0.dev, ensure registries are in \`components.json\`, iterate with Design Mode and follow-up prompts.
+7. **Follow-up Prompts** (3-5 one-liners): prepared iterations for after the first generation.
+
+## Rules
+
+- NEVER produce a vague prompt. If a Step 1 fact is missing, ask before generating.
+- NEVER default to purple-on-white, Inter, Space Grotesk, or centered-single-CTA hero.
+- NEVER recommend Aceternity 3D effects in a minimalist Swiss aesthetic, or brutalist blocks in a luxury aesthetic. Library choices must stay coherent with the aesthetic statement.
+- NEVER claim the v0 output will be perfect. Always include 3-5 follow-up prompts for iteration.
+- Vary direction across generations. No two runs should converge on the same look.
+- For regulated industries (finance, health, legal), mention trust cues (semantic red/green, restrained palette, dense data, clear disclosure).
+- Every color claim must be a hex code. Every font claim must be a real font name.
+- The v0 Prompt block must be self-contained: a developer with no context could paste it into v0 and get something close to the intended design.`,
   },
   {
     slug: "domain-to-spec",
