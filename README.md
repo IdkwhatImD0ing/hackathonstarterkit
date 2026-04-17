@@ -82,6 +82,7 @@ lib/
     quickstart/           # Chains domain-to-spec, scaffold-frontend, scaffold-backend
     scaffold-frontend/    # PRD-driven Next.js scaffold into clients/
     scaffold-backend/     # PRD-driven FastAPI scaffold into server/ (optional Supabase)
+    v0-prompt-crafter/    # Alternative frontend path: PRD -> Vercel v0 prompt
     feature-builder/      # New feature implementation guide
     bugfix-doctor/        # Systematic bug-fixing workflow
     demo-prep/            # Live demo script generator
@@ -101,6 +102,10 @@ The skills are designed to run in a specific order for new projects:
 7. **`demo-prep`** — Run before presenting at a hackathon or demo day.
 
 **`blog-writer`** is separate from the hackathon loop. Used to publish write-ups to this site.
+
+### Alternative frontend path
+
+**`v0-prompt-crafter`** is an alternative to `scaffold-frontend`. Instead of scaffolding a Next.js app locally, it reads `PRD.md` (or a one-line product description) and produces a copy-paste prompt for [Vercel v0](https://v0.dev) that generates a production-grade UI. Use one or the other, not both for the same product surface.
 
 ### Shortcut
 

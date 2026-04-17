@@ -9,6 +9,7 @@ import {
   MonitorSmartphone,
   Server,
   Zap,
+  Sparkles,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -125,6 +126,19 @@ const SKILL_META: SkillMeta[] = [
     },
   },
   {
+    slug: "v0-prompt-crafter",
+    title: "v0 Prompt Crafter",
+    description:
+      "Turn a PRD or product description into a production-grade Vercel v0 prompt. Researches the industry, commits to a bold aesthetic, picks fancy UI libraries (shadcn, Aceternity, Magic UI, Motion), and assembles a copy-paste prompt.",
+    category: "building",
+    icon: Sparkles,
+    command: {
+      name: "/v0-prompt-crafter",
+      usage: "/v0-prompt-crafter [paste your PRD or one-line product description]",
+      hint: "Turns a PRD into a production-grade Vercel v0 prompt",
+    },
+  },
+  {
     slug: "feature-builder",
     title: "Feature Builder",
     description:
@@ -209,6 +223,11 @@ export function getSkillsByCategory(
  * that chains `domain-to-spec -> scaffold-frontend -> scaffold-backend`
  * in one invocation, not a step in the pipeline. It is surfaced separately
  * on the skills page as an alternative to running steps 2-4 manually.
+ *
+ * `v0-prompt-crafter` is also NOT in this list because it is an alternative
+ * path to `scaffold-frontend` (generate a UI via Vercel v0 instead of
+ * scaffolding locally) rather than a pipeline step. It still appears in
+ * the "All Skills" grid.
  */
 export const RECOMMENDED_ORDER: string[] = [
   "non-coder-mode",

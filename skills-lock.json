@@ -5,6 +5,11 @@
       "source": "anthropics/skills",
       "sourceType": "github",
       "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
+    },
+    "v0-prompt-crafter": {
+      "source": "local",
+      "sourceType": "local",
+      "computedHash": "92aa32f4075b94128d1435f991aba5257e89f4028afd10ac746d5fe07e2cf750"
     }
   }
 }

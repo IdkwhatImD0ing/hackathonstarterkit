@@ -37,6 +37,8 @@ invocation with a user confirmation gate between the PRD and the scaffolds.
 Use `quickstart` when you want to go faster; use the manual order when you
 want to pause between steps or only run a subset.
 
+`v0-prompt-crafter` is an **alternative path** to `scaffold-frontend`: instead of scaffolding a Next.js app locally, it reads the PRD and produces a single copy-paste prompt for [Vercel v0](https://v0.dev) to generate a production-grade UI. Use one or the other, not both for the same product surface.
+
 `blog-writer` is separate from the hackathon pipeline. It is used to publish write-ups to this site's blog.
 
 ## Skill-by-Skill Contract
@@ -81,6 +83,12 @@ want to pause between steps or only run a subset.
 - **Fail-fast**:
   - If `AGENTS.md` or `PRD.md` is missing: direct user to `domain-to-spec`.
   - If `Backend Needed? = No`: direct user to `feature-builder`.
+
+### `v0-prompt-crafter` (Building, alternative to `scaffold-frontend`)
+
+- **When**: User wants to generate a UI via [Vercel v0](https://v0.dev) instead of scaffolding a Next.js app locally.
+- **Reads**: A PRD or one-line product description. Researches the target industry's visual vocabulary and picks a bold aesthetic direction.
+- **Writes**: A single copy-paste prompt for v0.dev plus industry research, aesthetic statement, design tokens, and a library stack recommendation. Does not write any files to the repo.
 
 ### `feature-builder` (Building)
 
