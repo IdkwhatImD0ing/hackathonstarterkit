@@ -39,7 +39,9 @@ yarn-error.log*
 !.agents/skills/non-coder-mode/
 !.agents/skills/feature-builder/
 !.agents/skills/bugfix-doctor/
-!.agents/skills/scaffold-app/
+!.agents/skills/scaffold-frontend/
+!.agents/skills/scaffold-backend/
+!.agents/skills/quickstart/
 !.agents/skills/demo-prep/
 !.agents/skills/domain-to-spec/
 !.agents/skills/blog-writer/

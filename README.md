@@ -77,15 +77,39 @@ lib/
   utils.ts                # shadcn utility (cn function)
 .agents/
   skills/
-    blog-writer/          # Agent skill for writing new blog posts with rich blocks
+    non-coder-mode/       # Non-coder guardrails (always on)
+    domain-to-spec/       # Writes AGENTS.md and PRD.md to the repo root (run FIRST)
+    quickstart/           # Chains domain-to-spec, scaffold-frontend, scaffold-backend
+    scaffold-frontend/    # PRD-driven Next.js scaffold into clients/
+    scaffold-backend/     # PRD-driven FastAPI scaffold into server/ (optional Supabase)
+    v0-prompt-crafter/    # Alternative frontend path: PRD -> Vercel v0 prompt
+    feature-builder/      # New feature implementation guide
     bugfix-doctor/        # Systematic bug-fixing workflow
     demo-prep/            # Live demo script generator
-    domain-to-spec/       # Domain expertise to technical spec
-    feature-builder/      # New feature implementation guide
-    non-coder-mode/       # Non-coder guardrails
-    scaffold-app/         # New project scaffolding
-    v0-prompt-crafter/    # PRD to Vercel v0 prompt generator
+    blog-writer/          # Agent skill for writing new blog posts with rich blocks
 ```
+
+## Agent Skills Pipeline
+
+The skills are designed to run in a specific order for new projects:
+
+1. **`non-coder-mode`** — Load once at the start of the session. Stays active the whole time.
+2. **`domain-to-spec`** — Interviews the user and writes `AGENTS.md` and `PRD.md` to the repo root. Every scaffold skill refuses to run without these files.
+3. **`scaffold-frontend`** — Reads `PRD.md`, creates `clients/` with a Next.js app whose pages match the PRD.
+4. **`scaffold-backend`** — Reads `PRD.md`. If `Backend Needed? = Yes`, creates `server/` with FastAPI routes that match the PRD and optional Supabase integration. Skipped otherwise.
+5. **`feature-builder`** — Implement one feature at a time after the scaffolds exist.
+6. **`bugfix-doctor`** — Use whenever something breaks.
+7. **`demo-prep`** — Run before presenting at a hackathon or demo day.
+
+**`blog-writer`** is separate from the hackathon loop. Used to publish write-ups to this site.
+
+### Alternative frontend path
+
+**`v0-prompt-crafter`** is an alternative to `scaffold-frontend`. Instead of scaffolding a Next.js app locally, it reads `PRD.md` (or a one-line product description) and produces a copy-paste prompt for [Vercel v0](https://v0.dev) that generates a production-grade UI. Use one or the other, not both for the same product surface.
+
+### Shortcut
+
+**`quickstart`** is not a step in the pipeline. It is a shortcut that chains steps 2-4 (`domain-to-spec` -> `scaffold-frontend` -> `scaffold-backend`) in one invocation with a user confirmation gate before any code is generated. Use it when you want to go faster; use the manual order when you want to pause between steps.
 
 ## Analytics
 
