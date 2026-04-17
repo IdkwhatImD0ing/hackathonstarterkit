@@ -94,15 +94,17 @@ The skills are designed to run in a specific order for new projects:
 
 1. **`non-coder-mode`** — Load once at the start of the session. Stays active the whole time.
 2. **`domain-to-spec`** — Interviews the user and writes `AGENTS.md` and `PRD.md` to the repo root. Every scaffold skill refuses to run without these files.
-3. **`quickstart`** (recommended) OR run the two scaffolds manually:
-   - **`scaffold-frontend`** — Reads `PRD.md`, creates `clients/` with a Next.js app whose pages match the PRD.
-   - **`scaffold-backend`** — Reads `PRD.md`. If `Backend Needed? = Yes`, creates `server/` with FastAPI routes that match the PRD and optional Supabase integration.
-4. **`feature-builder`** — Implement one feature at a time after the scaffolds exist.
-5. **`bugfix-doctor`** — Use whenever something breaks.
-6. **`demo-prep`** — Run before presenting at a hackathon or demo day.
-7. **`blog-writer`** — Separate from the hackathon loop. Used to publish write-ups to this site.
+3. **`scaffold-frontend`** — Reads `PRD.md`, creates `clients/` with a Next.js app whose pages match the PRD.
+4. **`scaffold-backend`** — Reads `PRD.md`. If `Backend Needed? = Yes`, creates `server/` with FastAPI routes that match the PRD and optional Supabase integration. Skipped otherwise.
+5. **`feature-builder`** — Implement one feature at a time after the scaffolds exist.
+6. **`bugfix-doctor`** — Use whenever something breaks.
+7. **`demo-prep`** — Run before presenting at a hackathon or demo day.
 
-`quickstart` is the fastest path: it chains `domain-to-spec -> scaffold-frontend -> scaffold-backend` with a user confirmation gate before any code is generated.
+**`blog-writer`** is separate from the hackathon loop. Used to publish write-ups to this site.
+
+### Shortcut
+
+**`quickstart`** is not a step in the pipeline. It is a shortcut that chains steps 2-4 (`domain-to-spec` -> `scaffold-frontend` -> `scaffold-backend`) in one invocation with a user confirmation gate before any code is generated. Use it when you want to go faster; use the manual order when you want to pause between steps.
 
 ## Analytics
 

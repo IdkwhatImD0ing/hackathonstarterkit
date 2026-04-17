@@ -15,12 +15,11 @@ non-coder-mode (always on)
 domain-to-spec   ───→  writes AGENTS.md + PRD.md at repo root
         |
         v
-quickstart        ───→  chains the two scaffolds below
+scaffold-frontend  ───→  clients/ (Next.js, reads PRD.md)
         |
-        +─────→ scaffold-frontend  ───→  clients/ (Next.js, reads PRD.md)
-        |
-        +─────→ scaffold-backend   ───→  server/  (FastAPI, optional Supabase)
-                                              (skipped if PRD.md says Backend Needed? = No)
+        v
+scaffold-backend   ───→  server/  (FastAPI, optional Supabase)
+                          (skipped if PRD.md says Backend Needed? = No)
         |
         v
 feature-builder  ───→  implements one feature at a time
@@ -31,6 +30,12 @@ bugfix-doctor    ───→  invoked on demand when something breaks
         v
 demo-prep        ───→  produces a 3-act demo script for judging day
 ```
+
+The `quickstart` skill is a **shortcut**, not a step in the pipeline. It
+chains `domain-to-spec -> scaffold-frontend -> scaffold-backend` in one
+invocation with a user confirmation gate between the PRD and the scaffolds.
+Use `quickstart` when you want to go faster; use the manual order when you
+want to pause between steps or only run a subset.
 
 `blog-writer` is separate from the hackathon pipeline. It is used to publish write-ups to this site's blog.
 
@@ -136,7 +141,7 @@ demo-prep        ───→  produces a 3-act demo script for judging day
 1. Create `.agents/skills/<slug>/SKILL.md` with a front matter block and prompt body.
 2. Add a new entry to `SKILL_META` in `lib/non-coder-skills.ts` with the display metadata (title, description, category, icon, slash command).
 3. Whitelist the new directory in `.gitignore` under the `# agent skills` section.
-4. If the new skill should be part of the pipeline, add its slug to `RECOMMENDED_ORDER` in `lib/non-coder-skills.ts` at the correct position.
+4. If the new skill is part of the pipeline, add its slug to `RECOMMENDED_ORDER` in `lib/non-coder-skills.ts` at the correct position. If it is a shortcut that wraps multiple pipeline steps, add it to `SHORTCUT_SKILLS` instead.
 5. Update this file (`docs/agent-skills.md`) with the skill's contract.
 6. Update the "Agent Skills Pipeline" section in `README.md`.
 
@@ -145,10 +150,15 @@ demo-prep        ───→  produces a 3-act demo script for judging day
 ```
 1. /non-coder-mode           ← always first, keep active
 2. /domain-to-spec           ← writes AGENTS.md + PRD.md
-3. /quickstart               ← OR run steps 4-5 manually
-4. /scaffold-frontend        ← if running manually
-5. /scaffold-backend         ← if running manually and backend is needed
-6. /feature-builder          ← repeat per feature
-7. /bugfix-doctor            ← when things break
-8. /demo-prep                ← before presenting
+3. /scaffold-frontend        ← reads PRD.md, creates clients/
+4. /scaffold-backend         ← reads PRD.md, creates server/ if backend is needed
+5. /feature-builder          ← repeat per feature
+6. /bugfix-doctor            ← when things break
+7. /demo-prep                ← before presenting
+```
+
+Shortcut:
+
+```
+/quickstart                  ← replaces steps 2-4 with one command
 ```

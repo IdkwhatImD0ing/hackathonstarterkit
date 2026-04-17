@@ -204,14 +204,24 @@ export function getSkillsByCategory(
 /**
  * Recommended order to run the skills for a fresh project.
  * Used on the skills index page to teach users the pipeline.
+ *
+ * Note: `quickstart` is intentionally NOT in this list. It is a shortcut
+ * that chains `domain-to-spec -> scaffold-frontend -> scaffold-backend`
+ * in one invocation, not a step in the pipeline. It is surfaced separately
+ * on the skills page as an alternative to running steps 2-4 manually.
  */
 export const RECOMMENDED_ORDER: string[] = [
   "non-coder-mode",
   "domain-to-spec",
-  "quickstart",
   "scaffold-frontend",
   "scaffold-backend",
   "feature-builder",
   "bugfix-doctor",
   "demo-prep",
 ];
+
+/**
+ * Skills that act as shortcuts over the RECOMMENDED_ORDER pipeline.
+ * Shown in their own section on the skills page.
+ */
+export const SHORTCUT_SKILLS: string[] = ["quickstart"];
