@@ -77,14 +77,32 @@ lib/
   utils.ts                # shadcn utility (cn function)
 .agents/
   skills/
-    blog-writer/          # Agent skill for writing new blog posts with rich blocks
+    non-coder-mode/       # Non-coder guardrails (always on)
+    domain-to-spec/       # Writes AGENTS.md and PRD.md to the repo root (run FIRST)
+    quickstart/           # Chains domain-to-spec, scaffold-frontend, scaffold-backend
+    scaffold-frontend/    # PRD-driven Next.js scaffold into clients/
+    scaffold-backend/     # PRD-driven FastAPI scaffold into server/ (optional Supabase)
+    feature-builder/      # New feature implementation guide
     bugfix-doctor/        # Systematic bug-fixing workflow
     demo-prep/            # Live demo script generator
-    domain-to-spec/       # Domain expertise to technical spec
-    feature-builder/      # New feature implementation guide
-    non-coder-mode/       # Non-coder guardrails
-    scaffold-app/         # New project scaffolding
+    blog-writer/          # Agent skill for writing new blog posts with rich blocks
 ```
+
+## Agent Skills Pipeline
+
+The skills are designed to run in a specific order for new projects:
+
+1. **`non-coder-mode`** — Load once at the start of the session. Stays active the whole time.
+2. **`domain-to-spec`** — Interviews the user and writes `AGENTS.md` and `PRD.md` to the repo root. Every scaffold skill refuses to run without these files.
+3. **`quickstart`** (recommended) OR run the two scaffolds manually:
+   - **`scaffold-frontend`** — Reads `PRD.md`, creates `clients/` with a Next.js app whose pages match the PRD.
+   - **`scaffold-backend`** — Reads `PRD.md`. If `Backend Needed? = Yes`, creates `server/` with FastAPI routes that match the PRD and optional Supabase integration.
+4. **`feature-builder`** — Implement one feature at a time after the scaffolds exist.
+5. **`bugfix-doctor`** — Use whenever something breaks.
+6. **`demo-prep`** — Run before presenting at a hackathon or demo day.
+7. **`blog-writer`** — Separate from the hackathon loop. Used to publish write-ups to this site.
+
+`quickstart` is the fastest path: it chains `domain-to-spec -> scaffold-frontend -> scaffold-backend` with a user confirmation gate before any code is generated.
 
 ## Analytics
 

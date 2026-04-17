@@ -11,7 +11,12 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
-import { NON_CODER_SKILLS, ALL_COMMANDS } from "@/lib/non-coder-skills";
+import {
+  NON_CODER_SKILLS,
+  ALL_COMMANDS,
+  RECOMMENDED_ORDER,
+  getSkillBySlug,
+} from "@/lib/non-coder-skills";
 
 export const metadata: Metadata = {
   title: "Skills & Commands",
@@ -93,6 +98,62 @@ export default function SkillsPage() {
             or navigate any folders.
           </p>
         </div>
+      </section>
+
+      {/* ── RECOMMENDED ORDER ── */}
+      <section className="space-y-8">
+        <div className="space-y-3">
+          <h2 className="font-display text-3xl font-bold tracking-tight">
+            Recommended Run Order
+          </h2>
+          <p className="max-w-3xl font-body text-muted-foreground">
+            These skills are pipelined. Each one has preconditions and produces
+            artifacts the next one reads. Run them in this order for a new
+            project, or run <code className="font-code text-volt">/quickstart</code> to
+            chain the foundation steps automatically.
+          </p>
+          <Separator className="bg-primary/20" />
+        </div>
+
+        <ol className="space-y-3">
+          {RECOMMENDED_ORDER.map((slug, i) => {
+            const skill = getSkillBySlug(slug);
+            if (!skill) return null;
+            const a = accentStyles[skill.accent];
+            return (
+              <li key={slug}>
+                <Link
+                  href={`/non-coders/skills/${slug}`}
+                  className={`group flex items-start gap-4 rounded-lg border ${a.border} ${a.bgSubtle} p-4 transition-colors hover:bg-surface`}
+                >
+                  <span
+                    className={`flex size-8 shrink-0 items-center justify-center rounded-full ${a.bg} font-code text-sm font-bold ${a.text}`}
+                  >
+                    {i + 1}
+                  </span>
+                  <div className="flex-1 space-y-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <code className={`font-code text-sm font-bold ${a.text}`}>
+                        {skill.command.name}
+                      </code>
+                      <Badge
+                        className={`${a.border} ${a.bg} ${a.text} font-code text-xs`}
+                      >
+                        {skill.categoryLabel.toUpperCase()}
+                      </Badge>
+                    </div>
+                    <p className="font-body text-sm text-muted-foreground">
+                      {skill.description}
+                    </p>
+                  </div>
+                  <span className="self-center font-code text-xs text-volt opacity-0 transition-opacity group-hover:opacity-100">
+                    Open →
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ol>
       </section>
 
       {/* ── SLASH COMMANDS ── */}
