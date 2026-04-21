@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Plug, KeyRound, FileText, Mic, Database, ArrowRight, Zap } from "lucide-react";
+import { Plug, KeyRound, FileText, Mic, Database, ArrowRight, Zap, ExternalLink } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -255,7 +255,15 @@ export default function ApisPage() {
               </Badge>
             </div>
             <CardTitle className="font-display text-xl text-volt">
-              ElevenLabs
+              <a
+                href="https://try.elevenlabs.io/thehackathonplaybook"
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-volt/80"
+              >
+                ElevenLabs
+                <ExternalLink className="size-4" />
+              </a>
             </CardTitle>
             <CardDescription className="font-body">
               Adds voice conversations to your app. Users click a button, speak,
@@ -280,6 +288,29 @@ export default function ApisPage() {
                 elevenlabs.io/app/settings/api-keys
               </p>
             </div>
+            <a
+              href="https://try.elevenlabs.io/thehackathonplaybook"
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="group glow-hover relative flex flex-col gap-4 overflow-hidden rounded-xl border border-volt/30 bg-gradient-to-br from-volt/10 via-volt/5 to-transparent p-5 transition-all hover:border-volt/60 sm:flex-row sm:items-center"
+            >
+              <div className="flex-1 space-y-1.5">
+                <span className="font-code text-[10px] uppercase tracking-wider text-volt">
+                  ElevenLabs
+                </span>
+                <p className="font-display text-base font-bold text-foreground transition-colors group-hover:text-volt">
+                  Get the Voice AI Stack the Pros Use
+                </p>
+                <p className="font-body text-sm text-muted-foreground">
+                  Free tier covers a hackathon. Sign up, grab your API key, and
+                  paste the prompt above into Cursor.
+                </p>
+              </div>
+              <span className="inline-flex items-center justify-center gap-2 rounded-lg bg-volt px-4 py-2.5 font-display text-sm font-bold text-volt-foreground shadow-lg shadow-volt/20 transition-all group-hover:shadow-xl group-hover:shadow-volt/30 sm:shrink-0">
+                Try ElevenLabs Free
+                <ExternalLink className="size-3.5" />
+              </span>
+            </a>
           </CardContent>
         </Card>
       </section>

@@ -16,6 +16,10 @@ import { JsonLd } from "@/components/json-ld";
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
 
+const POSTS_BY_DATE_DESC = [...BLOG_POSTS].sort((a, b) =>
+  b.date.localeCompare(a.date),
+);
+
 export const metadata: Metadata = {
   title: "Hackathon Blog — Tips, Strategies & Guides to Win Hackathons",
   description:
@@ -45,7 +49,7 @@ const blogListJsonLd = {
   url: `${BASE_URL}/blog`,
   mainEntity: {
     "@type": "ItemList",
-    itemListElement: BLOG_POSTS.map((post, i) => ({
+    itemListElement: POSTS_BY_DATE_DESC.map((post, i) => ({
       "@type": "ListItem",
       position: i + 1,
       url: `${BASE_URL}/blog/${post.slug}`,
@@ -89,7 +93,7 @@ export default function BlogPage() {
       </header>
 
       <div className="stagger-children grid grid-cols-1 gap-6">
-        {BLOG_POSTS.map((post) => (
+        {POSTS_BY_DATE_DESC.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`}>
             <Card className="glow-hover group cursor-pointer transition-all hover:border-volt/30">
               <CardHeader>

@@ -14,6 +14,7 @@ import {
   Quote,
   ThumbsUp,
   ThumbsDown,
+  ExternalLink,
 } from "lucide-react";
 import type { ContentBlock } from "@/lib/blog";
 import { cn } from "@/lib/utils";
@@ -352,6 +353,48 @@ function BlogLinkCard({
   );
 }
 
+function BlogCtaButton({
+  title,
+  description,
+  label,
+  href,
+  tag,
+  sponsored,
+}: Extract<ContentBlock, { type: "cta-button" }>) {
+  const rel = sponsored
+    ? "sponsored noopener noreferrer"
+    : "noopener noreferrer";
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel={rel}
+      className="group glow-hover relative flex flex-col gap-4 overflow-hidden rounded-xl border border-volt/30 bg-gradient-to-br from-volt/10 via-volt/5 to-transparent p-5 transition-all hover:border-volt/60 sm:flex-row sm:items-center"
+    >
+      <div className="flex-1 space-y-1.5">
+        {tag && (
+          <span className="font-code text-[10px] uppercase tracking-wider text-volt">
+            {tag}
+          </span>
+        )}
+        <p className="font-display text-base font-bold text-foreground transition-colors group-hover:text-volt">
+          {title}
+        </p>
+        {description && (
+          <p className="font-body text-sm text-muted-foreground">
+            {description}
+          </p>
+        )}
+      </div>
+      <span className="inline-flex items-center justify-center gap-2 rounded-lg bg-volt px-4 py-2.5 font-display text-sm font-bold text-volt-foreground shadow-lg shadow-volt/20 transition-all group-hover:shadow-xl group-hover:shadow-volt/30 sm:shrink-0">
+        {label}
+        <ExternalLink className="size-3.5" />
+      </span>
+    </a>
+  );
+}
+
 export function BlogBlock({ block }: { block: ContentBlock }) {
   switch (block.type) {
     case "paragraph":
@@ -376,6 +419,8 @@ export function BlogBlock({ block }: { block: ContentBlock }) {
       return <BlogChecklist {...block} />;
     case "link-card":
       return <BlogLinkCard {...block} />;
+    case "cta-button":
+      return <BlogCtaButton {...block} />;
     default:
       return null;
   }

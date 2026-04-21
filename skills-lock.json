@@ -6,6 +6,11 @@
       "sourceType": "github",
       "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
     },
+    "prompt-master": {
+      "source": "nidhinjs/prompt-master",
+      "sourceType": "github",
+      "computedHash": "d99ec3c50969406e277650874d056b6235b85645ba5eb823e4640d0eb1be8813"
+    },
     "v0-prompt-crafter": {
       "source": "local",
       "sourceType": "local",
