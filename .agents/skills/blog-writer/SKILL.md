@@ -5,7 +5,7 @@ description: "Write new blog posts using the rich content block system. Handles 
 
 # Blog Writer
 
-Write a new blog post for the Hackathon Starter Kit site using the rich content block system. Every post is defined as structured data in `lib/blog.ts` and rendered automatically by `app/blog/[slug]/page.tsx`.
+Write a new blog post for the Hackathon Playbook site using the rich content block system. Every post is defined as structured data in `lib/blog.ts` and rendered automatically by `app/blog/[slug]/page.tsx`.
 
 ## Step 1: Define the Topic
 

@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default:
-      "Hackathon Starter Kit — How to Win Hackathons | Guides, Templates & Strategies",
-    template: "%s | Hackathon Starter Kit",
+      "Hackathon Playbook — How to Win Hackathons | Guides, Templates & Strategies",
+    template: "%s | Hackathon Playbook",
   },
   description:
     "Learn how to win hackathons with battle-tested strategies from 36+ victories and $100K+ in prizes. Guides on team formation, ideation, pitching, the best tech stack for hackathons, and tips for beginners.",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "hackathon guide",
     "hackathon for beginners",
     "hackathon playbook",
-    "hackathon starter kit",
+    "the hackathon playbook",
     "win hackathon prizes",
     "hackathon pitch tips",
     "hackathon team formation",
@@ -41,23 +41,23 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Bill Zhang", url: "https://v2.art3m1s.me/" }],
   creator: "Bill Zhang",
-  publisher: "Hackathon Starter Kit",
+  publisher: "Hackathon Playbook",
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
     type: "website",
-    siteName: "Hackathon Starter Kit",
+    siteName: "Hackathon Playbook",
     locale: "en_US",
     url: BASE_URL,
     title:
-      "Hackathon Starter Kit — How to Win Hackathons | Guides & Strategies",
+      "Hackathon Playbook — How to Win Hackathons | Guides & Strategies",
     description:
       "Learn how to win hackathons with battle-tested strategies from 36+ victories and $100K+ in prizes. The ultimate playbook for hackathon success.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hackathon Starter Kit — How to Win Hackathons",
+    title: "Hackathon Playbook — How to Win Hackathons",
     description:
       "Battle-tested strategies from 36+ hackathon wins. Guides on team formation, ideation, pitching, best tech stack, and tips for beginners.",
   },
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Hackathon Starter Kit",
+  name: "Hackathon Playbook",
   url: BASE_URL,
   description:
     "Learn how to win hackathons with battle-tested strategies from 36+ victories and $100K+ in prizes.",
@@ -107,7 +107,7 @@ const websiteJsonLd = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Hackathon Starter Kit",
+  name: "Hackathon Playbook",
   url: BASE_URL,
   logo: `${BASE_URL}/icon`,
   description:

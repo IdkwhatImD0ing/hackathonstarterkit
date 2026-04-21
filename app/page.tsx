@@ -9,20 +9,20 @@ const BASE_URL =
 
 export const metadata: Metadata = {
   title:
-    "Hackathon Starter Kit — How to Win Hackathons | Complete Guide from 36+ Wins",
+    "Hackathon Playbook — How to Win Hackathons | Complete Guide from 36+ Wins",
   description:
     "Learn how to win hackathons with the ultimate playbook from 36+ victories and $100K+ in prizes. Battle-tested guides on team formation, ideation, the best tech stack, pitching, and submission strategies.",
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: "Hackathon Starter Kit — How to Win Hackathons",
+    title: "Hackathon Playbook — How to Win Hackathons",
     description:
       "The ultimate hackathon playbook with battle-tested guides, templates, and strategies from 36+ wins and $100K+ in prizes.",
     url: BASE_URL,
   },
   twitter: {
-    title: "Hackathon Starter Kit — How to Win Hackathons",
+    title: "Hackathon Playbook — How to Win Hackathons",
     description:
       "Battle-tested strategies from 36+ hackathon victories. Learn team formation, ideation, best tech stack, pitching, and more.",
   },
@@ -254,7 +254,7 @@ export default function Home() {
       <section className="flex min-h-[70vh] items-center justify-center">
         <div className="text-center space-y-6">
           <h1 className="font-display text-4xl font-bold md:text-5xl">
-            Hackathon <span className="text-primary">Starter Kit</span>
+            Hackathon <span className="text-primary">Playbook</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground">
             Guides, templates, and strategies from 36+ hackathon wins.

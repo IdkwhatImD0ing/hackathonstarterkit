@@ -1,6 +1,6 @@
 # SEO Implementation Guide
 
-This document describes the SEO strategy and technical implementation for the Hackathon Starter Kit website.
+This document describes the SEO strategy and technical implementation for the Hackathon Playbook website.
 
 ## Goal
 

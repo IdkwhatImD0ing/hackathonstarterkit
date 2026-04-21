@@ -81,7 +81,7 @@ export default async function BlogPostPage({
     },
     publisher: {
       "@type": "Organization",
-      name: "Hackathon Starter Kit",
+      name: "Hackathon Playbook",
       url: BASE_URL,
     },
     mainEntityOfPage: {

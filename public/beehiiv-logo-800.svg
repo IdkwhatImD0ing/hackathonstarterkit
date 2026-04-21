@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#0a0a0f"/>
+  <polyline
+    points="175,180 395,410 175,640"
+    fill="none"
+    stroke="#a855f7"
+    stroke-width="96"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <rect
+    x="440" y="545"
+    width="250" height="95"
+    rx="6" ry="6"
+    fill="#d4ff00"
+  />
+</svg>

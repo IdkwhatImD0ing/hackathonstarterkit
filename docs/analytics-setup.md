@@ -1,6 +1,6 @@
 # Analytics Setup Guide
 
-This document describes the analytics stack for the Hackathon Starter Kit website.
+This document describes the analytics stack for the Hackathon Playbook website.
 
 ## Analytics Stack Overview
 

@@ -67,7 +67,7 @@ Create `client/app/layout.tsx` with:
 
 - Document title and description pulled from `PRD.md > What Is This?`.
 - A top `<nav>` with links to every page in the PRD's Pages / Screens table, in user-flow order.
-- A `<footer>` with the project name and a "Built with the Hackathon Starter Kit" link to `https://thehackathonplaybook.dev`.
+- A `<footer>` with the project name and a "Built with the Hackathon Playbook" link to `https://thehackathonplaybook.dev`.
 
 ## Step 5: Generate Type Definitions From the Data Model
 

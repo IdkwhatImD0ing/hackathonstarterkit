@@ -1,8 +1,8 @@
-# Hackathon Starter Kit — Design System & Project Plan
+# Hackathon Playbook — Design System & Project Plan
 
 ## Vision
 
-A website for hackathon people, built by someone who has won 36+ hackathons. The Hackathon Starter Kit provides guides for every aspect of a hackathon, from ideation and team formation to pitching and post-hackathon follow-up. It is backed by real experience: 50+ hackathons attended, $100K+ in prizes, first place at some of the biggest hackathons in the US (HackUTD, UC Berkeley AI Hackathon, and LA Hacks, all with 1,000+ participants).
+A website for hackathon people, built by someone who has won 36+ hackathons. The Hackathon Playbook provides guides for every aspect of a hackathon, from ideation and team formation to pitching and post-hackathon follow-up. It is backed by real experience: 50+ hackathons attended, $100K+ in prizes, first place at some of the biggest hackathons in the US (HackUTD, UC Berkeley AI Hackathon, and LA Hacks, all with 1,000+ participants).
 
 ## About the Author
 

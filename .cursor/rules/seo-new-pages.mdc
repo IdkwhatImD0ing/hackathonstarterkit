@@ -11,7 +11,7 @@ Every new page or route added to this site **must** follow the SEO plan document
 
 Export a `metadata` object (or `generateMetadata` for dynamic routes) with:
 
-- **title**: Keyword-rich, targeting a specific search query. Use the layout template (`%s | Hackathon Starter Kit`) by keeping the title short.
+- **title**: Keyword-rich, targeting a specific search query. Use the layout template (`%s | Hackathon Playbook`) by keeping the title short.
 - **description**: 150-160 characters. Include the primary keyword naturally within the first sentence.
 - **alternates.canonical**: Full canonical URL for the page (`${BASE_URL}/your-route`).
 - **openGraph**: At minimum `title`, `description`, and `url`.

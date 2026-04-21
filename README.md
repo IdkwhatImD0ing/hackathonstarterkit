@@ -1,4 +1,4 @@
-# Hackathon Starter Kit
+# Hackathon Playbook
 
 The ultimate hackathon playbook with guides, templates, and battle-tested strategies from **36+ hackathon victories** and **$100K+ in prizes**.
 
