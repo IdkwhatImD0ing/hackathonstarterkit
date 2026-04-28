@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "Expert hackathon guides covering how to win hackathons, the best tech stack, tips for beginners, pitching strategies, and how non-coders are winning with AI tools. From 36+ hackathon victories.",
   alternates: {
     canonical: `${BASE_URL}/blog`,
+    types: {
+      "application/rss+xml": `${BASE_URL}/blog/rss.xml`,
+    },
   },
   openGraph: {
     title: "Hackathon Blog — Tips, Strategies & Guides",
