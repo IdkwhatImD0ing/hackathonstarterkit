@@ -3,8 +3,19 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, ArrowRight, Home } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { BLOG_POSTS, getBlogBySlug } from "@/lib/blog";
+import {
+  BLOG_POSTS,
+  getBlogBySlug,
+  getRecommendedBlogPosts,
+} from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
 import { BlogBlock } from "@/components/blog-blocks";
 import { BlogAnalytics } from "@/components/blog-analytics";
@@ -61,6 +72,7 @@ export default async function BlogPostPage({
   const currentIndex = BLOG_POSTS.findIndex((p) => p.slug === slug);
   const nextPost = BLOG_POSTS[currentIndex + 1];
   const prevPost = BLOG_POSTS[currentIndex - 1];
+  const recommendedPosts = getRecommendedBlogPosts(slug, 3);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -227,6 +239,71 @@ export default async function BlogPostPage({
             Open the Playbook →
           </Link>
         </div>
+
+        {recommendedPosts.length > 0 ? (
+          <section className="space-y-4">
+            <div className="space-y-1">
+              <p className="font-code text-xs uppercase tracking-[0.2em] text-volt">
+                Recommended next
+              </p>
+              <h2 className="font-display text-2xl font-bold tracking-tight">
+                More guides for where you are now
+              </h2>
+            </div>
+
+            <div className="grid gap-4">
+              {recommendedPosts.map((recommendedPost) => (
+                <Link
+                  key={recommendedPost.slug}
+                  href={`/blog/${recommendedPost.slug}`}
+                >
+                  <Card className="glow-hover group transition-all hover:border-volt/30">
+                    <CardHeader>
+                      <div className="flex items-center gap-3">
+                        <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
+                          {new Date(recommendedPost.date).toLocaleDateString(
+                            "en-US",
+                            {
+                              month: "short",
+                              day: "numeric",
+                              year: "numeric",
+                            },
+                          )}
+                        </Badge>
+                        <span className="flex items-center gap-1 font-code text-xs text-muted-foreground">
+                          <Clock className="size-3" />
+                          {recommendedPost.readingTime}
+                        </span>
+                      </div>
+                      <CardTitle className="font-display text-lg transition-colors group-hover:text-volt">
+                        {recommendedPost.title}
+                      </CardTitle>
+                      <CardDescription className="font-body text-sm">
+                        {recommendedPost.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {recommendedPost.keywords.slice(0, 3).map((kw) => (
+                          <Badge
+                            key={kw}
+                            variant="outline"
+                            className="border-border font-code text-[10px] text-muted-foreground"
+                          >
+                            {kw}
+                          </Badge>
+                        ))}
+                        <span className="ml-auto flex items-center gap-1 font-code text-xs text-volt opacity-0 transition-opacity group-hover:opacity-100">
+                          Read next <ArrowRight className="size-3" />
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <nav className="flex items-center justify-between gap-4">
           {prevPost ? (
