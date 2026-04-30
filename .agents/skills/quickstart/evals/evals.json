@@ -1,0 +1,27 @@
+{
+  "skill_name": "quickstart",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have an empty repo and want to build a small app for my law office that tracks client intake tasks. Can you run the whole setup from idea to frontend and backend scaffold?",
+      "expected_output": "A coordinated quickstart workflow that checks for existing files, runs domain-to-spec, confirms PRD sections, scaffolds frontend, and conditionally scaffolds backend.",
+      "files": [],
+      "expectations": [
+        "The output begins with a preflight for AGENTS.md, PRD.md, client, and server.",
+        "The output does not skip domain-to-spec or PRD confirmation before scaffolding.",
+        "The output stops or asks before overwriting existing project artifacts."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I already have a PRD.md and a client folder from yesterday, but I want quickstart to continue and add whatever is missing.",
+      "expected_output": "A safe quickstart response that detects existing artifacts, asks how to proceed, and avoids overwriting or cascading broken state.",
+      "files": [],
+      "expectations": [
+        "The output identifies existing files/folders as a stop condition or decision point.",
+        "The output offers skip, update, or cancel style options.",
+        "The output does not proceed to overwrite or rescaffold without approval."
+      ]
+    }
+  ]
+}

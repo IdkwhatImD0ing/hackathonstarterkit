@@ -1,0 +1,27 @@
+{
+  "skill_name": "bugfix-doctor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "My Next.js app crashes when I run `pnpm build`. The error says `TypeError: Cannot read properties of undefined (reading 'map')` in `app/dashboard/page.tsx`. I don't know what that means. Help me fix it.",
+      "expected_output": "A plain-English debugging workflow that explains the error, identifies likely causes, proposes a focused fix, and gives verification steps.",
+      "files": [],
+      "expectations": [
+        "The output explains the error in plain English before proposing code changes.",
+        "The output follows a reproduce, isolate, fix, verify sequence.",
+        "The output avoids blaming the user and keeps the fix focused."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "The form submit button worked yesterday but now clicking it does nothing. There is no visible error, and I am not a coder. What should we do?",
+      "expected_output": "A calm debugging plan that gathers evidence, narrows the likely causes, suggests safe checks, and defines how to verify the fix.",
+      "files": [],
+      "expectations": [
+        "The output asks or infers what changed, what was expected, and what happened.",
+        "The output ranks likely causes or explains how to isolate them.",
+        "The final structure includes symptom, cause, fix, verification, and prevention."
+      ]
+    }
+  ]
+}

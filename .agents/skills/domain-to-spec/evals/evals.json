@@ -1,0 +1,27 @@
+{
+  "skill_name": "domain-to-spec",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm a pediatric occupational therapist building a tool to turn parent intake notes into a therapy goals summary. I need something I can show at a hackathon, and I don't know how to turn this into a spec.",
+      "expected_output": "A domain-aware interview and draft spec plan that identifies constraints, MVP flow, backend decision, and the contents needed for AGENTS.md and PRD.md.",
+      "files": [],
+      "expectations": [
+        "The output asks targeted domain and workflow questions instead of jumping straight to code.",
+        "The output proposes an input, process, output MVP flow.",
+        "The output discusses whether a backend is needed and asks for confirmation before finalizing it."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I am a restaurant manager and I want an app that predicts how many staff I need for each shift based on weather, reservations, and last year's sales. Create the project spec files.",
+      "expected_output": "A buildable AGENTS.md and PRD.md-style specification with pages, data model, backend decision, routes, constraints, success criteria, and out-of-scope items.",
+      "files": [],
+      "expectations": [
+        "The output includes both AGENTS.md and PRD.md sections or clearly describes creating both files.",
+        "The PRD includes Pages / Screens, Data Model, Backend Needed, Backend Routes, Success Criteria, and Risk Areas.",
+        "The output separates MVP functionality from later enhancements."
+      ]
+    }
+  ]
+}

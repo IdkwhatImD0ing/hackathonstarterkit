@@ -39,7 +39,7 @@ want to pause between steps or only run a subset.
 
 `v0-prompt-crafter` is an **alternative path** to `scaffold-frontend`: instead of scaffolding a Next.js app locally, it reads the PRD and produces a single copy-paste prompt for [Vercel v0](https://v0.dev) to generate a production-grade UI. Use one or the other, not both for the same product surface.
 
-`blog-writer` is separate from the hackathon pipeline. It is used to publish write-ups to this site's blog.
+`blog-writer` is separate from the hackathon pipeline. It is used to publish write-ups to this site's blog, and is marked `metadata.internal: true` so the skills CLI does not install it during normal repo installs.
 
 ## Skill-by-Skill Contract
 
@@ -113,6 +113,7 @@ want to pause between steps or only run a subset.
 - **When**: Writing a new post for this site's blog.
 - **Reads**: User's topic, `lib/blog.ts > BLOG_POSTS` to avoid overlap.
 - **Writes**: A new entry in `lib/blog.ts`.
+- **Install visibility**: Hidden from normal `npx skills add IdkwhatImD0ing/hackathonstarterkit` installs with `metadata.internal: true`. It can still be listed or installed by setting `INSTALL_INTERNAL_SKILLS=1`.
 
 ## Repo Layout After Running the Pipeline
 
@@ -149,9 +150,10 @@ want to pause between steps or only run a subset.
 1. Create `.agents/skills/<slug>/SKILL.md` with a front matter block and prompt body.
 2. Add a new entry to `SKILL_META` in `lib/non-coder-skills.ts` with the display metadata (title, description, category, icon, slash command).
 3. Whitelist the new directory in `.gitignore` under the `# agent skills` section.
-4. If the new skill is part of the pipeline, add its slug to `RECOMMENDED_ORDER` in `lib/non-coder-skills.ts` at the correct position. If it is a shortcut that wraps multiple pipeline steps, add it to `SHORTCUT_SKILLS` instead.
-5. Update this file (`docs/agent-skills.md`) with the skill's contract.
-6. Update the "Agent Skills Pipeline" section in `README.md`.
+4. If the skill is repo-internal and should not install through `npx skills add <repo>`, add `metadata.internal: true` to its front matter.
+5. If the new skill is part of the pipeline, add its slug to `RECOMMENDED_ORDER` in `lib/non-coder-skills.ts` at the correct position. If it is a shortcut that wraps multiple pipeline steps, add it to `SHORTCUT_SKILLS` instead.
+6. Update this file (`docs/agent-skills.md`) with the skill's contract.
+7. Update the "Agent Skills Pipeline" section in `README.md`.
 
 ## Canonical Run Order (copy-paste for users)
 

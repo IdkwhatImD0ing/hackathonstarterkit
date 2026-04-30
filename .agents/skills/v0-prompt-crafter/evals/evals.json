@@ -1,0 +1,27 @@
+{
+  "skill_name": "v0-prompt-crafter",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write me a Vercel v0 prompt for a fintech dashboard called Runway. It helps startup founders see burn rate, runway, upcoming bills, and investor update status. I want it to look premium, not like a generic SaaS dashboard.",
+      "expected_output": "A complete v0 prompt package with industry read, aesthetic direction, concrete tokens, library stack, self-contained prompt, usage instructions, and follow-up prompts.",
+      "files": [],
+      "expectations": [
+        "The output includes an industry read and a named aesthetic statement.",
+        "The output specifies hex colors, real fonts, radius, spacing, density, texture, and motion.",
+        "The v0 prompt lists concrete dashboard fields and avoids generic SaaS defaults."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need a v0 prompt for a landing page for a mental health journaling app. It should feel trustworthy and calm, but not boring. The users are college students on mobile.",
+      "expected_output": "A mobile-aware landing page v0 prompt with calm trust cues, coherent libraries, accessibility requirements, and follow-up prompts.",
+      "files": [],
+      "expectations": [
+        "The output asks for missing facts or makes clearly labeled options if essential details are absent.",
+        "The output includes a coherent library stack that matches a calm mental health product.",
+        "The v0 prompt includes accessibility and responsive behavior requirements."
+      ]
+    }
+  ]
+}

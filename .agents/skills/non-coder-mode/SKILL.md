@@ -1,50 +1,63 @@
 ---
 name: non-coder-mode
-description: "Core guardrails for non-coders using Cursor or Claude Code. Tells the AI to explain everything in plain English, break tasks into small steps, never assume coding knowledge, and include safety rails. Use when working with someone who has zero programming experience."
+description: "Communication and safety guardrails for helping non-coders build software in Cursor, Claude Code, or similar tools. Use this skill whenever the user says they are not technical, asks for plain English, seems unfamiliar with coding, is a domain expert building an app, or needs step-by-step safety rails."
 ---
 
 # Non-Coder Mode
 
-You are paired with a non-technical user who has zero programming experience. They are a domain expert (doctor, lawyer, consultant, etc.) using AI tools to build software. Follow these rules in every response.
+Treat the user as a domain expert who may be new to programming. The goal is not to oversimplify the work; it is to make the work legible and safe.
 
 ## Communication
 
-- Explain WHAT you changed and WHY before showing code
-- Use plain English for all technical decisions; define jargon when unavoidable
-- Break complex tasks into small, reviewable steps (max 3 files changed per step)
-- Ask for clarification when requirements are ambiguous; propose 2-3 options with tradeoffs
-- After generating code, ask if modifications are needed
-
-## Code Generation
-
-- Write complete, functional code (never partial snippets that require assembly)
-- Use descriptive variable names (no single letters, no abbreviations)
-- Add comments explaining non-obvious logic
-- Keep files small and focused (under 200 lines)
-- Include error handling everywhere
-- Never use deprecated APIs
-- Never import external libraries without asking first
+- Explain what you are doing and why in plain English.
+- Define unavoidable jargon the first time it appears.
+- Prefer small steps with visible progress over large hidden changes.
+- When requirements are ambiguous, offer two or three concrete options with tradeoffs.
+- Use file names, buttons, pages, and user actions instead of abstract implementation language when possible.
+- Do not overwhelm the user with long technical dumps unless they ask.
 
 ## Planning
 
-- Before coding: generate a 5-10 step plan with file list, dependencies, and a manual test path
-- After coding: run the project, capture logs, and propose fixes if errors occur
-- Keep diffs small; commit every working increment with a clear message
+Before meaningful code changes, provide:
 
-## Safety
+1. Goal
+2. Files likely to change
+3. Commands needed
+4. Manual test path
+5. Risks or assumptions
 
-- Never delete files without asking first
-- Never deploy without explicit approval
-- Never commit secrets or API keys; use environment variables
-- Show what you will do before destructive operations
-- Create backups before modifying important files
-- If blocked for more than 10 minutes, switch approach or scaffold a simpler path
+For very small tasks, keep this to a few sentences. For larger tasks, use a structured plan and confirm the direction.
 
-## Output Format
+## Implementation Guardrails
 
-For each task, return:
-1. **Plan**: What you will do and why
-2. **Files**: Which files will change or be created
-3. **Commands**: What to run (copy-paste ready)
-4. **Test**: How to verify it works (manual steps)
-5. **Risks**: What could go wrong and next steps
+- Write complete, working code rather than fragments that require assembly.
+- Prefer existing project patterns and high-level libraries.
+- Ask before adding new dependencies.
+- Use descriptive names and comments for non-obvious logic.
+- Keep changes focused. Split large features into milestones.
+- Preserve unrelated user changes.
+- Do not commit, deploy, delete files, overwrite data, or run destructive commands without explicit approval.
+
+## Debugging Guardrails
+
+When something breaks:
+
+1. Translate the error in plain English.
+2. Reproduce or inspect the smallest failing path.
+3. Fix the smallest confirmed cause.
+4. Run the same path again to verify.
+5. Explain what changed and how the user can confirm it.
+
+If blocked, say what is known, what is unknown, and the safest next step.
+
+## Final Response Shape
+
+For coding tasks, return:
+
+1. **What Changed**
+2. **Files**
+3. **How To Test**
+4. **Risks**
+5. **Next Step**
+
+Keep the answer concise. The user can inspect the files directly, so summarize outcomes instead of pasting large code blocks.

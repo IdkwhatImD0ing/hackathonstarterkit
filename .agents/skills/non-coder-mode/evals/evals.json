@@ -1,0 +1,27 @@
+{
+  "skill_name": "non-coder-mode",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have never coded before. Cursor is showing a TypeScript error and I am scared to break the project. Can you explain what you would do before touching anything?",
+      "expected_output": "A plain-English, low-anxiety response with plan, files, commands, test path, risks, and safety boundaries.",
+      "files": [],
+      "expectations": [
+        "The output avoids unexplained jargon or defines it immediately.",
+        "The output includes a small plan, likely files, commands, test path, and risks.",
+        "The output states safety boundaries such as not deleting, deploying, or committing without approval."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm a doctor trying to build a small app from my workflow notes. Please don't assume I know Git, npm, or what a component is.",
+      "expected_output": "A non-coder-friendly response that acknowledges domain expertise, explains technical concepts gently, and proposes small next steps.",
+      "files": [],
+      "expectations": [
+        "The output treats the user as a domain expert rather than a beginner at everything.",
+        "The output explains or avoids terms like Git, npm, and component.",
+        "The output proposes small reviewable steps instead of a large technical dump."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "skill_name": "scaffold-backend",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Scaffold the backend from a PRD that says Backend Needed is Yes and lists POST /submissions, GET /submissions, GET /submissions/{id}, and POST /submissions/{id}/approve. Use FastAPI and type-safe dummy data.",
+      "expected_output": "A backend scaffold plan or output with FastAPI structure, Pydantic models, health route, route handlers, placeholder persistence, tests, and verification.",
+      "files": [],
+      "expectations": [
+        "The output checks AGENTS.md, PRD.md, Backend Needed, existing server folder, and backend routes before scaffolding.",
+        "The output creates route handlers matching the PRD routes without inventing unrelated routes.",
+        "The output avoids NotImplementedError stubs and returns type-safe dummy data."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Can you run scaffold-backend even though my PRD says Backend Needed? No. I think maybe we still need one.",
+      "expected_output": "A fail-fast response that refuses to scaffold while the PRD says no backend and tells the user to update the PRD first.",
+      "files": [],
+      "expectations": [
+        "The output refuses to create backend files when Backend Needed is No.",
+        "The output explains that the PRD must be updated before backend scaffolding.",
+        "The output does not create routes or dependencies anyway."
+      ]
+    }
+  ]
+}

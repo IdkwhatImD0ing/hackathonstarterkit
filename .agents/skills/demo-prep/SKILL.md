@@ -1,61 +1,86 @@
 ---
 name: demo-prep
-description: "Produces a step-by-step live demo script for hackathon presentations. Covers the problem, the app walkthrough, and the outcome. Includes a backup plan. Use before presenting at a hackathon or demo day."
+description: "Create a timed hackathon or demo-day presentation script, click path, backup plan, rehearsal checklist, and judge Q&A. Use this skill whenever the user is preparing to present, pitch, record a demo video, make slides, rehearse, or turn a working app into a clear story for judges."
 ---
 
 # Demo Prep
 
-The user is about to present their project at a hackathon or demo day. Help them create a polished, timed demo script that tells a compelling story.
+Help the user turn a project into a polished demo story. Prioritize clarity, timing, and resilience over clever wording.
 
-## Step 1: Gather Context
+## Gather The Demo Facts
 
-Ask the user:
-- What does your app do? (one sentence)
-- Who is it for?
-- What is the single most impressive thing it does?
-- How long is your presentation slot? (default: 3 minutes)
-- Will you do a live demo, recorded video, or slides?
+Ask only for what is missing:
 
-## Step 2: Write the Demo Script
+- App name and one-sentence description
+- Target user and the pain point
+- The single most impressive feature or "wow moment"
+- Presentation length, defaulting to three minutes
+- Format: live demo, recorded video, slides, or hybrid
+- Any judging criteria, sponsor prize, or required technology
+- Current demo URL or local run instructions if available
 
-Structure the script in three acts:
+If the app is not finished, help choose the most reliable working path rather than the most ambitious one.
 
-### Act 1: The Problem (30 seconds)
-- One sentence describing the pain point
-- One concrete example or statistic that makes it real
-- "What if there was a better way?"
+## Shape The Story
 
-### Act 2: The Solution (90 seconds)
-- Show the app running (live or recorded)
-- Walk through the core user flow step by step
-- Highlight the "wow moment" (the single most impressive feature)
-- Keep clicks to a minimum; narrate what is happening
+Use a three-act structure scaled to the time limit:
 
-### Act 3: The Impact (30 seconds)
-- What changes because this exists?
-- One metric, testimonial, or future vision
-- Clear closing statement
+1. **Problem**: make the pain concrete with a believable scenario, not a vague market claim.
+2. **Solution**: walk through one crisp user flow with the wow moment near the middle.
+3. **Impact**: explain what changes because the product exists and close with a memorable line.
 
-## Step 3: Prepare the Backup Plan
+For a three-minute slot, aim for:
 
-- Record a screen capture of the full demo flow (in case live demo fails)
-- Prepare 2-3 screenshots of key screens as fallback slides
-- Test the app on the presentation machine/network before going on stage
-- Have the live URL ready as a backup to localhost
+- 0:00-0:30 problem
+- 0:30-2:15 demo walkthrough
+- 2:15-2:45 impact
+- 2:45-3:00 closing and transition to questions
 
-## Step 4: Rehearse Checklist
+Adjust the allocation for shorter or longer slots.
 
-- [ ] Timed the full presentation (fits within the slot)
-- [ ] Practiced at least 3 times out loud
-- [ ] Tested the app on the demo machine
-- [ ] Backup video/screenshots are ready
-- [ ] Opening line is memorized (no fumbling the start)
-- [ ] Closing line is memorized (end strong)
+## Write The Demo
 
-## Output
+Produce presenter-ready language, not an outline. The script should sound spoken, concise, and confident.
+
+Include:
+
+- Timestamped narration
+- Exact click path or slide path
+- What should be visible on screen at each moment
+- Where to pause for the judge to notice the wow moment
+- One fallback line for any slow load, flaky API, or missing data
+
+Keep clicks minimal. A demo is not a product tour; it is proof that the core value works.
+
+## Backup Plan
+
+Prepare fallbacks in priority order:
+
+1. Recorded screen capture of the full flow
+2. Two to four screenshots of key states
+3. Seeded local data or demo account
+4. Live URL as a backup to localhost, or localhost as a backup to live URL
+5. One sentence to say if the app fails on stage without sounding defensive
+
+## Rehearsal Checklist
+
+Give the user a practical checklist:
+
+- Time the full script out loud.
+- Practice at least three times.
+- Test on the actual presentation machine and network if possible.
+- Open every tab before presenting.
+- Close distracting apps and notifications.
+- Memorize the opening and closing lines.
+
+## Final Output
 
 Return:
-1. **Script**: The full narrated demo script with timestamps
-2. **Click Path**: Exact sequence of actions to perform during the demo
-3. **Backup Plan**: What to do if the live demo breaks
-4. **Q&A Prep**: 3-5 likely questions judges will ask, with suggested answers
+
+1. **Timed Script**: spoken narration with timestamps
+2. **Click Path**: exact actions to perform
+3. **Backup Plan**: what to do if the live demo fails
+4. **Q&A Prep**: three to five likely judge questions with strong answers
+5. **Rehearsal Checklist**: final prep items
+
+If the user asked for slides instead of a live demo, adapt the click path into a slide-by-slide plan.

@@ -1,55 +1,65 @@
 ---
 name: bugfix-doctor
-description: "Systematic bug-fixing workflow for non-coders. Walks through reproduce, isolate, fix, test, and verify. Explains all errors in plain English. Use when something is broken and the user does not understand why."
+description: "Diagnose and fix broken code for non-coders with a reproduce, isolate, fix, verify workflow. Use this skill whenever the user says something is broken, shows an error, reports a failed build/test/dev server, says they do not understand what went wrong, or asks why the app stopped working."
 ---
 
 # Bugfix Doctor
 
-Something is broken and the user does not understand why. Walk them through a systematic fix using plain English at every step.
+Use a calm, evidence-first debugging workflow. The user may not know programming terms, so translate errors before diving into implementation.
 
-## Step 1: Reproduce
+## 1. Reproduce The Symptom
 
-Ask the user:
-- What did you expect to happen?
+Start by gathering the smallest useful facts:
+
+- What did the user expect?
 - What actually happened?
-- Can you show me the error? (screenshot, error message, or description)
+- What command, page, button, or workflow triggered it?
+- What error text, screenshot, console log, or terminal output is available?
 
-If they provide an error message, translate it into plain English before doing anything else.
+If an error is provided, explain it in plain English before making changes. If no error is available, inspect the likely command, page, or file path and state what evidence you are looking for.
 
-## Step 2: Isolate
+## 2. Isolate The Cause
 
-- Identify the most likely root cause
-- Explain the cause in one sentence without jargon
-- If multiple causes are possible, list them ranked by likelihood
-- Show the user exactly which file and which section contains the problem
+Form a ranked hypothesis list, then test the top hypothesis with the least invasive evidence:
 
-## Step 3: Fix
+- Read the relevant files and recent changes.
+- Run the smallest command that reproduces the failure when safe.
+- Use logs, stack traces, failing test names, or UI behavior to narrow the cause.
+- Point to the exact file or component involved.
 
-- Apply the smallest possible change that fixes the issue
-- Never refactor unrelated code during a bugfix
-- Never change more than 3 files for a single bug
-- Explain what you changed and why in plain English
+Avoid broad refactors during diagnosis. If more than one cause remains plausible, say what would distinguish them.
 
-## Step 4: Test
+## 3. Fix The Smallest Thing
 
-- Run the project and verify the fix
-- Walk the user through the same steps that triggered the bug
-- Confirm the bug is gone
-- Check that nothing else broke (run existing tests if available)
+Apply the minimum change that addresses the verified cause.
 
-## Step 5: Report
+Good bugfix behavior:
+
+- Keep the diff focused on the broken behavior.
+- Preserve unrelated user changes.
+- Prefer one to three files for a single bug unless the evidence clearly requires more.
+- Explain the change in plain English before or immediately after editing.
+- If the fix is uncertain, frame it as a safe experiment and verify it.
+
+Do not blame the user, hide uncertainty, or add new features while fixing the bug.
+
+## 4. Verify The Fix
+
+Use the same path that failed:
+
+- Rerun the failed command, test, or page flow.
+- Confirm the original symptom is gone.
+- Run adjacent checks when risk is meaningful, such as a nearby test, build, or manual browser path.
+- If verification cannot run, explain the blocker and give the exact manual test steps.
+
+## 5. Final Report
 
 Return exactly these sections:
 
-1. **Symptom**: What the user saw (their words)
-2. **Cause**: What went wrong (plain English)
-3. **Fix**: What was changed (file names and a one-line summary per file)
-4. **Verification**: How to confirm it works
-5. **Prevention**: One suggestion to avoid this type of bug in the future
+1. **Symptom**: what the user saw, in plain English
+2. **Cause**: what went wrong and why it broke
+3. **Fix**: files changed and a one-line explanation per file
+4. **Verification**: commands or manual steps used to confirm the fix
+5. **Prevention**: one practical way to avoid this class of bug next time
 
-## Rules
-
-- Always explain errors in plain English first, before showing code
-- Never blame the user for the bug
-- If the fix is uncertain, say so and propose a safe experiment
-- If you cannot find the cause, say so honestly and suggest next steps
+Keep the final answer concise. Include technical detail only where it helps the user trust or repeat the fix.

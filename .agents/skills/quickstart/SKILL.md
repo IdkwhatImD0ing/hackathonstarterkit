@@ -1,143 +1,113 @@
 ---
 name: quickstart
-description: "One-shot project bootstrapper. Runs domain-to-spec, scaffold-frontend, and (if needed) scaffold-backend sequentially, with user confirmation between steps. Produces AGENTS.md, PRD.md, a Next.js app in client/, and optionally a FastAPI app in server/. Use when starting a brand new project and the user wants the full stack in one go."
+description: "Orchestrate a new project from idea to running scaffold by chaining `domain-to-spec`, `scaffold-frontend`, and optional `scaffold-backend`. Use this skill when the user wants a one-shot setup, full-stack bootstrap, empty-repo starter, or guided path from rough idea to `AGENTS.md`, `PRD.md`, `client/`, and optionally `server/`."
 ---
 
 # Quickstart
 
-The user is staring at an empty repo and wants to go from zero to a running full-stack scaffold in one command. This skill chains the three foundational skills in the right order so the user does not have to remember them.
+Run the foundational project setup in the right order. This skill coordinates other skills; it should not skip their safety checks.
 
-The pipeline is:
+## Pipeline
 
-```
-  domain-to-spec   →   scaffold-frontend   →   scaffold-backend (optional)
-  (writes PRD)        (reads PRD, builds       (reads PRD, builds
-                       client/)                 server/ if needed)
+```text
+domain-to-spec -> scaffold-frontend -> scaffold-backend, only if PRD says Yes
 ```
 
 ## Preflight
 
-Before starting, check the repo state:
+Check for existing project artifacts:
 
 ```bash
-test -f AGENTS.md && echo "AGENTS_EXISTS"
-test -f PRD.md && echo "PRD_EXISTS"
-test -d client && echo "CLIENT_EXISTS"
-test -d server && echo "SERVER_EXISTS"
+test -f AGENTS.md && echo AGENTS_EXISTS || true
+test -f PRD.md && echo PRD_EXISTS || true
+test -d client && echo CLIENT_EXISTS || true
+test -d server && echo SERVER_EXISTS || true
 ```
 
-If any of `AGENTS.md`, `PRD.md`, `client/`, or `server/` already exist, STOP and show the user what was found. Ask:
+If any exist, stop and show what was found. Ask whether to skip existing steps, update the existing specs, or cancel. Do not overwrite silently.
 
-> "I found existing files from a previous run. Do you want to (a) skip steps whose output already exists, (b) overwrite everything and start fresh, or (c) cancel?"
-
-Respect the answer. Never overwrite silently.
+Treat overwrite as an exceptional recovery path, not a normal quickstart option. If the user asks to start fresh, explain exactly which files or folders would be replaced and ask for explicit confirmation before any destructive action.
 
 ## Step 1: Run `domain-to-spec`
 
-Invoke the `domain-to-spec` skill end-to-end. Do not summarize it. Do not skip any of its questions. The user must complete the full Q&A so the PRD is properly filled in.
+Use the `domain-to-spec` workflow end to end. Capture the user's domain, MVP flow, backend decision, pages, routes, constraints, and success criteria.
 
-When `domain-to-spec` finishes, both `AGENTS.md` and `PRD.md` should exist at the repo root. Verify:
+Verify:
 
 ```bash
-test -f AGENTS.md && test -f PRD.md && echo "STEP_1_OK" || echo "STEP_1_FAILED"
+test -f AGENTS.md && test -f PRD.md && echo STEP_1_OK || echo STEP_1_FAILED
 ```
 
-If the check fails, STOP. Do not proceed to Step 2. Ask the user to retry `domain-to-spec` or investigate why the files were not created.
+If this fails, stop. The scaffold skills need the docs.
 
-## Step 2: Pause for User Review
+## Step 2: Confirm The PRD
 
-Before running any scaffolds, show the user:
+Before scaffolding, show the user:
 
-- The `## Pages / Screens` table from `PRD.md`.
-- The `## Backend Needed?` line from `PRD.md`.
-- The `## Backend Routes` section from `PRD.md` (if backend is needed).
+- `Pages / Screens`
+- `Backend Needed?`
+- `Backend Routes`, if any
+- `Core Features (MVP)`
 
-Ask:
+Ask the user to confirm or provide corrections. Update `PRD.md` if they correct it, then show the sections again. Only continue after confirmation.
 
-> "Review these sections. Are the pages, backend decision, and routes correct? Reply 'yes' to continue, or paste corrections and I will update `PRD.md` before scaffolding."
-
-If the user pastes corrections, update `PRD.md` in place, then re-show the sections and ask again. Only proceed when the user confirms.
+If `PRD.md` already existed before quickstart began, treat this as a review step, not a rewrite step. Preserve existing decisions unless the user explicitly changes them.
 
 ## Step 3: Run `scaffold-frontend`
 
-Invoke the `scaffold-frontend` skill end-to-end. It will:
-- Preflight that `AGENTS.md` and `PRD.md` exist (they will, from Step 1).
-- Run `pnpm create next-app` into `client/`.
-- Generate pages, layout, types, and (if backend is needed) an API client.
-- Start `pnpm dev` and verify the landing page renders.
+Use the `scaffold-frontend` workflow. It should create `client/`, generate PRD pages, add navigation, add types, and create an API client only if the PRD needs a backend.
 
-When the skill finishes, verify:
+Verify:
 
 ```bash
-test -d client/app && test -f client/package.json && echo "STEP_3_OK" || echo "STEP_3_FAILED"
+test -d client/app && test -f client/package.json && echo STEP_3_OK || echo STEP_3_FAILED
 ```
 
-If the check fails, STOP and hand off to `bugfix-doctor`. Do not proceed to Step 4.
+If this fails, stop and switch to the bugfix workflow.
 
-## Step 4: Decide on Backend
+## Step 4: Decide Backend Step
 
-Read `PRD.md > Backend Needed?`:
+Read `PRD.md > Backend Needed?`.
 
-- If it starts with **No**, skip to Step 6. Tell the user: "No backend needed per `PRD.md`. Skipping `scaffold-backend`."
-- If it starts with **Yes**, proceed to Step 5.
+- If it starts with `No`, skip backend and explain why.
+- If it starts with `Yes`, continue to backend scaffolding.
 
 ## Step 5: Run `scaffold-backend`
 
-Invoke the `scaffold-backend` skill end-to-end. It will:
-- Preflight `AGENTS.md`, `PRD.md`, and `Backend Needed? = Yes`.
-- Ask about Supabase integration.
-- Scaffold `server/` with FastAPI, Pydantic models, and one route file per PRD entity.
-- Run `pytest` and verify `GET /health`.
+Use the `scaffold-backend` workflow. Ask about Supabase only if persistence is needed and not already decided.
 
-When the skill finishes, verify:
+Verify:
 
 ```bash
-test -f server/app/main.py && test -f server/requirements.txt && echo "STEP_5_OK" || echo "STEP_5_FAILED"
+test -f server/app/main.py && test -f server/requirements.txt && echo STEP_5_OK || echo STEP_5_FAILED
 ```
 
-If the check fails, STOP and hand off to `bugfix-doctor`.
+If this fails, stop and switch to the bugfix workflow.
 
-## Step 6: Connect Frontend and Backend (if backend exists)
+## Step 6: Connect And Verify
 
-If `server/` was scaffolded:
+If backend exists:
 
-1. Ensure `client/.env.local` contains `NEXT_PUBLIC_API_URL=http://localhost:8000` (create or append).
-2. Start both dev servers (in separate terminals):
-   ```bash
-   cd server && source .venv/bin/activate && uvicorn app.main:app --reload
-   cd client && pnpm dev
-   ```
-3. Verify the frontend can reach the backend by loading the landing page in the browser and checking the network tab.
+- Ensure the frontend has `NEXT_PUBLIC_API_URL=http://localhost:8000` in the appropriate example or local env file.
+- Start backend and frontend in separate terminals.
+- Verify the landing page loads and the API health endpoint responds.
 
-If frontend-only, just confirm `pnpm dev` is still running on `http://localhost:3000`.
+If frontend-only, verify the frontend dev server and generated routes.
 
-## Step 7: Summary and Handoff
+## Final Response
 
-Return exactly:
+Return:
 
-1. **Pipeline Result**:
-   - `domain-to-spec`: OK / Failed
-   - `scaffold-frontend`: OK / Failed
-   - `scaffold-backend`: OK / Skipped / Failed
-2. **Files and Folders Created**:
-   - `AGENTS.md` (repo root)
-   - `PRD.md` (repo root)
-   - `client/` with X pages
-   - `server/` with X routes (if applicable)
-3. **Live Endpoints**:
-   - Frontend: `http://localhost:3000`
-   - Backend: `http://localhost:8000` (if applicable)
-   - API Docs: `http://localhost:8000/docs` (if applicable)
-4. **Next Skills to Run**:
-   - `feature-builder`: implement the first MVP feature.
-   - `bugfix-doctor`: if anything breaks.
-   - `demo-prep`: once the MVP is done and you are preparing to present.
+1. **Pipeline Result**: status for spec, frontend, and backend
+2. **Files and Folders Created**: `AGENTS.md`, `PRD.md`, `client/`, and optional `server/`
+3. **Live Endpoints**: frontend URL, backend URL, and API docs if present
+4. **Verification**: commands and checks completed
+5. **Next Skills**: `feature-builder`, `bugfix-doctor`, or `demo-prep`
 
-## Rules
+## Boundaries
 
-- Never skip Step 1. The PRD drives every other step.
-- Never run `scaffold-frontend` or `scaffold-backend` without the preflight check passing.
-- Pause for user confirmation between Step 2 and Step 3. It is much easier to edit `PRD.md` once than to rescaffold twice.
-- If any sub-skill fails, STOP the whole pipeline. Do not cascade broken state downstream.
-- Never invent features, pages, or routes beyond what the user confirmed in the PRD.
-- Always leave the dev servers running at the end so the user can see their app immediately.
+- Do not skip `domain-to-spec`.
+- Do not scaffold from an unconfirmed PRD.
+- Do not cascade after a failed step.
+- Do not invent pages, routes, or features outside the PRD.
+- Leave dev servers running only when the user wants to inspect the app immediately.

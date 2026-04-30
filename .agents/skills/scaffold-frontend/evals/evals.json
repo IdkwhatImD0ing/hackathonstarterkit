@@ -1,0 +1,27 @@
+{
+  "skill_name": "scaffold-frontend",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Using the existing AGENTS.md and PRD.md, scaffold the frontend for a clinic intake app. The PRD has Landing, Intake Form, Review Summary, and Settings pages, and says Backend Needed is Yes.",
+      "expected_output": "A PRD-driven frontend scaffold plan or output that checks prerequisites, generates pages, layout, types, API client, env example, guardrail rule, and verification steps.",
+      "files": [],
+      "expectations": [
+        "The output checks that AGENTS.md and PRD.md exist before scaffolding.",
+        "The output maps each PRD page to a Next.js route and does not invent extra pages.",
+        "The output creates or describes an API client only because Backend Needed is Yes."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Run scaffold-frontend, but I do not have PRD.md yet. I just know I want a dashboard.",
+      "expected_output": "A fail-fast response that refuses to scaffold without AGENTS.md and PRD.md and directs the user to domain-to-spec or quickstart.",
+      "files": [],
+      "expectations": [
+        "The output refuses to create files without PRD.md and AGENTS.md.",
+        "The output directs the user to domain-to-spec or quickstart.",
+        "The output does not ask unrelated design questions or invent a dashboard."
+      ]
+    }
+  ]
+}

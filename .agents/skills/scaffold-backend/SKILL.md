@@ -1,77 +1,62 @@
 ---
 name: scaffold-backend
-description: "PRD-driven backend scaffold. Reads AGENTS.md and PRD.md from the repo root and creates a FastAPI app inside server/ with optional Supabase integration and one stub route per entry listed under PRD.md > Backend Routes. Refuses to run if AGENTS.md and PRD.md do not exist, or if PRD.md says Backend Needed? = No. Run AFTER scaffold-frontend."
+description: "Create a PRD-driven FastAPI backend in `server/` from repo-root `AGENTS.md` and `PRD.md`. Use this skill after frontend scaffolding only when `PRD.md` says `Backend Needed?` is Yes, especially for API routes, Pydantic models, health checks, optional Supabase wiring, and type-safe placeholder data."
 ---
 
 # Scaffold Backend
 
-This skill creates the backend for the user's project inside a `server/` directory at the repo root. Like `scaffold-frontend`, it is driven entirely by `PRD.md` and `AGENTS.md`. Every route, every Pydantic model, and the decision to include Supabase are all derived from the PRD.
+Generate a minimal, working backend from the confirmed PRD. The backend should be callable immediately by the frontend, even if persistence is temporary.
 
-## Preflight: PRD, AGENTS, and Backend Needed
+## Preflight
 
-Before doing anything else, check three conditions:
-
-1. `AGENTS.md` exists at the repo root.
-2. `PRD.md` exists at the repo root.
-3. `PRD.md > Backend Needed?` starts with `Yes`.
+Check from the repo root:
 
 ```bash
-test -f AGENTS.md && test -f PRD.md || { echo "MISSING_DOCS"; exit 1; }
-grep -A1 "^## Backend Needed?" PRD.md | tail -n1
+test -f AGENTS.md && test -f PRD.md || { echo MISSING_DOCS; exit 1; }
+test -d server && echo SERVER_EXISTS || true
 ```
 
-### Fail-fast responses
+Read `PRD.md > Backend Needed?`.
 
-- If `AGENTS.md` or `PRD.md` is missing, STOP and respond exactly:
+Stop without creating files if:
 
-  > This skill cannot run yet. `AGENTS.md` and `PRD.md` must exist at the repo root. Run the `domain-to-spec` skill first, or run the `quickstart` skill to chain everything automatically.
+- `AGENTS.md` or `PRD.md` is missing
+- `Backend Needed?` is missing, empty, or starts with `No`
+- `server/` already exists and is non-empty
+- `Backend Routes` is empty even though backend is needed
 
-- If `Backend Needed?` is `No` (or empty), STOP and respond exactly:
+In each stop case, explain the specific missing prerequisite and the safest next step.
 
-  > This project does not need a backend according to `PRD.md > Backend Needed?`. If that is wrong, rerun the `domain-to-spec` skill to update the PRD. Otherwise, run the `feature-builder` skill to build out frontend features.
+## Read The Specs
 
-Do not create any files in either fail case.
+Extract:
 
-## Step 1: Read the PRD and AGENTS
+- Backend routes, each as method, path, and purpose
+- Data model entities and fields
+- Auth, storage, file processing, email, and paid API requirements
+- Domain constraints that affect validation
+- Python version and backend conventions from `AGENTS.md`
 
-Extract from `PRD.md`:
+If the PRD implies a database, ask whether to wire Supabase now, defer it, or use an in-memory placeholder. Do not silently choose paid or external services.
 
-- **Routes list** (from `PRD.md > Backend Routes`). Each bullet becomes a FastAPI route.
-- **Data model** (from `PRD.md > Data Model`). Each entity becomes a Pydantic model.
-- **Domain constraints** (from `PRD.md > Domain Constraints`). Used to decide what validation rules to add.
-- **Auth requirement**. Check if `PRD.md > Core Features (MVP)` or `PRD.md > User Flow` mention login, accounts, or user-specific data. If yes, Supabase Auth is needed.
+Before generating files, make a route inventory table with `Method`, `Path`, `Purpose`, `Route Module`, and `Handler`. This table is the contract for the scaffold. If two PRD bullets map to the same handler or an entity has no route module, resolve that before writing files.
 
-Extract from `AGENTS.md`:
+## Create `server/`
 
-- The Python version and FastAPI conventions.
-- Whether Supabase is listed under `## Tech Stack > Database`.
+Generate:
 
-## Step 2: Ask About Supabase
-
-Prompt the user:
-
-> "Your PRD implies this app needs a database. I recommend Supabase because it is free, hosted, and integrates auth, Postgres, and storage in one service. Should I wire it up now? (yes / no / later)"
-
-- If **yes**: include Supabase integration in Step 4.
-- If **no**: scaffold FastAPI only; use an in-memory Python dict as a placeholder store, with a clear TODO comment to swap it out later.
-- If **later**: same as **no**.
-
-## Step 3: Scaffold `server/`
-
-Create the following structure at the repo root:
-
-```
+```text
 server/
   app/
     __init__.py
-    main.py                # FastAPI app entry point
-    config.py              # Environment variable loader
-    db.py                  # Supabase client or in-memory store
-    models.py              # Pydantic models (from PRD Data Model)
+    main.py
+    config.py
+    db.py
+    models.py
     routes/
       __init__.py
-      health.py            # GET /health
-      <entity>.py          # One file per entity in the PRD (e.g. submissions.py)
+      health.py
+      <entity>.py
   tests/
     __init__.py
     test_health.py
@@ -81,11 +66,22 @@ server/
   README.md
 ```
 
-## Step 4: Generate `requirements.txt`
+Include:
 
-Always include:
+- FastAPI app with CORS for `http://localhost:3000`
+- `GET /health`
+- One route module per entity or route group in `Backend Routes`
+- Pydantic `Base`, `Create`, and response models for each entity
+- Type-safe placeholder data with UUIDs
+- Supabase client only if the user chose it
 
-```
+Avoid `NotImplementedError` stubs. The frontend should be able to call routes and receive realistic dummy responses.
+
+## Dependencies
+
+Include:
+
+```text
 fastapi>=0.115
 uvicorn[standard]>=0.32
 pydantic>=2.9
@@ -95,250 +91,57 @@ pytest>=8.3
 httpx>=0.27
 ```
 
-If Supabase was chosen, also include:
+Add `supabase>=2.9` only if Supabase is selected.
 
-```
-supabase>=2.9
-```
+## Route Generation Rules
 
-## Step 5: Generate `main.py`
+For each PRD route:
 
-```python
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+- Match the HTTP method and path exactly.
+- Use descriptive function names.
+- Return typed models or lists of typed models.
+- Raise `HTTPException(status_code=404)` for missing IDs.
+- Keep route behavior simple and predictable.
+- Add comments only where the placeholder store needs future replacement.
 
-from app.routes import health
-# Import one route module per entity in PRD > Backend Routes
-# Example: from app.routes import submissions
+`GET /health` is allowed as a scaffold health check, but it does not count as satisfying a PRD route. In the final response, separate health routes from product routes so the user can see exactly what came from the PRD.
 
-app = FastAPI(title="{project name from PRD}")
+## Verify
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-app.include_router(health.router)
-# app.include_router(submissions.router, prefix="/submissions", tags=["submissions"])
-```
-
-Replace `{project name from PRD}` with the one-sentence summary's subject. Uncomment and add one `include_router` call per entity found in `PRD.md > Backend Routes`.
-
-## Step 6: Generate Pydantic Models From the Data Model
-
-For each entity in `PRD.md > Data Model`, create a class in `app/models.py`:
-
-```python
-from datetime import datetime
-from typing import Literal
-from pydantic import BaseModel, Field
-
-class SubmissionBase(BaseModel):
-    patient_name: str = Field(..., min_length=1)
-    date: datetime
-    medications: list[str]
-
-class SubmissionCreate(SubmissionBase):
-    pass
-
-class Submission(SubmissionBase):
-    id: str
-    status: Literal["pending", "approved", "rejected"] = "pending"
-```
-
-Always generate a `Base`, a `Create`, and a full model per entity. This pattern gives you clean request/response separation.
-
-## Step 7: Generate Route Stubs From `PRD.md > Backend Routes`
-
-For each bullet under `PRD.md > Backend Routes`, generate a FastAPI route. Example input:
-
-```
-- POST /submissions — create a new submission from the form
-- GET /submissions — list the current user's submissions
-- GET /submissions/{id} — fetch one submission
-- POST /submissions/{id}/approve — mark a submission as approved
-```
-
-Generated `app/routes/submissions.py`:
-
-```python
-from fastapi import APIRouter, HTTPException
-from uuid import uuid4
-
-from app.models import Submission, SubmissionCreate
-from app.db import store
-
-router = APIRouter()
-
-@router.post("", response_model=Submission)
-def create_submission(payload: SubmissionCreate) -> Submission:
-    submission = Submission(id=str(uuid4()), **payload.model_dump())
-    store.setdefault("submissions", {})[submission.id] = submission
-    return submission
-
-@router.get("", response_model=list[Submission])
-def list_submissions() -> list[Submission]:
-    return list(store.get("submissions", {}).values())
-
-@router.get("/{submission_id}", response_model=Submission)
-def get_submission(submission_id: str) -> Submission:
-    submission = store.get("submissions", {}).get(submission_id)
-    if submission is None:
-        raise HTTPException(status_code=404, detail="Submission not found")
-    return submission
-
-@router.post("/{submission_id}/approve", response_model=Submission)
-def approve_submission(submission_id: str) -> Submission:
-    submission = store.get("submissions", {}).get(submission_id)
-    if submission is None:
-        raise HTTPException(status_code=404, detail="Submission not found")
-    submission = submission.model_copy(update={"status": "approved"})
-    store["submissions"][submission_id] = submission
-    return submission
-```
-
-Every route should return dummy but type-safe data so the frontend has something to consume immediately.
-
-## Step 8: Generate `db.py`
-
-### If Supabase was chosen
-
-```python
-from supabase import create_client, Client
-from app.config import settings
-
-supabase: Client = create_client(settings.supabase_url, settings.supabase_key)
-```
-
-Add to `.env.example`:
-
-```
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_KEY=your-anon-or-service-key
-```
-
-Add a short section to `server/README.md` explaining how to create a Supabase project, copy the URL and anon key, and paste them into `.env`.
-
-### If Supabase was declined
-
-```python
-# Temporary in-memory store. Swap for Supabase/Postgres before production.
-store: dict[str, dict] = {}
-```
-
-## Step 9: Generate `config.py` and `.env.example`
-
-`app/config.py`:
-
-```python
-from pydantic_settings import BaseSettings, SettingsConfigDict
-
-class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
-
-    supabase_url: str = ""
-    supabase_key: str = ""
-
-settings = Settings()
-```
-
-`.env.example`:
-
-```
-# Copy this file to .env and fill in your values
-SUPABASE_URL=
-SUPABASE_KEY=
-```
-
-## Step 10: Generate `tests/test_health.py`
-
-```python
-from fastapi.testclient import TestClient
-from app.main import app
-
-client = TestClient(app)
-
-def test_health() -> None:
-    response = client.get("/health")
-    assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
-```
-
-And `app/routes/health.py`:
-
-```python
-from fastapi import APIRouter
-
-router = APIRouter()
-
-@router.get("/health")
-def health() -> dict[str, str]:
-    return {"status": "ok"}
-```
-
-## Step 11: Generate `server/.gitignore`
-
-```
-.venv/
-__pycache__/
-*.pyc
-.env
-.pytest_cache/
-.coverage
-```
-
-## Step 12: Generate `server/README.md`
-
-A short README with:
-- One-sentence project summary (from PRD).
-- Setup: create venv, `pip install -r requirements.txt`, copy `.env.example` to `.env`.
-- Run dev: `uvicorn app.main:app --reload`.
-- Tests: `pytest`.
-- If Supabase is wired up: a "Setting up Supabase" section with 4-5 bullet steps.
-
-## Step 13: Verify
-
-From the repo root:
+From `server/`:
 
 ```bash
-cd server
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-uvicorn app.main:app --reload &
-sleep 2
-curl http://localhost:8000/health
 pytest
+uvicorn app.main:app --reload
 ```
 
 Confirm:
-- `GET /health` returns `{"status": "ok"}`.
-- Every generated route appears in `http://localhost:8000/docs` (FastAPI auto-docs).
-- `pytest` passes.
 
-If anything fails, STOP and invoke the `bugfix-doctor` skill.
+- Tests pass
+- `GET /health` returns `{"status": "ok"}`
+- Generated routes appear in `/docs`
+- No secrets are hardcoded
 
-## Output
+If verification fails, switch to the bugfix workflow and fix the generated scaffold before reporting success.
 
-Return exactly:
+## Final Response
 
-1. **Files Created**: Every file under `server/`, with a one-line description.
-2. **Routes Generated**: One bullet per route, mapped to its entry in `PRD.md > Backend Routes`.
-3. **Supabase Wired Up?**: Yes or No (with the reason the user gave).
-4. **Verification**: Confirmation that `/health` responded, auto-docs listed every route, and tests passed.
-5. **Next Steps**:
-   - "Update `client/.env.local` with `NEXT_PUBLIC_API_URL=http://localhost:8000`."
-   - "Run both servers together: `cd server && uvicorn app.main:app --reload` in one terminal, `cd client && pnpm dev` in another."
-   - "Use the `feature-builder` skill to connect the first frontend page to the first backend route."
+Return:
 
-## Rules
+1. **Files Created**: every file under `server/`
+2. **Routes Generated**: each PRD route and generated handler
+3. **Health Check**: `GET /health` status, listed separately from PRD product routes
+4. **Persistence**: Supabase or in-memory placeholder, with reason
+5. **Verification**: commands and outcomes
+6. **Next Steps**: update frontend API URL and connect the first feature
 
-- Never run without `AGENTS.md` and `PRD.md` at the repo root.
-- Never run if `PRD.md > Backend Needed?` is not `Yes`.
-- Never overwrite an existing non-empty `server/` directory without asking.
-- Never invent routes that are not in `PRD.md > Backend Routes`. If the list is empty, ask the user to update the PRD first.
-- Every route must return type-safe dummy data. No `NotImplementedError` stubs. The frontend should be able to call the backend end-to-end immediately after scaffolding.
-- Never hardcode secrets. Use `app/config.py` + `.env` for every external key.
+## Boundaries
+
+- Do not run without the required docs.
+- Do not create a backend when the PRD says no backend.
+- Do not overwrite existing backend files without approval.
+- Do not invent routes outside the PRD.
+- Do not hardcode secrets.

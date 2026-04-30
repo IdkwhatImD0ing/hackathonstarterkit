@@ -1,51 +1,92 @@
 ---
 name: feature-builder
-description: "Structured workflow for implementing a new feature when you have no coding experience. Returns a plan, files list, commands, manual test steps, and rollback plan. Use when the user wants to add a feature to their project."
+description: "Plan, implement, and verify one product feature for a non-coder using small reversible steps. Use this skill whenever the user asks to add, build, implement, wire up, or change app behavior, especially when they need a plan, file list, commands, manual test path, or rollback plan."
 ---
 
 # Feature Builder
 
-The user wants to implement a new feature. They have no coding background. Guide them through a structured, safe process.
+Build one feature at a time. The user may not code, so keep the work visible, bounded, and reversible.
 
-## Step 1: Understand the Feature
+## Understand The Feature
 
-Ask the user to describe:
-- What the feature should do (in their own words)
-- Who will use it
-- What it should look like (screenshots, sketches, or descriptions are all fine)
+Extract or ask for:
 
-If the description is vague, propose 2-3 concrete interpretations and ask which one is closest.
+- What the feature should do in the user's words
+- Who uses it and why it matters
+- What screen, page, or flow it belongs to
+- What it should look like, using screenshots, sketches, examples, or plain description
+- What counts as "done"
 
-## Step 2: Create the Plan
+If the request is vague, propose two or three concrete interpretations and ask the user to choose. If the feature depends on auth, payments, database writes, external APIs, or secrets, call that out before implementation.
 
-Generate a plan with exactly these sections:
+## Decide State And Persistence
 
-1. **Goal**: One sentence describing the feature
-2. **Steps**: 5-10 numbered steps, each with a single goal
-3. **Files**: List every file that will be created or changed
-4. **Dependencies**: Any new libraries needed (ask before installing)
-5. **Commands**: Copy-paste terminal commands to run
-6. **Manual Test**: Step-by-step instructions to verify the feature works
-7. **Rollback Plan**: How to undo the changes if something breaks
+Before building features that save, remember, notify, or share data, identify where the state lives:
 
-## Step 3: Implement
+- Local component state for temporary UI-only behavior
+- Browser storage for single-device preferences or drafts
+- Existing backend/database for account-level or cross-device data
+- New backend/database work only after the user approves the added scope
 
-- Build the smallest vertical slice first: input > minimal processing > visible output
-- Implement one step at a time; confirm each step works before moving to the next
-- Use the simplest libraries and hosted services available
-- Target a visible, working demo in under 60 minutes
+Do not quietly choose persistence. Ask when the product behavior depends on whether data survives refreshes, appears across devices, or belongs to a signed-in user.
 
-## Step 4: Verify
+## Plan First
 
-After implementation:
-- Run the project and capture any errors
-- Walk the user through the manual test steps
-- If errors occur, explain them in plain English and propose fixes
-- Ask: "Does this match what you had in mind?"
+Before editing, provide a compact plan with:
 
-## Constraints
+1. **Goal**: one sentence
+2. **Steps**: five to ten small steps
+3. **Files**: files to create or change
+4. **Dependencies**: new libraries, if any, with a recommendation and reason
+5. **Commands**: copy-paste-ready commands
+6. **Manual Test**: step-by-step verification path
+7. **Rollback Plan**: how to undo the feature safely
 
-- Never add features the user did not ask for
-- Never make changes outside the scope of this feature
-- Keep changes minimal, testable, and reversible
-- Prefer high-level libraries over low-level implementations
+Ask before installing new dependencies or making destructive changes.
+
+When a feature touches email, payments, AI APIs, auth, databases, analytics, or file storage, include a short **External Services** note covering provider choice, required keys, local testing, and what happens if the service fails.
+
+## Implement In A Vertical Slice
+
+Start with the smallest path that shows value:
+
+1. Input or trigger
+2. Minimal processing
+3. Visible output
+
+Then improve styling, empty states, validation, and error handling. Prefer existing app patterns and helper APIs over new architecture. Do not add adjacent features just because they are easy.
+
+## Keep The User Oriented
+
+Use plain English updates:
+
+- What changed
+- Why it changed
+- How the user can see it
+- What remains
+
+If an error appears, switch into a debugging posture and explain the error before fixing it.
+
+## Verify
+
+Run the most relevant check for the change:
+
+- Unit or integration tests if they exist and cover the feature
+- Typecheck or build for shared code changes
+- Browser/manual flow for UI behavior
+- API request for backend behavior
+- Failure cases for external services, empty states, validation, and permission errors when relevant
+
+If verification cannot run, state why and give manual steps the user can perform.
+
+## Final Response
+
+Return:
+
+1. **What Changed**: short user-facing summary
+2. **Files**: changed files and why they matter
+3. **How To Test**: commands and manual steps
+4. **Rollback**: simplest safe undo path
+5. **Risks**: any remaining uncertainty
+
+Do not commit unless the user explicitly asks.

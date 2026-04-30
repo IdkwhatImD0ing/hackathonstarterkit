@@ -1,164 +1,107 @@
 ---
 name: scaffold-frontend
-description: "PRD-driven frontend scaffold. Reads AGENTS.md and PRD.md from the repo root and creates a Next.js + TypeScript + Tailwind app inside client/ with pages, navigation, and placeholder components that match the PRD. Refuses to run if AGENTS.md and PRD.md do not exist. Run this AFTER domain-to-spec."
+description: "Create a PRD-driven Next.js frontend in `client/` from repo-root `AGENTS.md` and `PRD.md`. Use this skill after `domain-to-spec` when the user wants the initial UI scaffold, pages, navigation, types, and optional API client generated from the confirmed PRD."
 ---
 
 # Scaffold Frontend
 
-This skill creates the frontend for the user's project inside a `client/` directory at the repo root. The app is driven by the existing `PRD.md` and `AGENTS.md`. Every page, every navigation link, and every data type is derived from those two files.
+Create the frontend scaffold only after the repo has `AGENTS.md` and `PRD.md`. The PRD is the source of truth for pages, navigation, data types, and backend wiring.
 
-## Preflight: PRD and AGENTS Must Exist
+## Preflight
 
-Before doing anything else, check that both files exist at the repo root:
+Check from the repo root:
 
 ```bash
 test -f AGENTS.md && test -f PRD.md && echo OK || echo MISSING
+test -d client && echo CLIENT_EXISTS || true
 ```
 
-If either file is missing, STOP and respond exactly:
+If either required doc is missing, stop and say:
 
-> This skill cannot run yet. `AGENTS.md` and `PRD.md` must exist at the repo root before scaffolding the frontend. Run the `domain-to-spec` skill first, or run the `quickstart` skill to chain everything automatically.
+> This skill cannot run yet. `AGENTS.md` and `PRD.md` must exist at the repo root before scaffolding the frontend. Run the `domain-to-spec` skill first, or run `quickstart` to chain the project setup.
 
-Do not create any files. Do not ask clarifying questions. Just direct the user to `domain-to-spec`.
+If `client/` exists and is non-empty, stop and ask whether to merge carefully, skip frontend scaffolding, or cancel. Never overwrite it silently.
 
-## Step 1: Read the PRD and AGENTS
+## Read The Specs
 
-Read `PRD.md` and `AGENTS.md` end-to-end. Extract:
+Read `PRD.md` and `AGENTS.md` end to end. Extract:
 
-- **Project name and one-sentence summary** (from `PRD.md > What Is This?`)
-- **Pages list** (from `PRD.md > Pages / Screens` table). You will generate one route per row.
-- **User flow** (from `PRD.md > User Flow`). Used to order the pages and decide navigation.
-- **Core features** (from `PRD.md > Core Features (MVP)`). Used to decide the primary CTA on the landing page.
-- **Data model** (from `PRD.md > Data Model`). Used to create TypeScript interfaces in `client/types/`.
-- **Backend Needed?** (from `PRD.md > Backend Needed?`). If Yes, create `client/lib/api.ts` with a fetch wrapper pointed at `NEXT_PUBLIC_API_URL`. If No, skip that file.
-- **Tech stack and code style** (from `AGENTS.md`). Match the conventions it declares.
+- Project name and summary
+- Pages from `Pages / Screens`
+- User flow and primary CTA
+- Core MVP features
+- Data model
+- Backend decision
+- Tech stack and style rules
+- Domain constraints that affect UI copy or validation
 
-## Step 2: Scaffold `client/`
+If the PRD is missing pages or contradicts itself, ask the user to update the PRD before scaffolding.
 
-Run these commands from the repo root:
+## Scaffold `client/`
+
+Use the stack declared in `AGENTS.md`. If it matches the default stack, run:
 
 ```bash
 pnpm create next-app@latest client --typescript --tailwind --app --eslint --src-dir=false --import-alias="@/*" --turbopack --no-install
 cd client && pnpm install
 ```
 
-Notes:
-- The scaffold goes into `client/` at the repo root, NOT a sibling of the repo.
-- If `client/` already exists and is non-empty, STOP and ask the user whether to overwrite, merge, or skip. Never overwrite silently.
+Do not scaffold outside the repo root.
 
-## Step 3: Generate Pages From the PRD
+## Generate PRD Pages
 
-For every row in `PRD.md > Pages / Screens`, create a corresponding route under `client/app/`:
+Create one route per `Pages / Screens` row:
 
-- The `Landing` row becomes `client/app/page.tsx`.
-- Every other row becomes `client/app/<kebab-case-name>/page.tsx`.
+- `Landing` maps to `client/app/page.tsx`
+- Other pages map to `client/app/<kebab-case-page>/page.tsx`
 
-Each page must include:
-- A single `<h1>` with the page name.
-- A short subtitle or description derived from the `Purpose` column.
-- The `Key Elements` listed as either a form, a list, or stub UI (whichever matches best).
-- A `<Link>` back to the landing page and forward to the next logical page based on `User Flow`.
+Each page should include:
 
-All pages must use semantic HTML (`<main>`, `<section>`, `<nav>`) and Tailwind utility classes.
+- One `<h1>`
+- Purpose-driven subtitle
+- Stub UI for each listed key element
+- Semantic sections
+- Navigation back to landing and forward to the next logical page
+- Plain, domain-aware copy from the PRD
 
-## Step 4: Generate the Shared Layout
+Keep pages as scaffolds, not finished product features.
 
-Create `client/app/layout.tsx` with:
+## Shared App Files
 
-- Document title and description pulled from `PRD.md > What Is This?`.
-- A top `<nav>` with links to every page in the PRD's Pages / Screens table, in user-flow order.
-- A `<footer>` with the project name and a "Built with the Hackathon Playbook" link to `https://thehackathonplaybook.dev`.
+Generate or update:
 
-## Step 5: Generate Type Definitions From the Data Model
+- `client/app/layout.tsx` with metadata, navigation, and footer
+- `client/app/globals.css` using the generated Tailwind setup
+- `client/types/models.ts` when the PRD has stored entities
+- `client/lib/api.ts` and `client/.env.local.example` only when `Backend Needed?` starts with `Yes`
+- `client/.cursor/rules/frontend-guardrails.mdc` with scoped frontend guardrails
 
-If `PRD.md > Data Model` is non-empty, create `client/types/models.ts` with one `interface` per entity described. Use descriptive field names and TypeScript primitives. Example:
+The API client should default to `http://localhost:8000` through `NEXT_PUBLIC_API_URL`.
 
-```ts
-export interface Submission {
-  id: string;
-  patientName: string;
-  date: string;
-  medications: string[];
-  status: "pending" | "approved" | "rejected";
-}
-```
+## Verify
 
-If the Data Model section is empty (stateless app), skip this step.
+Run the most relevant commands available in `client/package.json`:
 
-## Step 6: Generate the API Client (if Backend Needed)
+- Install dependencies if not already installed
+- Start the dev server
+- Load the landing page and generated routes
+- Run lint or build if practical
 
-If `PRD.md > Backend Needed?` starts with `Yes`, create `client/lib/api.ts`:
+If a generated page fails, stop and switch to the bugfix workflow before proceeding.
 
-```ts
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+## Final Response
 
-export async function apiFetch<T>(
-  path: string,
-  init?: RequestInit
-): Promise<T> {
-  const response = await fetch(`${API_URL}${path}`, {
-    ...init,
-    headers: {
-      "Content-Type": "application/json",
-      ...(init?.headers ?? {}),
-    },
-  });
-  if (!response.ok) {
-    throw new Error(`API error ${response.status}: ${response.statusText}`);
-  }
-  return response.json() as Promise<T>;
-}
-```
+Return:
 
-Also create `client/.env.local.example` with:
+1. **Files Created**: every generated file with a one-line purpose
+2. **Pages Generated**: route mapped to PRD row
+3. **Backend Hooked Up?**: yes or no, with PRD reason
+4. **Verification**: commands and browser checks
+5. **Next Steps**: run `scaffold-backend` if backend is needed, otherwise use `feature-builder`
 
-```
-NEXT_PUBLIC_API_URL=http://localhost:8000
-```
+## Boundaries
 
-If `Backend Needed? = No`, skip this step entirely.
-
-## Step 7: Add a Cursor Rule
-
-Create `client/.cursor/rules/frontend-guardrails.mdc` with a summary of the non-coder guardrails from `AGENTS.md`, scoped to `client/`:
-
-- Server components by default; `"use client"` only when interactivity is required.
-- Validate all form inputs with Zod.
-- No hardcoded colors; use Tailwind tokens and CSS variables declared in `globals.css`.
-- Keep components under 200 lines. Split larger files.
-
-## Step 8: Run and Verify
-
-From the repo root:
-
-```bash
-cd client && pnpm dev
-```
-
-Open `http://localhost:3000` in the browser. Walk the user through:
-- Landing page shows the one-sentence summary and a CTA.
-- Navigation lists every page from the PRD.
-- Each page loads without errors.
-- Console is clean (no warnings or failed fetches).
-
-If any page throws, STOP and use the `bugfix-doctor` skill. Do not move on.
-
-## Output
-
-Return exactly:
-
-1. **Files Created**: Every file added under `client/`, with a one-line description.
-2. **Pages Generated**: One bullet per route, mapped to its row in `PRD.md > Pages / Screens`.
-3. **Backend Hooked Up?**: Yes or No, referencing `PRD.md > Backend Needed?`.
-4. **Verification**: Confirmation that `pnpm dev` started cleanly and every page loaded.
-5. **Next Steps**:
-   - If `Backend Needed? = Yes`: "Run the `scaffold-backend` skill next."
-   - If `Backend Needed? = No`: "Run the `feature-builder` skill to implement the first core feature."
-
-## Rules
-
-- Never run if `AGENTS.md` or `PRD.md` is missing.
-- Never overwrite an existing non-empty `client/` directory without asking.
-- Never invent pages or features that are not in `PRD.md`.
-- Keep the scaffold minimal. Each page should be a stub, not a finished implementation. Use `feature-builder` to flesh out features one at a time.
-- Match the tech stack and code style declared in `AGENTS.md` exactly. Do not swap frameworks.
+- Do not run without `AGENTS.md` and `PRD.md`.
+- Do not invent pages or features outside the PRD.
+- Do not overwrite an existing frontend without approval.
+- Match the declared tech stack. If the user wants a different framework, update the specs first.

@@ -1,0 +1,27 @@
+{
+  "skill_name": "feature-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Can you add a saved projects feature to my hackathon app? Users should click a star on a project card and then see saved projects on a separate page. I don't know which files matter.",
+      "expected_output": "A safe feature implementation plan with goal, files, dependencies, commands, manual test, rollback, and a smallest vertical slice.",
+      "files": [],
+      "expectations": [
+        "The output starts by clarifying or scoping the feature when details are missing.",
+        "The plan includes goal, steps, files, dependencies, commands, manual test, and rollback plan.",
+        "The implementation approach starts with a minimal visible vertical slice."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I want to add email notifications when someone submits our contact form. Use whatever library is easiest and just make it work.",
+      "expected_output": "A feature plan that flags secrets and external services, asks before adding dependencies, and gives a reversible implementation path.",
+      "files": [],
+      "expectations": [
+        "The output calls out email provider setup, secrets, and environment variables.",
+        "The output asks before installing or choosing a new dependency/service.",
+        "The output includes verification steps for both success and failure cases."
+      ]
+    }
+  ]
+}

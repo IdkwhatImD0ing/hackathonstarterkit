@@ -1,0 +1,27 @@
+{
+  "skill_name": "demo-prep",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a 3-minute hackathon demo tomorrow. The app is called CaseBrief AI. It helps public defenders paste police reports and get a plain-English case timeline. The wow moment is highlighting contradictions between witness statements. Write my demo script.",
+      "expected_output": "A timed three-minute demo script with click path, backup plan, rehearsal checklist, and judge Q&A.",
+      "files": [],
+      "expectations": [
+        "The output includes timestamps that fit a three-minute presentation.",
+        "The output identifies and stages the contradiction-highlighting wow moment.",
+        "The output includes a backup plan and at least three likely judge questions."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We only have 90 seconds for our project pitch. It is a mobile app that helps students find teammates at a hackathon. We have a live demo but Wi-Fi might be bad. Help us rehearse.",
+      "expected_output": "A concise 90-second presentation plan that adapts the structure, minimizes clicks, and includes a Wi-Fi failure fallback.",
+      "files": [],
+      "expectations": [
+        "The output adapts timing to 90 seconds rather than using the default three-minute script.",
+        "The output includes a minimal click path or slide path.",
+        "The output includes a specific fallback for bad Wi-Fi."
+      ]
+    }
+  ]
+}

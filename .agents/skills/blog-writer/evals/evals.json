@@ -1,0 +1,27 @@
+{
+  "skill_name": "blog-writer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add a blog post for the Hackathon Playbook about how non-coders can choose a hackathon project idea. The target reader is a lawyer, doctor, or consultant using AI tools for the first time. Primary keyword: hackathon project ideas for non coders. Keep it practical and include internal links.",
+      "expected_output": "A complete blog post plan or post object that follows the rich content block system, targets the keyword, and includes internal links plus SEO details.",
+      "files": [],
+      "expectations": [
+        "The output includes a slug, title, 150-160 character description, reading time, keywords, and section plan or post object.",
+        "The output uses at least three rich content block types and includes at least one link-card.",
+        "The output avoids unattributed quote blocks or includes complete quote attribution."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I want a new SEO article called 'Hackathon Demo Script: How to Present in 3 Minutes'. Make it useful for beginners preparing for judging. Include a checklist and a sample click path.",
+      "expected_output": "A beginner-friendly SEO blog article structure using blocks, with demo-specific guidance, a checklist, and related internal links.",
+      "files": [],
+      "expectations": [
+        "The output targets a clear search keyword in the slug and title.",
+        "The output includes a checklist block and a step-list or pro-con block.",
+        "The output includes an SEO checklist or verification summary."
+      ]
+    }
+  ]
+}
