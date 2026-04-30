@@ -11,6 +11,18 @@
       "sourceType": "github",
       "computedHash": "d99ec3c50969406e277650874d056b6235b85645ba5eb823e4640d0eb1be8813"
     },
+    "svg-animations": {
+      "source": "supermemoryai/skills",
+      "sourceType": "github",
+      "skillPath": "svg-animations/SKILL.md",
+      "computedHash": "9be4b3e0afe9d3cbb1bcf238f8504f9a23552f742350fbef9483070112ac1977"
+    },
+    "svg-illustration": {
+      "source": "narumiruna/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/svg-illustration/SKILL.md",
+      "computedHash": "a0bd4ecc502d9ccb351ff6c9c38168c9045112a7c0c0acef975f4ce352902a9e"
+    },
     "v0-prompt-crafter": {
       "source": "local",
       "sourceType": "local",

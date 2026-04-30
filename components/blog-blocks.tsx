@@ -142,6 +142,95 @@ function BlogStepList({
   );
 }
 
+function BlogImage({
+  src,
+  alt,
+  caption,
+  credit,
+  href,
+}: Extract<ContentBlock, { type: "image" }>) {
+  const image = (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      className="block w-full bg-primary/5 object-cover transition-transform duration-500 group-hover/image:scale-[1.015]"
+    />
+  );
+
+  return (
+    <figure className="glass glow-hover group overflow-hidden rounded-xl border border-primary/15 bg-card/50 transition-all hover:border-volt/30">
+      <div className="relative overflow-hidden bg-primary/5">
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/image block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-volt focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            {image}
+            <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-background/20 bg-background/80 px-2.5 py-1 font-code text-[10px] text-foreground/80 shadow-sm backdrop-blur transition-colors group-hover/image:text-volt">
+              Source <ExternalLink className="size-3" />
+            </span>
+          </a>
+        ) : (
+          <div className="group/image">{image}</div>
+        )}
+      </div>
+      {(caption || credit) && (
+        <figcaption className="border-t border-primary/10 bg-card/80 p-4">
+          {caption && (
+            <p className="font-body text-sm leading-relaxed text-foreground/80">
+              {caption}
+            </p>
+          )}
+          {credit && (
+            <p className="mt-2 font-code text-[10px] uppercase tracking-wider text-muted-foreground">
+              {credit}
+            </p>
+          )}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+function BlogVideo({
+  src,
+  title,
+  caption,
+  credit,
+}: Extract<ContentBlock, { type: "video" }>) {
+  return (
+    <figure className="glass glow-hover overflow-hidden rounded-xl border border-primary/15 bg-card/50 transition-all hover:border-volt/30">
+      <div className="relative aspect-video overflow-hidden bg-primary/5">
+        <iframe
+          src={src}
+          title={title}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="absolute inset-0 size-full"
+        />
+      </div>
+      {(caption || credit) && (
+        <figcaption className="border-t border-primary/10 bg-card/80 p-4">
+          {caption && (
+            <p className="font-body text-sm leading-relaxed text-foreground/80">
+              {caption}
+            </p>
+          )}
+          {credit && (
+            <p className="mt-2 font-code text-[10px] uppercase tracking-wider text-muted-foreground">
+              {credit}
+            </p>
+          )}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
 function BlogQuote({
   text,
   attribution,
@@ -407,6 +496,10 @@ export function BlogBlock({ block }: { block: ContentBlock }) {
       return <BlogCallout {...block} />;
     case "stat-row":
       return <BlogStatRow {...block} />;
+    case "image":
+      return <BlogImage {...block} />;
+    case "video":
+      return <BlogVideo {...block} />;
     case "step-list":
       return <BlogStepList {...block} />;
     case "quote":

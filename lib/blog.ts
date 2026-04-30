@@ -7,8 +7,10 @@ import { post as hackathonTipsForBeginners } from "./blog/posts/hackathon-tips-f
 import { post as hackathonPitchGuide } from "./blog/posts/hackathon-pitch-guide";
 import { post as nonCodersWinningHackathons } from "./blog/posts/non-coders-winning-hackathons";
 import { post as buildWithElevenlabsAndCursor } from "./blog/posts/build-with-elevenlabs-and-cursor";
+import { post as hackathonPitchMistakesLaHacks } from "./blog/posts/hackathon-pitch-mistakes-la-hacks";
 
 export const BLOG_POSTS: BlogPost[] = [
+  hackathonPitchMistakesLaHacks,
   howToWinHackathons,
   bestTechStackForHackathons,
   hackathonTipsForBeginners,

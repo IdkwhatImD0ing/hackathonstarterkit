@@ -12,6 +12,8 @@ export type ContentBlock =
   | { type: "paragraph"; text: string }
   | { type: "callout"; variant: "tip" | "warning" | "info" | "success"; title?: string; text: string }
   | { type: "stat-row"; stats: { value: string; label: string }[] }
+  | { type: "image"; src: string; alt: string; caption?: string; credit?: string; href?: string }
+  | { type: "video"; src: string; title: string; caption?: string; credit?: string }
   | { type: "step-list"; steps: { title: string; description: string }[] }
   | { type: "quote"; text: string; attribution?: string }
   | { type: "pro-con"; pros: string[]; cons: string[] }
