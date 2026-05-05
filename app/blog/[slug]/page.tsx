@@ -19,6 +19,7 @@ import {
 import { JsonLd } from "@/components/json-ld";
 import { BlogBlock } from "@/components/blog-blocks";
 import { BlogAnalytics } from "@/components/blog-analytics";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
@@ -220,6 +221,12 @@ export default async function BlogPostPage({
           </section>
         ))}
       </div>
+
+      <NewsletterSignup
+        eyebrow="Get the next guide"
+        title="Want more hackathon breakdowns like this?"
+        description="Join the newsletter for practical build, pitch, and judging strategy from 36+ hackathon wins."
+      />
 
       <Separator className="bg-primary/20" />
 

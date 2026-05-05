@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { BLOG_POSTS } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
@@ -94,6 +95,8 @@ export default function BlogPage() {
         </p>
         <Separator className="bg-primary/20" />
       </header>
+
+      <NewsletterSignup />
 
       <div className="stagger-children grid grid-cols-1 gap-6">
         {POSTS_BY_DATE_DESC.map((post) => (
