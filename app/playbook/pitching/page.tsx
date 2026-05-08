@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Mic,
   BookOpen,
@@ -1627,11 +1628,28 @@ export default function PitchingPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  Screen Studio (Mac) or CanVid (Windows) handle auto-zoom,
-                  instant editing, effects, and selfie overlays. During
-                  hackathons, where every second matters, these tools save hours
-                  of manual editing.
+                  On Mac,{" "}
+                  <a
+                    href="https://screenstudio.lemonsqueezy.com?aff=LpD9R"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-primary underline decoration-primary/30 hover:decoration-primary"
+                  >
+                    Screen Studio
+                  </a>{" "}
+                  is what I reach for. CanVid covers the same ground on
+                  Windows. Both handle auto-zoom, instant editing, effects,
+                  and selfie overlays, which saves hours of manual work when
+                  every hackathon hour matters.
                 </p>
+                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
+                  <p className="font-code text-xs text-primary/80">
+                    <span className="font-semibold">My pick:</span> Screen
+                    Studio. The auto-zoom and cursor smoothing alone make a
+                    60 second demo look like a polished product launch. Worth
+                    a look if you are on Mac.
+                  </p>
+                </div>
                 <div className="space-y-2">
                   <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                     Key Features
@@ -1654,6 +1672,63 @@ export default function PitchingPage() {
               </CardContent>
             </Card>
           </div>
+
+          {/* --- CROSS-LINK: examples + recording stack live on submission page --- */}
+          <Link
+            href="/playbook/submission#demo-video-examples"
+            className="group block"
+          >
+            <Card className="glow-hover overflow-hidden border-volt/30 transition-all hover:-translate-y-0.5 hover:border-volt/60">
+              <CardContent className="p-6 md:p-8">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-[auto_1fr_auto] md:items-center">
+                  <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-volt/10">
+                    <Video className="size-7 text-volt" />
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
+                        SEE EXAMPLES
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="border-success/20 text-success font-code text-xs"
+                      >
+                        <Trophy className="mr-1 size-3" />
+                        1ST OVERALL
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="border-spark/20 text-spark font-code text-xs"
+                      >
+                        <Sparkles className="mr-1 size-3" />
+                        INTERNSHIP OFFER
+                      </Badge>
+                    </div>
+                    <h3 className="font-display text-2xl font-bold tracking-tight transition-colors group-hover:text-volt">
+                      Watch real demo video examples + the recording stack
+                    </h3>
+                    <p className="font-body text-sm text-foreground/80">
+                      Two embedded demo videos that turned hackathon work into
+                      outcomes (winning the largest 24 hour hackathon in the
+                      US and landing an internship offer), plus the screen
+                      recorder I use for them, live on the submission playbook
+                      page.
+                    </p>
+                    <p className="font-body text-xs text-foreground/60">
+                      <Clock className="-mt-0.5 mr-1 inline size-3 text-volt" />
+                      Bonus: it also covers the timing trick for recording the
+                      video <em>after</em> code submission so it never eats
+                      build hours.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 self-start font-display text-sm font-semibold text-volt md:self-center">
+                    View on submission
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
 
           <div className="rounded-lg border border-border bg-surface p-4">
             <p className="font-body text-sm text-muted-foreground">

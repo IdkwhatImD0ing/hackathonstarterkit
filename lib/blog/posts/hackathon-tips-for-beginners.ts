@@ -6,6 +6,7 @@ export const post: BlogPost = {
   description:
     "First hackathon? This beginner's guide covers everything you need to know: what to bring, how to find a team, what to build, common mistakes, and how to make the most of your first hackathon experience.",
   date: "2026-04-08",
+  updatedDate: "2026-05-08",
   readingTime: "9 min read",
   keywords: [
     "hackathon tips for beginners",
@@ -98,6 +99,18 @@ export const post: BlogPost = {
           "Trying to build too many features",
         ]},
         { type: "callout", variant: "tip", text: "If something isn't working after 30 minutes, find a workaround or cut the feature. Ask mentors for help early and often. They're there specifically to help you." },
+        { type: "paragraph", text: "Skipping the demo video backup is the most preventable mistake on this list. A 60-90 second screen recording with voiceover gives judges a way to understand your project even if your live demo dies on stage, and it keeps living after the hackathon ends. The example below is SoundSearch, a solo first-place accessibility tool from the AIATL hackathon that guides users through complex websites with real-time voice over a phone call. The recording reached a recruiter after the event and turned into an internship offer. The embed skips the problem framing intro so the product is on screen right away." },
+        { type: "callout", variant: "tip", text: "First-timer relief: this does not have to come out of your coding budget. Most hackathons only freeze the code at submission, while the Devpost listing (including the demo video link) stays editable for an hour or two after. The submission playbook has the full timing trick." },
+        { type: "video", src: "https://www.youtube.com/embed/RgH-i9SYj-o?start=22", title: "SoundSearch demo video, solo 1st place at AIATL, that led to an internship offer", caption: "A demo video does not need a team. A solo submission with a clear recording can outlive the hackathon and reach recruiters on its own.", credit: "Demo video by Bill Zhang." },
+        { type: "cta-button",
+          tag: "My pick",
+          title: "Screen Studio is what I use to record hackathon demos",
+          description: "Auto-zoom, cursor smoothing, and webcam overlay baked in. As a beginner you will spend almost no time editing, which matters a lot at hour 22. Worth a look if you are on Mac.",
+          label: "Check it out",
+          href: "https://screenstudio.lemonsqueezy.com?aff=LpD9R",
+          sponsored: true,
+        },
+        { type: "link-card", title: "Hackathon Submission Playbook", description: "Demo video examples, README templates, and the recording stack used by 36+ winning teams.", href: "/playbook/submission", tag: "Playbook" },
       ],
     },
     {

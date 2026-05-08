@@ -6,6 +6,7 @@ export const post: BlogPost = {
   description:
     "Avoid these hackathon pitch mistakes from LA Hacks judging: tailor your pitch, simplify slides, demo the main flow, and leave Q&A time for better scores.",
   date: "2026-04-30",
+  updatedDate: "2026-05-08",
   readingTime: "8 min read",
   keywords: [
     "hackathon pitch mistakes",
@@ -137,7 +138,18 @@ export const post: BlogPost = {
         { type: "image", src: "/blog/la-hacks-pauley-atmosphere.png", alt: "Teams at LA Hacks set up with laptops on judging tables inside Pauley Pavilion.", caption: "In a crowded judging floor, a clear backup video can be the difference between being remembered and being lost in the noise.", credit: "Photo courtesy of LA Hacks." },
         { type: "callout", variant: "warning", title: "Your Live Demo Can Fail", text: "A backup video protects you from bad Wi-Fi, broken APIs, browser issues, and laptop chaos. It lets the judge see the product even when the environment fails." },
         { type: "paragraph", text: "The side benefit is that the video also improves your Devpost. During deliberation, judges may revisit submissions. If your video is clear, they can remember the project. If your Devpost is thin, your project becomes much easier to forget." },
+        { type: "callout", variant: "tip", text: "And no, recording does not have to come out of your build hours. Hackathons lock the code at submission, but the Devpost (including the YouTube link) usually stays editable. The submission playbook has the full timing trick." },
         { type: "video", src: "https://www.youtube.com/embed/hdpdgxrilQM", title: "Winning Berkeley AI Hackathon demo video example", caption: "A backup demo video should make the project understandable even when the live environment fails or judges revisit the submission later.", credit: "Demo video courtesy of Bill Zhang." },
+        { type: "paragraph", text: "And here is another demo video that did the heavy lifting for its team. TalkTuahBank won 1st Overall at HackUTD 2024, the largest 24 hour hackathon in the US." },
+        { type: "video", src: "https://www.youtube.com/embed/YsH_z1azXSA", title: "TalkTuahBank demo video, 1st Overall at HackUTD 2024", caption: "Notice how the product is on screen within 30 seconds and a real money transfer is executed on camera. That is what a backup video should do.", credit: "Demo video by the TalkTuahBank team." },
+        { type: "cta-button",
+          tag: "My pick",
+          title: "Screen Studio is the screen recorder I use for demo videos",
+          description: "Auto-zoom, cursor smoothing, and webcam overlay baked in. A 60-second hackathon demo looks like a polished product launch with almost no editing. Worth a look if you are on Mac.",
+          label: "Check it out",
+          href: "https://screenstudio.lemonsqueezy.com?aff=LpD9R",
+          sponsored: true,
+        },
       ],
     },
     {

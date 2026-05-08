@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock, ArrowRight, Home } from "lucide-react";
+import { ArrowLeft, Clock, ArrowRight, Home, RefreshCw } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -50,6 +50,7 @@ export async function generateMetadata({
       description: post.description,
       url: `${BASE_URL}/blog/${post.slug}`,
       publishedTime: post.date,
+      modifiedTime: post.updatedDate ?? post.date,
       authors: ["Bill Zhang"],
       tags: post.keywords,
     },
@@ -81,7 +82,7 @@ export default async function BlogPostPage({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updatedDate ?? post.date,
     url: `${BASE_URL}/blog/${post.slug}`,
     author: {
       "@type": "Person",
@@ -162,7 +163,7 @@ export default async function BlogPostPage({
         </nav>
 
         <header className="space-y-4">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
               {new Date(post.date).toLocaleDateString("en-US", {
                 month: "long",
@@ -174,6 +175,17 @@ export default async function BlogPostPage({
               <Clock className="size-3" />
               {post.readingTime}
             </span>
+            {post.updatedDate ? (
+              <span className="flex items-center gap-1 font-code text-xs text-volt">
+                <RefreshCw className="size-3" />
+                Updated{" "}
+                {new Date(post.updatedDate).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </span>
+            ) : null}
           </div>
 
           <h1 className="font-display text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
@@ -266,7 +278,7 @@ export default async function BlogPostPage({
                 >
                   <Card className="glow-hover group transition-all hover:border-volt/30">
                     <CardHeader>
-                      <div className="flex items-center gap-3">
+                      <div className="flex flex-wrap items-center gap-3">
                         <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
                           {new Date(recommendedPost.date).toLocaleDateString(
                             "en-US",
@@ -281,6 +293,19 @@ export default async function BlogPostPage({
                           <Clock className="size-3" />
                           {recommendedPost.readingTime}
                         </span>
+                        {recommendedPost.updatedDate ? (
+                          <span className="flex items-center gap-1 font-code text-xs text-volt">
+                            <RefreshCw className="size-3" />
+                            Updated{" "}
+                            {new Date(
+                              recommendedPost.updatedDate,
+                            ).toLocaleDateString("en-US", {
+                              month: "short",
+                              day: "numeric",
+                              year: "numeric",
+                            })}
+                          </span>
+                        ) : null}
                       </div>
                       <CardTitle className="font-display text-lg transition-colors group-hover:text-volt">
                         {recommendedPost.title}

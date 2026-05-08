@@ -7,6 +7,7 @@ export const post: BlogPost = {
   description:
     "Master the art of hackathon pitching. Learn pitch structure, storytelling techniques, demo best practices, and how to handle judge Q&A. Includes templates from 36+ winning presentations.",
   date: "2026-04-10",
+  updatedDate: "2026-05-08",
   readingTime: "8 min read",
   keywords: [
     "hackathon pitch guide",
@@ -55,6 +56,17 @@ export const post: BlogPost = {
       blocks: [
         { type: "paragraph", text: "Always do a live demo when possible. Slides are for backup only. Walk through your product as if you're a user encountering it for the first time. Show the most impressive feature first, not last." },
         { type: "callout", variant: "warning", text: "Pre-load your demo with realistic data, not 'test123' and 'lorem ipsum'. If your app shows a dashboard, populate it with realistic numbers. If it processes text, use a real example. Small details like this make your project feel polished and real." },
+        { type: "paragraph", text: "And always record a backup demo video. The Wi-Fi will fail, the API will rate-limit, the laptop will sleep. A pre-recorded video keeps the demo running when the live environment does not. It also follows judges into deliberation, when you cannot." },
+        { type: "video", src: "https://www.youtube.com/embed/YsH_z1azXSA", title: "TalkTuahBank demo video, 1st Overall at HackUTD 2024", caption: "Notice how the product is on screen within 30 seconds and a real money transfer is executed on camera. That is what a backup video should do.", credit: "Demo video by the TalkTuahBank team." },
+        { type: "cta-button",
+          tag: "My pick",
+          title: "Screen Studio is the screen recorder I use for hackathon demos",
+          description: "Auto-zoom, cursor smoothing, and webcam overlay baked in. A 60-second hackathon demo looks like a product launch with almost no editing. Worth a look if you are on Mac.",
+          label: "Check it out",
+          href: "https://screenstudio.lemonsqueezy.com?aff=LpD9R",
+          sponsored: true,
+        },
+        { type: "link-card", title: "More demo video examples", description: "Two real demo videos that turned hackathon work into outcomes, plus the recording stack behind them.", href: "/playbook/pitching", tag: "Playbook" },
       ],
     },
     {

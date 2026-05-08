@@ -7,6 +7,7 @@ export const post: BlogPost = {
   description:
     "Discover the best technology and tools to use at hackathons in 2026. From frameworks to AI APIs, deployment platforms, and databases, here's what winning teams actually use.",
   date: "2026-04-05",
+  updatedDate: "2026-05-08",
   readingTime: "10 min read",
   keywords: [
     "best tech stack for hackathons",
@@ -89,6 +90,33 @@ export const post: BlogPost = {
         { type: "paragraph", text: "Judges need to see a live URL, not localhost. A deployed project always beats a localhost-only demo in judging." },
         { type: "code-snippet", language: "bash", filename: "terminal", code: "# Deploy to Vercel in seconds\nnpx vercel deploy\n\n# Or use Railway for full-stack\nrailway up" },
         { type: "callout", variant: "warning", text: "For mobile apps, use Expo for React Native (instant QR code testing). For hardware projects, ensure you have a working video demo as backup in case of live demo failures." },
+      ],
+    },
+    {
+      heading: "Recording Your Demo Video",
+      paragraphs: [],
+      blocks: [
+        { type: "paragraph", text: "The demo video is the only piece of your hackathon submission that keeps working after you leave the room. Judges revisit it during deliberation, recruiters find it on YouTube, and sponsors clip it for their own posts. Skipping it is the highest-cost mistake a team can make." },
+        { type: "pro-con", pros: [
+          "Screen Studio (Mac): what I use, auto-zoom and cursor smoothing baked in",
+          "CanVid (Windows): closest equivalent on Windows",
+          "60-90 second runtime, one take is fine",
+          "Voiceover with the problem first, then product",
+        ], cons: [
+          "QuickTime / built-in screen recorders (no zoom, no polish)",
+          "5-minute recordings (judges scrub, not watch)",
+          "Slide-only recordings without showing the product",
+          "No voiceover or captions",
+        ]},
+        { type: "cta-button",
+          tag: "My pick",
+          title: "Screen Studio is the screen recorder I use for hackathon demos",
+          description: "Auto-zoom, cursor smoothing, webcam overlay, and export presets that just work. Almost no editing time. Worth a look if you are on Mac.",
+          label: "Check it out",
+          href: "https://screenstudio.lemonsqueezy.com?aff=LpD9R",
+          sponsored: true,
+        },
+        { type: "link-card", title: "Hackathon Submission Playbook", description: "Demo video examples that won the largest 24 hour hackathon in the US and landed an internship offer.", href: "/playbook/submission", tag: "See Examples" },
       ],
     },
     {

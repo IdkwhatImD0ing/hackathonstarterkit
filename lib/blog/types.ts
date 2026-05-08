@@ -3,6 +3,7 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
+  updatedDate?: string;
   readingTime: string;
   keywords: string[];
   content: BlogSection[];

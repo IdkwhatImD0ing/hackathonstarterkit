@@ -799,7 +799,7 @@ export default function ExecutionPage() {
                 title: "Demo Prep",
                 time: "Hour 20-22",
                 description:
-                  "Record the demo video. Build the pitch deck. Prep appendix slides for Q&A. This is not optional and is actually the highest-ROI activity of the entire hackathon. A polished pitch with a working demo beats a perfect codebase with a bad presentation.",
+                  "Record the demo video. Build the pitch deck. Prep appendix slides for Q&A. This is not optional and is actually the highest-ROI activity of the entire hackathon. A polished pitch with a working demo beats a perfect codebase with a bad presentation. Tight on build hours? The demo video itself can usually slide into the post-submission buffer before judging — see the submission playbook for the timing trick.",
                 accent: "volt" as const,
               },
               {

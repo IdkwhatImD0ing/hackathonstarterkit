@@ -6,6 +6,7 @@ export const post: BlogPost = {
   description:
     "Battle-tested strategies from 36+ hackathon wins and $100K+ in prizes. Learn the 7-phase system for hackathon success covering team formation, ideation, execution, pitching, and more.",
   date: "2026-04-01",
+  updatedDate: "2026-05-08",
   readingTime: "12 min read",
   keywords: [
     "how to win hackathons",
@@ -104,13 +105,24 @@ export const post: BlogPost = {
         { type: "paragraph", text: "Your Devpost submission and README are just as important as your code. Judges often review submissions before seeing demos. Write a compelling project description that leads with what the project does, not how it was built." },
         { type: "checklist", title: "Submission Checklist", items: [
           "Compelling project description (problem-first, not tech-first)",
-          "2-3 minute demo video with screen recording and voiceover",
+          "60-90 second demo video with screen recording and voiceover",
           "Screenshots showing key features",
           "Architecture diagram in README",
           "List of technologies and APIs used",
           "Team member roles and contributions",
         ]},
         { type: "callout", variant: "tip", text: "These materials often determine whether judges visit your table. A polished Devpost submission can be the difference between winning and not even being considered." },
+        { type: "paragraph", text: "Here is what a winning hackathon demo video actually looks like. TalkTuahBank took 1st Overall at HackUTD 2024, the largest 24 hour hackathon in the US. Notice how the product is on screen within the first 30 seconds and a real money transfer is executed on camera." },
+        { type: "video", src: "https://www.youtube.com/embed/YsH_z1azXSA", title: "TalkTuahBank demo video, 1st Overall at HackUTD 2024", caption: "A 2-minute demo that wins: open with the problem, show the product working end to end, end with the impact.", credit: "Demo video by the TalkTuahBank team." },
+        { type: "cta-button",
+          tag: "My pick",
+          title: "Screen Studio is the screen recorder I use for hackathon demos",
+          description: "Auto-zoom, cursor smoothing, webcam overlay, and export presets that just work. Basically no editing time. Worth a look if you are on Mac.",
+          label: "Check it out",
+          href: "https://screenstudio.lemonsqueezy.com?aff=LpD9R",
+          sponsored: true,
+        },
+        { type: "link-card", title: "Hackathon Submission Playbook", description: "Demo video examples, README templates, and the recording stack used by 36+ winning teams.", href: "/playbook/submission", tag: "Full Playbook" },
       ],
     },
     {
