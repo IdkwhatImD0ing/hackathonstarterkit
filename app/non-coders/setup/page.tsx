@@ -199,8 +199,16 @@ export default function SetupPage() {
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
             Your entire configuration lives in three files. The AI reads these
-            every time it helps you. Don&apos;t know what a &ldquo;file&rdquo;
-            means in this context? Check{" "}
+            every time it helps you. For the deep dive on the system prompt files
+            (and a one-command setup), see{" "}
+            <Link
+              href="/non-coders/system-prompt"
+              className="text-volt underline decoration-volt/30 hover:decoration-volt"
+            >
+              The System Prompt
+            </Link>
+            . Don&apos;t know what a &ldquo;file&rdquo; means in this context?
+            Check{" "}
             <Link
               href="/non-coders/concepts"
               className="text-volt underline decoration-volt/30 hover:decoration-volt"

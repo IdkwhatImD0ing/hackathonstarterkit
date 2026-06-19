@@ -1,0 +1,3 @@
+# AGENTS.md
+
+See @CLAUDE.md for all project guidance. That file is the single source of truth: how to work with me, the honesty rules, what we are building, and the guardrails. This file only points to it so Cursor, Codex, and other tools load the exact same rules as Claude.

@@ -1,4 +1,4 @@
-import { Trophy, Settings, BookOpen, Plug, Sparkles } from "lucide-react";
+import { Trophy, Settings, BookOpen, Plug, Sparkles, FileCog } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface NonCoderSection {
@@ -41,6 +41,14 @@ export const NON_CODER_SECTIONS: NonCoderSection[] = [
       "How to add any service to your app with just a key and a docs link.",
     icon: Plug,
     accent: "success",
+  },
+  {
+    slug: "system-prompt",
+    title: "The System Prompt",
+    subtitle:
+      "The CLAUDE.md and AGENTS.md files that set the rules your AI follows every session. One command sets up both.",
+    icon: FileCog,
+    accent: "spark",
   },
   {
     slug: "skills",

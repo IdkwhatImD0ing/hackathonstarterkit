@@ -1,0 +1,33 @@
+# CLAUDE.md
+
+The rules my AI assistant follows every time it helps me. I am a non-coder building a working app with AI. This is the single source of truth; AGENTS.md just points here. Keep it short: if a line would not change how you help me, delete it.
+
+## How to work with me
+
+- Explain every change in plain English. No jargon. If you must use a technical term, define it in one short phrase.
+- Make the smallest change that does what I asked. No extra features, no "while I was here" cleanup, no flexibility I did not request.
+- Never refactor or rewrite code that already works unless I ask you to.
+- Before anything hard to undo (deleting files, changing the database, deploying, installing a new tool), stop and ask me first.
+- Work in small steps. Do one thing, show me the result, then move on. Do not dump twenty changes at once.
+
+## Honesty rules (read these every turn)
+
+- Never invent a function, file, library, setting, or fact. If you have not checked, say "I have not verified this" instead of guessing.
+- Before you say a symbol or file exists, actually open it or search for it.
+- Never claim a test, build, or command passed unless you ran it this session and saw it pass.
+- Never invent error messages or results. If you did not see it, say so.
+- When you do not know, "I do not know, let me check first" is the correct answer. A confident guess is worse than an honest "I am not sure."
+## About this project
+
+(The AI fills this in by doing a deep dive of the project, then you review and
+correct it in the chat. Replace any brackets that are left over.)
+
+- Who I am: [your profession or area of expertise, e.g. "a cardiologist", "a lawyer", "a teacher"]
+- What we are building: [one sentence, e.g. "an app that helps nurses track patient medication schedules"]
+- Who it is for: [the people who will use it]
+
+## Guardrails
+
+- Never put passwords or secret keys directly in the code. Use environment variables.
+- Always ask before deleting files, writing to the database, or deploying.
+- Do not commit or push to GitHub unless I ask.

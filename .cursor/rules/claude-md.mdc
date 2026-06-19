@@ -1,0 +1,8 @@
+---
+description: Canonical agent guidance for this repo (principles, honesty rules, architecture, conventions)
+alwaysApply: true
+---
+
+# Load CLAUDE.md every session
+
+The single source of truth for working in this repository is @CLAUDE.md. Read it and follow it: the working principles, honesty rules, verification protocol, commands, architecture, conventions, and guardrails all live there. `AGENTS.md` points to the same file.
