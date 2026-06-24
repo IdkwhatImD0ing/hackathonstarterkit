@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   Mic,
   BookOpen,
@@ -23,6 +22,7 @@ import {
   Camera,
   Presentation,
   CheckCircle2,
+  Star,
   Swords,
   CircleDot,
   ExternalLink,
@@ -1519,7 +1519,7 @@ export default function PitchingPage() {
         {/* ============================================================
             THE DEMO VIDEO
             ============================================================ */}
-        <section className="space-y-8">
+        <section id="the-demo-video" className="space-y-8 scroll-mt-20">
           <SectionHeading
             title="The Demo Video"
             subtitle="A polished demo video can be the difference between walking away empty-handed and pocketing serious cash. It's the secret weapon most teams neglect."
@@ -1650,61 +1650,204 @@ export default function PitchingPage() {
             </Card>
           </div>
 
-          {/* --- CROSS-LINK: examples + recording stack live on submission page --- */}
-          <Link
-            href="/playbook/submission#demo-video-examples"
-            className="group block"
-          >
-            <Card className="glow-hover overflow-hidden border-volt/30 transition-all hover:-translate-y-0.5 hover:border-volt/60">
-              <CardContent className="p-6 md:p-8">
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-[auto_1fr_auto] md:items-center">
-                  <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-volt/10">
-                    <Video className="size-7 text-volt" />
+          <div className="space-y-1">
+            <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">REAL EXAMPLES</Badge>
+            <h3 className="font-display text-2xl font-bold tracking-tight">Two demo videos that turned work into outcomes</h3>
+            <p className="font-body text-sm text-muted-foreground">Notice how each gets the product on screen fast, narrates what the viewer is seeing, and lets the actual interaction do the convincing.</p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            {/* Demo video 1: TalkTuahBank */}
+            <Card className="glow-hover overflow-hidden border-success/20">
+              <CardHeader>
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
+                    <Trophy className="size-5 text-success" />
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
-                        SEE EXAMPLES
-                      </Badge>
-                      <Badge
-                        variant="outline"
-                        className="border-success/20 text-success font-code text-xs"
-                      >
-                        <Trophy className="mr-1 size-3" />
-                        1ST OVERALL
-                      </Badge>
-                      <Badge
-                        variant="outline"
-                        className="border-spark/20 text-spark font-code text-xs"
-                      >
-                        <Sparkles className="mr-1 size-3" />
-                        INTERNSHIP OFFER
-                      </Badge>
-                    </div>
-                    <h3 className="font-display text-2xl font-bold tracking-tight transition-colors group-hover:text-volt">
-                      Watch real demo video examples + the recording stack
-                    </h3>
-                    <p className="font-body text-sm text-foreground/80">
-                      Two demo videos that turned hackathon work into outcomes
-                      (winning the largest 24 hour hackathon in the US, landing
-                      an internship offer), plus the screen recorder I use, on
-                      the submission playbook page.
-                    </p>
-                    <p className="font-body text-xs text-foreground/60">
-                      <Clock className="-mt-0.5 mr-1 inline size-3 text-volt" />
-                      Bonus: it also covers the timing trick for recording the
-                      video <em>after</em> code submission so it never eats
-                      build hours.
-                    </p>
+                  <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
+                    DEMO VIDEO 1
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="border-success/20 text-success font-code text-xs"
+                  >
+                    WON LARGEST 24-HOUR HACKATHON
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-success">
+                  TalkTuahBank — HackUTD 2024
+                </CardTitle>
+                <CardDescription className="font-body text-sm">
+                  1st Overall + Goldman Sachs Challenge Winner at the largest
+                  24 hour hackathon in the US.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="overflow-hidden rounded-lg border border-success/10">
+                  <div className="aspect-video">
+                    <iframe
+                      src="https://www.youtube.com/embed/YsH_z1azXSA"
+                      title="TalkTuahBank demo video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="size-full"
+                    />
                   </div>
-                  <div className="flex items-center gap-2 self-start font-display text-sm font-semibold text-volt md:self-center">
-                    View on submission
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                </div>
+                <div className="rounded-lg border border-success/10 bg-success/5 p-3">
+                  <p className="font-code text-xs text-success/80">
+                    <span className="font-semibold">Why it works:</span> A
+                    role-play demo runs a real money transfer on camera. Voice,
+                    dashboard, and specific dollar amounts turn
+                    &ldquo;voice-based banking&rdquo; into a verifiable outcome
+                    judges can replay during deliberation.
+                  </p>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=YsH_z1azXSA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 font-code text-xs text-success/60 underline decoration-success/30 hover:decoration-success"
+                >
+                  <Play className="size-3" />
+                  Watch on YouTube
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Demo video 2: SoundSearch — solo first-place project at AIATL that led to an internship offer */}
+            <Card className="glow-hover overflow-hidden border-spark/20">
+              <CardHeader>
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                    <Sparkles className="size-5 text-spark" />
                   </div>
+                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                    DEMO VIDEO 2
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="border-spark/20 text-spark font-code text-xs"
+                  >
+                    SOLO 1ST PLACE + INTERNSHIP OFFER
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-spark">
+                  SoundSearch — AIATL Hackathon
+                </CardTitle>
+                <CardDescription className="font-body text-sm">
+                  A solo first-place accessibility tool that guides users
+                  through complex websites via real-time voice over a phone
+                  call. Built with NLX.ai and AWS, demoed on Google Flights.
+                  The recording reached a recruiter and turned into an
+                  internship offer.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="overflow-hidden rounded-lg border border-spark/10">
+                  <div className="aspect-video">
+                    <iframe
+                      src="https://www.youtube.com/embed/RgH-i9SYj-o?start=22"
+                      title="SoundSearch demo video, solo 1st place at AIATL, that led to an internship offer"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="size-full"
+                    />
+                  </div>
+                </div>
+                <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                  <p className="font-code text-xs text-spark/80">
+                    <span className="font-semibold">Why it works:</span> The
+                    embed skips the problem-framing intro, so the product is on
+                    screen in the first beat. No setup to sit through: the
+                    recruiter hears the voice assistant walk Google Flights end
+                    to end and gets it instantly. The video became the portfolio
+                    piece, not the repo.
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://youtu.be/RgH-i9SYj-o?t=22"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 font-code text-xs text-spark/60 underline decoration-spark/30 hover:decoration-spark"
+                  >
+                    <Play className="size-3" />
+                    Watch on YouTube
+                  </a>
+                  <a
+                    href="https://devpost.com/software/maybe-zc19va"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 font-code text-xs text-spark/60 underline decoration-spark/30 hover:decoration-spark"
+                  >
+                    <ExternalLink className="size-3" />
+                    View on Devpost
+                  </a>
                 </div>
               </CardContent>
             </Card>
-          </Link>
+          </div>
+
+          {/* --- RECORDER I USE: SCREEN STUDIO --- */}
+          <div className="glass overflow-hidden rounded-2xl border border-volt/15 bg-volt/[0.03] p-6 md:p-8">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[auto_1fr_auto] md:items-center">
+              <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-volt/10">
+                <Camera className="size-7 text-volt" />
+              </div>
+              <div className="space-y-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <Badge
+                    variant="outline"
+                    className="border-volt/30 text-volt font-code text-xs"
+                  >
+                    <Star className="mr-1 size-3" />
+                    My pick
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="border-volt/20 text-volt/80 font-code text-xs"
+                  >
+                    macOS
+                  </Badge>
+                </div>
+                <h3 className="font-display text-2xl font-bold tracking-tight">
+                  Screen Studio
+                </h3>
+                <p className="font-body text-sm text-foreground/80">
+                  The screen recorder I use for every hackathon demo. Auto-zoom
+                  and cursor smoothing make a 60-second demo look like a product
+                  launch, with basically no editing time. Worth a look if
+                  you&apos;re on Mac.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "Automatic cursor zoom",
+                    "Smooth cursor glide",
+                    "Webcam overlay",
+                    "1-click export presets",
+                  ].map((feature) => (
+                    <span
+                      key={feature}
+                      className="flex items-center gap-1.5 font-code text-xs text-volt/80"
+                    >
+                      <CheckCircle2 className="size-3" />
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <a
+                href="https://screenstudio.lemonsqueezy.com?aff=LpD9R"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 self-start rounded-lg border border-volt/40 px-5 py-2.5 font-display text-sm font-semibold text-volt transition-all hover:border-volt hover:bg-volt/10 md:self-center"
+              >
+                Check it out
+                <ExternalLink className="size-3.5" />
+              </a>
+            </div>
+          </div>
 
           <div className="rounded-lg border border-border bg-surface p-4">
             <p className="font-body text-sm text-muted-foreground">
