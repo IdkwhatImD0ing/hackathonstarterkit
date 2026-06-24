@@ -59,6 +59,18 @@ Composition guidance:
 - Include at least one `link-card` to existing site content.
 - Every quote must include a real attribution with the person's full name and credential, title, or source.
 
+## Write To Be Finished
+
+Most readers never reach the end. Optimize for completion, grounded in `docs/blog-engagement-research.md` (read it for the evidence and sources). The highest-leverage moves:
+
+- **Front-load the payoff.** Put the core answer in the first sentence and above the fold (inverted pyramid). Readers absorb only about 20 to 28% of a page's words ([NN/g, 2008](https://www.nngroup.com/articles/how-little-do-users-read/)).
+- **Short first sentence.** Start momentum at near-zero effort; the headline's job is just to earn sentence one ([Joseph Sugarman, 1998](https://thisiscopy.com/joseph-sugarmans-copywriting-approach/)).
+- **One concrete curiosity gap** in the intro, paid off later.
+- **Cut verbosity.** Word count is not a ranking factor; edit until no word can be removed. Cover the intent, then stop.
+- **A surprise in the middle and a forward-looking payoff at the end**, not a recap.
+
+Before finishing, run the post through `docs/blog-engagement-checklist.md`.
+
 ## Add The Post
 
 Append the post object to `BLOG_POSTS` in `lib/blog.ts`. Preserve local formatting and do not rewrite unrelated posts. Use today's date unless the user specifies a publication date.
@@ -97,6 +109,7 @@ Check the post against the SEO plan:
 - Internal link-card is present
 - Quote attributions are complete
 - Metadata, JSON-LD, and sitemap are covered by the existing blog templates
+- The post passes `docs/blog-engagement-checklist.md` (short first sentence, front-loaded payoff, scannable structure, no padding)
 
 Run the project validation that matches the repo. Prefer the existing build command if package scripts reveal one; otherwise use `npx next build`.
 

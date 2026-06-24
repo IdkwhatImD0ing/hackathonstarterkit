@@ -60,23 +60,29 @@ If `NEXT_PUBLIC_POSTHOG_KEY` is not set, PostHog does not initialize and no trac
 
 #### Custom Blog Events
 
-These events are fired by the `BlogAnalytics` component on every blog post page:
+These events are fired by the `BlogAnalytics` component on every blog post page. All include `blog_slug` and `blog_title`.
 
-| Event | When | Properties |
+| Event | When | Additional properties |
 |---|---|---|
-| `blog_post_viewed` | On page load | `blog_slug`, `blog_title`, `blog_reading_time` |
-| `blog_scroll_milestone` | At 25%, 50%, 75%, 100% scroll | `blog_slug`, `blog_title`, `scroll_percent`, `time_on_page_seconds` |
-| `blog_post_engagement` | On page leave (after 2+ seconds) | `blog_slug`, `blog_title`, `time_spent_seconds`, `max_scroll_percent`, `reading_completed` |
+| `blog_post_viewed` | On page load | `blog_reading_time` |
+| `blog_scroll_milestone` | At 25%, 50%, 75%, 100% page scroll | `scroll_percent`, `time_on_page_seconds`, `engaged_seconds` |
+| `blog_section_viewed` | When each article section scrolls into view | `section_index`, `section_heading`, `engaged_seconds` |
+| `blog_reading_completed` | Reached the end-of-article marker AND engaged 30+ seconds | `engaged_seconds`, `time_on_page_seconds` |
+| `blog_post_engagement` | On page leave (pagehide / SPA unmount, after 2+ seconds) | `time_spent_seconds`, `engaged_seconds`, `max_scroll_percent`, `reading_completed` |
+
+**Engaged time vs time-on-page.** `time_spent_seconds` / `time_on_page_seconds` are wall-clock. `engaged_seconds` counts only seconds where the tab was visible and the reader was active within the last 5 seconds (Chartbeat-style), so it separates real readers from fast scanners. `section_index` is driven by `data-blog-section` on each `<section>`; `blog_reading_completed` fires off the `<div data-blog-end>` marker in `app/blog/[slug]/page.tsx`. See `docs/blog-engagement-research.md` for the methodology and benchmarks.
 
 ### PostHog Dashboard Recommendations
 
 Once data starts flowing, create these insights in PostHog:
 
 1. **Blog Performance**: Bar chart of `blog_post_viewed` broken down by `blog_slug`
-2. **Reading Completion Rate**: Funnel from `blog_post_viewed` to `blog_scroll_milestone` where `scroll_percent = 100`
-3. **Engagement by Post**: Table of `blog_post_engagement` showing average `time_spent_seconds` and `max_scroll_percent` by `blog_slug`
-4. **Top Referrers**: Bar chart of `$pageview` broken down by `$referrer` for `/blog/*` pages
-5. **CTA Conversion**: Funnel from `blog_post_viewed` to click on "Open the Playbook" button
+2. **Per-section drop-off (the cliff)**: Funnel of `blog_section_viewed` filtered to one `blog_slug`, ordered by `section_index` (0, 1, 2, ...). The step with the biggest drop names the section readers quit at. This is the highest-value insight for deciding what to rewrite.
+3. **True Reading Completion Rate**: Funnel from `blog_post_viewed` to `blog_reading_completed`, per slug. This filters out fast scrollers that a raw 100% scroll would count.
+4. **Scanners vs readers**: Table of `blog_post_engagement` by `blog_slug` comparing average `engaged_seconds` against `time_spent_seconds` and `max_scroll_percent`. High scroll with low engaged time means scanning.
+5. **Visual diagnosis**: Use the PostHog toolbar scrollmap on a live blog URL, then watch session replays of sessions that bailed at the cliff section.
+6. **Top Referrers**: Bar chart of `$pageview` broken down by `$referrer` for `/blog/*` pages
+7. **CTA Conversion**: Funnel from `blog_post_viewed` to click on "Open the Playbook" button
 
 ### Reverse Proxy (Optional)
 
