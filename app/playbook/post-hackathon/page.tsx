@@ -41,11 +41,11 @@ import NextLink from "next/link";
 
 const section = PLAYBOOK_SECTIONS[6];
 
-const README_AGENT_PROMPT = `Install the GitHub Writer skill from https://github.com/IdkwhatImD0ing/hackathonstarterkit by running this in your terminal:
+const SHIP_IT_ALL_PROMPT = `Install the Ship It skill and run it:
 
-npx skills add IdkwhatImD0ing/hackathonstarterkit --skill readme-writer
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill ship-it
 
-Then use the readme-writer skill to write a winner-grade README for this hackathon project. Read the repo first to detect the stack and structure, then ask me for anything you can't find: the demo video link, the live URL and Devpost, any awards, the event details, and the team members with their GitHub and LinkedIn. Do not invent awards, stats, or prizes.`;
+Use the ship-it skill to create all four of my post-hackathon deliverables in one pass: the portfolio site, the GitHub README, the Devpost submission, and the YouTube demo description. It should install the four sub-skills it needs (portfolio-builder, readme-writer, devpost-writer, youtube-writer), read the repo first, then interview me ONCE for everything all four need (the demo video and its beats, the live URL and Devpost, any awards, the event details, the team, and the challenges and what's next). Then generate the four so they tell one consistent story, pausing after each so I can redirect. Do not invent awards, stats, timestamps, or challenges. Note: the portfolio step uses Anthropic's frontend-design plugin, so if it's not already installed, tell me to run "/plugin marketplace add anthropics/claude-plugins-official" and "/plugin install frontend-design@claude-plugins-official" before that step.`;
 
 const PORTFOLIO_AGENT_PROMPT = `First install Anthropic's frontend-design plugin in Claude Code so the site gets a unique design, not a template:
 
@@ -57,12 +57,6 @@ Then install the Portfolio Builder skill and run it:
 npx skills add IdkwhatImD0ing/hackathonstarterkit --skill portfolio-builder
 
 Use the portfolio-builder skill to build a recruiter-facing portfolio website for this project. Read the repo first, then ask me for the demo video, the live URL and Devpost, any awards, the event details, and the team info. If the project is not a web app (hardware, an ML model, a CLI), showcase it with photos, diagrams, and the demo video. Do not invent awards, stats, or prizes.`;
-
-const DEVPOST_AGENT_PROMPT = `Install the Devpost Writer skill and run it:
-
-npx skills add IdkwhatImD0ing/hackathonstarterkit --skill devpost-writer
-
-Use the devpost-writer skill to write our Devpost submission for this project. Read the repo first, then ask me for the demo video, the live URL, the hackathon and any awards, and the challenges we hit and what's next. Write the standard Devpost sections (inspiration, what it does, how we built it, challenges, accomplishments, what we learned, what's next), the Built With tags, and the Try it out links. Do not invent awards, stats, or challenges.`;
 
 const YOUTUBE_AGENT_PROMPT = `Install the YouTube Writer skill and run it:
 
@@ -941,16 +935,57 @@ export default function PostHackathonPage() {
         {/* ============================================================
             THE SHIP-IT TOOLKIT — AGENT SHORTCUTS
             ============================================================ */}
-        <section className="space-y-8">
+        <section id="the-ship-it-toolkit" className="space-y-8 scroll-mt-20">
           <SectionHeading
             title="The Ship-It Toolkit"
-            subtitle="Four deliverables turn a weekend build into something recruiters can find, in the order that matters most: the portfolio site, the GitHub README, the Devpost writeup, then the YouTube description. Each has a skill and a copy-paste prompt for your coding agent."
+            subtitle="Run all four deliverables with one prompt, or grab a single skill. The portfolio site and YouTube description live here; the GitHub README and Devpost skills moved to the submission page."
           />
 
           <KeyTakeaway>
-            Four copy-paste agent prompts make your build findable: portfolio
-            site, README, Devpost, and YouTube description.
+            One copy-paste prompt ships all four: the portfolio site, README,
+            Devpost, and YouTube description, generated to tell one consistent
+            story.
           </KeyTakeaway>
+
+          {/* 0 — Do all four at once */}
+          <Card className="glow-hover border-primary/30 bg-primary/5">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                  <Rocket className="size-5 text-primary" />
+                </div>
+                <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
+                  SHIP IT SKILL — RUN ALL FOUR
+                </Badge>
+              </div>
+              <CardTitle className="font-display text-xl text-primary">
+                Do All Four at Once
+              </CardTitle>
+              <CardDescription className="font-body text-base">
+                One skill that runs the other four. It interviews you a single
+                time, then generates the portfolio site, README, Devpost, and
+                YouTube description in order, so they share one tagline, one set
+                of stats, and one story. Best if you want everything done in a
+                single sitting.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
+                <div className="float-right ml-3 mb-2">
+                  <CopyButton text={SHIP_IT_ALL_PROMPT} />
+                </div>
+                <pre className="whitespace-pre-wrap break-words font-code text-xs leading-relaxed text-foreground/80">{SHIP_IT_ALL_PROMPT}</pre>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="flex items-center gap-4">
+            <Separator className="flex-1 bg-border" />
+            <span className="font-code text-xs uppercase tracking-widest text-muted-foreground">
+              Or run them one at a time
+            </span>
+            <Separator className="flex-1 bg-border" />
+          </div>
 
           <div className="space-y-5">
             {/* 1 — Portfolio */}
@@ -976,91 +1011,16 @@ export default function PostHackathonPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="relative">
-                  <div className="absolute right-3 top-3 z-10">
+                <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
+                  <div className="float-right ml-3 mb-2">
                     <CopyButton text={PORTFOLIO_AGENT_PROMPT} />
                   </div>
-                  <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 pt-14">
-                    <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{PORTFOLIO_AGENT_PROMPT}</pre>
-                  </div>
+                  <pre className="whitespace-pre-wrap break-words font-code text-xs leading-relaxed text-foreground/80">{PORTFOLIO_AGENT_PROMPT}</pre>
                 </div>
               </CardContent>
             </Card>
 
-            {/* 2 — README */}
-            <Card className="glow-hover border-success/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
-                    <Github className="size-5 text-success" />
-                  </div>
-                  <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
-                    GITHUB WRITER SKILL
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-success">
-                  2. Write Your GitHub README
-                </CardTitle>
-                <CardDescription className="font-body text-base">
-                  Writes a README with a centered hero, badges, a clickable demo
-                  video, an architecture diagram, and team cards. Reads your repo
-                  first, asks for facts it can&apos;t find, and never invents
-                  awards or stats.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="relative">
-                  <div className="absolute right-3 top-3 z-10">
-                    <CopyButton text={README_AGENT_PROMPT} />
-                  </div>
-                  <div className="rounded-xl border border-success/20 bg-success/5 p-4 pt-14">
-                    <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{README_AGENT_PROMPT}</pre>
-                  </div>
-                </div>
-                <NextLink
-                  href="/non-coders/skills/readme-writer"
-                  className="inline-flex items-center gap-2 font-code text-xs text-success transition-colors hover:text-success/80"
-                >
-                  See the full GitHub Writer skill
-                  <ArrowRight className="size-3.5" />
-                </NextLink>
-              </CardContent>
-            </Card>
-
-            {/* 3 — Devpost */}
-            <Card className="glow-hover border-spark/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
-                    <Megaphone className="size-5 text-spark" />
-                  </div>
-                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
-                    DEVPOST WRITER SKILL
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-spark">
-                  3. Write Your Devpost
-                </CardTitle>
-                <CardDescription className="font-body text-base">
-                  Writes the Devpost story section by section (inspiration, what
-                  it does, how you built it, challenges, what&apos;s next), plus
-                  the Built With tags and Try it out links. Reads your repo first
-                  and keeps every section honest.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="relative">
-                  <div className="absolute right-3 top-3 z-10">
-                    <CopyButton text={DEVPOST_AGENT_PROMPT} />
-                  </div>
-                  <div className="rounded-xl border border-spark/20 bg-spark/5 p-4 pt-14">
-                    <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{DEVPOST_AGENT_PROMPT}</pre>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* 4 — YouTube */}
+            {/* 2 — YouTube */}
             <Card className="glow-hover border-volt/20">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -1072,7 +1032,7 @@ export default function PostHackathonPage() {
                   </Badge>
                 </div>
                 <CardTitle className="font-display text-xl text-volt">
-                  4. Write Your YouTube Description
+                  2. Write Your YouTube Description
                 </CardTitle>
                 <CardDescription className="font-body text-base">
                   Writes the demo video&apos;s title, description, tags, and
@@ -1081,16 +1041,26 @@ export default function PostHackathonPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="relative">
-                  <div className="absolute right-3 top-3 z-10">
+                <div className="rounded-xl border border-volt/20 bg-volt/5 p-4">
+                  <div className="float-right ml-3 mb-2">
                     <CopyButton text={YOUTUBE_AGENT_PROMPT} />
                   </div>
-                  <div className="rounded-xl border border-volt/20 bg-volt/5 p-4 pt-14">
-                    <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{YOUTUBE_AGENT_PROMPT}</pre>
-                  </div>
+                  <pre className="whitespace-pre-wrap break-words font-code text-xs leading-relaxed text-foreground/80">{YOUTUBE_AGENT_PROMPT}</pre>
                 </div>
               </CardContent>
             </Card>
+
+            <NextLink href="/playbook/submission#generate-it-with-a-skill" className="group block">
+              <Card className="glow-hover border-success/20">
+                <CardContent className="flex items-center justify-between gap-4 p-5">
+                  <div className="space-y-1">
+                    <p className="font-display font-semibold">Need your GitHub README or Devpost?</p>
+                    <p className="font-body text-sm text-muted-foreground">Those two skills moved to the submission playbook page, next to the README and Devpost how-tos.</p>
+                  </div>
+                  <ArrowRight className="size-5 shrink-0 text-success transition-transform group-hover:translate-x-1" />
+                </CardContent>
+              </Card>
+            </NextLink>
           </div>
         </section>
 
