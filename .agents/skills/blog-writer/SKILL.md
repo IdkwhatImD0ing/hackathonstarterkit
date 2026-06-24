@@ -56,8 +56,21 @@ Composition guidance:
 - Avoid back-to-back visual blocks without a `paragraph` transition when the reader needs context.
 - Use callouts sparingly. If everything is highlighted, nothing feels important.
 - Put terminal commands in `code-snippet` blocks.
+- Emphasize key phrases by wrapping them in `**double asterisks**` inside `paragraph` or `callout` text; the renderer converts them to bold. Use sparingly. This is the only inline markdown the renderer supports (no italics, links, or `*single*` asterisks in body text).
 - Include at least one `link-card` to existing site content.
 - Every quote must include a real attribution with the person's full name and credential, title, or source.
+
+## Write To Be Finished
+
+Most readers never reach the end. Optimize for completion, grounded in `docs/blog-engagement-research.md` (read it for the evidence and sources). The highest-leverage moves:
+
+- **Front-load the payoff.** Put the core answer in the first sentence and above the fold (inverted pyramid). Readers absorb only about 20 to 28% of a page's words ([NN/g, 2008](https://www.nngroup.com/articles/how-little-do-users-read/)).
+- **Short first sentence.** Start momentum at near-zero effort; the headline's job is just to earn sentence one ([Joseph Sugarman, 1998](https://thisiscopy.com/joseph-sugarmans-copywriting-approach/)).
+- **One concrete curiosity gap** in the intro, paid off later.
+- **Cut verbosity.** Word count is not a ranking factor; edit until no word can be removed. Cover the intent, then stop.
+- **A surprise in the middle and a forward-looking payoff at the end**, not a recap.
+
+Before finishing, run the post through `docs/blog-engagement-checklist.md`.
 
 ## Add The Post
 
@@ -97,6 +110,7 @@ Check the post against the SEO plan:
 - Internal link-card is present
 - Quote attributions are complete
 - Metadata, JSON-LD, and sitemap are covered by the existing blog templates
+- The post passes `docs/blog-engagement-checklist.md` (short first sentence, front-loaded payoff, scannable structure, no padding)
 
 Run the project validation that matches the repo. Prefer the existing build command if package scripts reveal one; otherwise use `npx next build`.
 

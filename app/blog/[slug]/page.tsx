@@ -213,8 +213,13 @@ export default async function BlogPostPage({
       </div>
 
       <div className="space-y-10">
-        {post.content.map((section) => (
-          <section key={section.heading} className="space-y-4">
+        {post.content.map((section, index) => (
+          <section
+            key={section.heading}
+            data-blog-section={index}
+            data-section-heading={section.heading}
+            className="space-y-4"
+          >
             <h2 className="font-display text-2xl font-bold tracking-tight">
               {section.heading}
             </h2>
@@ -233,6 +238,10 @@ export default async function BlogPostPage({
           </section>
         ))}
       </div>
+
+      {/* End-of-article marker: the completion tracker observes this to
+          distinguish readers who reached the end from those who bounced. */}
+      <div data-blog-end aria-hidden="true" />
 
       <NewsletterSignup
         eyebrow="Get the next guide"
