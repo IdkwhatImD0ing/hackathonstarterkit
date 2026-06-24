@@ -58,6 +58,7 @@ Enforced by `.cursor/rules/`; they apply to Claude too. Violations produce wrong
 2. **Every quote needs full attribution**: person's name + credential/title + source work and year where applicable.
 3. **Research expectation:** ground playbook content in named experts, papers, books, or concrete URLs rather than generic advice. Weave research and quotes through the narrative (mirroring team-formation and ideation); never collect them in a separate "research" block.
 4. **Every new page/route follows the SEO checklist** in `docs/seo-implementation.md`: export `metadata` (keyword-rich title, 150-160 char description, `alternates.canonical` from `NEXT_PUBLIC_BASE_URL`, `openGraph`, `twitter`); add `<JsonLd>` (`components/json-ld.tsx`) for content/guide/FAQ pages; one `<h1>`, semantic headings, internal links.
+5. **Playbook pages follow the content & UX conventions** in `docs/page-content-conventions.md`: scannable copy (front-loaded, bold-lead bullets, one `<KeyTakeaway>` per section); progressive disclosure via `<Disclosure>`/`<SeriousModeGate>` for secondary or theory content, with collapsed bodies rendered using `hidden` (never conditional) so they stay in the prerendered HTML for SEO; interactives near the top; keep the owner's practical advice visible and tuck pure-theory "Why This Works" research behind a dropdown.
 
 ## Architecture
 
