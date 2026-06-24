@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { KeyTakeaway } from "@/components/key-takeaway";
+import { Disclosure } from "@/components/disclosure";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
   Card,
@@ -81,6 +82,26 @@ export default function ExecutionPage() {
       subtitle={section.subtitle}
     >
       <div className="space-y-24">
+        {/* ============================================================
+            INTERACTIVE: TIMELINE SIMULATOR
+            ============================================================ */}
+        <section className="space-y-8">
+          <div className="space-y-1">
+            <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+              INTERACTIVE
+            </Badge>
+            <h3 className="font-display text-2xl font-bold tracking-tight">
+              Plan Your 24 Hours
+            </h3>
+            <p className="font-body text-sm text-muted-foreground">
+              Allocate hours across each phase and get real-time feedback. Feel
+              the tradeoffs of a fixed time budget.
+            </p>
+          </div>
+          <KeyTakeaway>Drag hours between phases to see why every minute added to one phase steals from another.</KeyTakeaway>
+          <TimelineSimulator />
+        </section>
+
         {/* ============================================================
             THE SPEED MINDSET
             ============================================================ */}
@@ -407,15 +428,16 @@ export default function ExecutionPage() {
         </section>
 
         {/* ============================================================
-            WHY THIS WORKS — THE SCIENCE
+            WHY THIS WORKS — THE SCIENCE (collapsible)
             ============================================================ */}
         <section className="space-y-8">
-          <SectionHeading
-            title="Why This Works — The Science of Constrained Execution"
-            subtitle="The best teams don't just move fast. They follow principles refined by decades of engineering and entrepreneurship research."
-          />
-
-          <KeyTakeaway>Ship a working flow first, cut the 80% that won&apos;t sway judges, and polish only what they&apos;ll see.</KeyTakeaway>
+          <Disclosure
+            title="Why This Works: The Science of Constrained Execution"
+            subtitle="Optional theory: the principles behind moving fast, refined by decades of engineering and entrepreneurship research."
+            badge="Optional: the science"
+            accent="primary"
+          >
+            <KeyTakeaway>Ship a working flow first, cut the 80% that won&apos;t sway judges, and polish only what they&apos;ll see.</KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
             <Card className="glow-hover border-volt/20">
@@ -574,6 +596,7 @@ export default function ExecutionPage() {
               </CardContent>
             </Card>
           </div>
+          </Disclosure>
         </section>
 
         {/* ============================================================
@@ -890,26 +913,6 @@ export default function ExecutionPage() {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* ============================================================
-            INTERACTIVE: TIMELINE SIMULATOR
-            ============================================================ */}
-        <section className="space-y-8">
-          <div className="space-y-1">
-            <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
-              INTERACTIVE
-            </Badge>
-            <h3 className="font-display text-2xl font-bold tracking-tight">
-              Plan Your 24 Hours
-            </h3>
-            <p className="font-body text-sm text-muted-foreground">
-              Allocate hours across each phase and get real-time feedback. Feel
-              the tradeoffs of a fixed time budget.
-            </p>
-          </div>
-          <KeyTakeaway>Drag hours between phases to see why every minute added to one phase steals from another.</KeyTakeaway>
-          <TimelineSimulator />
         </section>
 
         {/* ============================================================
