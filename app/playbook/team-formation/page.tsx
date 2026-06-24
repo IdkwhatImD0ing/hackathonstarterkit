@@ -24,6 +24,7 @@ import {
 import { SectionTemplate } from "@/components/section-template";
 import { PersonaQuiz } from "@/components/persona-quiz";
 import { KeyTakeaway } from "@/components/key-takeaway";
+import { SeriousModeGate, Disclosure } from "@/components/serious-mode";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 
 import {
@@ -78,6 +79,21 @@ export default function TeamFormationPage() {
       subtitle={section.subtitle}
     >
       <div className="space-y-24">
+        {/* ============================================================
+            PERSONA QUIZ
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="Find Your Persona"
+            subtitle="Which role do you gravitate toward? Take the 8-question quiz."
+          />
+          <KeyTakeaway>
+            Know your default role so you can recruit teammates who cover the
+            other three.
+          </KeyTakeaway>
+          <PersonaQuiz />
+        </section>
+
         {/* ============================================================
             THE FOUR PERSONAS
             ============================================================ */}
@@ -530,539 +546,126 @@ export default function TeamFormationPage() {
         </section>
 
         {/* ============================================================
-            PERSONA QUIZ
+            WHERE TO FIND TEAMMATES
             ============================================================ */}
         <section className="space-y-8">
           <SectionHeading
-            title="Find Your Persona"
-            subtitle="Which role do you gravitate toward? Take the 8-question quiz."
-          />
-          <KeyTakeaway>
-            Know your default role so you can recruit teammates who cover the
-            other three.
-          </KeyTakeaway>
-          <PersonaQuiz />
-        </section>
-
-        {/* ============================================================
-            THE RANKING SYSTEM
-            ============================================================ */}
-        <section className="space-y-8">
-          <SectionHeading
-            title="The Ranking System"
-            subtitle="A sports-inspired system for building your hackathon squad. The method behind $100K+ in prizes."
+            title="Where to Find Teammates"
+            subtitle="The best teammates rarely come from a single search. Here's where to look."
           />
 
           <KeyTakeaway>
-            Train rookies on a JV list, then promote proven teammates to varsity
-            for high-stakes wins.
+            Source teammates from many channels, but the strongest signal is
+            hacking alongside someone at a fun event.
           </KeyTakeaway>
 
-          <p className="font-body text-foreground/80">
-            Like a sports team, you train rookies through the season before the
-            championship game. Hackathons work the same way.
-          </p>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr]">
-            {/* JV Card */}
-            <Card className="glow-hover border-volt/20">
-              <CardHeader>
-                <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
-                  TIER 1
-                </Badge>
-                <CardTitle className="font-display text-2xl text-volt">
-                  JV Teammates
-                </CardTitle>
-                <CardDescription className="font-body text-base">
-                  <span className="font-semibold text-foreground">
-                    Your development squad.
-                  </span>{" "}
-                  High-potential teammates you&apos;re actively training and
-                  building chemistry with.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 font-body text-sm text-foreground/80">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Proven attitude
-                      </span>{" "}
-                      and work ethic over 1-3 hackathons
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Still developing
-                      </span>{" "}
-                      time management, prototyping, and pitching
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Building chemistry
-                      </span>{" "}
-                      with you at training hackathons
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        One good hackathon
-                      </span>{" "}
-                      usually earns a JV spot
-                    </span>
-                  </li>
-                </ul>
-                <div className="rounded-lg bg-volt/5 p-3 text-center">
-                  <p className="font-display text-2xl font-bold text-volt">
-                    1-3
-                  </p>
-                  <p className="font-code text-xs text-volt/70">
-                    hackathons to join
-                  </p>
+          <div className="stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: MessageCircle,
+                title: "Hackathon Discords",
+                description:
+                  "Jump into team-matching channels early; the best teammates get claimed fast.",
+                accent: "volt" as const,
+              },
+              {
+                icon: Users,
+                title: "Hackathon Communities",
+                description:
+                  "Tap WeCracked (4K+ members), MLH groups, and local clubs for a steady pipeline.",
+                accent: "spark" as const,
+              },
+              {
+                icon: Building2,
+                title: "University Clubs",
+                description:
+                  "CS clubs, ACM chapters, and hackathon orgs are goldmines; the building culture already exists.",
+                accent: "primary" as const,
+              },
+              {
+                icon: Globe,
+                title: "Devpost Scouting",
+                description:
+                  "Browse past winners and reach out to people whose projects impress you. Most are happy to connect.",
+                accent: "volt" as const,
+              },
+              {
+                icon: Calendar,
+                title: "Fun Hackathons",
+                description:
+                  'Hacking alongside someone is your best pipeline. One "fun" event can reveal a future varsity teammate.',
+                accent: "success" as const,
+              },
+              {
+                icon: Share2,
+                title: "Social Media",
+                description:
+                  "LinkedIn groups, Twitter/X tech communities, and hackathon subreddits are underrated sources.",
+                accent: "spark" as const,
+              },
+            ].map((item) => {
+              const accentMap = {
+                volt: {
+                  bg: "bg-volt/10",
+                  text: "text-volt",
+                  border: "border-volt/20",
+                  dot: "bg-volt",
+                },
+                spark: {
+                  bg: "bg-spark/10",
+                  text: "text-spark",
+                  border: "border-spark/20",
+                  dot: "bg-spark",
+                },
+                primary: {
+                  bg: "bg-primary/10",
+                  text: "text-primary",
+                  border: "border-primary/20",
+                  dot: "bg-primary",
+                },
+                success: {
+                  bg: "bg-success/10",
+                  text: "text-success",
+                  border: "border-success/20",
+                  dot: "bg-success",
+                },
+              };
+              const a = accentMap[item.accent];
+              return (
+                <div
+                  key={item.title}
+                  className={`glow-hover rounded-xl border ${a.border} bg-card p-5 transition-all`}
+                >
+                  <div className="flex items-start gap-3">
+                    <div
+                      className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${a.bg}`}
+                    >
+                      <item.icon className={`size-4 ${a.text}`} />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="font-display text-sm font-semibold">
+                        {item.title}
+                      </p>
+                      <p className="font-body text-sm text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Progression Arrow */}
-            <div className="hidden items-center md:flex">
-              <div className="flex flex-col items-center gap-2">
-                <div className="h-16 w-px bg-gradient-to-b from-volt to-spark" />
-                <ArrowRight className="size-6 text-spark" />
-                <div className="h-16 w-px bg-gradient-to-b from-spark to-spark/0" />
-                <p className="font-code text-xs text-muted-foreground [writing-mode:vertical-lr]">
-                  2-8 hackathons
-                </p>
-              </div>
-            </div>
-
-            {/* Mobile arrow */}
-            <div className="flex items-center justify-center py-2 md:hidden">
-              <div className="flex items-center gap-3">
-                <div className="h-px w-12 bg-gradient-to-r from-volt to-spark" />
-                <ArrowRight className="size-5 text-spark" />
-                <p className="font-code text-xs text-muted-foreground">
-                  2-8 hackathons
-                </p>
-              </div>
-            </div>
-
-            {/* Varsity Card */}
-            <Card className="glow-hover border-spark/20">
-              <CardHeader>
-                <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
-                  TIER 2
-                </Badge>
-                <CardTitle className="font-display text-2xl text-spark">
-                  Varsity Teammates
-                </CardTitle>
-                <CardDescription className="font-body text-base">
-                  <span className="font-semibold text-foreground">
-                    Your championship squad.
-                  </span>{" "}
-                  Battle-tested over many hackathons, with deep trust and
-                  communication shortcuts.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 font-body text-sm text-foreground/80">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Deep trust
-                      </span>{" "}
-                      and rhythm from 3-8+ hackathons together
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Self-directed
-                      </span>
-                      : each person owns their role, no micromanagement
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Shared toolkit
-                      </span>
-                      : templates, favorite APIs, deployment pipeline
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Reserved
-                      </span>{" "}
-                      for high-stakes competitions where winning is the goal
-                    </span>
-                  </li>
-                </ul>
-                <div className="rounded-lg bg-spark/5 p-3 text-center">
-                  <p className="font-display text-2xl font-bold text-spark">
-                    3-8+
-                  </p>
-                  <p className="font-code text-xs text-spark/70">
-                    hackathons to earn varsity
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+              );
+            })}
           </div>
 
           <div className="rounded-lg border border-border bg-surface p-4">
             <p className="font-body text-sm text-muted-foreground">
               <span className="font-display font-semibold text-foreground">
-                The key factor isn&apos;t skill level
+                Remember:
               </span>{" "}
-              but how well you work together under time pressure. A varsity
-              teammate may be a worse coder than a JV one, yet communicate
-              better, pivot faster, and never go silent at 3AM. This mirrors
-              what psychologist Anders Ericsson calls{" "}
-              <span className="font-semibold text-foreground">
-                deliberate practice
-              </span>
-              : improvement needs repeated, structured effort with feedback, not
-              just showing up.
+              Attitude and communication are the foundation of any winning team.
+              You can teach skills, but the willingness to learn, adapt, and
+              support each other under pressure separates good teams from
+              winning ones.
             </p>
-            <p className="mt-2 font-code text-xs text-muted-foreground/60">
-              —{" "}
-              <a href="https://en.wikipedia.org/wiki/Peak:_Secrets_from_the_New_Science_of_Expertise" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Anders Ericsson, Peak: Secrets from the New Science of
-              Expertise, 2016</a>
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            <Card className="glow-hover border-volt/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
-                    <BookOpen className="size-5 text-volt" />
-                  </div>
-                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
-                    BRUCE TUCKMAN
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-volt">
-                  Tuckman&apos;s Group Development
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;Groups move through forming, storming, norming, and
-                  performing — each stage must be navigated before a team can
-                  reach peak effectiveness.&rdquo;
-                </blockquote>
-                <p className="font-body text-sm text-foreground/60">
-                  Tuckman&apos;s 1965 model maps onto JV/Varsity. JV teammates
-                  are{" "}
-                  <span className="font-semibold text-foreground">
-                    forming and storming
-                  </span>
-                  : learning styles, navigating disagreements, building trust.
-                  Varsity teammates have reached{" "}
-                  <span className="font-semibold text-foreground">
-                    norming and performing
-                  </span>
-                  : shared norms, fluid execution, zero coordination overhead.
-                </p>
-                <p className="font-code text-xs text-volt/60">
-                  —{" "}
-                  <a href="https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Developmental Sequence in Small Groups, 1965</a>
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="glow-hover border-spark/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
-                    <FlaskConical className="size-5 text-spark" />
-                  </div>
-                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
-                    MAPPED TO HACKATHONS
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-spark">
-                  The Progression Path
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
-                    <p className="font-display text-sm font-semibold text-volt">
-                      Forming → JV List
-                    </p>
-                    <p className="font-body text-xs text-foreground/60">
-                      First hackathon together: learning how each person works
-                      and setting communication expectations.
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
-                    <p className="font-display text-sm font-semibold text-volt">
-                      Storming → Training Hackathons
-                    </p>
-                    <p className="font-body text-xs text-foreground/60">
-                      Disagreements over scope, stack, and approach surface. This
-                      friction is necessary; working through it builds trust.
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
-                    <p className="font-display text-sm font-semibold text-spark">
-                      Norming → Late JV / Early Varsity
-                    </p>
-                    <p className="font-body text-xs text-foreground/60">
-                      Shared norms emerge. You know who handles what. Code
-                      reviews and communication shortcuts develop naturally.
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
-                    <p className="font-display text-sm font-semibold text-spark">
-                      Performing → Varsity
-                    </p>
-                    <p className="font-body text-xs text-foreground/60">
-                      Peak effectiveness. The team executes as a unit: shared
-                      toolkits, minimal overhead, maximum output.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* ============================================================
-            HACKATHON CATEGORIES
-            ============================================================ */}
-        <section className="space-y-8">
-          <SectionHeading
-            title="Hackathon Categories"
-            subtitle="Not every hackathon is a championship game. Sort events to maximize team development and wins."
-          />
-
-          <KeyTakeaway>
-            Use fun events to scout, training events to build your JV, and
-            competitive events for varsity-only wins.
-          </KeyTakeaway>
-
-          <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
-            {/* Fun Hackathons */}
-            <Card className="glow-hover border-success/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
-                    <Sparkles className="size-5 text-success" />
-                  </div>
-                  <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
-                    FUN
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-success">
-                  Fun Hackathons
-                </CardTitle>
-                <CardDescription className="font-body">
-                  <span className="font-semibold text-foreground">
-                    Low stakes, high discovery.
-                  </span>{" "}
-                  Team up with people you meet or match with. Less about winning,
-                  more about scouting.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Users className="size-3.5 text-success/60" />
-                    <span className="font-code text-xs text-muted-foreground">
-                      TEAM WITH
-                    </span>
-                  </div>
-                  <p className="font-body text-sm text-foreground/80">
-                    New people, team-matching channels, friends trying
-                    hackathons
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                    Pro Tip
-                  </p>
-                  <p className="font-body text-sm text-foreground/80">
-                    Treat every fun hackathon as a scouting event. Whoever vibes
-                    well here might become your next JV member.
-                  </p>
-                </div>
-                <div className="rounded-lg bg-success/5 p-3 text-center">
-                  <p className="font-display text-lg font-bold text-success">
-                    1 event
-                  </p>
-                  <p className="font-code text-xs text-success/70">
-                    to earn JV consideration
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Training Hackathons */}
-            <Card className="glow-hover border-volt/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
-                    <GraduationCap className="size-5 text-volt" />
-                  </div>
-                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
-                    TRAINING
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-volt">
-                  Training Hackathons
-                </CardTitle>
-                <CardDescription className="font-body">
-                  <span className="font-semibold text-foreground">
-                    JV list only.
-                  </span>{" "}
-                  Develop technical and soft skills together. Practice the full
-                  workflow: ideation, architecture, execution, pitching.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Users className="size-3.5 text-volt/60" />
-                    <span className="font-code text-xs text-muted-foreground">
-                      TEAM WITH
-                    </span>
-                  </div>
-                  <p className="font-body text-sm text-foreground/80">
-                    JV teammates only; the point is chemistry and shared muscle
-                    memory
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                    Pro Tip
-                  </p>
-                  <p className="font-body text-sm text-foreground/80">
-                    Simulate competition conditions: set internal deadlines,
-                    practice the pitch early, do a full dress rehearsal before
-                    submission.
-                  </p>
-                </div>
-                <div className="rounded-lg bg-volt/5 p-3 text-center">
-                  <p className="font-display text-lg font-bold text-volt">
-                    2-8+ events
-                  </p>
-                  <p className="font-code text-xs text-volt/70">
-                    to train a team to varsity
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Competitive Hackathons */}
-            <Card className="glow-hover border-spark/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
-                    <Trophy className="size-5 text-spark" />
-                  </div>
-                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
-                    COMPETITIVE
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-spark">
-                  Competitive Hackathons
-                </CardTitle>
-                <CardDescription className="font-body">
-                  <span className="font-semibold text-foreground">
-                    Varsity only. One goal: first place.
-                  </span>{" "}
-                  Backed by extensive training, shared tools, and battle-tested
-                  teamwork.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Users className="size-3.5 text-spark/60" />
-                    <span className="font-code text-xs text-muted-foreground">
-                      TEAM WITH
-                    </span>
-                  </div>
-                  <p className="font-body text-sm text-foreground/80">
-                    Varsity only: pre-planned roles, shared templates, proven
-                    tools and APIs
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                    Pro Tip
-                  </p>
-                  <p className="font-body text-sm text-foreground/80">
-                    Pre-plan the stack, ready your boilerplates, and assign roles
-                    before kickoff. Minimize decisions during the event.
-                  </p>
-                </div>
-                <div className="rounded-lg bg-spark/5 p-3 text-center">
-                  <p className="animate-shimmer font-display text-lg font-bold">
-                    Win mode
-                  </p>
-                  <p className="font-code text-xs text-spark/70">
-                    first place or bust
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="animate-glow-pulse glass rounded-xl border border-primary/10 p-6">
-            <div className="flex items-start gap-4">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <Compass className="size-5 text-primary" />
-              </div>
-              <div className="space-y-2">
-                <p className="font-display font-semibold">
-                  <a href="https://en.wikipedia.org/wiki/J._Richard_Hackman" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">J. Richard Hackman</a> — Leading Teams
-                </p>
-                <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;The single most important condition for team
-                  effectiveness is having a compelling direction — a purpose that
-                  is clear, challenging, and consequential.&rdquo;
-                </blockquote>
-                <p className="font-body text-sm text-foreground/60">
-                  Hackman&apos;s Harvard research explains the three categories.
-                  Fun hackathons have{" "}
-                  <span className="font-semibold text-foreground">
-                    no shared direction
-                  </span>{" "}
-                  (you&apos;re still exploring). Training hackathons have{" "}
-                  <span className="font-semibold text-foreground">
-                    a learning direction
-                  </span>{" "}
-                  (the purpose is growth). Competitive hackathons have{" "}
-                  <span className="font-semibold text-foreground">
-                    a winning direction
-                  </span>{" "}
-                  that is clear, challenging, and consequential. Sharper
-                  direction, better performance.
-                </p>
-                <p className="font-code text-xs text-primary/60">
-                  —{" "}
-                  <a href="https://en.wikipedia.org/wiki/J._Richard_Hackman" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Leading Teams: Setting the Stage for Great Performances,
-                  2002</a>
-                </p>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -1199,127 +802,532 @@ export default function TeamFormationPage() {
         </section>
 
         {/* ============================================================
-            WHERE TO FIND TEAMMATES
+            GOING PRO: RANKING SYSTEM + CATEGORIES (gated, collapsible)
             ============================================================ */}
         <section className="space-y-8">
-          <SectionHeading
-            title="Where to Find Teammates"
-            subtitle="The best teammates rarely come from a single search. Here's where to look."
-          />
+          <SeriousModeGate>
+            {/* THE RANKING SYSTEM */}
+            <Disclosure
+              title="The Ranking System"
+              subtitle="A sports-inspired system for building your hackathon squad. The method behind $100K+ in prizes."
+              badge="For serious competitors"
+              accent="spark"
+            >
+              <KeyTakeaway>
+                Train rookies on a JV list, then promote proven teammates to
+                varsity for high-stakes wins.
+              </KeyTakeaway>
 
-          <KeyTakeaway>
-            Source teammates from many channels, but the strongest signal is
-            hacking alongside someone at a fun event.
-          </KeyTakeaway>
+              <p className="font-body text-foreground/80">
+                Like a sports team, you train rookies through the season before
+                the championship game. Hackathons work the same way.
+              </p>
 
-          <div className="stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: MessageCircle,
-                title: "Hackathon Discords",
-                description:
-                  "Jump into team-matching channels early; the best teammates get claimed fast.",
-                accent: "volt" as const,
-              },
-              {
-                icon: Users,
-                title: "Hackathon Communities",
-                description:
-                  "Tap WeCracked (4K+ members), MLH groups, and local clubs for a steady pipeline.",
-                accent: "spark" as const,
-              },
-              {
-                icon: Building2,
-                title: "University Clubs",
-                description:
-                  "CS clubs, ACM chapters, and hackathon orgs are goldmines; the building culture already exists.",
-                accent: "primary" as const,
-              },
-              {
-                icon: Globe,
-                title: "Devpost Scouting",
-                description:
-                  "Browse past winners and reach out to people whose projects impress you. Most are happy to connect.",
-                accent: "volt" as const,
-              },
-              {
-                icon: Calendar,
-                title: "Fun Hackathons",
-                description:
-                  'Hacking alongside someone is your best pipeline. One "fun" event can reveal a future varsity teammate.',
-                accent: "success" as const,
-              },
-              {
-                icon: Share2,
-                title: "Social Media",
-                description:
-                  "LinkedIn groups, Twitter/X tech communities, and hackathon subreddits are underrated sources.",
-                accent: "spark" as const,
-              },
-            ].map((item) => {
-              const accentMap = {
-                volt: {
-                  bg: "bg-volt/10",
-                  text: "text-volt",
-                  border: "border-volt/20",
-                  dot: "bg-volt",
-                },
-                spark: {
-                  bg: "bg-spark/10",
-                  text: "text-spark",
-                  border: "border-spark/20",
-                  dot: "bg-spark",
-                },
-                primary: {
-                  bg: "bg-primary/10",
-                  text: "text-primary",
-                  border: "border-primary/20",
-                  dot: "bg-primary",
-                },
-                success: {
-                  bg: "bg-success/10",
-                  text: "text-success",
-                  border: "border-success/20",
-                  dot: "bg-success",
-                },
-              };
-              const a = accentMap[item.accent];
-              return (
-                <div
-                  key={item.title}
-                  className={`glow-hover rounded-xl border ${a.border} bg-card p-5 transition-all`}
-                >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${a.bg}`}
-                    >
-                      <item.icon className={`size-4 ${a.text}`} />
-                    </div>
-                    <div className="space-y-1">
-                      <p className="font-display text-sm font-semibold">
-                        {item.title}
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr]">
+                {/* JV Card */}
+                <Card className="glow-hover border-volt/20">
+                  <CardHeader>
+                    <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                      TIER 1
+                    </Badge>
+                    <CardTitle className="font-display text-2xl text-volt">
+                      JV Teammates
+                    </CardTitle>
+                    <CardDescription className="font-body text-base">
+                      <span className="font-semibold text-foreground">
+                        Your development squad.
+                      </span>{" "}
+                      High-potential teammates you&apos;re actively training and
+                      building chemistry with.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <ul className="space-y-2 font-body text-sm text-foreground/80">
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                        <span>
+                          <span className="font-semibold text-foreground">
+                            Proven attitude
+                          </span>{" "}
+                          and work ethic over 1-3 hackathons
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                        <span>
+                          <span className="font-semibold text-foreground">
+                            Still developing
+                          </span>{" "}
+                          time management, prototyping, and pitching
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                        <span>
+                          <span className="font-semibold text-foreground">
+                            Building chemistry
+                          </span>{" "}
+                          with you at training hackathons
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
+                        <span>
+                          <span className="font-semibold text-foreground">
+                            One good hackathon
+                          </span>{" "}
+                          usually earns a JV spot
+                        </span>
+                      </li>
+                    </ul>
+                    <div className="rounded-lg bg-volt/5 p-3 text-center">
+                      <p className="font-display text-2xl font-bold text-volt">
+                        1-3
                       </p>
-                      <p className="font-body text-sm text-muted-foreground">
-                        {item.description}
+                      <p className="font-code text-xs text-volt/70">
+                        hackathons to join
                       </p>
                     </div>
+                  </CardContent>
+                </Card>
+
+                {/* Progression Arrow */}
+                <div className="hidden items-center md:flex">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="h-16 w-px bg-gradient-to-b from-volt to-spark" />
+                    <ArrowRight className="size-6 text-spark" />
+                    <div className="h-16 w-px bg-gradient-to-b from-spark to-spark/0" />
+                    <p className="font-code text-xs text-muted-foreground [writing-mode:vertical-lr]">
+                      2-8 hackathons
+                    </p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
 
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                Remember:
-              </span>{" "}
-              Attitude and communication are the foundation of any winning team.
-              You can teach skills, but the willingness to learn, adapt, and
-              support each other under pressure separates good teams from
-              winning ones.
-            </p>
-          </div>
+                {/* Mobile arrow */}
+                <div className="flex items-center justify-center py-2 md:hidden">
+                  <div className="flex items-center gap-3">
+                    <div className="h-px w-12 bg-gradient-to-r from-volt to-spark" />
+                    <ArrowRight className="size-5 text-spark" />
+                    <p className="font-code text-xs text-muted-foreground">
+                      2-8 hackathons
+                    </p>
+                  </div>
+                </div>
+
+                {/* Varsity Card */}
+                <Card className="glow-hover border-spark/20">
+                  <CardHeader>
+                    <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                      TIER 2
+                    </Badge>
+                    <CardTitle className="font-display text-2xl text-spark">
+                      Varsity Teammates
+                    </CardTitle>
+                    <CardDescription className="font-body text-base">
+                      <span className="font-semibold text-foreground">
+                        Your championship squad.
+                      </span>{" "}
+                      Battle-tested over many hackathons, with deep trust and
+                      communication shortcuts.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <ul className="space-y-2 font-body text-sm text-foreground/80">
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                        <span>
+                          <span className="font-semibold text-foreground">
+                            Deep trust
+                          </span>{" "}
+                          and rhythm from 3-8+ hackathons together
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                        <span>
+                          <span className="font-semibold text-foreground">
+                            Self-directed
+                          </span>
+                          : each person owns their role, no micromanagement
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                        <span>
+                          <span className="font-semibold text-foreground">
+                            Shared toolkit
+                          </span>
+                          : templates, favorite APIs, deployment pipeline
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
+                        <span>
+                          <span className="font-semibold text-foreground">
+                            Reserved
+                          </span>{" "}
+                          for high-stakes competitions where winning is the goal
+                        </span>
+                      </li>
+                    </ul>
+                    <div className="rounded-lg bg-spark/5 p-3 text-center">
+                      <p className="font-display text-2xl font-bold text-spark">
+                        3-8+
+                      </p>
+                      <p className="font-code text-xs text-spark/70">
+                        hackathons to earn varsity
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="rounded-lg border border-border bg-surface p-4">
+                <p className="font-body text-sm text-muted-foreground">
+                  <span className="font-display font-semibold text-foreground">
+                    The key factor isn&apos;t skill level
+                  </span>{" "}
+                  but how well you work together under time pressure. A varsity
+                  teammate may be a worse coder than a JV one, yet communicate
+                  better, pivot faster, and never go silent at 3AM. This mirrors
+                  what psychologist Anders Ericsson calls{" "}
+                  <span className="font-semibold text-foreground">
+                    deliberate practice
+                  </span>
+                  : improvement needs repeated, structured effort with feedback,
+                  not just showing up.
+                </p>
+                <p className="mt-2 font-code text-xs text-muted-foreground/60">
+                  —{" "}
+                  <a href="https://en.wikipedia.org/wiki/Peak:_Secrets_from_the_New_Science_of_Expertise" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Anders Ericsson, Peak: Secrets from the New Science of
+                  Expertise, 2016</a>
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                <Card className="glow-hover border-volt/20">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                        <BookOpen className="size-5 text-volt" />
+                      </div>
+                      <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                        BRUCE TUCKMAN
+                      </Badge>
+                    </div>
+                    <CardTitle className="font-display text-xl text-volt">
+                      Tuckman&apos;s Group Development
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
+                      &ldquo;Groups move through forming, storming, norming, and
+                      performing — each stage must be navigated before a team can
+                      reach peak effectiveness.&rdquo;
+                    </blockquote>
+                    <p className="font-body text-sm text-foreground/60">
+                      Tuckman&apos;s 1965 model maps onto JV/Varsity. JV
+                      teammates are{" "}
+                      <span className="font-semibold text-foreground">
+                        forming and storming
+                      </span>
+                      : learning styles, navigating disagreements, building
+                      trust. Varsity teammates have reached{" "}
+                      <span className="font-semibold text-foreground">
+                        norming and performing
+                      </span>
+                      : shared norms, fluid execution, zero coordination
+                      overhead.
+                    </p>
+                    <p className="font-code text-xs text-volt/60">
+                      —{" "}
+                      <a href="https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Developmental Sequence in Small Groups, 1965</a>
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="glow-hover border-spark/20">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                        <FlaskConical className="size-5 text-spark" />
+                      </div>
+                      <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                        MAPPED TO HACKATHONS
+                      </Badge>
+                    </div>
+                    <CardTitle className="font-display text-xl text-spark">
+                      The Progression Path
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-3">
+                      <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                        <p className="font-display text-sm font-semibold text-volt">
+                          Forming → JV List
+                        </p>
+                        <p className="font-body text-xs text-foreground/60">
+                          First hackathon together: learning how each person
+                          works and setting communication expectations.
+                        </p>
+                      </div>
+                      <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                        <p className="font-display text-sm font-semibold text-volt">
+                          Storming → Training Hackathons
+                        </p>
+                        <p className="font-body text-xs text-foreground/60">
+                          Disagreements over scope, stack, and approach surface.
+                          This friction is necessary; working through it builds
+                          trust.
+                        </p>
+                      </div>
+                      <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                        <p className="font-display text-sm font-semibold text-spark">
+                          Norming → Late JV / Early Varsity
+                        </p>
+                        <p className="font-body text-xs text-foreground/60">
+                          Shared norms emerge. You know who handles what. Code
+                          reviews and communication shortcuts develop naturally.
+                        </p>
+                      </div>
+                      <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+                        <p className="font-display text-sm font-semibold text-spark">
+                          Performing → Varsity
+                        </p>
+                        <p className="font-body text-xs text-foreground/60">
+                          Peak effectiveness. The team executes as a unit: shared
+                          toolkits, minimal overhead, maximum output.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </Disclosure>
+
+            {/* HACKATHON CATEGORIES */}
+            <Disclosure
+              title="Hackathon Categories"
+              subtitle="Not every hackathon is a championship game. Sort events to maximize team development and wins."
+              badge="For serious competitors"
+              accent="primary"
+            >
+              <KeyTakeaway>
+                Use fun events to scout, training events to build your JV, and
+                competitive events for varsity-only wins.
+              </KeyTakeaway>
+
+              <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
+                {/* Fun Hackathons */}
+                <Card className="glow-hover border-success/20">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
+                        <Sparkles className="size-5 text-success" />
+                      </div>
+                      <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
+                        FUN
+                      </Badge>
+                    </div>
+                    <CardTitle className="font-display text-xl text-success">
+                      Fun Hackathons
+                    </CardTitle>
+                    <CardDescription className="font-body">
+                      <span className="font-semibold text-foreground">
+                        Low stakes, high discovery.
+                      </span>{" "}
+                      Team up with people you meet or match with. Less about
+                      winning, more about scouting.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <Users className="size-3.5 text-success/60" />
+                        <span className="font-code text-xs text-muted-foreground">
+                          TEAM WITH
+                        </span>
+                      </div>
+                      <p className="font-body text-sm text-foreground/80">
+                        New people, team-matching channels, friends trying
+                        hackathons
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                        Pro Tip
+                      </p>
+                      <p className="font-body text-sm text-foreground/80">
+                        Treat every fun hackathon as a scouting event. Whoever
+                        vibes well here might become your next JV member.
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-success/5 p-3 text-center">
+                      <p className="font-display text-lg font-bold text-success">
+                        1 event
+                      </p>
+                      <p className="font-code text-xs text-success/70">
+                        to earn JV consideration
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Training Hackathons */}
+                <Card className="glow-hover border-volt/20">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                        <GraduationCap className="size-5 text-volt" />
+                      </div>
+                      <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                        TRAINING
+                      </Badge>
+                    </div>
+                    <CardTitle className="font-display text-xl text-volt">
+                      Training Hackathons
+                    </CardTitle>
+                    <CardDescription className="font-body">
+                      <span className="font-semibold text-foreground">
+                        JV list only.
+                      </span>{" "}
+                      Develop technical and soft skills together. Practice the
+                      full workflow: ideation, architecture, execution,
+                      pitching.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <Users className="size-3.5 text-volt/60" />
+                        <span className="font-code text-xs text-muted-foreground">
+                          TEAM WITH
+                        </span>
+                      </div>
+                      <p className="font-body text-sm text-foreground/80">
+                        JV teammates only; the point is chemistry and shared
+                        muscle memory
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                        Pro Tip
+                      </p>
+                      <p className="font-body text-sm text-foreground/80">
+                        Simulate competition conditions: set internal deadlines,
+                        practice the pitch early, do a full dress rehearsal
+                        before submission.
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-volt/5 p-3 text-center">
+                      <p className="font-display text-lg font-bold text-volt">
+                        2-8+ events
+                      </p>
+                      <p className="font-code text-xs text-volt/70">
+                        to train a team to varsity
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Competitive Hackathons */}
+                <Card className="glow-hover border-spark/20">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                        <Trophy className="size-5 text-spark" />
+                      </div>
+                      <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                        COMPETITIVE
+                      </Badge>
+                    </div>
+                    <CardTitle className="font-display text-xl text-spark">
+                      Competitive Hackathons
+                    </CardTitle>
+                    <CardDescription className="font-body">
+                      <span className="font-semibold text-foreground">
+                        Varsity only. One goal: first place.
+                      </span>{" "}
+                      Backed by extensive training, shared tools, and
+                      battle-tested teamwork.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <Users className="size-3.5 text-spark/60" />
+                        <span className="font-code text-xs text-muted-foreground">
+                          TEAM WITH
+                        </span>
+                      </div>
+                      <p className="font-body text-sm text-foreground/80">
+                        Varsity only: pre-planned roles, shared templates, proven
+                        tools and APIs
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                        Pro Tip
+                      </p>
+                      <p className="font-body text-sm text-foreground/80">
+                        Pre-plan the stack, ready your boilerplates, and assign
+                        roles before kickoff. Minimize decisions during the
+                        event.
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-spark/5 p-3 text-center">
+                      <p className="animate-shimmer font-display text-lg font-bold">
+                        Win mode
+                      </p>
+                      <p className="font-code text-xs text-spark/70">
+                        first place or bust
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="animate-glow-pulse glass rounded-xl border border-primary/10 p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <Compass className="size-5 text-primary" />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="font-display font-semibold">
+                      <a href="https://en.wikipedia.org/wiki/J._Richard_Hackman" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">J. Richard Hackman</a> — Leading Teams
+                    </p>
+                    <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
+                      &ldquo;The single most important condition for team
+                      effectiveness is having a compelling direction — a purpose
+                      that is clear, challenging, and consequential.&rdquo;
+                    </blockquote>
+                    <p className="font-body text-sm text-foreground/60">
+                      Hackman&apos;s Harvard research explains the three
+                      categories. Fun hackathons have{" "}
+                      <span className="font-semibold text-foreground">
+                        no shared direction
+                      </span>{" "}
+                      (you&apos;re still exploring). Training hackathons have{" "}
+                      <span className="font-semibold text-foreground">
+                        a learning direction
+                      </span>{" "}
+                      (the purpose is growth). Competitive hackathons have{" "}
+                      <span className="font-semibold text-foreground">
+                        a winning direction
+                      </span>{" "}
+                      that is clear, challenging, and consequential. Sharper
+                      direction, better performance.
+                    </p>
+                    <p className="font-code text-xs text-primary/60">
+                      —{" "}
+                      <a href="https://en.wikipedia.org/wiki/J._Richard_Hackman" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Leading Teams: Setting the Stage for Great Performances,
+                      2002</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Disclosure>
+          </SeriousModeGate>
         </section>
       </div>
     </SectionTemplate>
