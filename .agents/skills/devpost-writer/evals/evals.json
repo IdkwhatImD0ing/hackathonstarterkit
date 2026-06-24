@@ -1,0 +1,27 @@
+{
+  "skill_name": "devpost-writer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write our Devpost submission. The project is DispatchAI, an empathetic AI 911 dispatcher built in 36 hours at the UC Berkeley AI Hackathon. It uses a fine-tuned Mistral-7B, FastAPI, Retell, and Hume for emotion. The hardest part was getting sub-second latency on the voice loop. Live at dispatchai.art3m1s.me, demo at https://www.youtube.com/watch?v=hdpdgxrilQM.",
+      "expected_output": "A complete Devpost story with a tagline and the standard sections (Inspiration, What it does, How we built it, Challenges, Accomplishments, What we learned, What's next), plus Built With tags and Try it out links.",
+      "files": [],
+      "expectations": [
+        "The output includes all standard Devpost sections plus a tagline under the ~200 character cap.",
+        "Built With lists the real technologies as tags and Try it out includes the live URL, GitHub, and demo video.",
+        "The challenge section reflects the real latency problem given, and no awards or stats are invented."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Help me write my Devpost. It's a solo project, I didn't win anything, and I only have the GitHub repo. Read the repo for what it does. Don't make stuff up.",
+      "expected_output": "A grounded Devpost story that reads the repo, asks for any missing facts, and writes honest sections without inventing awards, stats, or challenges.",
+      "files": [],
+      "expectations": [
+        "The skill inspects the repo before asking the user for missing details.",
+        "No awards, metrics, or fabricated challenges appear; missing facts are asked for or omitted.",
+        "The story still covers the core Devpost sections and stays consistent with what the repo actually contains."
+      ]
+    }
+  ]
+}

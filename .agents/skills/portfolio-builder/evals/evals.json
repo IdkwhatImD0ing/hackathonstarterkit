@@ -1,0 +1,27 @@
+{
+  "skill_name": "portfolio-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a portfolio site for our hackathon project DispatchAI, an empathetic AI 911 dispatcher. It won Grand Prize at the UC Berkeley AI Hackathon (1 of 293 submissions). Stack is Next.js, FastAPI, a fine-tuned Mistral-7B, Retell, and Hume. Demo is at https://www.youtube.com/watch?v=hdpdgxrilQM. I want recruiters to take it seriously.",
+      "expected_output": "A one-page, recruiter-facing case-study site with a project-specific design produced via the frontend-design skill, covering hero, credibility, problem, what it does, architecture, an interactive or embedded showcase, results, team, and honest limits.",
+      "files": [],
+      "expectations": [
+        "The skill installs or confirms Anthropic's frontend-design skill before designing, and derives a palette and type system from the project rather than a template.",
+        "The plan includes an embedded/interactive or seeded showcase for the web app plus the demo video, not just screenshots.",
+        "No awards or stats are invented beyond those provided, and an 'honest limits' section is included."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need a portfolio website for my hackathon project, but it's not a web app. It's a hardware bike-tracking mesh network (Arduino + LoRa radios + a Firestore backend). Built by 4 students in 36 hours. We placed Top 10 globally. There's no live app to click. Read the repo for the rest.",
+      "expected_output": "A recruiter-facing case-study site that showcases a non-web-app project through photos, a system diagram, field footage, and a telemetry or map replay, with a distinctive design from the frontend-design skill.",
+      "files": [],
+      "expectations": [
+        "The skill recognizes the project is not a web app and chooses hardware-appropriate showcase devices (build photos, wiring/system diagram, field footage, map or telemetry replay) instead of an embedded live app.",
+        "It still produces a unique design via frontend-design and reads the repo before asking for missing facts.",
+        "The site remains recruiter-first with credibility, architecture, by-the-numbers, team, and links sections, and invents no awards or metrics."
+      ]
+    }
+  ]
+}

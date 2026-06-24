@@ -46,6 +46,29 @@ npx skills add IdkwhatImD0ing/hackathonstarterkit --skill readme-writer
 
 Then use the readme-writer skill to write a winner-grade README for this hackathon project. Read the repo first to detect the stack and structure, then ask me for anything you can't find: the demo video link, the live URL and Devpost, any awards, the event details, and the team members with their GitHub and LinkedIn. Do not invent awards, stats, or prizes.`;
 
+const PORTFOLIO_AGENT_PROMPT = `First install Anthropic's frontend-design plugin in Claude Code so the site gets a unique design, not a template:
+
+/plugin marketplace add anthropics/claude-plugins-official
+/plugin install frontend-design@claude-plugins-official
+
+Then install the Portfolio Builder skill and run it:
+
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill portfolio-builder
+
+Use the portfolio-builder skill to build a recruiter-facing portfolio website for this project. Read the repo first, then ask me for the demo video, the live URL and Devpost, any awards, the event details, and the team info. If the project is not a web app (hardware, an ML model, a CLI), showcase it with photos, diagrams, and the demo video. Do not invent awards, stats, or prizes.`;
+
+const DEVPOST_AGENT_PROMPT = `Install the Devpost Writer skill and run it:
+
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill devpost-writer
+
+Use the devpost-writer skill to write our Devpost submission for this project. Read the repo first, then ask me for the demo video, the live URL, the hackathon and any awards, and the challenges we hit and what's next. Write the standard Devpost sections (inspiration, what it does, how we built it, challenges, accomplishments, what we learned, what's next), the Built With tags, and the Try it out links. Do not invent awards, stats, or challenges.`;
+
+const YOUTUBE_AGENT_PROMPT = `Install the YouTube Writer skill and run it:
+
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill youtube-writer
+
+Use the youtube-writer skill to write the title, description, tags, and chapter timestamps for our demo video. Read the repo first, then ask me for the video length and its beats (so the chapters are real), plus the Devpost and GitHub links and any awards. Front-load the hook in the first two lines of the description. Do not invent awards or timestamps.`;
+
 export const metadata: Metadata = {
   title: "Post-Hackathon — Turn Hackathon Projects into Career Opportunities",
   description:
@@ -851,53 +874,156 @@ export default function PostHackathonPage() {
         </section>
 
         {/* ============================================================
-            AI SHORTCUT — THE GITHUB WRITER SKILL
+            THE SHIP-IT TOOLKIT — AGENT SHORTCUTS
             ============================================================ */}
         <section className="space-y-8">
           <SectionHeading
-            title="Shortcut — Let an Agent Write Your README"
-            subtitle="Step 3 is the one most people skip, yet the README is what a recruiter actually lands on. Hand it to your coding agent with the GitHub Writer skill and get a winner-grade README in minutes."
+            title="The Ship-It Toolkit"
+            subtitle="Four deliverables turn a weekend build into something recruiters can find, in the order that matters most: the portfolio site, the GitHub README, the Devpost writeup, then the YouTube description. Each has a skill and a copy-paste prompt for your coding agent."
           />
 
-          <Card className="glow-hover border-success/20">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
-                  <Github className="size-5 text-success" />
+          <div className="space-y-5">
+            {/* 1 — Portfolio */}
+            <Card className="glow-hover border-primary/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                    <Globe className="size-5 text-primary" />
+                  </div>
+                  <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
+                    PORTFOLIO BUILDER SKILL
+                  </Badge>
                 </div>
-                <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
-                  GITHUB WRITER SKILL
-                </Badge>
-              </div>
-              <CardTitle className="font-display text-xl text-success">
-                Paste This Into Claude Code or Cursor
-              </CardTitle>
-              <CardDescription className="font-body text-base">
-                It installs the skill from the repo, then writes a README with a
-                centered hero, badges, a clickable demo video, an architecture
-                diagram, and team cards. It reads your repo first and asks for
-                the facts it can&apos;t find, and it will not invent awards or
-                stats.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="relative">
-                <div className="absolute right-3 top-3 z-10">
-                  <CopyButton text={README_AGENT_PROMPT} />
+                <CardTitle className="font-display text-xl text-primary">
+                  1. Build Your Portfolio Site
+                </CardTitle>
+                <CardDescription className="font-body text-base">
+                  It installs Anthropic&apos;s frontend-design skill for a
+                  one-of-a-kind look, then builds a one-page case study with a
+                  hero, problem, architecture, demo, results, team, and honest
+                  limits. It works even when the project is not a web app, and it
+                  never invents awards or stats.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="relative">
+                  <div className="absolute right-3 top-3 z-10">
+                    <CopyButton text={PORTFOLIO_AGENT_PROMPT} />
+                  </div>
+                  <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 pt-14">
+                    <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{PORTFOLIO_AGENT_PROMPT}</pre>
+                  </div>
                 </div>
-                <div className="rounded-xl border border-success/20 bg-success/5 p-4 pt-14">
-                  <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{README_AGENT_PROMPT}</pre>
+              </CardContent>
+            </Card>
+
+            {/* 2 — README */}
+            <Card className="glow-hover border-success/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
+                    <Github className="size-5 text-success" />
+                  </div>
+                  <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
+                    GITHUB WRITER SKILL
+                  </Badge>
                 </div>
-              </div>
-              <NextLink
-                href="/non-coders/skills/readme-writer"
-                className="inline-flex items-center gap-2 font-code text-xs text-success transition-colors hover:text-success/80"
-              >
-                See the full GitHub Writer skill
-                <ArrowRight className="size-3.5" />
-              </NextLink>
-            </CardContent>
-          </Card>
+                <CardTitle className="font-display text-xl text-success">
+                  2. Write Your GitHub README
+                </CardTitle>
+                <CardDescription className="font-body text-base">
+                  It installs the skill from the repo, then writes a README with
+                  a centered hero, badges, a clickable demo video, an
+                  architecture diagram, and team cards. It reads your repo first
+                  and asks for the facts it can&apos;t find, and it will not
+                  invent awards or stats.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="relative">
+                  <div className="absolute right-3 top-3 z-10">
+                    <CopyButton text={README_AGENT_PROMPT} />
+                  </div>
+                  <div className="rounded-xl border border-success/20 bg-success/5 p-4 pt-14">
+                    <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{README_AGENT_PROMPT}</pre>
+                  </div>
+                </div>
+                <NextLink
+                  href="/non-coders/skills/readme-writer"
+                  className="inline-flex items-center gap-2 font-code text-xs text-success transition-colors hover:text-success/80"
+                >
+                  See the full GitHub Writer skill
+                  <ArrowRight className="size-3.5" />
+                </NextLink>
+              </CardContent>
+            </Card>
+
+            {/* 3 — Devpost */}
+            <Card className="glow-hover border-spark/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                    <Megaphone className="size-5 text-spark" />
+                  </div>
+                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                    DEVPOST WRITER SKILL
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-spark">
+                  3. Write Your Devpost
+                </CardTitle>
+                <CardDescription className="font-body text-base">
+                  It writes the Devpost story section by section (inspiration,
+                  what it does, how you built it, challenges, what&apos;s next),
+                  plus the Built With tags and the Try it out links. It reads your
+                  repo first and keeps every section honest.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="relative">
+                  <div className="absolute right-3 top-3 z-10">
+                    <CopyButton text={DEVPOST_AGENT_PROMPT} />
+                  </div>
+                  <div className="rounded-xl border border-spark/20 bg-spark/5 p-4 pt-14">
+                    <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{DEVPOST_AGENT_PROMPT}</pre>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 4 — YouTube */}
+            <Card className="glow-hover border-volt/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
+                    <PenLine className="size-5 text-volt" />
+                  </div>
+                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
+                    YOUTUBE WRITER SKILL
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-volt">
+                  4. Write Your YouTube Description
+                </CardTitle>
+                <CardDescription className="font-body text-base">
+                  It writes the demo video&apos;s title, description, tags, and
+                  chapter timestamps so recruiters can find it. It reads your
+                  repo and asks for the video beats, and it never fakes a
+                  timestamp or an award.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="relative">
+                  <div className="absolute right-3 top-3 z-10">
+                    <CopyButton text={YOUTUBE_AGENT_PROMPT} />
+                  </div>
+                  <div className="rounded-xl border border-volt/20 bg-volt/5 p-4 pt-14">
+                    <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{YOUTUBE_AGENT_PROMPT}</pre>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* ============================================================

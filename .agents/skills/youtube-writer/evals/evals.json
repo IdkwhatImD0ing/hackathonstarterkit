@@ -1,0 +1,27 @@
+{
+  "skill_name": "youtube-writer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write the YouTube title and description for our hackathon demo. Project is TalkTuahBank, voice banking over a phone call. Won 1st Overall at HackUTD 2024. The 2-minute video goes: 0:00 intro, 0:15 the problem, 0:40 live phone call demo, 1:30 architecture, 1:50 wrap. Devpost is devpost.com/software/talktuahbank, repo at github.com/aurelisajuan/TalkTuahBank.",
+      "expected_output": "Two or three title options, a full description with a strong first-two-line hook, valid YouTube chapters, tags, and a pinned comment.",
+      "files": [],
+      "expectations": [
+        "The chapters start at 0:00, are in ascending order, and there are at least three of them.",
+        "The description front-loads the hook in the first two lines and includes the Devpost and GitHub links.",
+        "The title references the real award and no fabricated awards or stats appear."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need a YouTube description for my demo video but I haven't written down the timestamps yet. The project is a CLI tool for generating test data. Read the repo for details.",
+      "expected_output": "A description and title that read the repo, and either ask the user for the video beats or explain how to get them rather than inventing timestamps.",
+      "files": [],
+      "expectations": [
+        "The skill does not fabricate chapter timestamps; it asks the user for the video beats or how to derive them.",
+        "It reads the repo before asking for missing facts and invents no awards.",
+        "It still produces a title and a description hook suited to a CLI tool."
+      ]
+    }
+  ]
+}
