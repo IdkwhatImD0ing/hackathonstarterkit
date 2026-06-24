@@ -74,6 +74,22 @@ import {
   Footprints,
   Dices,
   Wand2,
+  Leaf,
+  Scale,
+  Wifi,
+  Cpu,
+  Webcam,
+  Gavel,
+  Stamp,
+  Sprout,
+  TreePine,
+  Recycle,
+  Receipt,
+  Bird,
+  FileSearch,
+  FileVideo,
+  Flame,
+  Sun,
 } from "lucide-react";
 
 // ---------------------------------------------------------------------------
@@ -107,6 +123,7 @@ const ELEMENTS: Record<string, AlchemyElement> = {
   suno: { id: "suno", name: "SunoAI", icon: Music, category: "tech", description: "Text to music" },
   vision: { id: "vision", name: "Vision AI", icon: Eye, category: "tech", description: "YOLO, SAM, GPT-4V" },
   blockchain: { id: "blockchain", name: "Blockchain", icon: Link, category: "tech", description: "Smart contracts & web3" },
+  iot: { id: "iot", name: "IoT Sensors", icon: Wifi, category: "tech", description: "Connected devices & sensors" },
 
   health: { id: "health", name: "Health", icon: Heart, category: "industry", description: "Healthcare & wellness" },
   education: { id: "education", name: "Education", icon: GraduationCap, category: "industry", description: "Learning & tutoring" },
@@ -114,6 +131,8 @@ const ELEMENTS: Record<string, AlchemyElement> = {
   finance: { id: "finance", name: "Finance", icon: DollarSign, category: "industry", description: "Banking & fintech" },
   entertainment: { id: "entertainment", name: "Entertainment", icon: Gamepad2, category: "industry", description: "Media & content" },
   sports: { id: "sports", name: "Sports", icon: Dumbbell, category: "industry", description: "Athletics & fitness" },
+  climate: { id: "climate", name: "Climate", icon: Leaf, category: "industry", description: "Sustainability & energy" },
+  legal: { id: "legal", name: "Legal", icon: Scale, category: "industry", description: "Law & compliance" },
 
   phone_agent: { id: "phone_agent", name: "AI Phone Agent", icon: PhoneCall, category: "intermediate", description: "LLM that answers calls" },
   video_gen: { id: "video_gen", name: "AI Video Generator", icon: Clapperboard, category: "intermediate", description: "LLM-directed video creation" },
@@ -181,6 +200,32 @@ const ELEMENTS: Record<string, AlchemyElement> = {
   tactical_movement: { id: "tactical_movement", name: "Tactical Movement AI", icon: Footprints, category: "final", description: "Analyze squad formations" },
   betting_ai: { id: "betting_ai", name: "Sports Betting AI", icon: Dices, category: "final", description: "AI-powered sports predictions" },
   fantasy_ai: { id: "fantasy_ai", name: "Fantasy Sports AI", icon: Wand2, category: "final", description: "AI manages your fantasy team" },
+
+  // new intermediates (IoT tech crosses)
+  iot_agent: { id: "iot_agent", name: "AIoT Agent", icon: Cpu, category: "intermediate", description: "LLM controls smart sensors" },
+  smart_sensor: { id: "smart_sensor", name: "Smart Sensor Vision", icon: Webcam, category: "intermediate", description: "Vision AI on IoT cameras" },
+
+  // new finals (Climate industry)
+  climate_hotline: { id: "climate_hotline", name: "Climate Action Hotline", icon: Sprout, category: "final", description: "Call-in carbon & energy advice" },
+  climate_explainer: { id: "climate_explainer", name: "Climate Explainer Studio", icon: TreePine, category: "final", description: "Auto-generate climate explainers" },
+  wildfire_watch: { id: "wildfire_watch", name: "Wildfire Watch Vision", icon: Flame, category: "final", description: "Spot wildfires in drone footage" },
+  carbon_ledger: { id: "carbon_ledger", name: "Carbon Credit Ledger", icon: Receipt, category: "final", description: "Blockchain-tracked carbon credits" },
+  nature_soundscape: { id: "nature_soundscape", name: "AI Nature Soundscapes", icon: Bird, category: "final", description: "Generative calming nature audio" },
+  green_venue: { id: "green_venue", name: "Green Venue Optimizer", icon: Recycle, category: "final", description: "Cut stadium energy & waste" },
+
+  // new finals (Legal industry)
+  legal_hotline: { id: "legal_hotline", name: "AI Legal Hotline", icon: Gavel, category: "final", description: "Call-in legal triage" },
+  deposition_ai: { id: "deposition_ai", name: "Deposition Video AI", icon: FileVideo, category: "final", description: "Summarize recorded testimony" },
+  contract_scanner: { id: "contract_scanner", name: "Contract Scanner AI", icon: FileSearch, category: "final", description: "Flag risky contract clauses" },
+  digital_notary: { id: "digital_notary", name: "Digital Notary", icon: Stamp, category: "final", description: "On-chain document notarization" },
+
+  // new finals (IoT intermediates + industries)
+  remote_patient: { id: "remote_patient", name: "Remote Patient Monitor", icon: Stethoscope, category: "final", description: "Track vitals from home sensors" },
+  perimeter_ai: { id: "perimeter_ai", name: "Perimeter Defense AI", icon: ShieldAlert, category: "final", description: "Sensor-driven base security" },
+  smart_grid: { id: "smart_grid", name: "Smart Grid Optimizer", icon: Sun, category: "final", description: "Balance renewable energy loads" },
+  motion_coach: { id: "motion_coach", name: "Motion Capture Coach", icon: Footprints, category: "final", description: "Wearable-sensor form analysis" },
+  intrusion_ai: { id: "intrusion_ai", name: "Intrusion Detection AI", icon: Radar, category: "final", description: "Spot intruders on camera feeds" },
+  emissions_monitor: { id: "emissions_monitor", name: "Emissions Monitor", icon: BarChart3, category: "final", description: "Live factory emissions tracking" },
 };
 
 // ---------------------------------------------------------------------------
@@ -272,6 +317,38 @@ const RECIPES: Recipe[] = [
   { a: "phone_agent", b: "smart_contract", result: "verified_caller" },
   { a: "video_gen", b: "music_prod", result: "music_video" },
   { a: "image_analyzer", b: "sports_analytics", result: "ai_referee" },
+
+  // new IoT intermediates (tech + tech)
+  { a: "iot", b: "llm", result: "iot_agent" },
+  { a: "iot", b: "vision", result: "smart_sensor" },
+
+  // new finals: Climate industry (intermediate + climate)
+  { a: "phone_agent", b: "climate", result: "climate_hotline" },
+  { a: "video_gen", b: "climate", result: "climate_explainer" },
+  { a: "image_analyzer", b: "climate", result: "wildfire_watch" },
+  { a: "smart_contract", b: "climate", result: "carbon_ledger" },
+  { a: "music_prod", b: "climate", result: "nature_soundscape" },
+  { a: "sports_analytics", b: "climate", result: "green_venue" },
+
+  // new finals: Legal industry (intermediate + legal)
+  { a: "phone_agent", b: "legal", result: "legal_hotline" },
+  { a: "video_gen", b: "legal", result: "deposition_ai" },
+  { a: "image_analyzer", b: "legal", result: "contract_scanner" },
+  { a: "smart_contract", b: "legal", result: "digital_notary" },
+
+  // new finals: IoT intermediates + industries
+  { a: "iot_agent", b: "health", result: "remote_patient" },
+  { a: "iot_agent", b: "defense", result: "perimeter_ai" },
+  { a: "iot_agent", b: "climate", result: "smart_grid" },
+  { a: "smart_sensor", b: "sports", result: "motion_coach" },
+  { a: "smart_sensor", b: "defense", result: "intrusion_ai" },
+  { a: "smart_sensor", b: "climate", result: "emissions_monitor" },
+
+  // shortcut recipes for the new branches (tech + industry)
+  { a: "twilio", b: "climate", result: "climate_hotline" },
+  { a: "vision", b: "climate", result: "wildfire_watch" },
+  { a: "twilio", b: "legal", result: "legal_hotline" },
+  { a: "iot", b: "climate", result: "smart_grid" },
 ];
 
 const BASE_IDS = Object.values(ELEMENTS)

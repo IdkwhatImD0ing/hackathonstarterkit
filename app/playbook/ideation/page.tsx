@@ -23,9 +23,12 @@ import {
   Globe,
   Sparkles,
   CheckCircle2,
+  Github,
+  ExternalLink,
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { KeyTakeaway } from "@/components/key-takeaway";
+import { Disclosure } from "@/components/disclosure";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
   Card,
@@ -119,6 +122,46 @@ function CombinationRow({
       </Badge>
       <Equal className="size-4 text-muted-foreground" />
       <Badge className={`${c.bg} ${c.text} font-code text-xs`}>{result}</Badge>
+    </div>
+  );
+}
+
+function ProjectLinks({
+  devpost,
+  github,
+  demo,
+  align = "start",
+}: {
+  devpost?: string;
+  github?: string;
+  demo?: string;
+  align?: "start" | "center";
+}) {
+  const links = [
+    demo ? { href: demo, label: "Live demo", Icon: Globe } : null,
+    github ? { href: github, label: "GitHub", Icon: Github } : null,
+    devpost ? { href: devpost, label: "Devpost", Icon: ExternalLink } : null,
+  ].filter(
+    (l): l is { href: string; label: string; Icon: typeof Globe } => l !== null,
+  );
+  return (
+    <div
+      className={`flex flex-wrap gap-2 ${
+        align === "center" ? "justify-center" : ""
+      }`}
+    >
+      {links.map(({ href, label, Icon }) => (
+        <a
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 rounded-lg border border-border bg-surface px-2.5 py-1.5 font-code text-xs text-muted-foreground transition-colors hover:border-volt/30 hover:text-foreground"
+        >
+          <Icon className="size-3.5" />
+          {label}
+        </a>
+      ))}
     </div>
   );
 }
@@ -349,6 +392,11 @@ export default function IdeationPage() {
                   else thought to make.
                 </p>
               </div>
+              <ProjectLinks
+                devpost="https://devpost.com/software/dispatch-ai"
+                github="https://github.com/IdkwhatImD0ing/DispatchAI"
+                demo="https://dispatchai.art3m1s.me/"
+              />
             </CardContent>
           </Card>
 
@@ -413,18 +461,27 @@ export default function IdeationPage() {
                 event: "LA Hacks",
                 prize: "Best Use of Google",
                 accent: "volt" as const,
+                devpost: "https://devpost.com/software/teachme-3p7bw1",
+                github: "https://github.com/IdkwhatImD0ing/TeachMe",
+                demo: "https://adapted.art3m1s.me/",
               },
               {
                 name: "DispatchAI",
                 event: "UC Berkeley AI Hackathon",
                 prize: "Grand Prize",
                 accent: "spark" as const,
+                devpost: "https://devpost.com/software/dispatch-ai",
+                github: "https://github.com/IdkwhatImD0ing/DispatchAI",
+                demo: "https://dispatchai.art3m1s.me/",
               },
               {
                 name: "TalkTuahBank",
                 event: "HackUTD",
                 prize: "1st Overall + Goldman Sachs",
                 accent: "primary" as const,
+                devpost: "https://devpost.com/software/talktuahbank",
+                github: "https://github.com/aurelisajuan/TalkTuahBank",
+                demo: "https://talktuah.art3m1s.me/",
               },
             ].map((project) => {
               const colors = {
@@ -460,6 +517,14 @@ export default function IdeationPage() {
                   <p className={`mt-1 font-code text-xs ${c.text}`}>
                     {project.prize}
                   </p>
+                  <div className="mt-3">
+                    <ProjectLinks
+                      devpost={project.devpost}
+                      github={project.github}
+                      demo={project.demo}
+                      align="center"
+                    />
+                  </div>
                 </div>
               );
             })}
@@ -478,15 +543,21 @@ export default function IdeationPage() {
         </section>
 
         {/* ============================================================
-            WHY THIS WORKS — THE SCIENCE
+            GO DEEPER — OPTIONAL FRAMEWORKS (collapsible)
             ============================================================ */}
         <section className="space-y-8">
           <SectionHeading
-            title="Why This Works — The Science of Combinatorial Creativity"
-            subtitle="The Little Alchemy method isn't just a personal hack. It's backed by decades of research from the world's best thinkers on creativity and innovation."
+            title="Go Deeper"
+            subtitle="Optional theory and prep for when you want more. The essentials are above; expand only what you need."
           />
 
-          <KeyTakeaway>Decades of creativity research agree: new ideas are old parts recombined, not invented from scratch.</KeyTakeaway>
+          <Disclosure
+            title="Why This Works: The Science of Combinatorial Creativity"
+            subtitle="Backed by decades of research from the best thinkers on creativity and innovation."
+            badge="The science"
+            accent="primary"
+          >
+            <KeyTakeaway>Decades of creativity research agree: new ideas are old parts recombined, not invented from scratch.</KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
             <Card className="glow-hover border-volt/20">
@@ -621,18 +692,15 @@ export default function IdeationPage() {
               </CardContent>
             </Card>
           </div>
-        </section>
+          </Disclosure>
 
-        {/* ============================================================
-            BUILDING YOUR ELEMENT LIST
-            ============================================================ */}
-        <section className="space-y-8">
-          <SectionHeading
+          <Disclosure
             title="Building Your Element List"
-            subtitle="Before you can combine, you need inventory. Here's how to assemble 20-30 high-quality elements before the hackathon even starts."
-          />
-
-          <KeyTakeaway>Stock 20-30 elements before the event: 10-15 tech, 5-10 domains, 5+ wild cards.</KeyTakeaway>
+            subtitle="Before you can combine, you need inventory: how to assemble 20-30 quality elements before the hackathon starts."
+            badge="Preparation"
+            accent="volt"
+          >
+            <KeyTakeaway>Stock 20-30 elements before the event: 10-15 tech, 5-10 domains, 5+ wild cards.</KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
             <Card className="glow-hover border-volt/20">
@@ -802,18 +870,15 @@ export default function IdeationPage() {
               </div>
             </div>
           </div>
-        </section>
+          </Disclosure>
 
-        {/* ============================================================
-            THE WANDERING MIND — DIFFUSE THINKING
-            ============================================================ */}
-        <section className="space-y-8">
-          <SectionHeading
+          <Disclosure
             title="The Wandering Mind"
-            subtitle="The best hackathon ideas don't come from staring at a blank screen. They come when you let your brain wander, and there's hard science behind why."
-          />
-
-          <KeyTakeaway>Step away and let your brain wander: diffuse, incubating thinking finds the connections focus can&apos;t.</KeyTakeaway>
+            subtitle="The best ideas don't come from staring at a blank screen; they come when you let your brain wander, and there's science behind why."
+            badge="Mindset"
+            accent="spark"
+          >
+            <KeyTakeaway>Step away and let your brain wander: diffuse, incubating thinking finds the connections focus can&apos;t.</KeyTakeaway>
 
           <Card className="glow-hover border-spark/20">
             <CardHeader>
@@ -998,6 +1063,7 @@ export default function IdeationPage() {
               it&apos;s often better at finding non-obvious connections.
             </p>
           </div>
+          </Disclosure>
         </section>
 
         {/* ============================================================

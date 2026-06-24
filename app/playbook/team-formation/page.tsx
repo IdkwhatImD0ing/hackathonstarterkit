@@ -24,7 +24,8 @@ import {
 import { SectionTemplate } from "@/components/section-template";
 import { PersonaQuiz } from "@/components/persona-quiz";
 import { KeyTakeaway } from "@/components/key-takeaway";
-import { SeriousModeGate, Disclosure } from "@/components/serious-mode";
+import { SeriousModeGate } from "@/components/serious-mode";
+import { Disclosure } from "@/components/disclosure";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 
 import {
