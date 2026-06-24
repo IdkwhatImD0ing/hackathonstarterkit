@@ -24,6 +24,7 @@ import {
   CheckCircle2,
   Shield,
   Bot,
+  Megaphone,
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { CopyButton } from "@/components/copy-button";
@@ -233,6 +234,18 @@ Environment Variables Needed: [List required env vars like OPENAI_API_KEY, etc.]
 Team Members: [Names, roles, and GitHub usernames]
 License: [MIT / Apache 2.0 / etc.]
 Additional Context: [Architecture details, special setup, hardware requirements, etc.]`;
+
+const README_AGENT_PROMPT = `Install the GitHub Writer skill from https://github.com/IdkwhatImD0ing/hackathonstarterkit by running this in your terminal:
+
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill readme-writer
+
+Then use the readme-writer skill to write a winner-grade README for this hackathon project. Read the repo first to detect the stack and structure, then ask me for anything you can't find: the demo video link, the live URL and Devpost, any awards, the event details, and the team members with their GitHub and LinkedIn. Also set the repo's About metadata to match: the description, the website, and the topics/tags, using the gh CLI if it's available. Do not invent awards, stats, or prizes.`;
+
+const DEVPOST_AGENT_PROMPT = `Install the Devpost Writer skill and run it:
+
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill devpost-writer
+
+Use the devpost-writer skill to write our Devpost submission for this project. Read the repo first, then ask me for the demo video, the live URL, the hackathon and any awards, and the challenges we hit and what's next. Write the standard Devpost sections (inspiration, what it does, how we built it, challenges, accomplishments, what we learned, what's next), the Built With tags, and the Try it out links. Do not invent awards, stats, or challenges.`;
 
 export default function SubmissionPage() {
   return (
@@ -1391,6 +1404,100 @@ export default function SubmissionPage() {
               rule: cut every word that doesn&apos;t earn its place.
             </p>
           </div>
+        </section>
+
+        {/* ============================================================
+            GENERATE IT WITH A SKILL
+            ============================================================ */}
+        <section id="generate-it-with-a-skill" className="space-y-8 scroll-mt-20">
+          <SectionHeading
+            title="Generate It With a Skill"
+            subtitle="Prefer an agent that reads your repo and does the work? Install these two skills to draft your GitHub README and Devpost writeup. They are part of the Ship-It Toolkit."
+          />
+
+          <KeyTakeaway>Install the readme-writer and devpost-writer skills to draft both submission deliverables straight from your repo.</KeyTakeaway>
+
+          <div className="space-y-5">
+            {/* 1 — README */}
+            <Card className="glow-hover border-success/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
+                    <Github className="size-5 text-success" />
+                  </div>
+                  <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
+                    GITHUB WRITER SKILL
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-success">
+                  1. Write Your GitHub README
+                </CardTitle>
+                <CardDescription className="font-body text-base">
+                  Writes a README with a centered hero, badges, a clickable demo
+                  video, an architecture diagram, and team cards, then sets the
+                  repo&apos;s About description, website, and topics to match.
+                  Reads your repo first, asks for facts it can&apos;t find, and
+                  never invents awards or stats.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="rounded-xl border border-success/20 bg-success/5 p-4">
+                  <div className="float-right ml-3 mb-2">
+                    <CopyButton text={README_AGENT_PROMPT} />
+                  </div>
+                  <pre className="whitespace-pre-wrap break-words font-code text-xs leading-relaxed text-foreground/80">{README_AGENT_PROMPT}</pre>
+                </div>
+                <Link
+                  href="/non-coders/skills/readme-writer"
+                  className="inline-flex items-center gap-2 font-code text-xs text-success transition-colors hover:text-success/80"
+                >
+                  See the full GitHub Writer skill
+                  <ArrowRight className="size-3.5" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* 2 — Devpost */}
+            <Card className="glow-hover border-spark/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
+                    <Megaphone className="size-5 text-spark" />
+                  </div>
+                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
+                    DEVPOST WRITER SKILL
+                  </Badge>
+                </div>
+                <CardTitle className="font-display text-xl text-spark">
+                  2. Write Your Devpost
+                </CardTitle>
+                <CardDescription className="font-body text-base">
+                  Writes the Devpost story section by section (inspiration, what
+                  it does, how you built it, challenges, what&apos;s next), plus
+                  the Built With tags and Try it out links. Reads your repo first
+                  and keeps every section honest.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="rounded-xl border border-spark/20 bg-spark/5 p-4">
+                  <div className="float-right ml-3 mb-2">
+                    <CopyButton text={DEVPOST_AGENT_PROMPT} />
+                  </div>
+                  <pre className="whitespace-pre-wrap break-words font-code text-xs leading-relaxed text-foreground/80">{DEVPOST_AGENT_PROMPT}</pre>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Link href="/playbook/post-hackathon#the-ship-it-toolkit" className="group block">
+            <div className="glow-hover flex items-center justify-between gap-4 rounded-xl border border-primary/30 bg-card p-5 transition-all hover:border-primary/60">
+              <div className="space-y-1">
+                <p className="font-display font-semibold">Building your portfolio site or YouTube description too?</p>
+                <p className="font-body text-sm text-muted-foreground">The full Ship-It Toolkit, plus a single prompt that generates all four deliverables, is on the post-hackathon page.</p>
+              </div>
+              <ArrowRight className="size-5 shrink-0 text-primary transition-transform group-hover:translate-x-1" />
+            </div>
+          </Link>
         </section>
       </div>
     </SectionTemplate>
