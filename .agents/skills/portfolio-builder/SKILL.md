@@ -30,6 +30,7 @@ Detect first, ask second. Read `AGENTS.md`, `PRD.md`, the `README`, `package.jso
 - What it does: three to five core capabilities.
 - How it works: enough of the system to draw an architecture diagram.
 - Proof: demo video (YouTube), live URL, Devpost, GitHub, press coverage, and any open-source artifacts (model, dataset, Figma).
+- **Event media**: the candid photos and clips from the hackathon itself, which the repo almost never contains. Ask explicitly for team and build-in-progress shots, demo-day or stage and award photos, whiteboard or napkin sketches, and the venue, plus where they live (a phone, a shared drive, the Devpost gallery). These are what make the site feel real, so request them rather than assuming the repo has them. If none exist, fall back to screenshots, diagrams, and the demo video.
 - Results: awards and placement, event name and dates and scale and rank, build time, team size, and any metrics (commits, latency, users).
 - Team: names, roles, GitHub handles, LinkedIn URLs, and headshots.
 
@@ -90,7 +91,7 @@ A single-page scroll, recruiter-first. Treat it as a menu: include a section onl
 - Use real content throughout; no lorem. Follow frontend-design's writing guidance: plain, specific, written from the reader's side of the screen.
 - Hold a quality floor without announcing it: responsive down to mobile, visible keyboard focus, and reduced motion respected.
 - Cover SEO basics: a keyword-aware title and description, a canonical URL, an Open Graph image, exactly one `h1`, and semantic sections.
-- Use real screenshots, photos, and diagrams; if you ship a mocked replica, label it; use the YouTube poster for the demo.
+- Use real screenshots, photos, and diagrams, including the event media gathered in Step 2 placed in the showcase, team, and by-the-numbers sections; if you ship a mocked replica, label it; use the YouTube poster for the demo.
 - Critique again after it renders, as frontend-design directs: screenshot the page, re-ask "would I have produced this same look for an unrelated project?", and remove one accessory by cutting a decoration that does not serve the brief.
 
 ## Verify
