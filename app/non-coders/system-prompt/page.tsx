@@ -20,6 +20,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
+import { LastUpdated } from "@/components/last-updated";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
@@ -121,6 +122,7 @@ export default function SystemPromptPage() {
           Write them once and every conversation gets better. Here is the one
           command that downloads both straight into your project.
         </p>
+        <LastUpdated date="2026-06-19" />
       </header>
 
       <Separator className="bg-primary/20" />

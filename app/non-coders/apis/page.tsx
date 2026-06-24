@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
+import { LastUpdated } from "@/components/last-updated";
 
 export const metadata: Metadata = {
   title: "Using APIs",
@@ -68,6 +69,7 @@ export default function ApisPage() {
           app? You don&apos;t need to understand how they work. You just need
           two things: a key and a docs link.
         </p>
+        <LastUpdated date="2026-04-21" />
       </header>
 
       <Separator className="bg-primary/20" />

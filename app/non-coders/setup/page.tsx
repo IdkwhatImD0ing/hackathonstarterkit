@@ -17,6 +17,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
+import { LastUpdated } from "@/components/last-updated";
 
 export const metadata: Metadata = {
   title: "Getting Started",
@@ -187,6 +188,7 @@ export default function SetupPage() {
           The 3 files, 4 shortcuts, and daily workflow you need. Nothing else is
           required.
         </p>
+        <LastUpdated date="2026-06-19" />
       </header>
 
       <Separator className="bg-primary/20" />

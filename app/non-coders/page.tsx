@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { NON_CODER_SECTIONS } from "@/lib/non-coder-sections";
+import { LastUpdated } from "@/components/last-updated";
 
 export const metadata: Metadata = {
   title: "Hackathons for Non-Coders — Win Without Coding Experience",
@@ -66,6 +67,7 @@ export default function NonCodersPage() {
           professionals who build with Cursor and Claude Code. Zero programming
           experience required.
         </p>
+        <LastUpdated date="2026-04-15" />
         <div className="flex flex-wrap gap-4">
           <div className="rounded-xl border border-volt/15 bg-volt/5 px-4 py-2 text-center">
             <p className="font-display text-2xl font-bold text-volt">4</p>

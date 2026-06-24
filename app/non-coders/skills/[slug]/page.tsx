@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { NON_CODER_SKILLS, getSkillBySlug } from "@/lib/non-coder-skills";
+import { LastUpdated } from "@/components/last-updated";
 
 const accentStyles = {
   volt: {
@@ -113,6 +114,7 @@ export default async function SkillDetailPage({
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           {skill.description}
         </p>
+        <LastUpdated date="2026-06-24" />
       </header>
 
       {/* Slash command */}
