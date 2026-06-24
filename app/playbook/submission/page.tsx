@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { CopyButton } from "@/components/copy-button";
+import { KeyTakeaway } from "@/components/key-takeaway";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
   Card,
@@ -250,18 +251,19 @@ export default function SubmissionPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Submission Advantage"
-            subtitle="Your submission is the artifact that outlives your pitch. Judges deliberate without you — your Devpost, README, and demo video speak on your behalf."
+            subtitle="Your submission is the artifact that outlives your pitch. Judges deliberate without you, so your Devpost, README, and demo video speak on your behalf."
           />
 
+          <KeyTakeaway>Judges deliberate without you, so your Devpost, README, and demo video are what win the room.</KeyTakeaway>
+
           <p className="font-body text-foreground/80">
-            Most teams treat the submission as an afterthought, something to
-            rush through in the last 30 minutes. Winning teams treat it as a{" "}
+            Treat the submission as a{" "}
             <span className="font-display font-semibold text-foreground">
               first-class deliverable
             </span>
-            . Your Devpost README, GitHub repo, and demo video are what judges
-            reference during deliberation. If they can&apos;t remember your
-            project, your submission is the tiebreaker.
+            , not a last-30-minutes rush. Your Devpost README, GitHub repo, and
+            demo video are what judges reference during deliberation. When they
+            can&apos;t remember your project, the submission is the tiebreaker.
           </p>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -281,10 +283,10 @@ export default function SubmissionPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  The narrative that frames your project for every judge,
-                  including those who never saw your live demo. This is the
-                  document most judges read during deliberation. It needs to tell
-                  the full story: problem, solution, tech, and vision.
+                  <span className="font-semibold text-foreground">Most judges read this during deliberation.</span>{" "}
+                  It frames your project for everyone, including those who never
+                  saw your live demo. Tell the full story: problem, solution,
+                  tech, and vision.
                 </p>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
@@ -311,11 +313,9 @@ export default function SubmissionPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  The technical credibility signal that proves you built
-                  something real. Technical judges will click your repo link.
-                  Clean code, good structure, and a proper README with
-                  architecture diagrams separate serious teams from weekend
-                  projects.
+                  <span className="font-semibold text-foreground">Technical judges will click your repo link.</span>{" "}
+                  Clean code, clear structure, and a README with architecture
+                  diagrams separate serious teams from weekend projects.
                 </p>
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
@@ -342,10 +342,9 @@ export default function SubmissionPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  The visual proof that persists into deliberation. When judges
-                  forget your project (which happens more than you&apos;d
-                  expect), your demo video is the reminder. Nothing beats seeing
-                  the product actually work.
+                  <span className="font-semibold text-foreground">Visual proof that persists into deliberation.</span>{" "}
+                  When judges forget your project (it happens often), the demo
+                  video is the reminder. Nothing beats seeing it actually work.
                 </p>
                 <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
                   <p className="font-code text-xs text-primary/80">
@@ -372,9 +371,8 @@ export default function SubmissionPage() {
                   no idea what you&apos;ll be coding.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Writing the README forces you to understand what you actually
-                  built. The act of documenting is the act of clarifying: for
-                  yourself and for judges.
+                  Writing the README forces you to understand what you built.
+                  Documenting is clarifying, for yourself and for judges.
                 </p>
               </div>
             </div>
@@ -390,14 +388,16 @@ export default function SubmissionPage() {
             subtitle="Every Devpost submission follows the same template. Here's how to write each section so judges remember your project during deliberation."
           />
 
+          <KeyTakeaway>Lead every section with the point: a striking stat, a concrete feature, a named sponsor API.</KeyTakeaway>
+
           <div className="space-y-4">
             {[
               {
                 step: 1,
                 title: "Inspiration",
                 description:
-                  "Lead with a striking stat or scenario that makes judges feel the problem. \"82% of emergency call centers are understaffed.\" \"Over 5 million children are hospitalized every year.\" \"1.7 billion adults worldwide remain unbanked.\" Make them care before you describe your solution.",
-                tip: "Avoid vague openers like \"We wanted to help people.\" Concrete numbers and vivid scenarios stick in judges' minds during deliberation.",
+                  "Open with a striking stat that makes judges feel the problem. \"82% of emergency call centers are understaffed.\" \"1.7 billion adults remain unbanked.\" Make them care before you describe the solution.",
+                tip: "Skip vague openers like \"We wanted to help people.\" Concrete numbers stick in judges' minds during deliberation.",
                 accent: "volt" as const,
               },
               {
@@ -412,40 +412,40 @@ export default function SubmissionPage() {
                 step: 3,
                 title: "How We Built It",
                 description:
-                  "Architecture diagram first, then a bullet list naming every API, framework, and service. Include a system design image; one visual explains what 500 words cannot. Group by Frontend, Backend, AI/ML, and Infrastructure.",
-                tip: "Name-drop sponsor technologies prominently. If you used Intel Dev Cloud, Hume, Retell, or any sponsor API, make it impossible to miss.",
+                  "Architecture diagram first, then bullet every API, framework, and service. One system design image explains what 500 words cannot. Group by Frontend, Backend, AI/ML, and Infrastructure.",
+                tip: "Name-drop sponsor tech prominently. Used Intel Dev Cloud, Hume, or Retell? Make it impossible to miss.",
                 accent: "primary" as const,
               },
               {
                 step: 4,
                 title: "Challenges We Ran Into",
                 description:
-                  "Be honest. \"Integrating multiple APIs seamlessly\" and \"Fine-tuning the model to handle edge cases\" are relatable. Saying \"We didn't have any challenges\" is a red flag that suggests you didn't push hard enough.",
-                tip: "Challenges show maturity. Judges want to see that you faced real problems and solved them, not that everything went perfectly.",
+                  "Be honest and specific. \"Integrating multiple APIs\" or \"fine-tuning the model for edge cases\" reads as real. \"We didn't have any challenges\" signals you didn't push hard enough.",
+                tip: "Challenges show maturity. Judges want real problems solved, not a project where everything went perfectly.",
                 accent: "success" as const,
               },
               {
                 step: 5,
                 title: "Accomplishments",
                 description:
-                  "What went right. Tie accomplishments back to the original problem: \"Successfully fine-tuned Mistral for emergency response scenarios\" connects to the 82% understaffing stat. Make the loop from problem to proof.",
-                tip: "Include quantitative wins: \"80% decrease in processing time,\" \"multi-language support in 6 languages,\" \"functional prototype in 18 hours.\"",
+                  "Tie wins back to the original problem. \"Fine-tuned Mistral for emergency response\" closes the loop on the 82% understaffing stat. Connect problem to proof.",
+                tip: "Quantify: \"80% decrease in processing time,\" \"support for 6 languages,\" \"functional prototype in 18 hours.\"",
                 accent: "volt" as const,
               },
               {
                 step: 6,
                 title: "What We Learned",
                 description:
-                  "Growth signal. Judges want to see you're reflective, not just productive. \"How to design multidimensional agentic systems\" and \"The importance of multi-layered security\" show depth of understanding beyond the code.",
-                tip: "This section is especially important for educational and \"best beginner\" tracks. It proves the hackathon taught you something.",
+                  "Show growth, not just output. \"How to design multi-agent systems\" or \"the importance of multi-layered security\" prove depth of understanding beyond the code.",
+                tip: "Especially important for educational and \"best beginner\" tracks. It proves the hackathon taught you something.",
                 accent: "spark" as const,
               },
               {
                 step: 7,
                 title: "What's Next",
                 description:
-                  "Future vision that shows the idea has legs beyond the weekend. \"Expand training data,\" \"Partner with local emergency services for real-world testing,\" \"Mobile app integration.\" Show judges this isn't a throwaway project.",
-                tip: "2-4 concrete next steps. Avoid pie-in-the-sky claims; judges can tell the difference between ambition and delusion.",
+                  "Prove the idea has legs beyond the weekend. \"Expand training data,\" \"partner with local emergency services for testing,\" \"mobile app integration.\" Show this isn't a throwaway.",
+                tip: "List 2-4 concrete next steps. Skip pie-in-the-sky claims; judges spot the line between ambition and delusion.",
                 accent: "primary" as const,
               },
             ].map((item) => {
@@ -515,6 +515,8 @@ export default function SubmissionPage() {
             title="The GitHub README — Structure for Credibility"
             subtitle="Technical judges will click your repo link. A clean GitHub README with architecture diagrams and install instructions separates serious teams from weekend projects."
           />
+
+          <KeyTakeaway>A clean repo README with badges, a diagram, and install steps is your technical credibility signal.</KeyTakeaway>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr]">
             <Card className="glow-hover border-volt/20">
@@ -648,8 +650,7 @@ export default function SubmissionPage() {
                 Remember:
               </span>{" "}
               The GitHub README is for developers and technical judges. The
-              Devpost is for everyone. They serve different audiences; write
-              both, and tailor each to its reader.
+              Devpost is for everyone. Write both, and tailor each to its reader.
             </p>
           </div>
         </section>
@@ -662,6 +663,8 @@ export default function SubmissionPage() {
             title="Why This Works — The Science of Great Documentation"
             subtitle="The best hackathon submissions follow the same principles that make great journalism, great memos, and great products memorable."
           />
+
+          <KeyTakeaway>Lead with impact, cut every spare word, and show readers depth only when they ask for it.</KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
             <Card className="glow-hover border-volt/20">
@@ -680,10 +683,9 @@ export default function SubmissionPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="font-body text-sm text-foreground/80">
-                  Journalism&apos;s most fundamental structure: put the most
-                  important information first. Judges skim, so your opening line
-                  determines whether they keep reading or move on to the next
-                  project.
+                  <span className="font-semibold text-foreground">Put the most important information first.</span>{" "}
+                  Judges skim, so your opening line decides whether they keep
+                  reading or move on to the next project.
                 </p>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
@@ -721,10 +723,9 @@ export default function SubmissionPage() {
                   than what.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Bezos banned PowerPoint at Amazon in favor of structured
-                  narrative memos. The same principle applies to your Devpost:
-                  writing a coherent story forces you to understand what you
-                  actually built and why it matters.
+                  Bezos banned PowerPoint at Amazon for structured narrative
+                  memos. Same idea for your Devpost: writing a coherent story
+                  forces you to understand what you built and why it matters.
                 </p>
                 <p className="font-code text-xs text-spark/60">
                   —{" "}
@@ -753,11 +754,10 @@ export default function SubmissionPage() {
                   out.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Orwell&apos;s 1946 rules for clear prose apply perfectly to
-                  hackathon submissions: never use a long word where a short one
-                  will do, never use the passive where you can use the active,
-                  and break any of these rules sooner than say anything
-                  barbarous.
+                  Orwell&apos;s 1946 rules fit hackathon submissions: never use
+                  a long word where a short one will do, never use the passive
+                  where you can use the active, and break any rule sooner than
+                  say anything barbarous.
                 </p>
                 <p className="font-code text-xs text-primary/60">
                   —{" "}
@@ -782,10 +782,9 @@ export default function SubmissionPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="font-body text-sm text-foreground/80">
-                  Show the essential information first, then let readers drill
-                  deeper if they want. Stripe&apos;s documentation, widely
-                  regarded as the gold standard, follows this principle:
-                  quickstart at the top, architecture details further down.
+                  <span className="font-semibold text-foreground">Show essentials first, let readers drill deeper.</span>{" "}
+                  Stripe&apos;s docs, the gold standard, do exactly this:
+                  quickstart at the top, architecture further down.
                 </p>
                 <div className="rounded-lg border border-success/10 bg-success/5 p-3">
                   <p className="font-code text-xs text-success/80">
@@ -807,6 +806,8 @@ export default function SubmissionPage() {
             title="Show, Don't Tell"
             subtitle="A screenshot is worth a thousand words. An architecture diagram is worth a thousand meetings. A demo video is worth a thousand Devpost entries."
           />
+
+          <KeyTakeaway>Don't describe your app, show it: diagram the architecture and record it working.</KeyTakeaway>
 
           <Card className="glow-hover border-spark/20">
             <CardContent className="space-y-4 pt-6">
@@ -844,10 +845,9 @@ export default function SubmissionPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  One system design image explains what 500 words of
-                  &ldquo;How We Built It&rdquo; text cannot. Show the flow:
-                  user action → frontend → API → AI model → response. Use
-                  Excalidraw, Figma, or even a whiteboard photo.
+                  <span className="font-semibold text-foreground">One image beats 500 words of &ldquo;How We Built It.&rdquo;</span>{" "}
+                  Show the flow: user action → frontend → API → AI model →
+                  response. Use Excalidraw, Figma, or a whiteboard photo.
                 </p>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
@@ -874,10 +874,10 @@ export default function SubmissionPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  4-6 annotated screenshots of key flows. Not raw screen
-                  captures; add callouts, arrows, and labels that guide the
-                  reader through the experience. The DoggoAI submission included
-                  design process images that dramatically elevated it.
+                  <span className="font-semibold text-foreground">4-6 annotated shots of key flows, not raw captures.</span>{" "}
+                  Add callouts, arrows, and labels that guide the reader. DoggoAI
+                  added design-process images that dramatically elevated its
+                  submission.
                 </p>
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
@@ -981,6 +981,8 @@ export default function SubmissionPage() {
             subtitle="Two real demo videos that turned hackathon work into outcomes. Notice how each one gets the product on screen fast, narrates what the viewer is seeing, and lets the actual interaction do the convincing."
           />
 
+          <KeyTakeaway>Get the product on screen fast, narrate the interaction, and let it do the convincing.</KeyTakeaway>
+
           {/* --- INSIDER TIMING TIP: the demo video does not eat your build hours --- */}
           <div className="animate-glow-pulse glass rounded-xl border border-volt/15 p-6">
             <div className="flex items-start gap-4">
@@ -997,22 +999,20 @@ export default function SubmissionPage() {
                   The demo video does not have to come out of your coding hours
                 </h3>
                 <p className="font-body text-sm text-foreground/80">
-                  Hackathons only freeze the{" "}
+                  Deadlines freeze the{" "}
                   <span className="font-display font-semibold text-foreground">
                     code
-                  </span>{" "}
-                  at the submission deadline. Devpost listings (including the
-                  YouTube link) almost always stay editable after the deadline
-                  passes, and judging usually does not start for another 1 to 2
-                  hours. Lock the repo and submit the Devpost first, then use
-                  that gap to record, edit, and paste the video link in. You
-                  get a polished demo without giving up any build time.
+                  </span>
+                  , not the listing. Devpost entries (including the YouTube
+                  link) usually stay editable after the deadline, and judging
+                  rarely starts for another 1 to 2 hours. Lock the repo, submit
+                  the Devpost, then record and paste the link in that gap. You
+                  get a polished demo without losing build time.
                 </p>
                 <p className="font-body text-xs text-foreground/60">
-                  Always read your specific hackathon&apos;s rules to confirm
-                  the post-submission edit window before relying on it. The
-                  point is to not let &ldquo;I have to record a video&rdquo;
-                  cost you 2 hours of feature work.
+                  Confirm your hackathon&apos;s post-submission edit window
+                  before relying on it. The point: never let &ldquo;I have to
+                  record a video&rdquo; cost you 2 hours of feature work.
                 </p>
               </div>
             </div>
@@ -1059,10 +1059,10 @@ export default function SubmissionPage() {
                 <div className="rounded-lg border border-success/10 bg-success/5 p-3">
                   <p className="font-code text-xs text-success/80">
                     <span className="font-semibold">Why it works:</span> A
-                    role-play demo executes a real money transfer on camera.
-                    Voice + dashboard + specific dollar amounts turn the
-                    abstract claim of &ldquo;voice-based banking&rdquo; into a
-                    verifiable outcome judges can replay during deliberation.
+                    role-play demo runs a real money transfer on camera. Voice,
+                    dashboard, and specific dollar amounts turn
+                    &ldquo;voice-based banking&rdquo; into a verifiable outcome
+                    judges can replay during deliberation.
                   </p>
                 </div>
                 <a
@@ -1101,8 +1101,8 @@ export default function SubmissionPage() {
                   A solo first-place accessibility tool that guides users
                   through complex websites via real-time voice over a phone
                   call. Built with NLX.ai and AWS, demoed on Google Flights.
-                  The recording reached a recruiter after the event and
-                  turned into an internship offer.
+                  The recording reached a recruiter and turned into an
+                  internship offer.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -1120,12 +1120,11 @@ export default function SubmissionPage() {
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
                     <span className="font-semibold">Why it works:</span> The
-                    embed jumps past the problem framing intro so the product
-                    is on screen in the first beat. A recruiter watching does
-                    not need to sit through setup, they hear the voice
-                    assistant walk through Google Flights end to end and
-                    immediately get what was built. The demo video became the
-                    portfolio piece, not the GitHub repo.
+                    embed skips the problem-framing intro, so the product is on
+                    screen in the first beat. No setup to sit through: the
+                    recruiter hears the voice assistant walk Google Flights end
+                    to end and gets it instantly. The video became the portfolio
+                    piece, not the repo.
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
@@ -1178,11 +1177,10 @@ export default function SubmissionPage() {
                   Screen Studio
                 </h3>
                 <p className="font-body text-sm text-foreground/80">
-                  This is the screen recorder I use for every hackathon demo I
-                  put together. The auto-zoom and cursor smoothing alone make
-                  a 60 second demo look like a polished product launch, and
-                  there is basically no editing time. Worth a look if you are
-                  on Mac.
+                  The screen recorder I use for every hackathon demo. Auto-zoom
+                  and cursor smoothing make a 60-second demo look like a product
+                  launch, with basically no editing time. Worth a look if
+                  you&apos;re on Mac.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {[
@@ -1218,10 +1216,9 @@ export default function SubmissionPage() {
               <span className="font-display font-semibold text-foreground">
                 The takeaway:
               </span>{" "}
-              A demo video is not a bonus deliverable. It is the artifact that
-              keeps working after the hackathon ends, when judges deliberate
-              and recruiters scroll. Pick the right tool, record once, and let
-              the video do the selling for you.
+              A demo video is not a bonus. It keeps working after the hackathon
+              ends, when judges deliberate and recruiters scroll. Pick the right
+              tool, record once, and let the video do the selling.
             </p>
           </div>
         </section>
@@ -1235,20 +1232,22 @@ export default function SubmissionPage() {
             subtitle="These six submission mistakes kill otherwise strong projects. Avoid them and you're already ahead of 80% of teams."
           />
 
+          <KeyTakeaway>Avoiding these six errors puts you ahead of 80% of teams before judging starts.</KeyTakeaway>
+
           <div className="stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: Video,
                 title: "No Demo Video",
                 description:
-                  "Instant disadvantage. Judges can't remember what they can't see. A 60-second recording is the highest-ROI activity of your hackathon.",
+                  "Instant disadvantage. Judges can't remember what they can't see. A 60-second recording is your highest-ROI activity.",
                 accent: "spark" as const,
               },
               {
                 icon: MessageSquareOff,
                 title: "Wall of Text",
                 description:
-                  "Nobody reads a 2000-word README with no images. Break it up with screenshots, diagrams, and headers. If a judge has to scroll to find the point, you've lost them.",
+                  "Nobody reads a 2000-word README with no images. Break it up with screenshots, diagrams, and headers. Make judges scroll to find the point and you've lost them.",
                 accent: "volt" as const,
               },
               {
@@ -1262,7 +1261,7 @@ export default function SubmissionPage() {
                 icon: Shield,
                 title: "Missing Tech Details",
                 description:
-                  "Judges, especially sponsor judges, want to know HOW you built it, not just WHAT. Name every API, framework, and service. Include the architecture diagram.",
+                  "Sponsor judges want HOW you built it, not just WHAT. Name every API, framework, and service. Include the architecture diagram.",
                 accent: "success" as const,
               },
               {
@@ -1354,17 +1353,15 @@ export default function SubmissionPage() {
                     document that represents your project when you&apos;re not
                     in the room.
                   </span>{" "}
-                  The teams that write great Devpost READMEs aren&apos;t adding
+                  Teams that write great Devpost READMEs aren&apos;t adding
                   fluff. They&apos;re forcing themselves to understand what they
-                  actually built, why it matters, and how to make someone else
-                  care.
+                  built, why it matters, and how to make someone else care.
                 </p>
                 <p className="font-body text-foreground/80">
-                  Every section of your submission is an act of clarity. The
-                  Inspiration section forces you to articulate the problem. The
-                  &ldquo;How We Built It&rdquo; section forces you to understand
-                  your own architecture. The &ldquo;What&apos;s Next&rdquo;
-                  section forces you to think beyond the weekend.
+                  Every section is an act of clarity. Inspiration forces you to
+                  articulate the problem. &ldquo;How We Built It&rdquo; forces
+                  you to understand your architecture. &ldquo;What&apos;s
+                  Next&rdquo; forces you to think beyond the weekend.
                 </p>
                 <p className="font-body text-foreground/80">
                   <span className="font-display font-semibold text-foreground">
@@ -1383,8 +1380,10 @@ export default function SubmissionPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Submission Checklist"
-            subtitle="A step-by-step summary for crafting your submission. Allocate 1-2 hours before the deadline — this is not optional."
+            subtitle="A step-by-step summary for crafting your submission. Allocate 1-2 hours before the deadline: this is not optional."
           />
+
+          <KeyTakeaway>Block 1-2 hours before the deadline and work this list top to bottom.</KeyTakeaway>
 
           <Card className="glow-hover border-volt/20">
             <CardContent className="space-y-4 pt-6">
@@ -1450,11 +1449,10 @@ export default function SubmissionPage() {
               <span className="font-display font-semibold text-foreground">
                 Remember:
               </span>{" "}
-              Judges deliberate without you in the room. Your Devpost README,
-              demo video, and GitHub repo are your advocates. Make them count.
-              They&apos;re the difference between &ldquo;I think that project
-              was good&rdquo; and &ldquo;I remember exactly why we should pick
-              that one.&rdquo;
+              Judges deliberate without you. Your Devpost README, demo video,
+              and GitHub repo are your advocates, the difference between
+              &ldquo;I think that project was good&rdquo; and &ldquo;I remember
+              exactly why we should pick that one.&rdquo;
             </p>
           </div>
         </section>
@@ -1467,6 +1465,8 @@ export default function SubmissionPage() {
             title="AI Prompt Templates"
             subtitle="Copy these prompts into Claude, ChatGPT, or any AI tool along with your project details. They're designed to generate submission-ready READMEs that follow every principle on this page."
           />
+
+          <KeyTakeaway>Paste these prompts plus your project details to generate a README that follows every rule above.</KeyTakeaway>
 
           <div className="space-y-6">
             <Card className="border-volt/20">
@@ -1486,9 +1486,9 @@ export default function SubmissionPage() {
                   Devpost README Generator
                 </CardTitle>
                 <CardDescription className="font-body text-base">
-                  Generates a complete Devpost submission following the winning
-                  patterns from this page. Paste the prompt below into any AI
-                  tool, then add your project details where indicated.
+                  Generates a complete Devpost submission using this page&apos;s
+                  winning patterns. Paste the prompt into any AI tool, then add
+                  your project details where indicated.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -1584,10 +1584,9 @@ export default function SubmissionPage() {
               <span className="font-display font-semibold text-foreground">
                 Pro tip:
               </span>{" "}
-              These prompts work best when you give them raw, detailed input,
-              even messy bullet points. The AI will structure it. After
-              generating, proofread with Orwell&apos;s rule: cut every word that
-              doesn&apos;t earn its place.
+              These prompts work best with raw, detailed input, even messy
+              bullets. The AI structures it. Then proofread with Orwell&apos;s
+              rule: cut every word that doesn&apos;t earn its place.
             </p>
           </div>
         </section>

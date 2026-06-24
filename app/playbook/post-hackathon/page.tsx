@@ -25,6 +25,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
+import { KeyTakeaway } from "@/components/key-takeaway";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
   Card,
@@ -118,10 +119,13 @@ export default function PostHackathonPage() {
             subtitle="Most teams pack up and move on after the hackathon. The ones who win careers (not just prizes) know the real work starts when the event ends."
           />
 
+          <KeyTakeaway>
+            The real work starts when the event ends: share, follow up, and keep
+            building. It only takes one person seeing it.
+          </KeyTakeaway>
+
           <p className="font-body text-foreground/80">
-            You may think that because you have no followers or no one&apos;s
-            looking at your page, no one will ever see this project. But you
-            never know.{" "}
+            No followers? Doesn&apos;t matter.{" "}
             <span className="font-display font-semibold text-foreground">
               It only takes one.
             </span>{" "}
@@ -146,10 +150,12 @@ export default function PostHackathonPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  Post it on LinkedIn. Share the demo video. Pin the GitHub repo.
-                  You never know who&apos;s watching: a recruiter, a founder, a
-                  future co-founder. The project that sits in a private repo
-                  helps no one, least of all you.
+                  <span className="font-semibold text-foreground">
+                    Make it public.
+                  </span>{" "}
+                  Post on LinkedIn, share the demo, pin the repo. You never know
+                  who&apos;s watching: a recruiter, a founder, a future
+                  co-founder. A private repo helps no one.
                 </p>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
@@ -177,10 +183,12 @@ export default function PostHackathonPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  Judges, sponsors, and fellow hackers are warm contacts right
-                  now. In a week, they&apos;re strangers again. Follow up within
-                  48 hours while the connection is fresh. A short message
-                  referencing your conversation goes further than you think.
+                  <span className="font-semibold text-foreground">
+                    Follow up within 48 hours.
+                  </span>{" "}
+                  Judges, sponsors, and fellow hackers are warm now. In a week,
+                  they&apos;re strangers again. A short message referencing your
+                  conversation goes further than you think.
                 </p>
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
@@ -207,10 +215,12 @@ export default function PostHackathonPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  You already have half the work done. Most people don&apos;t
-                  have long-term projects because getting started feels
-                  insurmountable. But you already started at the hackathon.
-                  Why not spend the next 6 months making it outstanding?
+                  <span className="font-semibold text-foreground">
+                    You&apos;re already half done.
+                  </span>{" "}
+                  Most people never start long-term projects because step one
+                  feels insurmountable. You already started at the hackathon.
+                  Spend the next 6 months making it outstanding.
                 </p>
                 <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
                   <p className="font-code text-xs text-primary/80">
@@ -236,9 +246,8 @@ export default function PostHackathonPage() {
                   hear it, does it make a sound?&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  If a project is made but no one knows about it, was the
-                  project actually made? The project sitting in a private repo
-                  helps no one, least of all you.
+                  If a project is made but no one knows, was it made? A private
+                  repo helps no one, least of all you.
                 </p>
               </div>
             </div>
@@ -254,12 +263,10 @@ export default function PostHackathonPage() {
                   The First Internship Story
                 </p>
                 <p className="font-body text-sm text-foreground/80">
-                  After the third in-person hackathon at LA Hacks, a LinkedIn
-                  post about a RAG-style chat app caught an interviewer&apos;s
-                  eye. Turns out, the interviewer was working on the exact same
-                  thing. The interview stopped being a pitch and became two
-                  people geeking out over the same problem. A week later: first
-                  internship offer.
+                  At LA Hacks, a LinkedIn post about a RAG-style chat app caught
+                  an interviewer&apos;s eye. They were building the exact same
+                  thing. The interview became two people geeking out over one
+                  problem. A week later: first internship offer.
                 </p>
                 <p className="font-body text-sm italic text-foreground/60">
                   &ldquo;We didn&apos;t win. But that weekend quietly rerouted
@@ -278,6 +285,11 @@ export default function PostHackathonPage() {
             title="Luck Surface Area — Share Your Work"
             subtitle="Luck isn't random. It's a function of what you do and how many people know about it. The more you build AND share, the more opportunities find you."
           />
+
+          <KeyTakeaway>
+            Luck = doing times telling. Share your work widely and opportunities
+            start finding you.
+          </KeyTakeaway>
 
           <Card className="glow-hover border-volt/20">
             <CardHeader>
@@ -350,11 +362,10 @@ export default function PostHackathonPage() {
               <span className="font-display font-semibold text-foreground">
                 The proof:
               </span>{" "}
-              Within the first 4 hackathons, sharing projects publicly led to an
-              interview and a first internship. After that, even without
-              actively job searching, 2 expedited interviews + 1 direct offer
-              arrived, plus countless hundreds of recruiting DMs on LinkedIn.
-              All from visibility, not LeetCode.{" "}
+              Within the first 4 hackathons, sharing publicly led to an
+              interview and a first internship. Without job searching after that:
+              2 expedited interviews, 1 direct offer, and hundreds of recruiting
+              DMs. All from visibility, not LeetCode.{" "}
               <span className="font-display font-semibold text-foreground">
                 You don&apos;t do hackathons to win. You do them to network.
               </span>
@@ -370,6 +381,11 @@ export default function PostHackathonPage() {
             title="The 48-Hour Follow-Up"
             subtitle="Hackathon contacts are warm right now. In a week, they're strangers. Research shows: follow up within 24-48 hours or the window closes."
           />
+
+          <KeyTakeaway>
+            Message everyone you had a real conversation with inside 48 hours,
+            while the connection is still warm.
+          </KeyTakeaway>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr]">
             <Card className="glow-hover border-volt/20">
@@ -389,19 +405,39 @@ export default function PostHackathonPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Judges who asked good questions about your project
+                    <span>
+                      <span className="font-semibold text-foreground">
+                        Judges
+                      </span>{" "}
+                      who asked good questions
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Sponsor reps who showed interest in your tech
+                    <span>
+                      <span className="font-semibold text-foreground">
+                        Sponsor reps
+                      </span>{" "}
+                      who liked your tech
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Teammates you want to hack with again
+                    <span>
+                      <span className="font-semibold text-foreground">
+                        Teammates
+                      </span>{" "}
+                      you&apos;d hack with again
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    Other participants you connected with over shared struggles
+                    <span>
+                      <span className="font-semibold text-foreground">
+                        Participants
+                      </span>{" "}
+                      you bonded with over shared struggles
+                    </span>
                   </li>
                 </ul>
                 <div className="rounded-lg bg-volt/5 p-3 text-center">
@@ -455,21 +491,39 @@ export default function PostHackathonPage() {
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Personalize: reference the specific conversation you had
+                    <span>
+                      <span className="font-semibold text-foreground">
+                        Personalize:
+                      </span>{" "}
+                      reference the exact conversation you had
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Add value: share the project link, demo video, or a
-                    resource they&apos;d find useful
+                    <span>
+                      <span className="font-semibold text-foreground">
+                        Add value:
+                      </span>{" "}
+                      send the project link, demo, or a useful resource
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    One clear ask: coffee chat, feedback on the project, or
-                    future collaboration
+                    <span>
+                      <span className="font-semibold text-foreground">
+                        One clear ask:
+                      </span>{" "}
+                      coffee chat, feedback, or collaboration
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Keep it short: 3-5 sentences max
+                    <span>
+                      <span className="font-semibold text-foreground">
+                        Keep it short:
+                      </span>{" "}
+                      3-5 sentences max
+                    </span>
                   </li>
                 </ul>
                 <div className="rounded-lg bg-spark/5 p-3 text-center">
@@ -495,9 +549,9 @@ export default function PostHackathonPage() {
                     Mark Granovetter — Strength of Weak Ties
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
-                    Casual contacts are more valuable than close friends for
-                    finding jobs. Hackathon judges, sponsors, and fellow hackers
-                    are weak ties, and weak ties open doors.
+                    Casual contacts beat close friends for finding jobs. Judges,
+                    sponsors, and fellow hackers are weak ties, and weak ties
+                    open doors.
                   </p>
                   <p className="font-code text-xs text-muted-foreground">
                     Stanford, 1973; one of the most cited sociology papers ever
@@ -516,9 +570,8 @@ export default function PostHackathonPage() {
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
                     &ldquo;Your network is your net worth.&rdquo; Your 170
-                    connections can reach millions of people. The best
-                    connections often happen over shared struggles, like
-                    debugging at 3AM.
+                    connections reach millions. The best ones form over shared
+                    struggles, like debugging at 3AM.
                   </p>
                 </div>
               </div>
@@ -534,6 +587,11 @@ export default function PostHackathonPage() {
             title="Turn It Into a Long-Term Project"
             subtitle="You already have half the work done. Most people can't start long-term projects because it feels insurmountable. But you already started at the hackathon."
           />
+
+          <KeyTakeaway>
+            Win or lose, you leave with a working prototype, a team, and
+            momentum: keep building instead of starting from zero.
+          </KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
             <Card className="glow-hover border-volt/20">
@@ -552,11 +610,12 @@ export default function PostHackathonPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  A winning hackathon project is already validated: judges
-                  believed in it, it beat the competition, and you have a
-                  working prototype. Spend the next 6 months making it
-                  outstanding. Put it on your resume as the centerpiece project
-                  for future internships or jobs.
+                  <span className="font-semibold text-foreground">
+                    A win is validation.
+                  </span>{" "}
+                  Judges believed in it, it beat the field, and you have a
+                  working prototype. Spend 6 months making it outstanding, then
+                  make it your resume centerpiece.
                 </p>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
@@ -583,12 +642,13 @@ export default function PostHackathonPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
-                  You have a working prototype, a team, and momentum.
-                  That&apos;s more than most side projects ever get. The
-                  knowledge you gained, even from a &ldquo;loss,&rdquo; is
-                  rocket fuel. One hackathon spent learning vector databases
-                  didn&apos;t win anything, but that knowledge landed an
-                  internship and a full-time job.
+                  <span className="font-semibold text-foreground">
+                    A loss is rocket fuel.
+                  </span>{" "}
+                  You still have a prototype, a team, and momentum, more than
+                  most side projects get. One hackathon spent learning vector
+                  databases won nothing, but that knowledge landed an internship
+                  and a full-time job.
                 </p>
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
@@ -611,9 +671,9 @@ export default function PostHackathonPage() {
                     Seth Godin / Steve Jobs
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
-                    &ldquo;Real artists ship.&rdquo; Don&apos;t let the project
-                    die in a private repo. Keep shipping iterations; each one
-                    makes the project more impressive and more useful.
+                    &ldquo;Real artists ship.&rdquo; Don&apos;t let it die in a
+                    private repo. Each iteration you ship makes it more
+                    impressive and more useful.
                   </p>
                 </div>
               </div>
@@ -628,10 +688,10 @@ export default function PostHackathonPage() {
                     Patrick McKenzie (patio11)
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
-                    Side projects compound over time into career-changing
-                    portfolios. A Bingo Card Creator built on nights and weekends
-                    turned into a full career pivot. Hackathon projects have
-                    the same potential.
+                    Side projects compound into career-changing portfolios. His
+                    Bingo Card Creator, built on nights and weekends, became a
+                    full career pivot. Hackathon projects have the same
+                    potential.
                   </p>
                 </div>
               </div>
@@ -647,6 +707,11 @@ export default function PostHackathonPage() {
             title="Why This Works — The Science"
             subtitle="Post-hackathon actions aren't just 'nice to have.' They're backed by research on how careers, networks, and opportunities actually work."
           />
+
+          <KeyTakeaway>
+            Four researchers agree: visible work and weak ties, not raw talent,
+            drive the opportunities that change careers.
+          </KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
             <Card className="glow-hover border-volt/20">
@@ -670,11 +735,9 @@ export default function PostHackathonPage() {
                   online, it doesn&apos;t exist.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Kleon&apos;s principle: you don&apos;t have to be a genius —
-                  you just have to share what you&apos;re doing. The act of
-                  sharing is generosity, not self-promotion. Make something,
-                  talk about it, and you&apos;ll attract people who care about
-                  the same things.
+                  You don&apos;t have to be a genius, just share what you make.
+                  Sharing is generosity, not self-promotion, and it attracts
+                  people who care about the same things.
                 </p>
                 <p className="font-code text-xs text-volt/60">
                   — Show Your Work, 2014
@@ -705,9 +768,8 @@ export default function PostHackathonPage() {
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   L = D x T. Do more (build, iterate, contribute) and tell more
-                  (post, share, demo). Both dimensions grow your luck surface
-                  area. Sharing one project to 1,000 people beats building 10
-                  projects that nobody sees.
+                  (post, share, demo). One project shared with 1,000 people beats
+                  10 projects nobody sees.
                 </p>
                 <p className="font-code text-xs text-spark/60">
                   — Jason Roberts, TechZing podcast
@@ -732,15 +794,13 @@ export default function PostHackathonPage() {
               <CardContent className="space-y-4">
                 <p className="font-body text-sm text-foreground/80">
                   Mark Granovetter&apos;s landmark 1973 Stanford study found
-                  that casual contacts (people you don&apos;t see every day)
-                  are more valuable than close friends for finding jobs and
-                  opportunities. They connect you to networks outside your own
-                  circle.
+                  casual contacts (people you don&apos;t see every day) beat
+                  close friends for finding jobs. They link you to networks
+                  outside your own circle.
                 </p>
                 <p className="font-body text-sm text-foreground/60">
-                  Hackathon judges, sponsors, and fellow hackers are weak ties.
-                  Cultivate them. They open doors that your close friends
-                  can&apos;t.
+                  Judges, sponsors, and fellow hackers are weak ties. Cultivate
+                  them. They open doors your close friends can&apos;t.
                 </p>
                 <p className="font-code text-xs text-primary/60">
                   — American Journal of Sociology, 1973
@@ -769,10 +829,10 @@ export default function PostHackathonPage() {
                   tried.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Project yourself forward to age 80. Will you regret sharing
-                  that project publicly? Will you regret sending that follow-up
-                  email? No. You&apos;ll regret staying silent. The downside of
-                  sharing is zero. The upside is unknowable.
+                  Picture yourself at 80. You won&apos;t regret sharing the
+                  project or sending the follow-up. You&apos;ll regret staying
+                  silent. The downside of sharing is zero; the upside is
+                  unknowable.
                 </p>
                 <p className="font-code text-xs text-success/60">
                   — Jeff Bezos, founder of Amazon
@@ -791,34 +851,39 @@ export default function PostHackathonPage() {
             subtitle="A step-by-step timeline for maximizing the value of every hackathon. Follow this and your projects will keep working for you long after the event ends."
           />
 
+          <KeyTakeaway>
+            Follow up day 1, post publicly by day 3, clean up and open-source in
+            week 1, then keep building for months.
+          </KeyTakeaway>
+
           <div className="space-y-4">
             {[
               {
                 step: 1,
                 title: "Day 1 — Within 24 Hours",
                 description:
-                  "Send follow-up messages to judges, sponsors, and contacts you met. Pin the GitHub repo to your profile. Update your LinkedIn headline if you won a prize. The connections are warmest right now, so don't let them cool off.",
+                  "Message judges, sponsors, and contacts. Pin the GitHub repo. Update your LinkedIn headline if you placed. Connections are warmest now, so don't let them cool.",
                 accent: "volt" as const,
               },
               {
                 step: 2,
                 title: "Day 2-3 — Share Publicly",
                 description:
-                  "Write and publish a LinkedIn post about the project. Share the demo video. Tag teammates, sponsors, and the hackathon org. Tell the story of what you built, what you learned, and what's next. This is the post that gets seen.",
+                  "Publish a LinkedIn post and share the demo video. Tag teammates, sponsors, and the org. Tell the story: what you built, learned, and what's next. This is the post that gets seen.",
                 accent: "spark" as const,
               },
               {
                 step: 3,
                 title: "Week 1 — Clean and Open-Source",
                 description:
-                  "Clean up the GitHub README with proper badges, screenshots, and install instructions. Open-source the project if possible. Add it to your portfolio site. Write a short blog post or Twitter thread about what you learned.",
+                  "Polish the README with badges, screenshots, and install steps. Open-source it, add it to your portfolio, and write a short post on what you learned.",
                 accent: "primary" as const,
               },
               {
                 step: 4,
                 title: "Month 1-6 — Keep Building",
                 description:
-                  "If the project has legs, keep going. Set a monthly milestone. Treat it like a real product; the hackathon gave you the MVP. Add features, get users, iterate based on feedback. This is how weekend projects become portfolio centerpieces.",
+                  "If it has legs, set a monthly milestone and treat it like a real product. The hackathon gave you the MVP. Add features, get users, iterate. This is how weekend builds become portfolio centerpieces.",
                 accent: "success" as const,
               },
             ].map((item) => {
@@ -882,6 +947,11 @@ export default function PostHackathonPage() {
             subtitle="Four deliverables turn a weekend build into something recruiters can find, in the order that matters most: the portfolio site, the GitHub README, the Devpost writeup, then the YouTube description. Each has a skill and a copy-paste prompt for your coding agent."
           />
 
+          <KeyTakeaway>
+            Four copy-paste agent prompts make your build findable: portfolio
+            site, README, Devpost, and YouTube description.
+          </KeyTakeaway>
+
           <div className="space-y-5">
             {/* 1 — Portfolio */}
             <Card className="glow-hover border-primary/20">
@@ -898,11 +968,11 @@ export default function PostHackathonPage() {
                   1. Build Your Portfolio Site
                 </CardTitle>
                 <CardDescription className="font-body text-base">
-                  It installs Anthropic&apos;s frontend-design skill for a
-                  one-of-a-kind look, then builds a one-page case study with a
-                  hero, problem, architecture, demo, results, team, and honest
-                  limits. It works even when the project is not a web app, and it
-                  never invents awards or stats.
+                  Installs Anthropic&apos;s frontend-design skill for a
+                  one-of-a-kind look, then builds a one-page case study (hero,
+                  problem, architecture, demo, results, team, honest limits).
+                  Works even for non-web projects, and never invents awards or
+                  stats.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -932,11 +1002,10 @@ export default function PostHackathonPage() {
                   2. Write Your GitHub README
                 </CardTitle>
                 <CardDescription className="font-body text-base">
-                  It installs the skill from the repo, then writes a README with
-                  a centered hero, badges, a clickable demo video, an
-                  architecture diagram, and team cards. It reads your repo first
-                  and asks for the facts it can&apos;t find, and it will not
-                  invent awards or stats.
+                  Writes a README with a centered hero, badges, a clickable demo
+                  video, an architecture diagram, and team cards. Reads your repo
+                  first, asks for facts it can&apos;t find, and never invents
+                  awards or stats.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -973,10 +1042,10 @@ export default function PostHackathonPage() {
                   3. Write Your Devpost
                 </CardTitle>
                 <CardDescription className="font-body text-base">
-                  It writes the Devpost story section by section (inspiration,
-                  what it does, how you built it, challenges, what&apos;s next),
-                  plus the Built With tags and the Try it out links. It reads your
-                  repo first and keeps every section honest.
+                  Writes the Devpost story section by section (inspiration, what
+                  it does, how you built it, challenges, what&apos;s next), plus
+                  the Built With tags and Try it out links. Reads your repo first
+                  and keeps every section honest.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -1006,10 +1075,9 @@ export default function PostHackathonPage() {
                   4. Write Your YouTube Description
                 </CardTitle>
                 <CardDescription className="font-body text-base">
-                  It writes the demo video&apos;s title, description, tags, and
-                  chapter timestamps so recruiters can find it. It reads your
-                  repo and asks for the video beats, and it never fakes a
-                  timestamp or an award.
+                  Writes the demo video&apos;s title, description, tags, and
+                  chapter timestamps so recruiters can find it. Reads your repo,
+                  asks for the video beats, and never fakes a timestamp or award.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -1051,16 +1119,13 @@ export default function PostHackathonPage() {
                     The hackathon is the beginning, not the end.
                   </span>{" "}
                   Every project you share, every follow-up you send, every
-                  iteration you ship expands your luck surface area. The person
-                  who sees your LinkedIn post might be the one who changes your
-                  trajectory.
+                  iteration you ship expands your luck surface area. One LinkedIn
+                  viewer might change your trajectory.
                 </p>
                 <p className="font-body text-foreground/80">
-                  You never know who&apos;s watching. You never know which
-                  conversation will be the one that matters. The interviewer who
-                  happened to be working on the same thing. The recruiter who
-                  stumbled across your Devpost. The founder who saw your demo
-                  video.
+                  You never know who&apos;s watching, or which conversation
+                  matters: the interviewer building the same thing, the recruiter
+                  who found your Devpost, the founder who saw your demo.
                 </p>
                 <p className="font-body text-foreground/80">
                   <span className="font-display font-semibold text-foreground">
@@ -1081,15 +1146,20 @@ export default function PostHackathonPage() {
             subtitle="A step-by-step summary for maximizing the value of every hackathon. The event is over. Now the real work begins."
           />
 
+          <KeyTakeaway>
+            Work this list while the event is fresh: follow up, post, clean up,
+            open-source, and keep building.
+          </KeyTakeaway>
+
           <Card className="glow-hover border-volt/20">
             <CardContent className="space-y-4 pt-6">
               {[
                 {
-                  text: "Send personalized follow-ups to judges, sponsors, and contacts within 48 hours",
+                  text: "Follow up: personalized messages to judges, sponsors, and contacts within 48 hours",
                   accent: "volt",
                 },
                 {
-                  text: "Write a LinkedIn post about the project and tag teammates, sponsors, and the hackathon org",
+                  text: "Post on LinkedIn: tag teammates, sponsors, and the hackathon org",
                   accent: "spark",
                 },
                 {
@@ -1097,19 +1167,19 @@ export default function PostHackathonPage() {
                   accent: "primary",
                 },
                 {
-                  text: "Share the demo video on social media (it's the highest-signal content you can post)",
+                  text: "Share the demo video: it's the highest-signal content you can post",
                   accent: "success",
                 },
                 {
-                  text: "Open-source the project if possible; it becomes a living portfolio piece",
+                  text: "Open-source it if possible; it becomes a living portfolio piece",
                   accent: "volt",
                 },
                 {
-                  text: "If the project has potential, set monthly milestones and keep building (you already have the MVP)",
+                  text: "Keep building: set monthly milestones (you already have the MVP)",
                   accent: "spark",
                 },
                 {
-                  text: "\"If your work isn't online, it doesn't exist\": make sure everything is findable",
+                  text: "Make it findable: \"if your work isn't online, it doesn't exist\"",
                   accent: "primary",
                 },
               ].map((item) => {
@@ -1142,9 +1212,9 @@ export default function PostHackathonPage() {
                 Remember:
               </span>{" "}
               The hackathon gave you the project, the connections, and the
-              momentum. What you do with them after is what separates people
-              who attend hackathons from people whose hackathons change their
-              careers. Share it, follow up, keep building. It only takes one.
+              momentum. What you do next separates people who attend hackathons
+              from people whose hackathons change their careers. Share it, follow
+              up, keep building. It only takes one.
             </p>
           </div>
         </section>
