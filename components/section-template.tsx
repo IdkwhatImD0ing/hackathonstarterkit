@@ -1,4 +1,6 @@
 import { Badge } from "@/components/ui/badge";
+import { LastUpdated } from "@/components/last-updated";
+import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 
 interface SectionTemplateProps {
   step: number;
@@ -13,6 +15,7 @@ export function SectionTemplate({
   subtitle,
   children,
 }: SectionTemplateProps) {
+  const updated = PLAYBOOK_SECTIONS.find((s) => s.step === step)?.updated;
   return (
     <div className="space-y-12">
       <header className="stagger-children space-y-4">
@@ -25,6 +28,7 @@ export function SectionTemplate({
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           {subtitle}
         </p>
+        {updated ? <LastUpdated date={updated} /> : null}
       </header>
 
       {children || (

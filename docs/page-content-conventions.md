@@ -58,6 +58,7 @@ Put interactive elements near the **top** of the page so readers engage before t
 - **No em dashes** in body text (titles, headings, and the `— Author, Work, Year` attribution lines are exempt).
 - **Do not touch** `export const metadata`, `<JsonLd>`, or other SEO when restructuring.
 - External links use `target="_blank" rel="noopener noreferrer"`. Only link URLs you have verified resolve; never invent project/demo/repo links.
+- **When you change a playbook page, bump its `updated` date** (ISO `YYYY-MM-DD`) in `lib/playbook.ts`. `SectionTemplate` reads it by step and renders a "Last updated …" `<time>` in the page header (`components/last-updated.tsx`).
 
 ## Verification (before commit)
 
