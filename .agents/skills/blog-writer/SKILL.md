@@ -56,6 +56,7 @@ Composition guidance:
 - Avoid back-to-back visual blocks without a `paragraph` transition when the reader needs context.
 - Use callouts sparingly. If everything is highlighted, nothing feels important.
 - Put terminal commands in `code-snippet` blocks.
+- Emphasize key phrases by wrapping them in `**double asterisks**` inside `paragraph` or `callout` text; the renderer converts them to bold. Use sparingly. This is the only inline markdown the renderer supports (no italics, links, or `*single*` asterisks in body text).
 - Include at least one `link-card` to existing site content.
 - Every quote must include a real attribution with the person's full name and credential, title, or source.
 

@@ -19,6 +19,21 @@ import {
 import type { ContentBlock } from "@/lib/blog";
 import { cn } from "@/lib/utils";
 
+// Render a small subset of inline markdown so authors can emphasize key phrases
+// directly in block text: **bold** becomes <strong>. The blog data stores plain
+// strings, so without this the asterisks would render literally.
+function renderInline(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((segment, i) =>
+    segment.startsWith("**") && segment.endsWith("**") && segment.length > 4 ? (
+      <strong key={i} className="font-semibold text-foreground">
+        {segment.slice(2, -2)}
+      </strong>
+    ) : (
+      segment
+    ),
+  );
+}
+
 const CALLOUT_CONFIG = {
   tip: {
     icon: Lightbulb,
@@ -84,7 +99,7 @@ function BlogCallout({
             {title ?? config.label}
           </p>
           <p className="font-body text-sm leading-relaxed text-foreground/80">
-            {text}
+            {renderInline(text)}
           </p>
         </div>
       </div>
@@ -489,7 +504,7 @@ export function BlogBlock({ block }: { block: ContentBlock }) {
     case "paragraph":
       return (
         <p className="font-body text-foreground/85 leading-relaxed">
-          {block.text}
+          {renderInline(block.text)}
         </p>
       );
     case "callout":
