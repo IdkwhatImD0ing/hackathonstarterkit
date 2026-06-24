@@ -2,11 +2,11 @@ import type { BlogPost } from "../types";
 
 export const post: BlogPost = {
   slug: "what-to-do-after-a-hackathon",
-  title: "What to Do After a Hackathon: The 5-Asset Visibility Worksheet",
+  title: "What to Do After a Hackathon: Ship 5 Assets That Get You Hired",
   description:
-    "What to do after a hackathon, win or lose: a worksheet for the 5 assets (GitHub README, Devpost, portfolio, demo video, LinkedIn) and the links that get you hired.",
+    "What to do after a hackathon, win or lose: the 5 linked assets that get you hired, and the AI skills that build your README, Devpost, portfolio, and demo copy.",
   date: "2026-06-24",
-  readingTime: "6 min read",
+  readingTime: "5 min read",
   keywords: [
     "what to do after a hackathon",
     "share hackathon project",
@@ -21,10 +21,10 @@ export const post: BlogPost = {
       paragraphs: [],
       blocks: [
         { type: "paragraph", text: "The hackathon is over. The most important work is not." },
-        { type: "paragraph", text: "Win or lose, your project only changes your career if people can **find it**. That means five public assets, all pointing at each other. Most teams ship one (a private GitHub repo nobody links to) and wonder why nothing happened. The trophy fades in a week. The link web works for you for years." },
+        { type: "paragraph", text: "Win or lose, your project only changes your career if people can **find it**. That means five public assets, each one linking to the other four. Most teams ship one (a private GitHub repo nobody links to) and wonder why nothing happened. The trophy fades in a week. A project anyone can click through works for you for years." },
         { type: "stat-row", stats: [
           { value: "5", label: "Assets to ship" },
-          { value: "1", label: "Link web" },
+          { value: "1", label: "Click to the rest" },
           { value: "48 hrs", label: "Best time to post" },
           { value: "0", label: "Lines of code recruiters read" },
         ]},
@@ -32,11 +32,11 @@ export const post: BlogPost = {
       ],
     },
     {
-      heading: "The Link Web Is the Whole Point",
+      heading: "Every Asset Links to Every Other One",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "Here is the rule that matters more than any single asset: **every asset links to every other asset.** A recruiter who lands on any one of them can reach all the rest in one click. There are no dead ends." },
-        { type: "code-snippet", language: "text", filename: "link-web.txt", code: `Devpost    ──►  GitHub · YouTube · Live site
+        { type: "paragraph", text: "Here is the rule that matters more than any single asset: **each one links to all the others.** A recruiter who lands on any of them can reach the rest in one click. There are no dead ends. Map it out and it looks like this:" },
+        { type: "code-snippet", language: "text", filename: "cross-links.txt", code: `Devpost    ──►  GitHub · YouTube · Live site
 GitHub     ──►  Devpost · Live site · YouTube · Press
 YouTube    ──►  Devpost · GitHub · Live site
 Portfolio  ──►  GitHub · Devpost · YouTube
@@ -58,7 +58,7 @@ YouTube    youtu.be/hdpdgxrilQM
    every page above links to the other three` },
         { type: "cta-button",
           tag: "Live example",
-          title: "See the link web on the Dispatch AI Devpost",
+          title: "See the cross-links on the Dispatch AI Devpost",
           description: "The demo video is embedded at the top, the live site and GitHub are one click away, and the README loops you right back. That is the whole pattern in one page.",
           label: "Open the Devpost",
           href: "https://devpost.com/software/dispatch-ai",
@@ -71,72 +71,38 @@ YouTube    youtu.be/hdpdgxrilQM
       blocks: [
         { type: "paragraph", text: "Why bother with all this? Because of who is actually looking. The recruiter who screens your resume and the person who DMs you on LinkedIn are usually **not going to read your source code.** But they will watch a 90-second demo. They will skim a Devpost. They will click a live site." },
         { type: "paragraph", text: "That is the edge. On a resume screen where you and another candidate look identical, **a demo they can watch breaks the tie.** A project they can experience beats a project they have to imagine." },
-        { type: "callout", variant: "success", title: "And the New Reader Is an LLM", text: "Recruiters and applicant systems run on AI now. A text-rich GitHub README, a written Devpost, a captioned video, and a portfolio page are exactly what a model scrapes and summarizes. **Five linked, text-heavy sources make you the candidate the AI can actually describe.**" },
+        { type: "callout", variant: "info", title: "And the New Reader Is an LLM", text: "Recruiters and applicant systems run on AI now. A text-rich GitHub README, a written Devpost, a captioned video, and a portfolio page are exactly what a model scrapes and summarizes. **Five linked, text-heavy sources make you the candidate the AI can actually describe.**" },
         { type: "quote", text: "It's not enough to be good. In order to be found, you have to be findable.", attribution: "Austin Kleon, Show Your Work!, 2014" },
-        { type: "callout", variant: "tip", text: "The proof: within the first four hackathons, a single LinkedIn post about a project led to an interview, then a first internship. Not from winning. From being findable." },
+        { type: "callout", variant: "success", title: "How I Got My First Internship", text: "This one is personal. I started doing hackathons to land an internship, and within my first four, **one LinkedIn post about a project got me the interview that became my first offer.** We didn't even win that hackathon. I would never have gotten that internship otherwise. Not from winning. From being findable." },
       ],
     },
     {
-      heading: "Worksheet 1: Your GitHub README",
+      heading: "Stop Writing These by Hand",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "Your README is the hub. Other developers read it, semi-technical recruiters skim it, and LLMs ingest it. **Lead with what the project does, not how you built it.**" },
-        { type: "checklist", title: "Your README must have", items: [
-          "One-line pitch and a hero screenshot or GIF at the very top",
-          "The demo video embedded or linked near the top",
-          "A link to the live, deployed site",
-          "A link to the Devpost submission",
-          "Links to any press, prize pages, or news coverage",
-          "Tech stack and an architecture diagram",
-          "Setup and run steps that actually work",
-          "Team members with their profile links",
-        ]},
+        { type: "paragraph", text: "Now the part most guides get wrong: they hand you five templates and wish you luck. **It is 2026. You should not be hand-writing a README or a Devpost at 4am after your demo.** Four of these five assets are mechanical, and AI generates them faster and more consistently than you will on no sleep." },
+        { type: "paragraph", text: "So I built skills that do it. The **ship-it skill** interviews you once, then generates the portfolio site, README, Devpost, and YouTube description in order, so all four share one tagline, one set of stats, and one story. Run it from your coding agent:" },
+        { type: "code-snippet", language: "bash", filename: "ship-it", code: `# Install the skill
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill ship-it
+
+# Then tell your agent:
+# "Use the ship-it skill to create all four of my
+#  post-hackathon deliverables from this repo."` },
+        { type: "paragraph", text: "Only need one of them? Each asset has its own skill. Install whichever you want and point your agent at it:" },
+        { type: "code-snippet", language: "bash", filename: "one-at-a-time", code: `npx skills add IdkwhatImD0ing/hackathonstarterkit --skill portfolio-builder
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill readme-writer
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill devpost-writer
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill youtube-writer` },
+        { type: "callout", variant: "info", title: "One-Time Setup for the Portfolio", text: "The portfolio builder uses Anthropic's frontend-design plugin so your site gets a custom look, not a template. The post-hackathon playbook has the exact prompts for every skill, plus the one extra plugin install the portfolio step needs." },
+        { type: "link-card", title: "The Post-Hackathon Playbook and Ship-It Toolkit", description: "The follow-up timeline, the networking science, and the copy-paste prompts that run every skill above.", href: "/playbook/post-hackathon", tag: "Full Playbook" },
       ],
     },
     {
-      heading: "Worksheet 2: Your Devpost",
+      heading: "What You Still Do Yourself",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "Devpost is where judges and recruiters browse projects side by side. **A thin Devpost gets forgotten during deliberation.** Make yours impossible to skim past." },
-        { type: "checklist", title: "Your Devpost must have", items: [
-          "A problem-first description, not a feature list",
-          "The demo video embedded at the top",
-          "A link to the live site",
-          "A link to the GitHub repo",
-          "Screenshots of the core user flow",
-          "Built-with tags for every tool and sponsor API",
-        ]},
-        { type: "link-card", title: "Hackathon Submission Playbook", description: "README templates, Devpost structure, and the demo recording stack used by winning teams.", href: "/playbook/submission", tag: "Full Playbook" },
-      ],
-    },
-    {
-      heading: "Worksheet 3: Your Portfolio Site",
-      paragraphs: [],
-      blocks: [
-        { type: "paragraph", text: "A one-page case study is the asset recruiters open first, because it needs zero technical effort to understand. **Show the decisions, not just the screenshots:** why you built it this way is what separates you from a tutorial follower." },
-        { type: "checklist", title: "Your portfolio page must have", items: [
-          "A hero: what it does in one sentence, plus a live demo",
-          "The problem and who actually has it",
-          "Your architecture and the key technical decisions you made",
-          "The tech stack",
-          "Results: prizes, metrics, or honest limits",
-          "Buttons to GitHub, Devpost, and the demo video",
-          "Your name and a way to reach you",
-        ]},
-      ],
-    },
-    {
-      heading: "Worksheet 4: Your Demo Video and Its Description",
-      paragraphs: [],
-      blocks: [
-        { type: "paragraph", text: "The demo video is your highest-signal asset, so do not settle for the rushed pitch recording. **Record a clean version after you submit,** when the pressure is off. Then make the description carry links back to everything else." },
-        { type: "checklist", title: "Your video and description must have", items: [
-          "The product on screen within the first 30 seconds",
-          "A title with the project name and what it does",
-          "A hook in the first two lines of the description",
-          "Links to Devpost, GitHub, and the live site in the description",
-          "Chapter timestamps so reviewers can jump to the core flow",
-        ]},
+        { type: "paragraph", text: "Two things stay human. AI cannot record your demo, and it should not write your LinkedIn post for you." },
+        { type: "paragraph", text: "**Record a clean demo after you submit,** when the pressure is off, and get the product on screen in the first 30 seconds. Then youtube-writer handles the title, description, timestamps, and the links back to everything else." },
         { type: "cta-button",
           tag: "My pick",
           title: "Screen Studio is the screen recorder I use for demo videos",
@@ -145,38 +111,16 @@ YouTube    youtu.be/hdpdgxrilQM
           href: "https://screenstudio.lemonsqueezy.com?aff=LpD9R",
           sponsored: true,
         },
+        { type: "paragraph", text: "The **LinkedIn post is the amplifier,** the one asset that pushes the other four in front of people, and it lands best in your own voice. Tell the story (what you built, what you learned, what is next), tag your team and the organizers, and carry the three links out: Devpost, GitHub, and the demo. End with one clear line on what you are looking for." },
       ],
     },
     {
-      heading: "Worksheet 5: Your LinkedIn Post",
+      heading: "Whichever Way, the Rule Is the Same",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "LinkedIn is the amplifier, the asset that pushes the other four in front of people. **This is the one that gets seen,** so it has to carry the links out." },
-        { type: "checklist", title: "Your LinkedIn post must have", items: [
-          "The story: what you built, what you learned, what is next",
-          "Tags for teammates, sponsors, and the hackathon org",
-          "A link to the Devpost",
-          "A link to the GitHub",
-          "The demo video, uploaded natively or linked",
-          "One clear line on what you are looking for",
-        ]},
-      ],
-    },
-    {
-      heading: "The Final Link-Back Check",
-      paragraphs: [],
-      blocks: [
-        { type: "paragraph", text: "Before you close the laptop, walk the web one more time. Open each asset and confirm it reaches the others. **A broken or missing link is a door that locks behind your reader.**" },
-        { type: "checklist", title: "Confirm the mesh", items: [
-          "Devpost points to GitHub, YouTube, and the live site",
-          "GitHub README points to Devpost, the live site, the video, and any press",
-          "YouTube description points to Devpost and GitHub",
-          "Portfolio points to GitHub, Devpost, and the video",
-          "LinkedIn points to Devpost, GitHub, and the video",
-          "Every link opens and lands where it should",
-        ]},
-        { type: "paragraph", text: "Do not want to write five assets by hand? The **Ship-It toolkit** interviews you once and generates the portfolio site, README, Devpost, and YouTube description so they tell one consistent story, then you add the LinkedIn post on top." },
-        { type: "link-card", title: "The Post-Hackathon Playbook and Ship-It Toolkit", description: "The follow-up timeline, the networking science, and the copy-paste prompts that generate all five assets.", href: "/playbook/post-hackathon", tag: "Full Playbook" },
+        { type: "paragraph", text: "However you generate them, one rule holds: **every asset links to every other.** Run ship-it, record the demo, post on LinkedIn, and you go from a finished repo to a project recruiters can actually find, all in an afternoon." },
+        { type: "paragraph", text: "The trophy was last weekend. **The links are what keeps working for you next year.**" },
+        { type: "link-card", title: "Hackathon Submission Playbook", description: "Where the README and Devpost skills live, with the demo recording stack winning teams use.", href: "/playbook/submission", tag: "Full Playbook" },
         { type: "link-card", title: "How to Win Hackathons: The Complete Guide", description: "The 7-phase system that produces the projects worth promoting, from team formation to follow-up.", href: "/blog/how-to-win-hackathons", tag: "Related Guide" },
       ],
     },
