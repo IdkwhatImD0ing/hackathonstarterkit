@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { KeyTakeaway } from "@/components/key-takeaway";
+import { Disclosure } from "@/components/disclosure";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
   Card,
@@ -1943,15 +1944,16 @@ export default function PitchingPage() {
         </section>
 
         {/* ============================================================
-            PITCHING UNDER PRESSURE
+            PITCHING UNDER PRESSURE (collapsible)
             ============================================================ */}
         <section className="space-y-8">
-          <SectionHeading
+          <Disclosure
             title="Pitching Under Pressure"
-            subtitle="Hackathons broke the overpreparing-for-presentations habit. Here's what pitching on no sleep actually teaches you, and why it ultimately makes you better."
-          />
-
-          <KeyTakeaway>Pitching on no sleep strips the polish: be vulnerable, talk with judges not at them, and rehearse until it&apos;s muscle memory.</KeyTakeaway>
+            subtitle="Optional: what pitching on no sleep teaches you, and why it makes you better."
+            badge="Optional: mindset"
+            accent="spark"
+          >
+            <KeyTakeaway>Pitching on no sleep strips the polish: be vulnerable, talk with judges not at them, and rehearse until it&apos;s muscle memory.</KeyTakeaway>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <Card className="glow-hover border-spark/20">
@@ -2116,6 +2118,7 @@ export default function PitchingPage() {
               );
             })}
           </div>
+          </Disclosure>
         </section>
 
         {/* ============================================================

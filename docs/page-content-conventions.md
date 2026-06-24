@@ -77,6 +77,6 @@ Put interactive elements near the **top** of the page so readers engage before t
 | ideation | yes | "Go Deeper" group (Why This Works, Building Your Element List, The Wandering Mind) | alchemy game in opening section |
 | validation | yes | "Why This Works" science collapsed | (none) |
 | execution | yes | "Why This Works" science collapsed | timeline simulator moved to top |
-| pitching | scannable only | not yet applied | not yet applied |
+| pitching | yes | "Pitching Under Pressure" mindset section collapsed | (none) |
 | submission | scannable only | not yet applied | not yet applied |
 | post-hackathon | scannable only | not yet applied | not yet applied |
