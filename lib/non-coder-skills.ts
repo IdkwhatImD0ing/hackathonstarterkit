@@ -10,6 +10,7 @@ import {
   Server,
   Zap,
   Sparkles,
+  Github,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -177,6 +178,19 @@ const SKILL_META: SkillMeta[] = [
       hint: "Generates a timed demo script with backup plan",
     },
   },
+  {
+    slug: "readme-writer",
+    title: "GitHub Writer",
+    description:
+      "Turns your finished project into a winner-grade GitHub README: a centered hero, badges, a clickable demo video, an architecture diagram, and team cards that make recruiters and judges take it seriously.",
+    category: "shipping",
+    icon: Github,
+    command: {
+      name: "/readme-writer",
+      usage: "/readme-writer [your project name or repo]",
+      hint: "Writes a polished GitHub README for your hackathon project",
+    },
+  },
 ];
 
 export const NON_CODER_SKILLS: NonCoderSkill[] = SKILL_META.map((meta) => ({
@@ -237,6 +251,7 @@ export const RECOMMENDED_ORDER: string[] = [
   "feature-builder",
   "bugfix-doctor",
   "demo-prep",
+  "readme-writer",
 ];
 
 /**

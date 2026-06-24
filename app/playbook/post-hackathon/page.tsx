@@ -35,8 +35,16 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { CopyButton } from "@/components/copy-button";
+import NextLink from "next/link";
 
 const section = PLAYBOOK_SECTIONS[6];
+
+const README_AGENT_PROMPT = `Install the GitHub Writer skill from https://github.com/IdkwhatImD0ing/hackathonstarterkit by running this in your terminal:
+
+npx skills add IdkwhatImD0ing/hackathonstarterkit --skill readme-writer
+
+Then use the readme-writer skill to write a winner-grade README for this hackathon project. Read the repo first to detect the stack and structure, then ask me for anything you can't find: the demo video link, the live URL and Devpost, any awards, the event details, and the team members with their GitHub and LinkedIn. Do not invent awards, stats, or prizes.`;
 
 export const metadata: Metadata = {
   title: "Post-Hackathon — Turn Hackathon Projects into Career Opportunities",
@@ -840,6 +848,56 @@ export default function PostHackathonPage() {
               );
             })}
           </div>
+        </section>
+
+        {/* ============================================================
+            AI SHORTCUT — THE GITHUB WRITER SKILL
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="Shortcut — Let an Agent Write Your README"
+            subtitle="Step 3 is the one most people skip, yet the README is what a recruiter actually lands on. Hand it to your coding agent with the GitHub Writer skill and get a winner-grade README in minutes."
+          />
+
+          <Card className="glow-hover border-success/20">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
+                  <Github className="size-5 text-success" />
+                </div>
+                <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
+                  GITHUB WRITER SKILL
+                </Badge>
+              </div>
+              <CardTitle className="font-display text-xl text-success">
+                Paste This Into Claude Code or Cursor
+              </CardTitle>
+              <CardDescription className="font-body text-base">
+                It installs the skill from the repo, then writes a README with a
+                centered hero, badges, a clickable demo video, an architecture
+                diagram, and team cards. It reads your repo first and asks for
+                the facts it can&apos;t find, and it will not invent awards or
+                stats.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="relative">
+                <div className="absolute right-3 top-3 z-10">
+                  <CopyButton text={README_AGENT_PROMPT} />
+                </div>
+                <div className="rounded-xl border border-success/20 bg-success/5 p-4 pt-14">
+                  <pre className="overflow-x-auto whitespace-pre-wrap font-code text-xs leading-relaxed text-foreground/80">{README_AGENT_PROMPT}</pre>
+                </div>
+              </div>
+              <NextLink
+                href="/non-coders/skills/readme-writer"
+                className="inline-flex items-center gap-2 font-code text-xs text-success transition-colors hover:text-success/80"
+              >
+                See the full GitHub Writer skill
+                <ArrowRight className="size-3.5" />
+              </NextLink>
+            </CardContent>
+          </Card>
         </section>
 
         {/* ============================================================

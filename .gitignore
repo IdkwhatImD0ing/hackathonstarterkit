@@ -46,6 +46,7 @@ yarn-error.log*
 !.agents/skills/domain-to-spec/
 !.agents/skills/blog-writer/
 !.agents/skills/v0-prompt-crafter/
+!.agents/skills/readme-writer/
 # .agents/commands/ is fully committed (all authored, no installed third-party commands)
 
 # vercel

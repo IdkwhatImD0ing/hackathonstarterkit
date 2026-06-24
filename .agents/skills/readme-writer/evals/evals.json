@@ -1,0 +1,27 @@
+{
+  "skill_name": "readme-writer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a README for our hackathon project. It's called TalkTuahBank, voice banking over a regular phone call for people without a smartphone or internet. We won Overall 1st Place and the Goldman Sachs track at HackUTD 2024 (1,100+ hackers). Stack is Retell AI, OpenAI Swarm, FastAPI, and a Next.js project page. Demo video is https://www.youtube.com/watch?v=YsH_z1azXSA and it's live at talktuah.art3m1s.me.",
+      "expected_output": "A complete README.md with a centered hero, shields.io badge rows (CTAs, awards, stack), a clickable YouTube demo poster, a Mermaid architecture diagram, a tech-stack table, and team/event sections.",
+      "files": [],
+      "expectations": [
+        "The hero is centered and leads with the tagline plus CTA and award badges before any body paragraph.",
+        "The demo poster uses the img.youtube.com/vi/YsH_z1azXSA thumbnail wrapped in a link to the video.",
+        "The README includes a Mermaid architecture diagram and a tech-stack table, and does not invent awards or stats beyond those provided."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Polish the README in this repo for our hackathon submission. We didn't place but it's going on my portfolio. I don't have a demo video yet and only I worked on it. Read the repo to figure out the stack and structure.",
+      "expected_output": "A README that auto-detects stack and layout from the repo, omits the awards section, leaves a TODO placeholder for the demo video, and renders a single-person team/credits block.",
+      "files": [],
+      "expectations": [
+        "The skill inspects the repo (package.json, folders, AGENTS.md/PRD.md) before asking the user for details.",
+        "No awards or placement section is fabricated, and the missing demo video is a marked TODO rather than a broken link.",
+        "The build-context note frames it honestly as a portfolio piece rather than production software."
+      ]
+    }
+  ]
+}
