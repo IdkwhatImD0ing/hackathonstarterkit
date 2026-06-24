@@ -1,68 +1,82 @@
 ---
 name: youtube-writer
-description: "Write the YouTube title, description, tags, and chapter timestamps for a hackathon project's demo video, tuned for recruiters and search. Use this whenever the user is uploading or has uploaded a demo video and needs the video title, description copy, tags or keywords, a pinned comment, or chapter markers."
+description: "Write the YouTube title and description for a hackathon project's demo video, tuned for recruiters and search. Use this whenever the user is uploading or has uploaded a demo video and needs the video title or description copy."
 ---
 
 # YouTube Writer
 
-The demo video is the highest-signal thing you can share, and it keeps working long after the hackathon: recruiters find these videos on YouTube months later. This writes the title, description, tags, and chapters so the video is findable and the description does the selling while you are not in the room.
+The demo video is the highest-signal thing you can share, and it keeps working long after the hackathon: recruiters find these videos on YouTube months later. This writes the title and description so the video is findable and the description does the selling while you are not in the room.
 
 ## Gather the facts
 
 Detect first, ask second. Read the repo and any existing README or Devpost copy, then ask for what is missing:
 
 - Project name and a one-line description of what it does.
-- The demo video: its length, and the rough beats with start times (needed for chapters). If the user does not have timestamps, ask them to scrub the video for section starts, or offer to derive beats from a demo script.
-- The primary topic or keyword someone would search for.
-- Links: Devpost, GitHub, live URL, portfolio site.
+- The core features (three to five), in plain user-side language.
+- The stack and any notable integrations.
 - Hackathon name and any awards (real ones only).
-- Team names and their socials.
+- Links: Devpost, GitHub, live URL.
+- The user's socials (LinkedIn, GitHub) for the follow line.
 
-Never invent an award or statistic, and never fabricate a timestamp. If the beats are unknown, ask rather than guess.
+Never invent an award or statistic.
 
 ## Write the title
 
-- Front-load the project name and what it does. The first roughly 60 characters show on desktop search and about 50 on mobile, so keep the project name and core value inside the first 50 characters.
-- Add the hackathon or award only if it is real (for example "... | Grand Prize, Cal Hacks 2024").
-- Stay under the 100-character hard cap, and aim for about 70 or fewer where practical, specific, and free of clickbait. The algorithm reads all 100 characters for keywords even when not all of them display.
-- Offer two or three title options.
+Format: `<Project> Product Demo | <what it does>`. For example:
+
+```
+DispatchAI Product Demo | AI-powered 911 Response System
+```
+
+- Front-load the project name; keep the name and core value inside the first 50 characters (that is what shows in search).
+- Stay under the 100-character hard cap, and aim for about 70 or fewer.
+- No clickbait. Offer two or three options.
 
 ## Write the description
 
-Structure it so the important parts survive the fold. Only about the first 150 characters show on desktop (roughly two lines) and as few as 100 on mobile before "Show more," so put the hook inside the first 100 characters:
+Follow this structure exactly. This is the template, with a real example below it:
 
-- **The hook**: open with what it is and why it matters, including the project name, inside the first 100 characters.
-- **What it does**: two to four sentences in plain, user-side language.
-- **Built with**: the stack.
-- **Links**: Devpost, GitHub, live site, portfolio, one per line.
-- **Chapters**: the timestamp list (see below).
-- **Team**: names and socials.
-- **Hackathon**: the event and any real awards.
-- **Hashtags**: three to five relevant ones (for example `#hackathon` `#AI`).
+1. **Award line** (only if real): `Winner @ <Event> - <Award 1>, <Award 2>, and <Award 3>!`
+2. **The hook**: one paragraph opening with "In this video, we're diving into `<Project>`, ..." that says what it is and why it matters.
+3. **What it does**: one paragraph in plain, user-side language describing the experience and the problem it solves.
+4. **Core Features:** a short bullet list (three to five lines).
+5. **Links**: the Devpost and the source code, written casually ("Check out the Devpost here!", "And the source code here!").
+6. A divider line.
+7. **Follow line**: the user's LinkedIn and GitHub.
 
-## Chapters
+Example output:
 
-YouTube turns timestamps in the description into clickable chapters, but only when every rule is met. If any one rule fails, chapters silently do not appear at all:
+```
+Winner @ UC Berkeley AI Hackathon 2024 - Grand Prize, AI for Good, and Best Use of Intel AI!
 
-- The timestamps must live in the video Description, not a comment or the title.
-- The first timestamp must be exactly `0:00` (the start of the video).
-- There must be at least three timestamps, listed in ascending order.
-- Every chapter must be at least 10 seconds long. One gap shorter than 10 seconds disables chapters for the whole video, not just that segment, so check the tightest gap.
-- Format each line as the timestamp, a space, then a short label, one per line, using colons (`mm:ss`, or `h:mm:ss` past an hour): for example `0:00 Intro`, `0:25 The problem`, `1:10 Live demo`.
+In this video, we're diving into DispatchAI, a groundbreaking AI-powered system designed to revolutionize emergency response. When seconds count, DispatchAI supports 911 call centers with intelligent, empathetic call management to help save lives.
 
-Map the video's real beats to chapters and label them in plain language.
+DispatchAI streamlines emergency response with an AI that prioritizes critical calls, detects caller emotions, and suggests actions like ambulance dispatch, all under human oversight. It aims to reduce wait times in understaffed call centers, addressing a crucial need in emergency services.
 
-## Tags and pinned comment
+Core Features:
+Intelligent call prioritization based on severity and emotion detection
+Real-time call summaries and action recommendations
+Interactive operator dashboard with map visualization
+Seamless integration with Twilio, Hume, Retell, and OpenAI
+Optimized on Intel Dev Cloud for fast, reliable performance
 
-- **Tags**: about 8 to 12 focused tags within the 500-character limit (the project name, the category, the key technologies, "hackathon", and the event name). Tags are only a minor ranking factor now, so do not stuff them; the title, description, thumbnail, and watch time drive discovery.
-- **Pinned comment**: suggest one carrying the key links (Devpost, GitHub, live), since viewers often miss links in the description body.
+Check out the Devpost here! https://devpost.com/software/dispatch-ai
+And the source code here! https://github.com/DispatcherAI/DispatcherAI
+
+-------------
+
+Follow me on LinkedIn for more hackathon and startup content. https://linkedin.com/in/bill-zhang1
+Check out my Github for more cool projects! https://github.com/IdkwhatImD0ing
+```
+
+If there is no award, drop line 1 and open with the hook.
 
 ## Verify
 
-- The title front-loads keywords inside the first 50 characters and claims no award that was not actually won.
-- The description hook works on its own inside the first 100 characters.
-- The chapters obey every rule: in the description, first is exactly `0:00`, at least three, ascending, and every gap is at least 10 seconds (one short gap disables them all).
-- Every link resolves, every stat or award is real, and the video is set to Public or Unlisted (not Private) so the link works for recruiters.
+- The title front-loads the project name inside the first 50 characters and claims no award that was not actually won.
+- The hook works on its own in the first line.
+- Every link resolves, and every award or stat is real.
+- No em dashes in the body copy (use commas, parens, or split sentences).
 
 ## Final output
 
@@ -70,13 +84,8 @@ Return:
 
 1. **Title options**: two or three.
 2. **Description**: the full copy-paste block.
-3. **Chapters**: the timestamp list.
-4. **Tags**: the keyword list.
-5. **Pinned comment**: the links comment.
-6. **Next step**: add a clean custom thumbnail with the project name, since thumbnail and title drive click-through more than any metadata, then share the video in a LinkedIn post and link it from the README and Devpost.
 
 ## Boundaries
 
 - Never invent awards or statistics.
-- Chapters must match the real video. If the beats are unknown, ask rather than fabricate timestamps.
 - Keep the copy honest and specific.

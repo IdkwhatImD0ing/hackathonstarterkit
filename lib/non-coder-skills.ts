@@ -182,7 +182,7 @@ const SKILL_META: SkillMeta[] = [
     slug: "readme-writer",
     title: "GitHub Writer",
     description:
-      "Turns your finished project into a winner-grade GitHub README: a centered hero, badges, a clickable demo video, an architecture diagram, and team cards that make recruiters and judges take it seriously.",
+      "Turns your finished project into a winner-grade GitHub README: a centered hero, badges, a clickable demo video, an architecture diagram, and team cards, then sets the repo's About description, website, and topics so recruiters and judges can find it.",
     category: "shipping",
     icon: Github,
     command: {

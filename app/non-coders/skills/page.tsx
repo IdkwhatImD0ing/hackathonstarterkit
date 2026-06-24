@@ -18,6 +18,7 @@ import {
   SHORTCUT_SKILLS,
   getSkillBySlug,
 } from "@/lib/non-coder-skills";
+import { LastUpdated } from "@/components/last-updated";
 
 export const metadata: Metadata = {
   title: "Skills & Commands",
@@ -56,6 +57,7 @@ export default function SkillsPage() {
           with someone who has no coding experience. Install them once, and
           every conversation gets better.
         </p>
+        <LastUpdated date="2026-04-17" />
       </header>
 
       <Separator className="bg-primary/20" />

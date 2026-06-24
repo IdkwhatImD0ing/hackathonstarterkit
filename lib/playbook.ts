@@ -1,6 +1,7 @@
 export const PLAYBOOK_SECTIONS = [
   {
     step: 1,
+    updated: "2026-06-24",
     slug: "team-formation",
     title: "Team Formation",
     subtitle:
@@ -8,6 +9,7 @@ export const PLAYBOOK_SECTIONS = [
   },
   {
     step: 2,
+    updated: "2026-06-24",
     slug: "ideation",
     title: "Ideation",
     subtitle:
@@ -15,6 +17,7 @@ export const PLAYBOOK_SECTIONS = [
   },
   {
     step: 3,
+    updated: "2026-06-24",
     slug: "validation",
     title: "Validation",
     subtitle:
@@ -22,6 +25,7 @@ export const PLAYBOOK_SECTIONS = [
   },
   {
     step: 4,
+    updated: "2026-06-24",
     slug: "execution",
     title: "Execution",
     subtitle:
@@ -29,6 +33,7 @@ export const PLAYBOOK_SECTIONS = [
   },
   {
     step: 5,
+    updated: "2026-06-24",
     slug: "pitching",
     title: "Pitching",
     subtitle:
@@ -36,6 +41,7 @@ export const PLAYBOOK_SECTIONS = [
   },
   {
     step: 6,
+    updated: "2026-06-24",
     slug: "submission",
     title: "Submission",
     subtitle:
@@ -43,6 +49,7 @@ export const PLAYBOOK_SECTIONS = [
   },
   {
     step: 7,
+    updated: "2026-06-24",
     slug: "post-hackathon",
     title: "Post-Hackathon",
     subtitle:

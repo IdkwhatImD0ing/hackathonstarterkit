@@ -30,6 +30,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { LastUpdated } from "@/components/last-updated";
 
 const SECTION_ICONS = [Users, Lightbulb, ShieldCheck, Zap, Mic, FileText, Megaphone];
 
@@ -52,6 +53,7 @@ export default function PlaybookPage() {
           <span className="animate-shimmer font-semibold">36+ victories</span>{" "}
           and $100K+ in prizes.
         </p>
+        <LastUpdated date="2026-04-15" />
       </header>
 
       <div className="relative h-12">

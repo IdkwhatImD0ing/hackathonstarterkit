@@ -3,24 +3,24 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Write the YouTube title and description for our hackathon demo. Project is TalkTuahBank, voice banking over a phone call. Won 1st Overall at HackUTD 2024. The 2-minute video goes: 0:00 intro, 0:15 the problem, 0:40 live phone call demo, 1:30 architecture, 1:50 wrap. Devpost is devpost.com/software/talktuahbank, repo at github.com/aurelisajuan/TalkTuahBank.",
-      "expected_output": "Two or three title options, a full description with a strong first-two-line hook, valid YouTube chapters, tags, and a pinned comment.",
+      "prompt": "Write the YouTube title and description for our hackathon demo. Project is TalkTuahBank, voice banking over a phone call. Won 1st Overall at HackUTD 2024. Devpost is devpost.com/software/talktuahbank, repo at github.com/aurelisajuan/TalkTuahBank.",
+      "expected_output": "Two or three title options in the '<Project> Product Demo | <what it does>' format, and a full description following the template: award line, hook, what it does, Core Features list, Devpost and source links, divider, follow line.",
       "files": [],
       "expectations": [
-        "The chapters start at 0:00, are in ascending order, and there are at least three of them.",
-        "The description front-loads the hook in the first two lines and includes the Devpost and GitHub links.",
-        "The title references the real award and no fabricated awards or stats appear."
+        "The title uses the 'Product Demo | ...' format and front-loads the project name.",
+        "The description opens with the real award line, then a hook, and includes the Devpost and GitHub links.",
+        "No fabricated awards or stats appear, and there are no em dashes in the body copy."
       ]
     },
     {
       "id": 2,
-      "prompt": "I need a YouTube description for my demo video but I haven't written down the timestamps yet. The project is a CLI tool for generating test data. Read the repo for details.",
-      "expected_output": "A description and title that read the repo, and either ask the user for the video beats or explain how to get them rather than inventing timestamps.",
+      "prompt": "I need a YouTube title and description for my demo video. The project is a CLI tool for generating test data. No awards. Read the repo for details.",
+      "expected_output": "A title and description that read the repo, follow the template, and drop the award line since there is no award.",
       "files": [],
       "expectations": [
-        "The skill does not fabricate chapter timestamps; it asks the user for the video beats or how to derive them.",
         "It reads the repo before asking for missing facts and invents no awards.",
-        "It still produces a title and a description hook suited to a CLI tool."
+        "The description drops the award line and opens with the hook.",
+        "It still produces a title in the 'Product Demo | ...' format and a Core Features list suited to a CLI tool."
       ]
     }
   ]

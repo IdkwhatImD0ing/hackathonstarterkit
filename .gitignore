@@ -50,6 +50,7 @@ yarn-error.log*
 !.agents/skills/portfolio-builder/
 !.agents/skills/devpost-writer/
 !.agents/skills/youtube-writer/
+!.agents/skills/ship-it/
 # .agents/commands/ is fully committed (all authored, no installed third-party commands)
 
 # vercel

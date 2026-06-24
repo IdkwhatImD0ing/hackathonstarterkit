@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { LastUpdated } from "@/components/last-updated";
 
 export const metadata: Metadata = {
   title: "Concepts Explained",
@@ -145,6 +146,7 @@ export default function ConceptsPage() {
           explained using analogies from everyday life. No code. No jargon in
           the explanations.
         </p>
+        <LastUpdated date="2026-04-06" />
       </header>
 
       <Separator className="bg-primary/20" />
