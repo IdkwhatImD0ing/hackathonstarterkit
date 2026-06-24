@@ -78,5 +78,5 @@ Put interactive elements near the **top** of the page so readers engage before t
 | validation | yes | "Why This Works" science collapsed | (none) |
 | execution | yes | "Why This Works" science collapsed | timeline simulator moved to top |
 | pitching | yes | "Pitching Under Pressure" mindset section collapsed | (none) |
-| submission | scannable only | not yet applied | not yet applied |
+| submission | yes | "Why This Works" science collapsed | (none) |
 | post-hackathon | scannable only | not yet applied | not yet applied |

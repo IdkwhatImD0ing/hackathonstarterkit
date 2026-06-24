@@ -32,6 +32,7 @@ import {
 import { SectionTemplate } from "@/components/section-template";
 import { CopyButton } from "@/components/copy-button";
 import { KeyTakeaway } from "@/components/key-takeaway";
+import { Disclosure } from "@/components/disclosure";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
   Card,
@@ -656,15 +657,16 @@ export default function SubmissionPage() {
         </section>
 
         {/* ============================================================
-            WHY THIS WORKS — THE SCIENCE
+            WHY THIS WORKS — THE SCIENCE (collapsible)
             ============================================================ */}
         <section className="space-y-8">
-          <SectionHeading
-            title="Why This Works — The Science of Great Documentation"
-            subtitle="The best hackathon submissions follow the same principles that make great journalism, great memos, and great products memorable."
-          />
-
-          <KeyTakeaway>Lead with impact, cut every spare word, and show readers depth only when they ask for it.</KeyTakeaway>
+          <Disclosure
+            title="Why This Works: The Science of Great Documentation"
+            subtitle="Optional theory: the journalism, memo, and product principles behind a memorable submission."
+            badge="Optional: the science"
+            accent="primary"
+          >
+            <KeyTakeaway>Lead with impact, cut every spare word, and show readers depth only when they ask for it.</KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
             <Card className="glow-hover border-volt/20">
@@ -796,6 +798,7 @@ export default function SubmissionPage() {
               </CardContent>
             </Card>
           </div>
+          </Disclosure>
         </section>
 
         {/* ============================================================
@@ -807,7 +810,7 @@ export default function SubmissionPage() {
             subtitle="A screenshot is worth a thousand words. An architecture diagram is worth a thousand meetings. A demo video is worth a thousand Devpost entries."
           />
 
-          <KeyTakeaway>Don't describe your app, show it: diagram the architecture and record it working.</KeyTakeaway>
+          <KeyTakeaway>Don&apos;t describe your app, show it: diagram the architecture and record it working.</KeyTakeaway>
 
           <Card className="glow-hover border-spark/20">
             <CardContent className="space-y-4 pt-6">
