@@ -37,6 +37,7 @@ export const post: BlogPost = {
       paragraphs: [],
       blocks: [
         { type: "paragraph", text: "Tailor the pitch like you tailor a resume. The project stays the same, but the angle shifts based on who is scoring it. **Most teams give every judge the identical script**, and it lands wrong half the time." },
+        { type: "image", src: "/blog/la-hacks-team-demo.png", alt: "A LA Hacks team presenting a project at a judging table while a judge listens and asks questions.", caption: "Judging is a conversation. Tailor the depth and angle to the person standing in front of you.", credit: "Photo courtesy of LA Hacks." },
         { type: "pro-con", pros: [
           "Ask the judge's background before going deep",
           "Lead with problem, workflow, and impact for non-technical judges",
@@ -115,6 +116,7 @@ export const post: BlogPost = {
       blocks: [
         { type: "paragraph", text: "Always record a demo video. Not if you have time. Always." },
         { type: "paragraph", text: "The LA Hacks Wi-Fi was spotty. Some teams could not run their demo because the app or network died, and without a backup video I had no clear way to see what the project actually did." },
+        { type: "image", src: "/blog/la-hacks-pauley-atmosphere.png", alt: "Teams at LA Hacks set up with laptops on judging tables inside Pauley Pavilion.", caption: "In a crowded judging floor, a clear backup video can be the difference between being remembered and being lost in the noise.", credit: "Photo courtesy of LA Hacks." },
         { type: "callout", variant: "warning", title: "Your Live Demo Can Fail", text: "A backup video survives bad Wi-Fi, broken APIs, browser issues, and laptop chaos. The judge sees the product even when the environment does not cooperate." },
         { type: "paragraph", text: "It also strengthens your Devpost. During deliberation, judges revisit submissions. A clear video keeps your project memorable. A thin Devpost makes it easy to forget." },
         { type: "callout", variant: "tip", text: "And recording does not have to eat your build hours. Hackathons lock the code at submission, but the Devpost (including the YouTube link) usually stays editable after. The submission playbook has the full timing trick." },
