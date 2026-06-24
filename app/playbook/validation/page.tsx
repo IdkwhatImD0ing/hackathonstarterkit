@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { SectionTemplate } from "@/components/section-template";
 import { KeyTakeaway } from "@/components/key-takeaway";
+import { Disclosure } from "@/components/disclosure";
 import { GoBagAssembler } from "./go-bag-assembler";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
@@ -1222,17 +1223,18 @@ export default function ValidationPage() {
         </section>
 
         {/* ============================================================
-            WHY THIS WORKS — THE SCIENCE
+            WHY THIS WORKS — THE SCIENCE (collapsible)
             ============================================================ */}
         <section className="space-y-8">
-          <SectionHeading
-            title="Why This Works — The Science of Rapid Validation"
-            subtitle="The Lego method goes beyond intuition. It's backed by decades of engineering and design research on how to validate fast and build with confidence."
-          />
-
-          <KeyTakeaway>
-            Decades of engineering research back the Lego method: build small, test end-to-end, and learn before you commit.
-          </KeyTakeaway>
+          <Disclosure
+            title="Why This Works: The Science of Rapid Validation"
+            subtitle="Optional theory: decades of engineering and design research back the Lego method. Expand it if you want the why."
+            badge="Optional: the science"
+            accent="primary"
+          >
+            <KeyTakeaway>
+              Decades of engineering research back the Lego method: build small, test end-to-end, and learn before you commit.
+            </KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
             <Card className="glow-hover border-volt/20">
@@ -1361,6 +1363,7 @@ export default function ValidationPage() {
               </CardContent>
             </Card>
           </div>
+          </Disclosure>
         </section>
 
         {/* ============================================================
