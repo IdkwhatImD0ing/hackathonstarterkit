@@ -1652,70 +1652,12 @@ export default function PitchingPage() {
 
           <div className="space-y-1">
             <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">REAL EXAMPLES</Badge>
-            <h3 className="font-display text-2xl font-bold tracking-tight">Two demo videos that turned work into outcomes</h3>
-            <p className="font-body text-sm text-muted-foreground">Notice how each gets the product on screen fast, narrates what the viewer is seeing, and lets the actual interaction do the convincing.</p>
+            <h3 className="font-display text-2xl font-bold tracking-tight">A demo video that turned work into an outcome</h3>
+            <p className="font-body text-sm text-muted-foreground">Notice how it gets the product on screen fast, narrates what the viewer is seeing, and lets the actual interaction do the convincing.</p>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-            {/* Demo video 1: TalkTuahBank */}
-            <Card className="glow-hover overflow-hidden border-success/20">
-              <CardHeader>
-                <div className="flex flex-wrap items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
-                    <Trophy className="size-5 text-success" />
-                  </div>
-                  <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
-                    DEMO VIDEO 1
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="border-success/20 text-success font-code text-xs"
-                  >
-                    WON LARGEST 24-HOUR HACKATHON
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-success">
-                  TalkTuahBank — HackUTD 2024
-                </CardTitle>
-                <CardDescription className="font-body text-sm">
-                  1st Overall + Goldman Sachs Challenge Winner at the largest
-                  24 hour hackathon in the US.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="overflow-hidden rounded-lg border border-success/10">
-                  <div className="aspect-video">
-                    <iframe
-                      src="https://www.youtube.com/embed/YsH_z1azXSA"
-                      title="TalkTuahBank demo video"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="size-full"
-                    />
-                  </div>
-                </div>
-                <div className="rounded-lg border border-success/10 bg-success/5 p-3">
-                  <p className="font-code text-xs text-success/80">
-                    <span className="font-semibold">Why it works:</span> A
-                    role-play demo runs a real money transfer on camera. Voice,
-                    dashboard, and specific dollar amounts turn
-                    &ldquo;voice-based banking&rdquo; into a verifiable outcome
-                    judges can replay during deliberation.
-                  </p>
-                </div>
-                <a
-                  href="https://www.youtube.com/watch?v=YsH_z1azXSA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 font-code text-xs text-success/60 underline decoration-success/30 hover:decoration-success"
-                >
-                  <Play className="size-3" />
-                  Watch on YouTube
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Demo video 2: SoundSearch — solo first-place project at AIATL that led to an internship offer */}
+          <div className="md:max-w-2xl">
+            {/* Demo video: SoundSearch — solo first-place project at AIATL that led to an internship offer */}
             <Card className="glow-hover overflow-hidden border-spark/20">
               <CardHeader>
                 <div className="flex flex-wrap items-center gap-3">
@@ -1723,7 +1665,7 @@ export default function PitchingPage() {
                     <Sparkles className="size-5 text-spark" />
                   </div>
                   <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
-                    DEMO VIDEO 2
+                    DEMO VIDEO
                   </Badge>
                   <Badge
                     variant="outline"
