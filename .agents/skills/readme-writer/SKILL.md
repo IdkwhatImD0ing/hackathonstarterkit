@@ -1,6 +1,6 @@
 ---
 name: readme-writer
-description: "Write a winner-grade README for a hackathon project: a centered hero with shields.io badges, a clickable demo-video poster, awards and stats tables, a Mermaid architecture diagram, a tech-stack table, a repo map, team cards, and an honest build-context note. Use this skill whenever the user wants a README, GitHub landing page, project writeup, or repo polish for a hackathon submission or portfolio piece."
+description: "Write a winner-grade README for a hackathon project: a centered hero with shields.io badges, a clickable demo-video poster, awards and stats tables, a Mermaid architecture diagram, a tech-stack table, a repo map, team cards, and an honest build-context note, then set the repo's About metadata (description, website, and topics) to match. Use this skill whenever the user wants a README, GitHub landing page, project writeup, repo polish, or repo description and tags for a hackathon submission or portfolio piece."
 ---
 
 # README Writer
@@ -170,6 +170,27 @@ Keep the README a landing page. If setup runs long, collapse it. If the architec
 - Team headshots can fall back to GitHub avatars: `https://github.com/<handle>.png?size=120`.
 - If the repo has its own asset or OG-image generation (for example an `opengraph-image.tsx`), offer to reuse it rather than inventing a new pipeline.
 
+## Set the repository metadata (About)
+
+The README is the page; the repo's "About" box is the search-and-preview layer that decides whether anyone opens the page at all. It shows under the repo name, in GitHub search results, and on the social card when the link is shared. After writing the README, set it from the same facts so the three stay consistent.
+
+Set three fields:
+
+- **Description**: one sentence, the tagline or a tightened version of it. Lead with what it does, not the stack, and keep it under about 120 characters so it does not truncate.
+- **Website**: the live deployment URL, or the demo video link if there is no live site.
+- **Topics (tags)**: five to twelve lowercase, hyphenated tags pulled from the real stack and domain, plus `hackathon` and the event or sponsor tech where relevant (for example `nextjs`, `fastapi`, `openai`, `voice-ai`, `hackathon`). GitHub allows up to twenty, each lowercase and at most fifty characters. Pick the ones a recruiter or judge would actually search, not every dependency.
+
+Apply them with the GitHub CLI from inside the repo, since the agent can run it directly:
+
+```bash
+gh repo edit \
+  --description "One line on what it does, under ~120 characters" \
+  --homepage "https://yourapp.com" \
+  --add-topic nextjs,fastapi,openai,voice-ai,hackathon
+```
+
+`--add-topic` merges with any existing topics rather than replacing them; run `gh repo edit --help` to confirm the flags for the installed version. If `gh` is missing or not authenticated, do not guess credentials: fall back to the "About" gear on the repo's GitHub page and hand the user the exact description and topic list to paste. Never invent a description or a tag that misrepresents the project.
+
 ## Verify
 
 Before finishing, check:
@@ -179,6 +200,7 @@ Before finishing, check:
 - The YouTube ID in the poster matches the demo link.
 - Every referenced image exists in the repo or is marked TODO.
 - The Mermaid block parses (balanced brackets, valid node ids).
+- The repo description, website, and topics are set and match the README, with no invented claims.
 - No fabricated awards, stats, prize figures, or team details.
 
 Preview in a Markdown renderer. Note that GitHub-only features (alerts, Mermaid, `<picture>` theming) render on GitHub but not in every previewer, so confirm on the repo when possible.
@@ -188,13 +210,15 @@ Preview in a Markdown renderer. Note that GitHub-only features (alerts, Mermaid,
 Return:
 
 1. **README.md**: written to the repo root (after showing a diff if one already exists).
-2. **Asset checklist**: which images exist and which are TODO.
-3. **Facts used vs. omitted**: what was included and which sections were skipped for lack of real facts.
-4. **Next steps**: for example, run `demo-prep` for the matching demo script, capture a custom poster, or pin the repo.
+2. **Repo metadata**: the description, website, and topics applied via `gh`, or the exact values to paste if `gh` was unavailable.
+3. **Asset checklist**: which images exist and which are TODO.
+4. **Facts used vs. omitted**: what was included and which sections were skipped for lack of real facts.
+5. **Next steps**: for example, run `demo-prep` for the matching demo script, capture a custom poster, or pin the repo.
 
 ## Boundaries
 
 - Never invent awards, statistics, prize amounts, ranks, or team information. Omit over guess.
 - Do not overwrite an existing README without showing the change and getting a go-ahead.
+- Set the repo's About metadata (description, website, topics) from the same facts, and never invent a description or tag that misrepresents the project.
 - Keep it a landing page, not exhaustive documentation. Deep setup and long flows belong in `<details>`.
 - Match the repo's real stack and structure. The README describes what exists, not an aspirational version.
