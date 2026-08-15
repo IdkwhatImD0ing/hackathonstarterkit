@@ -17,10 +17,18 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
+    // Preview deployments must never be indexed: their *.vercel.app URLs
+    // bypass Cloudflare and would dilute the canonical domain if crawled.
+    // (The generated robots.txt also serves disallow-all on previews.)
+    const previewHeaders =
+      process.env.VERCEL_ENV === "preview"
+        ? [{ key: "X-Robots-Tag", value: "noindex, nofollow" }]
+        : [];
     return [
       {
         source: "/(.*)",
         headers: [
+          ...previewHeaders,
           {
             key: "X-Content-Type-Options",
             value: "nosniff",
