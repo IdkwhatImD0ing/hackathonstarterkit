@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/api/md/[[...path]]": ["./content/generated/**"],
     "/.well-known/agent-skills/[name]/SKILL.md": ["./content/generated/agent-skills/**"],
+    "/api/mcp": ["./content/generated/**", "./index/**"],
+    "/api/chat": ["./content/generated/**", "./index/**"],
   },
   async redirects() {
     return [

@@ -25,7 +25,7 @@ export function GET() {
       url: `${SITE_URL}/api/mcp`,
     },
     capabilities: {
-      tools: { listChanged: false },
+      tools: { listChanged: true },
     },
     documentation: `${SITE_URL}/ai`,
   };
