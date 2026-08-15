@@ -66,7 +66,7 @@ SlugLoop](https://www.universityofcalifornia.edu/news/uc-santa-cruz-students-beh
 
 Linguify](https://devpost.com/software/linguify-katunw)[+31more winsView on Devpost](https://devpost.com/IdkwhatImD0ing)
 
-[Portfolio](https://v2.art3m1s.me/)[GitHub](https://github.com/IdkwhatImD0ing)[LinkedIn](https://www.linkedin.com/in/bill-zhang1/)[Devpost](https://devpost.com/IdkwhatImD0ing)
+[Portfolio](https://v2.art3m1s.me/)[GitHub](https://github.com/IdkwhatImD0ing)[LinkedIn](https://www.linkedin.com/in/bill-zhang1/)[Devpost](https://devpost.com/IdkwhatImD0ing)[For AI & Agents](https://thehackathonplaybook.dev/ai)
 
 ---
 
@@ -406,8 +406,6 @@ first place or bust
 Hackman's Harvard research explains the three categories. Fun hackathons have no shared direction (you're still exploring). Training hackathons have a learning direction (the purpose is growth). Competitive hackathons have a winning direction that is clear, challenging, and consequential. Sharper direction, better performance.
 
 — [Leading Teams: Setting the Stage for Great Performances, 2002](https://en.wikipedia.org/wiki/J._Richard_Hackman)
-
-[Ideation](https://thehackathonplaybook.dev/playbook/ideation)
 
 ---
 
@@ -790,8 +788,6 @@ Pick the idea at the edge of the adjacent possible. What just became feasible?
 Validate with your team: does it excite everyone, and can you ship it in 24-48 hours?
 
 Remember: Ideation isn't about finding the perfect idea on the first try. It's about generating enough raw material that one great idea rises to the surface. Trust the process, the volume, and your subconscious.
-
-[Team Formation](https://thehackathonplaybook.dev/playbook/team-formation)[Validation](https://thehackathonplaybook.dev/playbook/validation)
 
 ---
 
@@ -1289,8 +1285,6 @@ If the spike fails, pivot immediately instead of sinking time into a broken assu
 
 Remember: Validation isn't about proving your idea is perfect. It finds what's broken before you're 18 hours deep with no backup plan. Test early, test in isolation, trust only proven blocks.
 
-[Ideation](https://thehackathonplaybook.dev/playbook/ideation)[Execution](https://thehackathonplaybook.dev/playbook/execution)
-
 ---
 
 # Execution
@@ -1638,8 +1632,6 @@ Stop building 4 hours out. Polish UI, record the demo video, and rehearse the pi
 "Done is better than perfect." Ship what works, cut what doesn't, sell the vision
 
 Remember: The goal isn't the best software, it's the best demo. Build less, leverage more, and always be ready to show what you've got.
-
-[Validation](https://thehackathonplaybook.dev/playbook/validation)[Pitching](https://thehackathonplaybook.dev/playbook/pitching)
 
 ---
 
@@ -2211,8 +2203,6 @@ End with the vision. Leave judges with a feeling, not a feature list
 
 Remember: The pitch isn't a summary of what you built. It's a performance that makes judges believe what you could build. Master storytelling and you win hackathons, hearts, minds, and maybe your dream job.
 
-[Execution](https://thehackathonplaybook.dev/playbook/execution)[Submission](https://thehackathonplaybook.dev/playbook/submission)
-
 ---
 
 # Submission
@@ -2716,8 +2706,6 @@ Use the devpost-writer skill to write our Devpost submission for this project. R
 
 The full Ship-It Toolkit, plus a single prompt that generates all four deliverables, is on the post-hackathon page.](https://thehackathonplaybook.dev/playbook/post-hackathon#the-ship-it-toolkit)
 
-[Pitching](https://thehackathonplaybook.dev/playbook/pitching)[Post-Hackathon](https://thehackathonplaybook.dev/playbook/post-hackathon)
-
 ---
 
 # Post-Hackathon
@@ -3014,8 +3002,6 @@ Keep building: set monthly milestones (you already have the MVP)
 Make it findable: "if your work isn't online, it doesn't exist"
 
 Remember: The hackathon gave you the project, the connections, and the momentum. What you do next separates people who attend hackathons from people whose hackathons change their careers. Share it, follow up, keep building. It only takes one.
-
-[Submission](https://thehackathonplaybook.dev/playbook/submission)[Back to Overview](https://thehackathonplaybook.dev/playbook)
 
 ---
 

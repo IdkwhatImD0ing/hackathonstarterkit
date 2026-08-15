@@ -294,5 +294,3 @@ first place or bust
 Hackman's Harvard research explains the three categories. Fun hackathons have no shared direction (you're still exploring). Training hackathons have a learning direction (the purpose is growth). Competitive hackathons have a winning direction that is clear, challenging, and consequential. Sharper direction, better performance.
 
 — [Leading Teams: Setting the Stage for Great Performances, 2002](https://en.wikipedia.org/wiki/J._Richard_Hackman)
-
-[Ideation](https://thehackathonplaybook.dev/playbook/ideation)

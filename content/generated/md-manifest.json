@@ -1,7 +1,7 @@
 {
   "/": {
     "file": "md/index.md",
-    "tokens": 526,
+    "tokens": 542,
     "title": "The Hackathon Playbook",
     "description": "Battle-tested hackathon strategy from 36+ wins and $100K+ in prizes, by Bill Zhang. Team formation, ideation, execution, pitching, and submission.",
     "track": "home"
@@ -15,7 +15,7 @@
   },
   "/playbook/team-formation": {
     "file": "md/playbook/team-formation.md",
-    "tokens": 2457,
+    "tokens": 2439,
     "title": "Team Formation",
     "description": "Find the right people, define roles, and create a winning team dynamic.",
     "track": "playbook",
@@ -23,7 +23,7 @@
   },
   "/playbook/ideation": {
     "file": "md/playbook/ideation.md",
-    "tokens": 2984,
+    "tokens": 2951,
     "title": "Ideation",
     "description": "Brainstorm, evaluate, and select ideas that judges love and you can actually build.",
     "track": "playbook",
@@ -31,7 +31,7 @@
   },
   "/playbook/validation": {
     "file": "md/playbook/validation.md",
-    "tokens": 4014,
+    "tokens": 3981,
     "title": "Validation",
     "description": "Validate your idea quickly against real constraints and judging criteria.",
     "track": "playbook",
@@ -39,7 +39,7 @@
   },
   "/playbook/execution": {
     "file": "md/playbook/execution.md",
-    "tokens": 2964,
+    "tokens": 2931,
     "title": "Execution",
     "description": "Time management, tech stack selection, MVP strategy, and team coordination.",
     "track": "playbook",
@@ -47,7 +47,7 @@
   },
   "/playbook/pitching": {
     "file": "md/playbook/pitching.md",
-    "tokens": 5529,
+    "tokens": 5498,
     "title": "Pitching",
     "description": "Craft a pitch that wins judges over in the first 30 seconds.",
     "track": "playbook",
@@ -55,7 +55,7 @@
   },
   "/playbook/submission": {
     "file": "md/playbook/submission.md",
-    "tokens": 5350,
+    "tokens": 5312,
     "title": "Submission",
     "description": "Write READMEs, record demos, and submit deliverables that make judges remember you.",
     "track": "playbook",
@@ -63,7 +63,7 @@
   },
   "/playbook/post-hackathon": {
     "file": "md/playbook/post-hackathon.md",
-    "tokens": 3159,
+    "tokens": 3128,
     "title": "Post-Hackathon",
     "description": "Share your work, follow up with contacts, and turn weekend projects into career-changing portfolio pieces.",
     "track": "playbook",

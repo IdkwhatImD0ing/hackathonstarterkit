@@ -498,5 +498,3 @@ Use the devpost-writer skill to write our Devpost submission for this project. R
 [Building your portfolio site or YouTube description too?
 
 The full Ship-It Toolkit, plus a single prompt that generates all four deliverables, is on the post-hackathon page.](https://thehackathonplaybook.dev/playbook/post-hackathon#the-ship-it-toolkit)
-
-[Pitching](https://thehackathonplaybook.dev/playbook/pitching)[Post-Hackathon](https://thehackathonplaybook.dev/playbook/post-hackathon)

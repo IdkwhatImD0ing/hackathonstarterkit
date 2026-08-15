@@ -139,8 +139,10 @@ pnpm run dev                 # http://localhost:3000
 ```
 
 ```bash
-pnpm run build               # verification gate for content/page changes (there is no test suite)
+pnpm run build               # verification gate for content/page changes
 pnpm run lint
+pnpm test                    # unit tests (vitest); integration tests run in CI against next start
+pnpm gen                     # rebuild + regenerate all agent-facing artifacts (markdown corpus, llms.txt, skills, index)
 ```
 
 > [!TIP]
@@ -178,6 +180,10 @@ docs/                     # SEO, analytics, content conventions, engagement rese
 </details>
 
 The site is **data-driven**: content lives in typed TypeScript under `lib/`, and route templates render it. To add content you usually edit a data file, not a page. The full project guidance lives in [`CLAUDE.md`](./CLAUDE.md) (and [`AGENTS.md`](./AGENTS.md), which points to it).
+
+## AI and agent access
+
+The site is machine-readable by design: every content page has a Markdown twin (append `.md`, or send `Accept: text/markdown`), an [llms.txt](https://thehackathonplaybook.dev/llms.txt) index, agent discovery documents under `/.well-known/` (MCP server card, agent-skills index with digests, api-catalog), a public read-only [MCP server](./docs/mcp.md) at `/api/mcp`, and a retrieval-grounded chatbot that answers only from site content. All of it is generated from the same sources that render the pages and gated by CI freshness checks. See [`docs/agent-readiness.md`](./docs/agent-readiness.md) for the architecture, [`docs/cloudflare-config.md`](./docs/cloudflare-config.md) for the dashboard settings it depends on, and the public [/ai](https://thehackathonplaybook.dev/ai) page for the user-facing summary.
 
 ## SEO and analytics
 

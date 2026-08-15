@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Trophy, ExternalLink, Github, Linkedin } from "lucide-react";
+import { Trophy, ExternalLink, Github, Linkedin, Bot } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
@@ -443,6 +443,13 @@ export default function Home() {
                     {link.label}
                   </a>
                 ))}
+                <Link
+                  href="/ai"
+                  className="group flex items-center gap-1.5 font-code text-xs text-muted-foreground transition-colors hover:text-volt"
+                >
+                  <Bot className="size-3.5 transition-transform group-hover:-translate-y-0.5" />
+                  For AI &amp; Agents
+                </Link>
               </div>
             </div>
           </div>

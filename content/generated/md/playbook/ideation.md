@@ -377,5 +377,3 @@ Pick the idea at the edge of the adjacent possible. What just became feasible?
 Validate with your team: does it excite everyone, and can you ship it in 24-48 hours?
 
 Remember: Ideation isn't about finding the perfect idea on the first try. It's about generating enough raw material that one great idea rises to the surface. Trust the process, the volume, and your subconscious.
-
-[Team Formation](https://thehackathonplaybook.dev/playbook/team-formation)[Validation](https://thehackathonplaybook.dev/playbook/validation)

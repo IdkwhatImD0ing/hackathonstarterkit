@@ -76,14 +76,14 @@
       "type": "skill-md",
       "description": "Validate a hackathon idea quickly against real constraints and judging criteria before building. Use when deciding whether a hackathon project idea is worth pursuing.",
       "url": "/.well-known/agent-skills/hackathon-idea-validation/SKILL.md",
-      "digest": "sha256:ee5acac17ce5433e4fff57566c41548bc95849cd61b9ef34c07b967253c89501"
+      "digest": "sha256:26914b1c66b500d8318f9384cd508431a6cde3888bf32b12a7a62e0fe9d38b72"
     },
     {
       "name": "hackathon-pitch-prep",
       "type": "skill-md",
       "description": "Prepare a winning hackathon pitch: narrative structure, demo choreography, judge psychology, and Q&A handling. Use when preparing to present a hackathon project.",
       "url": "/.well-known/agent-skills/hackathon-pitch-prep/SKILL.md",
-      "digest": "sha256:e1a85a372e657587f578c6be3f3a623dc5f54cc05535c915ac0904f1fc57b767"
+      "digest": "sha256:42e6b0d0a783b7a424d79cd82af8eacdd733548a9f8165cf2ebe6a0ff0f599dc"
     },
     {
       "name": "hackathon-stack-selection",
@@ -97,7 +97,7 @@
       "type": "skill-md",
       "description": "Ship a complete hackathon submission: README, demo video, Devpost write-up, and deliverables judges remember. Use when finalizing a hackathon submission.",
       "url": "/.well-known/agent-skills/hackathon-submission-checklist/SKILL.md",
-      "digest": "sha256:06c62c8108eb9ec22f8ac54f279794caff13f63f7f5898d465b70fd2b6dccda1"
+      "digest": "sha256:6e4c3f23ece2ab8e8507f5916dc5272d04119a1c3acbbf7ce6f42d2e4b35da08"
     }
   ]
 }

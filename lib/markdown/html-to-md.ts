@@ -73,9 +73,14 @@ export function createTurndown(): TurndownService {
     },
   });
 
-  // Absolutize links; drop pure-anchor fragments' styling.
+  // Absolutize links; drop pure-anchor fragments' styling. Chrome links
+  // (data-slot="button" CTAs) are excluded here because later-added rules
+  // win in Turndown, and this rule would otherwise shadow strip-chrome.
   td.addRule("absolute-links", {
-    filter: (node) => node.nodeName === "A" && !!(node as HTMLElement).getAttribute("href"),
+    filter: (node) =>
+      node.nodeName === "A" &&
+      !!(node as HTMLElement).getAttribute("href") &&
+      !isChromeNode(node as HTMLElement),
     replacement: (content, node) => {
       const href = (node as HTMLElement).getAttribute("href") ?? "";
       const text = content.trim();

@@ -487,5 +487,3 @@ If the spike fails, pivot immediately instead of sinking time into a broken assu
 "What I cannot create, I do not understand." Can't build the smallest version? Rethink the approach
 
 Remember: Validation isn't about proving your idea is perfect. It finds what's broken before you're 18 hours deep with no backup plan. Test early, test in isolation, trust only proven blocks.
-
-[Ideation](https://thehackathonplaybook.dev/playbook/ideation)[Execution](https://thehackathonplaybook.dev/playbook/execution)

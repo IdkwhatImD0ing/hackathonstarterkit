@@ -292,5 +292,3 @@ Keep building: set monthly milestones (you already have the MVP)
 Make it findable: "if your work isn't online, it doesn't exist"
 
 Remember: The hackathon gave you the project, the connections, and the momentum. What you do next separates people who attend hackathons from people whose hackathons change their careers. Share it, follow up, keep building. It only takes one.
-
-[Submission](https://thehackathonplaybook.dev/playbook/submission)[Back to Overview](https://thehackathonplaybook.dev/playbook)

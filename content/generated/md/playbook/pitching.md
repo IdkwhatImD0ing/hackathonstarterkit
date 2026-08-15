@@ -565,5 +565,3 @@ Rehearse two versions (technical depth and impact) so you can switch mid-pitch
 End with the vision. Leave judges with a feeling, not a feature list
 
 Remember: The pitch isn't a summary of what you built. It's a performance that makes judges believe what you could build. Master storytelling and you win hackathons, hearts, minds, and maybe your dream job.
-
-[Execution](https://thehackathonplaybook.dev/playbook/execution)[Submission](https://thehackathonplaybook.dev/playbook/submission)

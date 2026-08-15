@@ -66,7 +66,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
 
-    // Standalone routes (legal, press)
+    // Standalone routes (legal, press, agent docs)
+    {
+      url: `${SITE_URL}/ai`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
     {
       url: `${SITE_URL}/media-kit`,
       lastModified: now,

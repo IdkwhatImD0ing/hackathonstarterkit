@@ -343,5 +343,3 @@ Stop building 4 hours out. Polish UI, record the demo video, and rehearse the pi
 "Done is better than perfect." Ship what works, cut what doesn't, sell the vision
 
 Remember: The goal isn't the best software, it's the best demo. Build less, leverage more, and always be ready to show what you've got.
-
-[Validation](https://thehackathonplaybook.dev/playbook/validation)[Pitching](https://thehackathonplaybook.dev/playbook/pitching)
