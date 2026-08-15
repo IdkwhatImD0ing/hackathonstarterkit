@@ -39,6 +39,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { TimelineSimulator } from "./timeline-simulator";
+import { SITE_URL } from "@/lib/site";
 
 const section = PLAYBOOK_SECTIONS[3];
 
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
   description:
     "Master hackathon execution: choose the best tech stack, manage your time effectively, build an MVP that impresses judges, and coordinate your team. Includes timeline simulator.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/execution`,
+    canonical: `${SITE_URL}/playbook/execution`,
   },
   openGraph: {
     title: "Hackathon Execution: Best Tech Stack & MVP Strategy",

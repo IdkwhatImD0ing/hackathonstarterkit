@@ -20,9 +20,7 @@ import { JsonLd } from "@/components/json-ld";
 import { BlogBlock } from "@/components/blog-blocks";
 import { BlogAnalytics } from "@/components/blog-analytics";
 import { NewsletterSignup } from "@/components/newsletter-signup";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { SITE_URL } from "@/lib/site";
 
 export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
@@ -42,13 +40,13 @@ export async function generateMetadata({
     description: post.description,
     keywords: post.keywords,
     alternates: {
-      canonical: `${BASE_URL}/blog/${post.slug}`,
+      canonical: `${SITE_URL}/blog/${post.slug}`,
     },
     openGraph: {
       type: "article",
       title: post.title,
       description: post.description,
-      url: `${BASE_URL}/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       publishedTime: post.date,
       modifiedTime: post.updatedDate ?? post.date,
       authors: ["Bill Zhang"],
@@ -83,7 +81,7 @@ export default async function BlogPostPage({
     description: post.description,
     datePublished: post.date,
     dateModified: post.updatedDate ?? post.date,
-    url: `${BASE_URL}/blog/${post.slug}`,
+    url: `${SITE_URL}/blog/${post.slug}`,
     author: {
       "@type": "Person",
       name: "Bill Zhang",
@@ -96,11 +94,11 @@ export default async function BlogPostPage({
     publisher: {
       "@type": "Organization",
       name: "Hackathon Playbook",
-      url: BASE_URL,
+      url: SITE_URL,
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${BASE_URL}/blog/${post.slug}`,
+      "@id": `${SITE_URL}/blog/${post.slug}`,
     },
     keywords: post.keywords.join(", "),
   };
@@ -113,19 +111,19 @@ export default async function BlogPostPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: BASE_URL,
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: `${BASE_URL}/blog`,
+        item: `${SITE_URL}/blog`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `${BASE_URL}/blog/${post.slug}`,
+        item: `${SITE_URL}/blog/${post.slug}`,
       },
     ],
   };

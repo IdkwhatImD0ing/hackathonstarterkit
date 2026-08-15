@@ -44,6 +44,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { SITE_URL } from "@/lib/site";
 
 const section = PLAYBOOK_SECTIONS[2];
 
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
   description:
     "Validate your hackathon idea against real constraints, available APIs, and judging criteria before you start building. Includes a go-bag assembler for essential tools and templates.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/validation`,
+    canonical: `${SITE_URL}/playbook/validation`,
   },
   openGraph: {
     title: "How to Validate Your Hackathon Idea Fast",

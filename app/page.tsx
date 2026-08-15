@@ -3,9 +3,7 @@ import Link from "next/link";
 import { Trophy, ExternalLink, Github, Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title:
@@ -13,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "Learn how to win hackathons with the ultimate playbook from 36+ victories and $100K+ in prizes. Battle-tested guides on team formation, ideation, the best tech stack, pitching, and submission strategies.",
   alternates: {
-    canonical: BASE_URL,
+    canonical: SITE_URL,
   },
   openGraph: {
     title: "Hackathon Playbook — How to Win Hackathons",
     description:
       "The ultimate hackathon playbook with battle-tested guides, templates, and strategies from 36+ wins and $100K+ in prizes.",
-    url: BASE_URL,
+    url: SITE_URL,
   },
   twitter: {
     title: "Hackathon Playbook — How to Win Hackathons",
@@ -202,43 +200,43 @@ const howToJsonLd = {
       "@type": "HowToStep",
       name: "Team Formation",
       text: "Find the right people, define roles, and create a winning team dynamic with complementary skills.",
-      url: `${BASE_URL}/playbook/team-formation`,
+      url: `${SITE_URL}/playbook/team-formation`,
     },
     {
       "@type": "HowToStep",
       name: "Ideation",
       text: "Brainstorm, evaluate, and select ideas that judges love and you can actually build in the time available.",
-      url: `${BASE_URL}/playbook/ideation`,
+      url: `${SITE_URL}/playbook/ideation`,
     },
     {
       "@type": "HowToStep",
       name: "Validation",
       text: "Validate your idea quickly against real constraints, available APIs, and judging criteria.",
-      url: `${BASE_URL}/playbook/validation`,
+      url: `${SITE_URL}/playbook/validation`,
     },
     {
       "@type": "HowToStep",
       name: "Execution",
       text: "Manage time effectively, select the right tech stack, build an MVP, and coordinate your team.",
-      url: `${BASE_URL}/playbook/execution`,
+      url: `${SITE_URL}/playbook/execution`,
     },
     {
       "@type": "HowToStep",
       name: "Pitching",
       text: "Craft a pitch that wins judges over in the first 30 seconds with a compelling demo.",
-      url: `${BASE_URL}/playbook/pitching`,
+      url: `${SITE_URL}/playbook/pitching`,
     },
     {
       "@type": "HowToStep",
       name: "Submission",
       text: "Write READMEs, record demo videos, and submit deliverables that make judges remember you.",
-      url: `${BASE_URL}/playbook/submission`,
+      url: `${SITE_URL}/playbook/submission`,
     },
     {
       "@type": "HowToStep",
       name: "Post-Hackathon",
       text: "Share your work, follow up with contacts, and turn weekend projects into career-changing portfolio pieces.",
-      url: `${BASE_URL}/playbook/post-hackathon`,
+      url: `${SITE_URL}/playbook/post-hackathon`,
     },
   ],
 };

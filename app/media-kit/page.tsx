@@ -15,9 +15,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { SITE_URL } from "@/lib/site";
 
 const CONTACT_EMAIL = "billzhangsc@gmail.com";
 
@@ -27,13 +25,13 @@ export const metadata: Metadata = {
   description:
     "Official media kit for Hackathon Playbook: founder bio, stats (36+ wins, $100K+ prizes), brand assets, logo, colors, and press contact for partnerships and affiliate programs.",
   alternates: {
-    canonical: `${BASE_URL}/media-kit`,
+    canonical: `${SITE_URL}/media-kit`,
   },
   openGraph: {
     title: "Media Kit — Hackathon Playbook",
     description:
       "Press, partnerships, and brand assets for Hackathon Playbook. 36+ hackathon wins, $100K+ in prizes.",
-    url: `${BASE_URL}/media-kit`,
+    url: `${SITE_URL}/media-kit`,
   },
   twitter: {
     title: "Media Kit — Hackathon Playbook",
@@ -47,7 +45,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Bill Zhang",
   url: "https://v2.art3m1s.me/",
-  image: `${BASE_URL}/icon`,
+  image: `${SITE_URL}/icon`,
   jobTitle: "Applied AI Engineer",
   worksFor: {
     "@type": "Organization",
@@ -70,18 +68,18 @@ const aboutPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: "Hackathon Playbook Media Kit",
-  url: `${BASE_URL}/media-kit`,
+  url: `${SITE_URL}/media-kit`,
   description:
     "Press, partnerships, and brand assets for Hackathon Playbook.",
   isPartOf: {
     "@type": "WebSite",
     name: "Hackathon Playbook",
-    url: BASE_URL,
+    url: SITE_URL,
   },
   about: {
     "@type": "Organization",
     name: "Hackathon Playbook",
-    url: BASE_URL,
+    url: SITE_URL,
     founder: { "@type": "Person", name: "Bill Zhang" },
   },
 };
@@ -457,7 +455,7 @@ export default function MediaKitPage() {
                   {s.description}
                 </p>
                 <p className="font-code text-[10px] text-muted-foreground">
-                  {BASE_URL}
+                  {SITE_URL}
                   {s.href}
                 </p>
               </Link>
@@ -483,11 +481,11 @@ export default function MediaKitPage() {
             <div>
               <p className="font-display text-sm font-bold">Logo / Icon</p>
               <p className="font-code text-xs text-muted-foreground">
-                {BASE_URL}/icon
+                {SITE_URL}/icon
               </p>
             </div>
             <a
-              href={`${BASE_URL}/icon`}
+              href={`${SITE_URL}/icon`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-lg border border-volt/30 bg-volt/10 px-3 py-1.5 font-code text-xs text-volt transition-colors hover:bg-volt/20"

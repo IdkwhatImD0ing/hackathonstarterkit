@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Home, Mail, Scale, FileText } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { SITE_URL } from "@/lib/site";
 
 const CONTACT_EMAIL = "billzhangsc@gmail.com";
 const LAST_UPDATED = "April 21, 2026";
@@ -14,13 +12,13 @@ export const metadata: Metadata = {
   description:
     "Terms of Service for Hackathon Playbook. Review the rules for using the site, affiliate link disclosures, intellectual property, disclaimers, and California governing law.",
   alternates: {
-    canonical: `${BASE_URL}/terms`,
+    canonical: `${SITE_URL}/terms`,
   },
   openGraph: {
     title: "Terms of Service — Hackathon Playbook",
     description:
       "Terms of Service for Hackathon Playbook, including affiliate disclosures, intellectual property, and usage rules.",
-    url: `${BASE_URL}/terms`,
+    url: `${SITE_URL}/terms`,
   },
   twitter: {
     title: "Terms of Service — Hackathon Playbook",
@@ -33,13 +31,13 @@ const webPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Terms of Service",
-  url: `${BASE_URL}/terms`,
+  url: `${SITE_URL}/terms`,
   description:
     "Terms of Service for Hackathon Playbook, including affiliate disclosures, intellectual property rules, and California governing law.",
   isPartOf: {
     "@type": "WebSite",
     name: "Hackathon Playbook",
-    url: BASE_URL,
+    url: SITE_URL,
   },
   dateModified: "2026-04-21",
 };

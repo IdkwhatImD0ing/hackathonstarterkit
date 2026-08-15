@@ -13,9 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { BLOG_POSTS } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
 import { NewsletterSignup } from "@/components/newsletter-signup";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { SITE_URL } from "@/lib/site";
 
 const POSTS_BY_DATE_DESC = [...BLOG_POSTS].sort((a, b) =>
   b.date.localeCompare(a.date),
@@ -26,16 +24,16 @@ export const metadata: Metadata = {
   description:
     "Expert hackathon guides covering how to win hackathons, the best tech stack, tips for beginners, pitching strategies, and how non-coders are winning with AI tools. From 36+ hackathon victories.",
   alternates: {
-    canonical: `${BASE_URL}/blog`,
+    canonical: `${SITE_URL}/blog`,
     types: {
-      "application/rss+xml": `${BASE_URL}/blog/rss.xml`,
+      "application/rss+xml": `${SITE_URL}/blog/rss.xml`,
     },
   },
   openGraph: {
     title: "Hackathon Blog — Tips, Strategies & Guides",
     description:
       "Expert guides on winning hackathons, the best tech stack, pitching, and more from 36+ victories.",
-    url: `${BASE_URL}/blog`,
+    url: `${SITE_URL}/blog`,
   },
   twitter: {
     title: "Hackathon Blog — Tips, Strategies & Guides",
@@ -50,13 +48,13 @@ const blogListJsonLd = {
   name: "Hackathon Blog",
   description:
     "Expert hackathon guides and strategies from 36+ victories.",
-  url: `${BASE_URL}/blog`,
+  url: `${SITE_URL}/blog`,
   mainEntity: {
     "@type": "ItemList",
     itemListElement: POSTS_BY_DATE_DESC.map((post, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      url: `${BASE_URL}/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       name: post.title,
     })),
   },

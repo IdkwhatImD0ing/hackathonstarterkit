@@ -38,6 +38,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import NextLink from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 const section = PLAYBOOK_SECTIONS[6];
 
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
   description:
     "Share your hackathon work, follow up with sponsors and contacts, and turn weekend projects into career-changing portfolio pieces, startups, and open-source contributions.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/post-hackathon`,
+    canonical: `${SITE_URL}/playbook/post-hackathon`,
   },
   openGraph: {
     title: "Post-Hackathon: Turn Projects into Career Opportunities",
