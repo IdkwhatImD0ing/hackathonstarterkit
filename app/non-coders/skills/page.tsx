@@ -21,6 +21,7 @@ import {
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "Skills & Commands",
@@ -59,6 +60,7 @@ export default function SkillsPage() {
           <br />
           <span className="text-volt">How to Help You</span>
         </h1>
+        <CopyForAi path="/non-coders/skills" title="Skills & Commands" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           These are installable skills that teach your AI assistant how to work
           with someone who has no coding experience. Install them once, and

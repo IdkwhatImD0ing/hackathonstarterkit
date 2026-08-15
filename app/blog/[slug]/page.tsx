@@ -19,6 +19,7 @@ import {
 import { JsonLd } from "@/components/json-ld";
 import { BlogBlock } from "@/components/blog-blocks";
 import { BlogAnalytics } from "@/components/blog-analytics";
+import { CopyForAi } from "@/components/copy-for-ai";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 
@@ -194,6 +195,8 @@ export default async function BlogPostPage({
           <p className="font-body text-lg text-muted-foreground">
             {post.description}
           </p>
+
+          <CopyForAi path={`/blog/${post.slug}`} title={post.title} />
 
           <div className="flex flex-wrap gap-2">
             {post.keywords.map((kw) => (

@@ -23,6 +23,7 @@ import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "The System Prompt: CLAUDE.md & AGENTS.md for Non-Coders",
@@ -116,6 +117,7 @@ export default function SystemPromptPage() {
           <br />
           <span className="text-spark">Standing Orders</span>
         </h1>
+        <CopyForAi path="/non-coders/system-prompt" title="The System Prompt" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           The rules your AI follows in every single chat live in two files: your{" "}
           <code className="font-code text-base text-spark">CLAUDE.md</code> and{" "}

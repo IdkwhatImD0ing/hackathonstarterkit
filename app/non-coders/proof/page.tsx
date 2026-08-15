@@ -18,6 +18,7 @@ import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "The Proof",
@@ -104,6 +105,7 @@ export default function ProofPage() {
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Non-Coders Are Winning
         </h1>
+        <CopyForAi path="/non-coders/proof" title="The Proof" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           These are real professionals with zero coding backgrounds who beat
           thousands of developers at major hackathons.

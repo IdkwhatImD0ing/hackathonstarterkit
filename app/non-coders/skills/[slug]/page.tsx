@@ -15,6 +15,7 @@ import { NON_CODER_SKILLS, getSkillBySlug } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 const accentStyles = {
   volt: {
@@ -118,6 +119,7 @@ export default async function SkillDetailPage({
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           {skill.title}
         </h1>
+        <CopyForAi path={`/non-coders/skills/${skill.slug}`} title={skill.title} />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           {skill.description}
         </p>

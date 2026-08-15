@@ -18,6 +18,7 @@ import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "Concepts Explained",
@@ -148,6 +149,7 @@ export default function ConceptsPage() {
           <br />
           <span className="text-primary">In Plain English</span>
         </h1>
+        <CopyForAi path="/non-coders/concepts" title="Concepts Explained" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           Every technical term you&apos;ll encounter while building with AI,
           explained using analogies from everyday life. No code. No jargon in

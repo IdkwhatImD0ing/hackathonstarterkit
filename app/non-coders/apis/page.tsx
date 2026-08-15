@@ -14,6 +14,7 @@ import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "Using APIs",
@@ -71,6 +72,7 @@ export default function ApisPage() {
           <br />
           <span className="text-success">With One Prompt</span>
         </h1>
+        <CopyForAi path="/non-coders/apis" title="Using APIs" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           Want to add voice AI, a database, payments, or text messaging to your
           app? You don&apos;t need to understand how they work. You just need

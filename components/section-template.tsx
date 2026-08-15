@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { LastUpdated } from "@/components/last-updated";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 import { JsonLd } from "@/components/json-ld";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import { guideArticleJsonLd } from "@/lib/structured-data";
@@ -42,6 +43,7 @@ export function SectionTemplate({
           {subtitle}
         </p>
         {updated ? <LastUpdated date={updated} /> : null}
+        {path ? <CopyForAi path={path} title={title} /> : null}
       </header>
 
       {children || (

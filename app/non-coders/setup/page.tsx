@@ -20,6 +20,7 @@ import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "Getting Started",
@@ -191,6 +192,7 @@ export default function SetupPage() {
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Getting Started
         </h1>
+        <CopyForAi path="/non-coders/setup" title="Getting Started" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           The 3 files, 4 shortcuts, and daily workflow you need. Nothing else is
           required.
