@@ -10,7 +10,10 @@
     "gen:md": "tsx scripts/build-markdown.mts",
     "gen:llms": "tsx scripts/build-llms.mts",
     "validate:jsonld": "tsx scripts/validate-jsonld.mts",
-    "gen:skills": "tsx scripts/build-agent-skills.mts"
+    "gen:skills": "tsx scripts/build-agent-skills.mts",
+    "gen:index": "tsx scripts/build-index.mts",
+    "check:bundle": "tsx scripts/check-client-bundle.mts",
+    "gen": "pnpm build && pnpm gen:md && pnpm gen:llms && pnpm gen:skills && pnpm gen:index"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
@@ -20,6 +23,7 @@
     "gpt-tokenizer": "^3.4.0",
     "lucide-react": "^0.577.0",
     "next": "16.1.6",
+    "openai": "^7.4.0",
     "posthog-js": "^1.369.1",
     "radix-ui": "^1.4.3",
     "react": "19.2.3",

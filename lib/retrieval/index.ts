@@ -1,14 +1,24 @@
 import { lexicalSearch, type SearchResult } from "./search";
+import { semanticSearch } from "./semantic";
 
 /**
  * The one retrieval entry point both consumers (/api/mcp and /api/chat)
- * call. Uses the semantic index when it exists and a query embedding can
- * be produced; falls back to lexical scoring otherwise, so retrieval
- * works before the first embedding run and when OPENAI_API_KEY is absent.
- *
- * The semantic tier is added by the chatbot phase (lib/retrieval/semantic.ts).
+ * call. Semantic (committed embedding index + query embedding) when
+ * available; lexical fallback otherwise, so retrieval works before the
+ * first embedding run and when OPENAI_API_KEY is absent. Semantic errors
+ * degrade to lexical rather than failing the request.
  */
-export async function searchCorpus(query: string, limit: number): Promise<SearchResult[]> {
+export async function searchCorpus(
+  query: string,
+  limit: number,
+  options?: { pageContext?: string },
+): Promise<SearchResult[]> {
+  try {
+    const semantic = await semanticSearch(query, limit, options?.pageContext);
+    if (semantic !== null) return semantic;
+  } catch (error) {
+    console.warn("Semantic search failed; falling back to lexical.", error);
+  }
   return lexicalSearch(query, limit);
 }
 
