@@ -40,7 +40,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { AlchemyGame } from "./alchemy-game";
-import { SITE_URL } from "@/lib/site";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 const section = PLAYBOOK_SECTIONS[1];
 
@@ -50,6 +50,7 @@ export const metadata: Metadata = {
     "Brainstorm, evaluate, and select hackathon project ideas that judges love and you can actually build. Frameworks for generating innovative ideas under time pressure.",
   alternates: {
     canonical: `${SITE_URL}/playbook/ideation`,
+    types: markdownAlternate("/playbook/ideation"),
   },
   openGraph: {
     title: "How to Come Up With Winning Hackathon Ideas",

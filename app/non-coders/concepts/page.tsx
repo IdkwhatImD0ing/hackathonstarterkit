@@ -16,11 +16,16 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Concepts Explained",
   description:
     "GitHub, APIs, deploying, and other tech jargon explained in plain English for non-coders.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/concepts`,
+    types: markdownAlternate("/non-coders/concepts"),
+  },
 };
 
 const CONCEPTS = [

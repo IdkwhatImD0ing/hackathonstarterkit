@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { NON_CODER_SKILLS, getSkillBySlug } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 const accentStyles = {
   volt: {
@@ -60,6 +61,10 @@ export async function generateMetadata({
   return {
     title: skill.title,
     description: skill.description,
+    alternates: {
+      canonical: `${SITE_URL}/non-coders/skills/${skill.slug}`,
+      types: markdownAlternate(`/non-coders/skills/${skill.slug}`),
+    },
     openGraph: {
       title: `${skill.title} | For Non-Coders`,
       description: skill.description,

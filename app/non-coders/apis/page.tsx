@@ -12,11 +12,16 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Using APIs",
   description:
     "How to add any service to your app with just an API key and a docs link. The copy-paste pattern for non-coders.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/apis`,
+    types: markdownAlternate("/non-coders/apis"),
+  },
 };
 
 const GENERIC_PROMPT = `I want to use [SERVICE NAME] in my project.

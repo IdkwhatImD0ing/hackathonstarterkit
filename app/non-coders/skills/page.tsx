@@ -19,11 +19,16 @@ import {
   getSkillBySlug,
 } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Skills & Commands",
   description:
     "Installable AI skills and slash commands that teach your AI assistant how to work with non-coders.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/skills`,
+    types: markdownAlternate("/non-coders/skills"),
+  },
 };
 
 const accentStyles = {

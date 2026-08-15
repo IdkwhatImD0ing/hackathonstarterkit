@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // The generated Markdown corpus lives outside public/ and would not be
+  // traced into the serverless bundle on its own; without this the Markdown
+  // handler 500s on cold start in production with file-not-found.
+  outputFileTracingIncludes: {
+    "/api/md/[[...path]]": ["./content/generated/**"],
+  },
   async redirects() {
     return [
       // Canonical host is the apex domain (see lib/site.ts). 301 anything
@@ -25,6 +31,13 @@ const nextConfig: NextConfig = {
         ? [{ key: "X-Robots-Tag", value: "noindex, nofollow" }]
         : [];
     return [
+      // Content pages negotiate on Accept (Markdown vs HTML); the header is
+      // set here rather than in proxy.ts because the framework's own Vary
+      // handling overrides response headers set from the proxy.
+      {
+        source: "/((?!api/|_next/|.*\\.[a-z0-9]+$).*)",
+        headers: [{ key: "Vary", value: "Accept" }],
+      },
       {
         source: "/(.*)",
         headers: [

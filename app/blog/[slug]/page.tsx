@@ -20,7 +20,7 @@ import { JsonLd } from "@/components/json-ld";
 import { BlogBlock } from "@/components/blog-blocks";
 import { BlogAnalytics } from "@/components/blog-analytics";
 import { NewsletterSignup } from "@/components/newsletter-signup";
-import { SITE_URL } from "@/lib/site";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
@@ -41,6 +41,7 @@ export async function generateMetadata({
     keywords: post.keywords,
     alternates: {
       canonical: `${SITE_URL}/blog/${post.slug}`,
+      types: markdownAlternate(`/blog/${post.slug}`),
     },
     openGraph: {
       type: "article",

@@ -38,7 +38,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import NextLink from "next/link";
-import { SITE_URL } from "@/lib/site";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 const section = PLAYBOOK_SECTIONS[6];
 
@@ -71,6 +71,7 @@ export const metadata: Metadata = {
     "Share your hackathon work, follow up with sponsors and contacts, and turn weekend projects into career-changing portfolio pieces, startups, and open-source contributions.",
   alternates: {
     canonical: `${SITE_URL}/playbook/post-hackathon`,
+    types: markdownAlternate("/playbook/post-hackathon"),
   },
   openGraph: {
     title: "Post-Hackathon: Turn Projects into Career Opportunities",

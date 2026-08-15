@@ -16,11 +16,16 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "The Proof",
   description:
     "Real professionals with zero coding backgrounds who beat thousands of developers at major hackathons.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/proof`,
+    types: markdownAlternate("/non-coders/proof"),
+  },
 };
 
 const WINNERS = [

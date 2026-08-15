@@ -21,7 +21,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
-import { SITE_URL } from "@/lib/site";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "The System Prompt: CLAUDE.md & AGENTS.md for Non-Coders",
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     "Skills teach your AI new tricks; the system prompt sets the rules it follows every session. Copy one command to download a non-coder CLAUDE.md and AGENTS.md straight into your project.",
   alternates: {
     canonical: `${SITE_URL}/non-coders/system-prompt`,
+    types: markdownAlternate("/non-coders/system-prompt"),
   },
   openGraph: {
     title: "The System Prompt: CLAUDE.md & AGENTS.md for Non-Coders",

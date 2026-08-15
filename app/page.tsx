@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Trophy, ExternalLink, Github, Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
-import { SITE_URL } from "@/lib/site";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title:
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "Learn how to win hackathons with the ultimate playbook from 36+ victories and $100K+ in prizes. Battle-tested guides on team formation, ideation, the best tech stack, pitching, and submission strategies.",
   alternates: {
     canonical: SITE_URL,
+    types: markdownAlternate("/"),
   },
   openGraph: {
     title: "Hackathon Playbook — How to Win Hackathons",

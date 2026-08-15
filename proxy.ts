@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { CANONICAL_HOST, SITE_URL } from "@/lib/site";
+import { CANONICAL_HOST, MARKDOWN_EXCLUDED_PATHS, SITE_URL } from "@/lib/site";
 
 /**
  * Edge-adjacent request handling (Next.js 16 proxy convention, the successor
@@ -23,6 +23,32 @@ import { CANONICAL_HOST, SITE_URL } from "@/lib/site";
 const VERCEL_ENV = process.env.VERCEL_ENV;
 const ORIGIN_SHARED_SECRET = process.env.ORIGIN_SHARED_SECRET;
 
+/**
+ * True for paths that can have a Markdown representation: real pages, not
+ * API routes, feeds, or files. The Markdown handler 404s unknown pages, so
+ * this only needs to be syntactic; it must not import the content registry
+ * (which pulls blog data and node:fs into the proxy bundle).
+ */
+function isContentPath(pathname: string): boolean {
+  if (pathname.startsWith("/api/")) return false;
+  if (pathname.startsWith("/.well-known/")) return false;
+  if (MARKDOWN_EXCLUDED_PATHS.includes(pathname)) return false;
+  // Anything with a file extension (robots.txt, sitemap.xml, rss.xml, images).
+  if (/\.[a-z0-9]+$/i.test(pathname)) return false;
+  return true;
+}
+
+/**
+ * Cloudflare's Accept normalization may reorder values and strip quality
+ * values (docs/cloudflare-config.md section 2), so this is a substring
+ * check rather than a q-value parse: browsers never send text/markdown, so
+ * its presence alone signals an agent asking for Markdown.
+ */
+function prefersMarkdown(request: NextRequest): boolean {
+  const accept = request.headers.get("accept") ?? "";
+  return accept.toLowerCase().includes("text/markdown");
+}
+
 export default function proxy(request: NextRequest) {
   const host = request.headers.get("host") ?? "";
 
@@ -43,6 +69,23 @@ export default function proxy(request: NextRequest) {
     ) {
       return new NextResponse("Forbidden", { status: 403 });
     }
+  }
+
+  const { pathname } = request.nextUrl;
+
+  // /playbook/pitching.md -> the Markdown handler. /index.md is the homepage.
+  if ((request.method === "GET" || request.method === "HEAD") && pathname.endsWith(".md") && !pathname.startsWith("/api/")) {
+    const page = pathname === "/index.md" ? "" : pathname.slice(0, -3);
+    if (!MARKDOWN_EXCLUDED_PATHS.includes(page)) {
+      return NextResponse.rewrite(new URL(`/api/md${page}`, request.url));
+    }
+  }
+
+  // Content negotiation: same URL, Accept: text/markdown.
+  if ((request.method === "GET" || request.method === "HEAD") && isContentPath(pathname) && prefersMarkdown(request)) {
+    return NextResponse.rewrite(
+      new URL(`/api/md${pathname === "/" ? "" : pathname}`, request.url),
+    );
   }
 
   return NextResponse.next();

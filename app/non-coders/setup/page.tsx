@@ -18,11 +18,16 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Getting Started",
   description:
     "The 3 files, 4 shortcuts, and daily workflow you need to start building with Cursor.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/setup`,
+    types: markdownAlternate("/non-coders/setup"),
+  },
 };
 
 const THREE_FILES = [

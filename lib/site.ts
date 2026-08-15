@@ -18,3 +18,23 @@ export function absoluteUrl(path: string): string {
   if (/^https?:\/\//.test(path)) return path;
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
+
+/**
+ * Pages that never get a Markdown representation (the noMarkdown escape
+ * hatch; this codebase has no frontmatter, so it is a list). Lives here
+ * rather than lib/content-pages.ts because proxy.ts needs it and must stay
+ * free of Node-only imports.
+ */
+export const MARKDOWN_EXCLUDED_PATHS: readonly string[] = ["/terms", "/media-kit"];
+
+/**
+ * The alternates.types entry advertising a page's Markdown representation,
+ * for use in each content page's metadata export:
+ * `alternates: { canonical, types: markdownAlternate("/playbook/pitching") }`
+ */
+export function markdownAlternate(path: string) {
+  const mdPath = path === "/" ? "/index.md" : `${path}.md`;
+  return {
+    "text/markdown": [{ url: `${SITE_URL}${mdPath}`, title: "Markdown" }],
+  };
+}

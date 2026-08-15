@@ -13,7 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { BLOG_POSTS } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
 import { NewsletterSignup } from "@/components/newsletter-signup";
-import { SITE_URL } from "@/lib/site";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 const POSTS_BY_DATE_DESC = [...BLOG_POSTS].sort((a, b) =>
   b.date.localeCompare(a.date),
@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/blog`,
     types: {
       "application/rss+xml": `${SITE_URL}/blog/rss.xml`,
+      ...markdownAlternate("/blog"),
     },
   },
   openGraph: {
