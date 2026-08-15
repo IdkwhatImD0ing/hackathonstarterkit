@@ -9,9 +9,11 @@
     "lint": "eslint",
     "gen:md": "tsx scripts/build-markdown.mts",
     "gen:llms": "tsx scripts/build-llms.mts",
-    "validate:jsonld": "tsx scripts/validate-jsonld.mts"
+    "validate:jsonld": "tsx scripts/validate-jsonld.mts",
+    "gen:skills": "tsx scripts/build-agent-skills.mts"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
     "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -23,7 +25,8 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.5.0",
-    "turndown": "^7.2.4"
+    "turndown": "^7.2.4",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

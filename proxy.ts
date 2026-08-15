@@ -74,7 +74,15 @@ export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // /playbook/pitching.md -> the Markdown handler. /index.md is the homepage.
-  if ((request.method === "GET" || request.method === "HEAD") && pathname.endsWith(".md") && !pathname.startsWith("/api/")) {
+  // /auth.md is its own route (the agent auth statement), not a page's
+  // Markdown twin, so it must not be rewritten.
+  if (
+    (request.method === "GET" || request.method === "HEAD") &&
+    pathname.endsWith(".md") &&
+    pathname !== "/auth.md" &&
+    !pathname.startsWith("/api/") &&
+    !pathname.startsWith("/.well-known/")
+  ) {
     const page = pathname === "/index.md" ? "" : pathname.slice(0, -3);
     if (!MARKDOWN_EXCLUDED_PATHS.includes(page)) {
       return NextResponse.rewrite(new URL(`/api/md${page}`, request.url));

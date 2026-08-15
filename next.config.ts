@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   // handler 500s on cold start in production with file-not-found.
   outputFileTracingIncludes: {
     "/api/md/[[...path]]": ["./content/generated/**"],
+    "/.well-known/agent-skills/[name]/SKILL.md": ["./content/generated/agent-skills/**"],
   },
   async redirects() {
     return [

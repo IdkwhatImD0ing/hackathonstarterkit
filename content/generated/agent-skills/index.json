@@ -1,0 +1,103 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "non-coder-mode",
+      "type": "skill-md",
+      "description": "Core guardrails for non-coders. Tells the AI to explain everything in plain English, break tasks into small steps, and never assume coding knowledge.",
+      "url": "/.well-known/agent-skills/non-coder-mode/SKILL.md",
+      "digest": "sha256:eae5a7f4fd3993cf3b2e15ca04177324a1359de7931c8450628c142513558666"
+    },
+    {
+      "name": "domain-to-spec",
+      "type": "skill-md",
+      "description": "Run this FIRST. Captures your domain expertise and writes AGENTS.md and PRD.md to the repo root. Every other scaffold skill reads these files.",
+      "url": "/.well-known/agent-skills/domain-to-spec/SKILL.md",
+      "digest": "sha256:e61ffb76b97e7c2db3edbcfb804a6c5739f09f61d94dcd328de586bdd5fef67c"
+    },
+    {
+      "name": "quickstart",
+      "type": "skill-md",
+      "description": "One-shot project bootstrapper. Chains domain-to-spec, scaffold-frontend, and scaffold-backend (if needed) with user confirmation between steps.",
+      "url": "/.well-known/agent-skills/quickstart/SKILL.md",
+      "digest": "sha256:15e0d467fa871461a05740494f931c89ba45a523be4ccfd41be6fbfb2aa94ee0"
+    },
+    {
+      "name": "scaffold-frontend",
+      "type": "skill-md",
+      "description": "PRD-driven Next.js scaffold into clients/. Reads AGENTS.md and PRD.md, generates pages, layout, types, and an API client. Refuses to run without both files.",
+      "url": "/.well-known/agent-skills/scaffold-frontend/SKILL.md",
+      "digest": "sha256:89180294e6478cf29e751ce2df554777fb3cf5932a353d99e3e9a4e11b7d20b7"
+    },
+    {
+      "name": "scaffold-backend",
+      "type": "skill-md",
+      "description": "PRD-driven FastAPI scaffold into server/ with optional Supabase. One stub route per entry in PRD.md > Backend Routes. Skips automatically if Backend Needed? = No.",
+      "url": "/.well-known/agent-skills/scaffold-backend/SKILL.md",
+      "digest": "sha256:dc503e0fd95ce46ff8d64f89664464d4881459c580bd74cf95153b95b8b99cd7"
+    },
+    {
+      "name": "v0-prompt-crafter",
+      "type": "skill-md",
+      "description": "Turn a PRD or product description into a production-grade Vercel v0 prompt. Researches the industry, commits to a bold aesthetic, picks fancy UI libraries (shadcn, Aceternity, Magic UI, Motion), and assembles a copy-paste prompt.",
+      "url": "/.well-known/agent-skills/v0-prompt-crafter/SKILL.md",
+      "digest": "sha256:45f6cf732ea61610964e118d80c758de6342ea8b94ec1cc6ea5b8f9ae47c6b9e"
+    },
+    {
+      "name": "feature-builder",
+      "type": "skill-md",
+      "description": "Structured workflow for implementing a new feature. Returns a plan, files list, commands, test steps, and rollback plan.",
+      "url": "/.well-known/agent-skills/feature-builder/SKILL.md",
+      "digest": "sha256:bfeffaabd65222fb35c3a69c3dbfb34af11391f84f288970d9ed66829df20fd5"
+    },
+    {
+      "name": "bugfix-doctor",
+      "type": "skill-md",
+      "description": "Systematic bug-fixing workflow. Walks through reproduce, isolate, fix, test, and verify. Explains all errors in plain English.",
+      "url": "/.well-known/agent-skills/bugfix-doctor/SKILL.md",
+      "digest": "sha256:8edc4c4d802e245c55cf51774227ca79ec7302959c408b77818d2f12e972749b"
+    },
+    {
+      "name": "demo-prep",
+      "type": "skill-md",
+      "description": "Produces a step-by-step live demo script for hackathon presentations. Covers the problem, walkthrough, and outcome with a backup plan.",
+      "url": "/.well-known/agent-skills/demo-prep/SKILL.md",
+      "digest": "sha256:ac1230239fab1cf8c6d5c2950dd874cdb89d365cb8866ac71b0bca6af22da856"
+    },
+    {
+      "name": "readme-writer",
+      "type": "skill-md",
+      "description": "Turns your finished project into a winner-grade GitHub README: a centered hero, badges, a clickable demo video, an architecture diagram, and team cards, then sets the repo's About description, website, and topics so recruiters and judges can find it.",
+      "url": "/.well-known/agent-skills/readme-writer/SKILL.md",
+      "digest": "sha256:b3811d7b5ef5c0c32c656b179d7c0ed6b1aaa998475bb29a3497bbe7c4e10c7f"
+    },
+    {
+      "name": "hackathon-idea-validation",
+      "type": "skill-md",
+      "description": "Validate a hackathon idea quickly against real constraints and judging criteria before building. Use when deciding whether a hackathon project idea is worth pursuing.",
+      "url": "/.well-known/agent-skills/hackathon-idea-validation/SKILL.md",
+      "digest": "sha256:ee5acac17ce5433e4fff57566c41548bc95849cd61b9ef34c07b967253c89501"
+    },
+    {
+      "name": "hackathon-pitch-prep",
+      "type": "skill-md",
+      "description": "Prepare a winning hackathon pitch: narrative structure, demo choreography, judge psychology, and Q&A handling. Use when preparing to present a hackathon project.",
+      "url": "/.well-known/agent-skills/hackathon-pitch-prep/SKILL.md",
+      "digest": "sha256:e1a85a372e657587f578c6be3f3a623dc5f54cc05535c915ac0904f1fc57b767"
+    },
+    {
+      "name": "hackathon-stack-selection",
+      "type": "skill-md",
+      "description": "Choose a hackathon tech stack optimized for shipping in 24-48 hours. Use when picking frameworks, hosting, and AI tooling at the start of a hackathon.",
+      "url": "/.well-known/agent-skills/hackathon-stack-selection/SKILL.md",
+      "digest": "sha256:4af35dc2c4ecf69eb1bfafdcbae6e09269bb241ec1b704fc38d39183c4ceb9ff"
+    },
+    {
+      "name": "hackathon-submission-checklist",
+      "type": "skill-md",
+      "description": "Ship a complete hackathon submission: README, demo video, Devpost write-up, and deliverables judges remember. Use when finalizing a hackathon submission.",
+      "url": "/.well-known/agent-skills/hackathon-submission-checklist/SKILL.md",
+      "digest": "sha256:06c62c8108eb9ec22f8ac54f279794caff13f63f7f5898d465b70fd2b6dccda1"
+    }
+  ]
+}
