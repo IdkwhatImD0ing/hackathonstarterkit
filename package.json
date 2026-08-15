@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "gen:md": "tsx scripts/build-markdown.mts"
+    "gen:md": "tsx scripts/build-markdown.mts",
+    "gen:llms": "tsx scripts/build-llms.mts",
+    "validate:jsonld": "tsx scripts/validate-jsonld.mts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

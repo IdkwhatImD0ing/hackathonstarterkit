@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
   title: "Using APIs",
@@ -60,6 +61,7 @@ Store the Supabase URL and key in environment variables.`;
 export default function ApisPage() {
   return (
     <div className="space-y-24">
+      <BreadcrumbJsonLd path="/non-coders/apis" />
       <header className="stagger-children space-y-4">
         <Badge className="border-success/30 bg-success/10 text-success font-code text-xs">
           USING APIS

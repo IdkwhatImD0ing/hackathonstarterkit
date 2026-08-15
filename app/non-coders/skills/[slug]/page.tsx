@@ -14,6 +14,7 @@ import { CopyButton } from "@/components/copy-button";
 import { NON_CODER_SKILLS, getSkillBySlug } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 const accentStyles = {
   volt: {
@@ -92,6 +93,7 @@ export default async function SkillDetailPage({
 
   return (
     <div className="space-y-12">
+      <BreadcrumbJsonLd path={`/non-coders/skills/${skill.slug}`} />
       {/* Back link */}
       <Link
         href="/non-coders"

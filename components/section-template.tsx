@@ -1,6 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { LastUpdated } from "@/components/last-updated";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { JsonLd } from "@/components/json-ld";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
+import { guideArticleJsonLd } from "@/lib/structured-data";
 
 interface SectionTemplateProps {
   step: number;
@@ -15,9 +18,19 @@ export function SectionTemplate({
   subtitle,
   children,
 }: SectionTemplateProps) {
-  const updated = PLAYBOOK_SECTIONS.find((s) => s.step === step)?.updated;
+  const section = PLAYBOOK_SECTIONS.find((s) => s.step === step);
+  const updated = section?.updated;
+  const path = section ? `/playbook/${section.slug}` : null;
   return (
     <div className="space-y-12">
+      {path ? (
+        <>
+          <BreadcrumbJsonLd path={path} />
+          <JsonLd
+            data={guideArticleJsonLd({ path, title, description: subtitle, updated })}
+          />
+        </>
+      ) : null}
       <header className="stagger-children space-y-4">
         <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
           PHASE {step} OF 7

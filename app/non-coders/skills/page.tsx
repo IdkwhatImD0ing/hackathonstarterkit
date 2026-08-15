@@ -20,6 +20,7 @@ import {
 } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
   title: "Skills & Commands",
@@ -48,6 +49,7 @@ Then confirm the installation when prompted. After it finishes, tell me which sk
 export default function SkillsPage() {
   return (
     <div className="space-y-24">
+      <BreadcrumbJsonLd path="/non-coders/skills" />
       <header className="stagger-children space-y-4">
         <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
           SKILLS & COMMANDS

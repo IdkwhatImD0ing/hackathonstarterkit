@@ -33,12 +33,17 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { JsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { playbookHowToJsonLd } from "@/lib/structured-data";
 
 const SECTION_ICONS = [Users, Lightbulb, ShieldCheck, Zap, Mic, FileText, Megaphone];
 
 export default function PlaybookPage() {
   return (
     <div className="space-y-16">
+      <JsonLd data={playbookHowToJsonLd()} />
+      <BreadcrumbJsonLd path="/playbook" />
       <header className="stagger-children space-y-6">
         <h1 className="font-display text-5xl font-extrabold leading-[0.9] tracking-tight md:text-7xl lg:text-8xl">
           The

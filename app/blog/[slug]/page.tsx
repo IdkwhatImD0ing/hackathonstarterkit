@@ -77,7 +77,7 @@ export default async function BlogPostPage({
 
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "TechArticle",
     headline: post.title,
     description: post.description,
     datePublished: post.date,

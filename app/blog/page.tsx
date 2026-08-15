@@ -14,6 +14,7 @@ import { BLOG_POSTS } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 const POSTS_BY_DATE_DESC = [...BLOG_POSTS].sort((a, b) =>
   b.date.localeCompare(a.date),
@@ -64,6 +65,7 @@ const blogListJsonLd = {
 export default function BlogPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 space-y-16">
+      <BreadcrumbJsonLd path="/blog" />
       <JsonLd data={blogListJsonLd} />
 
       <nav className="flex items-center gap-3">

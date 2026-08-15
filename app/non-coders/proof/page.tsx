@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
   title: "The Proof",
@@ -95,6 +96,7 @@ const accentStyles = {
 export default function ProofPage() {
   return (
     <div className="space-y-12">
+      <BreadcrumbJsonLd path="/non-coders/proof" />
       <header className="stagger-children space-y-4">
         <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
           THE PROOF

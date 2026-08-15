@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { NON_CODER_SECTIONS } from "@/lib/non-coder-sections";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
   title: "Hackathons for Non-Coders — Win Without Coding Experience",
@@ -52,6 +53,7 @@ const accentStyles = {
 export default function NonCodersPage() {
   return (
     <div className="space-y-24">
+      <BreadcrumbJsonLd path="/non-coders" />
       {/* ============================================================
           HERO
           ============================================================ */}

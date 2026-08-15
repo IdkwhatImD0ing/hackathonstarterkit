@@ -101,7 +101,10 @@ export default function proxy(request: NextRequest) {
   // Cloudflare readiness scanner looks for.
   const response = NextResponse.next();
   const links = [
+    // "describedby" is the relation the llms.txt v2 spec recommends;
+    // "llms-txt" is what the readiness scanner probes for. Emit both.
     `<${SITE_URL}/llms.txt>; rel="llms-txt"`,
+    `<${SITE_URL}/llms.txt>; rel="describedby"`,
     `<${SITE_URL}/.well-known/api-catalog>; rel="api-catalog"`,
     `<${SITE_URL}/.well-known/mcp/server-card.json>; rel="mcp-server-card"`,
     `<${SITE_URL}/sitemap.xml>; rel="sitemap"`,

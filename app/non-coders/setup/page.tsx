@@ -19,6 +19,7 @@ import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
   title: "Getting Started",
@@ -182,6 +183,7 @@ const accentStyles = {
 export default function SetupPage() {
   return (
     <div className="space-y-24">
+      <BreadcrumbJsonLd path="/non-coders/setup" />
       <header className="stagger-children space-y-4">
         <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
           GETTING STARTED
