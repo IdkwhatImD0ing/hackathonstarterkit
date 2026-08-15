@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { fontDisplay, fontBody, fontCode } from "@/lib/fonts";
 import { Analytics } from "@vercel/analytics/next";
 import { PostHogPageViewTracker } from "@/components/posthog-provider";
+import { WebMcpTools } from "@/components/web-mcp";
 import { JsonLd } from "@/components/json-ld";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
@@ -137,6 +138,7 @@ export default function RootLayout({
         {children}
         <PostHogPageViewTracker />
         <Analytics />
+        <WebMcpTools />
       </body>
     </html>
   );
