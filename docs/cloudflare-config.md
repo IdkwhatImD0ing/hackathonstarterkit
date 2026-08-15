@@ -32,20 +32,22 @@ curl -sI https://thehackathonplaybook.dev/ | grep -iE "^HTTP"
 
 By default Cloudflare keys its cache on the URL and ignores `Vary` (except `Accept-Encoding`). Without the rule below, the first `Accept: text/markdown` request for `/playbook/pitching` would poison the edge cache and serve raw Markdown to every human after it, or the reverse. It will look fine in curl against Vercel and break only behind the edge.
 
-The chosen strategy is a combination the origin code already assumes:
+The chosen strategy (the user-facing spec called these options 3 plus 2), which the origin code implements:
 
-1. `.md` URLs are the primary, fully cacheable artifact (distinct URL, distinct cache key, no `Vary` involved). Agents are pointed at these via `Link` headers, `llms.txt`, and the `<link rel="alternate">` tags.
-2. `Accept` negotiation at the same URL still works, and the origin emits `Vary: Accept` on content pages. To make Cloudflare honor it, add the Cache Rule below.
+1. `.md` URLs are the primary, fully cacheable artifact (distinct URL, distinct cache key, no `Vary` involved). Agents are pointed at these via `Link` headers, `llms.txt`, and the `<link rel="alternate">` tags. Origin sends them with `public, max-age=300, s-maxage=3600, stale-while-revalidate=86400` and no `Vary`.
+2. `Accept: text/markdown` negotiation at the canonical URL works, and that negotiated response is served `Cache-Control: no-store` with `Vary: Accept`, so no cache layer can ever store Markdown against the HTML URL's key.
+3. One gap remains, and closing it is what the Cache Rule below is for: Next.js owns the `Vary` header on prerendered HTML pages and does not include `Accept` in it (verified against next start; the framework replaces config- and middleware-set `Vary` values with its RSC vary list). So a cached HTML response at the edge carries no signal that the URL negotiates, and without the rule Cloudflare would serve that cached HTML to an agent sending `Accept: text/markdown`, never consulting the origin.
 
-Configure: **Caching > Cache Rules > Create rule**
+Configure (REQUIRED, not optional): **Caching > Cache Rules > Create rule**
 
-- Name: `vary on accept for content negotiation`
-- When: Hostname equals `thehackathonplaybook.dev`
-- Then: Cache eligible; under **Vary**, add header `accept` with action **Normalize**.
+- Name: `bypass cache for markdown negotiation`
+- When (custom filter expression):
+  `any(http.request.headers["accept"][*] contains "text/markdown")`
+- Then: **Bypass cache**.
 
-Per [Cloudflare's Vary documentation](https://developers.cloudflare.com/cache/concepts/vary/) (verified August 2026): this feature is available on all plans, Free included. The rule only takes effect on responses whose origin `Vary` header lists `accept`, which is exactly what the content pages emit. Normalization lowercases MIME types, strips whitespace and parameters, sorts by quality value, and then drops the quality values. It is lossy, and Cloudflare may forward the normalized `Accept` value to the origin. The negotiation logic in `proxy.ts` therefore uses a substring match on `text/markdown` rather than parsing quality values, so it behaves identically on raw and normalized headers.
+Available on all plans. Agent traffic negotiating via `Accept` is a small fraction of requests, and the origin is Vercel's CDN (itself cached), so the cost is negligible; humans and `.md` fetches keep full edge caching.
 
-Fallback if you prefer not to touch Vary settings: set the header action to **Bypass** instead of Normalize. Responses with `Vary: Accept` then skip the edge cache entirely. Correct, trivially safe, and only costs edge caching on negotiated HTML; the `.md` URLs stay cached either way.
+Optional upgrade instead of (not in addition to) the bypass rule: Cloudflare Cache Rules also support varying the cache on `Accept` with a **Normalize** action, per [Cloudflare's Vary documentation](https://developers.cloudflare.com/cache/concepts/vary/) (verified August 2026: available on all plans). That would make negotiated responses edge-cacheable per normalized Accept value. It only helps if the origin later emits `Vary: Accept` on HTML, which Next.js currently prevents; revisit if that changes. Note the normalization is lossy (lowercases, sorts by quality value, strips parameters and q-values, and may forward the normalized header to the origin), which is why the negotiation logic in `proxy.ts` uses a substring match on `text/markdown` rather than parsing quality values.
 
 Verify (this is also automated in `scripts/smoke.mts`, run it against production after deploy):
 

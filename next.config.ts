@@ -31,13 +31,6 @@ const nextConfig: NextConfig = {
         ? [{ key: "X-Robots-Tag", value: "noindex, nofollow" }]
         : [];
     return [
-      // Content pages negotiate on Accept (Markdown vs HTML); the header is
-      // set here rather than in proxy.ts because the framework's own Vary
-      // handling overrides response headers set from the proxy.
-      {
-        source: "/((?!api/|_next/|.*\\.[a-z0-9]+$).*)",
-        headers: [{ key: "Vary", value: "Accept" }],
-      },
       {
         source: "/(.*)",
         headers: [

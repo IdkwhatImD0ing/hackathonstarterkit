@@ -81,14 +81,41 @@ export default function proxy(request: NextRequest) {
     }
   }
 
-  // Content negotiation: same URL, Accept: text/markdown.
+  // Content negotiation: same URL, Accept: text/markdown. The marker header
+  // tells the Markdown handler this response is the negotiated variant (it
+  // must carry Vary: Accept), as opposed to the .md URL (a distinct,
+  // Vary-free cacheable artifact).
   if ((request.method === "GET" || request.method === "HEAD") && isContentPath(pathname) && prefersMarkdown(request)) {
+    const headers = new Headers(request.headers);
+    headers.set("x-md-negotiated", "1");
     return NextResponse.rewrite(
       new URL(`/api/md${pathname === "/" ? "" : pathname}`, request.url),
+      { request: { headers } },
     );
   }
 
-  return NextResponse.next();
+  // RFC 8288 Link headers advertising the agent-facing entry points
+  // (Phase 4). rel="canonical" (RFC 6596), rel="alternate", and
+  // rel="api-catalog" (RFC 9727) are IANA-registered; "llms-txt",
+  // "mcp-server-card", and "sitemap" are the extension relations the
+  // Cloudflare readiness scanner looks for.
+  const response = NextResponse.next();
+  const links = [
+    `<${SITE_URL}/llms.txt>; rel="llms-txt"`,
+    `<${SITE_URL}/.well-known/api-catalog>; rel="api-catalog"`,
+    `<${SITE_URL}/.well-known/mcp/server-card.json>; rel="mcp-server-card"`,
+    `<${SITE_URL}/sitemap.xml>; rel="sitemap"`,
+  ];
+  if (isContentPath(pathname)) {
+    const canonical = pathname === "/" ? `${SITE_URL}/` : `${SITE_URL}${pathname}`;
+    const mdUrl = pathname === "/" ? `${SITE_URL}/index.md` : `${SITE_URL}${pathname}.md`;
+    links.push(
+      `<${canonical}>; rel="canonical"`,
+      `<${mdUrl}>; rel="alternate"; type="text/markdown"`,
+    );
+  }
+  response.headers.set("Link", links.join(", "));
+  return response;
 }
 
 export const config = {
