@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:quotes": "node scripts/verify-quotes.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

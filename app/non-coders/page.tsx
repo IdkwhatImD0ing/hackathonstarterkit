@@ -99,7 +99,8 @@ export default function NonCodersPage() {
             <Quote className="mx-auto size-10 text-spark/40" />
             <blockquote className="font-display text-2xl font-bold italic tracking-tight md:text-4xl">
               &ldquo;You don&apos;t have to know programming to{" "}
-              <span className="animate-shimmer">create solutions</span>.&rdquo;
+              <span className="animate-shimmer">create solutions</span>
+              &hellip;&rdquo;
             </blockquote>
             <p className="font-body text-sm text-muted-foreground">
               &mdash;{" "}
