@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { LastUpdated } from "@/components/last-updated";
 import { CheatSheetBrowser } from "@/components/cheat-sheet-browser";
+import { CheatSheetSearch } from "@/components/cheat-sheet-search";
 import { CHEAT_PROMPT_COUNT, CHEAT_SHEET_UPDATED } from "@/lib/cheat-sheet";
 import { cheatSheetHowToJsonLd } from "@/lib/structured-data";
 import { SITE_URL } from "@/lib/site";
@@ -92,6 +93,11 @@ export default function CheatSheetPage() {
           </p>
           <LastUpdated date={CHEAT_SHEET_UPDATED} />
         </header>
+
+        {/* ============================================================
+            PROMPT FINDER — describe the moment, jump to the card
+            ============================================================ */}
+        <CheatSheetSearch />
 
         {/* ============================================================
             HOW TO USE
