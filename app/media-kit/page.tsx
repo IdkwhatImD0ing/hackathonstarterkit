@@ -121,24 +121,29 @@ const CREDENTIALS = [
     color: "text-spark",
   },
   {
+    text: "Hackathon judge at LA Hacks 2026",
+    highlight: "returning for the LA Hacks AI Hackathon",
+    color: "text-volt",
+  },
+  {
     text: "Co-founder of WeCracked",
     highlight: "4,000+ member hackathon community",
-    color: "text-volt",
+    color: "text-spark",
   },
   {
     text: "Software Engineer 2 at Pinterest",
     highlight: "ex-Applied AI Engineer at Scale AI",
-    color: "text-spark",
+    color: "text-volt",
   },
   {
     text: "Co-founder of Dispatch AI",
     highlight: "$1M valuation, Berkeley SkyDeck funded",
-    color: "text-volt",
+    color: "text-spark",
   },
   {
     text: "USC MS in Computer Science (AI)",
     highlight: "UCSC undergrad",
-    color: "text-spark",
+    color: "text-volt",
   },
 ];
 
