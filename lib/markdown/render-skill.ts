@@ -2,7 +2,7 @@ import type { NonCoderSkill } from "../non-coder-skills";
 
 /**
  * Render a non-coder skill page to Markdown. The skill content is already
- * Markdown (the SKILL.md source in .agents/skills); this strips its
+ * Markdown (the SKILL.md source in skills/); this strips its
  * frontmatter, drops the duplicate H1 (the document header adds the title),
  * and prepends the install command shown on the page.
  */

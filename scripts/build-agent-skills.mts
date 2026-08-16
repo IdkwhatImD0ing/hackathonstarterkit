@@ -7,7 +7,7 @@
  * - index.json: $schema + skills[] with name/type/description/url/digest,
  *   digest being sha256:{hex} of the exact artifact bytes.
  * - One SKILL.md artifact per skill. The ten installable non-coder skills
- *   are copied verbatim from .agents/skills (already valid SKILL.md files
+ *   are copied verbatim from skills/ (already valid SKILL.md files
  *   with frontmatter). Four more are derived from playbook content: the
  *   artifact is YAML frontmatter plus the same Markdown the page serves,
  *   so the skill can never drift from the site.

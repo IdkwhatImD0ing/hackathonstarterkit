@@ -46,7 +46,7 @@
 The Hackathon Playbook is two things in one repo:
 
 1. **The site** at [thehackathonplaybook.dev](https://thehackathonplaybook.dev): a content-heavy, SEO-first guide to winning hackathons. A fixed seven-phase playbook, a track for non-coders, and a keyword-targeted blog, distilled from 50+ events and $100K+ in prizes.
-2. **The skill pipeline** under [`.agents/skills/`](./.agents/skills): installable AI agent skills that take a new hackathon project from idea to spec to scaffold to demo, then package it for recruiters. These run *against your project repo*, not against this site.
+2. **The skill pipeline** under [`skills/`](./skills): installable AI agent skills that take a new hackathon project from idea to spec to scaffold to demo, then package it for recruiters. These run *against your project repo*, not against this site.
 
 The guidance and the tooling share one opinion about how hackathons are actually won, so the advice on the site and the skills in the repo point in the same direction.
 
@@ -172,8 +172,7 @@ lib/
   non-coder-sections.ts   # Non-coder section definitions
   non-coder-skills.ts     # Installable AI skill definitions
   blog.ts, blog/          # Blog posts (one file per post) and shared types
-.agents/
-  skills/                 # The agent skill pipeline (see above)
+skills/                   # The agent skill pipeline (see above)
 docs/                     # SEO, analytics, content conventions, engagement research
 ```
 

@@ -23,7 +23,7 @@ export interface ContentPage {
   /**
    * Which Markdown generator handles this page:
    * - "blog": rendered from the BlogPost data in lib/blog/posts
-   * - "skill": rendered from the SKILL.md source in .agents/skills
+   * - "skill": rendered from the SKILL.md source in skills/
    * - "jsx": converted from the prerendered HTML (hardcoded JSX pages)
    */
   source: "jsx" | "blog" | "skill";

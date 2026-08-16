@@ -3,7 +3,7 @@
  * content/generated/, straight from the same sources that render the site:
  *
  * - blog posts: from the typed data in lib/blog/posts
- * - skills: from the SKILL.md sources in .agents/skills
+ * - skills: from the SKILL.md sources in skills/
  * - JSX pages (playbook, non-coders, homepage, indexes): converted from the
  *   prerendered HTML in .next/server/app, so run `next build` first
  *
