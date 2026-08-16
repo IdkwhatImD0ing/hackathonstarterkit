@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
+import { SKILLS_INSTALL_PROMPT } from "@/lib/prompts";
 import {
   NON_CODER_SKILLS,
   ALL_COMMANDS,
@@ -40,12 +41,8 @@ const accentStyles = {
   success: { border: "border-success/20", bg: "bg-success/10", text: "text-success", bgSubtle: "bg-success/5" },
 };
 
-const INSTALL_PROMPT = `Install the non-coder skills from this GitHub repo: https://github.com/IdkwhatImD0ing/hackathonstarterkit
-
-Run this command in the terminal:
-npx skills add IdkwhatImD0ing/hackathonstarterkit
-
-Then confirm the installation when prompted. After it finishes, tell me which skills were installed.`;
+// Shared with /cheat-sheet, so both offer the identical install prompt.
+const INSTALL_PROMPT = SKILLS_INSTALL_PROMPT;
 
 export default function SkillsPage() {
   return (

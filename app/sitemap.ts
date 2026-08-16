@@ -66,7 +66,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
 
-    // Standalone routes (legal, press, agent docs)
+    // Standalone routes (cheat sheet, legal, press, agent docs)
+    {
+      url: `${SITE_URL}/cheat-sheet`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     {
       url: `${SITE_URL}/ai`,
       lastModified: now,

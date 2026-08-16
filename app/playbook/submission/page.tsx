@@ -32,6 +32,10 @@ import { KeyTakeaway } from "@/components/key-takeaway";
 import { Disclosure } from "@/components/disclosure";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
+  DEVPOST_AGENT_PROMPT as SHARED_DEVPOST_AGENT_PROMPT,
+  README_AGENT_PROMPT as SHARED_README_AGENT_PROMPT,
+} from "@/lib/prompts";
+import {
   Card,
   CardContent,
   CardHeader,
@@ -237,17 +241,9 @@ Team Members: [Names, roles, and GitHub usernames]
 License: [MIT / Apache 2.0 / etc.]
 Additional Context: [Architecture details, special setup, hardware requirements, etc.]`;
 
-const README_AGENT_PROMPT = `Install the GitHub Writer skill from https://github.com/IdkwhatImD0ing/hackathonstarterkit by running this in your terminal:
-
-npx skills add IdkwhatImD0ing/hackathonstarterkit --skill readme-writer
-
-Then use the readme-writer skill to write a winner-grade README for this hackathon project. Read the repo first to detect the stack and structure, then ask me for anything you can't find: the demo video link, the live URL and Devpost, any awards, the event details, and the team members with their GitHub and LinkedIn. Also set the repo's About metadata to match: the description, the website, and the topics/tags, using the gh CLI if it's available. Do not invent awards, stats, or prizes.`;
-
-const DEVPOST_AGENT_PROMPT = `Install the Devpost Writer skill and run it:
-
-npx skills add IdkwhatImD0ing/hackathonstarterkit --skill devpost-writer
-
-Use the devpost-writer skill to write our Devpost submission for this project. Read the repo first, then ask me for the demo video, the live URL, the hackathon and any awards, and the challenges we hit and what's next. Write the standard Devpost sections (inspiration, what it does, how we built it, challenges, accomplishments, what we learned, what's next), the Built With tags, and the Try it out links. Do not invent awards, stats, or challenges.`;
+// Both are shared with /cheat-sheet, so the two pages cannot drift apart.
+const README_AGENT_PROMPT = SHARED_README_AGENT_PROMPT;
+const DEVPOST_AGENT_PROMPT = SHARED_DEVPOST_AGENT_PROMPT;
 
 export default function SubmissionPage() {
   return (

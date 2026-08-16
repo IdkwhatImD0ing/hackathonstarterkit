@@ -71,6 +71,15 @@ The rules my AI assistant follows every time it helps me. I am a non-coder build
 - Before anything hard to undo (deleting files, changing the database, deploying, installing a new tool), stop and ask me first.
 - Work in small steps. Do one thing, show me the result, then move on. Do not dump twenty changes at once.
 
+## Think before you build (read these before starting anything)
+
+- Do not guess what I meant. If my request could mean two different things, tell me both readings and ask which one I want.
+- Say your assumptions out loud before you start, in one or two plain sentences, so I can catch a wrong one early.
+- If you are confused about anything, stop and say exactly what is confusing. A question now beats a wrong build later.
+- If there is a simpler way to get what I want, say so, even if it means less code or no code at all. Push back when I am overcomplicating it.
+- Before you start, tell me what "done" looks like: the exact thing I will be able to click or see that proves it works. When you finish, walk me through that check.
+- When you edit my project, touch only the files the task needs. Match how the existing code looks, and never change or delete things you do not understand just because they were nearby. If you spot something that looks dead or wrong but is not part of my request, mention it instead of touching it.
+
 ## Honesty rules (read these every turn)
 
 - Never invent a function, file, library, setting, or fact. If you have not checked, say "I have not verified this" instead of guessing.
@@ -92,6 +101,10 @@ correct it in the chat. Replace any brackets that are left over.)
 - Never put passwords or secret keys directly in the code. Use environment variables.
 - Always ask before deleting files, writing to the database, or deploying.
 - Do not commit or push to GitHub unless I ask.
+
+## Where these rules come from
+
+The "Think before you build" section adapts Andrej Karpathy's observations on the mistakes AI coding assistants make (posted on X, 2026: x.com/karpathy/status/2015883857489522876), popularized as a CLAUDE.md by Forrest Chang (github.com/forrestchang/andrej-karpathy-skills), rewritten here in plain English for non-coders.
 ```
 
 `AGENTS.md`

@@ -27,6 +27,7 @@ import {
 import { SectionTemplate } from "@/components/section-template";
 import { KeyTakeaway } from "@/components/key-takeaway";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
+import { YOUTUBE_AGENT_PROMPT as SHARED_YOUTUBE_AGENT_PROMPT } from "@/lib/prompts";
 import {
   Card,
   CardContent,
@@ -59,11 +60,8 @@ npx skills add IdkwhatImD0ing/hackathonstarterkit --skill portfolio-builder
 
 Use the portfolio-builder skill to build a recruiter-facing portfolio website for this project. Read the repo first, then ask me for the demo video, the live URL and Devpost, any awards, the event details, and the team info. If the project is not a web app (hardware, an ML model, a CLI), showcase it with photos, diagrams, and the demo video. Do not invent awards, stats, or prizes.`;
 
-const YOUTUBE_AGENT_PROMPT = `Install the YouTube Writer skill and run it:
-
-npx skills add IdkwhatImD0ing/hackathonstarterkit --skill youtube-writer
-
-Use the youtube-writer skill to write the title, description, tags, and chapter timestamps for our demo video. Read the repo first, then ask me for the video length and its beats (so the chapters are real), plus the Devpost and GitHub links and any awards. Front-load the hook in the first two lines of the description. Do not invent awards or timestamps.`;
+// Shared with /cheat-sheet, so both offer the identical prompt.
+const YOUTUBE_AGENT_PROMPT = SHARED_YOUTUBE_AGENT_PROMPT;
 
 export const metadata: Metadata = {
   title: "Post-Hackathon — Turn Hackathon Projects into Career Opportunities",

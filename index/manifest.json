@@ -3,10 +3,10 @@
   "embeddingDims": 1536,
   "chunkerVersion": 2,
   "normalizerVersion": 1,
-  "generatedAt": "2026-08-16T10:42:57.396Z",
+  "generatedAt": "2026-08-16T20:35:52.571Z",
   "pages": {
     "/": {
-      "sourceHash": "06cdc456546df8971faf4dcb0661c4980138eecc0d5b789d31cd3f9ce6c6c1f1",
+      "sourceHash": "93eca5d4bc06188608c162e3385cec39ce17a4f3b51c67bcc565f7c47ee388bc",
       "chunkIds": [
         "/#hackathon-playbook#0",
         "/#bill-zhang-idkwhatimd0inghttpsgithubcomidkwhatimd0ing#0"
@@ -297,7 +297,7 @@
       ]
     },
     "/non-coders/system-prompt": {
-      "sourceHash": "3304755d8b6f5965d916e92de1a1d0d3233dcd3ad302370d87d2010e95315b50",
+      "sourceHash": "8d99ba2f9de9923b263a43a97b4c8faedcc5e18f89d13531afaac76e01cc7fd0",
       "chunkIds": [
         "/non-coders/system-prompt#what-is-a-system-prompt#0",
         "/non-coders/system-prompt#two-files-one-set-of-rules#0",
@@ -305,6 +305,8 @@
         "/non-coders/system-prompt#two-files-one-set-of-rules/agentsmd#0",
         "/non-coders/system-prompt#the-one-command-setup#0",
         "/non-coders/system-prompt#what-you-get#0",
+        "/non-coders/system-prompt#what-you-get#1",
+        "/non-coders/system-prompt#what-you-get#2",
         "/non-coders/system-prompt#why-one-file-and-a-pointer#0",
         "/non-coders/system-prompt#next-steps#0"
       ]
@@ -574,8 +576,8 @@
   },
   "chunks": {
     "/#hackathon-playbook#0": {
-      "contentHash": "f99decc1e2fcf789bd9dcea633435a95e5b6fd9ebab90a633376f85912926923",
-      "tokens": 79,
+      "contentHash": "18e02a115fa9136375b38d7e1f934d74bd14e81fcd4c418c9607c88ade1a267b",
+      "tokens": 109,
       "pageTitle": "The Hackathon Playbook",
       "sectionHeading": "Hackathon Playbook",
       "url": "/",
@@ -2608,8 +2610,26 @@
       "track": "non-coders"
     },
     "/non-coders/system-prompt#what-you-get#0": {
-      "contentHash": "bef25cb7031badb5d1e302a13db28f266095377f6032b1d6e2935ad8cc0293e7",
-      "tokens": 656,
+      "contentHash": "464b39c369aca0478b7dfc42f1fd9dadb3b77cfe6ae1f571053263235f0c4250",
+      "tokens": 63,
+      "pageTitle": "The System Prompt",
+      "sectionHeading": "What You Get",
+      "url": "/non-coders/system-prompt",
+      "mdUrl": "/non-coders/system-prompt.md",
+      "track": "non-coders"
+    },
+    "/non-coders/system-prompt#what-you-get#1": {
+      "contentHash": "8adbd1e03ec3b9c80da31acef1ee7987f1e7604674c04c8fad5ee92fccc82285",
+      "tokens": 815,
+      "pageTitle": "The System Prompt",
+      "sectionHeading": "What You Get",
+      "url": "/non-coders/system-prompt",
+      "mdUrl": "/non-coders/system-prompt.md",
+      "track": "non-coders"
+    },
+    "/non-coders/system-prompt#what-you-get#2": {
+      "contentHash": "b176a36f56342685fe90e6c5098217205fd43ef02d317bbc5abf957cdc971a36",
+      "tokens": 99,
       "pageTitle": "The System Prompt",
       "sectionHeading": "What You Get",
       "url": "/non-coders/system-prompt",
