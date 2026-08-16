@@ -10,6 +10,8 @@
  * previews and local dev, not a substitute for KV in production.
  */
 
+import { redisRest } from "./redis-rest";
+
 const WINDOW_MS = 10 * 60 * 1000;
 
 export interface RateLimitResult {
@@ -43,9 +45,12 @@ function memoryLimit(key: string, max: number): RateLimitResult {
   return { allowed: true, remaining: max - hits.length, retryAfterSeconds: 0 };
 }
 
-async function upstashLimit(key: string, max: number): Promise<RateLimitResult> {
-  const url = process.env.UPSTASH_REDIS_REST_URL!;
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN!;
+async function upstashLimit(
+  key: string,
+  max: number,
+  creds: { url: string; token: string },
+): Promise<RateLimitResult> {
+  const { url, token } = creds;
   const now = Date.now();
   const cutoff = now - WINDOW_MS;
   const redisKey = `rl:${key}`;
@@ -74,8 +79,9 @@ async function upstashLimit(key: string, max: number): Promise<RateLimitResult> 
 }
 
 export async function rateLimit(key: string, max: number): Promise<RateLimitResult> {
-  if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
-    return upstashLimit(key, max);
+  const creds = redisRest();
+  if (creds) {
+    return upstashLimit(key, max, creds);
   }
   return memoryLimit(key, max);
 }

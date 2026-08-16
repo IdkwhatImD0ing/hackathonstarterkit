@@ -12,6 +12,8 @@
  * Only token counts are stored. Never message content.
  */
 
+import { redisRest } from "../redis-rest";
+
 const memory = new Map<string, number>();
 
 function monthKey(): string {
@@ -19,14 +21,15 @@ function monthKey(): string {
 }
 
 function upstashConfigured(): boolean {
-  return Boolean(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN);
+  return redisRest() !== null;
 }
 
 async function upstash(command: (string | number)[]): Promise<unknown> {
-  const response = await fetch(process.env.UPSTASH_REDIS_REST_URL!, {
+  const creds = redisRest()!;
+  const response = await fetch(creds.url, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${process.env.UPSTASH_REDIS_REST_TOKEN!}`,
+      Authorization: `Bearer ${creds.token}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify(command),
