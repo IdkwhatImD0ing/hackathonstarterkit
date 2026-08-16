@@ -70,7 +70,7 @@ Wenqing Li at HackMerced XI — 1st Place in Track [TheraCaIl](https://devpost.c
 
 \>
 
-Aurelisa & Aurelia Sindhunirmala at AthenaHacks 2025 — 1st Place Overall [ETA+](https://devpost.com/software/eta-1ubyla)
+Aurelisa & Aurelia Juan at AthenaHacks 2025 — 1st Place Overall [ETA+](https://devpost.com/software/eta-1ubyla)
 
 \>
 
