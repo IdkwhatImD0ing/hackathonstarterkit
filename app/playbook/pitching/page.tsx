@@ -575,9 +575,10 @@ export default function PitchingPage() {
 
           <p className="font-body text-foreground/80">
             <span className="font-semibold text-foreground">These are real pitches that won real prizes.</span>{" "}
-            Each was transcribed from its presentation video and analyzed with
-            GPT-5 to surface structural phases, techniques, and the moments that
-            won judges over.
+            Two were transcribed from their presentation videos and the third
+            reconstructed from its Devpost writeup, then analyzed with GPT-5 in
+            March 2026 to surface structural phases, techniques, and the moments
+            that won judges over.
           </p>
 
           {/* --- CASE STUDY 1: DispatchAI --- */}
@@ -594,15 +595,16 @@ export default function PitchingPage() {
                   variant="outline"
                   className="border-volt/20 text-volt font-code text-xs"
                 >
-                  $62K+ IN PRIZES
+                  $64K IN PRIZES
                 </Badge>
               </div>
               <CardTitle className="font-display text-2xl text-volt">
                 DispatchAI — UC Berkeley AI Hackathon 2024
               </CardTitle>
               <CardDescription className="font-body text-base">
-                Grand Prize ($25K SkyDeck investment) + AI For Good + Best Use
-                of Intel AI. The largest AI hackathon in the US.
+                Grand Prize ($25K SkyDeck investment) + AI For Good ($25K) +
+                Best Use of Intel AI (1st, roughly $14K in hardware). The
+                largest AI hackathon in the US.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -620,7 +622,7 @@ export default function PitchingPage() {
 
               <div className="space-y-3">
                 <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                  Pitch Structure Breakdown (4 min 32 sec)
+                  Pitch Structure Breakdown (4 min 34 sec)
                 </p>
                 <p className="font-body text-xs text-foreground/60">
                   Quotes below are transcribed from the team&apos;s pitch video
@@ -665,10 +667,10 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "Live Demo",
-                      time: "3:17 – 4:32",
+                      time: "3:17 – 4:34",
                       pct: 28,
                       quote:
-                        "I have my phone here with me, and I will call our agents now.",
+                        "I have my phone here with me, and I will call our agents.",
                       technique:
                         "Live phone call to AI dispatcher with real-time UI",
                     },
@@ -824,7 +826,7 @@ export default function PitchingPage() {
 
               <div className="space-y-3">
                 <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                  Pitch Structure Breakdown (2 min 6 sec)
+                  Pitch Structure Breakdown (2 min 11 sec)
                 </p>
                 <p className="font-body text-xs text-foreground/60">
                   Quotes below are transcribed from the TalkTuahBank team&apos;s
@@ -857,7 +859,7 @@ export default function PitchingPage() {
                     {
                       phase: "Live Demo",
                       time: "0:14 – 1:10",
-                      pct: 44,
+                      pct: 42,
                       quote:
                         "Hey, I can help with things like checking your account balance, transferring funds, and even getting you started on a loan application.",
                       technique:
@@ -866,7 +868,7 @@ export default function PitchingPage() {
                     {
                       phase: "How It Works",
                       time: "1:10 – 1:49",
-                      pct: 31,
+                      pct: 30,
                       quote:
                         "Awesome, you've successfully transferred $200 to account ACC 456.",
                       technique:
@@ -874,8 +876,8 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "Vision",
-                      time: "1:49 – 2:06",
-                      pct: 14,
+                      time: "1:49 – 2:11",
+                      pct: 17,
                       quote:
                         "If there's anything else you need, feel free to let me know.",
                       technique:
@@ -940,7 +942,7 @@ export default function PitchingPage() {
                     <Zap className="mt-0.5 size-4 shrink-0 text-spark" />
                     <div className="space-y-1">
                       <p className="font-code text-xs text-spark/60">
-                        TalkTuahBank AI agent, demo video, HackUTD 2024 @ 1:15
+                        TalkTuahBank AI agent, demo video, HackUTD 2024 @ 1:20
                       </p>
                       <blockquote className="font-body text-sm italic text-foreground/80">
                         &ldquo;Awesome, you&apos;ve successfully transferred
@@ -1020,15 +1022,17 @@ export default function PitchingPage() {
                   Pitch Structure (Reconstructed from Devpost)
                 </p>
                 <p className="font-body text-xs text-foreground/60">
-                  These lines are condensed from the AdaptEd team&apos;s own
-                  Devpost writeup (LA Hacks 2024), not transcribed from a
-                  recorded pitch. The statistics are the team&apos;s own claims
-                  and carry no citation on Devpost.
+                  These lines come from the AdaptEd team&apos;s own Devpost
+                  writeup (LA Hacks 2024), not from a recorded pitch. Lines in
+                  quotation marks are verbatim; the rest are condensed
+                  summaries of longer passages. The statistics are the
+                  team&apos;s own claims and carry no citation on Devpost.
                 </p>
                 <div className="space-y-2">
                   {[
                     {
                       phase: "Big Shift",
+                      verbatim: true,
                       quote:
                         "Instead of students adapting to the system, our AI lecturer adapts to students.",
                       technique:
@@ -1036,6 +1040,7 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "Stakes",
+                      verbatim: false,
                       quote:
                         "50% of 16M US university students are falling behind. Less than 3% have access to quality tutoring.",
                       technique:
@@ -1043,6 +1048,7 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "Live Demo",
+                      verbatim: false,
                       quote:
                         "Responsive AI conversation, dynamic slide and whiteboard content, emotion detection.",
                       technique:
@@ -1050,6 +1056,7 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "How It Works",
+                      verbatim: false,
                       quote:
                         "Gemini 1.5 Pro for multi-source aggregation, Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection.",
                       technique:
@@ -1057,6 +1064,7 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "Vision",
+                      verbatim: true,
                       quote:
                         "AdaptEd: interactive and personalized lectures through conversational voice AI.",
                       technique:
@@ -1073,7 +1081,11 @@ export default function PitchingPage() {
                         </Badge>
                       </div>
                       <blockquote className="mt-2 border-l-2 border-primary/30 pl-3 font-body text-sm italic text-foreground/80">
-                        &ldquo;{item.quote}&rdquo;
+                        {item.verbatim ? (
+                          <>&ldquo;{item.quote}&rdquo;</>
+                        ) : (
+                          item.quote
+                        )}
                       </blockquote>
                       <p className="mt-1 font-code text-xs text-foreground/50">
                         Technique: {item.technique}

@@ -16,10 +16,12 @@
  * Zero dependencies. Node 18+ (built-in fetch).
  *
  *   node scripts/verify-quotes.mjs              # extract + structural checks
- *   SERPER_API_KEY=... node scripts/verify-quotes.mjs --search
+ *   node scripts/verify-quotes.mjs --search     # assign evidence tiers
  *
- * Search backends (set one): SERPER_API_KEY, BRAVE_API_KEY,
- * or GOOGLE_CSE_KEY + GOOGLE_CSE_CX. Book checks additionally use
+ * --search needs no configuration: it falls back to DuckDuckGo's HTML
+ * endpoint, which is keyless and does not gate on CAPTCHA the way a scripted
+ * Google query does. Set SERPER_API_KEY, BRAVE_API_KEY, or GOOGLE_CSE_KEY +
+ * GOOGLE_CSE_CX to use a higher-quality backend instead. Book checks use
  * GOOGLE_BOOKS_API_KEY if set (the keyless tier is heavily rate limited).
  *
  * Note on sandboxes: inside Claude Code's remote environment the agent proxy
@@ -88,7 +90,8 @@ function cleanText(raw) {
   s = s.replace(/\{"\s*"\}|\{'\s*'\}/g, " ");        // {" "} spacers
   s = s.replace(/\{\/\*[\s\S]*?\*\/\}/g, " ");        // JSX comments
   s = s.replace(/<[^>]+>/g, " ");                     // tags
-  s = s.replace(/\{[^{}]*\}/g, " ");                  // leftover JSX expressions
+  // Leftover JSX expressions, innermost first, so nested braces fully unwind.
+  for (let prev; prev !== s; ) { prev = s; s = s.replace(/\{[^{}]*\}/g, " "); }
   for (const [k, v] of Object.entries(ENTITIES)) s = s.split(k).join(v);
   s = s.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n));
   return s.replace(/\s+/g, " ").trim();
@@ -176,11 +179,14 @@ function personOf(attribution) {
 
 /* -------------------------------------------------------------------- search */
 
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36";
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 function backend() {
   if (process.env.SERPER_API_KEY) return "serper";
   if (process.env.BRAVE_API_KEY) return "brave";
   if (process.env.GOOGLE_CSE_KEY && process.env.GOOGLE_CSE_CX) return "cse";
-  return null;
+  return "ddg";
 }
 
 async function search(query) {
@@ -205,6 +211,28 @@ async function search(query) {
     const r = await fetch(u);
     if (!r.ok) throw new Error(`cse ${r.status}`);
     return ((await r.json()).items || []).map((o) => o.link).filter(Boolean);
+  }
+  if (b === "ddg") {
+    // Paced, because the whole point is a burst of near-identical queries.
+    await sleep(1200);
+    const r = await fetch("https://html.duckduckgo.com/html/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded", "User-Agent": UA },
+      body: new URLSearchParams({ q: query }).toString(),
+    });
+    if (!r.ok) throw new Error(`ddg ${r.status}`);
+    const html = await r.text();
+    // A bot challenge is an empty result page. Never let that read as RED:
+    // "blocked" and "this quote has no source" must not be the same verdict.
+    if (/bots use DuckDuckGo|complete the following challenge/i.test(html)) {
+      throw new Error(
+        "duckduckgo served a bot challenge. Set SERPER_API_KEY, BRAVE_API_KEY, " +
+        "or GOOGLE_CSE_KEY + GOOGLE_CSE_CX, or narrow the run with --only=",
+      );
+    }
+    return [...html.matchAll(/class="result__a"[^>]*href="([^"]+)"/g)]
+      .map((m) => m[1].split("&amp;").join("&"))
+      .filter((u) => /^https?:\/\//.test(u));
   }
   throw new Error("no search backend configured");
 }
@@ -310,12 +338,18 @@ async function main() {
   console.log("Wrote quote-report.json");
 
   if (!DO_SEARCH) {
-    console.log("\nRun with --search and a search API key to assign evidence tiers.");
+    console.log("\nRun with --search to assign evidence tiers (no API key required).");
     return;
   }
   const bad = results.filter((r) => r.tier === "RED" || r.tier === "SUSPECT");
   if (bad.length) {
     console.log(`\n${bad.length} quotes need attention (RED = paraphrase in quote marks, SUSPECT = possible misattribution).`);
+    process.exitCode = 1;
+  }
+  // A search that never ran is not a search that passed.
+  const errored = results.filter((r) => r.tier === "ERROR");
+  if (errored.length) {
+    console.log(`\n${errored.length} quotes could not be checked: ${errored[0].reason}`);
     process.exitCode = 1;
   }
 }

@@ -38,7 +38,7 @@ const NOTABLE_WINS = [
   },
   {
     hackathon: "UC Berkeley AI",
-    prize: "Grand Prize ($60K+)",
+    prize: "Grand Prize ($64K)",
     project: "Dispatch AI",
     accent: "spark" as const,
     url: "https://devpost.com/software/dispatch-ai",

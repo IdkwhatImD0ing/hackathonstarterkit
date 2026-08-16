@@ -1292,7 +1292,7 @@ export default function ValidationPage() {
                 </p>
                 <p className="font-code text-xs text-spark/60">
                   —{" "}
-                  <a href="https://ixdf.org/literature/article/design-thinking-get-started-with-prototyping" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">A saying at IDEO, via Tom &amp; David Kelley, Creative Confidence, 2013</a>
+                  <a href="https://ixdf.org/literature/article/design-thinking-get-started-with-prototyping" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">A saying at IDEO, quoted by the Interaction Design Foundation, Design Thinking: Get Started with Prototyping</a>
                 </p>
               </CardContent>
             </Card>
