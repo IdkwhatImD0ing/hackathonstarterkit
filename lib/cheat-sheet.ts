@@ -683,7 +683,7 @@ Then quiz me one question at a time and score my answers.`,
     title: "Panic Buttons",
     timing: "When it is going wrong",
     subtitle:
-      "Prompts for the last few hours, when the right move is triage rather than engineering.",
+      "Prompts for the last few hours, when the right move is triage rather than engineering. They all converge on one rule: you walk into judging with something on screen, even if every pixel of it is hardcoded.",
     icon: Siren,
     accent: "primary",
     prompts: [
@@ -698,11 +698,29 @@ Ask me in one message: how long until submission, what currently works, what is 
 Then:
 1. Tell me the smallest demo we can still deliver using what already works.
 2. List what to cut, in order, and what to say about it if judges ask.
-3. Give me the one thing to fix first, chosen by demo impact per minute of work.
+3. Give me the one thing to fix first, chosen by demo impact per minute of work. For anything broken that cannot be fixed in the time we have, say "hardcode it" instead: a demo step that shows canned output beats a demo step that does not exist.
 4. Reserve the last 45 minutes for the video and submission, and tell me the hard stop time for coding.
 
 One plan. No alternatives. I will follow it.`,
         note: "A small demo that works beats an ambitious one that does not. Every judge has seen the second kind.",
+      },
+      {
+        id: "hardcode-the-demo",
+        title: "Hardcode whatever it takes to have a demo",
+        when: "The real thing will not be ready and the pitch slot is not moving. The nuclear option, and it beats having nothing.",
+        prompt: `We are out of time and the real thing will not work. Hardcode whatever it takes so the demo still happens.
+
+Ask me first: the click-by-click demo script, what already works for real, what is broken or missing, and how many minutes we have. If we never wrote a demo script, have me walk you through the clicks right now and write it down as you go.
+
+Then work backward from the demo script and nothing else:
+1. Every step that works for real stays real. Real beats fake wherever real exists.
+2. Every step that does not work gets hardcoded: canned API responses, precomputed results, fixed state transitions, a scripted happy path. It has to look real on screen for the exact inputs in the script, and it must never crash.
+3. Make the seams invisible to the audience: realistic data, realistic timing, no placeholder text, no debug output.
+4. When you are done, give me a two-column list, REAL versus HARDCODED, step by step, so the presenter knows exactly what they can click live and where they must not deviate from the script.
+5. Walk the full script with me once and confirm every step renders.
+
+The worst outcome tonight is standing in front of judges with nothing on screen. A hardcoded demo we can show beats a real one we cannot.`,
+        note: "Know your seams and stick to the script. If a judge asks what is real, answer honestly; a hardcoded demo you own up to is a prototype.",
       },
       {
         id: "api-died",
@@ -714,8 +732,8 @@ Ask me which service it is, what it does for us in one sentence, and how long we
 
 Then:
 1. Give me a drop-in replacement we can wire in under 30 minutes, with the code.
-2. If there is none, add a cached-response fallback: record one real successful response now, serve it when the live call fails, and show a visible "cached response" label so we are not claiming something false.
-3. Make the failure path invisible to the audience and obvious to us.
+2. If there is none, hardcode it: record one real successful response now if the service still answers at all, otherwise write the response by hand, and serve that when the live call fails. The demo must flow either way.
+3. Make the failure path invisible to the audience and obvious to us, and tell me exactly which steps of the demo are now canned so the presenter knows.
 
 Do option 1 if it exists, otherwise option 2. Do not make me choose, just tell me which you did.`,
       },
@@ -743,9 +761,9 @@ Never force push to our main branch.`,
 
 Ask me only two things: how many minutes I have, and what broke. Then answer in under 100 words.
 
-1. Do not refactor. Give me the ugliest fix that makes the demo path work right now.
-2. If it cannot be fixed in the time I gave you, give me the exact words to route around it live: what I click instead, and what I say.
-3. Give me the fallback order: live app, then local, then the recorded video, then screenshots.`,
+1. Do not refactor. Give me the ugliest fix that makes the demo path work right now, hardcoding the broken step's output if that is fastest.
+2. If even that will not land in time, give me the exact words to route around it live: what I click instead, and what I say.
+3. Give me the fallback order: live app, then local, then the recorded video, then screenshots. We show one of these no matter what.`,
         note: "Have the video downloaded on your laptop before you present. Venue wifi fails at every hackathon.",
       },
     ],
