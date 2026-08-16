@@ -67,8 +67,8 @@ const NOTABLE_WINS = [
 
 const CREDENTIALS = [
   {
-    text: "1st place at HackUTD, UC Berkeley AI Hackathon, LA Hacks",
-    highlight: "1,000+ person events",
+    text: "1st place at HackUTD 2024, UC Berkeley AI Hackathon 2024, LA Hacks 2024",
+    highlight: "1,000+ person events, plus 33 other hackathon wins",
     color: "text-volt",
   },
   {
@@ -82,8 +82,8 @@ const CREDENTIALS = [
     color: "text-volt",
   },
   {
-    text: "Applied AI Engineer at Scale AI",
-    highlight: "Enterprise & Post-Training Research",
+    text: "Software Engineer 2 at Pinterest",
+    highlight: "ex-Applied AI Engineer at Scale AI",
     color: "text-spark",
   },
   {

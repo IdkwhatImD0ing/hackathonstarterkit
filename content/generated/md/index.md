@@ -32,7 +32,7 @@ Hackathons
 
 \>
 
-1st place at HackUTD, UC Berkeley AI Hackathon, LA Hacks — 1,000+ person events
+1st place at HackUTD 2024, UC Berkeley AI Hackathon 2024, LA Hacks 2024 — 1,000+ person events, plus 33 other hackathon wins
 
 \>
 
@@ -44,7 +44,7 @@ Co-founder of WeCracked — 4,000+ member hackathon community
 
 \>
 
-Applied AI Engineer at Scale AI — Enterprise & Post-Training Research
+Software Engineer 2 at Pinterest — ex-Applied AI Engineer at Scale AI
 
 \>
 
