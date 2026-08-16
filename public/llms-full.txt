@@ -34,7 +34,7 @@ Hackathons
 
 \>
 
-1st place at HackUTD, UC Berkeley AI Hackathon, LA Hacks — 1,000+ person events
+1st place at HackUTD 2024, UC Berkeley AI Hackathon 2024, LA Hacks 2024 — 1,000+ person events, plus 33 other hackathon wins
 
 \>
 
@@ -46,7 +46,7 @@ Co-founder of WeCracked — 4,000+ member hackathon community
 
 \>
 
-Applied AI Engineer at Scale AI — Enterprise & Post-Training Research
+Software Engineer 2 at Pinterest — ex-Applied AI Engineer at Scale AI
 
 \>
 
@@ -55,6 +55,28 @@ Co-founder of Dispatch AI — $1M valuation, Berkeley SkyDeck funded
 \>
 
 USC MS in Computer Science (AI) — UCSC undergrad
+
+Teams I have coached to first place.
+
+\>
+
+Wenqing Li at UC Berkeley AI Hackathon 2026 — Grand Prize + SkyDeck Grand Prize [TheraCat](https://devpost.com/software/theracat)
+
+\>
+
+Kevin Wu & Jay Wu at LA Hacks 2026 — 1st Overall + Cognition Challenge [Codebreaker](https://devpost.com/software/codebreaker-la)
+
+\>
+
+Wenqing Li at HackMerced XI — 1st Place in Track [TheraCaIl](https://devpost.com/software/theracail)
+
+\>
+
+Aurelisa Juan & Aurelia Sindhu at AthenaHacks 2025 — 1st Place Overall [ETA+](https://devpost.com/software/eta-1ubyla)
+
+\>
+
+Jasmine Wu at AthenaHacks 2024 (USC) — Best Overall [DriveMate](https://devpost.com/software/drivemate)
 
 [HackUTD 2024
 
