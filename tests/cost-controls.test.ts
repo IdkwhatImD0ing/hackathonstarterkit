@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { countTokens } from "gpt-tokenizer";
 import { reservationForInput, reserveTokens, settleTokens } from "@/lib/chat/spend";
 import { memoryLimit } from "@/lib/rate-limit";
@@ -11,21 +11,54 @@ import { memoryLimit } from "@/lib/rate-limit";
  */
 
 describe("reserveTokens / settleTokens (memory path)", () => {
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it("reserves, refuses over-budget, and frees capacity on settle", async () => {
     const budget = 1_000;
 
-    expect(await reserveTokens(500, budget)).toBe("ok");
+    const first = await reserveTokens(500, budget);
+    expect(first.result).toBe("ok");
     // 500 reserved; another 600 would exceed the ceiling.
-    expect(await reserveTokens(600, budget)).toBe("over_budget");
+    expect((await reserveTokens(600, budget)).result).toBe("over_budget");
 
     // Actual usage was only 100 of the 500 reserved; 400 frees up.
-    await settleTokens(500, 100);
-    expect(await reserveTokens(600, budget)).toBe("ok");
+    await settleTokens(500, 100, first.key);
+    expect((await reserveTokens(600, budget)).result).toBe("ok");
 
     // Rejected reservations must not consume budget: currently at 700,
     // a 400 attempt is refused and the counter stays at 700.
-    expect(await reserveTokens(400, budget)).toBe("over_budget");
-    expect(await reserveTokens(300, budget)).toBe("ok");
+    expect((await reserveTokens(400, budget)).result).toBe("over_budget");
+    expect((await reserveTokens(300, budget)).result).toBe("ok");
+  });
+
+  it("settles against the month that took the reservation, not the settle-time month", async () => {
+    // Fake dates far from the real clock so these counters cannot collide
+    // with the other tests' month keys.
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2031-08-31T23:59:00Z"));
+    const budget = 1_000;
+
+    const reservation = await reserveTokens(800, budget);
+    expect(reservation.result).toBe("ok");
+    expect((await reserveTokens(300, budget)).result).toBe("over_budget");
+
+    // The stream terminates after midnight UTC. Settlement must free the
+    // August counter (the month that took the reservation); recomputing
+    // the key here would instead push September's fresh counter negative,
+    // silently raising its ceiling.
+    vi.setSystemTime(new Date("2031-09-01T00:00:30Z"));
+    await settleTokens(800, 100, reservation.key);
+
+    // September starts from a clean counter, not a negative one.
+    const september = await reserveTokens(budget, budget);
+    expect(september.result).toBe("ok");
+    await settleTokens(budget, 0, september.key);
+
+    // And August really was settled down to 100: 300 fits now.
+    vi.setSystemTime(new Date("2031-08-31T23:59:30Z"));
+    expect((await reserveTokens(300, budget)).result).toBe("ok");
   });
 });
 

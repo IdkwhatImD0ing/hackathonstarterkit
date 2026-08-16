@@ -177,7 +177,10 @@ export async function POST(request: NextRequest) {
     CHAT_MAX_OUTPUT_TOKENS,
   );
 
-  const reservation = await reserveTokens(reservedTokens, CHAT_MONTHLY_TOKEN_BUDGET);
+  const { result: reservation, key: spendKey } = await reserveTokens(
+    reservedTokens,
+    CHAT_MONTHLY_TOKEN_BUDGET,
+  );
   if (reservation === "over_budget") {
     release();
     return jsonError(
@@ -217,14 +220,16 @@ export async function POST(request: NextRequest) {
       ],
     });
 
-    // Settlement bookkeeping: exactly one settle per reservation. When the
-    // stream ends without usage (crash, client disconnect, missing terminal
-    // event), the full reservation stands, which errs toward spending less.
+    // Settlement bookkeeping: exactly one settle per reservation, against
+    // the month key that took it (a stream can straddle the boundary).
+    // When the stream ends without usage (crash, client disconnect,
+    // missing terminal event), the full reservation stands, which errs
+    // toward spending less.
     let settled = false;
     const settle = (actualTokens: number) => {
       if (settled) return;
       settled = true;
-      void settleTokens(reservedTokens, actualTokens);
+      void settleTokens(reservedTokens, actualTokens, spendKey);
     };
 
     type ResponseUsage = {
@@ -315,7 +320,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     release();
     // The API call never started streaming, so nothing was spent.
-    void settleTokens(reservedTokens, 0);
+    void settleTokens(reservedTokens, 0, spendKey);
     console.error("chat: completion failed", error);
     return jsonError(502, "api_error", "The model is unreachable right now. Try again shortly.");
   }

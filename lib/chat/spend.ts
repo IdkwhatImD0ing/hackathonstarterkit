@@ -7,7 +7,10 @@
  * request atomically reserves its worst-case token count (INCRBY); if the
  * new total exceeds the budget the reservation is rolled back and the
  * request is refused. When the stream terminates, the reservation is
- * settled down to actual usage. If usage is unknown (crash, incomplete
+ * settled down to actual usage, against the same month key the
+ * reservation was taken from: a stream can straddle a month boundary,
+ * and settling into the new month would drive its fresh counter negative
+ * and quietly extend its budget. If usage is unknown (crash, incomplete
  * stream), the full reservation stands, which errs toward spending less.
  *
  * Counters live in Redis (spend:tokens:YYYY-MM, lib/redis-rest.ts). When
@@ -23,6 +26,18 @@
 import { redisRest } from "../redis-rest";
 
 export type ReserveResult = "ok" | "over_budget" | "unavailable";
+
+export interface SpendReservation {
+  result: ReserveResult;
+  /**
+   * The month counter the reservation was taken against. Settlement MUST
+   * target this key, not the current month: recomputing the key at settle
+   * time lets a boundary-straddling stream INCRBY a negative delta into
+   * the new month's fresh counter, pushing it below zero and raising that
+   * month's effective ceiling.
+   */
+  key: string;
+}
 
 /** Structural overhead reserved per message (role markers, separators). */
 const PER_MESSAGE_OVERHEAD_TOKENS = 16;
@@ -75,47 +90,50 @@ async function upstash(command: (string | number)[]): Promise<unknown> {
 
 /**
  * Atomically reserve `maxTokens` against the monthly budget. Callers must
- * later settleTokens() with actual usage.
+ * later settleTokens() with actual usage and the returned key.
  */
 export async function reserveTokens(
   maxTokens: number,
   budget: number,
-): Promise<ReserveResult> {
+): Promise<SpendReservation> {
   const key = monthKey();
 
   if (!redisRest()) {
     const next = (memory.get(key) ?? 0) + maxTokens;
-    if (next > budget) return "over_budget";
+    if (next > budget) return { result: "over_budget", key };
     memory.set(key, next);
-    return "ok";
+    return { result: "ok", key };
   }
 
   try {
     const total = Number(await upstash(["INCRBY", key, maxTokens]));
-    // Expire well past the month's end; the key name scopes the month.
+    // Expire well past the month's end (long enough that a settle landing
+    // after the boundary still finds the key); the key name scopes the month.
     await upstash(["EXPIRE", key, 60 * 60 * 24 * 45, "NX"]).catch(() => {});
     if (total > budget) {
       await upstash(["DECRBY", key, maxTokens]);
-      return "over_budget";
+      return { result: "over_budget", key };
     }
-    return "ok";
+    return { result: "ok", key };
   } catch (error) {
     // Fail closed: with Redis configured but down, allowing the request
     // would let every instance spend against a counter it cannot see.
     console.error("spend: reservation unavailable, refusing request", error);
-    return "unavailable";
+    return { result: "unavailable", key };
   }
 }
 
 /**
- * Settle a reservation down to actual usage. `actualTokens` defaults to
- * the reservation when usage is unknown, which keeps the full reservation
- * counted (safe direction). Settlement failures are logged, not thrown: a
- * response that already streamed must not error, and an unsettled
- * reservation only overcounts.
+ * Settle a reservation down to actual usage, against the key the
+ * reservation was taken from (see SpendReservation.key). Settlement
+ * failures are logged, not thrown: a response that already streamed must
+ * not error, and an unsettled reservation only overcounts.
  */
-export async function settleTokens(reservedMax: number, actualTokens: number): Promise<void> {
-  const key = monthKey();
+export async function settleTokens(
+  reservedMax: number,
+  actualTokens: number,
+  key: string,
+): Promise<void> {
   const delta = actualTokens - reservedMax;
   if (delta === 0) return;
 
