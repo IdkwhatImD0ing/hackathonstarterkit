@@ -16,11 +16,18 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "The Proof",
   description:
     "Real professionals with zero coding backgrounds who beat thousands of developers at major hackathons.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/proof`,
+    types: markdownAlternate("/non-coders/proof"),
+  },
 };
 
 const WINNERS = [
@@ -96,10 +103,14 @@ const accentStyles = {
 export default function ProofPage() {
   return (
     <div className="space-y-12">
+      <BreadcrumbJsonLd path="/non-coders/proof" />
       <header className="stagger-children space-y-4">
-        <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
-          THE PROOF
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
+            THE PROOF
+          </Badge>
+          <CopyForAi path="/non-coders/proof" title="The Proof" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Non-Coders Are Winning
         </h1>

@@ -15,9 +15,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { SITE_URL } from "@/lib/site";
 
 const CONTACT_EMAIL = "billzhangsc@gmail.com";
 
@@ -27,13 +25,13 @@ export const metadata: Metadata = {
   description:
     "Official media kit for Hackathon Playbook: founder bio, stats (36+ wins, $100K+ prizes), brand assets, logo, colors, and press contact for partnerships and affiliate programs.",
   alternates: {
-    canonical: `${BASE_URL}/media-kit`,
+    canonical: `${SITE_URL}/media-kit`,
   },
   openGraph: {
     title: "Media Kit — Hackathon Playbook",
     description:
       "Press, partnerships, and brand assets for Hackathon Playbook. 36+ hackathon wins, $100K+ in prizes.",
-    url: `${BASE_URL}/media-kit`,
+    url: `${SITE_URL}/media-kit`,
   },
   twitter: {
     title: "Media Kit — Hackathon Playbook",
@@ -47,11 +45,11 @@ const personJsonLd = {
   "@type": "Person",
   name: "Bill Zhang",
   url: "https://v2.art3m1s.me/",
-  image: `${BASE_URL}/icon`,
-  jobTitle: "Applied AI Engineer",
+  image: `${SITE_URL}/icon`,
+  jobTitle: "Software Engineer 2",
   worksFor: {
     "@type": "Organization",
-    name: "Scale AI",
+    name: "Pinterest",
   },
   alumniOf: [
     { "@type": "CollegeOrUniversity", name: "University of Southern California" },
@@ -70,18 +68,18 @@ const aboutPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: "Hackathon Playbook Media Kit",
-  url: `${BASE_URL}/media-kit`,
+  url: `${SITE_URL}/media-kit`,
   description:
     "Press, partnerships, and brand assets for Hackathon Playbook.",
   isPartOf: {
     "@type": "WebSite",
     name: "Hackathon Playbook",
-    url: BASE_URL,
+    url: SITE_URL,
   },
   about: {
     "@type": "Organization",
     name: "Hackathon Playbook",
-    url: BASE_URL,
+    url: SITE_URL,
     founder: { "@type": "Person", name: "Bill Zhang" },
   },
 };
@@ -113,8 +111,8 @@ const accentMap = {
 
 const CREDENTIALS = [
   {
-    text: "1st place at HackUTD, UC Berkeley AI Hackathon, LA Hacks",
-    highlight: "1,000+ person events",
+    text: "1st place at HackUTD 2024, UC Berkeley AI Hackathon 2024, LA Hacks 2024",
+    highlight: "1,000+ person events, plus 33 other hackathon wins",
     color: "text-volt",
   },
   {
@@ -123,24 +121,29 @@ const CREDENTIALS = [
     color: "text-spark",
   },
   {
-    text: "Co-founder of WeCracked",
-    highlight: "4,000+ member hackathon community",
+    text: "Hackathon judge at LA Hacks 2026",
+    highlight: "returning for the LA Hacks AI Hackathon",
     color: "text-volt",
   },
   {
-    text: "Applied AI Engineer at Scale AI",
-    highlight: "Enterprise & Post-Training Research",
+    text: "Co-founder of WeCracked",
+    highlight: "4,000+ member hackathon community",
     color: "text-spark",
+  },
+  {
+    text: "Software Engineer 2 at Pinterest",
+    highlight: "ex-Applied AI Engineer at Scale AI",
+    color: "text-volt",
   },
   {
     text: "Co-founder of Dispatch AI",
     highlight: "$1M valuation, Berkeley SkyDeck funded",
-    color: "text-volt",
+    color: "text-spark",
   },
   {
     text: "USC MS in Computer Science (AI)",
     highlight: "UCSC undergrad",
-    color: "text-spark",
+    color: "text-volt",
   },
 ];
 
@@ -339,10 +342,11 @@ export default function MediaKitPage() {
                 @IdkwhatImD0ing
               </a>
               ) is one of the most decorated hackathon competitors in the US
-              college scene. He is an Applied AI Engineer at Scale AI
-              (Enterprise & Post-Training Research), co-founder of WeCracked (a
-              4,000+ member hackathon community), and co-founder of Dispatch AI
-              (Berkeley SkyDeck funded, $1M valuation).
+              college scene. He is a Software Engineer 2 at Pinterest,
+              previously an Applied AI Engineer at Scale AI (Enterprise &
+              Post-Training Research), co-founder of WeCracked (a 4,000+ member
+              hackathon community), and co-founder of Dispatch AI (Berkeley
+              SkyDeck funded, $1M valuation).
             </p>
             <div className="space-y-2">
               <p className="font-code text-xs uppercase tracking-widest text-muted-foreground">
@@ -457,7 +461,7 @@ export default function MediaKitPage() {
                   {s.description}
                 </p>
                 <p className="font-code text-[10px] text-muted-foreground">
-                  {BASE_URL}
+                  {SITE_URL}
                   {s.href}
                 </p>
               </Link>
@@ -483,11 +487,11 @@ export default function MediaKitPage() {
             <div>
               <p className="font-display text-sm font-bold">Logo / Icon</p>
               <p className="font-code text-xs text-muted-foreground">
-                {BASE_URL}/icon
+                {SITE_URL}/icon
               </p>
             </div>
             <a
-              href={`${BASE_URL}/icon`}
+              href={`${SITE_URL}/icon`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-lg border border-volt/30 bg-volt/10 px-3 py-1.5 font-code text-xs text-volt transition-colors hover:bg-volt/20"

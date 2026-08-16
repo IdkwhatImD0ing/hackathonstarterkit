@@ -34,23 +34,9 @@ yarn-error.log*
 .env*
 !.env.example
 
-# agent skills (treat installed skills like node_modules)
-.agents/skills/*
-!.agents/skills/non-coder-mode/
-!.agents/skills/feature-builder/
-!.agents/skills/bugfix-doctor/
-!.agents/skills/scaffold-frontend/
-!.agents/skills/scaffold-backend/
-!.agents/skills/quickstart/
-!.agents/skills/demo-prep/
-!.agents/skills/domain-to-spec/
-!.agents/skills/blog-writer/
-!.agents/skills/v0-prompt-crafter/
-!.agents/skills/readme-writer/
-!.agents/skills/portfolio-builder/
-!.agents/skills/devpost-writer/
-!.agents/skills/youtube-writer/
-!.agents/skills/ship-it/
+# agent skills installed by the skills CLI (treat like node_modules).
+# Our own authored skills live in the fully tracked top-level skills/ dir.
+.agents/skills/
 # .agents/commands/ is fully committed (all authored, no installed third-party commands)
 
 # vercel

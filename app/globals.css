@@ -181,6 +181,20 @@
 }
 
 /* ============================================================
+   SCROLLBARS
+   ============================================================ */
+/* Standard properties only: when scrollbar-color is set, Chromium
+   ignores ::-webkit-scrollbar rules, so mixing the two APIs fights
+   itself. scrollbar-color inherits, so :root styles the page scrollbar
+   and every inner scroller (chat window included) in one place. */
+:root {
+  scrollbar-color: oklch(0.54 0.24 285 / 45%) transparent;
+}
+* {
+  scrollbar-width: thin;
+}
+
+/* ============================================================
    CUSTOM ANIMATIONS
    ============================================================ */
 

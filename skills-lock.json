@@ -22,11 +22,6 @@
       "sourceType": "github",
       "skillPath": "skills/svg-illustration/SKILL.md",
       "computedHash": "a0bd4ecc502d9ccb351ff6c9c38168c9045112a7c0c0acef975f4ce352902a9e"
-    },
-    "v0-prompt-crafter": {
-      "source": "local",
-      "sourceType": "local",
-      "computedHash": "92aa32f4075b94128d1435f991aba5257e89f4028afd10ac746d5fe07e2cf750"
     }
   }
 }

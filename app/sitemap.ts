@@ -3,16 +3,14 @@ import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import { NON_CODER_SECTIONS } from "@/lib/non-coder-sections";
 import { NON_CODER_SKILLS } from "@/lib/non-coder-skills";
 import { BLOG_POSTS } from "@/lib/blog";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   return [
     {
-      url: BASE_URL,
+      url: SITE_URL,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1,
@@ -20,13 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Playbook index + all phases (driven by lib/playbook.ts)
     {
-      url: `${BASE_URL}/playbook`,
+      url: `${SITE_URL}/playbook`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     ...PLAYBOOK_SECTIONS.map((section) => ({
-      url: `${BASE_URL}/playbook/${section.slug}`,
+      url: `${SITE_URL}/playbook/${section.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
@@ -34,13 +32,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Non-coders index + sub-pages (driven by lib/non-coder-sections.ts)
     {
-      url: `${BASE_URL}/non-coders`,
+      url: `${SITE_URL}/non-coders`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     ...NON_CODER_SECTIONS.map((section) => ({
-      url: `${BASE_URL}/non-coders/${section.slug}`,
+      url: `${SITE_URL}/non-coders/${section.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
@@ -48,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Skill detail pages (driven by lib/non-coder-skills.ts)
     ...NON_CODER_SKILLS.map((skill) => ({
-      url: `${BASE_URL}/non-coders/skills/${skill.slug}`,
+      url: `${SITE_URL}/non-coders/skills/${skill.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,
@@ -56,27 +54,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Blog index + all posts (driven by lib/blog.ts)
     {
-      url: `${BASE_URL}/blog`,
+      url: `${SITE_URL}/blog`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     ...BLOG_POSTS.map((post) => ({
-      url: `${BASE_URL}/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
 
-    // Standalone routes (legal, press)
+    // Standalone routes (legal, press, agent docs)
     {
-      url: `${BASE_URL}/media-kit`,
+      url: `${SITE_URL}/ai`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
-      url: `${BASE_URL}/terms`,
+      url: `${SITE_URL}/media-kit`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/terms`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,

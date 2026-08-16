@@ -46,7 +46,7 @@
 The Hackathon Playbook is two things in one repo:
 
 1. **The site** at [thehackathonplaybook.dev](https://thehackathonplaybook.dev): a content-heavy, SEO-first guide to winning hackathons. A fixed seven-phase playbook, a track for non-coders, and a keyword-targeted blog, distilled from 50+ events and $100K+ in prizes.
-2. **The skill pipeline** under [`.agents/skills/`](./.agents/skills): installable AI agent skills that take a new hackathon project from idea to spec to scaffold to demo, then package it for recruiters. These run *against your project repo*, not against this site.
+2. **The skill pipeline** under [`skills/`](./skills): installable AI agent skills that take a new hackathon project from idea to spec to scaffold to demo, then package it for recruiters. These run *against your project repo*, not against this site.
 
 The guidance and the tooling share one opinion about how hackathons are actually won, so the advice on the site and the skills in the repo point in the same direction.
 
@@ -139,8 +139,10 @@ pnpm run dev                 # http://localhost:3000
 ```
 
 ```bash
-pnpm run build               # verification gate for content/page changes (there is no test suite)
+pnpm run build               # verification gate for content/page changes
 pnpm run lint
+pnpm test                    # unit tests (vitest); integration tests run in CI against next start
+pnpm gen                     # rebuild + regenerate all agent-facing artifacts (markdown corpus, llms.txt, skills, index)
 ```
 
 > [!TIP]
@@ -170,14 +172,17 @@ lib/
   non-coder-sections.ts   # Non-coder section definitions
   non-coder-skills.ts     # Installable AI skill definitions
   blog.ts, blog/          # Blog posts (one file per post) and shared types
-.agents/
-  skills/                 # The agent skill pipeline (see above)
+skills/                   # The agent skill pipeline (see above)
 docs/                     # SEO, analytics, content conventions, engagement research
 ```
 
 </details>
 
 The site is **data-driven**: content lives in typed TypeScript under `lib/`, and route templates render it. To add content you usually edit a data file, not a page. The full project guidance lives in [`CLAUDE.md`](./CLAUDE.md) (and [`AGENTS.md`](./AGENTS.md), which points to it).
+
+## AI and agent access
+
+The site is machine-readable by design: every content page has a Markdown twin (append `.md`, or send `Accept: text/markdown`), an [llms.txt](https://thehackathonplaybook.dev/llms.txt) index, agent discovery documents under `/.well-known/` (MCP server card, agent-skills index with digests, api-catalog), a public read-only [MCP server](./docs/mcp.md) at `/api/mcp`, and a retrieval-grounded chatbot that answers only from site content. All of it is generated from the same sources that render the pages and gated by CI freshness checks. See [`docs/agent-readiness.md`](./docs/agent-readiness.md) for the architecture, [`docs/cloudflare-config.md`](./docs/cloudflare-config.md) for the dashboard settings it depends on, and the public [/ai](https://thehackathonplaybook.dev/ai) page for the user-facing summary.
 
 ## SEO and analytics
 

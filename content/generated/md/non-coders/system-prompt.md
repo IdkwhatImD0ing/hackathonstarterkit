@@ -1,0 +1,123 @@
+# The System Prompt
+
+> The CLAUDE.md and AGENTS.md files that set the rules your AI follows every session. One command sets up both.
+
+Canonical: https://thehackathonplaybook.dev/non-coders/system-prompt
+
+---
+
+## What Is a System Prompt?
+
+Think of it as the briefing you give a brand-new assistant on their first day. You tell them how you like to work, what the project is, and what they should never do without asking. A good assistant re-reads that briefing every morning so they never drift.
+
+That is exactly what a system prompt is. Your AI reads these files at the start of every conversation, before you type a word. It is the standing instruction for how to behave with you. You write it once, and every chat after that gets better.
+
+## Two Files, One Set of Rules
+
+Different AI tools look for different filenames. Rather than keep two copies in sync, you put the real rules in one file and make the other point to it. Update one, both tools follow.
+
+#### CLAUDE.md
+
+The actual rules. How to talk to you, the honesty rules, what you are building, and the guardrails.
+
+#### AGENTS.md
+
+A one-line pointer to CLAUDE.md, so other tools load the exact same rules.
+
+## The One-Command Setup
+
+Copy this and paste it into Cursor (Ctrl+I) or Claude Code. The AI adds the rules to your project (merging with any CLAUDE.md you already have), reads your project to fill in the details, then shows you the result to review. You do not touch any settings.
+
+paste this into your AI chat
+
+```
+Set up my project's system prompt. I am a non-coder, so handle the whole thing for me.
+
+1. Fetch the rules from these two files (for example: curl https://thehackathonplaybook.dev/system-prompt/non-coder-claude.txt):
+   - https://thehackathonplaybook.dev/system-prompt/non-coder-claude.txt  -> goes in CLAUDE.md
+   - https://thehackathonplaybook.dev/system-prompt/non-coder-agents.txt  -> goes in AGENTS.md
+
+2. Add them to the root of my project WITHOUT throwing away anything I already have:
+   - If the file does not exist yet, create it from the fetched text.
+   - If the file already exists, do NOT overwrite it. Weave the rules in: merge matching sections, keep everything project-specific I already wrote, and drop only exact duplicates. Show me a clear before/after of what changed.
+
+3. Fill in the "About this project" section of CLAUDE.md yourself. Do a deep dive of my project first: read the README, the main folders, the package/config files, and the key source files. From that, write a short, accurate description of what this project is, who it is for, and the tech it uses. Do not ask me to fill in the blanks, draft it from what you actually find.
+
+4. Show me the finished CLAUDE.md and AGENTS.md right here in the chat, and walk me through the "About this project" section line by line so I can confirm or correct it before we move on.
+
+From now on, follow CLAUDE.md in every chat.
+```
+
+That's it. The rules always come straight from this site, so you get the latest version. The AI reads your project to fill in the details and shows you everything to confirm before moving on.
+
+## What You Get
+
+This is exactly what lands in your project. Prefer to paste it in by hand? Copy either file below, or open the raw text.
+
+`CLAUDE.md`
+
+[view raw text](https://thehackathonplaybook.dev/system-prompt/non-coder-claude.txt)
+
+```
+# CLAUDE.md
+
+The rules my AI assistant follows every time it helps me. I am a non-coder building a working app with AI. This is the single source of truth; AGENTS.md just points here. Keep it short: if a line would not change how you help me, delete it.
+
+## How to work with me
+
+- Explain every change in plain English. No jargon. If you must use a technical term, define it in one short phrase.
+- Make the smallest change that does what I asked. No extra features, no "while I was here" cleanup, no flexibility I did not request.
+- Never refactor or rewrite code that already works unless I ask you to.
+- Before anything hard to undo (deleting files, changing the database, deploying, installing a new tool), stop and ask me first.
+- Work in small steps. Do one thing, show me the result, then move on. Do not dump twenty changes at once.
+
+## Honesty rules (read these every turn)
+
+- Never invent a function, file, library, setting, or fact. If you have not checked, say "I have not verified this" instead of guessing.
+- Before you say a symbol or file exists, actually open it or search for it.
+- Never claim a test, build, or command passed unless you ran it this session and saw it pass.
+- Never invent error messages or results. If you did not see it, say so.
+- When you do not know, "I do not know, let me check first" is the correct answer. A confident guess is worse than an honest "I am not sure."
+## About this project
+
+(The AI fills this in by doing a deep dive of the project, then you review and
+correct it in the chat. Replace any brackets that are left over.)
+
+- Who I am: [your profession or area of expertise, e.g. "a cardiologist", "a lawyer", "a teacher"]
+- What we are building: [one sentence, e.g. "an app that helps nurses track patient medication schedules"]
+- Who it is for: [the people who will use it]
+
+## Guardrails
+
+- Never put passwords or secret keys directly in the code. Use environment variables.
+- Always ask before deleting files, writing to the database, or deploying.
+- Do not commit or push to GitHub unless I ask.
+```
+
+`AGENTS.md`
+
+[view raw text](https://thehackathonplaybook.dev/system-prompt/non-coder-agents.txt)
+
+```
+# AGENTS.md
+
+See @CLAUDE.md for all project guidance. That file is the single source of truth: how to work with me, the honesty rules, what we are building, and the guardrails. This file only points to it so Cursor, Codex, and other tools load the exact same rules as Claude.
+```
+
+## Why One File and a Pointer?
+
+If you keep the full rules in both files, they drift apart the moment you edit one and forget the other. Then Cursor and Claude give you different behavior and you cannot tell why.
+
+Keeping the rules in `CLAUDE.md` and making `AGENTS.md` a single line that points to it means there is one source of truth. Change it once, every tool follows. One short file is also easier for the AI to actually pay attention to than a long one.
+
+## Next Steps
+
+[#### Add Skills & Commands
+
+Now that the rules are set, install the skills that walk your AI through scaffolding, building, and demoing your project.
+
+Open Skills](https://thehackathonplaybook.dev/non-coders/skills)[#### Getting Started
+
+New to all of this? The shortcuts, the daily workflow, and the other files that make up your project setup.
+
+Open Getting Started](https://thehackathonplaybook.dev/non-coders/setup)

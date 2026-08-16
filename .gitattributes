@@ -1,0 +1,12 @@
+# Generated artifacts are compared and digested byte-for-byte (CI freshness
+# gates, sha256 skill digests in the agent-skills index, embedding source
+# hashes). Force LF so Windows checkouts (core.autocrlf) cannot smudge them
+# into digest mismatches and false-stale index builds.
+content/generated/** text eol=lf
+public/llms.txt text eol=lf
+public/llms-full.txt text eol=lf
+index/manifest.json text eol=lf
+index/embeddings.bin binary
+# The skill sources themselves are copied byte-for-byte into the digested
+# artifacts, so they need the same guarantee.
+skills/** text eol=lf

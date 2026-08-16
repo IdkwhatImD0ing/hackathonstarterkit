@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Trophy, ExternalLink, Github, Linkedin } from "lucide-react";
+import { Trophy, ExternalLink, Github, Linkedin, Bot } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title:
@@ -13,13 +11,14 @@ export const metadata: Metadata = {
   description:
     "Learn how to win hackathons with the ultimate playbook from 36+ victories and $100K+ in prizes. Battle-tested guides on team formation, ideation, the best tech stack, pitching, and submission strategies.",
   alternates: {
-    canonical: BASE_URL,
+    canonical: SITE_URL,
+    types: markdownAlternate("/"),
   },
   openGraph: {
     title: "Hackathon Playbook — How to Win Hackathons",
     description:
       "The ultimate hackathon playbook with battle-tested guides, templates, and strategies from 36+ wins and $100K+ in prizes.",
-    url: BASE_URL,
+    url: SITE_URL,
   },
   twitter: {
     title: "Hackathon Playbook — How to Win Hackathons",
@@ -68,8 +67,8 @@ const NOTABLE_WINS = [
 
 const CREDENTIALS = [
   {
-    text: "1st place at HackUTD, UC Berkeley AI Hackathon, LA Hacks",
-    highlight: "1,000+ person events",
+    text: "1st place at HackUTD 2024, UC Berkeley AI Hackathon 2024, LA Hacks 2024",
+    highlight: "1,000+ person events, plus 33 other hackathon wins",
     color: "text-volt",
   },
   {
@@ -78,24 +77,72 @@ const CREDENTIALS = [
     color: "text-spark",
   },
   {
-    text: "Co-founder of WeCracked",
-    highlight: "4,000+ member hackathon community",
+    text: "Hackathon judge at LA Hacks 2026",
+    highlight: "returning for the LA Hacks AI Hackathon",
     color: "text-volt",
   },
   {
-    text: "Applied AI Engineer at Scale AI",
-    highlight: "Enterprise & Post-Training Research",
+    text: "Co-founder of WeCracked",
+    highlight: "4,000+ member hackathon community",
     color: "text-spark",
+  },
+  {
+    text: "Software Engineer 2 at Pinterest",
+    highlight: "ex-Applied AI Engineer at Scale AI",
+    color: "text-volt",
   },
   {
     text: "Co-founder of Dispatch AI",
     highlight: "$1M valuation, Berkeley SkyDeck funded",
-    color: "text-volt",
+    color: "text-spark",
   },
   {
     text: "USC MS in Computer Science (AI)",
     highlight: "UCSC undergrad",
+    color: "text-volt",
+  },
+];
+
+const MENTEE_WINS = [
+  {
+    mentee: "Wenqing Li",
+    hackathon: "UC Berkeley AI Hackathon 2026",
+    prize: "Grand Prize + SkyDeck Grand Prize",
+    project: "TheraCat",
+    url: "https://devpost.com/software/theracat",
+    color: "text-volt",
+  },
+  {
+    mentee: "Kevin Wu & Jay Wu",
+    hackathon: "LA Hacks 2026",
+    prize: "1st Overall + Cognition Challenge",
+    project: "Codebreaker",
+    url: "https://devpost.com/software/codebreaker-la",
     color: "text-spark",
+  },
+  {
+    mentee: "Wenqing Li",
+    hackathon: "HackMerced XI",
+    prize: "1st Place in Track",
+    project: "TheraCaIl",
+    url: "https://devpost.com/software/theracail",
+    color: "text-volt",
+  },
+  {
+    mentee: "Aurelisa Juan & Aurelia Sindhu",
+    hackathon: "AthenaHacks 2025",
+    prize: "1st Place Overall",
+    project: "ETA+",
+    url: "https://devpost.com/software/eta-1ubyla",
+    color: "text-spark",
+  },
+  {
+    mentee: "Jasmine Wu",
+    hackathon: "AthenaHacks 2024 (USC)",
+    prize: "Best Overall",
+    project: "DriveMate",
+    url: "https://devpost.com/software/drivemate",
+    color: "text-volt",
   },
 ];
 
@@ -204,43 +251,43 @@ const howToJsonLd = {
       "@type": "HowToStep",
       name: "Team Formation",
       text: "Find the right people, define roles, and create a winning team dynamic with complementary skills.",
-      url: `${BASE_URL}/playbook/team-formation`,
+      url: `${SITE_URL}/playbook/team-formation`,
     },
     {
       "@type": "HowToStep",
       name: "Ideation",
       text: "Brainstorm, evaluate, and select ideas that judges love and you can actually build in the time available.",
-      url: `${BASE_URL}/playbook/ideation`,
+      url: `${SITE_URL}/playbook/ideation`,
     },
     {
       "@type": "HowToStep",
       name: "Validation",
       text: "Validate your idea quickly against real constraints, available APIs, and judging criteria.",
-      url: `${BASE_URL}/playbook/validation`,
+      url: `${SITE_URL}/playbook/validation`,
     },
     {
       "@type": "HowToStep",
       name: "Execution",
       text: "Manage time effectively, select the right tech stack, build an MVP, and coordinate your team.",
-      url: `${BASE_URL}/playbook/execution`,
+      url: `${SITE_URL}/playbook/execution`,
     },
     {
       "@type": "HowToStep",
       name: "Pitching",
       text: "Craft a pitch that wins judges over in the first 30 seconds with a compelling demo.",
-      url: `${BASE_URL}/playbook/pitching`,
+      url: `${SITE_URL}/playbook/pitching`,
     },
     {
       "@type": "HowToStep",
       name: "Submission",
       text: "Write READMEs, record demo videos, and submit deliverables that make judges remember you.",
-      url: `${BASE_URL}/playbook/submission`,
+      url: `${SITE_URL}/playbook/submission`,
     },
     {
       "@type": "HowToStep",
       name: "Post-Hackathon",
       text: "Share your work, follow up with contacts, and turn weekend projects into career-changing portfolio pieces.",
-      url: `${BASE_URL}/playbook/post-hackathon`,
+      url: `${SITE_URL}/playbook/post-hackathon`,
     },
   ],
 };
@@ -378,6 +425,45 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* ── Mentoring wins ── */}
+              <div className="space-y-3">
+                <p className="font-code text-sm text-muted-foreground">
+                  <span className="text-spark">$</span> ls ./mentee-wins
+                </p>
+                <p className="font-body text-sm text-muted-foreground">
+                  Teams I have coached to first place.
+                </p>
+                <div className="stagger-children space-y-2">
+                  {MENTEE_WINS.map((win) => (
+                    <div
+                      key={`${win.mentee}-${win.hackathon}`}
+                      className="flex items-start gap-2.5 font-body text-sm"
+                    >
+                      <span
+                        className={`mt-0.5 shrink-0 font-code font-bold ${win.color}`}
+                      >
+                        &gt;
+                      </span>
+                      <p className="text-foreground/85">
+                        {win.mentee} at {win.hackathon}{" "}
+                        <span className={`font-semibold ${win.color}`}>
+                          — {win.prize}
+                        </span>
+                        {" "}
+                        <a
+                          href={win.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-code text-xs text-muted-foreground underline underline-offset-2 transition-colors hover:text-volt"
+                        >
+                          {win.project}
+                        </a>
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* ── Notable wins shelf ── */}
               <div className="space-y-3">
                 <p className="font-code text-sm text-muted-foreground">
@@ -446,6 +532,13 @@ export default function Home() {
                     {link.label}
                   </a>
                 ))}
+                <Link
+                  href="/ai"
+                  className="group flex items-center gap-1.5 font-code text-xs text-muted-foreground transition-colors hover:text-volt"
+                >
+                  <Bot className="size-3.5 transition-transform group-hover:-translate-y-0.5" />
+                  For AI &amp; Agents
+                </Link>
               </div>
             </div>
           </div>

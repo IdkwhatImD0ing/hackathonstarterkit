@@ -19,11 +19,18 @@ import {
   getSkillBySlug,
 } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "Skills & Commands",
   description:
     "Installable AI skills and slash commands that teach your AI assistant how to work with non-coders.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/skills`,
+    types: markdownAlternate("/non-coders/skills"),
+  },
 };
 
 const accentStyles = {
@@ -43,10 +50,14 @@ Then confirm the installation when prompted. After it finishes, tell me which sk
 export default function SkillsPage() {
   return (
     <div className="space-y-24">
+      <BreadcrumbJsonLd path="/non-coders/skills" />
       <header className="stagger-children space-y-4">
-        <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
-          SKILLS & COMMANDS
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
+            SKILLS & COMMANDS
+          </Badge>
+          <CopyForAi path="/non-coders/skills" title="Skills & Commands" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Teach Your AI
           <br />

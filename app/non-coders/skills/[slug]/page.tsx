@@ -13,6 +13,9 @@ import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { NON_CODER_SKILLS, getSkillBySlug } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 const accentStyles = {
   volt: {
@@ -60,6 +63,10 @@ export async function generateMetadata({
   return {
     title: skill.title,
     description: skill.description,
+    alternates: {
+      canonical: `${SITE_URL}/non-coders/skills/${skill.slug}`,
+      types: markdownAlternate(`/non-coders/skills/${skill.slug}`),
+    },
     openGraph: {
       title: `${skill.title} | For Non-Coders`,
       description: skill.description,
@@ -87,6 +94,7 @@ export default async function SkillDetailPage({
 
   return (
     <div className="space-y-12">
+      <BreadcrumbJsonLd path={`/non-coders/skills/${skill.slug}`} />
       {/* Back link */}
       <Link
         href="/non-coders"
@@ -98,15 +106,18 @@ export default async function SkillDetailPage({
 
       {/* Header */}
       <header className="stagger-children space-y-4">
-        <div className="flex items-center gap-3">
-          <div
-            className={`flex size-12 items-center justify-center rounded-xl ${a.bg}`}
-          >
-            <skill.icon className={`size-6 ${a.text}`} />
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div
+              className={`flex size-12 items-center justify-center rounded-xl ${a.bg}`}
+            >
+              <skill.icon className={`size-6 ${a.text}`} />
+            </div>
+            <Badge className={`${a.border} ${a.bg} ${a.text} font-code text-xs`}>
+              {skill.categoryLabel.toUpperCase()}
+            </Badge>
           </div>
-          <Badge className={`${a.border} ${a.bg} ${a.text} font-code text-xs`}>
-            {skill.categoryLabel.toUpperCase()}
-          </Badge>
+          <CopyForAi path={`/non-coders/skills/${skill.slug}`} title={skill.title} />
         </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           {skill.title}

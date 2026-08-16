@@ -12,13 +12,16 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { NON_CODER_SECTIONS } from "@/lib/non-coder-sections";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
   title: "Hackathons for Non-Coders — Win Without Coding Experience",
   description:
     "Non-coders are winning hackathons with AI tools. Proven strategies, installable AI skills, and step-by-step guides for doctors, lawyers, and professionals who build with Cursor and Claude Code.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/non-coders`,
+    canonical: `${SITE_URL}/non-coders`,
+    types: markdownAlternate("/non-coders"),
   },
   openGraph: {
     title: "Hackathons for Non-Coders — Win Without Coding Experience",
@@ -50,6 +53,7 @@ const accentStyles = {
 export default function NonCodersPage() {
   return (
     <div className="space-y-24">
+      <BreadcrumbJsonLd path="/non-coders" />
       {/* ============================================================
           HERO
           ============================================================ */}

@@ -45,7 +45,7 @@ const CATEGORY_META: Record<
   shipping: { label: "Shipping", accent: "success" },
 };
 
-const SKILLS_DIR = join(process.cwd(), ".agents", "skills");
+const SKILLS_DIR = join(process.cwd(), "skills");
 
 function loadSkillContent(slug: string): string {
   return readFileSync(join(SKILLS_DIR, slug, "SKILL.md"), "utf8");

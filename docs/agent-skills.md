@@ -1,6 +1,6 @@
 # Agent Skills Pipeline
 
-This document describes the agent skills in `.agents/skills/`, their dependencies, and the canonical order to run them for a new project.
+This document describes the agent skills in the top-level `skills/` directory, their dependencies, and the canonical order to run them for a new project. The directory is deliberately not `.agents/skills/` or `.claude/skills/`: agent CLIs auto-load those (`.agents/skills/` by Cursor, Codex, and Amp; `.claude/skills/` by Claude Code), and these skills are meant to run against *your* project repo, not to activate automatically in sessions working on this one. (`.agents/skills/` remains as the gitignored install target for third-party skills added via the skills CLI.)
 
 ## Overview
 
@@ -140,20 +140,19 @@ want to pause between steps or only run a subset.
 
 ## Where the Site Renders These Skills
 
-- `lib/non-coder-skills.ts` loads every `SKILL.md` from `.agents/skills/<slug>/SKILL.md` at build time using `readFileSync`. The SKILL.md is the single source of truth; the TypeScript file only holds display metadata (title, description, icon, command).
+- `lib/non-coder-skills.ts` loads every `SKILL.md` from `skills/<slug>/SKILL.md` at build time using `readFileSync`. The SKILL.md is the single source of truth; the TypeScript file only holds display metadata (title, description, icon, command).
 - `app/non-coders/skills/page.tsx` renders the grid of skills.
 - `app/non-coders/skills/[slug]/page.tsx` renders the full SKILL.md body with a copy button.
 - `app/sitemap.ts` picks up one URL per skill automatically from `NON_CODER_SKILLS`.
 
 ## Adding a New Skill
 
-1. Create `.agents/skills/<slug>/SKILL.md` with a front matter block and prompt body.
+1. Create `skills/<slug>/SKILL.md` with a front matter block and prompt body.
 2. Add a new entry to `SKILL_META` in `lib/non-coder-skills.ts` with the display metadata (title, description, category, icon, slash command).
-3. Whitelist the new directory in `.gitignore` under the `# agent skills` section.
-4. If the skill is repo-internal and should not install through `npx skills add <repo>`, add `metadata.internal: true` to its front matter.
-5. If the new skill is part of the pipeline, add its slug to `RECOMMENDED_ORDER` in `lib/non-coder-skills.ts` at the correct position. If it is a shortcut that wraps multiple pipeline steps, add it to `SHORTCUT_SKILLS` instead.
-6. Update this file (`docs/agent-skills.md`) with the skill's contract.
-7. Update the "Agent Skills Pipeline" section in `README.md`.
+3. If the skill is repo-internal and should not install through `npx skills add <repo>`, add `metadata.internal: true` to its front matter.
+4. If the new skill is part of the pipeline, add its slug to `RECOMMENDED_ORDER` in `lib/non-coder-skills.ts` at the correct position. If it is a shortcut that wraps multiple pipeline steps, add it to `SHORTCUT_SKILLS` instead.
+5. Update this file (`docs/agent-skills.md`) with the skill's contract.
+6. Update the "Agent Skills Pipeline" section in `README.md`.
 
 ## Canonical Run Order (copy-paste for users)
 

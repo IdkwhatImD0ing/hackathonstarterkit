@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   description:
     "A battle-tested 7-phase system for winning hackathons: team formation, ideation, validation, execution, pitching, submission, and post-hackathon strategy. Distilled from 36+ victories and $100K+ in prizes.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook`,
+    canonical: `${SITE_URL}/playbook`,
+    types: markdownAlternate("/playbook"),
   },
   openGraph: {
     title: "Hackathon Playbook — 7-Phase System to Win Any Hackathon",
@@ -31,12 +32,18 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { JsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { playbookHowToJsonLd } from "@/lib/structured-data";
 
 const SECTION_ICONS = [Users, Lightbulb, ShieldCheck, Zap, Mic, FileText, Megaphone];
 
 export default function PlaybookPage() {
   return (
     <div className="space-y-16">
+      <JsonLd data={playbookHowToJsonLd()} />
+      <BreadcrumbJsonLd path="/playbook" />
       <header className="stagger-children space-y-6">
         <h1 className="font-display text-5xl font-extrabold leading-[0.9] tracking-tight md:text-7xl lg:text-8xl">
           The

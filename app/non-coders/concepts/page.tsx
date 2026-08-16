@@ -16,11 +16,18 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "Concepts Explained",
   description:
     "GitHub, APIs, deploying, and other tech jargon explained in plain English for non-coders.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/concepts`,
+    types: markdownAlternate("/non-coders/concepts"),
+  },
 };
 
 const CONCEPTS = [
@@ -132,10 +139,14 @@ const accentStyles = {
 export default function ConceptsPage() {
   return (
     <div className="space-y-12">
+      <BreadcrumbJsonLd path="/non-coders/concepts" />
       <header className="stagger-children space-y-4">
-        <Badge className="border-primary/30 bg-primary/10 text-primary font-code text-xs">
-          CONCEPTS EXPLAINED
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-primary/30 bg-primary/10 text-primary font-code text-xs">
+            CONCEPTS EXPLAINED
+          </Badge>
+          <CopyForAi path="/non-coders/concepts" title="Concepts Explained" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Tech Jargon,
           <br />
