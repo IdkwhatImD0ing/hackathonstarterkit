@@ -20,9 +20,24 @@
  * Only token counts are stored. Never message content.
  */
 
+import { countTokens } from "gpt-tokenizer";
 import { redisRest } from "../redis-rest";
 
 export type ReserveResult = "ok" | "over_budget" | "unavailable";
+
+/**
+ * Worst-case token reservation for a request: a real tokenizer count of
+ * every input text (a chars-based heuristic underestimates CJK, emoji,
+ * and adversarial Unicode by several-fold), a 1.25 factor covering drift
+ * between gpt-tokenizer's encoding and the serving model's tokenizer,
+ * per-message structural overhead, and the full output cap. Settlement
+ * only ever subtracts from this; tests/cost-controls.test.ts holds a
+ * regression proving non-ASCII input stays within the reservation.
+ */
+export function reservationForInput(texts: string[], maxOutputTokens: number): number {
+  const inputTokens = texts.reduce((sum, text) => sum + countTokens(text), 0);
+  return Math.ceil(inputTokens * 1.25) + texts.length * 8 + maxOutputTokens;
+}
 
 const memory = new Map<string, number>();
 

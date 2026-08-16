@@ -15,7 +15,7 @@ import {
   isReasoningExempt,
   rejectReasoningModel,
 } from "@/lib/chat/config";
-import { reserveTokens, settleTokens } from "@/lib/chat/spend";
+import { reservationForInput, reserveTokens, settleTokens } from "@/lib/chat/spend";
 import { SYSTEM_PROMPT, contextMessage } from "@/lib/chat/prompt";
 
 /**
@@ -95,14 +95,30 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  if ((activeStreams.get(ip) ?? 0) >= MAX_CONCURRENT_STREAMS) {
+  // Acquire the concurrency slot synchronously at the check: check and
+  // increment with no await between them, so parallel requests cannot all
+  // pass a stale count. Release is idempotent (per-request flag) because
+  // both the stream's finally and cancel() may call it, and every early
+  // return below must call it too.
+  const heldStreams = activeStreams.get(ip) ?? 0;
+  if (heldStreams >= MAX_CONCURRENT_STREAMS) {
     return jsonError(429, "rate_limited", "One conversation at a time, hacker.");
   }
+  activeStreams.set(ip, heldStreams + 1);
+  let released = false;
+  const release = () => {
+    if (released) return;
+    released = true;
+    const current = (activeStreams.get(ip) ?? 1) - 1;
+    if (current <= 0) activeStreams.delete(ip);
+    else activeStreams.set(ip, current);
+  };
 
   let body: z.infer<typeof RequestSchema>;
   try {
     body = RequestSchema.parse(await request.json());
   } catch {
+    release();
     return jsonError(400, "invalid", "Invalid request shape.");
   }
 
@@ -124,6 +140,8 @@ export async function POST(request: NextRequest) {
 
   // Nothing relevant: answer honestly without spending model tokens.
   if (results.length === 0) {
+    // No model stream is held open; the slot frees immediately.
+    release();
     const stream = new ReadableStream({
       start(controller) {
         send(controller, "citations", []);
@@ -152,17 +170,16 @@ export async function POST(request: NextRequest) {
 
   // Reserve worst-case tokens against the monthly budget BEFORE calling
   // OpenAI, atomically, so concurrent requests cannot collectively pass a
-  // stale reading of the counter (reserve/settle semantics in
-  // lib/chat/spend.ts). Estimate errs high: chars/3 overshoots real
-  // tokenization for English, plus the full output cap.
-  const promptChars =
-    SYSTEM_PROMPT.length +
-    contextMessage(results).length +
-    body.messages.reduce((sum, m) => sum + m.content.length, 0);
-  const reservedTokens = Math.ceil(promptChars / 3) + CHAT_MAX_OUTPUT_TOKENS + 200;
+  // stale reading of the counter (reserve/settle semantics and the
+  // tokenizer-based worst-case estimate both live in lib/chat/spend.ts).
+  const reservedTokens = reservationForInput(
+    [SYSTEM_PROMPT, contextMessage(results), ...body.messages.map((m) => m.content)],
+    CHAT_MAX_OUTPUT_TOKENS,
+  );
 
   const reservation = await reserveTokens(reservedTokens, CHAT_MONTHLY_TOKEN_BUDGET);
   if (reservation === "over_budget") {
+    release();
     return jsonError(
       503,
       "budget",
@@ -171,18 +188,12 @@ export async function POST(request: NextRequest) {
   }
   if (reservation === "unavailable") {
     // Fail closed: cost controls are unreachable, so no spend happens.
+    release();
     return jsonError(503, "api_error", "Chat is briefly unavailable. Try again shortly.");
   }
 
   const { default: OpenAI } = await import("openai");
   const client = new OpenAI();
-
-  activeStreams.set(ip, (activeStreams.get(ip) ?? 0) + 1);
-  const release = () => {
-    const current = (activeStreams.get(ip) ?? 1) - 1;
-    if (current <= 0) activeStreams.delete(ip);
-    else activeStreams.set(ip, current);
-  };
 
   try {
     const completion = await client.responses.create({

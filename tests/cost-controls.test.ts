@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { reserveTokens, settleTokens } from "@/lib/chat/spend";
+import { countTokens } from "gpt-tokenizer";
+import { reservationForInput, reserveTokens, settleTokens } from "@/lib/chat/spend";
 import { memoryLimit } from "@/lib/rate-limit";
 
 /**
@@ -25,6 +26,36 @@ describe("reserveTokens / settleTokens (memory path)", () => {
     // a 400 attempt is refused and the counter stays at 700.
     expect(await reserveTokens(400, budget)).toBe("over_budget");
     expect(await reserveTokens(300, budget)).toBe("ok");
+  });
+});
+
+describe("reservationForInput", () => {
+  // Adversarial-tokenization inputs where a chars-based estimate
+  // underestimates badly: CJK (~1 token per char), emoji (multiple tokens
+  // per char), and mixed symbols.
+  const adversarial = [
+    "日本語のテキストで質問しますがトークン数は文字数より多いです".repeat(8),
+    "🚀🎉🔥💡🧠".repeat(40),
+    "ハッカソンで優勝する方法を教えて 🏆 ¿cómo? Ω≈ç√∫˜µ".repeat(10),
+  ];
+
+  it("reserves at least the real tokenizer count of the input plus the output cap", () => {
+    for (const text of adversarial) {
+      const reserved = reservationForInput([text], 600);
+      const actualInputTokens = countTokens(text);
+      // actual usage = input + at most 600 output; reservation must cover it
+      expect(reserved).toBeGreaterThanOrEqual(actualInputTokens + 600);
+      // and the old chars/3 heuristic would NOT have covered it, proving
+      // the regression this guards against
+      expect(Math.ceil(text.length / 3) + 600).toBeLessThan(actualInputTokens + 600);
+    }
+  });
+
+  it("covers multi-text inputs the way the route composes them", () => {
+    const texts = ["system prompt text", adversarial[0], "user question 🚀"];
+    const reserved = reservationForInput(texts, 600);
+    const actual = texts.reduce((s, t) => s + countTokens(t), 0) + 600;
+    expect(reserved).toBeGreaterThanOrEqual(actual);
   });
 });
 
