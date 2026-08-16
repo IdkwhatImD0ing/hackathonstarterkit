@@ -1,42 +1,90 @@
 # DNS records for AI agent discovery (DNS-AID)
 
-The readiness scan probed `_index._agents.thehackathonplaybook.dev`, `_mcp._agents.…`, and `_a2a._agents.…` for SVCB/HTTPS records (RFC 9460) and got NXDOMAIN on all three. These records let agents discover a site's AI entry points from DNS alone, before making a single HTTP request.
+These records let agents discover the site's AI entry points from DNS alone, before making a single HTTP request. They are DNS configuration and cannot ship from the repo.
 
-This is DNS configuration and cannot ship from the repo. Apply the records below in the Cloudflare dashboard (**DNS > Records > Add record**). All of them are pure discovery pointers; nothing breaks if they are wrong, agents just fall back to HTTP discovery (the Link headers and `.well-known` documents this PR ships).
+**Status as of 2026-08-16: both records are published and resolve. DNSSEC does not validate. One action is outstanding, and it is at the registrar, not in the zone.** `pnpm smoke` now checks both halves.
 
-A note on spec maturity: the DNS-AID draft is young and was not reachable from the environment that authored this PR, so the record *names* below come from what Cloudflare's scanner actually probed, and the record *syntax* follows RFC 9460, which is stable. Before applying, skim the current draft (search the IETF datatracker for "DNS-AID" or "AI discovery SVCB") and prefer its parameter conventions if they have moved. The `dig` checks at the bottom verify exactly what the scanner probes.
+## Current state, verified over DoH and RDAP
 
-## Records to create
+The records exist and answer correctly:
 
-Only two entry points exist after this PR (`_index` for the site itself, `_mcp` for the MCP server). Do not create `_a2a` unless a callable A2A agent endpoint ships later; advertising an endpoint that does not exist is worse than NXDOMAIN.
+```
+_index._agents.thehackathonplaybook.dev.  300  IN  HTTPS  1 thehackathonplaybook.dev. alpn=h2
+_mcp._agents.thehackathonplaybook.dev.    300  IN  HTTPS  1 thehackathonplaybook.dev. alpn=h2
+```
+
+The zone is signed, but the delegation is not. Cloudflare publishes a KSK and a ZSK for the zone (`dig DNSKEY`, or the DoH query below, returns `257 3 13 ...` and `256 3 13 ...`), and the `.dev` registry says so directly:
+
+```json
+"secureDNS": { "delegationSigned": false, "zoneSigned": true }
+```
+
+No DS record exists at the parent, so a validating resolver has no path from the `.dev` trust anchor down to this zone and treats every answer as unsigned. Both Cloudflare's and Google's public resolvers return `AD: false` for this domain while returning `AD: true` for a control zone such as `cloudflare.com`. That is exactly the readiness scanner's finding: the records are found, the data is not authenticated.
+
+Signing the zone is only half of DNSSEC. Until the DS record reaches the registry, the signatures are unverifiable and the scan keeps failing.
+
+## The outstanding action: get the DS record to the registry
+
+The domain is registered with Cloudflare Registrar (RDAP registrar handle 1910, `CloudFlare, Inc.`) and uses Cloudflare nameservers, so the DS submission is meant to happen automatically when DNSSEC is switched on. It has not: the registry's last change predates the day DNSSEC was enabled here.
+
+1. **Cloudflare dashboard > the zone > DNS > Settings > DNSSEC.** Read the actual state rather than assuming it is on. Signed-but-undelegated usually shows as pending DS submission.
+2. If it reports pending, the DS was never accepted by the registry. Toggling DNSSEC off and back on re-triggers the submission for Cloudflare Registrar domains. Disabling DNSSEC on a zone whose delegation is already insecure changes nothing for resolvers, so this is safe here. It would **not** be safe on a zone with a live DS, where removing the key before the DS expires makes the domain unresolvable for validating clients.
+3. If the dashboard offers the DS record for manual entry, it belongs in the registrar's DNSSEC section for this domain. Same account, different product: **Domain Registration > Manage Domains > thehackathonplaybook.dev**.
+4. Registry propagation takes minutes to hours. `delegationSigned` flipping to `true` in RDAP is the authoritative confirmation; the `AD` flag follows once resolvers' cached negative-DS proofs expire.
+
+## Records
+
+Applied and verified live. Nothing here needs to change to fix the scan.
 
 | Type | Name | Priority | Target | SvcParams |
 | --- | --- | --- | --- | --- |
 | HTTPS | `_index._agents` | 1 | `thehackathonplaybook.dev.` | `alpn="h2"` |
 | HTTPS | `_mcp._agents` | 1 | `thehackathonplaybook.dev.` | `alpn="h2"` |
 
-In the Cloudflare UI: Type `HTTPS`, Name exactly `_index._agents` (Cloudflare appends the zone), Priority `1`, Target `thehackathonplaybook.dev.`, and add the `alpn` parameter set to `h2`. Leave proxy status DNS-only (grey cloud); these are discovery records, not traffic.
+In the Cloudflare UI: Type `HTTPS`, Name exactly `_index._agents` (Cloudflare appends the zone), Priority `1`, Target `thehackathonplaybook.dev.`, `alpn` set to `h2`. Leave proxy status DNS-only (grey cloud); these are discovery pointers, not traffic. TTL Auto (300s) is fine, they change roughly never.
 
-TTL: Auto is fine (300s). These records change roughly never.
+There is deliberately no `_a2a._agents` record. Nothing here speaks the A2A protocol, and advertising an endpoint that does not exist is worse than NXDOMAIN. See `docs/agent-readiness.md` for the full list of things skipped on principle.
 
-## DNSSEC
+## What the spec actually says
 
-The discovery spec expects the zone to be signed so agents can trust the answers. In Cloudflare this is one toggle plus one registrar step:
+Checked against `draft-mozleywilliams-dnsop-dnsaid-02` (27 May 2026, an individual Internet-Draft with no IETF standing) and the scanner's own skill document. This resolves the open verification item that the earlier version of this file carried.
 
-1. **DNS > Settings > DNSSEC > Enable DNSSEC.**
-2. Cloudflare shows a DS record; add it at the domain registrar (if the registrar is Cloudflare Registrar, this happens automatically).
-3. Wait for the dashboard to report DNSSEC as active (can take up to the registrar's TTL).
+- **Owner names match.** The draft defines `_index._agents.example.com` for an organizational registry, plus per-agent names and `_agents-challenge` for domain control validation. The `_index` and `_mcp` labels in use are correct.
+- **Record type.** The draft uses SVCB (type 64) throughout. The published records are HTTPS (type 65), which is SVCB-compatible and which the scanner accepts explicitly ("ServiceMode SVCB/HTTPS records"). It found them, so this is not the failing half. Not worth churning production DNS over.
+- **DNSSEC is a SHOULD, not a MUST**, in the draft's own words: records SHOULD be signed for data origin authentication, and only TLSA records MUST be. The scanner is stricter than the draft, and validating consumers are told to refuse bogus records, so signing is still the right call.
+- **The richer SvcParamKeys are not usable yet.** The draft proposes `cap`, `cap-sha256`, `well-known`, `bap`, `policy`, and `realm` alongside standard `alpn`, `port`, and the address hints. None are IANA-registered, and the draft says experimental parameters must be expressed as `keyNNNNN` until they are. No number is assigned, so there is nothing interoperable to publish. Revisit if the draft advances: `well-known=mcp/server-card.json` on the `_mcp` record would be a genuine improvement, since that document already exists.
 
 ## Verify
 
 ```bash
-# each should return an HTTPS (type 65) record, not NXDOMAIN
-dig +short HTTPS _index._agents.thehackathonplaybook.dev
-dig +short HTTPS _mcp._agents.thehackathonplaybook.dev
-
-# this one should stay NXDOMAIN on purpose (no A2A endpoint is published)
-dig +short HTTPS _a2a._agents.thehackathonplaybook.dev
-
-# DNSSEC: the ad (authenticated data) flag should be set
-dig +dnssec thehackathonplaybook.dev SOA | grep -o "flags:[^;]*"
+pnpm smoke
 ```
+
+The DNS-AID section checks both records and the `AD` flag, and tells you which half is broken. To check by hand without `dig` (Windows has no `dig`):
+
+```bash
+curl -s -H "accept: application/dns-json" "https://cloudflare-dns.com/dns-query?name=_index._agents.thehackathonplaybook.dev&type=HTTPS"
+curl -s -H "accept: application/dns-json" "https://cloudflare-dns.com/dns-query?name=_mcp._agents.thehackathonplaybook.dev&type=HTTPS"
+```
+
+Expect `"Status":0` and an `Answer` entry, not NXDOMAIN.
+
+```bash
+curl -s -H "accept: application/dns-json" "https://cloudflare-dns.com/dns-query?name=thehackathonplaybook.dev&type=SOA"
+```
+
+`"AD":true` is the goal. It is currently `false`.
+
+```bash
+curl -sL "https://rdap.org/domain/thehackathonplaybook.dev" | tr ',' '\n' | grep -i -A1 secureDNS
+```
+
+`"delegationSigned":true` is the registry-side proof that the DS landed.
+
+```bash
+curl -s -X POST https://isitagentready.com/api/scan \
+  -H "Content-Type: application/json" \
+  -d '{"url":"https://thehackathonplaybook.dev"}'
+```
+
+The scanner passes when `checks.discoverability.dnsAid.status` is `"pass"`.
