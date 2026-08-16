@@ -40,6 +40,10 @@ Google Developer Student Challenge — Top 10 Global (only US team in 3 years)
 
 \>
 
+Hackathon judge at LA Hacks 2026 — returning for the LA Hacks AI Hackathon
+
+\>
+
 Co-founder of WeCracked — 4,000+ member hackathon community
 
 \>
