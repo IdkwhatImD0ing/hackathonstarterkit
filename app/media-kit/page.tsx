@@ -46,10 +46,10 @@ const personJsonLd = {
   name: "Bill Zhang",
   url: "https://v2.art3m1s.me/",
   image: `${SITE_URL}/icon`,
-  jobTitle: "Applied AI Engineer",
+  jobTitle: "Software Engineer 2",
   worksFor: {
     "@type": "Organization",
-    name: "Scale AI",
+    name: "Pinterest",
   },
   alumniOf: [
     { "@type": "CollegeOrUniversity", name: "University of Southern California" },
@@ -111,8 +111,8 @@ const accentMap = {
 
 const CREDENTIALS = [
   {
-    text: "1st place at HackUTD, UC Berkeley AI Hackathon, LA Hacks",
-    highlight: "1,000+ person events",
+    text: "1st place at HackUTD 2024, UC Berkeley AI Hackathon 2024, LA Hacks 2024",
+    highlight: "1,000+ person events, plus 33 other hackathon wins",
     color: "text-volt",
   },
   {
@@ -126,8 +126,8 @@ const CREDENTIALS = [
     color: "text-volt",
   },
   {
-    text: "Applied AI Engineer at Scale AI",
-    highlight: "Enterprise & Post-Training Research",
+    text: "Software Engineer 2 at Pinterest",
+    highlight: "ex-Applied AI Engineer at Scale AI",
     color: "text-spark",
   },
   {
@@ -337,10 +337,11 @@ export default function MediaKitPage() {
                 @IdkwhatImD0ing
               </a>
               ) is one of the most decorated hackathon competitors in the US
-              college scene. He is an Applied AI Engineer at Scale AI
-              (Enterprise & Post-Training Research), co-founder of WeCracked (a
-              4,000+ member hackathon community), and co-founder of Dispatch AI
-              (Berkeley SkyDeck funded, $1M valuation).
+              college scene. He is a Software Engineer 2 at Pinterest,
+              previously an Applied AI Engineer at Scale AI (Enterprise &
+              Post-Training Research), co-founder of WeCracked (a 4,000+ member
+              hackathon community), and co-founder of Dispatch AI (Berkeley
+              SkyDeck funded, $1M valuation).
             </p>
             <div className="space-y-2">
               <p className="font-code text-xs uppercase tracking-widest text-muted-foreground">

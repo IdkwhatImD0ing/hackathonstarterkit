@@ -91,10 +91,10 @@ const websiteJsonLd = {
       "https://www.linkedin.com/in/bill-zhang1/",
       "https://devpost.com/IdkwhatImD0ing",
     ],
-    jobTitle: "Applied AI Engineer",
+    jobTitle: "Software Engineer 2",
     worksFor: {
       "@type": "Organization",
-      name: "Scale AI",
+      name: "Pinterest",
     },
   },
   potentialAction: {
