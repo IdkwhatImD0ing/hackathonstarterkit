@@ -1,41 +1,47 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PromptCard } from "@/components/prompt-card";
 import { CHEAT_SECTIONS, type CheatAccent } from "@/lib/cheat-sheet";
 
 const ACCENTS: Record<
   CheatAccent,
-  { text: string; border: string; bg: string; tab: string; dot: string }
+  {
+    text: string;
+    tabBar: string;
+    iconChip: string;
+    chip: string;
+    dot: string;
+  }
 > = {
   volt: {
     text: "text-volt",
-    border: "border-volt/25",
-    bg: "bg-volt/10",
-    tab: "border-volt/40 bg-volt/15 text-volt",
-    dot: "bg-volt",
+    tabBar: "bg-volt shadow-[0_0_10px_var(--volt)]",
+    iconChip: "border-volt/25 bg-volt/10",
+    chip: "bg-volt/10 text-volt",
+    dot: "bg-volt shadow-[0_0_6px_var(--volt)]",
   },
   spark: {
     text: "text-spark",
-    border: "border-spark/25",
-    bg: "bg-spark/10",
-    tab: "border-spark/40 bg-spark/15 text-spark",
-    dot: "bg-spark",
+    tabBar: "bg-spark shadow-[0_0_10px_var(--spark)]",
+    iconChip: "border-spark/25 bg-spark/10",
+    chip: "bg-spark/10 text-spark",
+    dot: "bg-spark shadow-[0_0_6px_var(--spark)]",
   },
   primary: {
     text: "text-primary",
-    border: "border-primary/25",
-    bg: "bg-primary/10",
-    tab: "border-primary/40 bg-primary/15 text-primary",
-    dot: "bg-primary",
+    tabBar: "bg-primary shadow-[0_0_10px_var(--primary)]",
+    iconChip: "border-primary/25 bg-primary/10",
+    chip: "bg-primary/10 text-primary",
+    dot: "bg-primary shadow-[0_0_6px_var(--primary)]",
   },
   success: {
     text: "text-success",
-    border: "border-success/25",
-    bg: "bg-success/10",
-    tab: "border-success/40 bg-success/15 text-success",
-    dot: "bg-success",
+    tabBar: "bg-success shadow-[0_0_10px_var(--success)]",
+    iconChip: "border-success/25 bg-success/10",
+    chip: "bg-success/10 text-success",
+    dot: "bg-success shadow-[0_0_6px_var(--success)]",
   },
 };
 
@@ -58,8 +64,8 @@ const SECTION_STARTS = CHEAT_SECTIONS.map((section) =>
 );
 
 /**
- * Tabs plus one prompt at a time, instead of a page you scroll for a minute
- * to find the prompt you need.
+ * The whole sheet as one console: a terminal-style title bar, a numbered phase
+ * rail, one prompt card, and a transport bar, all inside a single glass frame.
  *
  * Every prompt stays in the DOM and is hidden with the `hidden` class rather
  * than conditionally rendered, matching docs/page-content-conventions.md: the
@@ -68,6 +74,7 @@ const SECTION_STARTS = CHEAT_SECTIONS.map((section) =>
  */
 export function CheatSheetBrowser() {
   const [cursor, setCursor] = useState(0);
+  const tablistRef = useRef<HTMLDivElement>(null);
   const active = FLAT[cursor];
 
   const jumpTo = useCallback((id: string) => {
@@ -93,41 +100,105 @@ export function CheatSheetBrowser() {
     return () => window.removeEventListener("hashchange", select);
   }, []);
 
+  // Keep the active phase tab in view when the rail scrolls (mobile). Scrolls
+  // only the rail itself, never the page.
+  useEffect(() => {
+    const rail = tablistRef.current;
+    const tab = rail?.querySelector<HTMLButtonElement>(
+      `#phase-tab-${active.section.slug}`,
+    );
+    if (!rail || !tab) return;
+    const railRect = rail.getBoundingClientRect();
+    const tabRect = tab.getBoundingClientRect();
+    rail.scrollTo({
+      left:
+        rail.scrollLeft +
+        (tabRect.left - railRect.left) -
+        (railRect.width - tabRect.width) / 2,
+      behavior: "smooth",
+    });
+  }, [active.section.slug]);
+
   const accent = ACCENTS[active.section.accent];
 
   return (
-    <div className="space-y-4">
-      {/* Phase tabs */}
-      <div
-        role="tablist"
-        aria-label="Hackathon phases"
-        className="glass flex gap-1.5 overflow-x-auto rounded-xl border border-primary/15 p-2"
-      >
-        {CHEAT_SECTIONS.map((section, i) => {
-          const a = ACCENTS[section.accent];
-          const isActive = section.slug === active.section.slug;
-          return (
-            <button
-              key={section.slug}
-              type="button"
-              role="tab"
-              aria-selected={isActive}
-              aria-controls={`panel-${section.slug}`}
-              onClick={() => setCursor(SECTION_STARTS[i])}
-              className={`whitespace-nowrap rounded-lg border px-3 py-1.5 font-code text-xs transition-colors ${
-                isActive
-                  ? a.tab
-                  : "border-transparent text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {section.label}
-            </button>
-          );
-        })}
+    <div className="glass glow overflow-hidden rounded-2xl border border-primary/15">
+      {/* Console title bar */}
+      <div className="flex items-center gap-2 border-b border-primary/10 bg-background/40 px-4 py-2.5">
+        <span aria-hidden className="size-2.5 shrink-0 rounded-full bg-destructive/60" />
+        <span aria-hidden className="size-2.5 shrink-0 rounded-full bg-spark/60" />
+        <span aria-hidden className="size-2.5 shrink-0 rounded-full bg-success/60" />
+        <span className="ml-2 min-w-0 truncate font-code text-xs text-muted-foreground">
+          ~/cheat-sheet/
+          <span className={accent.text}>{active.section.slug}</span>
+        </span>
+        <span className="ml-auto shrink-0 font-code text-[10px] uppercase tracking-widest text-muted-foreground/60">
+          prompt{" "}
+          <span className={accent.text}>
+            {String(cursor + 1).padStart(2, "0")}
+          </span>
+          /{FLAT.length}
+        </span>
+      </div>
+
+      {/* Phase rail: 8 numbered tabs in event order */}
+      <div className="border-b border-primary/10">
+        <div
+          ref={tablistRef}
+          role="tablist"
+          aria-label="Hackathon phases"
+          className="scrollbar-none flex overflow-x-auto max-md:[mask-image:linear-gradient(to_right,transparent,black_1.25rem,black_calc(100%_-_1.25rem),transparent)]"
+        >
+          {CHEAT_SECTIONS.map((section, i) => {
+            const a = ACCENTS[section.accent];
+            const isActive = section.slug === active.section.slug;
+            const Icon = section.icon;
+            return (
+              <button
+                key={section.slug}
+                id={`phase-tab-${section.slug}`}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                aria-controls={section.slug}
+                onClick={() => setCursor(SECTION_STARTS[i])}
+                className={`group relative flex min-w-[5.5rem] flex-1 flex-col items-center gap-1 whitespace-nowrap px-3 pb-3 pt-2.5 transition-colors ${
+                  isActive ? "" : "hover:bg-foreground/[0.03]"
+                }`}
+              >
+                <span
+                  className={`flex items-center gap-1.5 font-code text-[10px] transition-colors ${
+                    isActive
+                      ? a.text
+                      : "text-muted-foreground/50 group-hover:text-muted-foreground"
+                  }`}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                  <Icon className="size-3" />
+                </span>
+                <span
+                  className={`font-code text-[11px] uppercase tracking-wider transition-colors ${
+                    isActive
+                      ? "text-foreground"
+                      : "text-muted-foreground group-hover:text-foreground"
+                  }`}
+                >
+                  {section.label}
+                </span>
+                <span
+                  aria-hidden
+                  className={`absolute inset-x-3 bottom-0 h-0.5 rounded-full transition-opacity ${
+                    isActive ? `${a.tabBar} opacity-100` : "opacity-0"
+                  }`}
+                />
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* One panel per phase; only the active one is shown, all stay in the HTML */}
-      {CHEAT_SECTIONS.map((section) => {
+      {CHEAT_SECTIONS.map((section, sectionIndex) => {
         const a = ACCENTS[section.accent];
         const isActive = section.slug === active.section.slug;
         const Icon = section.icon;
@@ -137,52 +208,72 @@ export function CheatSheetBrowser() {
             id={section.slug}
             role="tabpanel"
             aria-label={section.title}
-            className={`scroll-mt-24 space-y-4 ${isActive ? "" : "hidden"}`}
+            className={`scroll-mt-24 space-y-5 p-4 md:p-6 ${isActive ? "" : "hidden"}`}
           >
-            <div className="space-y-3">
-              <div className="flex flex-wrap items-center gap-3">
+            <div className="space-y-2">
+              <p className="font-code text-[10px] uppercase tracking-widest text-muted-foreground/60">
+                <span className={a.text}>
+                  Phase {String(sectionIndex + 1).padStart(2, "0")}
+                </span>
+                {" · "}
+                {section.timing}
+              </p>
+              <div className="flex items-center gap-3">
                 <span
-                  className={`flex size-9 items-center justify-center rounded-lg ${a.bg}`}
+                  className={`flex size-10 shrink-0 items-center justify-center rounded-lg border ${a.iconChip}`}
                 >
-                  <Icon className={`size-4 ${a.text}`} />
+                  <Icon className={`size-5 ${a.text}`} />
                 </span>
                 <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
                   {section.title}
                 </h2>
-                <span
-                  className={`rounded-full border px-2.5 py-0.5 font-code text-[10px] ${a.border} ${a.text}`}
-                >
-                  {section.timing}
-                </span>
               </div>
               <p className="max-w-2xl font-body text-sm text-muted-foreground">
                 {section.subtitle}
               </p>
             </div>
 
-            {/* Prompt index for this phase */}
-            <div className="flex gap-1.5 overflow-x-auto">
-              {section.prompts.map((prompt) => (
-                <button
-                  key={prompt.id}
-                  type="button"
-                  onClick={() => jumpTo(prompt.id)}
-                  aria-current={prompt.id === active.prompt.id}
-                  className={`whitespace-nowrap rounded-lg border px-2.5 py-1 font-code text-[11px] transition-colors ${
-                    prompt.id === active.prompt.id
-                      ? `${a.border} ${a.bg} ${a.text}`
-                      : "border-border text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {prompt.title}
-                </button>
-              ))}
+            {/* Prompt index for this phase: a numbered tracklist, subordinate
+                to the phase rail above it */}
+            <div className="space-y-1.5">
+              <p className="font-code text-[10px] uppercase tracking-widest text-muted-foreground/50">
+                Prompts in this phase
+              </p>
+              <div className="scrollbar-none flex gap-1 overflow-x-auto max-md:[mask-image:linear-gradient(to_right,transparent,black_1.25rem,black_calc(100%_-_1.25rem),transparent)] md:flex-wrap md:overflow-visible">
+                {section.prompts.map((prompt, promptIndex) => {
+                  const isCurrent = prompt.id === active.prompt.id;
+                  return (
+                    <button
+                      key={prompt.id}
+                      type="button"
+                      onClick={() => jumpTo(prompt.id)}
+                      aria-current={isCurrent}
+                      className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-1 font-code text-[11px] transition-colors ${
+                        isCurrent
+                          ? a.chip
+                          : "text-muted-foreground hover:bg-foreground/[0.04] hover:text-foreground"
+                      }`}
+                    >
+                      <span
+                        className={
+                          isCurrent ? "opacity-60" : "text-muted-foreground/50"
+                        }
+                      >
+                        {String(promptIndex + 1).padStart(2, "0")}
+                      </span>
+                      {prompt.title}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
             {section.prompts.map((prompt) => (
               <div
                 key={prompt.id}
-                className={prompt.id === active.prompt.id ? "" : "hidden"}
+                className={
+                  prompt.id === active.prompt.id ? "animate-card-in" : "hidden"
+                }
               >
                 <PromptCard
                   prompt={prompt}
@@ -195,34 +286,51 @@ export function CheatSheetBrowser() {
         );
       })}
 
-      {/* Cycle through every prompt in running order, across phases */}
-      <div className="flex items-center justify-between gap-3">
+      {/* Transport bar: cycle through every prompt in running order */}
+      <div className="flex items-center justify-between gap-3 border-t border-primary/10 bg-background/40 px-3 py-3 md:px-4">
         <button
           type="button"
           onClick={() => setCursor((c) => Math.max(0, c - 1))}
           disabled={cursor === 0}
-          className="glow-hover inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 font-code text-xs text-muted-foreground transition-colors hover:text-foreground disabled:pointer-events-none disabled:opacity-30"
+          aria-label="Previous prompt"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-border bg-background/40 px-3 py-2 font-code text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground disabled:pointer-events-none disabled:opacity-30"
         >
           <ChevronLeft className="size-3.5" />
-          Previous
+          <span className="hidden sm:inline">Prev</span>
         </button>
 
-        <span className="font-code text-xs text-muted-foreground">
-          <span className={accent.text}>{active.promptIndex + 1}</span> of{" "}
-          {active.section.prompts.length} in {active.section.label}
-          <span className="text-muted-foreground/40">
-            {" "}
-            ({cursor + 1}/{FLAT.length})
+        <div className="flex min-w-0 flex-col items-center gap-1.5">
+          <div className="flex items-center gap-1.5">
+            {active.section.prompts.map((prompt, i) => (
+              <span
+                key={prompt.id}
+                aria-hidden
+                className={`size-1.5 rounded-full transition-all ${
+                  i === active.promptIndex
+                    ? accent.dot
+                    : "bg-muted-foreground/25"
+                }`}
+              />
+            ))}
+          </div>
+          <span className="truncate font-code text-[10px] uppercase tracking-widest text-muted-foreground">
+            {active.section.label} {active.promptIndex + 1}/
+            {active.section.prompts.length}
+            <span className="text-muted-foreground/50">
+              {" "}
+              · {cursor + 1}/{FLAT.length}
+            </span>
           </span>
-        </span>
+        </div>
 
         <button
           type="button"
           onClick={() => setCursor((c) => Math.min(FLAT.length - 1, c + 1))}
           disabled={cursor === FLAT.length - 1}
-          className="glow-hover inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 font-code text-xs text-muted-foreground transition-colors hover:text-foreground disabled:pointer-events-none disabled:opacity-30"
+          aria-label="Next prompt"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-border bg-background/40 px-3 py-2 font-code text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground disabled:pointer-events-none disabled:opacity-30"
         >
-          Next
+          <span className="hidden sm:inline">Next</span>
           <ChevronRight className="size-3.5" />
         </button>
       </div>

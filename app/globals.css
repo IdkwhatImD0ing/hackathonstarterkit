@@ -358,3 +358,26 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid oklch(0.54 0.24 285 / 10%);
 }
+
+/* Card swap inside the cheat-sheet browser: runs each time the class is
+   applied to an element that was hidden */
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-in {
+  animation: card-in 0.35s ease-out both;
+}
+
+/* Hide the scrollbar on horizontal rails whose edges already fade to signal
+   overflow (the cheat-sheet phase tabs and prompt index) */
+.scrollbar-none {
+  scrollbar-width: none;
+}

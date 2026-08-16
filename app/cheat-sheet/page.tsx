@@ -86,6 +86,10 @@ export default function CheatSheetPage() {
             fill in. Pick the phase you are in, copy the prompt, and answer the
             questions it asks you.
           </p>
+          <p className="font-code text-xs text-muted-foreground">
+            <span className="text-volt">$</span> pick a phase → copy → paste →
+            answer its questions
+          </p>
           <LastUpdated date={CHEAT_SHEET_UPDATED} />
         </header>
 
@@ -101,11 +105,13 @@ export default function CheatSheetPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {HOW_TO_USE.map((rule) => (
-              <div key={rule.step} className="space-y-1.5">
-                <span className="font-code text-xs text-muted-foreground/60">
+              <div key={rule.step} className="flex gap-3">
+                <span className="flex size-6 shrink-0 items-center justify-center rounded-md border border-spark/25 bg-spark/10 font-code text-[10px] text-spark">
                   {rule.step}
                 </span>
-                <p className="font-body text-sm text-foreground/85">{rule.text}</p>
+                <p className="font-body text-sm leading-relaxed text-foreground/85">
+                  {rule.text}
+                </p>
               </div>
             ))}
           </div>
