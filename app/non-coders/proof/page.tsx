@@ -122,7 +122,8 @@ export default function ProofPage() {
           professional developer.
         </p>
         <p className="mt-2 font-code text-xs text-foreground/50">
-          Source: Anthropic,{" "}
+          Applicant count via Cerebral Valley, the hackathon&apos;s co-host;
+          selection and winner details from Anthropic,{" "}
           <a
             href="https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon"
             target="_blank"

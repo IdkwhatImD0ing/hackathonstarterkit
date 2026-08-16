@@ -1180,7 +1180,7 @@ export default function PostHackathonPage() {
                   accent: "spark",
                 },
                 {
-                  text: "Make it findable: \"if your work isn't online, it doesn't exist\" (Austin Kleon, Show Your Work!, 2014)",
+                  text: "Make it findable: \"if your work isn't online, it doesn't exist\" (Austin Kleon, author of Show Your Work!, 2014)",
                   accent: "primary",
                 },
               ].map((item) => {

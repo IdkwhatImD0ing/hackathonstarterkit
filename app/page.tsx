@@ -176,7 +176,7 @@ const faqJsonLd = {
       name: "Can non-coders win hackathons?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, non-coders are increasingly winning hackathons. At Anthropic's Built with Opus 4.6 Claude Code hackathon in February 2026, personal injury lawyer Mike Brown won 1st place with CrossBeam and cardiologist Michal Nedoszytko placed 3rd with postvisit.ai, both building with Claude Code. Domain expertise (in law, medicine, finance, etc.) combined with AI-assisted development can produce more innovative solutions than pure technical skill alone.",
+        text: "Yes, non-coders are increasingly winning hackathons. At Anthropic's Built with Opus 4.6 Claude Code hackathon in February 2026, personal injury lawyer Mike Brown won 1st place with CrossBeam and cardiologist Michal Nedoszytko placed 3rd with PostVisit.ai, both building with Claude Code. Domain expertise (in law, medicine, finance, etc.) combined with AI-assisted development can produce more innovative solutions than pure technical skill alone.",
         citation:
           "https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon",
       },

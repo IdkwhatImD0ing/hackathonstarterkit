@@ -708,7 +708,7 @@ export default function SubmissionPage() {
                 </div>
                 <p className="font-code text-xs text-volt/60">
                   —{" "}
-                  <a href="https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism)" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Inverted pyramid, the news structure of the 19th-century telegraph era</a>
+                  <a href="https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism)" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Inverted pyramid, in widespread newspaper use since the early 1900s</a>
                 </p>
               </CardContent>
             </Card>

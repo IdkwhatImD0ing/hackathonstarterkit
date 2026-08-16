@@ -688,8 +688,8 @@ export default function TeamFormationPage() {
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
                 —{" "}
-                <a href="https://en.wikipedia.org/wiki/Peter_Schutz" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Peter Schutz, CEO of Porsche AG 1981-1988</a>,
-                the hiring philosophy he set at Porsche
+                <a href="https://en.wikipedia.org/wiki/Peter_Schutz" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Peter Schutz, CEO of Porsche AG from 1981 to 1987</a>,
+                his often-quoted hiring maxim
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">

@@ -1674,7 +1674,8 @@ export default function ValidationPage() {
                 </p>
                 <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
                   <p className="font-code text-xs text-primary/80">
-                    Reid Hoffman, LinkedIn co-founder, in his 2017 post on X:
+                    Reid Hoffman, LinkedIn co-founder, in his 2017 post on
+                    Twitter:
                     &ldquo;If you&apos;re not embarrassed by the first version
                     of your product, you&apos;ve launched too late.&rdquo;
                     Perfect decisions aren&apos;t the goal. Fast, reversible

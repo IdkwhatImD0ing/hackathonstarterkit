@@ -415,8 +415,9 @@ export default function ExecutionPage() {
                     Thomas Dohmke
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
-                    &ldquo;The developer of the future is not a code-typist.
-                    They are the creative director of code.&rdquo;
+                    &ldquo;A vital shift is underway in software development,
+                    one that redefines how we build, but also who we are as
+                    developers.&rdquo;
                   </p>
                   <p className="font-code text-xs text-muted-foreground">
                     <a href="https://ashtom.github.io/developers-reinvented" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Former CEO of GitHub — &ldquo;Developers, Reinvented&rdquo;, August 2025</a>
