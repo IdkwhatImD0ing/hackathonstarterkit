@@ -9,7 +9,7 @@ Dashboard click paths below are as of August 2026. Cloudflare moves things aroun
 ## 0. Preconditions found by live probing (2026-08-15), do these first
 
 1. **The zone is currently DNS-only (grey cloud): no `cf-ray` on production responses.** Every Cloudflare feature in this document (Cache Rules, AI Crawl Control, Bot Fight Mode, Transform Rules, Redirect Rules) is inert until the `A`/`CNAME` records for the apex and `www` are switched to Proxied (orange cloud) under **DNS > Records**. Two consequences while grey-cloud: the September 15 AI Crawl Control deadline in section 3 does not affect traffic yet (it starts mattering the moment you proxy), and Markdown negotiation caching is governed by Vercel alone, which respects the origin's `Vary`/`no-store` headers correctly, so negotiation is safe today. The bypass Cache Rule in section 2 becomes REQUIRED the moment you flip to orange.
-2. **Redirect-loop landmine: flip Vercel's primary domain before or at deploy.** Production currently 307-redirects apex to `www` because the Vercel project's primary domain is `www.thehackathonplaybook.dev`. This repo makes the apex canonical and 301s `www` to apex. Deployed together those two redirects loop. Fix in **Vercel > Project > Settings > Domains**: set `thehackathonplaybook.dev` as the primary domain and configure `www.thehackathonplaybook.dev` to redirect to it. Verify after deploy:
+2. **Redirect-loop landmine: flip Vercel's primary domain before or at deploy. (Resolved 2026-08-15: the primary domain is now the apex, and `www` 308-redirects to it, verified live.)** Production previously 307-redirected apex to `www` because the Vercel project's primary domain was `www.thehackathonplaybook.dev`. This repo makes the apex canonical and 301s `www` to apex. Deployed together those two redirects would have looped. Fix in **Vercel > Project > Settings > Domains**: set `thehackathonplaybook.dev` as the primary domain and configure `www.thehackathonplaybook.dev` to redirect to it. Verify after deploy:
 
 ```bash
 curl -sI https://thehackathonplaybook.dev/ | grep -iE "^(HTTP|location)"
@@ -17,6 +17,13 @@ curl -sI https://thehackathonplaybook.dev/ | grep -iE "^(HTTP|location)"
 curl -sIL --max-redirs 3 https://www.thehackathonplaybook.dev/ | grep -iE "^(HTTP|location)"
 # expect: exactly one 301/308 to the apex, then 200
 ```
+
+3. **Applied 2026-08-15 via the Cloudflare API** (zone deliberately stays grey-cloud for now):
+   - Section 1's `www to apex` Redirect Rule and section 2's `bypass cache for markdown negotiation` Cache Rule are created and enabled. Both are inert while the zone is DNS-only; they become live protection the moment the apex or `www` records are proxied.
+   - Section 3: the zone is opted out of the September 15 default blocking (`ai_bots_migration_opt_out: true`), AI Labyrinth (`crawler_protection`) is disabled, Bot Fight Mode is off, and `ai_bots_protection`, `content_bots_protection`, and the Search/Agent/Training category policies are all non-blocking.
+   - Section 4: managed robots.txt confirmed off (`is_robots_txt_managed: false`).
+   - Section 6 (origin lock): deliberately skipped while grey-cloud.
+   - `docs/dns-aid-setup.md`: both `_agents` HTTPS records are live (verified against 1.1.1.1), and DNSSEC is enabled and pending registry propagation (the domain is on Cloudflare Registrar, so the DS record is submitted automatically).
 
 ## 1. Canonical host redirect (Phase 1)
 
