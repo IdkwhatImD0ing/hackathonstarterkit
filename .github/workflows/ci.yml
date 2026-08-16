@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      # Lint has pre-existing failures in interactive components that
+      # predate the agent-readiness work; keep it visible without blocking.
+      - name: Lint (non-blocking, pre-existing failures)
+        run: pnpm lint
+        continue-on-error: true
+
+      - name: Unit tests
+        run: pnpm test
+
+      - name: Markdown corpus freshness
+        run: pnpm gen:md -- --check
+
+      - name: llms.txt freshness
+        run: pnpm gen:llms -- --check
+
+      - name: Agent skills index + digest freshness
+        run: pnpm gen:skills -- --check
+
+      - name: Embedding index freshness
+        run: |
+          if [ -f index/manifest.json ]; then
+            pnpm gen:index -- --dry-run
+          else
+            echo "::warning::index/ not committed yet; run 'pnpm gen:index' with OPENAI_API_KEY and commit it. Retrieval falls back to lexical until then."
+          fi
+
+      - name: JSON-LD validation
+        run: pnpm validate:jsonld
+
+      - name: Client bundle secret check
+        run: pnpm check:bundle
+
+      - name: Integration tests against next start
+        run: |
+          pnpm start &
+          echo $! > server.pid
+          INTEGRATION_BASE_URL=http://localhost:3000 pnpm test -- tests/integration.test.ts
+          kill "$(cat server.pid)"

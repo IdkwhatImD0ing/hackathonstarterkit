@@ -35,7 +35,7 @@ If you skip verification, prefix the code with `// UNVERIFIED: I have not confir
 
 ## Project context
 
-- **What this is:** "The Hackathon Playbook", a content-heavy, SEO-first marketing/education site deployed at `thehackathonplaybook.dev`. The repo also ships a pipeline of agent skills under `.agents/skills/` that scaffold new hackathon projects, separate from the site's own code.
+- **What this is:** "The Hackathon Playbook", a content-heavy, SEO-first marketing/education site deployed at `thehackathonplaybook.dev`. The repo also ships a pipeline of agent skills under the top-level `skills/` directory that scaffold new hackathon projects, separate from the site's own code.
 - **Stack:** Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, shadcn/ui (new-york style, CSS variables) over radix-ui, lucide-react. Analytics: Vercel Analytics + PostHog. Fonts via `next/font/google` in `lib/fonts.ts`.
 
 ## Commands
@@ -85,6 +85,8 @@ Content is **data-driven**: page data lives in `lib/` as typed TypeScript, and r
 - Never commit secrets, `.env` files, or credentials.
 - Do not commit or push unless asked.
 
-## Agent skills (`.agents/skills/`)
+## Agent skills (`skills/`)
 
 A scaffolding pipeline for building *new* hackathon projects (not this site). Intended order: `non-coder-mode` (load once, stays active) → `domain-to-spec` (writes `AGENTS.md` + `PRD.md` to a target repo root; scaffolds refuse to run without these) → `scaffold-frontend` (`clients/`) → `scaffold-backend` (`server/`, optional Supabase, skipped if PRD says no backend) → `feature-builder` → `bugfix-doctor` → `demo-prep`. `quickstart` chains steps 2-4 with a confirmation gate. `v0-prompt-crafter` is an alternative to `scaffold-frontend`. `blog-writer` is standalone, for publishing write-ups to this site.
+
+The skills live in a plain `skills/` directory (not `.agents/skills/` or `.claude/skills/`) deliberately, so agent CLIs (Cursor, Codex, Amp, Claude Code) do not auto-load them into sessions working on this repo. To use one here (e.g. `blog-writer` when publishing a post), read `skills/<slug>/SKILL.md` and follow it. `.agents/skills/` still exists only as the gitignored install target for third-party skills added via the skills CLI.

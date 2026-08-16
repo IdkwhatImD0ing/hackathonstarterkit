@@ -1,0 +1,95 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "The Hackathon Playbook public APIs",
+    "description": "Read-only, unauthenticated APIs over the playbook's content: a grounded chat endpoint and an MCP server (Streamable HTTP, JSON-RPC 2.0). Rate limited per client IP. See /auth.md and /ai.",
+    "version": "1.0.0"
+  },
+  "servers": [{ "url": "https://thehackathonplaybook.dev" }],
+  "paths": {
+    "/api/chat": {
+      "post": {
+        "operationId": "chat",
+        "summary": "Ask the playbook a question; answers are grounded in site content and streamed as SSE.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["messages"],
+                "properties": {
+                  "messages": {
+                    "type": "array",
+                    "maxItems": 10,
+                    "items": {
+                      "type": "object",
+                      "required": ["role", "content"],
+                      "properties": {
+                        "role": { "type": "string", "enum": ["user", "assistant"] },
+                        "content": { "type": "string", "maxLength": 1500 }
+                      }
+                    }
+                  },
+                  "pageContext": {
+                    "type": "string",
+                    "description": "Optional site path (e.g. /playbook/pitching) whose content gets a retrieval boost.",
+                    "pattern": "^/[a-z0-9\\-/]*$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Server-sent event stream: `event: citations` with a JSON array of {title, heading, url}, unnamed `data:` events with {delta} text chunks, then `event: done` with token counts.",
+            "content": { "text/event-stream": {} }
+          },
+          "400": { "description": "Invalid request shape (code: invalid)." },
+          "403": { "description": "Cross-origin browser request (code: forbidden)." },
+          "429": { "description": "Rate limited, see Retry-After (code: rate_limited)." },
+          "502": { "description": "Upstream model unreachable (code: api_error)." },
+          "503": { "description": "Chat disabled or monthly budget reached (code: disabled | budget)." }
+        }
+      }
+    },
+    "/api/mcp": {
+      "post": {
+        "operationId": "mcp",
+        "summary": "MCP server (Streamable HTTP transport, JSON-RPC 2.0). Tools: search_playbook, get_page, list_topics, get_checklist.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "type": "object", "description": "A JSON-RPC 2.0 request per the Model Context Protocol." }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "JSON-RPC response.", "content": { "application/json": {} } },
+          "429": { "description": "Rate limited." }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "health",
+        "summary": "Liveness check.",
+        "responses": {
+          "200": {
+            "description": "Service is up.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "status": { "type": "string", "enum": ["ok"] } }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

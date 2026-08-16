@@ -40,6 +40,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 const section = PLAYBOOK_SECTIONS[5];
 
@@ -48,7 +49,8 @@ export const metadata: Metadata = {
   description:
     "Write hackathon READMEs, record compelling demo videos, and submit deliverables that make judges remember you. Templates and examples from 36+ winning submissions.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/submission`,
+    canonical: `${SITE_URL}/playbook/submission`,
+    types: markdownAlternate("/playbook/submission"),
   },
   openGraph: {
     title: "How to Write a Winning Hackathon Submission",

@@ -37,6 +37,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
 
 const section = PLAYBOOK_SECTIONS[0];
 
@@ -45,7 +46,8 @@ export const metadata: Metadata = {
   description:
     "Learn how to form the perfect hackathon team. Find the right people, define roles, balance skills, and create a team dynamic that wins prizes. Proven strategies from 36+ hackathon victories.",
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev"}/playbook/team-formation`,
+    canonical: `${SITE_URL}/playbook/team-formation`,
+    types: markdownAlternate("/playbook/team-formation"),
   },
   openGraph: {
     title: "How to Build a Winning Hackathon Team",

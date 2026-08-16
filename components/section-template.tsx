@@ -1,6 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { LastUpdated } from "@/components/last-updated";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
+import { JsonLd } from "@/components/json-ld";
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
+import { guideArticleJsonLd } from "@/lib/structured-data";
 
 interface SectionTemplateProps {
   step: number;
@@ -15,13 +19,26 @@ export function SectionTemplate({
   subtitle,
   children,
 }: SectionTemplateProps) {
-  const updated = PLAYBOOK_SECTIONS.find((s) => s.step === step)?.updated;
+  const section = PLAYBOOK_SECTIONS.find((s) => s.step === step);
+  const updated = section?.updated;
+  const path = section ? `/playbook/${section.slug}` : null;
   return (
     <div className="space-y-12">
+      {path ? (
+        <>
+          <BreadcrumbJsonLd path={path} />
+          <JsonLd
+            data={guideArticleJsonLd({ path, title, description: subtitle, updated })}
+          />
+        </>
+      ) : null}
       <header className="stagger-children space-y-4">
-        <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
-          PHASE {step} OF 7
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
+            PHASE {step} OF 7
+          </Badge>
+          {path ? <CopyForAi path={path} title={title} /> : null}
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           {title}
         </h1>

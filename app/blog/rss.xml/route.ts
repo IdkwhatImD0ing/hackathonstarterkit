@@ -1,9 +1,8 @@
 import { BLOG_POSTS } from "@/lib/blog";
 import type { BlogPost, ContentBlock } from "@/lib/blog";
+import { SITE_URL } from "@/lib/site";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
-const FEED_URL = `${BASE_URL}/blog/rss.xml`;
+const FEED_URL = `${SITE_URL}/blog/rss.xml`;
 
 export const revalidate = 3600;
 
@@ -67,9 +66,9 @@ function renderBlockHtml(block: ContentBlock) {
         .map((item) => `<li>${escapeXml(item)}</li>`)
         .join("")}</ul>`;
     case "link-card":
-      return `<p><a href="${escapeXml(new URL(block.href, BASE_URL).toString())}">${escapeXml(block.title)}</a>: ${escapeXml(block.description)}</p>`;
+      return `<p><a href="${escapeXml(new URL(block.href, SITE_URL).toString())}">${escapeXml(block.title)}</a>: ${escapeXml(block.description)}</p>`;
     case "cta-button":
-      return `<p><a href="${escapeXml(new URL(block.href, BASE_URL).toString())}">${escapeXml(block.label)}</a>${block.description ? `: ${escapeXml(block.description)}` : ""}</p>`;
+      return `<p><a href="${escapeXml(new URL(block.href, SITE_URL).toString())}">${escapeXml(block.label)}</a>${block.description ? `: ${escapeXml(block.description)}` : ""}</p>`;
   }
 }
 
@@ -88,7 +87,7 @@ function renderPostContent(post: BlogPost) {
 }
 
 function renderRssItem(post: BlogPost) {
-  const postUrl = `${BASE_URL}/blog/${post.slug}`;
+  const postUrl = `${SITE_URL}/blog/${post.slug}`;
 
   return `
     <item>
@@ -115,7 +114,7 @@ export function GET() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Hackathon Playbook Blog</title>
-    <link>${escapeXml(`${BASE_URL}/blog`)}</link>
+    <link>${escapeXml(`${SITE_URL}/blog`)}</link>
     <atom:link href="${escapeXml(FEED_URL)}" rel="self" type="application/rss+xml" />
     <description>Expert hackathon guides, strategies, and tips from 36+ victories.</description>
     <language>en-US</language>

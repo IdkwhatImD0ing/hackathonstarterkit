@@ -18,11 +18,18 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "Getting Started",
   description:
     "The 3 files, 4 shortcuts, and daily workflow you need to start building with Cursor.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/setup`,
+    types: markdownAlternate("/non-coders/setup"),
+  },
 };
 
 const THREE_FILES = [
@@ -177,10 +184,14 @@ const accentStyles = {
 export default function SetupPage() {
   return (
     <div className="space-y-24">
+      <BreadcrumbJsonLd path="/non-coders/setup" />
       <header className="stagger-children space-y-4">
-        <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
-          GETTING STARTED
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
+            GETTING STARTED
+          </Badge>
+          <CopyForAi path="/non-coders/setup" title="Getting Started" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Getting Started
         </h1>

@@ -21,22 +21,23 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "The System Prompt: CLAUDE.md & AGENTS.md for Non-Coders",
   description:
     "Skills teach your AI new tricks; the system prompt sets the rules it follows every session. Copy one command to download a non-coder CLAUDE.md and AGENTS.md straight into your project.",
   alternates: {
-    canonical: `${BASE_URL}/non-coders/system-prompt`,
+    canonical: `${SITE_URL}/non-coders/system-prompt`,
+    types: markdownAlternate("/non-coders/system-prompt"),
   },
   openGraph: {
     title: "The System Prompt: CLAUDE.md & AGENTS.md for Non-Coders",
     description:
       "One copy-paste command downloads a non-coder CLAUDE.md and AGENTS.md into your project, so Cursor and Claude follow the same rules every session.",
-    url: `${BASE_URL}/non-coders/system-prompt`,
+    url: `${SITE_URL}/non-coders/system-prompt`,
   },
   twitter: {
     title: "Set Your AI's Rules Once: CLAUDE.md & AGENTS.md",
@@ -57,8 +58,8 @@ const AGENTS_TXT = readFileSync(
   "utf8",
 );
 
-const CLAUDE_URL = `${BASE_URL}/system-prompt/non-coder-claude.txt`;
-const AGENTS_URL = `${BASE_URL}/system-prompt/non-coder-agents.txt`;
+const CLAUDE_URL = `${SITE_URL}/system-prompt/non-coder-claude.txt`;
+const AGENTS_URL = `${SITE_URL}/system-prompt/non-coder-agents.txt`;
 
 const SETUP_COMMAND = `Set up my project's system prompt. I am a non-coder, so handle the whole thing for me.
 
@@ -105,11 +106,15 @@ const FILES = [
 export default function SystemPromptPage() {
   return (
     <div className="space-y-24">
+      <BreadcrumbJsonLd path="/non-coders/system-prompt" />
       {/* ── HERO ── */}
       <header className="stagger-children space-y-4">
-        <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
-          THE SYSTEM PROMPT
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
+            THE SYSTEM PROMPT
+          </Badge>
+          <CopyForAi path="/non-coders/system-prompt" title="The System Prompt" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Your AI&apos;s
           <br />

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { fontDisplay, fontBody, fontCode } from "@/lib/fonts";
 import { Analytics } from "@vercel/analytics/next";
 import { PostHogPageViewTracker } from "@/components/posthog-provider";
+import { WebMcpTools } from "@/components/web-mcp";
+import { ChatWidget } from "@/components/chat/chat-widget";
 import { JsonLd } from "@/components/json-ld";
 import "./globals.css";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://thehackathonplaybook.dev";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(SITE_URL),
   title: {
     default:
       "Hackathon Playbook — How to Win Hackathons | Guides, Templates & Strategies",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
   creator: "Bill Zhang",
   publisher: "Hackathon Playbook",
   alternates: {
-    canonical: BASE_URL,
+    canonical: SITE_URL,
   },
   openGraph: {
     type: "website",
     siteName: "Hackathon Playbook",
     locale: "en_US",
-    url: BASE_URL,
+    url: SITE_URL,
     title:
       "Hackathon Playbook — How to Win Hackathons | Guides & Strategies",
     description:
@@ -79,7 +79,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Hackathon Playbook",
-  url: BASE_URL,
+  url: SITE_URL,
   description:
     "Learn how to win hackathons with battle-tested strategies from 36+ victories and $100K+ in prizes.",
   author: {
@@ -99,7 +99,7 @@ const websiteJsonLd = {
   },
   potentialAction: {
     "@type": "SearchAction",
-    target: `${BASE_URL}/blog?q={search_term_string}`,
+    target: `${SITE_URL}/blog?q={search_term_string}`,
     "query-input": "required name=search_term_string",
   },
 };
@@ -108,8 +108,8 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Hackathon Playbook",
-  url: BASE_URL,
-  logo: `${BASE_URL}/icon`,
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon`,
   description:
     "The ultimate hackathon resource with guides, templates, and strategies from 36+ wins.",
   founder: {
@@ -139,6 +139,8 @@ export default function RootLayout({
         {children}
         <PostHogPageViewTracker />
         <Analytics />
+        <WebMcpTools />
+        <ChatWidget />
       </body>
     </html>
   );

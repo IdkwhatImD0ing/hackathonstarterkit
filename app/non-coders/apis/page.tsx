@@ -12,11 +12,18 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
+import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "Using APIs",
   description:
     "How to add any service to your app with just an API key and a docs link. The copy-paste pattern for non-coders.",
+  alternates: {
+    canonical: `${SITE_URL}/non-coders/apis`,
+    types: markdownAlternate("/non-coders/apis"),
+  },
 };
 
 const GENERIC_PROMPT = `I want to use [SERVICE NAME] in my project.
@@ -55,10 +62,14 @@ Store the Supabase URL and key in environment variables.`;
 export default function ApisPage() {
   return (
     <div className="space-y-24">
+      <BreadcrumbJsonLd path="/non-coders/apis" />
       <header className="stagger-children space-y-4">
-        <Badge className="border-success/30 bg-success/10 text-success font-code text-xs">
-          USING APIS
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-success/30 bg-success/10 text-success font-code text-xs">
+            USING APIS
+          </Badge>
+          <CopyForAi path="/non-coders/apis" title="Using APIs" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Add Any Service
           <br />
