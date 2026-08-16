@@ -165,31 +165,31 @@ TL;DR Decades of creativity research agree: new ideas are old parts recombined, 
 
 Broader experiences give you more “dots” to connect. A more diverse element list makes your combinations more unexpected and powerful.
 
-— [Wired interview, 1996](https://www.wired.com/1996/02/jobs-2/)
+— Steve Jobs, co-founder of Apple, [Wired interview, 1996](https://www.wired.com/1996/02/jobs-2/)
 
 #### Bisociation
 
-> “The creative act is the perceiving of a situation or idea in two self-consistent but habitually incompatible frames of reference.”
+> “The pattern underlying \[the creative act\] is the perceiving of a situation or idea in two self-consistent but habitually incompatible frames of reference.”
 
 “Bisociation” is creativity as the collision of two independent mental frameworks. Exactly what happens when you cross “LLMs” with “Defense.”
 
-— [The Act of Creation, 1964](https://en.wikipedia.org/wiki/The_Act_of_Creation)
+— Arthur Koestler, Hungarian-British author, [The Act of Creation, 1964](https://en.wikipedia.org/wiki/The_Act_of_Creation)
 
 #### The Adjacent Possible
 
-> “Good ideas are not conjured out of thin air; they are built out of a collection of existing parts… the adjacent possible.”
+> “Good ideas are not conjured out of thin air; they are built out of a collection of existing parts, the composition of which expands (and, occasionally, contracts) over time.”
 
-Innovation lives at the edge of what's feasible. The best hackathon ideas use tools that just became possible: a new API, a fresh model, a just-opened dataset.
+Johnson calls that expanding edge the “adjacent possible,” a term he borrowed from biologist Stuart Kauffman. Innovation lives at the edge of what's feasible. The best hackathon ideas use tools that just became possible: a new API, a fresh model, a just-opened dataset.
 
-— [Where Good Ideas Come From, 2010](https://en.wikipedia.org/wiki/Where_Good_Ideas_Come_From)
+— Steven Johnson, science writer, [Where Good Ideas Come From, 2010](https://en.wikipedia.org/wiki/Where_Good_Ideas_Come_From)
 
 #### Notice, Don't Invent
 
-> “Live in the future, then build what's missing. The verb you want to be using with respect to startup ideas is not ‘think up’ but ‘notice.’”
+> “Live in the future, then build what's missing. … The verb you want to be using with respect to startup ideas is not ‘think up’ but ‘notice.’”
 
 The best ideas come from your own experience. What frustrates you? What gap do others miss? Combine that personal insight with your elements.
 
-— [How to Get Startup Ideas, 2012](https://paulgraham.com/startupideas.html)
+— Paul Graham, Y Combinator co-founder, [How to Get Startup Ideas, 2012](https://paulgraham.com/startupideas.html)
 
 ### 
 
@@ -234,11 +234,13 @@ Things that add a unique angle. Unusual constraints, trends, and sponsor challen
 
 wild cards for spice
 
-[Linus Pauling](https://en.wikipedia.org/wiki/Linus_Pauling) — Two-Time Nobel Laureate
+[Linus Pauling](https://en.wikipedia.org/wiki/Linus_Pauling) — Two-Time Nobel Laureate (Chemistry 1954, Peace 1962)
 
-> “The best way to have a good idea is to have a lot of ideas. You aren't going to have good ideas unless you have lots of ideas and some principle of selection.”
+> “The best way to have a good idea is to have a lot of ideas.”
 
-Don't filter while building your list. Chase volume now, not quality. You'll prune later.
+— Quoted in Fortune, April 1960
+
+He filled in the other half on PBS's NOVA in 1977: “you aren't going to have good ideas unless you have lots of ideas and some sort of principle of selection…” So don't filter while building your list. Chase volume now, not quality. You'll prune later.
 
 ### 
 
@@ -260,7 +262,7 @@ You don't have to play TFT. Pair ideation with anything that keeps your hands bu
 
 #### Focused vs. Diffuse Thinking
 
-Professor Barbara Oakley's research reveals two thinking modes:
+Barbara Oakley, professor of engineering at Oakland University, popularized two thinking modes in A Mind for Numbers (2014) and in the Coursera course [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn) (2014), which she teaches with neuroscientist Terrence Sejnowski:
 
 Focused Mode
 
@@ -270,9 +272,9 @@ Diffuse Mode
 
 Relaxed, broad, associative. Surfaces novel connections. You walking to the coffee shop when the idea hits.
 
-> “Sometimes backing off can be the best thing you can do when learning something new.”
+> “Sometimes we need to lose concentration so we can think more clearly.”
 
-— [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn)
+— Barbara Oakley and Terrence Sejnowski with Alistair McConville, [Learning How to Learn](https://www.penguinrandomhouse.com/books/563935/learning-how-to-learn-by-barbara-oakley-phd-and-terrence-sejnowski-phd-with-alistair-mcconville/), 2018
 
 #### The Five-Step Process
 
@@ -303,7 +305,7 @@ TL;DR When random combining stalls, reach for SCAMPER, random input, or antidisc
 
 #### SCAMPER Method
 
-[Bob Eberle's](https://en.wikipedia.org/wiki/S.C.A.M.P.E.R) checklist to expand any idea in seven directions.
+Education author Bob Eberle's [Scamper: Games for Imagination Development](https://archive.org/details/scampergamesfori0000eber) (1971) turned Alex Osborn's brainstorming questions into a checklist that expands any idea in seven directions.
 
 Substitute: Replace a component
 
@@ -323,17 +325,17 @@ Run each letter on your top idea. “Substitute the API? Combine with another ap
 
 #### Random Input
 
-[Edward de Bono's](https://en.wikipedia.org/wiki/Lateral_thinking) technique for provoking new connections with randomness.
+Maltese physician and author Edward de Bono, who coined [lateral thinking](https://en.wikipedia.org/wiki/Lateral_thinking), devised this technique for provoking new connections with randomness, set out in Serious Creativity (1992).
 
 1.  Pick a random noun: open a dictionary, use a generator, or point at something in the room
 2.  Force-connect it to your problem. How is your idea like a “lighthouse”?
 3.  Follow the unexpected links. The weirder the connection, the more original the idea
 
-Stuck in a loop of similar ideas? Random input is the fastest way out. De Bono argued the real risk isn't being too random, but not random enough.
+Stuck in a loop of similar ideas? Random input is the fastest way out, as long as the word is genuinely random. The failure mode isn't picking something too random; it's quietly picking something already connected to your problem.
 
 #### Antidisciplinary Thinking
 
-[Joi Ito's](https://joi.ito.com/weblog/2014/10/02/antidisciplinar.html) framework for finding innovation in the white space between fields.
+Joi Ito, then director of the MIT Media Lab, on finding innovation in the white space between fields, from his 2014 essay [Antidisciplinary](https://joi.ito.com/weblog/2014/10/02/antidisciplinar.html).
 
 Interdisciplinary work has fields collaborate. Antidisciplinary thinking creates something that fits no existing category: the white space between the dots on a map of knowledge.
 
@@ -345,10 +347,10 @@ Ask Yourself
 
 The best projects feel weird at first. “An AI 911 dispatcher?” sounded strange until it won grand prize. Lean into the weirdness.
 
-> “Creativity is just connecting things.  
+> “Creativity is just connecting things. …  
 > The broader one's understanding of the human experience, the better design we will have.”
 
-— [Steve Jobs, co-founder of Apple](https://www.wired.com/1996/02/jobs-2/)
+— Steve Jobs, co-founder of Apple, [Wired interview, 1996](https://www.wired.com/1996/02/jobs-2/)
 
 The best ideas don't come from staring at a blank screen. They come from a broad inventory of elements (technologies you've explored, industries you understand, problems you've felt) plus the courage to combine them in ways nobody else would.
 

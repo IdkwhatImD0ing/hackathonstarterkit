@@ -305,7 +305,7 @@ Stream
 
 ## Spike Solutions — Test the Riskiest Piece First
 
-From Kent Beck's Extreme Programming: a small, throwaway experiment to test a risky technical assumption before committing to a full implementation.
+From Kent Beck's Extreme Programming Explained (1999): a small, throwaway experiment to test a risky technical assumption before committing to a full implementation.
 
 TL;DR Spike the one assumption that could kill your idea before writing real code. 30-60 minutes de-risks the project.
 
@@ -313,9 +313,9 @@ TL;DR Spike the one assumption that could kill your idea before writing real cod
 
 Identify the riskiest technical assumption and spike it before writing a single line of real code.
 
-> “A spike solution is a very simple program to explore potential solutions. It focuses only on the problem under examination while ignoring all other concerns. Most spikes are not good enough to keep, so expect to throw away the code.”
+> “A spike solution is a very simple program to explore potential solutions. … Most spikes are not good enough to keep, so expect to throw it away.”
 
-— [Kent Beck, Extreme Programming](https://en.wikipedia.org/wiki/Extreme_programming)
+— [Don Wells, Extreme Programming: A Gentle Introduction, extremeprogramming.org](http://www.extremeprogramming.org/rules/spike.html)
 
 The Rule
 
@@ -351,23 +351,23 @@ TL;DR Decades of engineering research back the Lego method: build small, test en
 
 Each Lego block is a mini MVP cycle: build the smallest testable version, measure, learn, repeat. By the time you combine them, you've learned what matters.
 
-— [The Lean Startup, 2011](http://theleanstartup.com/)
+— [Eric Ries, entrepreneur and author, The Lean Startup, 2011](http://theleanstartup.com/)
 
 #### Prototype Over Meetings
 
 > “If a picture is worth a thousand words, a prototype is worth a thousand meetings.”
 
-IDEO's philosophy: stop debating whether something works and build it. A 30-minute prototype answers more than a 2-hour whiteboard session.
+IDEO's philosophy: stop debating whether something works and build it. Our own rule of thumb: a 30-minute prototype answers more than a 2-hour whiteboard session.
 
-— [David Kelley, IDEO founder](https://www.ideo.com/)
+— [A saying at IDEO, quoted by the Interaction Design Foundation, Design Thinking: Get Started with Prototyping](https://ixdf.org/literature/article/design-thinking-get-started-with-prototyping)
 
 #### Walking Skeleton
 
-> “A tiny implementation that performs a small end-to-end function, linking together the main architectural components.”
+> “A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components.”
 
 Before adding features, get one path working from UI to logic to data. The skeleton proves your architecture. Once it walks, flesh it out. Never start with the flesh.
 
-— [Alistair Cockburn, Agile Manifesto co-author](https://wiki.c2.com/?WalkingSkeleton)
+— [Alistair Cockburn, Agile Manifesto co-author, Crystal Clear, 2004](https://wiki.c2.com/?WalkingSkeleton)
 
 #### Tracer Bullet Development
 
@@ -415,9 +415,9 @@ Most hackathon decisions are reversible. Make them fast. Save your deliberation 
 
 TL;DR Decide reversible (two-way door) choices in under 5 minutes. Spend your deliberation on the few you can't undo.
 
-> “Most decisions are two-way doors. If you make the wrong decision, you come back in and pick another door. But some decisions are one-way doors — you go in that door, you're not coming back.”
+> “Some decisions are consequential and irreversible or nearly irreversible – one-way doors – and these decisions must be made methodically, carefully, slowly, with great deliberation and consultation. … But most decisions aren't like that – they are changeable, reversible – they're two-way doors.”
 
-— [Jeff Bezos, founder of Amazon](https://en.wikipedia.org/wiki/Jeff_Bezos)
+— [Jeff Bezos, founder of Amazon, 2015 Letter to Shareholders](https://www.aboutamazon.com/about-us/shareholder-letters)
 
 #### Decide Fast, Swap Later
 
@@ -445,7 +445,7 @@ these decisions are hard to undo
 
 Spend 80% of your decision energy on one-way doors. Make two-way doors in under 5 minutes. Losing teams don't pick the wrong framework; they spend 2 hours debating which one to use.
 
-Reid Hoffman: “If you aren't embarrassed by the first version of your product, you shipped too late.” Perfect decisions aren't the goal. Fast, reversible decisions are.
+Reid Hoffman, LinkedIn co-founder, in his 2017 post on Twitter: “If you're not embarrassed by the first version of your product, you've launched too late.” Perfect decisions aren't the goal. Fast, reversible decisions are.
 
 > “What I cannot create,  
 > I do not understand.”
@@ -484,6 +484,6 @@ Make two-way door decisions in under 5 minutes; save deliberation for one-way do
 
 If the spike fails, pivot immediately instead of sinking time into a broken assumption
 
-"What I cannot create, I do not understand." Can't build the smallest version? Rethink the approach
+"What I cannot create, I do not understand." (Richard Feynman) Can't build the smallest version? Rethink the approach
 
 Remember: Validation isn't about proving your idea is perfect. It finds what's broken before you're 18 hours deep with no backup plan. Test early, test in isolation, trust only proven blocks.

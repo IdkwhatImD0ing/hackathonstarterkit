@@ -62,7 +62,7 @@ That is the edge. On a resume screen where you and another candidate look identi
 
 > It's not enough to be good. In order to be found, you have to be findable.
 >
-> Austin Kleon, Show Your Work!, 2014
+> Austin Kleon, author of Show Your Work!, 2014
 
 > **How I Got My First Internship:** This one is personal. I started doing hackathons to land an internship, and within my first four, **one LinkedIn post about a project got me the interview that became my first offer.** We didn't even win that hackathon. I would never have gotten that internship otherwise. Not from winning. From being findable.
 

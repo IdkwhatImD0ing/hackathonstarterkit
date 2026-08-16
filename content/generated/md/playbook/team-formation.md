@@ -95,13 +95,13 @@ Over-planning and rigidity; too much process slows a 48-hour sprint.
 
 Like a film producer: they own the schedule, scope, and ship date. Spot them: they time-box debates and ask "is this in scope?"
 
-[Meredith Belbin](https://www.belbin.com/) — Team Role Theory
+[Meredith Belbin](https://www.belbin.com/) — management researcher, Henley Management College
 
-> “Nobody is perfect, but a team can be. A team is not a bunch of people with job titles, but a congregation of individuals, each of whom has a role which is understood by other members.”
+> “Nobody is perfect, but a team can be.”
 
-Belbin's Cambridge research found nine team roles, and teams with complementary coverage beat equally talented teams with overlapping strengths. Our four personas map directly: the Designer is Belbin's Plant (creative thinker), the Pitcher is the Resource Investigator (external communicator), the Architect is the Monitor Evaluator (analytical judge), and the Strategist is the Co-ordinator (team leader).
+Belbin's research at Henley Management College identified eight team roles (a ninth, the Specialist, was added in Team Roles at Work in 1993), and teams with complementary coverage beat equally talented teams with overlapping strengths. Our four personas map directly: the Designer is Belbin's Plant (creative thinker), the Pitcher is the Resource Investigator (external communicator), the Architect is the Monitor Evaluator (analytical judge), and the Strategist is the Co-ordinator (team leader).
 
-— [Management Teams: Why They Succeed or Fail, 1981](https://www.belbin.com/)
+— Belbin's often-quoted maxim; team roles from [Management Teams: Why They Succeed or Fail, 1981](https://www.belbin.com/)
 
 ## Where to Find Teammates
 
@@ -137,10 +137,10 @@ Remember: Attitude and communication are the foundation of any winning team. You
 
 TL;DR Pick attitude over raw skill: a toxic genius costs more than they add under 24-48 hour pressure.
 
-> “Hire for attitude,  
-> train for skill.”
+> “Hire character.  
+> Train skill.”
 
-— [Peter Schutz, former CEO of Porsche](https://en.wikipedia.org/wiki/Peter_W._Schutz)
+— [Peter Schutz, CEO of Porsche AG from 1981 to 1987](https://en.wikipedia.org/wiki/Peter_Schutz), his often-quoted hiring maxim
 
 A toxic genius is still toxic. However skilled, if they create friction, slow communication, or sour the environment, they're a net loss. Under 24-48 hour pressure, chemistry beats individual brilliance.
 
@@ -155,7 +155,7 @@ Amy Edmondson — Harvard Business School
 
 > “Psychological safety is a belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes.”
 
-Edmondson's research confirms teams where members feel safe to take risks outperform those ruled by fear or ego, even when the “fearful” team has more raw talent.
+Edmondson's research shows teams where members feel safe to take interpersonal risks learn faster and perform better. Her hospital studies famously found the best teams reported the most mistakes, because people felt safe enough to report them.
 
 — [The Fearless Organization, 2018](https://fearlessorganization.com/)
 
@@ -211,11 +211,11 @@ The key factor isn't skill level but how well you work together under time press
 
 #### Tuckman's Group Development
 
-> “Groups move through forming, storming, norming, and performing — each stage must be navigated before a team can reach peak effectiveness.”
+Tuckman found that groups move through forming, storming, norming, and performing, and that every stage is necessary before a team reaches full effectiveness.
 
 Tuckman's 1965 model maps onto JV/Varsity. JV teammates are forming and storming: learning styles, navigating disagreements, building trust. Varsity teammates have reached norming and performing: shared norms, fluid execution, zero coordination overhead.
 
-— [Developmental Sequence in Small Groups, 1965](https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development)
+— Bruce Tuckman, psychologist, U.S. Naval Medical Research Institute, [Developmental Sequence in Small Groups, Psychological Bulletin, 1965](https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development)
 
 #### The Progression Path
 
@@ -289,7 +289,7 @@ first place or bust
 
 [J. Richard Hackman](https://en.wikipedia.org/wiki/J._Richard_Hackman) — Leading Teams
 
-> “The single most important condition for team effectiveness is having a compelling direction — a purpose that is clear, challenging, and consequential.”
+Hackman names a compelling direction, a purpose that is clear, challenging, and consequential, as one of five conditions for team effectiveness.
 
 Hackman's Harvard research explains the three categories. Fun hackathons have no shared direction (you're still exploring). Training hackathons have a learning direction (the purpose is growth). Competitive hackathons have a winning direction that is clear, challenging, and consequential. Sharper direction, better performance.
 

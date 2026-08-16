@@ -125,9 +125,9 @@ Here is the highest-leverage move I have found: **flip the order**. Make the age
 2. **Green** Have the agent write the minimum code that makes the test pass. Run it. Iterate until green.
 3. **Refactor** Have the agent clean up that code without breaking the test. Run it once more to be sure.
 
-> Never write a new piece of functionality without a failing test.
+> Write new code only if you first have a failing automated test.
 >
-> Kent Beck, Test-Driven Development: By Example, 2002
+> Kent Beck, creator of Extreme Programming, Test-Driven Development: By Example (Addison-Wesley, 2002)
 
 > **Why It Wins:** Tests turn 'looks fine' into 'provably works.' Given a hard pass/fail signal, the agent stops hallucinating and starts converging. You also get a free regression suite, priceless when you swap voices or models five minutes before demo.
 
