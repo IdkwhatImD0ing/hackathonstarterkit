@@ -124,7 +124,7 @@ const MENTEE_WINS = [
     color: "text-volt",
   },
   {
-    mentee: "Aurelisa & Aurelia Juan",
+    mentee: "Aurelisa Juan & Aurelia Sindhu",
     hackathon: "AthenaHacks 2025",
     prize: "1st Place Overall",
     project: "ETA+",
