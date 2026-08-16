@@ -37,6 +37,8 @@ The Visibility Principle
 
 > “If a tree falls in a forest and no one is around to hear it, does it make a sound?”
 
+— Traditional philosophical thought experiment; earliest known printing in The Chautauquan, June 1883 (often misattributed to George Berkeley, who never posed it)
+
 If a project is made but no one knows, was it made? A private repo helps no one, least of all you.
 
 The First Internship Story
@@ -55,9 +57,9 @@ TL;DR Luck = doing times telling. Share your work widely and opportunities start
 
 The more you do AND the more people who know about it, the more “lucky” opportunities find you.
 
-> “Luck surface area is directly proportional to the degree to which you do something you're passionate about combined with the total number of people to whom this is effectively communicated.”
+> “The amount of serendipity that will occur in your life, your Luck Surface Area, is directly proportional to the degree to which you do something you're passionate about combined with the total number of people to whom this is effectively communicated.”
 
-— Jason Roberts, Luck Surface Area (L = D x T)
+— Jason Roberts, serial entrepreneur and TechZing podcast co-host, “How to Increase Your Luck Surface Area”, Codus Operandi, 2010 (L = D x T)
 
 Where to Share
 
@@ -77,7 +79,7 @@ The proof: Within the first 4 hackathons, sharing publicly led to an interview a
 
 ## The 48-Hour Follow-Up
 
-Hackathon contacts are warm right now. In a week, they're strangers. Research shows: follow up within 24-48 hours or the window closes.
+Hackathon contacts are warm right now. In a week, they're strangers. Follow up within 24-48 hours, before the connection goes cold.
 
 TL;DR Message everyone you had a real conversation with inside 48 hours, while the connection is still warm.
 
@@ -111,15 +113,17 @@ Short, personal, and valuable. No generic “let's stay in touch.”
 
 short, personal, one clear ask
 
-Mark Granovetter — Strength of Weak Ties
+Mark Granovetter, Sociologist — Strength of Weak Ties
 
 Casual contacts beat close friends for finding jobs. Judges, sponsors, and fellow hackers are weak ties, and weak ties open doors.
 
-Stanford, 1973; one of the most cited sociology papers ever
+“The Strength of Weak Ties”, American Journal of Sociology, 1973; one of the most cited sociology papers ever
 
-Reid Hoffman — LinkedIn Co-founder
+Porter Gale — Former VP of Marketing, Virgin America
 
-“Your network is your net worth.” Your 170 connections reach millions. The best ones form over shared struggles, like debugging at 3AM.
+Your network is your net worth. Your connections reach far past the people you actually know, and the best ones form over shared struggles, like debugging at 3AM.
+
+Your Network Is Your Net Worth, Atria Books, 2013
 
 ## Turn It Into a Long-Term Project
 
@@ -139,13 +143,17 @@ A loss is rocket fuel. You still have a prototype, a team, and momentum, more th
 
 Losing hackathons is better than winning them; the “losses” are where the real growth happens.
 
-Seth Godin / Steve Jobs
+Steve Jobs — Apple Co-founder
 
 “Real artists ship.” Don't let it die in a private repo. Each iteration you ship makes it more impressive and more useful.
 
-Patrick McKenzie (patio11)
+Macintosh team retreat, January 1983, as recounted by Andy Hertzfeld on folklore.org; later popularized by Seth Godin
+
+Patrick McKenzie (patio11) — Software Entrepreneur and Writer
 
 Side projects compound into career-changing portfolios. His Bingo Card Creator, built on nights and weekends, became a full career pivot. Hackathon projects have the same potential.
+
+He ran Bingo Card Creator alongside a day job until he went full-time on his software business in 2010; story documented on kalzumeus.com
 
 ## Why This Works — The Science
 
@@ -155,27 +163,27 @@ TL;DR Four researchers agree: visible work and weak ties, not raw talent, drive 
 
 #### Show Your Work
 
-> “The real gap is between doing nothing and doing something. In this day and age, if your work isn't online, it doesn't exist.”
+> “It sounds a little extreme, but in this day and age, if your work isn't online, it doesn't exist.”
 
-You don't have to be a genius, just share what you make. Sharing is generosity, not self-promotion, and it attracts people who care about the same things.
+Kleon builds the case on a line he borrows from Clay Shirky, who teaches at NYU: “The real gap is between doing nothing and doing something.” You don't have to be a genius, just share what you make. Sharing is generosity, not self-promotion, and it attracts people who care about the same things.
 
-— Show Your Work, 2014
+— Austin Kleon, author, Show Your Work!, 2014; Shirky line from Cognitive Surplus, 2010
 
 #### Luck Surface Area
 
-> “Luck surface area is directly proportional to the degree to which you do something you're passionate about combined with the total number of people to whom this is effectively communicated.”
+> “The amount of serendipity that will occur in your life, your Luck Surface Area, is directly proportional to the degree to which you do something you're passionate about combined with the total number of people to whom this is effectively communicated.”
 
 L = D x T. Do more (build, iterate, contribute) and tell more (post, share, demo). One project shared with 1,000 people beats 10 projects nobody sees.
 
-— Jason Roberts, TechZing podcast
+— Jason Roberts, serial entrepreneur and TechZing podcast co-host, “How to Increase Your Luck Surface Area”, Codus Operandi, 2010
 
 #### Strength of Weak Ties
 
-Mark Granovetter's landmark 1973 Stanford study found casual contacts (people you don't see every day) beat close friends for finding jobs. They link you to networks outside your own circle.
+Sociologist Mark Granovetter's landmark 1973 study, built on his Harvard doctoral research and published while he was at Johns Hopkins, found casual contacts (people you don't see every day) beat close friends for finding jobs. They link you to networks outside your own circle.
 
 Judges, sponsors, and fellow hackers are weak ties. Cultivate them. They open doors your close friends can't.
 
-— American Journal of Sociology, 1973
+— Mark Granovetter, “The Strength of Weak Ties”, American Journal of Sociology 78(6), 1973
 
 #### Regret Minimization
 
@@ -183,7 +191,7 @@ Judges, sponsors, and fellow hackers are weak ties. Cultivate them. They open do
 
 Picture yourself at 80. You won't regret sharing the project or sending the follow-up. You'll regret staying silent. The downside of sharing is zero; the upside is unknowable.
 
-— Jeff Bezos, founder of Amazon
+— Jeff Bezos, founder of Amazon, Academy of Achievement interview, 2001
 
 ## The Post-Hackathon Playbook
 
@@ -263,7 +271,7 @@ Those two skills moved to the submission playbook page, next to the README and D
 > “It's not enough to be good.  
 > In order to be found, you have to be findable.”
 
-— Austin Kleon, Show Your Work
+— Austin Kleon, author of Show Your Work! (2014)
 
 The hackathon is the beginning, not the end. Every project you share, every follow-up you send, every iteration you ship expands your luck surface area. One LinkedIn viewer might change your trajectory.
 
@@ -289,6 +297,6 @@ Open-source it if possible; it becomes a living portfolio piece
 
 Keep building: set monthly milestones (you already have the MVP)
 
-Make it findable: "if your work isn't online, it doesn't exist"
+Make it findable: "if your work isn't online, it doesn't exist" (Austin Kleon, author of Show Your Work!, 2014)
 
 Remember: The hackathon gave you the project, the connections, and the momentum. What you do next separates people who attend hackathons from people whose hackathons change their careers. Share it, follow up, keep building. It only takes one.

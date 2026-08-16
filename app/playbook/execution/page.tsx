@@ -402,7 +402,7 @@ export default function ExecutionPage() {
                     English.&rdquo;
                   </p>
                   <p className="font-code text-xs text-muted-foreground">
-                    <a href="https://twitter.com/karpathy/status/1617979122625712128" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Former Tesla AI lead, OpenAI founding member</a>
+                    <a href="https://twitter.com/karpathy/status/1617979122625712128" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Former Tesla AI lead, OpenAI founding member — X (Twitter), January 2023</a>
                   </p>
                 </div>
               </div>
@@ -417,11 +417,12 @@ export default function ExecutionPage() {
                     Thomas Dohmke
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
-                    &ldquo;AI coding is here to stay. It&apos;s a new way for
-                    developers to express their creativity.&rdquo;
+                    &ldquo;A vital shift is underway in software development,
+                    one that redefines how we build, but also who we are as
+                    developers.&rdquo;
                   </p>
                   <p className="font-code text-xs text-muted-foreground">
-                    <a href="https://github.blog/news-insights/product-news/github-copilot-x-the-ai-powered-developer-experience/" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">CEO of GitHub</a>
+                    <a href="https://ashtom.github.io/developers-reinvented" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Former CEO of GitHub — &ldquo;Developers, Reinvented&rdquo;, August 2025</a>
                   </p>
                 </div>
               </div>
@@ -468,7 +469,7 @@ export default function ExecutionPage() {
                 </p>
                 <p className="font-code text-xs text-volt/60">
                   —{" "}
-                  <a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Kent Beck, creator of XP and TDD</a>
+                  <a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Software proverb popularized by Kent Beck, creator of XP and TDD; in print since Johnson and Kernighan, Byte, August 1983</a>
                 </p>
               </CardContent>
             </Card>
@@ -489,8 +490,8 @@ export default function ExecutionPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-spark/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;If you aren&apos;t embarrassed by the first version of
-                  your product, you shipped too late.&rdquo;
+                  &ldquo;If you&apos;re not embarrassed by the first version of
+                  your product, you&apos;ve launched too late.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   <span className="font-semibold text-foreground">Ship to learn, not to cut corners.</span>{" "}
@@ -499,7 +500,7 @@ export default function ExecutionPage() {
                 </p>
                 <p className="font-code text-xs text-spark/60">
                   —{" "}
-                  <a href="https://www.linkedin.com/pulse/arent-embarrassed-first-version-your-product-you-reid-hoffman/" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Reid Hoffman, co-founder of LinkedIn</a>
+                  <a href="https://x.com/reidhoffman/status/847142924240379904" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Reid Hoffman, co-founder of LinkedIn — X (Twitter), 2017</a>
                 </p>
               </CardContent>
             </Card>
@@ -520,7 +521,7 @@ export default function ExecutionPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;80% of consequences come from 20% of causes.&rdquo;
+                  Roughly 80% of consequences come from 20% of causes.
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   <span className="font-semibold text-foreground">80% of demo impact comes from 20% of features.</span>{" "}
@@ -529,7 +530,7 @@ export default function ExecutionPage() {
                 </p>
                 <p className="font-code text-xs text-primary/60">
                   —{" "}
-                  <a href="https://en.wikipedia.org/wiki/Pareto_principle" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Vilfredo Pareto, 1906 / Joseph Juran</a>
+                  <a href="https://en.wikipedia.org/wiki/Pareto_principle" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">The Pareto principle: observed by economist Vilfredo Pareto (1906), named and popularized by quality-management pioneer Joseph Juran</a>
                 </p>
               </CardContent>
             </Card>
@@ -593,7 +594,7 @@ export default function ExecutionPage() {
                 </ol>
                 <p className="font-code text-xs text-success/60">
                   —{" "}
-                  <a href="https://www.youtube.com/watch?v=t705r8ICkRw" target="_blank" rel="noopener noreferrer" className="underline decoration-success/30 hover:decoration-success">Elon Musk, SpaceX Starbase</a>
+                  <a href="https://www.youtube.com/watch?v=t705r8ICkRw" target="_blank" rel="noopener noreferrer" className="underline decoration-success/30 hover:decoration-success">Elon Musk, Starbase tour interview with Tim Dodd (Everyday Astronaut), 2021</a>
                 </p>
               </CardContent>
             </Card>
@@ -613,7 +614,7 @@ export default function ExecutionPage() {
           <KeyTakeaway>Time is non-negotiable, so scope is what you cut: build the vital 20%, kill the comfortable 80%.</KeyTakeaway>
 
           <p className="font-body text-foreground/80">
-            <a href="https://basecamp.com/shapeup" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Ryan Singer&apos;s Shape Up methodology</a> from Basecamp defines{" "}
+            <a href="https://basecamp.com/shapeup" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Ryan Singer&apos;s Shape Up methodology</a> (Basecamp, 2019) defines{" "}
             <span className="font-display font-semibold text-foreground">
               scope hammering
             </span>{" "}
@@ -741,10 +742,15 @@ export default function ExecutionPage() {
                 </div>
                 <div className="space-y-1">
                   <p className="font-display text-sm font-semibold">
-                    <a href="https://en.wikipedia.org/wiki/Sheryl_Sandberg" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Sheryl Sandberg</a> / Facebook
+                    <a href="https://money.cnn.com/2012/02/01/technology/zuckerberg_ipo_letter/index.htm" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Mark Zuckerberg</a> / Facebook
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
                     &ldquo;Done is better than perfect.&rdquo;
+                  </p>
+                  <p className="font-code text-xs text-muted-foreground">
+                    Facebook motto, quoted in Zuckerberg&apos;s founder&apos;s
+                    letter, 2012 IPO filing; popularized by then-COO Sheryl
+                    Sandberg in Lean In (2013)
                   </p>
                 </div>
               </div>
@@ -756,11 +762,12 @@ export default function ExecutionPage() {
                 </div>
                 <div className="space-y-1">
                   <p className="font-display text-sm font-semibold">
-                    Jason Fried / <a href="https://basecamp.com/gettingreal" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Getting Real</a>
+                    Jason Fried, 37signals co-founder / <a href="https://basecamp.com/gettingreal" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Getting Real</a> (2006)
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
-                    &ldquo;Build less. Underdo your competition. Fewer features,
-                    fewer options, fewer meetings, fewer promises.&rdquo;
+                    &ldquo;Underdo your competition... Less features, less
+                    options/preferences, less people and corporate structure,
+                    less meetings and abstractions, less promises.&rdquo;
                   </p>
                 </div>
               </div>
@@ -896,7 +903,7 @@ export default function ExecutionPage() {
                   <span className="font-display font-semibold text-foreground">
                     Timeboxing
                   </span>{" "}
-                  ranks among the most effective productivity techniques, per <a href="https://hbr.org/2018/12/how-timeboxing-works-and-why-it-will-make-you-more-productive" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Harvard Business Review</a>. Assign fixed blocks and stop
+                  ranks among the most effective productivity techniques, per a 2018 <a href="https://hbr.org/2018/12/how-timeboxing-works-and-why-it-will-make-you-more-productive" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Harvard Business Review</a> piece by Marc Zao-Sanders. Assign fixed blocks and stop
                   when time is up, done or not.
                 </p>
               </div>
@@ -909,8 +916,10 @@ export default function ExecutionPage() {
                     Brooks&apos;s Law
                   </a>{" "}
                   says &ldquo;adding manpower to a late software project makes it
-                  later.&rdquo; When you&apos;re behind, cut features instead of
-                  adding scope or people.
+                  later.&rdquo; Fred Brooks, the Turing Award-winning computer
+                  scientist who managed IBM&apos;s System/360, coined it in The
+                  Mythical Man-Month (1975). When you&apos;re behind, cut
+                  features instead of adding scope or people.
                 </p>
               </div>
             </div>
@@ -1028,13 +1037,18 @@ export default function ExecutionPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  <a href="https://www.navalmanack.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Naval Ravikant</a> — AngelList Co-founder
+                  <a href="https://x.com/naval/status/1002106893265920000" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Naval Ravikant</a> — AngelList Co-founder
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;Code and media are permissionless leverage. They&apos;re
                   the leverage behind the newly rich. You can create software
                   and media that works for you while you sleep.&rdquo;
                 </blockquote>
+                <p className="font-code text-xs text-muted-foreground">
+                  How to Get Rich (Without Getting Lucky) thread, 2018;
+                  collected in{" "}
+                  <a href="https://www.navalmanack.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">The Almanack of Naval Ravikant</a> (Eric Jorgenson, 2020)
+                </p>
                 <p className="font-body text-sm text-foreground/60">
                   Use leverage (templates, AI, APIs, no-code) and reserve human
                   effort for vision, design, and high-impact decisions.
@@ -1060,7 +1074,7 @@ export default function ExecutionPage() {
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
                 —{" "}
-                <a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Kent Beck, creator of Extreme Programming</a>
+                <a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Software proverb popularized by Kent Beck, creator of Extreme Programming; in print since Johnson and Kernighan, Byte, August 1983</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
@@ -1129,7 +1143,7 @@ export default function ExecutionPage() {
                   accent: "spark",
                 },
                 {
-                  text: "\"Done is better than perfect.\" Ship what works, cut what doesn't, sell the vision",
+                  text: "\"Done is better than perfect,\" the Facebook motto from Mark Zuckerberg's 2012 IPO letter. Ship what works, cut what doesn't, sell the vision",
                   accent: "primary",
                 },
               ].map((item) => {

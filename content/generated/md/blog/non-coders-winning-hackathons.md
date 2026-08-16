@@ -1,6 +1,6 @@
 # Non-Coders Winning Hackathons: How Experts Beat Developers
 
-> Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic SF, beating developers with AI tools like Cursor and Claude Code.
+> Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic's global hackathon, beating developers with Claude Code.
 
 Canonical: https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons
 Last updated: 2026-06-24
@@ -11,9 +11,9 @@ Last updated: 2026-06-24
 
 A non-coder won.
 
-At the **Anthropic hackathon in San Francisco in February 2026**, a personal injury lawyer named Mike Brown took 1st place, ahead of hundreds of experienced developers. A cardiologist, Dr. Michal Nedoszytko, placed 3rd. **Neither had written a line of code before.**
+At **Anthropic's Built with Opus 4.6 hackathon**, a global virtual event held February 10 to 16, 2026, a personal injury lawyer named Mike Brown took 1st place, ahead of hundreds of experienced developers. A cardiologist, Dr. Michal Nedoszytko, placed 3rd. 13,000 people applied, 500 were selected, and most of them were developers. **Brown says he did not write, or even read, a single line of code.**
 
-| Lawyer, no code | Doctor, no code | Vibe-coder wins | To ship an app |
+| Lawyer, no code | Doctor, 7 days | Hackathons entered | To ship an app |
 | --- | --- | --- | --- |
 | 1st | 3rd | 200+ | 3 hrs |
 
@@ -25,9 +25,9 @@ Judges do not award prizes for clean code. They award prizes for **solving a rea
 
 A cardiologist knows exactly which patient-monitoring data matters. He describes the app in plain English, the AI builds it, and the result is more useful than what most developers would even think to make.
 
-> There's always been a tech barrier between domain expertise and coding. But now, if anyone has enough expertise, they can create advanced solutions. Programming is solved.
+> You don't have to know programming to create solutions.
 >
-> Dr. Michal Nedoszytko, cardiologist and 3rd place, Anthropic Hackathon SF (2026)
+> Dr. Michal Nedoszytko, interventional cardiologist and creator of PostVisit.ai, 3rd place at Anthropic's Built with Opus 4.6 hackathon (ReachMD, The Convergence, 2026)
 
 > **Win:** The playing field is level. When the code writes itself, the person who understands the problem best wins.
 
@@ -62,13 +62,13 @@ Start with a problem you know cold from your own work. Then **compete where you 
 
 When judges see a product built by someone who truly lives the problem, it stands out from the generic 'cool tech demo' most developer teams ship.
 
-## Proof: 3 Hours, One App, 200+ Wins
+## Proof: 3 Hours, One App, 200+ Hackathons
 
-Mike Brown's 1st-place project at the Anthropic hackathon was a **legal analysis tool**. He built the whole app with Claude Code, leaning on years of legal experience to make something developers would not have imagined.
+Mike Brown's 1st-place project at Anthropic's Built with Opus 4.6 hackathon (February 2026) was **CrossBeam**, an AI tool that reads California ADU building-permit plan sets and correction letters, cross-references city and state code, and returns an action plan in about 20 minutes instead of weeks. He built the whole app with Claude Code, leaning on years of legal experience to make something developers would not have imagined.
 
-Here's how fast this moves: Nina Kolari, a non-technical professional, built a **working iPhone app in 3 hours** at a hackathon using AI tools.
+Here's how fast this moves: Nina Kolari, a non-technical entrepreneur who learned iOS development with AI tools, built **Aphasio**, a working iPhone communication app for people with aphasia, in **3 hours** at the Cursor hackathon in Chiang Mai, and won against 27 other teams (her write-up on ninakolari.com, December 2025).
 
-> **Tip:** Rene Turcios, a self-described 'vibe coder' with limited traditional coding skill, has racked up 200+ hackathon wins. Consistency and strategy beat raw coding ability.
+> **Tip:** Rene Turcios, a self-described 'vibe coder' who does not know how to code, has competed in 200+ hackathons since 2023 and keeps winning prizes (The San Francisco Standard, July 2025). Consistency and strategy beat raw coding ability.
 
 ## Your First Hackathon, Step by Step
 

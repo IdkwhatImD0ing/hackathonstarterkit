@@ -240,7 +240,7 @@ export default function PitchingPage() {
                   listeners into invested supporters.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  —{" "}
+                  — Simon Sinek, author and TEDx speaker,{" "}
                   <a href="https://simonsinek.com/books/start-with-why/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Start With Why, 2009</a>
                 </p>
               </CardContent>
@@ -262,8 +262,8 @@ export default function PitchingPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-spark/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;Make the audience the hero of the presentation, not
-                  yourself.&rdquo;
+                  &ldquo;You are not the hero who will save the audience; the
+                  audience is your hero.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   Duarte&apos;s Sparkline alternates between current reality
@@ -272,7 +272,7 @@ export default function PitchingPage() {
                   solution. Oscillate between both, never camp on one.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  —{" "}
+                  — Nancy Duarte, CEO of Duarte, Inc.,{" "}
                   <a href="https://www.duarte.com/resonate/" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Resonate, 2010</a>
                 </p>
               </CardContent>
@@ -416,7 +416,7 @@ export default function PitchingPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Anatomy of a Winning Pitch"
-            subtitle="A battle-tested pitch structure that works whether you have 2 minutes or 10. Based on Andy Raskin's strategic narrative framework and adapted for hackathons."
+            subtitle="A battle-tested pitch structure that works whether you have 2 minutes or 10. Based on Andy Raskin's strategic narrative framework from 'The Greatest Sales Deck I've Ever Seen' (Medium, 2016), adapted for hackathons."
           />
 
           <KeyTakeaway>Open with a shift, show the stakes, then spend most of your time on a working live demo.</KeyTakeaway>
@@ -548,17 +548,16 @@ export default function PitchingPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  <a href="https://medium.com/the-mission/the-greatest-sales-deck-ive-ever-seen-4f4ef3391ba0" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Andy Raskin</a> — Strategic Narrative Expert
+                  <a href="https://medium.com/the-mission/the-greatest-sales-deck-ive-ever-seen-4f4ef3391ba0" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Andy Raskin</a> — Strategic Narrative Expert, &ldquo;The Greatest Sales Deck I&apos;ve Ever Seen,&rdquo; Medium, 2016
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
-                  &ldquo;Your prospect is Luke, and you&apos;re Obi-Wan,
-                  furnishing a lightsaber to help them defeat the Empire.
-                  Position your product as the magic gift that gets the hero to
-                  the promised land.&rdquo;
+                  &ldquo;Your prospect is Luke, and you&apos;re Obi Wan,
+                  furnishing a lightsaber to help him defeat the Empire.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Judges are the heroes. Your project is the lightsaber. Frame it
-                  that way.
+                  Raskin&apos;s fourth element is to introduce features as magic
+                  gifts for overcoming obstacles to the promised land. Judges are
+                  the heroes. Your project is the lightsaber. Frame it that way.
                 </p>
               </div>
             </div>
@@ -578,9 +577,10 @@ export default function PitchingPage() {
 
           <p className="font-body text-foreground/80">
             <span className="font-semibold text-foreground">These are real pitches that won real prizes.</span>{" "}
-            Each was transcribed from its presentation video and analyzed with
-            GPT-5 to surface structural phases, techniques, and the moments that
-            won judges over.
+            Two were transcribed from their presentation videos and the third
+            reconstructed from its Devpost writeup, then analyzed with GPT-5 in
+            March 2026 to surface structural phases, techniques, and the moments
+            that won judges over.
           </p>
 
           {/* --- CASE STUDY 1: DispatchAI --- */}
@@ -597,15 +597,16 @@ export default function PitchingPage() {
                   variant="outline"
                   className="border-volt/20 text-volt font-code text-xs"
                 >
-                  $62K+ IN PRIZES
+                  $64K IN PRIZES
                 </Badge>
               </div>
               <CardTitle className="font-display text-2xl text-volt">
-                DispatchAI — UC Berkeley AI Hackathon
+                DispatchAI — UC Berkeley AI Hackathon 2024
               </CardTitle>
               <CardDescription className="font-body text-base">
-                Grand Prize ($25K SkyDeck investment) + AI For Good + Best Use
-                of Intel AI. The largest AI hackathon in the US.
+                Grand Prize ($25K SkyDeck investment) + AI For Good ($25K) +
+                Best Use of Intel AI (1st, roughly $14K in hardware). The
+                largest AI hackathon in the US.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -623,7 +624,13 @@ export default function PitchingPage() {
 
               <div className="space-y-3">
                 <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                  Pitch Structure Breakdown (4 min 32 sec)
+                  Pitch Structure Breakdown (4 min 34 sec)
+                </p>
+                <p className="font-body text-xs text-foreground/60">
+                  Quotes below are transcribed from the team&apos;s pitch video
+                  (DispatchAI, UC Berkeley AI Hackathon 2024, recorded June
+                  2024), narrated throughout by team member Spike O&apos;Carroll.
+                  Spoken audio is lightly cleaned for repeated words.
                 </p>
                 <div className="space-y-2">
                   {[
@@ -662,10 +669,10 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "Live Demo",
-                      time: "3:17 – 4:32",
+                      time: "3:17 – 4:34",
                       pct: 28,
                       quote:
-                        "Our call updates in real time on the dashboard, and our transcription is on the right.",
+                        "I have my phone here with me, and I will call our agents.",
                       technique:
                         "Live phone call to AI dispatcher with real-time UI",
                     },
@@ -728,7 +735,8 @@ export default function PitchingPage() {
                     <Zap className="mt-0.5 size-4 shrink-0 text-volt" />
                     <div className="space-y-1">
                       <p className="font-code text-xs text-volt/60">
-                        @ 3:43 – 3:50
+                        Spike O&apos;Carroll, DispatchAI pitch video, UC Berkeley
+                        AI Hackathon 2024 @ 3:43 – 3:50
                       </p>
                       <blockquote className="font-body text-sm italic text-foreground/80">
                         &ldquo;See, you can see that our call updates in real
@@ -820,7 +828,15 @@ export default function PitchingPage() {
 
               <div className="space-y-3">
                 <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                  Pitch Structure Breakdown (2 min 6 sec)
+                  Pitch Structure Breakdown (2 min 11 sec)
+                </p>
+                <p className="font-body text-xs text-foreground/60">
+                  Quotes below are transcribed from the TalkTuahBank team&apos;s
+                  demo video (HackUTD 2024, November 2024). The Big Shift and
+                  Stakes lines are the team&apos;s narrator; the Live Demo, How
+                  It Works, and Vision lines are spoken by the product&apos;s AI
+                  agent during the recorded call. Spoken audio is lightly cleaned
+                  for repeated words.
                 </p>
                 <div className="space-y-2">
                   {[
@@ -845,7 +861,7 @@ export default function PitchingPage() {
                     {
                       phase: "Live Demo",
                       time: "0:14 – 1:10",
-                      pct: 44,
+                      pct: 42,
                       quote:
                         "Hey, I can help with things like checking your account balance, transferring funds, and even getting you started on a loan application.",
                       technique:
@@ -854,16 +870,16 @@ export default function PitchingPage() {
                     {
                       phase: "How It Works",
                       time: "1:10 – 1:49",
-                      pct: 31,
+                      pct: 30,
                       quote:
-                        "Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.",
+                        "Awesome, you've successfully transferred $200 to account ACC 456.",
                       technique:
                         "Tangible proof point: completed real transaction",
                     },
                     {
                       phase: "Vision",
-                      time: "1:49 – 2:06",
-                      pct: 14,
+                      time: "1:49 – 2:11",
+                      pct: 17,
                       quote:
                         "If there's anything else you need, feel free to let me know.",
                       technique:
@@ -928,11 +944,11 @@ export default function PitchingPage() {
                     <Zap className="mt-0.5 size-4 shrink-0 text-spark" />
                     <div className="space-y-1">
                       <p className="font-code text-xs text-spark/60">
-                        @ 1:15
+                        TalkTuahBank AI agent, demo video, HackUTD 2024 @ 1:20
                       </p>
                       <blockquote className="font-body text-sm italic text-foreground/80">
                         &ldquo;Awesome, you&apos;ve successfully transferred
-                        $200 to account A, capital C, 4, 5, 6.&rdquo;
+                        $200 to account ACC 456.&rdquo;
                       </blockquote>
                       <p className="font-body text-xs text-foreground/60">
                         One line converts the concept into a verifiable outcome:
@@ -1007,10 +1023,18 @@ export default function PitchingPage() {
                 <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                   Pitch Structure (Reconstructed from Devpost)
                 </p>
+                <p className="font-body text-xs text-foreground/60">
+                  These lines come from the AdaptEd team&apos;s own Devpost
+                  writeup (LA Hacks 2024), not from a recorded pitch. Lines in
+                  quotation marks are verbatim; the rest are condensed
+                  summaries of longer passages. The statistics are the
+                  team&apos;s own claims and carry no citation on Devpost.
+                </p>
                 <div className="space-y-2">
                   {[
                     {
                       phase: "Big Shift",
+                      verbatim: true,
                       quote:
                         "Instead of students adapting to the system, our AI lecturer adapts to students.",
                       technique:
@@ -1018,6 +1042,7 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "Stakes",
+                      verbatim: false,
                       quote:
                         "50% of 16M US university students are falling behind. Less than 3% have access to quality tutoring.",
                       technique:
@@ -1025,6 +1050,7 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "Live Demo",
+                      verbatim: false,
                       quote:
                         "Responsive AI conversation, dynamic slide and whiteboard content, emotion detection.",
                       technique:
@@ -1032,6 +1058,7 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "How It Works",
+                      verbatim: false,
                       quote:
                         "Gemini 1.5 Pro for multi-source aggregation, Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection.",
                       technique:
@@ -1039,6 +1066,7 @@ export default function PitchingPage() {
                     },
                     {
                       phase: "Vision",
+                      verbatim: true,
                       quote:
                         "AdaptEd: interactive and personalized lectures through conversational voice AI.",
                       technique:
@@ -1055,7 +1083,11 @@ export default function PitchingPage() {
                         </Badge>
                       </div>
                       <blockquote className="mt-2 border-l-2 border-primary/30 pl-3 font-body text-sm italic text-foreground/80">
-                        &ldquo;{item.quote}&rdquo;
+                        {item.verbatim ? (
+                          <>&ldquo;{item.quote}&rdquo;</>
+                        ) : (
+                          item.quote
+                        )}
                       </blockquote>
                       <p className="mt-1 font-code text-xs text-foreground/50">
                         Technique: {item.technique}
@@ -1096,6 +1128,10 @@ export default function PitchingPage() {
                   <div className="flex items-start gap-3">
                     <Zap className="mt-0.5 size-4 shrink-0 text-primary" />
                     <div className="space-y-1">
+                      <p className="font-code text-xs text-primary/60">
+                        AdaptEd team, Devpost writeup, LA Hacks 2024
+                        (reconstructed, not a recorded pitch line)
+                      </p>
                       <blockquote className="font-body text-sm italic text-foreground/80">
                         &ldquo;Instead of students adapting to the system, our
                         AI lecturer adapts to students.&rdquo;
@@ -1183,7 +1219,7 @@ export default function PitchingPage() {
                   icon: Layers,
                   title: "All 5 Frameworks Present",
                   description:
-                    "GPT-5 identified all five persuasion frameworks (Sinek, Duarte, Aristotle, Heath, Raskin) in each pitch. Winning pitches don't use one framework; they layer all of them.",
+                    "All five persuasion frameworks (Sinek, Duarte, Aristotle, Heath, Raskin) are visible in each of these three pitches. Winning pitches don't use one framework; they layer all of them.",
                   accent: "primary" as const,
                 },
               ].map((item) => {
@@ -2060,13 +2096,15 @@ export default function PitchingPage() {
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-spark/30 pl-4 font-body text-sm italic text-foreground/80">
                   &ldquo;In order for connection to happen, we have to allow
-                  ourselves to be seen, really seen. The courage to be
-                  imperfect.&rdquo;
+                  ourselves to be seen, really seen.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  No sleep strips away the polish. You explain what you built
-                  honestly, flaws included. You stop trying to impress and start
-                  trying to communicate. That makes you more convincing.
+                  Later in the same talk, Brown describes what the people she
+                  calls wholehearted had in common: &ldquo;these folks had, very
+                  simply, the courage to be imperfect.&rdquo; No sleep strips
+                  away the polish. You explain what you built honestly, flaws
+                  included. You stop trying to impress and start trying to
+                  communicate. That makes you more convincing.
                 </p>
                 <p className="font-body text-sm text-foreground/60">
                   Share a real setback: &ldquo;We thought X, then talked to
@@ -2074,8 +2112,9 @@ export default function PitchingPage() {
                   makes you more human and credible.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  —{" "}
-                  <a href="https://www.ted.com/talks/brene_brown_the_power_of_vulnerability" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">The Power of Vulnerability, TED 2010</a>
+                  — Brené Brown, research professor, University of Houston
+                  Graduate College of Social Work,{" "}
+                  <a href="https://www.ted.com/talks/brene_brown_the_power_of_vulnerability" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">The Power of Vulnerability, TEDxHouston 2010</a>
                 </p>
               </CardContent>
             </Card>
@@ -2132,8 +2171,8 @@ export default function PitchingPage() {
                   </ol>
                 </div>
                 <p className="font-code text-xs text-volt/60">
-                  —{" "}
-                  <a href="https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">How to Win Friends and Influence People</a>
+                  — Dale Carnegie, American writer and lecturer,{" "}
+                  <a href="https://www.simonandschuster.com/books/The-Quick-and-Easy-Way-to-Effective-Speaking/Dorothy-Carnegie/Dale-Carnegie-Books/9780671724009" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">The Quick and Easy Way to Effective Speaking, 1962</a>
                 </p>
               </CardContent>
             </Card>
@@ -2224,8 +2263,8 @@ export default function PitchingPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                —{" "}
-                <a href="https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Dale Carnegie, pioneer of public speaking</a>
+                — Dale Carnegie, American writer and lecturer,{" "}
+                <a href="https://www.simonandschuster.com/books/The-Quick-and-Easy-Way-to-Effective-Speaking/Dorothy-Carnegie/Dale-Carnegie-Books/9780671724009" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">The Quick and Easy Way to Effective Speaking, 1962</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">

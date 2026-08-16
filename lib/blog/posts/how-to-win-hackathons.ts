@@ -128,7 +128,7 @@ export const post: BlogPost = {
       heading: "Phase 7: The Win Is in the Follow-Up",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "The hackathon doesn't end when prizes are announced. The best outcomes happen in the next 48 hours. **Dispatch AI won the UC Berkeley AI Hackathon Grand Prize ($60K+)**, then landed Berkeley SkyDeck funding and reached a $1M valuation." },
+        { type: "paragraph", text: "The hackathon doesn't end when prizes are announced. The best outcomes happen in the next 48 hours. **Dispatch AI won the Grand Prize at the UC Berkeley AI Hackathon 2024**, worth about $64K across prizes: a $25K Berkeley SkyDeck Fund investment with a Golden Ticket to SkyDeck Pad-13, $25K for AI For Good, and roughly $14K of hardware for first place in Best Use of Intel AI (devpost.com/software/dispatch-ai)." },
         { type: "step-list", steps: [
           { title: "Follow Up Fast", description: "Email sponsors and mentors within 48 hours, while they still remember you." },
           { title: "Polish & Publish", description: "Clean up your code, write a proper README, and push to GitHub." },

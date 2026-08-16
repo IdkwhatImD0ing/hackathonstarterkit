@@ -235,13 +235,13 @@ Over-planning and rigidity; too much process slows a 48-hour sprint.
 
 Like a film producer: they own the schedule, scope, and ship date. Spot them: they time-box debates and ask "is this in scope?"
 
-[Meredith Belbin](https://www.belbin.com/) — Team Role Theory
+[Meredith Belbin](https://www.belbin.com/) — management researcher, Henley Management College
 
-> “Nobody is perfect, but a team can be. A team is not a bunch of people with job titles, but a congregation of individuals, each of whom has a role which is understood by other members.”
+> “Nobody is perfect, but a team can be.”
 
-Belbin's Cambridge research found nine team roles, and teams with complementary coverage beat equally talented teams with overlapping strengths. Our four personas map directly: the Designer is Belbin's Plant (creative thinker), the Pitcher is the Resource Investigator (external communicator), the Architect is the Monitor Evaluator (analytical judge), and the Strategist is the Co-ordinator (team leader).
+Belbin's research at Henley Management College identified eight team roles (a ninth, the Specialist, was added in Team Roles at Work in 1993), and teams with complementary coverage beat equally talented teams with overlapping strengths. Our four personas map directly: the Designer is Belbin's Plant (creative thinker), the Pitcher is the Resource Investigator (external communicator), the Architect is the Monitor Evaluator (analytical judge), and the Strategist is the Co-ordinator (team leader).
 
-— [Management Teams: Why They Succeed or Fail, 1981](https://www.belbin.com/)
+— Belbin's often-quoted maxim; team roles from [Management Teams: Why They Succeed or Fail, 1981](https://www.belbin.com/)
 
 ## Where to Find Teammates
 
@@ -277,10 +277,10 @@ Remember: Attitude and communication are the foundation of any winning team. You
 
 TL;DR Pick attitude over raw skill: a toxic genius costs more than they add under 24-48 hour pressure.
 
-> “Hire for attitude,  
-> train for skill.”
+> “Hire character.  
+> Train skill.”
 
-— [Peter Schutz, former CEO of Porsche](https://en.wikipedia.org/wiki/Peter_W._Schutz)
+— [Peter Schutz, CEO of Porsche AG from 1981 to 1987](https://en.wikipedia.org/wiki/Peter_Schutz), his often-quoted hiring maxim
 
 A toxic genius is still toxic. However skilled, if they create friction, slow communication, or sour the environment, they're a net loss. Under 24-48 hour pressure, chemistry beats individual brilliance.
 
@@ -295,7 +295,7 @@ Amy Edmondson — Harvard Business School
 
 > “Psychological safety is a belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes.”
 
-Edmondson's research confirms teams where members feel safe to take risks outperform those ruled by fear or ego, even when the “fearful” team has more raw talent.
+Edmondson's research shows teams where members feel safe to take interpersonal risks learn faster and perform better. Her hospital studies famously found the best teams reported the most mistakes, because people felt safe enough to report them.
 
 — [The Fearless Organization, 2018](https://fearlessorganization.com/)
 
@@ -351,11 +351,11 @@ The key factor isn't skill level but how well you work together under time press
 
 #### Tuckman's Group Development
 
-> “Groups move through forming, storming, norming, and performing — each stage must be navigated before a team can reach peak effectiveness.”
+Tuckman found that groups move through forming, storming, norming, and performing, and that every stage is necessary before a team reaches full effectiveness.
 
 Tuckman's 1965 model maps onto JV/Varsity. JV teammates are forming and storming: learning styles, navigating disagreements, building trust. Varsity teammates have reached norming and performing: shared norms, fluid execution, zero coordination overhead.
 
-— [Developmental Sequence in Small Groups, 1965](https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development)
+— Bruce Tuckman, psychologist, U.S. Naval Medical Research Institute, [Developmental Sequence in Small Groups, Psychological Bulletin, 1965](https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development)
 
 #### The Progression Path
 
@@ -429,7 +429,7 @@ first place or bust
 
 [J. Richard Hackman](https://en.wikipedia.org/wiki/J._Richard_Hackman) — Leading Teams
 
-> “The single most important condition for team effectiveness is having a compelling direction — a purpose that is clear, challenging, and consequential.”
+Hackman names a compelling direction, a purpose that is clear, challenging, and consequential, as one of five conditions for team effectiveness.
 
 Hackman's Harvard research explains the three categories. Fun hackathons have no shared direction (you're still exploring). Training hackathons have a learning direction (the purpose is growth). Competitive hackathons have a winning direction that is clear, challenging, and consequential. Sharper direction, better performance.
 
@@ -604,31 +604,31 @@ TL;DR Decades of creativity research agree: new ideas are old parts recombined, 
 
 Broader experiences give you more “dots” to connect. A more diverse element list makes your combinations more unexpected and powerful.
 
-— [Wired interview, 1996](https://www.wired.com/1996/02/jobs-2/)
+— Steve Jobs, co-founder of Apple, [Wired interview, 1996](https://www.wired.com/1996/02/jobs-2/)
 
 #### Bisociation
 
-> “The creative act is the perceiving of a situation or idea in two self-consistent but habitually incompatible frames of reference.”
+> “The pattern underlying \[the creative act\] is the perceiving of a situation or idea in two self-consistent but habitually incompatible frames of reference.”
 
 “Bisociation” is creativity as the collision of two independent mental frameworks. Exactly what happens when you cross “LLMs” with “Defense.”
 
-— [The Act of Creation, 1964](https://en.wikipedia.org/wiki/The_Act_of_Creation)
+— Arthur Koestler, Hungarian-British author, [The Act of Creation, 1964](https://en.wikipedia.org/wiki/The_Act_of_Creation)
 
 #### The Adjacent Possible
 
-> “Good ideas are not conjured out of thin air; they are built out of a collection of existing parts… the adjacent possible.”
+> “Good ideas are not conjured out of thin air; they are built out of a collection of existing parts, the composition of which expands (and, occasionally, contracts) over time.”
 
-Innovation lives at the edge of what's feasible. The best hackathon ideas use tools that just became possible: a new API, a fresh model, a just-opened dataset.
+Johnson calls that expanding edge the “adjacent possible,” a term he borrowed from biologist Stuart Kauffman. Innovation lives at the edge of what's feasible. The best hackathon ideas use tools that just became possible: a new API, a fresh model, a just-opened dataset.
 
-— [Where Good Ideas Come From, 2010](https://en.wikipedia.org/wiki/Where_Good_Ideas_Come_From)
+— Steven Johnson, science writer, [Where Good Ideas Come From, 2010](https://en.wikipedia.org/wiki/Where_Good_Ideas_Come_From)
 
 #### Notice, Don't Invent
 
-> “Live in the future, then build what's missing. The verb you want to be using with respect to startup ideas is not ‘think up’ but ‘notice.’”
+> “Live in the future, then build what's missing. … The verb you want to be using with respect to startup ideas is not ‘think up’ but ‘notice.’”
 
 The best ideas come from your own experience. What frustrates you? What gap do others miss? Combine that personal insight with your elements.
 
-— [How to Get Startup Ideas, 2012](https://paulgraham.com/startupideas.html)
+— Paul Graham, Y Combinator co-founder, [How to Get Startup Ideas, 2012](https://paulgraham.com/startupideas.html)
 
 ### 
 
@@ -673,11 +673,13 @@ Things that add a unique angle. Unusual constraints, trends, and sponsor challen
 
 wild cards for spice
 
-[Linus Pauling](https://en.wikipedia.org/wiki/Linus_Pauling) — Two-Time Nobel Laureate
+[Linus Pauling](https://en.wikipedia.org/wiki/Linus_Pauling) — Two-Time Nobel Laureate (Chemistry 1954, Peace 1962)
 
-> “The best way to have a good idea is to have a lot of ideas. You aren't going to have good ideas unless you have lots of ideas and some principle of selection.”
+> “The best way to have a good idea is to have a lot of ideas.”
 
-Don't filter while building your list. Chase volume now, not quality. You'll prune later.
+— Quoted in Fortune, April 1960
+
+He filled in the other half on PBS's NOVA in 1977: “you aren't going to have good ideas unless you have lots of ideas and some sort of principle of selection…” So don't filter while building your list. Chase volume now, not quality. You'll prune later.
 
 ### 
 
@@ -699,7 +701,7 @@ You don't have to play TFT. Pair ideation with anything that keeps your hands bu
 
 #### Focused vs. Diffuse Thinking
 
-Professor Barbara Oakley's research reveals two thinking modes:
+Barbara Oakley, professor of engineering at Oakland University, popularized two thinking modes in A Mind for Numbers (2014) and in the Coursera course [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn) (2014), which she teaches with neuroscientist Terrence Sejnowski:
 
 Focused Mode
 
@@ -709,9 +711,9 @@ Diffuse Mode
 
 Relaxed, broad, associative. Surfaces novel connections. You walking to the coffee shop when the idea hits.
 
-> “Sometimes backing off can be the best thing you can do when learning something new.”
+> “Sometimes we need to lose concentration so we can think more clearly.”
 
-— [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn)
+— Barbara Oakley and Terrence Sejnowski with Alistair McConville, [Learning How to Learn](https://www.penguinrandomhouse.com/books/563935/learning-how-to-learn-by-barbara-oakley-phd-and-terrence-sejnowski-phd-with-alistair-mcconville/), 2018
 
 #### The Five-Step Process
 
@@ -742,7 +744,7 @@ TL;DR When random combining stalls, reach for SCAMPER, random input, or antidisc
 
 #### SCAMPER Method
 
-[Bob Eberle's](https://en.wikipedia.org/wiki/S.C.A.M.P.E.R) checklist to expand any idea in seven directions.
+Education author Bob Eberle's [Scamper: Games for Imagination Development](https://archive.org/details/scampergamesfori0000eber) (1971) turned Alex Osborn's brainstorming questions into a checklist that expands any idea in seven directions.
 
 Substitute: Replace a component
 
@@ -762,17 +764,17 @@ Run each letter on your top idea. “Substitute the API? Combine with another ap
 
 #### Random Input
 
-[Edward de Bono's](https://en.wikipedia.org/wiki/Lateral_thinking) technique for provoking new connections with randomness.
+Maltese physician and author Edward de Bono, who coined [lateral thinking](https://en.wikipedia.org/wiki/Lateral_thinking), devised this technique for provoking new connections with randomness, set out in Serious Creativity (1992).
 
 1.  Pick a random noun: open a dictionary, use a generator, or point at something in the room
 2.  Force-connect it to your problem. How is your idea like a “lighthouse”?
 3.  Follow the unexpected links. The weirder the connection, the more original the idea
 
-Stuck in a loop of similar ideas? Random input is the fastest way out. De Bono argued the real risk isn't being too random, but not random enough.
+Stuck in a loop of similar ideas? Random input is the fastest way out, as long as the word is genuinely random. The failure mode isn't picking something too random; it's quietly picking something already connected to your problem.
 
 #### Antidisciplinary Thinking
 
-[Joi Ito's](https://joi.ito.com/weblog/2014/10/02/antidisciplinar.html) framework for finding innovation in the white space between fields.
+Joi Ito, then director of the MIT Media Lab, on finding innovation in the white space between fields, from his 2014 essay [Antidisciplinary](https://joi.ito.com/weblog/2014/10/02/antidisciplinar.html).
 
 Interdisciplinary work has fields collaborate. Antidisciplinary thinking creates something that fits no existing category: the white space between the dots on a map of knowledge.
 
@@ -784,10 +786,10 @@ Ask Yourself
 
 The best projects feel weird at first. “An AI 911 dispatcher?” sounded strange until it won grand prize. Lean into the weirdness.
 
-> “Creativity is just connecting things.  
+> “Creativity is just connecting things. …  
 > The broader one's understanding of the human experience, the better design we will have.”
 
-— [Steve Jobs, co-founder of Apple](https://www.wired.com/1996/02/jobs-2/)
+— Steve Jobs, co-founder of Apple, [Wired interview, 1996](https://www.wired.com/1996/02/jobs-2/)
 
 The best ideas don't come from staring at a blank screen. They come from a broad inventory of elements (technologies you've explored, industries you understand, problems you've felt) plus the courage to combine them in ways nobody else would.
 
@@ -1130,7 +1132,7 @@ Stream
 
 ## Spike Solutions — Test the Riskiest Piece First
 
-From Kent Beck's Extreme Programming: a small, throwaway experiment to test a risky technical assumption before committing to a full implementation.
+From Kent Beck's Extreme Programming Explained (1999): a small, throwaway experiment to test a risky technical assumption before committing to a full implementation.
 
 TL;DR Spike the one assumption that could kill your idea before writing real code. 30-60 minutes de-risks the project.
 
@@ -1138,9 +1140,9 @@ TL;DR Spike the one assumption that could kill your idea before writing real cod
 
 Identify the riskiest technical assumption and spike it before writing a single line of real code.
 
-> “A spike solution is a very simple program to explore potential solutions. It focuses only on the problem under examination while ignoring all other concerns. Most spikes are not good enough to keep, so expect to throw away the code.”
+> “A spike solution is a very simple program to explore potential solutions. … Most spikes are not good enough to keep, so expect to throw it away.”
 
-— [Kent Beck, Extreme Programming](https://en.wikipedia.org/wiki/Extreme_programming)
+— [Don Wells, Extreme Programming: A Gentle Introduction, extremeprogramming.org](http://www.extremeprogramming.org/rules/spike.html)
 
 The Rule
 
@@ -1176,23 +1178,23 @@ TL;DR Decades of engineering research back the Lego method: build small, test en
 
 Each Lego block is a mini MVP cycle: build the smallest testable version, measure, learn, repeat. By the time you combine them, you've learned what matters.
 
-— [The Lean Startup, 2011](http://theleanstartup.com/)
+— [Eric Ries, entrepreneur and author, The Lean Startup, 2011](http://theleanstartup.com/)
 
 #### Prototype Over Meetings
 
 > “If a picture is worth a thousand words, a prototype is worth a thousand meetings.”
 
-IDEO's philosophy: stop debating whether something works and build it. A 30-minute prototype answers more than a 2-hour whiteboard session.
+IDEO's philosophy: stop debating whether something works and build it. Our own rule of thumb: a 30-minute prototype answers more than a 2-hour whiteboard session.
 
-— [David Kelley, IDEO founder](https://www.ideo.com/)
+— [A saying at IDEO, quoted by the Interaction Design Foundation, Design Thinking: Get Started with Prototyping](https://ixdf.org/literature/article/design-thinking-get-started-with-prototyping)
 
 #### Walking Skeleton
 
-> “A tiny implementation that performs a small end-to-end function, linking together the main architectural components.”
+> “A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components.”
 
 Before adding features, get one path working from UI to logic to data. The skeleton proves your architecture. Once it walks, flesh it out. Never start with the flesh.
 
-— [Alistair Cockburn, Agile Manifesto co-author](https://wiki.c2.com/?WalkingSkeleton)
+— [Alistair Cockburn, Agile Manifesto co-author, Crystal Clear, 2004](https://wiki.c2.com/?WalkingSkeleton)
 
 #### Tracer Bullet Development
 
@@ -1240,9 +1242,9 @@ Most hackathon decisions are reversible. Make them fast. Save your deliberation 
 
 TL;DR Decide reversible (two-way door) choices in under 5 minutes. Spend your deliberation on the few you can't undo.
 
-> “Most decisions are two-way doors. If you make the wrong decision, you come back in and pick another door. But some decisions are one-way doors — you go in that door, you're not coming back.”
+> “Some decisions are consequential and irreversible or nearly irreversible – one-way doors – and these decisions must be made methodically, carefully, slowly, with great deliberation and consultation. … But most decisions aren't like that – they are changeable, reversible – they're two-way doors.”
 
-— [Jeff Bezos, founder of Amazon](https://en.wikipedia.org/wiki/Jeff_Bezos)
+— [Jeff Bezos, founder of Amazon, 2015 Letter to Shareholders](https://www.aboutamazon.com/about-us/shareholder-letters)
 
 #### Decide Fast, Swap Later
 
@@ -1270,7 +1272,7 @@ these decisions are hard to undo
 
 Spend 80% of your decision energy on one-way doors. Make two-way doors in under 5 minutes. Losing teams don't pick the wrong framework; they spend 2 hours debating which one to use.
 
-Reid Hoffman: “If you aren't embarrassed by the first version of your product, you shipped too late.” Perfect decisions aren't the goal. Fast, reversible decisions are.
+Reid Hoffman, LinkedIn co-founder, in his 2017 post on Twitter: “If you're not embarrassed by the first version of your product, you've launched too late.” Perfect decisions aren't the goal. Fast, reversible decisions are.
 
 > “What I cannot create,  
 > I do not understand.”
@@ -1309,7 +1311,7 @@ Make two-way door decisions in under 5 minutes; save deliberation for one-way do
 
 If the spike fails, pivot immediately instead of sinking time into a broken assumption
 
-"What I cannot create, I do not understand." Can't build the smallest version? Rethink the approach
+"What I cannot create, I do not understand." (Richard Feynman) Can't build the smallest version? Rethink the approach
 
 Remember: Validation isn't about proving your idea is perfect. It finds what's broken before you're 18 hours deep with no backup plan. Test early, test in isolation, trust only proven blocks.
 
@@ -1458,13 +1460,13 @@ Andrej Karpathy
 
 “The hottest new programming language is English.”
 
-[Former Tesla AI lead, OpenAI founding member](https://twitter.com/karpathy/status/1617979122625712128)
+[Former Tesla AI lead, OpenAI founding member — X (Twitter), January 2023](https://twitter.com/karpathy/status/1617979122625712128)
 
 Thomas Dohmke
 
-“AI coding is here to stay. It's a new way for developers to express their creativity.”
+“A vital shift is underway in software development, one that redefines how we build, but also who we are as developers.”
 
-[CEO of GitHub](https://github.blog/news-insights/product-news/github-copilot-x-the-ai-powered-developer-experience/)
+[Former CEO of GitHub — “Developers, Reinvented”, August 2025](https://ashtom.github.io/developers-reinvented)
 
 ### 
 
@@ -1476,23 +1478,23 @@ TL;DR Ship a working flow first, cut the 80% that won't sway judges, and polish 
 
 Order matters. Get the flow working end-to-end, however ugly. Refactor only what the demo needs. Most teams never pass step one in 24 hours, and that's fine.
 
-— [Kent Beck, creator of XP and TDD](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
+— [Software proverb popularized by Kent Beck, creator of XP and TDD; in print since Johnson and Kernighan, Byte, August 1983](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
 #### Ship Embarrassingly Early
 
-> “If you aren't embarrassed by the first version of your product, you shipped too late.”
+> “If you're not embarrassed by the first version of your product, you've launched too late.”
 
 Ship to learn, not to cut corners. Move fast, test assumptions. A too-polished demo usually means too long building and too little refining the story.
 
-— [Reid Hoffman, co-founder of LinkedIn](https://www.linkedin.com/pulse/arent-embarrassed-first-version-your-product-you-reid-hoffman/)
+— [Reid Hoffman, co-founder of LinkedIn — X (Twitter), 2017](https://x.com/reidhoffman/status/847142924240379904)
 
 #### The 80/20 Rule
 
-> “80% of consequences come from 20% of causes.”
+> Roughly 80% of consequences come from 20% of causes.
 
 80% of demo impact comes from 20% of features. One sharp “pointy feature” that solves one problem well beats a broad platform with ten half-built ones.
 
-— [Vilfredo Pareto, 1906 / Joseph Juran](https://en.wikipedia.org/wiki/Pareto_principle)
+— [The Pareto principle: observed by economist Vilfredo Pareto (1906), named and popularized by quality-management pioneer Joseph Juran](https://en.wikipedia.org/wiki/Pareto_principle)
 
 #### The 5-Step Process
 
@@ -1509,7 +1511,7 @@ Adapted from SpaceX engineering. Apply in order:
 5.  Automate: Automate last, and never automate a broken process
 
 
-— [Elon Musk, SpaceX Starbase](https://www.youtube.com/watch?v=t705r8ICkRw)
+— [Elon Musk, Starbase tour interview with Tim Dodd (Everyday Astronaut), 2021](https://www.youtube.com/watch?v=t705r8ICkRw)
 
 ## Scope Hammering
 
@@ -1517,7 +1519,7 @@ Fixed time, variable scope. You cut features until what's left fits. This discip
 
 TL;DR Time is non-negotiable, so scope is what you cut: build the vital 20%, kill the comfortable 80%.
 
-[Ryan Singer's Shape Up methodology](https://basecamp.com/shapeup) from Basecamp defines scope hammering as “forcefully questioning a design, implementation, or use case to cut scope and finish inside the fixed time box.” Time is the one thing you can't negotiate. Scope is what you cut.
+[Ryan Singer's Shape Up methodology](https://basecamp.com/shapeup) (Basecamp, 2019) defines scope hammering as “forcefully questioning a design, implementation, or use case to cut scope and finish inside the fixed time box.” Time is the one thing you can't negotiate. Scope is what you cut.
 
 #### The Vital 20%
 
@@ -1549,13 +1551,15 @@ Kill this
 
 it won't change the outcome
 
-[Sheryl Sandberg](https://en.wikipedia.org/wiki/Sheryl_Sandberg) / Facebook
+[Mark Zuckerberg](https://money.cnn.com/2012/02/01/technology/zuckerberg_ipo_letter/index.htm) / Facebook
 
 “Done is better than perfect.”
 
-Jason Fried / [Getting Real](https://basecamp.com/gettingreal)
+Facebook motto, quoted in Zuckerberg's founder's letter, 2012 IPO filing; popularized by then-COO Sheryl Sandberg in Lean In (2013)
 
-“Build less. Underdo your competition. Fewer features, fewer options, fewer meetings, fewer promises.”
+Jason Fried, 37signals co-founder / [Getting Real](https://basecamp.com/gettingreal) (2006)
+
+“Underdo your competition... Less features, less options/preferences, less people and corporate structure, less meetings and abstractions, less promises.”
 
 ## The Hackathon Timeline
 
@@ -1587,9 +1591,9 @@ Rehearse and Submit
 
 Practice the pitch 3+ times and time it. Submit every deliverable early (Devpost, video, repo) and make no changes after. Use the rest to rest and prep mentally for judging.
 
-Timeboxing ranks among the most effective productivity techniques, per [Harvard Business Review](https://hbr.org/2018/12/how-timeboxing-works-and-why-it-will-make-you-more-productive). Assign fixed blocks and stop when time is up, done or not.
+Timeboxing ranks among the most effective productivity techniques, per a 2018 [Harvard Business Review](https://hbr.org/2018/12/how-timeboxing-works-and-why-it-will-make-you-more-productive) piece by Marc Zao-Sanders. Assign fixed blocks and stop when time is up, done or not.
 
-[Brooks's Law](https://en.wikipedia.org/wiki/Brooks%27s_law) says “adding manpower to a late software project makes it later.” When you're behind, cut features instead of adding scope or people.
+[Brooks's Law](https://en.wikipedia.org/wiki/Brooks%27s_law) says “adding manpower to a late software project makes it later.” Fred Brooks, the Turing Award-winning computer scientist who managed IBM's System/360, coined it in The Mythical Man-Month (1975). When you're behind, cut features instead of adding scope or people.
 
 ## The Leverage Toolkit
 
@@ -1621,9 +1625,11 @@ Communication Shortcuts
 
 Shared Figma, standups every 2-3 hours, one Slack/Discord channel. Over-communication beats under-communication at 3AM.
 
-[Naval Ravikant](https://www.navalmanack.com/) — AngelList Co-founder
+[Naval Ravikant](https://x.com/naval/status/1002106893265920000) — AngelList Co-founder
 
 > “Code and media are permissionless leverage. They're the leverage behind the newly rich. You can create software and media that works for you while you sleep.”
+
+How to Get Rich (Without Getting Lucky) thread, 2018; collected in [The Almanack of Naval Ravikant](https://www.navalmanack.com/) (Eric Jorgenson, 2020)
 
 Use leverage (templates, AI, APIs, no-code) and reserve human effort for vision, design, and high-impact decisions.
 
@@ -1631,7 +1637,7 @@ Use leverage (templates, AI, APIs, no-code) and reserve human effort for vision,
 > Make it right.  
 > Make it fast.”
 
-— [Kent Beck, creator of Extreme Programming](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
+— [Software proverb popularized by Kent Beck, creator of Extreme Programming; in print since Johnson and Kernighan, Byte, August 1983](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
 In a 24-48 hour sprint, most teams never get past “make it work.” That's fine. A working demo with a clear story beats a half-finished masterpiece. Winners don't have the cleanest code; they shipped something that works and told a compelling story.
 
@@ -1657,7 +1663,7 @@ Checkpoint every 2-3 hours: "Can we demo right now?" If not, fix that first
 
 Stop building 4 hours out. Polish UI, record the demo video, and rehearse the pitch
 
-"Done is better than perfect." Ship what works, cut what doesn't, sell the vision
+"Done is better than perfect," the Facebook motto from Mark Zuckerberg's 2012 IPO letter. Ship what works, cut what doesn't, sell the vision
 
 Remember: The goal isn't the best software, it's the best demo. Build less, leverage more, and always be ready to show what you've got.
 
@@ -1710,15 +1716,15 @@ TL;DR Winning pitches layer four proven frameworks: Sinek's why, Duarte's tensio
 
 Most teams pitch outside-in: “We built an app that…” Winners pitch inside-out: start with why you care, then how, then what. The Golden Circle turns passive listeners into invested supporters.
 
-— [Start With Why, 2009](https://simonsinek.com/books/start-with-why/)
+— Simon Sinek, author and TEDx speaker, [Start With Why, 2009](https://simonsinek.com/books/start-with-why/)
 
 #### What Is vs. What Could Be
 
-> “Make the audience the hero of the presentation, not yourself.”
+> “You are not the hero who will save the audience; the audience is your hero.”
 
 Duarte's Sparkline alternates between current reality (“what is”) and desired future (“what could be”). The tension builds, then resolves with your solution. Oscillate between both, never camp on one.
 
-— [Resonate, 2010](https://www.duarte.com/resonate/)
+— Nancy Duarte, CEO of Duarte, Inc., [Resonate, 2010](https://www.duarte.com/resonate/)
 
 #### Ethos, Pathos, Logos
 
@@ -1758,7 +1764,7 @@ Stories: Show how change happens
 
 ## Anatomy of a Winning Pitch
 
-A battle-tested pitch structure that works whether you have 2 minutes or 10. Based on Andy Raskin's strategic narrative framework and adapted for hackathons.
+A battle-tested pitch structure that works whether you have 2 minutes or 10. Based on Andy Raskin's strategic narrative framework from 'The Greatest Sales Deck I've Ever Seen' (Medium, 2016), adapted for hackathons.
 
 TL;DR Open with a shift, show the stakes, then spend most of your time on a working live demo.
 
@@ -1792,11 +1798,11 @@ End with where this goes. Skip the feature roadmap. Offer a glimpse of the futur
 
 "Imagine a world where no 911 call goes unanswered. We built the first step."
 
-[Andy Raskin](https://medium.com/the-mission/the-greatest-sales-deck-ive-ever-seen-4f4ef3391ba0) — Strategic Narrative Expert
+[Andy Raskin](https://medium.com/the-mission/the-greatest-sales-deck-ive-ever-seen-4f4ef3391ba0) — Strategic Narrative Expert, “The Greatest Sales Deck I've Ever Seen,” Medium, 2016
 
-> “Your prospect is Luke, and you're Obi-Wan, furnishing a lightsaber to help them defeat the Empire. Position your product as the magic gift that gets the hero to the promised land.”
+> “Your prospect is Luke, and you're Obi Wan, furnishing a lightsaber to help him defeat the Empire.”
 
-Judges are the heroes. Your project is the lightsaber. Frame it that way.
+Raskin's fourth element is to introduce features as magic gifts for overcoming obstacles to the promised land. Judges are the heroes. Your project is the lightsaber. Frame it that way.
 
 ## Winning Pitches Dissected
 
@@ -1804,13 +1810,15 @@ Theory is great, but seeing real pitches broken down is better. Here are three h
 
 TL;DR Three real winners, transcribed and analyzed: all opened with a number, demoed live, and aligned with sponsors.
 
-These are real pitches that won real prizes. Each was transcribed from its presentation video and analyzed with GPT-5 to surface structural phases, techniques, and the moments that won judges over.
+These are real pitches that won real prizes. Two were transcribed from their presentation videos and the third reconstructed from its Devpost writeup, then analyzed with GPT-5 in March 2026 to surface structural phases, techniques, and the moments that won judges over.
 
-#### DispatchAI — UC Berkeley AI Hackathon
+#### DispatchAI — UC Berkeley AI Hackathon 2024
 
-Grand Prize ($25K SkyDeck investment) + AI For Good + Best Use of Intel AI. The largest AI hackathon in the US.
+Grand Prize ($25K SkyDeck investment) + AI For Good ($25K) + Best Use of Intel AI (1st, roughly $14K in hardware). The largest AI hackathon in the US.
 
-Pitch Structure Breakdown (4 min 32 sec)
+Pitch Structure Breakdown (4 min 34 sec)
+
+Quotes below are transcribed from the team's pitch video (DispatchAI, UC Berkeley AI Hackathon 2024, recorded June 2024), narrated throughout by team member Spike O'Carroll. Spoken audio is lightly cleaned for repeated words.
 
 0:00 – 0:3914% of pitch
 
@@ -1836,9 +1844,9 @@ Technique: Concrete mechanism walkthrough with human-centered safety framing
 
 Technique: Mission statement tying product to social impact
 
-3:17 – 4:3228% of pitch
+3:17 – 4:3428% of pitch
 
-> “Our call updates in real time on the dashboard, and our transcription is on the right.”
+> “I have my phone here with me, and I will call our agents.”
 
 Technique: Live phone call to AI dispatcher with real-time UI
 
@@ -1846,7 +1854,7 @@ Frameworks Identified
 
 Strongest Moment
 
-@ 3:43 – 3:50
+Spike O'Carroll, DispatchAI pitch video, UC Berkeley AI Hackathon 2024 @ 3:43 – 3:50
 
 > “See, you can see that our call updates in real time on the dashboard, and our transcription is on the right.”
 
@@ -1860,7 +1868,9 @@ Why it won: A quantifiable problem (80%+ understaffed centers) met concrete exec
 
 1st Overall + Goldman Sachs Challenge Winner. The largest 24-hour hackathon in the US.
 
-Pitch Structure Breakdown (2 min 6 sec)
+Pitch Structure Breakdown (2 min 11 sec)
+
+Quotes below are transcribed from the TalkTuahBank team's demo video (HackUTD 2024, November 2024). The Big Shift and Stakes lines are the team's narrator; the Live Demo, How It Works, and Vision lines are spoken by the product's AI agent during the recorded call. Spoken audio is lightly cleaned for repeated words.
 
 0:00 – 0:054% of pitch
 
@@ -1874,19 +1884,19 @@ Technique: Statistic hook to establish global scale and urgency
 
 Technique: Low-barrier access framing to maximize perceived impact
 
-0:14 – 1:1044% of pitch
+0:14 – 1:1042% of pitch
 
 > “Hey, I can help with things like checking your account balance, transferring funds, and even getting you started on a loan application.”
 
 Technique: Show-don't-tell role-play demo with concrete details
 
-1:10 – 1:4931% of pitch
+1:10 – 1:4930% of pitch
 
-> “Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.”
+> “Awesome, you've successfully transferred $200 to account ACC 456.”
 
 Technique: Tangible proof point: completed real transaction
 
-1:49 – 2:0614% of pitch
+1:49 – 2:1117% of pitch
 
 > “If there's anything else you need, feel free to let me know.”
 
@@ -1896,9 +1906,9 @@ Frameworks Identified
 
 Strongest Moment
 
-@ 1:15
+TalkTuahBank AI agent, demo video, HackUTD 2024 @ 1:20
 
-> “Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.”
+> “Awesome, you've successfully transferred $200 to account ACC 456.”
 
 One line converts the concept into a verifiable outcome: money moved. It turns abstract “voice banking” claims into a believable, tangible result.
 
@@ -1912,19 +1922,21 @@ Google Company Challenge Winner. First place among 142 projects.
 
 Pitch Structure (Reconstructed from Devpost)
 
+These lines come from the AdaptEd team's own Devpost writeup (LA Hacks 2024), not from a recorded pitch. Lines in quotation marks are verbatim; the rest are condensed summaries of longer passages. The statistics are the team's own claims and carry no citation on Devpost.
+
 > “Instead of students adapting to the system, our AI lecturer adapts to students.”
 
 Technique: Contrarian, single-line reframe that reverses expectations
 
-> “50% of 16M US university students are falling behind. Less than 3% have access to quality tutoring.”
+> 50% of 16M US university students are falling behind. Less than 3% have access to quality tutoring.
 
 Technique: Quantified pain + inequity framing with both percentage and population
 
-> “Responsive AI conversation, dynamic slide and whiteboard content, emotion detection.”
+> Responsive AI conversation, dynamic slide and whiteboard content, emotion detection.
 
 Technique: Show-don't-tell micro-scenario mapping features to outcomes
 
-> “Gemini 1.5 Pro for multi-source aggregation, Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection.”
+> Gemini 1.5 Pro for multi-source aggregation, Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection.
 
 Technique: Technical transparency: each component assigned a clear role
 
@@ -1935,6 +1947,8 @@ Technique: Concise product vision paired with scale implication
 Frameworks Identified
 
 Strongest Moment
+
+AdaptEd team, Devpost writeup, LA Hacks 2024 (reconstructed, not a recorded pitch line)
 
 > “Instead of students adapting to the system, our AI lecturer adapts to students.”
 
@@ -1968,7 +1982,7 @@ Each pitch had a single sentence that encapsulated the entire vision: "world's f
 
 All 5 Frameworks Present
 
-GPT-5 identified all five persuasion frameworks (Sinek, Duarte, Aristotle, Heath, Raskin) in each pitch. Winning pitches don't use one framework; they layer all of them.
+All five persuasion frameworks (Sinek, Duarte, Aristotle, Heath, Raskin) are visible in each of these three pitches. Winning pitches don't use one framework; they layer all of them.
 
 The pattern is clear: Winning pitches follow a formula. Open with a quantified problem, reframe with a one-liner, spend most of the time on a working demo, align with sponsor priorities, and close with a vision that makes judges feel something. The frameworks above aren't theory. They are what winners use.
 
@@ -2157,13 +2171,13 @@ TL;DR Pitching on no sleep strips the polish: be vulnerable, talk with judges no
 
 #### The Power of Vulnerability
 
-> “In order for connection to happen, we have to allow ourselves to be seen, really seen. The courage to be imperfect.”
+> “In order for connection to happen, we have to allow ourselves to be seen, really seen.”
 
-No sleep strips away the polish. You explain what you built honestly, flaws included. You stop trying to impress and start trying to communicate. That makes you more convincing.
+Later in the same talk, Brown describes what the people she calls wholehearted had in common: “these folks had, very simply, the courage to be imperfect.” No sleep strips away the polish. You explain what you built honestly, flaws included. You stop trying to impress and start trying to communicate. That makes you more convincing.
 
 Share a real setback: “We thought X, then talked to users and learned Y.” Admitting what you didn't know makes you more human and credible.
 
-— [The Power of Vulnerability, TED 2010](https://www.ted.com/talks/brene_brown_the_power_of_vulnerability)
+— Brené Brown, research professor, University of Houston Graduate College of Social Work, [The Power of Vulnerability, TEDxHouston 2010](https://www.ted.com/talks/brene_brown_the_power_of_vulnerability)
 
 #### Talk With, Not At
 
@@ -2177,7 +2191,7 @@ The Carnegie Structure
 2.  Say it
 3.  Tell them what you said
 
-— [How to Win Friends and Influence People](https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People)
+— Dale Carnegie, American writer and lecturer, [The Quick and Easy Way to Effective Speaking, 1962](https://www.simonandschuster.com/books/The-Quick-and-Easy-Way-to-Effective-Speaking/Dorothy-Carnegie/Dale-Carnegie-Books/9780671724009)
 
 Practice = Code
 
@@ -2193,7 +2207,7 @@ Watch yourself pitch. You'll catch filler words, pacing, and missed beats you'd 
 
 > “Your purpose is to make your audience see what you saw, hear what you heard, feel what you felt.”
 
-— [Dale Carnegie, pioneer of public speaking](https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People)
+— Dale Carnegie, American writer and lecturer, [The Quick and Easy Way to Effective Speaking, 1962](https://www.simonandschuster.com/books/The-Quick-and-Easy-Way-to-Effective-Speaking/Dorothy-Carnegie/Dale-Carnegie-Books/9780671724009)
 
 Winning isn't about cramming more tech into the pitch. It's about being ready for the conversation after. Winning teams aren't always the most technical. They make judges feel something, believe the vision, and think “that team gets it.”
 
@@ -2268,7 +2282,7 @@ Visual proof that persists into deliberation. When judges forget your project (i
 
 Devpost calls the demo video [one of the most important elements](https://help.devpost.com/article/84-video-making-best-practices) of your submission.
 
-[Tom Preston-Werner](https://tom.preston-werner.com/2010/08/23/readme-driven-development) — GitHub Co-founder
+[Tom Preston-Werner](https://tom.preston-werner.com/2010/08/23/readme-driven-development) — GitHub Co-founder, “Readme Driven Development,” 2010
 
 > “Until you've written about your software, you have no idea what you'll be coding.”
 
@@ -2374,15 +2388,15 @@ Put the most important information first. Judges skim, so your opening line deci
 
 Lead with impact, not backstory. “82% of call centers are understaffed” hooks instantly. “We're a team of four students who…” does not.
 
-— [Associated Press style, standardized 1953](https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism))
+— [Inverted pyramid, in widespread newspaper use since the early 1900s](https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism))
 
 #### The 6-Page Memo
 
-> “The narrative structure of a good memo forces better thought and better understanding of what's more important than what.”
+> “The reason writing a good 4 page memo is harder than ‘writing’ a 20 page powerpoint is because the narrative structure of a good memo forces better thought and better understanding of what's more important than what, and how things are related.”
 
-Bezos banned PowerPoint at Amazon for structured narrative memos. Same idea for your Devpost: writing a coherent story forces you to understand what you built and why it matters.
+Bezos banned PowerPoint at Amazon in 2004 in favor of structured narrative memos. Same idea for your Devpost: writing a coherent story forces you to understand what you built and why it matters.
 
-— [Jeff Bezos, Amazon shareholder letter](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders)
+— [Jeff Bezos, Amazon founder and CEO, email to Amazon's S-Team, June 9, 2004](https://slab.com/blog/jeff-bezos-writing-management-strategy/)
 
 #### 6 Rules for Clear Writing
 
@@ -2404,9 +2418,9 @@ A screenshot is worth a thousand words. An architecture diagram is worth a thous
 
 TL;DR Don't describe your app, show it: diagram the architecture and record it working.
 
-> “Don't tell me the moon is shining; show me the glint of light on broken glass.”
+> “In descriptions of Nature one must seize on small details, grouping them so that when the reader closes his eyes he gets a picture. For instance, you'll have a moonlit night if you write that on the mill dam a piece of glass from a broken bottle glittered like a bright little star…”
 
-— [Anton Chekhov, letter to his brother, 1886](https://en.wikipedia.org/wiki/Show,_don%27t_tell)
+— [Anton Chekhov, Russian playwright and short-story writer, letter to his brother Alexander, May 1886 (trans. Avrahm Yarmolinsky, The Unknown Chekhov, 1954)](https://en.wikipedia.org/wiki/Show,_don%27t_tell)
 
 Chekhov's principle for fiction applies perfectly to hackathon submissions. Don't describe your app; show it. Don't explain your architecture; diagram it. Don't claim it works; record it working.
 
@@ -2480,9 +2494,9 @@ Late Submission
 
 Devpost deadlines are hard cutoffs. Submit 30 minutes early. Teams lose every hackathon because they hit "submit" at 11:59 and Devpost lagged.
 
-> “The narrative structure of a good memo forces better thought and better understanding of what's more important than what.”
+> “…the narrative structure of a good memo forces better thought and better understanding of what's more important than what, and how things are related.”
 
-— [Jeff Bezos, Amazon shareholder letter, 2017](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders)
+— [Jeff Bezos, Amazon founder and CEO, email to Amazon's S-Team, June 9, 2004](https://slab.com/blog/jeff-bezos-writing-management-strategy/)
 
 Your submission isn't an afterthought; it's the document that represents your project when you're not in the room. Teams that write great Devpost READMEs aren't adding fluff. They're forcing themselves to understand what they built, why it matters, and how to make someone else care.
 
@@ -2775,6 +2789,8 @@ The Visibility Principle
 
 > “If a tree falls in a forest and no one is around to hear it, does it make a sound?”
 
+— Traditional philosophical thought experiment; earliest known printing in The Chautauquan, June 1883 (often misattributed to George Berkeley, who never posed it)
+
 If a project is made but no one knows, was it made? A private repo helps no one, least of all you.
 
 The First Internship Story
@@ -2793,9 +2809,9 @@ TL;DR Luck = doing times telling. Share your work widely and opportunities start
 
 The more you do AND the more people who know about it, the more “lucky” opportunities find you.
 
-> “Luck surface area is directly proportional to the degree to which you do something you're passionate about combined with the total number of people to whom this is effectively communicated.”
+> “The amount of serendipity that will occur in your life, your Luck Surface Area, is directly proportional to the degree to which you do something you're passionate about combined with the total number of people to whom this is effectively communicated.”
 
-— Jason Roberts, Luck Surface Area (L = D x T)
+— Jason Roberts, serial entrepreneur and TechZing podcast co-host, “How to Increase Your Luck Surface Area”, Codus Operandi, 2010 (L = D x T)
 
 Where to Share
 
@@ -2815,7 +2831,7 @@ The proof: Within the first 4 hackathons, sharing publicly led to an interview a
 
 ## The 48-Hour Follow-Up
 
-Hackathon contacts are warm right now. In a week, they're strangers. Research shows: follow up within 24-48 hours or the window closes.
+Hackathon contacts are warm right now. In a week, they're strangers. Follow up within 24-48 hours, before the connection goes cold.
 
 TL;DR Message everyone you had a real conversation with inside 48 hours, while the connection is still warm.
 
@@ -2849,15 +2865,17 @@ Short, personal, and valuable. No generic “let's stay in touch.”
 
 short, personal, one clear ask
 
-Mark Granovetter — Strength of Weak Ties
+Mark Granovetter, Sociologist — Strength of Weak Ties
 
 Casual contacts beat close friends for finding jobs. Judges, sponsors, and fellow hackers are weak ties, and weak ties open doors.
 
-Stanford, 1973; one of the most cited sociology papers ever
+“The Strength of Weak Ties”, American Journal of Sociology, 1973; one of the most cited sociology papers ever
 
-Reid Hoffman — LinkedIn Co-founder
+Porter Gale — Former VP of Marketing, Virgin America
 
-“Your network is your net worth.” Your 170 connections reach millions. The best ones form over shared struggles, like debugging at 3AM.
+Your network is your net worth. Your connections reach far past the people you actually know, and the best ones form over shared struggles, like debugging at 3AM.
+
+Your Network Is Your Net Worth, Atria Books, 2013
 
 ## Turn It Into a Long-Term Project
 
@@ -2877,13 +2895,17 @@ A loss is rocket fuel. You still have a prototype, a team, and momentum, more th
 
 Losing hackathons is better than winning them; the “losses” are where the real growth happens.
 
-Seth Godin / Steve Jobs
+Steve Jobs — Apple Co-founder
 
 “Real artists ship.” Don't let it die in a private repo. Each iteration you ship makes it more impressive and more useful.
 
-Patrick McKenzie (patio11)
+Macintosh team retreat, January 1983, as recounted by Andy Hertzfeld on folklore.org; later popularized by Seth Godin
+
+Patrick McKenzie (patio11) — Software Entrepreneur and Writer
 
 Side projects compound into career-changing portfolios. His Bingo Card Creator, built on nights and weekends, became a full career pivot. Hackathon projects have the same potential.
+
+He ran Bingo Card Creator alongside a day job until he went full-time on his software business in 2010; story documented on kalzumeus.com
 
 ## Why This Works — The Science
 
@@ -2893,27 +2915,27 @@ TL;DR Four researchers agree: visible work and weak ties, not raw talent, drive 
 
 #### Show Your Work
 
-> “The real gap is between doing nothing and doing something. In this day and age, if your work isn't online, it doesn't exist.”
+> “It sounds a little extreme, but in this day and age, if your work isn't online, it doesn't exist.”
 
-You don't have to be a genius, just share what you make. Sharing is generosity, not self-promotion, and it attracts people who care about the same things.
+Kleon builds the case on a line he borrows from Clay Shirky, who teaches at NYU: “The real gap is between doing nothing and doing something.” You don't have to be a genius, just share what you make. Sharing is generosity, not self-promotion, and it attracts people who care about the same things.
 
-— Show Your Work, 2014
+— Austin Kleon, author, Show Your Work!, 2014; Shirky line from Cognitive Surplus, 2010
 
 #### Luck Surface Area
 
-> “Luck surface area is directly proportional to the degree to which you do something you're passionate about combined with the total number of people to whom this is effectively communicated.”
+> “The amount of serendipity that will occur in your life, your Luck Surface Area, is directly proportional to the degree to which you do something you're passionate about combined with the total number of people to whom this is effectively communicated.”
 
 L = D x T. Do more (build, iterate, contribute) and tell more (post, share, demo). One project shared with 1,000 people beats 10 projects nobody sees.
 
-— Jason Roberts, TechZing podcast
+— Jason Roberts, serial entrepreneur and TechZing podcast co-host, “How to Increase Your Luck Surface Area”, Codus Operandi, 2010
 
 #### Strength of Weak Ties
 
-Mark Granovetter's landmark 1973 Stanford study found casual contacts (people you don't see every day) beat close friends for finding jobs. They link you to networks outside your own circle.
+Sociologist Mark Granovetter's landmark 1973 study, built on his Harvard doctoral research and published while he was at Johns Hopkins, found casual contacts (people you don't see every day) beat close friends for finding jobs. They link you to networks outside your own circle.
 
 Judges, sponsors, and fellow hackers are weak ties. Cultivate them. They open doors your close friends can't.
 
-— American Journal of Sociology, 1973
+— Mark Granovetter, “The Strength of Weak Ties”, American Journal of Sociology 78(6), 1973
 
 #### Regret Minimization
 
@@ -2921,7 +2943,7 @@ Judges, sponsors, and fellow hackers are weak ties. Cultivate them. They open do
 
 Picture yourself at 80. You won't regret sharing the project or sending the follow-up. You'll regret staying silent. The downside of sharing is zero; the upside is unknowable.
 
-— Jeff Bezos, founder of Amazon
+— Jeff Bezos, founder of Amazon, Academy of Achievement interview, 2001
 
 ## The Post-Hackathon Playbook
 
@@ -3001,7 +3023,7 @@ Those two skills moved to the submission playbook page, next to the README and D
 > “It's not enough to be good.  
 > In order to be found, you have to be findable.”
 
-— Austin Kleon, Show Your Work
+— Austin Kleon, author of Show Your Work! (2014)
 
 The hackathon is the beginning, not the end. Every project you share, every follow-up you send, every iteration you ship expands your luck surface area. One LinkedIn viewer might change your trajectory.
 
@@ -3027,7 +3049,7 @@ Open-source it if possible; it becomes a living portfolio piece
 
 Keep building: set monthly milestones (you already have the MVP)
 
-Make it findable: "if your work isn't online, it doesn't exist"
+Make it findable: "if your work isn't online, it doesn't exist" (Austin Kleon, author of Show Your Work!, 2014)
 
 Remember: The hackathon gave you the project, the connections, and the momentum. What you do next separates people who attend hackathons from people whose hackathons change their careers. Share it, follow up, keep building. It only takes one.
 
@@ -3041,11 +3063,11 @@ Canonical: https://thehackathonplaybook.dev/non-coders
 
 ---
 
-> “There's always been a tech barrier between domain expertise and coding. But now, if anyone has enough expertise, they can create advanced solutions. Programming is solved.”
+> “You don't have to know programming to create solutions…”
 
-— [Dr. Michal Nedoszytko, cardiologist, 3rd place at Anthropic hackathon (New York Post, Feb 2026)](https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/)
+— [Dr. Michal Nedoszytko, interventional cardiologist and creator of PostVisit.ai, 3rd place at Anthropic's Built with Opus 4.6 hackathon (ReachMD, The Convergence, March 2026)](https://reachmd.com/programs/the-convergence/Michal-Nedoszytko-PostVisit-ai/54781/)
 
-You don't need to become a programmer. You need to be an expert in the problem. The cardiologist didn't learn JavaScript. The lawyer didn't study computer science. They described what they needed, and AI built it.
+You don't need to become a programmer. You need to be an expert in the problem. Mike Brown, the lawyer who took first place, said in [Anthropic's winners write-up](https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon) that he didn't write a single line of code. Nedoszytko is a different case: Anthropic describes him as a cardiologist who had spent 20 years building healthcare software alongside his practice, and he still needed only 7 days to ship PostVisit.ai. He qualifies his own line, too: what you build without programming is a solution, or at least a prototype you can use yourself.
 
 ## Choose Your Starting Point
 
@@ -3079,9 +3101,9 @@ Enter section →](https://thehackathonplaybook.dev/non-coders/skills)
 
 ## Sources
 
-This guide is built on research from 30+ articles, blog posts, GitHub repos, and hackathon post-mortems.
+This guide is built on the articles, blog posts, GitHub repos, and hackathon post-mortems below.
 
-[NY Post: Vibe Coding Is Here to Stay](https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/)[Hadley Lab: The Lawyer Who Won](https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/)[TechStory: Cardiologist Builds App in 7 Days](https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/)[Nina Kolari: Hackathon Takeaways](https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[SF Standard: 200+ Hackathon Wins](https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/)[Cursor Blog: Agent Best Practices](https://cursor.com/blog/agent-best-practices)[AGENTS.md Official Site](https://agents.md/)[Awesome Cursor Rules (38k+ stars)](https://github.com/PatrickJS/awesome-cursorrules)[Vibe Coding Lite: Systematic Approach](https://vibecodinglite.dev/quickstart.html)[Seoul Economic Daily: Builder Era Dawns](https://en.sedaily.com/news/2026/02/25/lawyers-doctors-sweep-ai-hackathon-as-builder-era-dawns)
+[NY Post: Vibe Coding Is Here to Stay (2026)](https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/)[Hadley Lab: The Lawyer Who Won (2026)](https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/)[TechStory: Cardiologist Builds App in 7 Days (2026)](https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/)[Nina Kolari: Hackathon Takeaways (2025)](https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[SF Standard: 200+ Hackathon Wins (2025)](https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/)[Cursor Blog: Agent Best Practices (2026)](https://cursor.com/blog/agent-best-practices)[AGENTS.md Official Site](https://agents.md/)[Awesome Cursor Rules (38k+ stars)](https://github.com/PatrickJS/awesome-cursorrules)[Vibe Coding Lite: Systematic Approach](https://vibecodinglite.dev/quickstart.html)[Seoul Economic Daily: Builder Era Dawns (2026)](https://en.sedaily.com/news/2026/02/25/lawyers-doctors-sweep-ai-hackathon-as-builder-era-dawns)
 
 ---
 
@@ -3095,6 +3117,8 @@ Canonical: https://thehackathonplaybook.dev/non-coders/proof
 
 Anthropic's “Built with Opus 4.6” Hackathon (Feb 2026): 13,000 applicants. 500 accepted. Only 1 of the 5 winners was a professional developer.
 
+Applicant count via Cerebral Valley, the hackathon's co-host; selection and winner details from Anthropic, [“Meet the winners of our Built with Opus 4.6 Claude Code hackathon”](https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon), 2026
+
 [#### Mike Brown
 
 Personal Injury Lawyer · Anthropic Hackathon
@@ -3103,9 +3127,11 @@ CrossBeam
 
 ADU permit compliance assistant
 
-> “A developer without legal expertise would build something that hallucinates plausible nonsense.”
+> “It's crazy to me that I ended up winning this contest, and I didn't write a single line of code. I didn't even read a line of code.”
 
-Read the full story →](https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/)[#### Dr. Michal Nedoszytko
+Mike Brown, Personal Injury Lawyer. Anthropic, “Meet the winners of our Built with Opus 4.6 Claude Code hackathon,” 2026
+
+Read the full story →](https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon)[#### Dr. Michal Nedoszytko
 
 Interventional Cardiologist · Anthropic Hackathon
 
@@ -3113,9 +3139,11 @@ PostVisit.AI
 
 Post-visit patient care platform
 
-> “Programming is solved.”
+> “Currently, you don't have to know programming to create solutions, or at least prototypes of solutions, for something that you can use personally.”
 
-Read the full story →](https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/)[#### Nina Kolari
+Dr. Michal Nedoszytko, Interventional Cardiologist. The Convergence, ReachMD, 2026
+
+Read the full story →](https://reachmd.com/programs/the-convergence/Michal-Nedoszytko-PostVisit-ai/54781/)[#### Nina Kolari
 
 Entrepreneur, 51 · Cursor Hackathon
 
@@ -3123,7 +3151,9 @@ Aphasio
 
 Speech practice app for stroke patients
 
-> “Product sense beats coding skill. I solved a specific, painful problem.”
+> “Product sense beats coding skill. \[…\] I built something simple that solved a specific, painful problem. The judges responded to clarity.”
+
+Nina Kolari, Entrepreneur, 51. ninakolari.com, December 9, 2025
 
 Read the full story →](https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[#### Rene Turcios
 
@@ -3135,11 +3165,13 @@ Zero lines of code written, ever
 
 > “Anyone can build anything they want.”
 
+Rene Turcios, Former Yu-Gi-Oh! Pro. The San Francisco Standard, July 5, 2025
+
 Read the full story →](https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/)
 
 The Pattern Is Clear
 
-Every winner solved a problem from their own professional domain. The cardiologist built for his patients. The lawyer built for a friend's business. The entrepreneur built for her mother. Your years of professional experience are worth more than any CS degree in this context.
+Every winner solved a problem they knew firsthand. The cardiologist built for his patients. The lawyer built for a friend's business. The entrepreneur built for her mother, who had a stroke and developed aphasia. Your years of lived and professional experience are worth more than any CS degree in this context.
 
 ---
 
@@ -5165,43 +5197,43 @@ Short, specific strategies from 36+ wins. No fluff, just the ideas that help you
 
 What to do after a hackathon, win or lose: the 5 linked assets that get you hired, and the AI skills that build your README, Devpost, portfolio, and demo copy.
 
-Read article](https://thehackathonplaybook.dev/blog/what-to-do-after-a-hackathon)[6 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/what-to-do-after-a-hackathon)[6 min readUpdated Jun 23, 2026
 
 #### 9 Hackathon Pitch Mistakes I Saw at LA Hacks
 
 Hackathon pitch mistakes from the LA Hacks judging floor: tailor the pitch, cut your slides, demo the main flow, and protect Q&A time for higher scores.
 
-Read article](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks)[5 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks)[5 min readUpdated Jun 23, 2026
 
 #### How to Build with ElevenLabs and Cursor at a Hackathon
 
 Build a voice AI hackathon project with ElevenLabs and Cursor in an afternoon. The exact PRD-first, MCP-driven, test-driven workflow Bill uses to ship and win.
 
-Read article](https://thehackathonplaybook.dev/blog/build-with-elevenlabs-and-cursor)[3 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/build-with-elevenlabs-and-cursor)[3 min readUpdated Jun 23, 2026
 
 #### Non-Coders Winning Hackathons: How Experts Beat Developers
 
-Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic SF, beating developers with AI tools like Cursor and Claude Code.
+Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic's global hackathon, beating developers with Claude Code.
 
-Read article](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons)[3 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons)[3 min readUpdated Jun 23, 2026
 
 #### Hackathon Pitch Guide: How to Present Your Project and Win Prizes
 
 Master the hackathon pitch with a 3-minute structure from 36+ winning presentations: the hook, the demo, judge Q&A, and the mistakes that cost prizes.
 
-Read article](https://thehackathonplaybook.dev/blog/hackathon-pitch-guide)[4 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/hackathon-pitch-guide)[4 min readUpdated Jun 23, 2026
 
 #### Hackathon Tips for Beginners: Your First Hackathon Survival Guide
 
 First hackathon? This beginner's guide covers what to bring, how to find a team, what to build, the mistakes to avoid, and how to win as a first-timer.
 
-Read article](https://thehackathonplaybook.dev/blog/hackathon-tips-for-beginners)[4 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/hackathon-tips-for-beginners)[4 min readUpdated Jun 23, 2026
 
 #### Best Tech Stack for Hackathons in 2026: Tools That Win Prizes
 
 The best tech stack for hackathons in 2026: Next.js, FastAPI, Supabase, Vercel, and an AI API. The exact stack winning teams use, and the rule that beats it.
 
-Read article](https://thehackathonplaybook.dev/blog/best-tech-stack-for-hackathons)[5 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/best-tech-stack-for-hackathons)[5 min readUpdated Jun 23, 2026
 
 #### How to Win Hackathons: A Complete Guide from 36+ Victories
 
@@ -5275,7 +5307,7 @@ That is the edge. On a resume screen where you and another candidate look identi
 
 > It's not enough to be good. In order to be found, you have to be findable.
 >
-> Austin Kleon, Show Your Work!, 2014
+> Austin Kleon, author of Show Your Work!, 2014
 
 > **How I Got My First Internship:** This one is personal. I started doing hackathons to land an internship, and within my first four, **one LinkedIn post about a project got me the interview that became my first offer.** We didn't even win that hackathon. I would never have gotten that internship otherwise. Not from winning. From being findable.
 
@@ -5411,7 +5443,7 @@ Smile. Obvious, but teams forget it the second judging starts. A flat, monotone 
 
 ![A dark pitch slide showing the problem: 82 percent of 911 call centers are understaffed, surrounded by emergency dispatch product visuals.](https://thehackathonplaybook.dev/blog/berkeley-ai-hackathon-problem-slide.png)
 
-*One memorable statistic, enough visual context to feel the pain point.*
+*One memorable statistic, enough visual context to feel the pain point. The 82 percent figure comes from The Pulse of 9-1-1, the 2023 NENA and Carbyne State of the Industry Survey.*
 
 ![A dark pitch slide showing the solution: personalized support through an empathetic AI speaker, immediate emergency response, and human-in-the-loop moderation.](https://thehackathonplaybook.dev/blog/berkeley-ai-hackathon-solution-slide.png)
 
@@ -5621,7 +5653,7 @@ Video: [TalkTuahBank demo video, 1st Overall at HackUTD 2024](https://www.youtub
 
 ## Phase 7: The Win Is in the Follow-Up
 
-The hackathon doesn't end when prizes are announced. The best outcomes happen in the next 48 hours. **Dispatch AI won the UC Berkeley AI Hackathon Grand Prize ($60K+)**, then landed Berkeley SkyDeck funding and reached a $1M valuation.
+The hackathon doesn't end when prizes are announced. The best outcomes happen in the next 48 hours. **Dispatch AI won the Grand Prize at the UC Berkeley AI Hackathon 2024**, worth about $64K across prizes: a $25K Berkeley SkyDeck Fund investment with a Golden Ticket to SkyDeck Pad-13, $25K for AI For Good, and roughly $14K of hardware for first place in Best Use of Intel AI (devpost.com/software/dispatch-ai).
 
 1. **Follow Up Fast** Email sponsors and mentors within 48 hours, while they still remember you.
 2. **Polish & Publish** Clean up your code, write a proper README, and push to GitHub.
@@ -5923,7 +5955,7 @@ A great project with a weak pitch loses to a good project with a great pitch. Ev
 
 You get about **30 seconds** before a judge decides whether to care. Spend them on the pain, not your tech stack.
 
-One winning opener I watched ran: **240 million 911 calls** are made in the US every year, and dispatchers prioritize them by hand while people are dying on the line. No team name, no tech stack, just the stakes.
+One winning opener I watched ran: **240 million 911 calls** are made in the US every year, and dispatchers prioritize them by hand while people are dying on the line. No team name, no tech stack, just the stakes. (That number is the National Emergency Number Association's estimate: nena.org/page/911statistics.)
 
 **Do:**
 
@@ -5993,7 +6025,7 @@ Run your structure end to end out loud at least once before you step up. The tea
 
 # Non-Coders Winning Hackathons: How Experts Beat Developers
 
-> Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic SF, beating developers with AI tools like Cursor and Claude Code.
+> Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic's global hackathon, beating developers with Claude Code.
 
 Canonical: https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons
 Last updated: 2026-06-24
@@ -6004,9 +6036,9 @@ Last updated: 2026-06-24
 
 A non-coder won.
 
-At the **Anthropic hackathon in San Francisco in February 2026**, a personal injury lawyer named Mike Brown took 1st place, ahead of hundreds of experienced developers. A cardiologist, Dr. Michal Nedoszytko, placed 3rd. **Neither had written a line of code before.**
+At **Anthropic's Built with Opus 4.6 hackathon**, a global virtual event held February 10 to 16, 2026, a personal injury lawyer named Mike Brown took 1st place, ahead of hundreds of experienced developers. A cardiologist, Dr. Michal Nedoszytko, placed 3rd. 13,000 people applied, 500 were selected, and most of them were developers. **Brown says he did not write, or even read, a single line of code.**
 
-| Lawyer, no code | Doctor, no code | Vibe-coder wins | To ship an app |
+| Lawyer, no code | Doctor, 7 days | Hackathons entered | To ship an app |
 | --- | --- | --- | --- |
 | 1st | 3rd | 200+ | 3 hrs |
 
@@ -6018,9 +6050,9 @@ Judges do not award prizes for clean code. They award prizes for **solving a rea
 
 A cardiologist knows exactly which patient-monitoring data matters. He describes the app in plain English, the AI builds it, and the result is more useful than what most developers would even think to make.
 
-> There's always been a tech barrier between domain expertise and coding. But now, if anyone has enough expertise, they can create advanced solutions. Programming is solved.
+> You don't have to know programming to create solutions.
 >
-> Dr. Michal Nedoszytko, cardiologist and 3rd place, Anthropic Hackathon SF (2026)
+> Dr. Michal Nedoszytko, interventional cardiologist and creator of PostVisit.ai, 3rd place at Anthropic's Built with Opus 4.6 hackathon (ReachMD, The Convergence, 2026)
 
 > **Win:** The playing field is level. When the code writes itself, the person who understands the problem best wins.
 
@@ -6055,13 +6087,13 @@ Start with a problem you know cold from your own work. Then **compete where you 
 
 When judges see a product built by someone who truly lives the problem, it stands out from the generic 'cool tech demo' most developer teams ship.
 
-## Proof: 3 Hours, One App, 200+ Wins
+## Proof: 3 Hours, One App, 200+ Hackathons
 
-Mike Brown's 1st-place project at the Anthropic hackathon was a **legal analysis tool**. He built the whole app with Claude Code, leaning on years of legal experience to make something developers would not have imagined.
+Mike Brown's 1st-place project at Anthropic's Built with Opus 4.6 hackathon (February 2026) was **CrossBeam**, an AI tool that reads California ADU building-permit plan sets and correction letters, cross-references city and state code, and returns an action plan in about 20 minutes instead of weeks. He built the whole app with Claude Code, leaning on years of legal experience to make something developers would not have imagined.
 
-Here's how fast this moves: Nina Kolari, a non-technical professional, built a **working iPhone app in 3 hours** at a hackathon using AI tools.
+Here's how fast this moves: Nina Kolari, a non-technical entrepreneur who learned iOS development with AI tools, built **Aphasio**, a working iPhone communication app for people with aphasia, in **3 hours** at the Cursor hackathon in Chiang Mai, and won against 27 other teams (her write-up on ninakolari.com, December 2025).
 
-> **Tip:** Rene Turcios, a self-described 'vibe coder' with limited traditional coding skill, has racked up 200+ hackathon wins. Consistency and strategy beat raw coding ability.
+> **Tip:** Rene Turcios, a self-described 'vibe coder' who does not know how to code, has competed in 200+ hackathons since 2023 and keeps winning prizes (The San Francisco Standard, July 2025). Consistency and strategy beat raw coding ability.
 
 ## Your First Hackathon, Step by Step
 
@@ -6207,9 +6239,9 @@ Here is the highest-leverage move I have found: **flip the order**. Make the age
 2. **Green** Have the agent write the minimum code that makes the test pass. Run it. Iterate until green.
 3. **Refactor** Have the agent clean up that code without breaking the test. Run it once more to be sure.
 
-> Never write a new piece of functionality without a failing test.
+> Write new code only if you first have a failing automated test.
 >
-> Kent Beck, Test-Driven Development: By Example, 2002
+> Kent Beck, creator of Extreme Programming, Test-Driven Development: By Example (Addison-Wesley, 2002)
 
 > **Why It Wins:** Tests turn 'looks fine' into 'provably works.' Given a hard pass/fail signal, the agent stops hallucinating and starts converging. You also get a free regression suite, priceless when you swap voices or models five minutes before demo.
 

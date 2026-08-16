@@ -32,7 +32,7 @@ A great project with a weak pitch loses to a good project with a great pitch. Ev
 
 You get about **30 seconds** before a judge decides whether to care. Spend them on the pain, not your tech stack.
 
-One winning opener I watched ran: **240 million 911 calls** are made in the US every year, and dispatchers prioritize them by hand while people are dying on the line. No team name, no tech stack, just the stakes.
+One winning opener I watched ran: **240 million 911 calls** are made in the US every year, and dispatchers prioritize them by hand while people are dying on the line. No team name, no tech stack, just the stakes. (That number is the National Emergency Number Association's estimate: nena.org/page/911statistics.)
 
 **Do:**
 

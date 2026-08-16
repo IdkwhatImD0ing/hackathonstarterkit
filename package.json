@@ -15,7 +15,8 @@
     "check:bundle": "tsx scripts/check-client-bundle.mts",
     "gen": "pnpm build && pnpm gen:md && pnpm gen:llms && pnpm gen:skills && pnpm gen:index",
     "test": "vitest run",
-    "smoke": "tsx scripts/smoke.mts"
+    "smoke": "tsx scripts/smoke.mts",
+    "verify:quotes": "node scripts/verify-quotes.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",

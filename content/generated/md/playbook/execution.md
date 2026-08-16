@@ -141,13 +141,13 @@ Andrej Karpathy
 
 “The hottest new programming language is English.”
 
-[Former Tesla AI lead, OpenAI founding member](https://twitter.com/karpathy/status/1617979122625712128)
+[Former Tesla AI lead, OpenAI founding member — X (Twitter), January 2023](https://twitter.com/karpathy/status/1617979122625712128)
 
 Thomas Dohmke
 
-“AI coding is here to stay. It's a new way for developers to express their creativity.”
+“A vital shift is underway in software development, one that redefines how we build, but also who we are as developers.”
 
-[CEO of GitHub](https://github.blog/news-insights/product-news/github-copilot-x-the-ai-powered-developer-experience/)
+[Former CEO of GitHub — “Developers, Reinvented”, August 2025](https://ashtom.github.io/developers-reinvented)
 
 ### 
 
@@ -159,23 +159,23 @@ TL;DR Ship a working flow first, cut the 80% that won't sway judges, and polish 
 
 Order matters. Get the flow working end-to-end, however ugly. Refactor only what the demo needs. Most teams never pass step one in 24 hours, and that's fine.
 
-— [Kent Beck, creator of XP and TDD](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
+— [Software proverb popularized by Kent Beck, creator of XP and TDD; in print since Johnson and Kernighan, Byte, August 1983](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
 #### Ship Embarrassingly Early
 
-> “If you aren't embarrassed by the first version of your product, you shipped too late.”
+> “If you're not embarrassed by the first version of your product, you've launched too late.”
 
 Ship to learn, not to cut corners. Move fast, test assumptions. A too-polished demo usually means too long building and too little refining the story.
 
-— [Reid Hoffman, co-founder of LinkedIn](https://www.linkedin.com/pulse/arent-embarrassed-first-version-your-product-you-reid-hoffman/)
+— [Reid Hoffman, co-founder of LinkedIn — X (Twitter), 2017](https://x.com/reidhoffman/status/847142924240379904)
 
 #### The 80/20 Rule
 
-> “80% of consequences come from 20% of causes.”
+> Roughly 80% of consequences come from 20% of causes.
 
 80% of demo impact comes from 20% of features. One sharp “pointy feature” that solves one problem well beats a broad platform with ten half-built ones.
 
-— [Vilfredo Pareto, 1906 / Joseph Juran](https://en.wikipedia.org/wiki/Pareto_principle)
+— [The Pareto principle: observed by economist Vilfredo Pareto (1906), named and popularized by quality-management pioneer Joseph Juran](https://en.wikipedia.org/wiki/Pareto_principle)
 
 #### The 5-Step Process
 
@@ -192,7 +192,7 @@ Adapted from SpaceX engineering. Apply in order:
 5.  Automate: Automate last, and never automate a broken process
 
 
-— [Elon Musk, SpaceX Starbase](https://www.youtube.com/watch?v=t705r8ICkRw)
+— [Elon Musk, Starbase tour interview with Tim Dodd (Everyday Astronaut), 2021](https://www.youtube.com/watch?v=t705r8ICkRw)
 
 ## Scope Hammering
 
@@ -200,7 +200,7 @@ Fixed time, variable scope. You cut features until what's left fits. This discip
 
 TL;DR Time is non-negotiable, so scope is what you cut: build the vital 20%, kill the comfortable 80%.
 
-[Ryan Singer's Shape Up methodology](https://basecamp.com/shapeup) from Basecamp defines scope hammering as “forcefully questioning a design, implementation, or use case to cut scope and finish inside the fixed time box.” Time is the one thing you can't negotiate. Scope is what you cut.
+[Ryan Singer's Shape Up methodology](https://basecamp.com/shapeup) (Basecamp, 2019) defines scope hammering as “forcefully questioning a design, implementation, or use case to cut scope and finish inside the fixed time box.” Time is the one thing you can't negotiate. Scope is what you cut.
 
 #### The Vital 20%
 
@@ -232,13 +232,15 @@ Kill this
 
 it won't change the outcome
 
-[Sheryl Sandberg](https://en.wikipedia.org/wiki/Sheryl_Sandberg) / Facebook
+[Mark Zuckerberg](https://money.cnn.com/2012/02/01/technology/zuckerberg_ipo_letter/index.htm) / Facebook
 
 “Done is better than perfect.”
 
-Jason Fried / [Getting Real](https://basecamp.com/gettingreal)
+Facebook motto, quoted in Zuckerberg's founder's letter, 2012 IPO filing; popularized by then-COO Sheryl Sandberg in Lean In (2013)
 
-“Build less. Underdo your competition. Fewer features, fewer options, fewer meetings, fewer promises.”
+Jason Fried, 37signals co-founder / [Getting Real](https://basecamp.com/gettingreal) (2006)
+
+“Underdo your competition... Less features, less options/preferences, less people and corporate structure, less meetings and abstractions, less promises.”
 
 ## The Hackathon Timeline
 
@@ -270,9 +272,9 @@ Rehearse and Submit
 
 Practice the pitch 3+ times and time it. Submit every deliverable early (Devpost, video, repo) and make no changes after. Use the rest to rest and prep mentally for judging.
 
-Timeboxing ranks among the most effective productivity techniques, per [Harvard Business Review](https://hbr.org/2018/12/how-timeboxing-works-and-why-it-will-make-you-more-productive). Assign fixed blocks and stop when time is up, done or not.
+Timeboxing ranks among the most effective productivity techniques, per a 2018 [Harvard Business Review](https://hbr.org/2018/12/how-timeboxing-works-and-why-it-will-make-you-more-productive) piece by Marc Zao-Sanders. Assign fixed blocks and stop when time is up, done or not.
 
-[Brooks's Law](https://en.wikipedia.org/wiki/Brooks%27s_law) says “adding manpower to a late software project makes it later.” When you're behind, cut features instead of adding scope or people.
+[Brooks's Law](https://en.wikipedia.org/wiki/Brooks%27s_law) says “adding manpower to a late software project makes it later.” Fred Brooks, the Turing Award-winning computer scientist who managed IBM's System/360, coined it in The Mythical Man-Month (1975). When you're behind, cut features instead of adding scope or people.
 
 ## The Leverage Toolkit
 
@@ -304,9 +306,11 @@ Communication Shortcuts
 
 Shared Figma, standups every 2-3 hours, one Slack/Discord channel. Over-communication beats under-communication at 3AM.
 
-[Naval Ravikant](https://www.navalmanack.com/) — AngelList Co-founder
+[Naval Ravikant](https://x.com/naval/status/1002106893265920000) — AngelList Co-founder
 
 > “Code and media are permissionless leverage. They're the leverage behind the newly rich. You can create software and media that works for you while you sleep.”
+
+How to Get Rich (Without Getting Lucky) thread, 2018; collected in [The Almanack of Naval Ravikant](https://www.navalmanack.com/) (Eric Jorgenson, 2020)
 
 Use leverage (templates, AI, APIs, no-code) and reserve human effort for vision, design, and high-impact decisions.
 
@@ -314,7 +318,7 @@ Use leverage (templates, AI, APIs, no-code) and reserve human effort for vision,
 > Make it right.  
 > Make it fast.”
 
-— [Kent Beck, creator of Extreme Programming](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
+— [Software proverb popularized by Kent Beck, creator of Extreme Programming; in print since Johnson and Kernighan, Byte, August 1983](https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
 In a 24-48 hour sprint, most teams never get past “make it work.” That's fine. A working demo with a clear story beats a half-finished masterpiece. Winners don't have the cleanest code; they shipped something that works and told a compelling story.
 
@@ -340,6 +344,6 @@ Checkpoint every 2-3 hours: "Can we demo right now?" If not, fix that first
 
 Stop building 4 hours out. Polish UI, record the demo video, and rehearse the pitch
 
-"Done is better than perfect." Ship what works, cut what doesn't, sell the vision
+"Done is better than perfect," the Facebook motto from Mark Zuckerberg's 2012 IPO letter. Ship what works, cut what doesn't, sell the vision
 
 Remember: The goal isn't the best software, it's the best demo. Build less, leverage more, and always be ready to show what you've got.

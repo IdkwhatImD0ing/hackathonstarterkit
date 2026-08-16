@@ -37,7 +37,7 @@ const NOTABLE_WINS = [
   },
   {
     hackathon: "UC Berkeley AI",
-    prize: "Grand Prize ($60K+)",
+    prize: "Grand Prize ($64K)",
     project: "Dispatch AI",
     accent: "spark" as const,
     url: "https://devpost.com/software/dispatch-ai",
@@ -223,7 +223,9 @@ const faqJsonLd = {
       name: "Can non-coders win hackathons?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, non-coders are increasingly winning hackathons. At the 2026 Anthropic hackathon, a personal injury lawyer won 1st place and a cardiologist placed 3rd, both using AI coding tools like Cursor and Claude Code. Domain expertise (in law, medicine, finance, etc.) combined with AI-assisted development can produce more innovative solutions than pure technical skill alone.",
+        text: "Yes, non-coders are increasingly winning hackathons. At Anthropic's Built with Opus 4.6 Claude Code hackathon in February 2026, personal injury lawyer Mike Brown won 1st place with CrossBeam and cardiologist Michal Nedoszytko placed 3rd with PostVisit.ai, both building with Claude Code. Domain expertise (in law, medicine, finance, etc.) combined with AI-assisted development can produce more innovative solutions than pure technical skill alone.",
+        citation:
+          "https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon",
       },
     },
     {

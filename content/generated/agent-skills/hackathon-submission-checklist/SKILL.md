@@ -29,7 +29,7 @@ Visual proof that persists into deliberation. When judges forget your project (i
 
 Devpost calls the demo video [one of the most important elements](https://help.devpost.com/article/84-video-making-best-practices) of your submission.
 
-[Tom Preston-Werner](https://tom.preston-werner.com/2010/08/23/readme-driven-development) — GitHub Co-founder
+[Tom Preston-Werner](https://tom.preston-werner.com/2010/08/23/readme-driven-development) — GitHub Co-founder, “Readme Driven Development,” 2010
 
 > “Until you've written about your software, you have no idea what you'll be coding.”
 
@@ -135,15 +135,15 @@ Put the most important information first. Judges skim, so your opening line deci
 
 Lead with impact, not backstory. “82% of call centers are understaffed” hooks instantly. “We're a team of four students who…” does not.
 
-— [Associated Press style, standardized 1953](https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism))
+— [Inverted pyramid, in widespread newspaper use since the early 1900s](https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism))
 
 #### The 6-Page Memo
 
-> “The narrative structure of a good memo forces better thought and better understanding of what's more important than what.”
+> “The reason writing a good 4 page memo is harder than ‘writing’ a 20 page powerpoint is because the narrative structure of a good memo forces better thought and better understanding of what's more important than what, and how things are related.”
 
-Bezos banned PowerPoint at Amazon for structured narrative memos. Same idea for your Devpost: writing a coherent story forces you to understand what you built and why it matters.
+Bezos banned PowerPoint at Amazon in 2004 in favor of structured narrative memos. Same idea for your Devpost: writing a coherent story forces you to understand what you built and why it matters.
 
-— [Jeff Bezos, Amazon shareholder letter](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders)
+— [Jeff Bezos, Amazon founder and CEO, email to Amazon's S-Team, June 9, 2004](https://slab.com/blog/jeff-bezos-writing-management-strategy/)
 
 #### 6 Rules for Clear Writing
 
@@ -165,9 +165,9 @@ A screenshot is worth a thousand words. An architecture diagram is worth a thous
 
 TL;DR Don't describe your app, show it: diagram the architecture and record it working.
 
-> “Don't tell me the moon is shining; show me the glint of light on broken glass.”
+> “In descriptions of Nature one must seize on small details, grouping them so that when the reader closes his eyes he gets a picture. For instance, you'll have a moonlit night if you write that on the mill dam a piece of glass from a broken bottle glittered like a bright little star…”
 
-— [Anton Chekhov, letter to his brother, 1886](https://en.wikipedia.org/wiki/Show,_don%27t_tell)
+— [Anton Chekhov, Russian playwright and short-story writer, letter to his brother Alexander, May 1886 (trans. Avrahm Yarmolinsky, The Unknown Chekhov, 1954)](https://en.wikipedia.org/wiki/Show,_don%27t_tell)
 
 Chekhov's principle for fiction applies perfectly to hackathon submissions. Don't describe your app; show it. Don't explain your architecture; diagram it. Don't claim it works; record it working.
 
@@ -241,9 +241,9 @@ Late Submission
 
 Devpost deadlines are hard cutoffs. Submit 30 minutes early. Teams lose every hackathon because they hit "submit" at 11:59 and Devpost lagged.
 
-> “The narrative structure of a good memo forces better thought and better understanding of what's more important than what.”
+> “…the narrative structure of a good memo forces better thought and better understanding of what's more important than what, and how things are related.”
 
-— [Jeff Bezos, Amazon shareholder letter, 2017](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders)
+— [Jeff Bezos, Amazon founder and CEO, email to Amazon's S-Team, June 9, 2004](https://slab.com/blog/jeff-bezos-writing-management-strategy/)
 
 Your submission isn't an afterthought; it's the document that represents your project when you're not in the room. Teams that write great Devpost READMEs aren't adding fluff. They're forcing themselves to understand what they built, why it matters, and how to make someone else care.
 

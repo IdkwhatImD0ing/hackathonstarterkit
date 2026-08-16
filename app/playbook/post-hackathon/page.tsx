@@ -239,6 +239,11 @@ export default function PostHackathonPage() {
                   &ldquo;If a tree falls in a forest and no one is around to
                   hear it, does it make a sound?&rdquo;
                 </blockquote>
+                <p className="font-code text-xs text-primary/60">
+                  — Traditional philosophical thought experiment; earliest known
+                  printing in The Chautauquan, June 1883 (often misattributed to
+                  George Berkeley, who never posed it)
+                </p>
                 <p className="font-body text-sm text-foreground/60">
                   If a project is made but no one knows, was it made? A private
                   repo helps no one, least of all you.
@@ -305,13 +310,16 @@ export default function PostHackathonPage() {
             </CardHeader>
             <CardContent className="space-y-5">
               <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
-                &ldquo;Luck surface area is directly proportional to the degree
+                &ldquo;The amount of serendipity that will occur in your life,
+                your Luck Surface Area, is directly proportional to the degree
                 to which you do something you&apos;re passionate about combined
                 with the total number of people to whom this is effectively
                 communicated.&rdquo;
               </blockquote>
               <p className="font-code text-xs text-volt/60">
-                — Jason Roberts, Luck Surface Area (L = D x T)
+                — Jason Roberts, serial entrepreneur and TechZing podcast
+                co-host, &ldquo;How to Increase Your Luck Surface Area&rdquo;,
+                Codus Operandi, 2010 (L = D x T)
               </p>
 
               <div className="space-y-2">
@@ -373,7 +381,7 @@ export default function PostHackathonPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The 48-Hour Follow-Up"
-            subtitle="Hackathon contacts are warm right now. In a week, they're strangers. Research shows: follow up within 24-48 hours or the window closes."
+            subtitle="Hackathon contacts are warm right now. In a week, they're strangers. Follow up within 24-48 hours, before the connection goes cold."
           />
 
           <KeyTakeaway>
@@ -540,7 +548,7 @@ export default function PostHackathonPage() {
                 </div>
                 <div className="space-y-1">
                   <p className="font-display text-sm font-semibold">
-                    Mark Granovetter — Strength of Weak Ties
+                    Mark Granovetter, Sociologist — Strength of Weak Ties
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
                     Casual contacts beat close friends for finding jobs. Judges,
@@ -548,7 +556,8 @@ export default function PostHackathonPage() {
                     open doors.
                   </p>
                   <p className="font-code text-xs text-muted-foreground">
-                    Stanford, 1973; one of the most cited sociology papers ever
+                    &ldquo;The Strength of Weak Ties&rdquo;, American Journal of
+                    Sociology, 1973; one of the most cited sociology papers ever
                   </p>
                 </div>
               </div>
@@ -560,12 +569,15 @@ export default function PostHackathonPage() {
                 </div>
                 <div className="space-y-1">
                   <p className="font-display text-sm font-semibold">
-                    Reid Hoffman — LinkedIn Co-founder
+                    Porter Gale — Former VP of Marketing, Virgin America
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
-                    &ldquo;Your network is your net worth.&rdquo; Your 170
-                    connections reach millions. The best ones form over shared
-                    struggles, like debugging at 3AM.
+                    Your network is your net worth. Your connections reach far
+                    past the people you actually know, and the best ones form
+                    over shared struggles, like debugging at 3AM.
+                  </p>
+                  <p className="font-code text-xs text-muted-foreground">
+                    Your Network Is Your Net Worth, Atria Books, 2013
                   </p>
                 </div>
               </div>
@@ -662,12 +674,16 @@ export default function PostHackathonPage() {
                 </div>
                 <div className="space-y-1">
                   <p className="font-display text-sm font-semibold">
-                    Seth Godin / Steve Jobs
+                    Steve Jobs — Apple Co-founder
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
                     &ldquo;Real artists ship.&rdquo; Don&apos;t let it die in a
                     private repo. Each iteration you ship makes it more
                     impressive and more useful.
+                  </p>
+                  <p className="font-code text-xs text-muted-foreground">
+                    Macintosh team retreat, January 1983, as recounted by Andy
+                    Hertzfeld on folklore.org; later popularized by Seth Godin
                   </p>
                 </div>
               </div>
@@ -679,13 +695,19 @@ export default function PostHackathonPage() {
                 </div>
                 <div className="space-y-1">
                   <p className="font-display text-sm font-semibold">
-                    Patrick McKenzie (patio11)
+                    Patrick McKenzie (patio11) — Software Entrepreneur and
+                    Writer
                   </p>
                   <p className="font-body text-sm italic text-foreground/70">
                     Side projects compound into career-changing portfolios. His
                     Bingo Card Creator, built on nights and weekends, became a
                     full career pivot. Hackathon projects have the same
                     potential.
+                  </p>
+                  <p className="font-code text-xs text-muted-foreground">
+                    He ran Bingo Card Creator alongside a day job until he went
+                    full-time on his software business in 2010; story documented
+                    on kalzumeus.com
                   </p>
                 </div>
               </div>
@@ -724,17 +746,20 @@ export default function PostHackathonPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;The real gap is between doing nothing and doing
-                  something. In this day and age, if your work isn&apos;t
-                  online, it doesn&apos;t exist.&rdquo;
+                  &ldquo;It sounds a little extreme, but in this day and age, if
+                  your work isn&apos;t online, it doesn&apos;t exist.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  You don&apos;t have to be a genius, just share what you make.
-                  Sharing is generosity, not self-promotion, and it attracts
-                  people who care about the same things.
+                  Kleon builds the case on a line he borrows from Clay Shirky,
+                  who teaches at NYU: &ldquo;The real gap is between doing
+                  nothing and doing something.&rdquo; You don&apos;t have to be
+                  a genius, just share what you make. Sharing is generosity, not
+                  self-promotion, and it attracts people who care about the same
+                  things.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  — Show Your Work, 2014
+                  — Austin Kleon, author, Show Your Work!, 2014; Shirky line
+                  from Cognitive Surplus, 2010
                 </p>
               </CardContent>
             </Card>
@@ -755,8 +780,9 @@ export default function PostHackathonPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-spark/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;Luck surface area is directly proportional to the
-                  degree to which you do something you&apos;re passionate about
+                  &ldquo;The amount of serendipity that will occur in your life,
+                  your Luck Surface Area, is directly proportional to the degree
+                  to which you do something you&apos;re passionate about
                   combined with the total number of people to whom this is
                   effectively communicated.&rdquo;
                 </blockquote>
@@ -766,7 +792,9 @@ export default function PostHackathonPage() {
                   10 projects nobody sees.
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  — Jason Roberts, TechZing podcast
+                  — Jason Roberts, serial entrepreneur and TechZing podcast
+                  co-host, &ldquo;How to Increase Your Luck Surface Area&rdquo;,
+                  Codus Operandi, 2010
                 </p>
               </CardContent>
             </Card>
@@ -787,17 +815,19 @@ export default function PostHackathonPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="font-body text-sm text-foreground/80">
-                  Mark Granovetter&apos;s landmark 1973 Stanford study found
-                  casual contacts (people you don&apos;t see every day) beat
-                  close friends for finding jobs. They link you to networks
-                  outside your own circle.
+                  Sociologist Mark Granovetter&apos;s landmark 1973 study, built
+                  on his Harvard doctoral research and published while he was at
+                  Johns Hopkins, found casual contacts (people you don&apos;t
+                  see every day) beat close friends for finding jobs. They link
+                  you to networks outside your own circle.
                 </p>
                 <p className="font-body text-sm text-foreground/60">
                   Judges, sponsors, and fellow hackers are weak ties. Cultivate
                   them. They open doors your close friends can&apos;t.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  — American Journal of Sociology, 1973
+                  — Mark Granovetter, &ldquo;The Strength of Weak Ties&rdquo;,
+                  American Journal of Sociology 78(6), 1973
                 </p>
               </CardContent>
             </Card>
@@ -829,7 +859,8 @@ export default function PostHackathonPage() {
                   unknowable.
                 </p>
                 <p className="font-code text-xs text-success/60">
-                  — Jeff Bezos, founder of Amazon
+                  — Jeff Bezos, founder of Amazon, Academy of Achievement
+                  interview, 2001
                 </p>
               </CardContent>
             </Card>
@@ -1080,7 +1111,7 @@ export default function PostHackathonPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                — Austin Kleon, Show Your Work
+                — Austin Kleon, author of Show Your Work! (2014)
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
@@ -1149,7 +1180,7 @@ export default function PostHackathonPage() {
                   accent: "spark",
                 },
                 {
-                  text: "Make it findable: \"if your work isn't online, it doesn't exist\"",
+                  text: "Make it findable: \"if your work isn't online, it doesn't exist\" (Austin Kleon, author of Show Your Work!, 2014)",
                   accent: "primary",
                 },
               ].map((item) => {

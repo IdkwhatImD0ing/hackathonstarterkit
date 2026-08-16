@@ -72,7 +72,7 @@ YouTube    youtu.be/hdpdgxrilQM
         { type: "paragraph", text: "Why bother with all this? Because of who is actually looking. The recruiter who screens your resume and the person who DMs you on LinkedIn are usually **not going to read your source code.** But they will watch a 90-second demo. They will skim a Devpost. They will click a live site." },
         { type: "paragraph", text: "That is the edge. On a resume screen where you and another candidate look identical, **a demo they can watch breaks the tie.** A project they can experience beats a project they have to imagine." },
         { type: "callout", variant: "info", title: "And the New Reader Is an LLM", text: "Recruiters and applicant systems run on AI now. A text-rich GitHub README, a written Devpost, a captioned video, and a portfolio page are exactly what a model scrapes and summarizes. **Five linked, text-heavy sources make you the candidate the AI can actually describe.**" },
-        { type: "quote", text: "It's not enough to be good. In order to be found, you have to be findable.", attribution: "Austin Kleon, Show Your Work!, 2014" },
+        { type: "quote", text: "It's not enough to be good. In order to be found, you have to be findable.", attribution: "Austin Kleon, author of Show Your Work!, 2014" },
         { type: "callout", variant: "success", title: "How I Got My First Internship", text: "This one is personal. I started doing hackathons to land an internship, and within my first four, **one LinkedIn post about a project got me the interview that became my first offer.** We didn't even win that hackathon. I would never have gotten that internship otherwise. Not from winning. From being findable." },
       ],
     },

@@ -45,15 +45,15 @@ TL;DR Winning pitches layer four proven frameworks: Sinek's why, Duarte's tensio
 
 Most teams pitch outside-in: “We built an app that…” Winners pitch inside-out: start with why you care, then how, then what. The Golden Circle turns passive listeners into invested supporters.
 
-— [Start With Why, 2009](https://simonsinek.com/books/start-with-why/)
+— Simon Sinek, author and TEDx speaker, [Start With Why, 2009](https://simonsinek.com/books/start-with-why/)
 
 #### What Is vs. What Could Be
 
-> “Make the audience the hero of the presentation, not yourself.”
+> “You are not the hero who will save the audience; the audience is your hero.”
 
 Duarte's Sparkline alternates between current reality (“what is”) and desired future (“what could be”). The tension builds, then resolves with your solution. Oscillate between both, never camp on one.
 
-— [Resonate, 2010](https://www.duarte.com/resonate/)
+— Nancy Duarte, CEO of Duarte, Inc., [Resonate, 2010](https://www.duarte.com/resonate/)
 
 #### Ethos, Pathos, Logos
 
@@ -93,7 +93,7 @@ Stories: Show how change happens
 
 ## Anatomy of a Winning Pitch
 
-A battle-tested pitch structure that works whether you have 2 minutes or 10. Based on Andy Raskin's strategic narrative framework and adapted for hackathons.
+A battle-tested pitch structure that works whether you have 2 minutes or 10. Based on Andy Raskin's strategic narrative framework from 'The Greatest Sales Deck I've Ever Seen' (Medium, 2016), adapted for hackathons.
 
 TL;DR Open with a shift, show the stakes, then spend most of your time on a working live demo.
 
@@ -127,11 +127,11 @@ End with where this goes. Skip the feature roadmap. Offer a glimpse of the futur
 
 "Imagine a world where no 911 call goes unanswered. We built the first step."
 
-[Andy Raskin](https://medium.com/the-mission/the-greatest-sales-deck-ive-ever-seen-4f4ef3391ba0) — Strategic Narrative Expert
+[Andy Raskin](https://medium.com/the-mission/the-greatest-sales-deck-ive-ever-seen-4f4ef3391ba0) — Strategic Narrative Expert, “The Greatest Sales Deck I've Ever Seen,” Medium, 2016
 
-> “Your prospect is Luke, and you're Obi-Wan, furnishing a lightsaber to help them defeat the Empire. Position your product as the magic gift that gets the hero to the promised land.”
+> “Your prospect is Luke, and you're Obi Wan, furnishing a lightsaber to help him defeat the Empire.”
 
-Judges are the heroes. Your project is the lightsaber. Frame it that way.
+Raskin's fourth element is to introduce features as magic gifts for overcoming obstacles to the promised land. Judges are the heroes. Your project is the lightsaber. Frame it that way.
 
 ## Winning Pitches Dissected
 
@@ -139,13 +139,15 @@ Theory is great, but seeing real pitches broken down is better. Here are three h
 
 TL;DR Three real winners, transcribed and analyzed: all opened with a number, demoed live, and aligned with sponsors.
 
-These are real pitches that won real prizes. Each was transcribed from its presentation video and analyzed with GPT-5 to surface structural phases, techniques, and the moments that won judges over.
+These are real pitches that won real prizes. Two were transcribed from their presentation videos and the third reconstructed from its Devpost writeup, then analyzed with GPT-5 in March 2026 to surface structural phases, techniques, and the moments that won judges over.
 
-#### DispatchAI — UC Berkeley AI Hackathon
+#### DispatchAI — UC Berkeley AI Hackathon 2024
 
-Grand Prize ($25K SkyDeck investment) + AI For Good + Best Use of Intel AI. The largest AI hackathon in the US.
+Grand Prize ($25K SkyDeck investment) + AI For Good ($25K) + Best Use of Intel AI (1st, roughly $14K in hardware). The largest AI hackathon in the US.
 
-Pitch Structure Breakdown (4 min 32 sec)
+Pitch Structure Breakdown (4 min 34 sec)
+
+Quotes below are transcribed from the team's pitch video (DispatchAI, UC Berkeley AI Hackathon 2024, recorded June 2024), narrated throughout by team member Spike O'Carroll. Spoken audio is lightly cleaned for repeated words.
 
 0:00 – 0:3914% of pitch
 
@@ -171,9 +173,9 @@ Technique: Concrete mechanism walkthrough with human-centered safety framing
 
 Technique: Mission statement tying product to social impact
 
-3:17 – 4:3228% of pitch
+3:17 – 4:3428% of pitch
 
-> “Our call updates in real time on the dashboard, and our transcription is on the right.”
+> “I have my phone here with me, and I will call our agents.”
 
 Technique: Live phone call to AI dispatcher with real-time UI
 
@@ -181,7 +183,7 @@ Frameworks Identified
 
 Strongest Moment
 
-@ 3:43 – 3:50
+Spike O'Carroll, DispatchAI pitch video, UC Berkeley AI Hackathon 2024 @ 3:43 – 3:50
 
 > “See, you can see that our call updates in real time on the dashboard, and our transcription is on the right.”
 
@@ -195,7 +197,9 @@ Why it won: A quantifiable problem (80%+ understaffed centers) met concrete exec
 
 1st Overall + Goldman Sachs Challenge Winner. The largest 24-hour hackathon in the US.
 
-Pitch Structure Breakdown (2 min 6 sec)
+Pitch Structure Breakdown (2 min 11 sec)
+
+Quotes below are transcribed from the TalkTuahBank team's demo video (HackUTD 2024, November 2024). The Big Shift and Stakes lines are the team's narrator; the Live Demo, How It Works, and Vision lines are spoken by the product's AI agent during the recorded call. Spoken audio is lightly cleaned for repeated words.
 
 0:00 – 0:054% of pitch
 
@@ -209,19 +213,19 @@ Technique: Statistic hook to establish global scale and urgency
 
 Technique: Low-barrier access framing to maximize perceived impact
 
-0:14 – 1:1044% of pitch
+0:14 – 1:1042% of pitch
 
 > “Hey, I can help with things like checking your account balance, transferring funds, and even getting you started on a loan application.”
 
 Technique: Show-don't-tell role-play demo with concrete details
 
-1:10 – 1:4931% of pitch
+1:10 – 1:4930% of pitch
 
-> “Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.”
+> “Awesome, you've successfully transferred $200 to account ACC 456.”
 
 Technique: Tangible proof point: completed real transaction
 
-1:49 – 2:0614% of pitch
+1:49 – 2:1117% of pitch
 
 > “If there's anything else you need, feel free to let me know.”
 
@@ -231,9 +235,9 @@ Frameworks Identified
 
 Strongest Moment
 
-@ 1:15
+TalkTuahBank AI agent, demo video, HackUTD 2024 @ 1:20
 
-> “Awesome, you've successfully transferred $200 to account A, capital C, 4, 5, 6.”
+> “Awesome, you've successfully transferred $200 to account ACC 456.”
 
 One line converts the concept into a verifiable outcome: money moved. It turns abstract “voice banking” claims into a believable, tangible result.
 
@@ -247,19 +251,21 @@ Google Company Challenge Winner. First place among 142 projects.
 
 Pitch Structure (Reconstructed from Devpost)
 
+These lines come from the AdaptEd team's own Devpost writeup (LA Hacks 2024), not from a recorded pitch. Lines in quotation marks are verbatim; the rest are condensed summaries of longer passages. The statistics are the team's own claims and carry no citation on Devpost.
+
 > “Instead of students adapting to the system, our AI lecturer adapts to students.”
 
 Technique: Contrarian, single-line reframe that reverses expectations
 
-> “50% of 16M US university students are falling behind. Less than 3% have access to quality tutoring.”
+> 50% of 16M US university students are falling behind. Less than 3% have access to quality tutoring.
 
 Technique: Quantified pain + inequity framing with both percentage and population
 
-> “Responsive AI conversation, dynamic slide and whiteboard content, emotion detection.”
+> Responsive AI conversation, dynamic slide and whiteboard content, emotion detection.
 
 Technique: Show-don't-tell micro-scenario mapping features to outcomes
 
-> “Gemini 1.5 Pro for multi-source aggregation, Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection.”
+> Gemini 1.5 Pro for multi-source aggregation, Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection.
 
 Technique: Technical transparency: each component assigned a clear role
 
@@ -270,6 +276,8 @@ Technique: Concise product vision paired with scale implication
 Frameworks Identified
 
 Strongest Moment
+
+AdaptEd team, Devpost writeup, LA Hacks 2024 (reconstructed, not a recorded pitch line)
 
 > “Instead of students adapting to the system, our AI lecturer adapts to students.”
 
@@ -303,7 +311,7 @@ Each pitch had a single sentence that encapsulated the entire vision: "world's f
 
 All 5 Frameworks Present
 
-GPT-5 identified all five persuasion frameworks (Sinek, Duarte, Aristotle, Heath, Raskin) in each pitch. Winning pitches don't use one framework; they layer all of them.
+All five persuasion frameworks (Sinek, Duarte, Aristotle, Heath, Raskin) are visible in each of these three pitches. Winning pitches don't use one framework; they layer all of them.
 
 The pattern is clear: Winning pitches follow a formula. Open with a quantified problem, reframe with a one-liner, spend most of the time on a working demo, align with sponsor priorities, and close with a vision that makes judges feel something. The frameworks above aren't theory. They are what winners use.
 
@@ -492,13 +500,13 @@ TL;DR Pitching on no sleep strips the polish: be vulnerable, talk with judges no
 
 #### The Power of Vulnerability
 
-> “In order for connection to happen, we have to allow ourselves to be seen, really seen. The courage to be imperfect.”
+> “In order for connection to happen, we have to allow ourselves to be seen, really seen.”
 
-No sleep strips away the polish. You explain what you built honestly, flaws included. You stop trying to impress and start trying to communicate. That makes you more convincing.
+Later in the same talk, Brown describes what the people she calls wholehearted had in common: “these folks had, very simply, the courage to be imperfect.” No sleep strips away the polish. You explain what you built honestly, flaws included. You stop trying to impress and start trying to communicate. That makes you more convincing.
 
 Share a real setback: “We thought X, then talked to users and learned Y.” Admitting what you didn't know makes you more human and credible.
 
-— [The Power of Vulnerability, TED 2010](https://www.ted.com/talks/brene_brown_the_power_of_vulnerability)
+— Brené Brown, research professor, University of Houston Graduate College of Social Work, [The Power of Vulnerability, TEDxHouston 2010](https://www.ted.com/talks/brene_brown_the_power_of_vulnerability)
 
 #### Talk With, Not At
 
@@ -512,7 +520,7 @@ The Carnegie Structure
 2.  Say it
 3.  Tell them what you said
 
-— [How to Win Friends and Influence People](https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People)
+— Dale Carnegie, American writer and lecturer, [The Quick and Easy Way to Effective Speaking, 1962](https://www.simonandschuster.com/books/The-Quick-and-Easy-Way-to-Effective-Speaking/Dorothy-Carnegie/Dale-Carnegie-Books/9780671724009)
 
 Practice = Code
 
@@ -528,7 +536,7 @@ Watch yourself pitch. You'll catch filler words, pacing, and missed beats you'd 
 
 > “Your purpose is to make your audience see what you saw, hear what you heard, feel what you felt.”
 
-— [Dale Carnegie, pioneer of public speaking](https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People)
+— Dale Carnegie, American writer and lecturer, [The Quick and Easy Way to Effective Speaking, 1962](https://www.simonandschuster.com/books/The-Quick-and-Easy-Way-to-Effective-Speaking/Dorothy-Carnegie/Dale-Carnegie-Books/9780671724009)
 
 Winning isn't about cramming more tech into the pitch. It's about being ready for the conversation after. Winning teams aren't always the most technical. They make judges feel something, believe the vision, and think “that team gets it.”
 

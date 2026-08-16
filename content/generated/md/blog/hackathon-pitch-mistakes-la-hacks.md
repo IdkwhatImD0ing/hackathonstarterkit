@@ -78,7 +78,7 @@ Smile. Obvious, but teams forget it the second judging starts. A flat, monotone 
 
 ![A dark pitch slide showing the problem: 82 percent of 911 call centers are understaffed, surrounded by emergency dispatch product visuals.](https://thehackathonplaybook.dev/blog/berkeley-ai-hackathon-problem-slide.png)
 
-*One memorable statistic, enough visual context to feel the pain point.*
+*One memorable statistic, enough visual context to feel the pain point. The 82 percent figure comes from The Pulse of 9-1-1, the 2023 NENA and Carbyne State of the Industry Survey.*
 
 ![A dark pitch slide showing the solution: personalized support through an empathetic AI speaker, immediate emergency response, and human-in-the-loop moderation.](https://thehackathonplaybook.dev/blog/berkeley-ai-hackathon-solution-slide.png)
 

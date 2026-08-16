@@ -106,7 +106,7 @@ Video: [TalkTuahBank demo video, 1st Overall at HackUTD 2024](https://www.youtub
 
 ## Phase 7: The Win Is in the Follow-Up
 
-The hackathon doesn't end when prizes are announced. The best outcomes happen in the next 48 hours. **Dispatch AI won the UC Berkeley AI Hackathon Grand Prize ($60K+)**, then landed Berkeley SkyDeck funding and reached a $1M valuation.
+The hackathon doesn't end when prizes are announced. The best outcomes happen in the next 48 hours. **Dispatch AI won the Grand Prize at the UC Berkeley AI Hackathon 2024**, worth about $64K across prizes: a $25K Berkeley SkyDeck Fund investment with a Golden Ticket to SkyDeck Pad-13, $25K for AI For Good, and roughly $14K of hardware for first place in Best Use of Intel AI (devpost.com/software/dispatch-ai).
 
 1. **Follow Up Fast** Email sponsors and mentors within 48 hours, while they still remember you.
 2. **Polish & Publish** Clean up your code, write a proper README, and push to GitHub.

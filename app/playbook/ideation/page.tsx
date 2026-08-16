@@ -589,7 +589,7 @@ export default function IdeationPage() {
                   more unexpected and powerful.
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  —{" "}
+                  — Steve Jobs, co-founder of Apple,{" "}
                   <a href="https://www.wired.com/1996/02/jobs-2/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Wired interview, 1996</a>
                 </p>
               </CardContent>
@@ -611,9 +611,9 @@ export default function IdeationPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-spark/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;The creative act is the perceiving of a situation or
-                  idea in two self-consistent but habitually incompatible frames
-                  of reference.&rdquo;
+                  &ldquo;The pattern underlying [the creative act] is the
+                  perceiving of a situation or idea in two self-consistent but
+                  habitually incompatible frames of reference.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   &ldquo;Bisociation&rdquo; is creativity as the collision of two
@@ -621,7 +621,7 @@ export default function IdeationPage() {
                   cross &ldquo;LLMs&rdquo; with &ldquo;Defense.&rdquo;
                 </p>
                 <p className="font-code text-xs text-spark/60">
-                  —{" "}
+                  — Arthur Koestler, Hungarian-British author,{" "}
                   <a href="https://en.wikipedia.org/wiki/The_Act_of_Creation" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">The Act of Creation, 1964</a>
                 </p>
               </CardContent>
@@ -644,19 +644,21 @@ export default function IdeationPage() {
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
                   &ldquo;Good ideas are not conjured out of thin air; they are
-                  built out of a collection of existing parts&hellip; the
-                  adjacent possible.&rdquo;
+                  built out of a collection of existing parts, the composition of
+                  which expands (and, occasionally, contracts) over time.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Innovation lives at the edge of what&apos;s feasible. The best
-                  hackathon ideas use tools that{" "}
+                  Johnson calls that expanding edge the &ldquo;adjacent
+                  possible,&rdquo; a term he borrowed from biologist Stuart
+                  Kauffman. Innovation lives at the edge of what&apos;s feasible.
+                  The best hackathon ideas use tools that{" "}
                   <span className="font-semibold text-foreground">
                     just became possible
                   </span>
                   : a new API, a fresh model, a just-opened dataset.
                 </p>
                 <p className="font-code text-xs text-primary/60">
-                  —{" "}
+                  — Steven Johnson, science writer,{" "}
                   <a href="https://en.wikipedia.org/wiki/Where_Good_Ideas_Come_From" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Where Good Ideas Come From, 2010</a>
                 </p>
               </CardContent>
@@ -678,9 +680,10 @@ export default function IdeationPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-success/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;Live in the future, then build what&apos;s missing. The
-                  verb you want to be using with respect to startup ideas is not
-                  &lsquo;think up&rsquo; but &lsquo;notice.&rsquo;&rdquo;
+                  &ldquo;Live in the future, then build what&apos;s missing.
+                  &hellip; The verb you want to be using with respect to startup
+                  ideas is not &lsquo;think up&rsquo; but
+                  &lsquo;notice.&rsquo;&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   The best ideas come from your own experience. What frustrates
@@ -688,7 +691,7 @@ export default function IdeationPage() {
                   with your elements.
                 </p>
                 <p className="font-code text-xs text-success/60">
-                  —{" "}
+                  — Paul Graham, Y Combinator co-founder,{" "}
                   <a href="https://paulgraham.com/startupideas.html" target="_blank" rel="noopener noreferrer" className="underline decoration-success/30 hover:decoration-success">How to Get Startup Ideas, 2012</a>
                 </p>
               </CardContent>
@@ -858,16 +861,22 @@ export default function IdeationPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  <a href="https://en.wikipedia.org/wiki/Linus_Pauling" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Linus Pauling</a> — Two-Time Nobel Laureate
+                  <a href="https://en.wikipedia.org/wiki/Linus_Pauling" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Linus Pauling</a> — Two-Time Nobel Laureate (Chemistry 1954, Peace 1962)
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;The best way to have a good idea is to have a lot of
-                  ideas. You aren&apos;t going to have good ideas unless you have
-                  lots of ideas and some principle of selection.&rdquo;
+                  ideas.&rdquo;
                 </blockquote>
+                <p className="font-code text-xs text-foreground/50">
+                  — Quoted in Fortune, April 1960
+                </p>
                 <p className="font-body text-sm text-foreground/60">
-                  Don&apos;t filter while building your list. Chase volume now,
-                  not quality. You&apos;ll prune later.
+                  He filled in the other half on PBS&apos;s NOVA in 1977:
+                  &ldquo;you aren&apos;t going to have good ideas unless you have
+                  lots of ideas and some sort of principle of
+                  selection&hellip;&rdquo; So don&apos;t filter while building
+                  your list. Chase volume now, not quality. You&apos;ll prune
+                  later.
                 </p>
               </div>
             </div>
@@ -948,8 +957,12 @@ export default function IdeationPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="font-body text-sm text-foreground/80">
-                  Professor Barbara Oakley&apos;s research reveals two thinking
-                  modes:
+                  Barbara Oakley, professor of engineering at Oakland University,
+                  popularized two thinking modes in A Mind for Numbers (2014) and
+                  in the Coursera course{" "}
+                  <a href="https://www.coursera.org/learn/learning-how-to-learn" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Learning How to Learn</a>{" "}
+                  (2014), which she teaches with neuroscientist Terrence
+                  Sejnowski:
                 </p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
@@ -972,12 +985,13 @@ export default function IdeationPage() {
                   </div>
                 </div>
                 <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;Sometimes backing off can be the best thing you can do
-                  when learning something new.&rdquo;
+                  &ldquo;Sometimes we need to lose concentration so we can think
+                  more clearly.&rdquo;
                 </blockquote>
                 <p className="font-code text-xs text-primary/60">
-                  —{" "}
-                  <a href="https://www.coursera.org/learn/learning-how-to-learn" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Learning How to Learn</a>
+                  — Barbara Oakley and Terrence Sejnowski with Alistair
+                  McConville,{" "}
+                  <a href="https://www.penguinrandomhouse.com/books/563935/learning-how-to-learn-by-barbara-oakley-phd-and-terrence-sejnowski-phd-with-alistair-mcconville/" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Learning How to Learn</a>, 2018
                 </p>
               </CardContent>
             </Card>
@@ -1094,8 +1108,10 @@ export default function IdeationPage() {
                   SCAMPER Method
                 </CardTitle>
                 <CardDescription className="font-body">
-                  <a href="https://en.wikipedia.org/wiki/S.C.A.M.P.E.R" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Bob Eberle&apos;s</a> checklist to expand any idea in seven
-                  directions.
+                  Education author Bob Eberle&apos;s{" "}
+                  <a href="https://archive.org/details/scampergamesfori0000eber" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Scamper: Games for Imagination Development</a>{" "}
+                  (1971) turned Alex Osborn&apos;s brainstorming questions into a
+                  checklist that expands any idea in seven directions.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -1152,8 +1168,10 @@ export default function IdeationPage() {
                   Random Input
                 </CardTitle>
                 <CardDescription className="font-body">
-                  <a href="https://en.wikipedia.org/wiki/Lateral_thinking" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Edward de Bono&apos;s</a> technique for provoking new connections
-                  with randomness.
+                  Maltese physician and author Edward de Bono, who coined{" "}
+                  <a href="https://en.wikipedia.org/wiki/Lateral_thinking" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">lateral thinking</a>, devised this technique for provoking new
+                  connections with randomness, set out in Serious Creativity
+                  (1992).
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -1183,8 +1201,9 @@ export default function IdeationPage() {
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
                     Stuck in a loop of similar ideas? Random input is the fastest
-                    way out. De Bono argued the real risk isn&apos;t being too
-                    random, but not random enough.
+                    way out, as long as the word is genuinely random. The failure
+                    mode isn&apos;t picking something too random; it&apos;s
+                    quietly picking something already connected to your problem.
                   </p>
                 </div>
               </CardContent>
@@ -1204,8 +1223,10 @@ export default function IdeationPage() {
                   Antidisciplinary Thinking
                 </CardTitle>
                 <CardDescription className="font-body">
-                  <a href="https://joi.ito.com/weblog/2014/10/02/antidisciplinar.html" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Joi Ito&apos;s</a> framework for finding innovation in the white
-                  space between fields.
+                  Joi Ito, then director of the MIT Media Lab, on finding
+                  innovation in the white space between fields, from his 2014
+                  essay{" "}
+                  <a href="https://joi.ito.com/weblog/2014/10/02/antidisciplinar.html" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Antidisciplinary</a>.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -1255,7 +1276,7 @@ export default function IdeationPage() {
             <div className="mx-auto max-w-3xl space-y-6 text-center">
               <Quote className="mx-auto size-10 text-spark/40" />
               <blockquote className="font-display text-2xl font-bold italic tracking-tight md:text-4xl">
-                &ldquo;Creativity is just connecting things.
+                &ldquo;Creativity is just connecting things. &hellip;
                 <br />
                 <span className="animate-shimmer">
                   The broader one&apos;s understanding of the human experience,
@@ -1264,8 +1285,8 @@ export default function IdeationPage() {
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
-                —{" "}
-                <a href="https://www.wired.com/1996/02/jobs-2/" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Steve Jobs, co-founder of Apple</a>
+                — Steve Jobs, co-founder of Apple,{" "}
+                <a href="https://www.wired.com/1996/02/jobs-2/" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Wired interview, 1996</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
