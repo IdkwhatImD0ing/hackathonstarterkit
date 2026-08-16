@@ -52,15 +52,17 @@ export default function SkillsPage() {
     <div className="space-y-24">
       <BreadcrumbJsonLd path="/non-coders/skills" />
       <header className="stagger-children space-y-4">
-        <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
-          SKILLS & COMMANDS
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
+            SKILLS & COMMANDS
+          </Badge>
+          <CopyForAi path="/non-coders/skills" title="Skills & Commands" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Teach Your AI
           <br />
           <span className="text-volt">How to Help You</span>
         </h1>
-        <CopyForAi path="/non-coders/skills" title="Skills & Commands" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           These are installable skills that teach your AI assistant how to work
           with someone who has no coding experience. Install them once, and

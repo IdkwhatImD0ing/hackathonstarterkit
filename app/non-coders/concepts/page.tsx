@@ -141,15 +141,17 @@ export default function ConceptsPage() {
     <div className="space-y-12">
       <BreadcrumbJsonLd path="/non-coders/concepts" />
       <header className="stagger-children space-y-4">
-        <Badge className="border-primary/30 bg-primary/10 text-primary font-code text-xs">
-          CONCEPTS EXPLAINED
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-primary/30 bg-primary/10 text-primary font-code text-xs">
+            CONCEPTS EXPLAINED
+          </Badge>
+          <CopyForAi path="/non-coders/concepts" title="Concepts Explained" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Tech Jargon,
           <br />
           <span className="text-primary">In Plain English</span>
         </h1>
-        <CopyForAi path="/non-coders/concepts" title="Concepts Explained" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           Every technical term you&apos;ll encounter while building with AI,
           explained using analogies from everyday life. No code. No jargon in

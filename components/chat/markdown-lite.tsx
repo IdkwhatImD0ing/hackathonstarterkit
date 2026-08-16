@@ -80,20 +80,39 @@ export function MarkdownLite({ text }: { text: string }) {
     }
 
     if (/^\s*(-|\d+\.)\s/.test(line)) {
-      const items: string[] = [];
+      // One level of nesting: items indented past the list's first line
+      // become children of the previous top-level item. Flattening them
+      // (the old behavior) turned structured answers into walls of text.
+      const items: { text: string; children: string[] }[] = [];
       const ordered = /^\s*\d+\./.test(line);
+      const baseIndent = (line.match(/^\s*/) as RegExpMatchArray)[0].length;
       while (i < lines.length && /^\s*(-|\d+\.)\s/.test(lines[i])) {
-        items.push(lines[i].replace(/^\s*(-|\d+\.)\s/, ""));
+        const indent = (lines[i].match(/^\s*/) as RegExpMatchArray)[0].length;
+        const text = lines[i].replace(/^\s*(-|\d+\.)\s/, "");
+        if (indent > baseIndent && items.length > 0) {
+          items[items.length - 1].children.push(text);
+        } else {
+          items.push({ text, children: [] });
+        }
         i++;
       }
       const List = ordered ? "ol" : "ul";
       blocks.push(
         <List
           key={key++}
-          className={`my-2 space-y-1 pl-5 ${ordered ? "list-decimal" : "list-disc"}`}
+          className={`my-2 space-y-1.5 pl-5 ${ordered ? "list-decimal" : "list-disc"}`}
         >
           {items.map((item, j) => (
-            <li key={j}>{renderInline(item, `${key}-${j}`)}</li>
+            <li key={j}>
+              {renderInline(item.text, `${key}-${j}`)}
+              {item.children.length > 0 ? (
+                <ul className="mt-1 list-[circle] space-y-1 pl-4">
+                  {item.children.map((child, k) => (
+                    <li key={k}>{renderInline(child, `${key}-${j}-${k}`)}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </li>
           ))}
         </List>,
       );
@@ -108,7 +127,7 @@ export function MarkdownLite({ text }: { text: string }) {
     const heading = line.match(/^(#{1,6})\s+(.*)$/);
     if (heading) {
       blocks.push(
-        <p key={key++} className="mt-3 mb-1 font-display text-sm font-bold">
+        <p key={key++} className="mt-4 mb-1.5 font-display text-sm font-bold text-volt">
           {renderInline(heading[2], `h${key}`)}
         </p>,
       );

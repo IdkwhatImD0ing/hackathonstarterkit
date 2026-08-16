@@ -47,9 +47,9 @@ export function CopyForAi({ path, title }: { path: string; title: string }) {
     <DropdownMenu>
       <DropdownMenuTrigger
         aria-label="Copy this page for AI tools"
-        className="glow-hover inline-flex items-center gap-1.5 rounded-lg border border-primary/15 bg-primary/5 px-3 py-1.5 font-code text-xs text-muted-foreground transition-colors hover:border-primary/30 hover:text-foreground motion-reduce:transition-none"
+        className="glow-hover inline-flex items-center gap-1.5 rounded-lg border border-volt/40 bg-volt/10 px-3.5 py-2 font-code text-xs font-medium text-foreground transition-colors hover:border-volt/60 hover:bg-volt/15 motion-reduce:transition-none"
       >
-        <Bot className="size-3.5" aria-hidden="true" />
+        <Bot className="size-3.5 text-volt" aria-hidden="true" />
         Copy for AI
         <ChevronDown className="size-3" aria-hidden="true" />
       </DropdownMenuTrigger>

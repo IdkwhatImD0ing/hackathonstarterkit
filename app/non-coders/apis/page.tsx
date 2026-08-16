@@ -64,15 +64,17 @@ export default function ApisPage() {
     <div className="space-y-24">
       <BreadcrumbJsonLd path="/non-coders/apis" />
       <header className="stagger-children space-y-4">
-        <Badge className="border-success/30 bg-success/10 text-success font-code text-xs">
-          USING APIS
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-success/30 bg-success/10 text-success font-code text-xs">
+            USING APIS
+          </Badge>
+          <CopyForAi path="/non-coders/apis" title="Using APIs" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Add Any Service
           <br />
           <span className="text-success">With One Prompt</span>
         </h1>
-        <CopyForAi path="/non-coders/apis" title="Using APIs" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           Want to add voice AI, a database, payments, or text messaging to your
           app? You don&apos;t need to understand how they work. You just need

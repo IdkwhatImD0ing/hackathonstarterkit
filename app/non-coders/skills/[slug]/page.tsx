@@ -106,20 +106,22 @@ export default async function SkillDetailPage({
 
       {/* Header */}
       <header className="stagger-children space-y-4">
-        <div className="flex items-center gap-3">
-          <div
-            className={`flex size-12 items-center justify-center rounded-xl ${a.bg}`}
-          >
-            <skill.icon className={`size-6 ${a.text}`} />
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div
+              className={`flex size-12 items-center justify-center rounded-xl ${a.bg}`}
+            >
+              <skill.icon className={`size-6 ${a.text}`} />
+            </div>
+            <Badge className={`${a.border} ${a.bg} ${a.text} font-code text-xs`}>
+              {skill.categoryLabel.toUpperCase()}
+            </Badge>
           </div>
-          <Badge className={`${a.border} ${a.bg} ${a.text} font-code text-xs`}>
-            {skill.categoryLabel.toUpperCase()}
-          </Badge>
+          <CopyForAi path={`/non-coders/skills/${skill.slug}`} title={skill.title} />
         </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           {skill.title}
         </h1>
-        <CopyForAi path={`/non-coders/skills/${skill.slug}`} title={skill.title} />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           {skill.description}
         </p>

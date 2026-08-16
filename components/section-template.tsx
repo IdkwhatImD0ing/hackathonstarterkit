@@ -33,9 +33,12 @@ export function SectionTemplate({
         </>
       ) : null}
       <header className="stagger-children space-y-4">
-        <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
-          PHASE {step} OF 7
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
+            PHASE {step} OF 7
+          </Badge>
+          {path ? <CopyForAi path={path} title={title} /> : null}
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           {title}
         </h1>
@@ -43,7 +46,6 @@ export function SectionTemplate({
           {subtitle}
         </p>
         {updated ? <LastUpdated date={updated} /> : null}
-        {path ? <CopyForAi path={path} title={title} /> : null}
       </header>
 
       {children || (

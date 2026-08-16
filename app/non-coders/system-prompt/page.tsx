@@ -109,15 +109,17 @@ export default function SystemPromptPage() {
       <BreadcrumbJsonLd path="/non-coders/system-prompt" />
       {/* ── HERO ── */}
       <header className="stagger-children space-y-4">
-        <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
-          THE SYSTEM PROMPT
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-spark/30 bg-spark/10 text-spark font-code text-xs">
+            THE SYSTEM PROMPT
+          </Badge>
+          <CopyForAi path="/non-coders/system-prompt" title="The System Prompt" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Your AI&apos;s
           <br />
           <span className="text-spark">Standing Orders</span>
         </h1>
-        <CopyForAi path="/non-coders/system-prompt" title="The System Prompt" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           The rules your AI follows in every single chat live in two files: your{" "}
           <code className="font-code text-base text-spark">CLAUDE.md</code> and{" "}

@@ -99,13 +99,15 @@ export default function ProofPage() {
     <div className="space-y-12">
       <BreadcrumbJsonLd path="/non-coders/proof" />
       <header className="stagger-children space-y-4">
-        <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
-          THE PROOF
-        </Badge>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Badge className="border-volt/30 bg-volt/10 text-volt font-code text-xs">
+            THE PROOF
+          </Badge>
+          <CopyForAi path="/non-coders/proof" title="The Proof" />
+        </div>
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Non-Coders Are Winning
         </h1>
-        <CopyForAi path="/non-coders/proof" title="The Proof" />
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           These are real professionals with zero coding backgrounds who beat
           thousands of developers at major hackathons.
