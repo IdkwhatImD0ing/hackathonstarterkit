@@ -28,6 +28,10 @@ export function absoluteUrl(path: string): string {
 export const MARKDOWN_EXCLUDED_PATHS: readonly string[] = [
   "/terms",
   "/media-kit",
+  // The cheat sheet is a prompt rack, not a document: its value is the copy
+  // buttons, and its prompts are already written to be pasted into an agent.
+  // Not in the content registry, so it has no generated .md to negotiate.
+  "/cheat-sheet",
   // Meta page about the agent features; not in the content registry, so it
   // has no generated .md and must not be advertised or negotiated.
   "/ai",

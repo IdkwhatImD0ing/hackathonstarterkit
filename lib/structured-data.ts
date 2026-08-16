@@ -1,6 +1,7 @@
 import { SITE_URL, SITE_NAME } from "./site";
 import { getContentPage } from "./content-pages";
 import { PLAYBOOK_SECTIONS } from "./playbook";
+import { CHEAT_SECTIONS } from "./cheat-sheet";
 
 /**
  * JSON-LD builders, generated from the same data that renders the pages.
@@ -13,6 +14,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   "non-coders": "For Non-Coders",
   skills: "Skills",
   blog: "Blog",
+  "cheat-sheet": "Cheat Sheet",
 };
 
 /** BreadcrumbList for any registered content path, e.g. "/playbook/pitching". */
@@ -59,6 +61,28 @@ export function playbookHowToJsonLd() {
       name: section.title,
       text: section.subtitle,
       url: `${SITE_URL}/playbook/${section.slug}`,
+    })),
+  };
+}
+
+/**
+ * HowTo for the cheat sheet: its sections are the phases of an event in the
+ * order you hit them, each anchored on the page, so the sequence is real
+ * rather than SEO decoration.
+ */
+export function cheatSheetHowToJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Hackathon Cheat Sheet: AI Prompts for Every Phase of the Event",
+    description:
+      "Paste-ready prompts for an AI agent at each phase of a hackathon: setup, idea lock, planning, building, debugging, shipping, pitching, and last-hour triage.",
+    step: CHEAT_SECTIONS.map((section, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: section.title,
+      text: section.subtitle,
+      url: `${SITE_URL}/cheat-sheet#${section.slug}`,
     })),
   };
 }

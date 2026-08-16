@@ -12,6 +12,8 @@ Guides, templates, and strategies from 36+ hackathon wins.
 
 [Open Playbook →](https://thehackathonplaybook.dev/playbook)[For Non-Coders →](https://thehackathonplaybook.dev/non-coders)[Read the Blog →](https://thehackathonplaybook.dev/blog)
 
+In a hackathon right now?[Cheat Sheet: copy-paste prompts →](https://thehackathonplaybook.dev/cheat-sheet)
+
 bill@hackathons ~ % whoami
 
 ## Bill Zhang [@IdkwhatImD0ing](https://github.com/IdkwhatImD0ing)

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Trophy, ExternalLink, Github, Linkedin, Bot } from "lucide-react";
+import { Trophy, ExternalLink, Github, Linkedin, Bot, Terminal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
@@ -276,6 +276,20 @@ export default function Home() {
               className="inline-block rounded-lg border border-primary/30 bg-primary/10 px-6 py-3 font-display text-sm font-semibold text-primary glow-hover transition-all hover:bg-primary/20"
             >
               Read the Blog →
+            </Link>
+          </div>
+          {/* Separate line: the other three CTAs are for learning, this one is
+              for someone with hours left on the clock. */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <span className="font-code text-xs text-muted-foreground">
+              In a hackathon right now?
+            </span>
+            <Link
+              href="/cheat-sheet"
+              className="inline-flex items-center gap-2 rounded-lg border border-success/30 bg-success/10 px-5 py-2.5 font-display text-sm font-semibold text-success glow-hover transition-all hover:bg-success/20"
+            >
+              <Terminal className="size-4" />
+              Cheat Sheet: copy-paste prompts →
             </Link>
           </div>
         </div>
