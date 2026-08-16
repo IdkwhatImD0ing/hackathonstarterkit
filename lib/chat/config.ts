@@ -1,23 +1,40 @@
 /**
  * Chat model configuration. THE model name lives here and nowhere else.
  *
- * Default: gpt-4.1-nano.
- * Last known pricing: $0.10 / 1M input tokens, $0.40 / 1M output tokens.
- * The pricing page (https://platform.openai.com/docs/pricing) was not
- * reachable from the environment that authored this file on 2026-08-15;
- * verify the current rate there before trusting cost projections.
+ * Default: gpt-5.6-luna, pinned to reasoning_effort "none" in the chat
+ * route so it bills zero hidden reasoning tokens.
+ * Pricing (OpenAI's July 30, 2026 price cut, checked 2026-08-15):
+ * $0.20 / 1M input, $0.02 / 1M cached input, $1.20 / 1M output.
+ * That is 2x the input and 3x the output rate of gpt-4.1-nano
+ * ($0.10 / $0.40), the previous default. The switch to Luna was an
+ * explicit owner decision (2026-08-15), made with those numbers on the
+ * table; if cost ever becomes the priority again, gpt-4.1-nano remains
+ * the cheaper choice.
  *
- * HARD REQUIREMENT: this must be a NON-REASONING model. Reasoning models
- * (gpt-5.x tiers, o-series) bill their invisible chain-of-thought as
- * output tokens at output prices; published measurements show gpt-5-nano
- * spending ~80% of billed output on reasoning the user never sees, where
- * gpt-4.1-nano spends zero. For a RAG chatbot that has already been
+ * HARD REQUIREMENT: this must be a model that bills no reasoning tokens,
+ * either a non-reasoning model or a reasoning-capable model on the
+ * REASONING_EXEMPT allowlist below with effort pinned to "none".
+ * Reasoning models at default effort bill their invisible
+ * chain-of-thought as output tokens at output prices; published
+ * measurements show gpt-5-nano spending ~80% of billed output on
+ * reasoning the user never sees. For a RAG chatbot that has already been
  * handed the answer in its context, paying a model to deliberate over
- * retrieved text is pure waste. Reasoning models also lock temperature
- * to 1. If a cheaper non-reasoning model appears, propose it with
- * numbers; do not swap it in silently.
+ * retrieved text is pure waste. The chat route asserts
+ * reasoning_tokens === 0 on every response as the runtime backstop.
  */
-export const DEFAULT_CHAT_MODEL = "gpt-4.1-nano";
+export const DEFAULT_CHAT_MODEL = "gpt-5.6-luna";
+
+/**
+ * Reasoning-capable models allowed anyway, because the chat route pins
+ * reasoning_effort to "none" for them. Adding a model here without
+ * verifying that (a) it accepts effort "none" and (b) the usage log
+ * shows reasoning=0 defeats the entire cost guard.
+ */
+const REASONING_EXEMPT_MODELS = new Set(["gpt-5.6-luna"]);
+
+export function isReasoningExempt(model: string): boolean {
+  return REASONING_EXEMPT_MODELS.has(model);
+}
 
 export const CHAT_MODEL = process.env.OPENAI_CHAT_MODEL ?? DEFAULT_CHAT_MODEL;
 
@@ -34,6 +51,7 @@ const REASONING_MODEL_PATTERNS = [
 ];
 
 export function rejectReasoningModel(model: string): string | null {
+  if (isReasoningExempt(model)) return null;
   for (const pattern of REASONING_MODEL_PATTERNS) {
     if (pattern.test(model)) {
       return (

@@ -11,6 +11,7 @@ import {
   CHAT_MONTHLY_TOKEN_BUDGET,
   CHAT_RATE_LIMIT_MAX,
   CHAT_TEMPERATURE,
+  isReasoningExempt,
   rejectReasoningModel,
 } from "@/lib/chat/config";
 import { addMonthlyTokens, getMonthlyTokens } from "@/lib/chat/spend";
@@ -161,15 +162,22 @@ export async function POST(request: NextRequest) {
   };
 
   try {
-    const completion = await client.chat.completions.create({
+    const completion = await client.responses.create({
       model: CHAT_MODEL,
       temperature: CHAT_TEMPERATURE,
-      max_tokens: CHAT_MAX_OUTPUT_TOKENS,
+      max_output_tokens: CHAT_MAX_OUTPUT_TOKENS,
+      // The condition under which a reasoning-capable model is allowed at
+      // all (lib/chat/config.ts): effort "none" bills zero reasoning
+      // tokens. Non-exempt models reject the parameter, so it is only
+      // sent when it applies.
+      ...(isReasoningExempt(CHAT_MODEL) ? { reasoning: { effort: "none" as const } } : {}),
       stream: true,
-      stream_options: { include_usage: true },
-      messages: [
-        // Stable prefix first so prompt caching hits it (see lib/chat/prompt.ts).
-        { role: "system", content: SYSTEM_PROMPT },
+      // Visitor questions must not be persisted on OpenAI's side; this
+      // route's contract is that only token counts outlive the request.
+      store: false,
+      // Stable prefix first so prompt caching hits it (see lib/chat/prompt.ts).
+      instructions: SYSTEM_PROMPT,
+      input: [
         { role: "user", content: contextMessage(results) },
         ...body.messages,
       ],
@@ -180,13 +188,15 @@ export async function POST(request: NextRequest) {
         try {
           send(controller, "citations", uniqueCitations);
           for await (const part of completion) {
-            const delta = part.choices[0]?.delta?.content;
-            if (delta) send(controller, null, { delta });
-
-            if (part.usage) {
-              const usage = part.usage;
+            if (part.type === "response.output_text.delta" && part.delta) {
+              send(controller, null, { delta: part.delta });
+            } else if (part.type === "response.failed") {
+              console.error("chat: response failed", part.response.error);
+              send(controller, "error", { code: "api_error" });
+            } else if (part.type === "response.completed" && part.response.usage) {
+              const usage = part.response.usage;
               const reasoningTokens =
-                usage.completion_tokens_details?.reasoning_tokens ?? 0;
+                usage.output_tokens_details?.reasoning_tokens ?? 0;
               if (reasoningTokens > 0) {
                 // The guard has been bypassed; surface it immediately.
                 console.error(
@@ -196,12 +206,14 @@ export async function POST(request: NextRequest) {
               }
               // Token counts only; never message content.
               console.log(
-                `chat: model=${CHAT_MODEL} prompt=${usage.prompt_tokens} completion=${usage.completion_tokens} reasoning=${reasoningTokens} cached=${usage.prompt_tokens_details?.cached_tokens ?? 0}`,
+                `chat: model=${CHAT_MODEL} prompt=${usage.input_tokens} completion=${usage.output_tokens} reasoning=${reasoningTokens} cached=${usage.input_tokens_details?.cached_tokens ?? 0}`,
               );
               await addMonthlyTokens(usage.total_tokens);
+              // SSE field names are the route's public contract with the
+              // widget; they keep their Chat Completions era names.
               send(controller, "done", {
-                promptTokens: usage.prompt_tokens,
-                completionTokens: usage.completion_tokens,
+                promptTokens: usage.input_tokens,
+                completionTokens: usage.output_tokens,
                 reasoningTokens,
               });
             }

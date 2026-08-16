@@ -30,7 +30,7 @@ Every content page has a canonical Markdown representation, generated at build t
 - **Committed generated content.** `content/generated/`, `public/llms*.txt`, and `index/` are committed on purpose: CI build caches are ephemeral, committing makes builds hermetic, PRs show exactly which chunks re-embed, and the corpus is small. If `index/` outgrows ~50MB, move it to blob storage.
 - **In-app conversion, not Cloudflare's edge Markdown.** The in-app pipeline converts from source (better output than edge HTML conversion) and the chatbot index reuses the same extractor. Cloudflare's Markdown-for-agents feature must stay OFF or output would be double-converted (`docs/cloudflare-config.md` section 5).
 - **Lexical fallback tier.** Retrieval works with no OpenAI key and no committed index (weighted term overlap over the corpus). The semantic tier activates when `index/` exists and a query embedding can be produced, and refuses stale indexes (version mismatch or <80% corpus coverage) rather than degrading silently.
-- **The chat model is guarded.** `gpt-4.1-nano` by default; the gpt-5.x and o-series families are refused at startup with an explanation, because reasoning models bill invisible chain-of-thought as output tokens. `reasoning_tokens` is asserted zero on every response. Rationale and numbers: `lib/chat/config.ts`.
+- **The chat model is guarded.** `gpt-5.6-luna` by default, allowlisted with reasoning effort pinned to "none"; every other gpt-5.x tier and the o-series are refused at startup with an explanation, because reasoning models at default effort bill invisible chain-of-thought as output tokens. `reasoning_tokens` is asserted zero on every response. Rationale and numbers: `lib/chat/config.ts`.
 
 ## Deliberately skipped, and why
 
