@@ -34,9 +34,11 @@ const WINNERS = [
     projectDesc: "ADU permit compliance assistant",
     buildTime: "6 days",
     quote:
-      "A developer without legal expertise would build something that hallucinates plausible nonsense.",
+      "It's crazy to me that I ended up winning this contest, and I didn't write a single line of code. I didn't even read a line of code.",
+    source:
+      "Anthropic, “Meet the winners of our Built with Opus 4.6 Claude Code hackathon,” 2026",
     accent: "volt" as const,
-    url: "https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/",
+    url: "https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon",
   },
   {
     name: "Dr. Michal Nedoszytko",
@@ -47,9 +49,11 @@ const WINNERS = [
     project: "PostVisit.AI",
     projectDesc: "Post-visit patient care platform",
     buildTime: "7 days",
-    quote: "Programming is solved.",
+    quote:
+      "Currently, you don't have to know programming to create solutions, or at least prototypes of solutions, for something that you can use personally.",
+    source: "The Convergence, ReachMD, 2026",
     accent: "spark" as const,
-    url: "https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/",
+    url: "https://reachmd.com/programs/the-convergence/Michal-Nedoszytko-PostVisit-ai/54781/",
   },
   {
     name: "Nina Kolari",
@@ -61,7 +65,8 @@ const WINNERS = [
     projectDesc: "Speech practice app for stroke patients",
     buildTime: "3 hours",
     quote:
-      "Product sense beats coding skill. I solved a specific, painful problem.",
+      "Product sense beats coding skill. […] I built something simple that solved a specific, painful problem. The judges responded to clarity.",
+    source: "ninakolari.com, December 9, 2025",
     accent: "primary" as const,
     url: "https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/",
   },
@@ -69,12 +74,13 @@ const WINNERS = [
     name: "Rene Turcios",
     profession: "Former Yu-Gi-Oh! Pro",
     icon: Gamepad2,
-    placement: "200+ Wins",
+    placement: "200+ Hackathons",
     hackathon: "Various Hackathons",
     project: "Multiple Projects",
     projectDesc: "Zero lines of code written, ever",
     buildTime: "Ongoing",
     quote: "Anyone can build anything they want.",
+    source: "The San Francisco Standard, July 5, 2025",
     accent: "success" as const,
     url: "https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/",
   },
@@ -114,6 +120,19 @@ export default function ProofPage() {
           </span>{" "}
           13,000 applicants. 500 accepted. Only 1 of the 5 winners was a
           professional developer.
+        </p>
+        <p className="mt-2 font-code text-xs text-foreground/50">
+          Source: Anthropic,{" "}
+          <a
+            href="https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-foreground/30 hover:decoration-foreground"
+          >
+            &ldquo;Meet the winners of our Built with Opus 4.6 Claude Code
+            hackathon&rdquo;
+          </a>
+          , 2026
         </p>
       </div>
 
@@ -169,6 +188,9 @@ export default function ProofPage() {
                   >
                     &ldquo;{winner.quote}&rdquo;
                   </blockquote>
+                  <p className="font-code text-xs text-foreground/50">
+                    {winner.name}, {winner.profession}. {winner.source}
+                  </p>
                   <span className={`font-code text-xs ${a.text} opacity-60`}>
                     Read the full story →
                   </span>
@@ -187,11 +209,11 @@ export default function ProofPage() {
           <div className="space-y-1">
             <p className="font-display font-semibold">The Pattern Is Clear</p>
             <p className="font-body text-sm text-foreground/80">
-              Every winner solved a problem from their own professional domain.
-              The cardiologist built for his patients. The lawyer built for a
-              friend&apos;s business. The entrepreneur built for her mother. Your
-              years of professional experience are worth more than any CS degree
-              in this context.
+              Every winner solved a problem they knew firsthand. The cardiologist
+              built for his patients. The lawyer built for a friend&apos;s
+              business. The entrepreneur built for her mother, who had a stroke
+              and developed aphasia. Your years of lived and professional
+              experience are worth more than any CS degree in this context.
             </p>
           </div>
         </div>

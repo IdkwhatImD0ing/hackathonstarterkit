@@ -1086,7 +1086,7 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Spike Solutions — Test the Riskiest Piece First"
-            subtitle="From Kent Beck's Extreme Programming: a small, throwaway experiment to test a risky technical assumption before committing to a full implementation."
+            subtitle="From Kent Beck's Extreme Programming Explained (1999): a small, throwaway experiment to test a risky technical assumption before committing to a full implementation."
           />
 
           <KeyTakeaway>
@@ -1114,14 +1114,12 @@ export default function ValidationPage() {
             <CardContent className="space-y-5">
               <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
                 &ldquo;A spike solution is a very simple program to explore
-                potential solutions. It focuses only on the problem under
-                examination while ignoring all other concerns. Most spikes are
-                not good enough to keep, so expect to throw away the
-                code.&rdquo;
+                potential solutions. &hellip; Most spikes are not good enough
+                to keep, so expect to throw it away.&rdquo;
               </blockquote>
               <p className="font-code text-xs text-volt/60">
                 —{" "}
-                <a href="https://en.wikipedia.org/wiki/Extreme_programming" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Kent Beck, Extreme Programming</a>
+                <a href="http://www.extremeprogramming.org/rules/spike.html" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Don Wells, Extreme Programming: A Gentle Introduction, extremeprogramming.org</a>
               </p>
 
               <div className="space-y-2">
@@ -1263,7 +1261,7 @@ export default function ValidationPage() {
                 </p>
                 <p className="font-code text-xs text-volt/60">
                   —{" "}
-                  <a href="http://theleanstartup.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">The Lean Startup, 2011</a>
+                  <a href="http://theleanstartup.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Eric Ries, entrepreneur and author, The Lean Startup, 2011</a>
                 </p>
               </CardContent>
             </Card>
@@ -1289,12 +1287,12 @@ export default function ValidationPage() {
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   IDEO&apos;s philosophy: stop debating whether something works
-                  and build it. A 30-minute prototype answers more than a 2-hour
-                  whiteboard session.
+                  and build it. Our own rule of thumb: a 30-minute prototype
+                  answers more than a 2-hour whiteboard session.
                 </p>
                 <p className="font-code text-xs text-spark/60">
                   —{" "}
-                  <a href="https://www.ideo.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">David Kelley, IDEO founder</a>
+                  <a href="https://ixdf.org/literature/article/design-thinking-get-started-with-prototyping" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">A saying at IDEO, via Tom &amp; David Kelley, Creative Confidence, 2013</a>
                 </p>
               </CardContent>
             </Card>
@@ -1315,9 +1313,10 @@ export default function ValidationPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;A tiny implementation that performs a small end-to-end
-                  function, linking together the main architectural
-                  components.&rdquo;
+                  &ldquo;A Walking Skeleton is a tiny implementation of the
+                  system that performs a small end-to-end function. It need not
+                  use the final architecture, but it should link together the
+                  main architectural components.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
                   Before adding features, get one path working from UI to logic
@@ -1326,7 +1325,7 @@ export default function ValidationPage() {
                 </p>
                 <p className="font-code text-xs text-primary/60">
                   —{" "}
-                  <a href="https://wiki.c2.com/?WalkingSkeleton" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Alistair Cockburn, Agile Manifesto co-author</a>
+                  <a href="https://wiki.c2.com/?WalkingSkeleton" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Alistair Cockburn, Agile Manifesto co-author, Crystal Clear, 2004</a>
                 </p>
               </CardContent>
             </Card>
@@ -1507,14 +1506,16 @@ export default function ValidationPage() {
           <Card className="glow-hover border-spark/20">
             <CardContent className="space-y-4 pt-6">
               <blockquote className="border-l-2 border-spark/30 pl-4 font-body text-sm italic text-foreground/80">
-                &ldquo;Most decisions are two-way doors. If you make the wrong
-                decision, you come back in and pick another door. But some
-                decisions are one-way doors — you go in that door, you&apos;re
-                not coming back.&rdquo;
+                &ldquo;Some decisions are consequential and irreversible or
+                nearly irreversible &ndash; one-way doors &ndash; and these
+                decisions must be made methodically, carefully, slowly, with
+                great deliberation and consultation. &hellip; But most decisions
+                aren&apos;t like that &ndash; they are changeable, reversible
+                &ndash; they&apos;re two-way doors.&rdquo;
               </blockquote>
               <p className="font-code text-xs text-spark/60">
                 —{" "}
-                <a href="https://en.wikipedia.org/wiki/Jeff_Bezos" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Jeff Bezos, founder of Amazon</a>
+                <a href="https://www.aboutamazon.com/about-us/shareholder-letters" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Jeff Bezos, founder of Amazon, 2015 Letter to Shareholders</a>
               </p>
             </CardContent>
           </Card>
@@ -1673,8 +1674,9 @@ export default function ValidationPage() {
                 </p>
                 <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
                   <p className="font-code text-xs text-primary/80">
-                    Reid Hoffman: &ldquo;If you aren&apos;t embarrassed by the
-                    first version of your product, you shipped too late.&rdquo;
+                    Reid Hoffman, LinkedIn co-founder, in his 2017 post on X:
+                    &ldquo;If you&apos;re not embarrassed by the first version
+                    of your product, you&apos;ve launched too late.&rdquo;
                     Perfect decisions aren&apos;t the goal. Fast, reversible
                     decisions are.
                   </p>
@@ -1787,7 +1789,7 @@ export default function ValidationPage() {
                   accent: "spark",
                 },
                 {
-                  text: "\"What I cannot create, I do not understand.\" Can't build the smallest version? Rethink the approach",
+                  text: "\"What I cannot create, I do not understand.\" (Richard Feynman) Can't build the smallest version? Rethink the approach",
                   accent: "primary",
                 },
               ].map((item) => {

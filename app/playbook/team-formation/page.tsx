@@ -509,18 +509,17 @@ export default function TeamFormationPage() {
               </div>
               <div className="space-y-2">
                 <p className="font-display font-semibold">
-                  <a href="https://www.belbin.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Meredith Belbin</a> — Team Role Theory
+                  <a href="https://www.belbin.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Meredith Belbin</a> — management researcher, Henley Management College
                 </p>
                 <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;Nobody is perfect, but a team can be. A team is not a
-                  bunch of people with job titles, but a congregation of
-                  individuals, each of whom has a role which is understood by
-                  other members.&rdquo;
+                  &ldquo;Nobody is perfect, but a team can be.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Belbin&apos;s Cambridge research found nine team roles, and
-                  teams with complementary coverage beat equally talented teams
-                  with overlapping strengths. Our four personas map directly:
+                  Belbin&apos;s research at Henley Management College identified
+                  eight team roles (a ninth, the Specialist, was added in Team
+                  Roles at Work in 1993), and teams with complementary coverage
+                  beat equally talented teams with overlapping strengths. Our
+                  four personas map directly:
                   the Designer is Belbin&apos;s{" "}
                   <span className="font-semibold text-foreground">Plant</span>{" "}
                   (creative thinker), the Pitcher is the{" "}
@@ -538,7 +537,7 @@ export default function TeamFormationPage() {
                   (team leader).
                 </p>
                 <p className="font-code text-xs text-volt/60">
-                  —{" "}
+                  — Belbin&apos;s often-quoted maxim; team roles from{" "}
                   <a href="https://www.belbin.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Management Teams: Why They Succeed or Fail, 1981</a>
                 </p>
               </div>
@@ -682,14 +681,15 @@ export default function TeamFormationPage() {
             <div className="mx-auto max-w-3xl space-y-6 text-center">
               <Quote className="mx-auto size-10 text-spark/40" />
               <blockquote className="font-display text-2xl font-bold italic tracking-tight md:text-4xl">
-                &ldquo;Hire for attitude,
+                &ldquo;Hire character.
                 <br />
-                <span className="animate-shimmer">train for skill.</span>
+                <span className="animate-shimmer">Train skill.</span>
                 &rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
                 —{" "}
-                <a href="https://en.wikipedia.org/wiki/Peter_W._Schutz" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Peter Schutz, former CEO of Porsche</a>
+                <a href="https://en.wikipedia.org/wiki/Peter_Schutz" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Peter Schutz, CEO of Porsche AG 1981-1988</a>,
+                the hiring philosophy he set at Porsche
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">
@@ -760,10 +760,11 @@ export default function TeamFormationPage() {
                         questions, concerns, or mistakes.&rdquo;
                       </blockquote>
                       <p className="font-body text-sm text-foreground/60">
-                        Edmondson&apos;s research confirms teams where members
-                        feel safe to take risks outperform those ruled by fear
-                        or ego, even when the &ldquo;fearful&rdquo; team has more
-                        raw talent.
+                        Edmondson&apos;s research shows teams where members feel
+                        safe to take interpersonal risks learn faster and
+                        perform better. Her hospital studies famously found the
+                        best teams reported the most mistakes, because people
+                        felt safe enough to report them.
                       </p>
                       <p className="font-code text-xs text-success/60">
                         —{" "}
@@ -1021,11 +1022,11 @@ export default function TeamFormationPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
-                      &ldquo;Groups move through forming, storming, norming, and
-                      performing — each stage must be navigated before a team can
-                      reach peak effectiveness.&rdquo;
-                    </blockquote>
+                    <p className="border-l-2 border-volt/30 pl-4 font-body text-sm text-foreground/80">
+                      Tuckman found that groups move through forming, storming,
+                      norming, and performing, and that every stage is necessary
+                      before a team reaches full effectiveness.
+                    </p>
                     <p className="font-body text-sm text-foreground/60">
                       Tuckman&apos;s 1965 model maps onto JV/Varsity. JV
                       teammates are{" "}
@@ -1041,8 +1042,9 @@ export default function TeamFormationPage() {
                       overhead.
                     </p>
                     <p className="font-code text-xs text-volt/60">
-                      —{" "}
-                      <a href="https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Developmental Sequence in Small Groups, 1965</a>
+                      — Bruce Tuckman, psychologist, U.S. Naval Medical Research
+                      Institute,{" "}
+                      <a href="https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Developmental Sequence in Small Groups, Psychological Bulletin, 1965</a>
                     </p>
                   </CardContent>
                 </Card>
@@ -1297,11 +1299,11 @@ export default function TeamFormationPage() {
                     <p className="font-display font-semibold">
                       <a href="https://en.wikipedia.org/wiki/J._Richard_Hackman" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">J. Richard Hackman</a> — Leading Teams
                     </p>
-                    <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
-                      &ldquo;The single most important condition for team
-                      effectiveness is having a compelling direction — a purpose
-                      that is clear, challenging, and consequential.&rdquo;
-                    </blockquote>
+                    <p className="border-l-2 border-primary/30 pl-4 font-body text-sm text-foreground/80">
+                      Hackman names a compelling direction, a purpose that is
+                      clear, challenging, and consequential, as one of five
+                      conditions for team effectiveness.
+                    </p>
                     <p className="font-body text-sm text-foreground/60">
                       Hackman&apos;s Harvard research explains the three
                       categories. Fun hackathons have{" "}

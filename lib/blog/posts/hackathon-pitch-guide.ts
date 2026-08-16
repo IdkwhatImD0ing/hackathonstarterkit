@@ -50,7 +50,7 @@ export const post: BlogPost = {
       paragraphs: [],
       blocks: [
         { type: "paragraph", text: "You get about **30 seconds** before a judge decides whether to care. Spend them on the pain, not your tech stack." },
-        { type: "paragraph", text: "One winning opener I watched ran: **240 million 911 calls** are made in the US every year, and dispatchers prioritize them by hand while people are dying on the line. No team name, no tech stack, just the stakes." },
+        { type: "paragraph", text: "One winning opener I watched ran: **240 million 911 calls** are made in the US every year, and dispatchers prioritize them by hand while people are dying on the line. No team name, no tech stack, just the stakes. (That number is the National Emergency Number Association's estimate: nena.org/page/911statistics.)" },
         { type: "pro-con", pros: [
           "Lead with a startling statistic",
           "Open with a personal story",

@@ -102,7 +102,7 @@ export const post: BlogPost = {
           { title: "Green", description: "Have the agent write the minimum code that makes the test pass. Run it. Iterate until green." },
           { title: "Refactor", description: "Have the agent clean up that code without breaking the test. Run it once more to be sure." },
         ]},
-        { type: "quote", text: "Never write a new piece of functionality without a failing test.", attribution: "Kent Beck, Test-Driven Development: By Example, 2002" },
+        { type: "quote", text: "Write new code only if you first have a failing automated test.", attribution: "Kent Beck, creator of Extreme Programming, Test-Driven Development: By Example (Addison-Wesley, 2002)" },
         { type: "callout", variant: "success", title: "Why It Wins", text: "Tests turn 'looks fine' into 'provably works.' Given a hard pass/fail signal, the agent stops hallucinating and starts converging. You also get a free regression suite, priceless when you swap voices or models five minutes before demo." },
       ],
     },

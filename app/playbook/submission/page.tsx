@@ -374,7 +374,7 @@ export default function SubmissionPage() {
               </div>
               <div className="space-y-1">
                 <p className="font-display font-semibold">
-                  <a href="https://tom.preston-werner.com/2010/08/23/readme-driven-development" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Tom Preston-Werner</a> — GitHub Co-founder
+                  <a href="https://tom.preston-werner.com/2010/08/23/readme-driven-development" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Tom Preston-Werner</a> — GitHub Co-founder, &ldquo;Readme Driven Development,&rdquo; 2010
                 </p>
                 <blockquote className="font-body text-sm italic text-foreground/80">
                   &ldquo;Until you&apos;ve written about your software, you have
@@ -708,7 +708,7 @@ export default function SubmissionPage() {
                 </div>
                 <p className="font-code text-xs text-volt/60">
                   —{" "}
-                  <a href="https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism)" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Associated Press style, standardized 1953</a>
+                  <a href="https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism)" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Inverted pyramid, the news structure of the 19th-century telegraph era</a>
                 </p>
               </CardContent>
             </Card>
@@ -729,18 +729,21 @@ export default function SubmissionPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <blockquote className="border-l-2 border-spark/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;The narrative structure of a good memo forces better
-                  thought and better understanding of what&apos;s more important
-                  than what.&rdquo;
+                  &ldquo;The reason writing a good 4 page memo is harder than
+                  &lsquo;writing&rsquo; a 20 page powerpoint is because the
+                  narrative structure of a good memo forces better thought and
+                  better understanding of what&apos;s more important than what,
+                  and how things are related.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Bezos banned PowerPoint at Amazon for structured narrative
-                  memos. Same idea for your Devpost: writing a coherent story
-                  forces you to understand what you built and why it matters.
+                  Bezos banned PowerPoint at Amazon in 2004 in favor of
+                  structured narrative memos. Same idea for your Devpost:
+                  writing a coherent story forces you to understand what you
+                  built and why it matters.
                 </p>
                 <p className="font-code text-xs text-spark/60">
                   —{" "}
-                  <a href="https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Jeff Bezos, Amazon shareholder letter</a>
+                  <a href="https://slab.com/blog/jeff-bezos-writing-management-strategy/" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Jeff Bezos, Amazon founder and CEO, email to Amazon&apos;s S-Team, June 9, 2004</a>
                 </p>
               </CardContent>
             </Card>
@@ -824,12 +827,16 @@ export default function SubmissionPage() {
           <Card className="glow-hover border-spark/20">
             <CardContent className="space-y-4 pt-6">
               <blockquote className="border-l-2 border-spark/30 pl-4 font-body text-sm italic text-foreground/80">
-                &ldquo;Don&apos;t tell me the moon is shining; show me the glint
-                of light on broken glass.&rdquo;
+                &ldquo;In descriptions of Nature one must seize on small
+                details, grouping them so that when the reader closes his eyes
+                he gets a picture. For instance, you&apos;ll have a moonlit
+                night if you write that on the mill dam a piece of glass from a
+                broken bottle glittered like a bright little
+                star&hellip;&rdquo;
               </blockquote>
               <p className="font-code text-xs text-spark/60">
                 —{" "}
-                <a href="https://en.wikipedia.org/wiki/Show,_don%27t_tell" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Anton Chekhov, letter to his brother, 1886</a>
+                <a href="https://en.wikipedia.org/wiki/Show,_don%27t_tell" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">Anton Chekhov, Russian playwright and short-story writer, letter to his brother Alexander, May 1886 (trans. Avrahm Yarmolinsky, The Unknown Chekhov, 1954)</a>
               </p>
               <p className="font-body text-sm text-foreground/60">
                 Chekhov&apos;s principle for fiction applies perfectly to
@@ -1151,14 +1158,14 @@ export default function SubmissionPage() {
             <div className="mx-auto max-w-3xl space-y-6 text-center">
               <Quote className="mx-auto size-10 text-spark/40" />
               <blockquote className="font-display text-2xl font-bold italic tracking-tight md:text-4xl">
-                &ldquo;The narrative structure of a good memo forces{" "}
+                &ldquo;&hellip;the narrative structure of a good memo forces{" "}
                 <span className="animate-shimmer">better thought</span> and
-                better understanding of what&apos;s more important than
-                what.&rdquo;
+                better understanding of what&apos;s more important than what,
+                and how things are related.&rdquo;
               </blockquote>
               <p className="font-body text-sm text-muted-foreground">
                 —{" "}
-                <a href="https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Jeff Bezos, Amazon shareholder letter, 2017</a>
+                <a href="https://slab.com/blog/jeff-bezos-writing-management-strategy/" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Jeff Bezos, Amazon founder and CEO, email to Amazon&apos;s S-Team, June 9, 2004</a>
               </p>
               <Separator className="mx-auto max-w-xs bg-primary/20" />
               <div className="space-y-4 text-left">

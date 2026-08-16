@@ -82,7 +82,7 @@ export default function NonCodersPage() {
             </p>
           </div>
           <div className="rounded-xl border border-primary/15 bg-primary/5 px-4 py-2 text-center">
-            <p className="font-display text-2xl font-bold text-primary">30+</p>
+            <p className="font-display text-2xl font-bold text-primary">10</p>
             <p className="font-code text-[10px] uppercase tracking-widest text-muted-foreground">
               Sources
             </p>
@@ -98,24 +98,20 @@ export default function NonCodersPage() {
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <Quote className="mx-auto size-10 text-spark/40" />
             <blockquote className="font-display text-2xl font-bold italic tracking-tight md:text-4xl">
-              &ldquo;There&apos;s always been a tech barrier between domain
-              expertise and coding. But now,{" "}
-              <span className="animate-shimmer">
-                if anyone has enough expertise, they can create advanced
-                solutions. Programming is solved.
-              </span>
-              &rdquo;
+              &ldquo;You don&apos;t have to know programming to{" "}
+              <span className="animate-shimmer">create solutions</span>.&rdquo;
             </blockquote>
             <p className="font-body text-sm text-muted-foreground">
               &mdash;{" "}
               <a
-                href="https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/"
+                href="https://reachmd.com/programs/the-convergence/Michal-Nedoszytko-PostVisit-ai/54781/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
               >
-                Dr. Michal Nedoszytko, cardiologist, 3rd place at Anthropic
-                hackathon (New York Post, Feb 2026)
+                Dr. Michal Nedoszytko, interventional cardiologist and creator
+                of PostVisit.ai, 3rd place at Anthropic&apos;s Built with Opus
+                4.6 hackathon (ReachMD, The Convergence, March 2026)
               </a>
             </p>
             <Separator className="mx-auto max-w-xs bg-primary/20" />
@@ -123,9 +119,22 @@ export default function NonCodersPage() {
               <span className="font-display font-semibold text-foreground">
                 You don&apos;t need to become a programmer.
               </span>{" "}
-              You need to be an expert in the problem. The cardiologist
-              didn&apos;t learn JavaScript. The lawyer didn&apos;t study
-              computer science. They described what they needed, and AI built it.
+              You need to be an expert in the problem. Mike Brown, the lawyer
+              who took first place, said in{" "}
+              <a
+                href="https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+              >
+                Anthropic&apos;s winners write-up
+              </a>{" "}
+              that he didn&apos;t write a single line of code. Nedoszytko is a
+              different case: Anthropic describes him as a cardiologist who had
+              spent 20 years building healthcare software alongside his
+              practice, and he still needed only 7 days to ship PostVisit.ai. He
+              qualifies his own line, too: what you build without programming is
+              a solution, or at least a prototype you can use yourself.
             </p>
           </div>
         </div>
@@ -198,8 +207,8 @@ export default function NonCodersPage() {
             Sources
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            This guide is built on research from 30+ articles, blog posts,
-            GitHub repos, and hackathon post-mortems.
+            This guide is built on the articles, blog posts, GitHub repos, and
+            hackathon post-mortems below.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -207,27 +216,27 @@ export default function NonCodersPage() {
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
           {[
             {
-              title: "NY Post: Vibe Coding Is Here to Stay",
+              title: "NY Post: Vibe Coding Is Here to Stay (2026)",
               url: "https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/",
             },
             {
-              title: "Hadley Lab: The Lawyer Who Won",
+              title: "Hadley Lab: The Lawyer Who Won (2026)",
               url: "https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/",
             },
             {
-              title: "TechStory: Cardiologist Builds App in 7 Days",
+              title: "TechStory: Cardiologist Builds App in 7 Days (2026)",
               url: "https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/",
             },
             {
-              title: "Nina Kolari: Hackathon Takeaways",
+              title: "Nina Kolari: Hackathon Takeaways (2025)",
               url: "https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/",
             },
             {
-              title: "SF Standard: 200+ Hackathon Wins",
+              title: "SF Standard: 200+ Hackathon Wins (2025)",
               url: "https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/",
             },
             {
-              title: "Cursor Blog: Agent Best Practices",
+              title: "Cursor Blog: Agent Best Practices (2026)",
               url: "https://cursor.com/blog/agent-best-practices",
             },
             {
@@ -243,7 +252,7 @@ export default function NonCodersPage() {
               url: "https://vibecodinglite.dev/quickstart.html",
             },
             {
-              title: "Seoul Economic Daily: Builder Era Dawns",
+              title: "Seoul Economic Daily: Builder Era Dawns (2026)",
               url: "https://en.sedaily.com/news/2026/02/25/lawyers-doctors-sweep-ai-hackathon-as-builder-era-dawns",
             },
           ].map((source) => (
