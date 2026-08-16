@@ -2,13 +2,25 @@
 
 Everything in this document lives in the Cloudflare (or Vercel) dashboard, not in the repo. It is invisible to code review, so treat this file as the source of truth for what the dashboards are supposed to look like. Every setting has a verification command; run them against the production domain, never against the `*.vercel.app` URL, because several of these behaviors only exist at the Cloudflare edge.
 
-Zone: `thehackathonplaybook.dev` (nameservers `addilyn.ns.cloudflare.com`, orange-clouded, Vercel origin).
+Zone: `thehackathonplaybook.dev` (nameservers `addilyn.ns.cloudflare.com`, Vercel origin).
 
 Dashboard click paths below are as of August 2026. Cloudflare moves things around; if a path is stale, use the dashboard search box with the setting name.
 
+## 0. Preconditions found by live probing (2026-08-15), do these first
+
+1. **The zone is currently DNS-only (grey cloud): no `cf-ray` on production responses.** Every Cloudflare feature in this document (Cache Rules, AI Crawl Control, Bot Fight Mode, Transform Rules, Redirect Rules) is inert until the `A`/`CNAME` records for the apex and `www` are switched to Proxied (orange cloud) under **DNS > Records**. Two consequences while grey-cloud: the September 15 AI Crawl Control deadline in section 3 does not affect traffic yet (it starts mattering the moment you proxy), and Markdown negotiation caching is governed by Vercel alone, which respects the origin's `Vary`/`no-store` headers correctly, so negotiation is safe today. The bypass Cache Rule in section 2 becomes REQUIRED the moment you flip to orange.
+2. **Redirect-loop landmine: flip Vercel's primary domain before or at deploy.** Production currently 307-redirects apex to `www` because the Vercel project's primary domain is `www.thehackathonplaybook.dev`. This repo makes the apex canonical and 301s `www` to apex. Deployed together those two redirects loop. Fix in **Vercel > Project > Settings > Domains**: set `thehackathonplaybook.dev` as the primary domain and configure `www.thehackathonplaybook.dev` to redirect to it. Verify after deploy:
+
+```bash
+curl -sI https://thehackathonplaybook.dev/ | grep -iE "^(HTTP|location)"
+# expect: HTTP 200, no location header (and no redirect chain)
+curl -sIL --max-redirs 3 https://www.thehackathonplaybook.dev/ | grep -iE "^(HTTP|location)"
+# expect: exactly one 301/308 to the apex, then 200
+```
+
 ## 1. Canonical host redirect (Phase 1)
 
-The canonical host is the apex, `thehackathonplaybook.dev`. The repo ships an origin-level 301 for `www` in `next.config.ts`, but the edge-level rule is preferred so the redirect happens before the request crosses to Vercel.
+The canonical host is the apex, `thehackathonplaybook.dev`. The repo ships an origin-level 301 for `www` in `next.config.ts`, and Vercel's domain-level redirect (section 0) covers the platform layer; the edge-level rule below is preferred once the zone is proxied so the redirect happens before the request crosses to Vercel.
 
 Configure: **Rules > Redirect Rules > Create rule**
 
