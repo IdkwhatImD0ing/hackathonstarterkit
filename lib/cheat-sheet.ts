@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import {
+  CODER_SYSTEM_PROMPT_SETUP_COMMAND,
   DEVPOST_AGENT_PROMPT,
   README_AGENT_PROMPT,
   SKILLS_INSTALL_PROMPT,
@@ -117,9 +118,17 @@ Then reply with a one-paragraph summary of our situation and the single biggest 
       {
         id: "system-prompt",
         title: "Set the rules your agent follows all weekend",
-        when: "Right after the repo exists, before the first feature.",
+        when: "Right after the repo exists, before the first feature. For coders; the non-coder edition is the next card.",
+        prompt: CODER_SYSTEM_PROMPT_SETUP_COMMAND,
+        note: "The four working principles adapt Andrej Karpathy's guidance on AI coding failure modes (X, 2026), popularized by Forrest Chang's andrej-karpathy-skills repo. CLAUDE.md is read by Claude Code, AGENTS.md by Cursor and Codex.",
+        source: { label: "The System Prompt", href: "/non-coders/system-prompt" },
+      },
+      {
+        id: "system-prompt-non-coder",
+        title: "Set the rules: non-coder edition",
+        when: "Same moment, if nobody on the team writes code. Plain-English rules with the Karpathy principles built in.",
         prompt: SYSTEM_PROMPT_SETUP_COMMAND,
-        note: "CLAUDE.md is read by Claude Code, AGENTS.md by Cursor and Codex. Setting both means one set of rules for the whole team.",
+        note: "Everything in plain English: honesty rules, small steps, ask-before-destructive, plus the same think-before-coding principles the coder edition carries.",
         source: { label: "The System Prompt", href: "/non-coders/system-prompt" },
       },
       {

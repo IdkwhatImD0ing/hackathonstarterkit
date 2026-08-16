@@ -106,7 +106,7 @@
   },
   "/non-coders/system-prompt": {
     "file": "md/non-coders/system-prompt.md",
-    "tokens": 1587,
+    "tokens": 1909,
     "title": "The System Prompt",
     "description": "The CLAUDE.md and AGENTS.md files that set the rules your AI follows every session. One command sets up both.",
     "track": "non-coders"

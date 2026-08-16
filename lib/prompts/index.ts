@@ -17,10 +17,13 @@ export {
   skillInstallCommand,
   CLAUDE_MD_URL,
   AGENTS_MD_URL,
+  CODER_CLAUDE_MD_URL,
+  CODER_AGENTS_MD_URL,
 } from "./skills";
 
 export { SKILLS_INSTALL_PROMPT } from "./skills-install";
 export { SYSTEM_PROMPT_SETUP_COMMAND } from "./system-prompt-setup";
+export { CODER_SYSTEM_PROMPT_SETUP_COMMAND } from "./coder-system-prompt-setup";
 export { README_AGENT_PROMPT } from "./readme-agent";
 export { DEVPOST_AGENT_PROMPT } from "./devpost-agent";
 export { YOUTUBE_AGENT_PROMPT } from "./youtube-agent";

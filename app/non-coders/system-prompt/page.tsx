@@ -118,7 +118,7 @@ export default function SystemPromptPage() {
           Write them once and every conversation gets better. Here is the one
           command that downloads both straight into your project.
         </p>
-        <LastUpdated date="2026-06-19" />
+        <LastUpdated date="2026-08-16" />
       </header>
 
       <Separator className="bg-primary/20" />

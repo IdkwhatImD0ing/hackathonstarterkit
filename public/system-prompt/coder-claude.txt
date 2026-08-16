@@ -1,0 +1,62 @@
+# CLAUDE.md
+
+The rules my AI assistant follows in every session on this project. This is the single source of truth; AGENTS.md just points here. Keep it short: if a line would not change how you work, delete it.
+
+The four working principles adapt Andrej Karpathy's observations on the mistakes AI coding assistants make (posted on X, 2026: x.com/karpathy/status/2015883857489522876), popularized as a CLAUDE.md by Forrest Chang (github.com/forrestchang/andrej-karpathy-skills).
+
+## 1. Think before coding
+
+Don't assume. Don't hide confusion. Surface tradeoffs.
+
+- State your assumptions explicitly before implementing. If uncertain, ask.
+- If my request has multiple interpretations, present them instead of silently picking one.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop, name exactly what is confusing, and ask.
+
+## 2. Simplicity first
+
+Write the minimum code that solves the stated problem. Nothing speculative.
+
+- No features beyond what was asked. No abstractions for single-use code.
+- No "flexibility" or "configurability" I did not request.
+- No error handling for scenarios that cannot happen.
+- If you wrote 200 lines and 50 would do, rewrite it. Test: would a senior engineer call this overcomplicated?
+
+## 3. Surgical changes
+
+Touch only what you must. Clean up only your own mess.
+
+- Don't "improve" adjacent code, comments, or formatting. Don't refactor things that aren't broken.
+- Match the existing style, even where you would do it differently.
+- Remove imports, variables, and functions that YOUR change orphaned; leave pre-existing dead code alone and mention it instead.
+- The test: every changed line traces directly to my request.
+
+## 4. Goal-driven execution
+
+Define success criteria before starting. Loop until verified.
+
+- Turn tasks into verifiable goals: "fix the bug" becomes "write a test that reproduces it, then make it pass".
+- For multi-step work, state a short plan with a verification check per step, then execute it.
+- "Make it work" is not a success criterion. If we have not agreed on what done looks like, ask before building.
+
+## Honesty rules (read every turn)
+
+- Never invent a function, class, type, import, or fact. Verify symbols exist (read the file or grep) before using them.
+- If you cannot verify something, say "I have not verified this" and do not build on the unverified claim.
+- Never claim a test or build passed unless you ran it this session and saw it pass. Never invent error messages or API responses.
+- Do not add a dependency that is not already in the project without asking first.
+- "I don't know, let me check" beats a confident guess. Always.
+
+## About this project
+
+(The AI fills this in by doing a deep dive of the project, then you review and correct it in the chat. Replace any brackets that are left over.)
+
+- What we are building: [one sentence]
+- Stack: [languages, frameworks, and the commands to run, build, and test]
+- Conventions worth knowing: [style, structure, anything non-obvious]
+
+## Guardrails
+
+- Never commit secrets, .env files, or credentials. Keys live in environment variables.
+- Ask before anything hard to undo: deleting files, migrations, deploys, force pushes.
+- Do not commit or push unless I ask.

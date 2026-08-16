@@ -16,3 +16,5 @@ export function skillInstallCommand(slug: string): string {
 
 export const CLAUDE_MD_URL = `${SITE_URL}/system-prompt/non-coder-claude.txt`;
 export const AGENTS_MD_URL = `${SITE_URL}/system-prompt/non-coder-agents.txt`;
+export const CODER_CLAUDE_MD_URL = `${SITE_URL}/system-prompt/coder-claude.txt`;
+export const CODER_AGENTS_MD_URL = `${SITE_URL}/system-prompt/coder-agents.txt`;
