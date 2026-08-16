@@ -38,24 +38,34 @@ describe("reservationForInput", () => {
     "🚀🎉🔥💡🧠".repeat(40),
     "ハッカソンで優勝する方法を教えて 🏆 ¿cómo? Ω≈ç√∫˜µ".repeat(10),
   ];
+  const utf8Bytes = (text: string) => new TextEncoder().encode(text).length;
 
-  it("reserves at least the real tokenizer count of the input plus the output cap", () => {
+  // The invariant the reservation rests on: a byte-fallback BPE tokenizer
+  // cannot emit more tokens than UTF-8 bytes, so covering the byte length
+  // covers ANY such serving tokenizer, not just the one in this repo.
+  it("reserves at least the UTF-8 byte length of the input plus the output cap", () => {
     for (const text of adversarial) {
       const reserved = reservationForInput([text], 600);
-      const actualInputTokens = countTokens(text);
-      // actual usage = input + at most 600 output; reservation must cover it
-      expect(reserved).toBeGreaterThanOrEqual(actualInputTokens + 600);
-      // and the old chars/3 heuristic would NOT have covered it, proving
-      // the regression this guards against
-      expect(Math.ceil(text.length / 3) + 600).toBeLessThan(actualInputTokens + 600);
+      expect(reserved).toBeGreaterThanOrEqual(utf8Bytes(text) + 600);
+      // the old chars/3 heuristic sat far below the bound; regression proof
+      expect(Math.ceil(text.length / 3) + 600).toBeLessThan(utf8Bytes(text) + 600);
+    }
+  });
+
+  it("byte bound dominates a real tokenizer's count on the same input", () => {
+    // Sanity that the bound is genuinely above an actual BPE tokenization,
+    // not merely above itself (gpt-tokenizer here is a reference point, not
+    // the definition of the bound).
+    for (const text of [...adversarial, "plain english question about pitching"]) {
+      expect(utf8Bytes(text)).toBeGreaterThanOrEqual(countTokens(text));
     }
   });
 
   it("covers multi-text inputs the way the route composes them", () => {
     const texts = ["system prompt text", adversarial[0], "user question 🚀"];
     const reserved = reservationForInput(texts, 600);
-    const actual = texts.reduce((s, t) => s + countTokens(t), 0) + 600;
-    expect(reserved).toBeGreaterThanOrEqual(actual);
+    const bound = texts.reduce((s, t) => s + utf8Bytes(t), 0) + 600;
+    expect(reserved).toBeGreaterThanOrEqual(bound);
   });
 });
 

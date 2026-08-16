@@ -20,23 +20,37 @@
  * Only token counts are stored. Never message content.
  */
 
-import { countTokens } from "gpt-tokenizer";
 import { redisRest } from "../redis-rest";
 
 export type ReserveResult = "ok" | "over_budget" | "unavailable";
 
+/** Structural overhead reserved per message (role markers, separators). */
+const PER_MESSAGE_OVERHEAD_TOKENS = 16;
+/** Fixed per-request overhead (request framing, instructions wrapper). */
+const PER_REQUEST_OVERHEAD_TOKENS = 64;
+
+const utf8 = new TextEncoder();
+
 /**
- * Worst-case token reservation for a request: a real tokenizer count of
- * every input text (a chars-based heuristic underestimates CJK, emoji,
- * and adversarial Unicode by several-fold), a 1.25 factor covering drift
- * between gpt-tokenizer's encoding and the serving model's tokenizer,
- * per-message structural overhead, and the full output cap. Settlement
- * only ever subtracts from this; tests/cost-controls.test.ts holds a
- * regression proving non-ASCII input stays within the reservation.
+ * Worst-case token reservation for a request, model-independent by
+ * construction: a byte-fallback BPE tokenizer (every OpenAI tokenizer,
+ * whose vocabulary contains all 256 single bytes) can never emit more
+ * tokens than the input's UTF-8 byte length, so the sum of byte lengths
+ * upper-bounds the serving model's input count regardless of which
+ * tokenizer it uses. Add explicit per-message and per-request structural
+ * overhead and the full output cap. This deliberately over-reserves
+ * (roughly 4x for English prose); settlement returns the excess as soon
+ * as the stream terminates, so the only cost is transient headroom
+ * consumption near the ceiling, where being conservative is the point.
  */
 export function reservationForInput(texts: string[], maxOutputTokens: number): number {
-  const inputTokens = texts.reduce((sum, text) => sum + countTokens(text), 0);
-  return Math.ceil(inputTokens * 1.25) + texts.length * 8 + maxOutputTokens;
+  const inputBytes = texts.reduce((sum, text) => sum + utf8.encode(text).length, 0);
+  return (
+    inputBytes +
+    texts.length * PER_MESSAGE_OVERHEAD_TOKENS +
+    PER_REQUEST_OVERHEAD_TOKENS +
+    maxOutputTokens
+  );
 }
 
 const memory = new Map<string, number>();
