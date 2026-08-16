@@ -1,0 +1,1167 @@
+{
+  "embeddingModel": "text-embedding-3-small",
+  "embeddingDims": 1536,
+  "chunkerVersion": 1,
+  "normalizerVersion": 1,
+  "generatedAt": "2026-08-16T03:18:00.596Z",
+  "pages": {
+    "/": {
+      "sourceHash": "fc0df469fdc81a67657258fb2d0001d334859cb59d5798b091b58f7243a673c1",
+      "chunkIds": [
+        "/#intro#0"
+      ]
+    },
+    "/playbook": {
+      "sourceHash": "b7391c0b2413529ab40508add33ae86aed558ac9895ebb5788a350f0a322b4fa",
+      "chunkIds": [
+        "/playbook#intro#0"
+      ]
+    },
+    "/playbook/team-formation": {
+      "sourceHash": "a66b5ebae434221e646a95d77504666ad7c8ebe370449dfd9a38a7a9972345ec",
+      "chunkIds": [
+        "/playbook/team-formation#intro#0",
+        "/playbook/team-formation#intro#1",
+        "/playbook/team-formation#section#0",
+        "/playbook/team-formation#section/section#0"
+      ]
+    },
+    "/playbook/ideation": {
+      "sourceHash": "11fa82f5ba4cf7d84ef2a1d98885cc78a3842ecc7efb7203211be7a21e6171e1",
+      "chunkIds": [
+        "/playbook/ideation#intro#0",
+        "/playbook/ideation#intro#1",
+        "/playbook/ideation#section#0",
+        "/playbook/ideation#section/section#0",
+        "/playbook/ideation#section/section#0",
+        "/playbook/ideation#section/section#1"
+      ]
+    },
+    "/playbook/validation": {
+      "sourceHash": "5915cbb5253927380fbb1cab7fa62f248e513fa2c4e34955f1ff38aafe9cf009",
+      "chunkIds": [
+        "/playbook/validation#intro#0",
+        "/playbook/validation#intro#1",
+        "/playbook/validation#intro#2",
+        "/playbook/validation#intro#3",
+        "/playbook/validation#section#0",
+        "/playbook/validation#section#1"
+      ]
+    },
+    "/playbook/execution": {
+      "sourceHash": "e725901554ebb798db789821e6a05107b7fe82f4afb5fdd997bdb23d799b5189",
+      "chunkIds": [
+        "/playbook/execution#intro#0",
+        "/playbook/execution#intro#1",
+        "/playbook/execution#section#0",
+        "/playbook/execution#section#1",
+        "/playbook/execution#section#2"
+      ]
+    },
+    "/playbook/pitching": {
+      "sourceHash": "c744cf092d17b95ae58cd0a6ccfb5f7f9b8c7b03cf0bbb0c2641191c3b1fa526",
+      "chunkIds": [
+        "/playbook/pitching#intro#0",
+        "/playbook/pitching#intro#1",
+        "/playbook/pitching#intro#2",
+        "/playbook/pitching#intro#3",
+        "/playbook/pitching#intro#4",
+        "/playbook/pitching#intro#5",
+        "/playbook/pitching#section#0",
+        "/playbook/pitching#section#1"
+      ]
+    },
+    "/playbook/submission": {
+      "sourceHash": "823c9e4c93c4e728a11593fedf3c564bd533c3da4c58f76ba7f1cfa36cb1703d",
+      "chunkIds": [
+        "/playbook/submission#intro#0",
+        "/playbook/submission#intro#1",
+        "/playbook/submission#section#0",
+        "/playbook/submission#section#1",
+        "/playbook/submission#section#2",
+        "/playbook/submission#section#3",
+        "/playbook/submission#section#4",
+        "/playbook/submission#section#5",
+        "/playbook/submission#section#6"
+      ]
+    },
+    "/playbook/post-hackathon": {
+      "sourceHash": "1effc9b188d3eec41fd0ca5d2eb30f96a9884b558da5b54bade3eb7acc5841d8",
+      "chunkIds": [
+        "/playbook/post-hackathon#intro#0",
+        "/playbook/post-hackathon#intro#1",
+        "/playbook/post-hackathon#intro#2",
+        "/playbook/post-hackathon#intro#3"
+      ]
+    },
+    "/non-coders": {
+      "sourceHash": "4a2aaef285938f0723c0651833b73a33cf4aef0efe65c8d312b01d47e4fbe268",
+      "chunkIds": [
+        "/non-coders#intro#0",
+        "/non-coders#intro#1"
+      ]
+    },
+    "/non-coders/proof": {
+      "sourceHash": "0fb0b6e15fa57c52c828718270075d000507459f61c7cc94e6ac0e4dafcf9048",
+      "chunkIds": [
+        "/non-coders/proof#intro#0"
+      ]
+    },
+    "/non-coders/setup": {
+      "sourceHash": "462ba4930943713ea1689cee3d15ff0d5e0c14f3aab1474c22d47778ffd0db12",
+      "chunkIds": [
+        "/non-coders/setup#intro#0",
+        "/non-coders/setup#intro#1"
+      ]
+    },
+    "/non-coders/concepts": {
+      "sourceHash": "aeae7d07b16c4fcde7a835ead34004c059f4ebc0185068e3496344ace8f2710d",
+      "chunkIds": [
+        "/non-coders/concepts#intro#0",
+        "/non-coders/concepts#intro#1"
+      ]
+    },
+    "/non-coders/apis": {
+      "sourceHash": "1af13c192b026c5ca354adb69f273d7063c81f3d50dd7db691287ac1a2b52eff",
+      "chunkIds": [
+        "/non-coders/apis#intro#0",
+        "/non-coders/apis#intro#1"
+      ]
+    },
+    "/non-coders/system-prompt": {
+      "sourceHash": "9622d143678c9b3bb2f252d50d24b84a646e023ad9dc01e29c5f24a8748cce33",
+      "chunkIds": [
+        "/non-coders/system-prompt#intro#0",
+        "/non-coders/system-prompt#intro#1"
+      ]
+    },
+    "/non-coders/skills": {
+      "sourceHash": "7685ef257142e20092315f33c688b7c5e3bedef4a521bfd0ecfdc90ec025c054",
+      "chunkIds": [
+        "/non-coders/skills#intro#0",
+        "/non-coders/skills#intro#1",
+        "/non-coders/skills#intro#2"
+      ]
+    },
+    "/non-coders/skills/non-coder-mode": {
+      "sourceHash": "31ad95668782a074f8eb84804a0680ae5a9316244fc6a264dcb607dff5fdc480",
+      "chunkIds": [
+        "/non-coders/skills/non-coder-mode#intro#0"
+      ]
+    },
+    "/non-coders/skills/domain-to-spec": {
+      "sourceHash": "8364da15e8ea8acd6338f8a5e18024625e31549164dcb7cb6cafdfb31bd7226a",
+      "chunkIds": [
+        "/non-coders/skills/domain-to-spec#intro#0",
+        "/non-coders/skills/domain-to-spec#intro#1"
+      ]
+    },
+    "/non-coders/skills/quickstart": {
+      "sourceHash": "527f176d09d4c842ae336f8fe94087ca4483b02540086801445608b45566860b",
+      "chunkIds": [
+        "/non-coders/skills/quickstart#intro#0",
+        "/non-coders/skills/quickstart#intro#1"
+      ]
+    },
+    "/non-coders/skills/scaffold-frontend": {
+      "sourceHash": "82befe1f88febd16cbbd71600127d4dcf6b45d0dce3e7cb5cad1abcf3130ceef",
+      "chunkIds": [
+        "/non-coders/skills/scaffold-frontend#intro#0",
+        "/non-coders/skills/scaffold-frontend#intro#1"
+      ]
+    },
+    "/non-coders/skills/scaffold-backend": {
+      "sourceHash": "e5d8f740e9bb4b6f990fbe0fd003fc97a6772ace70ade23e1c513e6a721257f9",
+      "chunkIds": [
+        "/non-coders/skills/scaffold-backend#intro#0",
+        "/non-coders/skills/scaffold-backend#intro#1"
+      ]
+    },
+    "/non-coders/skills/v0-prompt-crafter": {
+      "sourceHash": "d30a40562061c782a07d1aa391dc0adb77f85cbf2b07133622f0364a823ca939",
+      "chunkIds": [
+        "/non-coders/skills/v0-prompt-crafter#intro#0",
+        "/non-coders/skills/v0-prompt-crafter#intro#1"
+      ]
+    },
+    "/non-coders/skills/feature-builder": {
+      "sourceHash": "376203fcbe6235c9382c4fae5d782dd6725be040e741424d1641916406ab0740",
+      "chunkIds": [
+        "/non-coders/skills/feature-builder#intro#0"
+      ]
+    },
+    "/non-coders/skills/bugfix-doctor": {
+      "sourceHash": "6d8b6702ca13f5a2e8deaf259cee0848fcf49d360fcf653ed2984b8b39cfcefd",
+      "chunkIds": [
+        "/non-coders/skills/bugfix-doctor#intro#0"
+      ]
+    },
+    "/non-coders/skills/demo-prep": {
+      "sourceHash": "92595bd94889efb7d533818f17050d16cc5ac37b1a781c686d2dca8a94bcd8c2",
+      "chunkIds": [
+        "/non-coders/skills/demo-prep#intro#0"
+      ]
+    },
+    "/non-coders/skills/readme-writer": {
+      "sourceHash": "74ee71a90c339c8cdb6722e9e3b6b7747631cbdef19498d1823523c19d7f5e27",
+      "chunkIds": [
+        "/non-coders/skills/readme-writer#intro#0",
+        "/non-coders/skills/readme-writer#intro#1",
+        "/non-coders/skills/readme-writer#intro#2",
+        "/non-coders/skills/readme-writer#intro#3",
+        "/non-coders/skills/readme-writer#intro#4",
+        "/non-coders/skills/readme-writer#intro#5"
+      ]
+    },
+    "/blog": {
+      "sourceHash": "ae4a557a10c49fc88b17ac22bb4fa20e329fe4133d2e86f1724dff80a8f91217",
+      "chunkIds": [
+        "/blog#intro#0"
+      ]
+    },
+    "/blog/what-to-do-after-a-hackathon": {
+      "sourceHash": "738146f93a2bd0b36af344b25c514e569074603ab12538b9a773ca67aaaad7e0",
+      "chunkIds": [
+        "/blog/what-to-do-after-a-hackathon#intro#0",
+        "/blog/what-to-do-after-a-hackathon#intro#1",
+        "/blog/what-to-do-after-a-hackathon#intro#2"
+      ]
+    },
+    "/blog/hackathon-pitch-mistakes-la-hacks": {
+      "sourceHash": "ffb9f292f6807faa5c07699af13d0ccdf7414b9b60322fd504beaa70286d5235",
+      "chunkIds": [
+        "/blog/hackathon-pitch-mistakes-la-hacks#intro#0",
+        "/blog/hackathon-pitch-mistakes-la-hacks#intro#1",
+        "/blog/hackathon-pitch-mistakes-la-hacks#intro#2"
+      ]
+    },
+    "/blog/how-to-win-hackathons": {
+      "sourceHash": "917d4cf78f53753b795dc9b26d4a0a3459d9f2f2ea8fe4a1863f22c714e6e6f3",
+      "chunkIds": [
+        "/blog/how-to-win-hackathons#intro#0",
+        "/blog/how-to-win-hackathons#intro#1",
+        "/blog/how-to-win-hackathons#intro#2"
+      ]
+    },
+    "/blog/best-tech-stack-for-hackathons": {
+      "sourceHash": "ba1f7e008aaeffbef9b346ffb6ebbd335a24761d948944c293a0c70918f1ea55",
+      "chunkIds": [
+        "/blog/best-tech-stack-for-hackathons#intro#0",
+        "/blog/best-tech-stack-for-hackathons#intro#1"
+      ]
+    },
+    "/blog/hackathon-tips-for-beginners": {
+      "sourceHash": "c4cfe1f25a9b751ce80a95f096e7ae57b7bac98bdbaef85e7dfe8709c0d5aa27",
+      "chunkIds": [
+        "/blog/hackathon-tips-for-beginners#intro#0",
+        "/blog/hackathon-tips-for-beginners#intro#1"
+      ]
+    },
+    "/blog/hackathon-pitch-guide": {
+      "sourceHash": "8f7eb4e2553a77892d2f0072a9196a3f11ade624bd011890677f11dd8530c960",
+      "chunkIds": [
+        "/blog/hackathon-pitch-guide#intro#0",
+        "/blog/hackathon-pitch-guide#intro#1"
+      ]
+    },
+    "/blog/non-coders-winning-hackathons": {
+      "sourceHash": "c6dfeba19a4e76dfb07ffe62efd268db5e5caf32919dcb198b111b2094aed5b0",
+      "chunkIds": [
+        "/blog/non-coders-winning-hackathons#intro#0",
+        "/blog/non-coders-winning-hackathons#intro#1"
+      ]
+    },
+    "/blog/build-with-elevenlabs-and-cursor": {
+      "sourceHash": "559ea2d3b51acba9d1091e5af37b9de139e231f5a4f6e9e2ab4f8bd81a62e844",
+      "chunkIds": [
+        "/blog/build-with-elevenlabs-and-cursor#intro#0",
+        "/blog/build-with-elevenlabs-and-cursor#intro#1",
+        "/blog/build-with-elevenlabs-and-cursor#intro#2"
+      ]
+    }
+  },
+  "chunks": {
+    "/#intro#0": {
+      "contentHash": "b8d66c87e2c9ee823f9c50e594d42f03fb5f4e8ade9527a18e33aea3ceb64504",
+      "tokens": 542,
+      "pageTitle": "The Hackathon Playbook",
+      "sectionHeading": "The Hackathon Playbook",
+      "url": "/",
+      "mdUrl": "/index.md",
+      "track": "home"
+    },
+    "/playbook#intro#0": {
+      "contentHash": "f9fb30967860bb56da1a86a620da399126581956abac77f200d1a4d70957de26",
+      "tokens": 317,
+      "pageTitle": "The 7-Phase Playbook",
+      "sectionHeading": "The 7-Phase Playbook",
+      "url": "/playbook",
+      "mdUrl": "/playbook.md",
+      "track": "playbook"
+    },
+    "/playbook/team-formation#intro#0": {
+      "contentHash": "ac2c9fb66c7fa69c3b1dd8edb05e1a1f72fae42ea73ebcc2521bf1dfebb37f0a",
+      "tokens": 766,
+      "pageTitle": "Team Formation",
+      "sectionHeading": "Team Formation",
+      "url": "/playbook/team-formation",
+      "mdUrl": "/playbook/team-formation.md",
+      "track": "playbook"
+    },
+    "/playbook/team-formation#intro#1": {
+      "contentHash": "f10fb2528720e31ca8b7047f60eb17cf2a64b8eace23e1d822079bc71adc956f",
+      "tokens": 688,
+      "pageTitle": "Team Formation",
+      "sectionHeading": "Team Formation",
+      "url": "/playbook/team-formation",
+      "mdUrl": "/playbook/team-formation.md",
+      "track": "playbook"
+    },
+    "/playbook/team-formation#section#0": {
+      "contentHash": "11393f6cf002addedf1dc6d59cd4aea928beacce5f39b3086f8163b5189472cf",
+      "tokens": 576,
+      "pageTitle": "Team Formation",
+      "sectionHeading": "",
+      "url": "/playbook/team-formation",
+      "mdUrl": "/playbook/team-formation.md",
+      "track": "playbook"
+    },
+    "/playbook/team-formation#section/section#0": {
+      "contentHash": "1f44cfe24904136f492c2a2252f9e130246f64af51a96efd4dfcadc721b9e47e",
+      "tokens": 406,
+      "pageTitle": "Team Formation",
+      "sectionHeading": " > ",
+      "url": "/playbook/team-formation",
+      "mdUrl": "/playbook/team-formation.md",
+      "track": "playbook"
+    },
+    "/playbook/ideation#intro#0": {
+      "contentHash": "55da1511011f4f8e9b0eb2850b314452e724f04d7f9743f42795459713919b8d",
+      "tokens": 835,
+      "pageTitle": "Ideation",
+      "sectionHeading": "Ideation",
+      "url": "/playbook/ideation",
+      "mdUrl": "/playbook/ideation.md",
+      "track": "playbook"
+    },
+    "/playbook/ideation#intro#1": {
+      "contentHash": "a86cbe2a654b3fde01b3ebd5771623b8dc1ac8634b97b4e991311b2004c56791",
+      "tokens": 61,
+      "pageTitle": "Ideation",
+      "sectionHeading": "Ideation",
+      "url": "/playbook/ideation",
+      "mdUrl": "/playbook/ideation.md",
+      "track": "playbook"
+    },
+    "/playbook/ideation#section#0": {
+      "contentHash": "c117797eb7a61f083d248f1e7a4ecf0c38d2e65d072b34118640fb4547e228f2",
+      "tokens": 400,
+      "pageTitle": "Ideation",
+      "sectionHeading": "",
+      "url": "/playbook/ideation",
+      "mdUrl": "/playbook/ideation.md",
+      "track": "playbook"
+    },
+    "/playbook/ideation#section/section#0": {
+      "contentHash": "dcd82676f568e23126de32c6a0df418a452f4668c9fe379d2073315b6080486a",
+      "tokens": 792,
+      "pageTitle": "Ideation",
+      "sectionHeading": " > ",
+      "url": "/playbook/ideation",
+      "mdUrl": "/playbook/ideation.md",
+      "track": "playbook"
+    },
+    "/playbook/ideation#section/section#1": {
+      "contentHash": "e7d59e2c8d009d3bbf07542f9ea843c23bd8127e614f9599825f5ea062d08c53",
+      "tokens": 521,
+      "pageTitle": "Ideation",
+      "sectionHeading": " > ",
+      "url": "/playbook/ideation",
+      "mdUrl": "/playbook/ideation.md",
+      "track": "playbook"
+    },
+    "/playbook/validation#intro#0": {
+      "contentHash": "e39128754fcce41b310f900efe0f23431c44eaa1511db719371a551ae351cefb",
+      "tokens": 816,
+      "pageTitle": "Validation",
+      "sectionHeading": "Validation",
+      "url": "/playbook/validation",
+      "mdUrl": "/playbook/validation.md",
+      "track": "playbook"
+    },
+    "/playbook/validation#intro#1": {
+      "contentHash": "45f16cb779eff7c13a293745260e4594017ce6ab1686a7854f3c14353c2cd93c",
+      "tokens": 802,
+      "pageTitle": "Validation",
+      "sectionHeading": "Validation",
+      "url": "/playbook/validation",
+      "mdUrl": "/playbook/validation.md",
+      "track": "playbook"
+    },
+    "/playbook/validation#intro#2": {
+      "contentHash": "94e76ffa674ab7c3deca9409ca122a0879c7d8406ee151827bce7267836fec87",
+      "tokens": 865,
+      "pageTitle": "Validation",
+      "sectionHeading": "Validation",
+      "url": "/playbook/validation",
+      "mdUrl": "/playbook/validation.md",
+      "track": "playbook"
+    },
+    "/playbook/validation#intro#3": {
+      "contentHash": "d698e6bdff715e3f5a3370f9670ad1f8d1ddcac0acb452c2a8aba2463c6bd4a2",
+      "tokens": 90,
+      "pageTitle": "Validation",
+      "sectionHeading": "Validation",
+      "url": "/playbook/validation",
+      "mdUrl": "/playbook/validation.md",
+      "track": "playbook"
+    },
+    "/playbook/validation#section#0": {
+      "contentHash": "ee1d13929d70daa5b053b8c04312c89c0e7b627d06594b495ad4e2e77346b0f0",
+      "tokens": 781,
+      "pageTitle": "Validation",
+      "sectionHeading": "",
+      "url": "/playbook/validation",
+      "mdUrl": "/playbook/validation.md",
+      "track": "playbook"
+    },
+    "/playbook/validation#section#1": {
+      "contentHash": "89dfe01d70d026a5e0c975b69350bcdfb3c4fa2afa67c7e6742f6368e1627183",
+      "tokens": 623,
+      "pageTitle": "Validation",
+      "sectionHeading": "",
+      "url": "/playbook/validation",
+      "mdUrl": "/playbook/validation.md",
+      "track": "playbook"
+    },
+    "/playbook/execution#intro#0": {
+      "contentHash": "5db6df010cd1c8fbf3a8bac891ebf5df44ddcb06c7e6adae93002cd460e07aea",
+      "tokens": 831,
+      "pageTitle": "Execution",
+      "sectionHeading": "Execution",
+      "url": "/playbook/execution",
+      "mdUrl": "/playbook/execution.md",
+      "track": "playbook"
+    },
+    "/playbook/execution#intro#1": {
+      "contentHash": "96c52ee215871fac3f4c3c0c90e0300d36c536516cf9cda5ff696b3524de5071",
+      "tokens": 141,
+      "pageTitle": "Execution",
+      "sectionHeading": "Execution",
+      "url": "/playbook/execution",
+      "mdUrl": "/playbook/execution.md",
+      "track": "playbook"
+    },
+    "/playbook/execution#section#0": {
+      "contentHash": "24b7743717a15c88ab4ce4ef42a49ded97c69ff14218397d7bdc8b7d6b7de94d",
+      "tokens": 820,
+      "pageTitle": "Execution",
+      "sectionHeading": "",
+      "url": "/playbook/execution",
+      "mdUrl": "/playbook/execution.md",
+      "track": "playbook"
+    },
+    "/playbook/execution#section#1": {
+      "contentHash": "53a61b83441f4a233d7c5586d95846062fafbf5a7279ee16d71dac3064a4b954",
+      "tokens": 803,
+      "pageTitle": "Execution",
+      "sectionHeading": "",
+      "url": "/playbook/execution",
+      "mdUrl": "/playbook/execution.md",
+      "track": "playbook"
+    },
+    "/playbook/execution#section#2": {
+      "contentHash": "f263bf0c6c1857fe4b9b15ef8f96ffeca886512ed451ed74cc58157a2d0ba100",
+      "tokens": 332,
+      "pageTitle": "Execution",
+      "sectionHeading": "",
+      "url": "/playbook/execution",
+      "mdUrl": "/playbook/execution.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#intro#0": {
+      "contentHash": "504915859d44ed103d76043601af345a5405533bea71a3f1b05675b899bfe2c7",
+      "tokens": 808,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Pitching",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#intro#1": {
+      "contentHash": "624209f33d670a09956b519a52c208a7973630f5a5767720bc669c4e8cd97515",
+      "tokens": 803,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Pitching",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#intro#2": {
+      "contentHash": "92794c1bbbc32184d15049fc9faac065ab04f5a665942771d33e66228045a5f0",
+      "tokens": 800,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Pitching",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#intro#3": {
+      "contentHash": "4402bea4264de8c9e0de2691c2922ccf42496992bc694b393a45f270c7785615",
+      "tokens": 807,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Pitching",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#intro#4": {
+      "contentHash": "7b2602d105f99c6e1163f308ab6cf910b324842f72bb82dfdf47595ef633aa2e",
+      "tokens": 804,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Pitching",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#intro#5": {
+      "contentHash": "5004030ae229fd1aeaf40d8b23d2a5f95e8583c39c1219caceec948b442769f8",
+      "tokens": 626,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Pitching",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#section#0": {
+      "contentHash": "1d4a86bf9e5da78abf8ff0f632f1536eda215958a8c13822e5c5bb728536a691",
+      "tokens": 802,
+      "pageTitle": "Pitching",
+      "sectionHeading": "",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#section#1": {
+      "contentHash": "7a3279e79199fb992501d57c973bc5677af06fbd1f6866245cd7421f9bb23d3e",
+      "tokens": 42,
+      "pageTitle": "Pitching",
+      "sectionHeading": "",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/submission#intro#0": {
+      "contentHash": "bca304b2d5e8ca4dbe5130d7acb390219a50890747bf2ad02df74ed38de2946f",
+      "tokens": 796,
+      "pageTitle": "Submission",
+      "sectionHeading": "Submission",
+      "url": "/playbook/submission",
+      "mdUrl": "/playbook/submission.md",
+      "track": "playbook"
+    },
+    "/playbook/submission#intro#1": {
+      "contentHash": "1ba253c93989a3e4c614af1beb9f0fa0561e6d10c55c1cdc9ffdb7dec21bae8e",
+      "tokens": 392,
+      "pageTitle": "Submission",
+      "sectionHeading": "Submission",
+      "url": "/playbook/submission",
+      "mdUrl": "/playbook/submission.md",
+      "track": "playbook"
+    },
+    "/playbook/submission#section#0": {
+      "contentHash": "4d5e0176f859172404893e713b21b2e967a0dfb8a42195af3a6398bc7476337e",
+      "tokens": 806,
+      "pageTitle": "Submission",
+      "sectionHeading": "",
+      "url": "/playbook/submission",
+      "mdUrl": "/playbook/submission.md",
+      "track": "playbook"
+    },
+    "/playbook/submission#section#1": {
+      "contentHash": "c94020853d69ca68ae1e52432ea5d71420c24bde94b544e19011dfb971a98988",
+      "tokens": 801,
+      "pageTitle": "Submission",
+      "sectionHeading": "",
+      "url": "/playbook/submission",
+      "mdUrl": "/playbook/submission.md",
+      "track": "playbook"
+    },
+    "/playbook/submission#section#2": {
+      "contentHash": "bc35098ac05307b67c7c94ffefd9ade3661965bbfc9289b22cde1a7051afc6c0",
+      "tokens": 165,
+      "pageTitle": "Submission",
+      "sectionHeading": "",
+      "url": "/playbook/submission",
+      "mdUrl": "/playbook/submission.md",
+      "track": "playbook"
+    },
+    "/playbook/submission#section#3": {
+      "contentHash": "e760cbe8f109a427ae5b75617a3629450f9183cfa1bff1ae87c8a1d5d8c2ff61",
+      "tokens": 789,
+      "pageTitle": "Submission",
+      "sectionHeading": "",
+      "url": "/playbook/submission",
+      "mdUrl": "/playbook/submission.md",
+      "track": "playbook"
+    },
+    "/playbook/submission#section#4": {
+      "contentHash": "e650b0dea45ce595af1ce946bed28c276a39832b5a89f68198b2946e84fe9e77",
+      "tokens": 34,
+      "pageTitle": "Submission",
+      "sectionHeading": "",
+      "url": "/playbook/submission",
+      "mdUrl": "/playbook/submission.md",
+      "track": "playbook"
+    },
+    "/playbook/submission#section#5": {
+      "contentHash": "482036e6b81665e6f01ac1bf2af26af41ae801cc98cc1b12ced2a241e654891e",
+      "tokens": 895,
+      "pageTitle": "Submission",
+      "sectionHeading": "",
+      "url": "/playbook/submission",
+      "mdUrl": "/playbook/submission.md",
+      "track": "playbook"
+    },
+    "/playbook/submission#section#6": {
+      "contentHash": "2c1acfa96ec0b6bd9eed0ff2ffb8225ad34ff27d768aa249b5bb02d3025b2cc6",
+      "tokens": 628,
+      "pageTitle": "Submission",
+      "sectionHeading": "",
+      "url": "/playbook/submission",
+      "mdUrl": "/playbook/submission.md",
+      "track": "playbook"
+    },
+    "/playbook/post-hackathon#intro#0": {
+      "contentHash": "07dd28fc7aab0450388eb47f8dec40c3892125d0a9881e8660e620d7d3bf0aa6",
+      "tokens": 792,
+      "pageTitle": "Post-Hackathon",
+      "sectionHeading": "Post-Hackathon",
+      "url": "/playbook/post-hackathon",
+      "mdUrl": "/playbook/post-hackathon.md",
+      "track": "playbook"
+    },
+    "/playbook/post-hackathon#intro#1": {
+      "contentHash": "074239cef06172520378e57e33eab05349e04d6e43cd5ea7094cadacf693c1ae",
+      "tokens": 816,
+      "pageTitle": "Post-Hackathon",
+      "sectionHeading": "Post-Hackathon",
+      "url": "/playbook/post-hackathon",
+      "mdUrl": "/playbook/post-hackathon.md",
+      "track": "playbook"
+    },
+    "/playbook/post-hackathon#intro#2": {
+      "contentHash": "e9e47dc7e20dbd79c3b5f77282608a0c07d6081facfd1920ab720fbe556558db",
+      "tokens": 804,
+      "pageTitle": "Post-Hackathon",
+      "sectionHeading": "Post-Hackathon",
+      "url": "/playbook/post-hackathon",
+      "mdUrl": "/playbook/post-hackathon.md",
+      "track": "playbook"
+    },
+    "/playbook/post-hackathon#intro#3": {
+      "contentHash": "df6908315483b6b0c000f6bc4dd78e994edaaf7c357dbed3a895a8b66da32638",
+      "tokens": 715,
+      "pageTitle": "Post-Hackathon",
+      "sectionHeading": "Post-Hackathon",
+      "url": "/playbook/post-hackathon",
+      "mdUrl": "/playbook/post-hackathon.md",
+      "track": "playbook"
+    },
+    "/non-coders#intro#0": {
+      "contentHash": "6f7171ba34b186adcaaa38b19b6c19de1eb62fa8861e322d254ab848e42ffe6d",
+      "tokens": 488,
+      "pageTitle": "Hackathons for Non-Coders",
+      "sectionHeading": "Hackathons for Non-Coders",
+      "url": "/non-coders",
+      "mdUrl": "/non-coders.md",
+      "track": "non-coders"
+    },
+    "/non-coders#intro#1": {
+      "contentHash": "a77b3a63733d7f3149a0087e647cfa34b6187e3f62872b18cd0b87dca5f69ddb",
+      "tokens": 327,
+      "pageTitle": "Hackathons for Non-Coders",
+      "sectionHeading": "Hackathons for Non-Coders",
+      "url": "/non-coders",
+      "mdUrl": "/non-coders.md",
+      "track": "non-coders"
+    },
+    "/non-coders/proof#intro#0": {
+      "contentHash": "378fb94ac4e47ddddd45854c21db890320ea560f15f2069342b102172b05cdcd",
+      "tokens": 437,
+      "pageTitle": "The Proof",
+      "sectionHeading": "The Proof",
+      "url": "/non-coders/proof",
+      "mdUrl": "/non-coders/proof.md",
+      "track": "non-coders"
+    },
+    "/non-coders/setup#intro#0": {
+      "contentHash": "40c3a6d807bc0db349ed27375b18b9869082f0ad581c2e3bce397f0e8bce4a03",
+      "tokens": 828,
+      "pageTitle": "Getting Started",
+      "sectionHeading": "Getting Started",
+      "url": "/non-coders/setup",
+      "mdUrl": "/non-coders/setup.md",
+      "track": "non-coders"
+    },
+    "/non-coders/setup#intro#1": {
+      "contentHash": "e67003ae034ab7dd18500e0c60e2b8bf68724de12a575b30172737bd6af9bd2a",
+      "tokens": 317,
+      "pageTitle": "Getting Started",
+      "sectionHeading": "Getting Started",
+      "url": "/non-coders/setup",
+      "mdUrl": "/non-coders/setup.md",
+      "track": "non-coders"
+    },
+    "/non-coders/concepts#intro#0": {
+      "contentHash": "7aa4c11306db9e1b8a745b2b6a2c605a587aaf374c41e3e86a2d74f56b7a4c0d",
+      "tokens": 781,
+      "pageTitle": "Concepts Explained",
+      "sectionHeading": "Concepts Explained",
+      "url": "/non-coders/concepts",
+      "mdUrl": "/non-coders/concepts.md",
+      "track": "non-coders"
+    },
+    "/non-coders/concepts#intro#1": {
+      "contentHash": "51b0b27cb3088eafc5903bdd26b6589dba683337a5e23bdb72beb2d49a96fc2b",
+      "tokens": 252,
+      "pageTitle": "Concepts Explained",
+      "sectionHeading": "Concepts Explained",
+      "url": "/non-coders/concepts",
+      "mdUrl": "/non-coders/concepts.md",
+      "track": "non-coders"
+    },
+    "/non-coders/apis#intro#0": {
+      "contentHash": "597101229f7bc8dcad90083a8d2b169803d9dd04d8743bb95818248738a93e6d",
+      "tokens": 781,
+      "pageTitle": "Using APIs",
+      "sectionHeading": "Using APIs",
+      "url": "/non-coders/apis",
+      "mdUrl": "/non-coders/apis.md",
+      "track": "non-coders"
+    },
+    "/non-coders/apis#intro#1": {
+      "contentHash": "7113641b031f5a89eb1f1f5bb016c18fb7bff1cd557c398a28c0903b5d02e602",
+      "tokens": 608,
+      "pageTitle": "Using APIs",
+      "sectionHeading": "Using APIs",
+      "url": "/non-coders/apis",
+      "mdUrl": "/non-coders/apis.md",
+      "track": "non-coders"
+    },
+    "/non-coders/system-prompt#intro#0": {
+      "contentHash": "4a8deb726b421deb398a32583bf4510d2b37ef1b550de9865501efe5cbf61ddb",
+      "tokens": 790,
+      "pageTitle": "The System Prompt",
+      "sectionHeading": "The System Prompt",
+      "url": "/non-coders/system-prompt",
+      "mdUrl": "/non-coders/system-prompt.md",
+      "track": "non-coders"
+    },
+    "/non-coders/system-prompt#intro#1": {
+      "contentHash": "46a16b93d66f894f4a9cb777a99191e62de64bb73532acbe2be5b4b8b7882375",
+      "tokens": 797,
+      "pageTitle": "The System Prompt",
+      "sectionHeading": "The System Prompt",
+      "url": "/non-coders/system-prompt",
+      "mdUrl": "/non-coders/system-prompt.md",
+      "track": "non-coders"
+    },
+    "/non-coders/skills#intro#0": {
+      "contentHash": "d98ea1994ad2940c62b8e1ca99ba8fe4a081c10311138ca7e2d311d762a958bd",
+      "tokens": 804,
+      "pageTitle": "Skills & Commands",
+      "sectionHeading": "Skills & Commands",
+      "url": "/non-coders/skills",
+      "mdUrl": "/non-coders/skills.md",
+      "track": "non-coders"
+    },
+    "/non-coders/skills#intro#1": {
+      "contentHash": "b1cea7f8c1713bf0cc453db52a99f3d45db252c598bb20912ce1e5abaa0316ab",
+      "tokens": 816,
+      "pageTitle": "Skills & Commands",
+      "sectionHeading": "Skills & Commands",
+      "url": "/non-coders/skills",
+      "mdUrl": "/non-coders/skills.md",
+      "track": "non-coders"
+    },
+    "/non-coders/skills#intro#2": {
+      "contentHash": "b7928694d6915596cbef844270b0b6a9c2a0dec2e15a3bcc8cd160a50c1054c0",
+      "tokens": 197,
+      "pageTitle": "Skills & Commands",
+      "sectionHeading": "Skills & Commands",
+      "url": "/non-coders/skills",
+      "mdUrl": "/non-coders/skills.md",
+      "track": "non-coders"
+    },
+    "/non-coders/skills/non-coder-mode#intro#0": {
+      "contentHash": "63eb87d1de8bc491ccc287d7d0c63bb427356d57c67b2f6549381df934d06bd1",
+      "tokens": 529,
+      "pageTitle": "Non-Coder Mode",
+      "sectionHeading": "Non-Coder Mode",
+      "url": "/non-coders/skills/non-coder-mode",
+      "mdUrl": "/non-coders/skills/non-coder-mode.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/domain-to-spec#intro#0": {
+      "contentHash": "ab39f303b20c6c608643c90ff58ce570160b8e239efc13f5afabca28b3726a41",
+      "tokens": 777,
+      "pageTitle": "Domain to Spec",
+      "sectionHeading": "Domain to Spec",
+      "url": "/non-coders/skills/domain-to-spec",
+      "mdUrl": "/non-coders/skills/domain-to-spec.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/domain-to-spec#intro#1": {
+      "contentHash": "a84c826e871712c411345b51751a68f42e3c26c8cdaf32afb6bfb1a3e2f74624",
+      "tokens": 259,
+      "pageTitle": "Domain to Spec",
+      "sectionHeading": "Domain to Spec",
+      "url": "/non-coders/skills/domain-to-spec",
+      "mdUrl": "/non-coders/skills/domain-to-spec.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/quickstart#intro#0": {
+      "contentHash": "9031e82cac9b4caed3613a4e27170a1fe9483eef20802ab4f5baa1d39cf2fa63",
+      "tokens": 805,
+      "pageTitle": "Quickstart",
+      "sectionHeading": "Quickstart",
+      "url": "/non-coders/skills/quickstart",
+      "mdUrl": "/non-coders/skills/quickstart.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/quickstart#intro#1": {
+      "contentHash": "a07bb46ff29335b4c6222b13f7b2ab843f5fa27459c8d134a0bc0baf61bef27b",
+      "tokens": 164,
+      "pageTitle": "Quickstart",
+      "sectionHeading": "Quickstart",
+      "url": "/non-coders/skills/quickstart",
+      "mdUrl": "/non-coders/skills/quickstart.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/scaffold-frontend#intro#0": {
+      "contentHash": "027618f4d50f85582b7ac0eb57a26265ab11ee98953f4b6af66e4022aade120d",
+      "tokens": 797,
+      "pageTitle": "Scaffold Frontend",
+      "sectionHeading": "Scaffold Frontend",
+      "url": "/non-coders/skills/scaffold-frontend",
+      "mdUrl": "/non-coders/skills/scaffold-frontend.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/scaffold-frontend#intro#1": {
+      "contentHash": "c5660e2ce02af2d8eeb90614ac68ef08f03cd476293dc84e8de2e9704dc32bf5",
+      "tokens": 147,
+      "pageTitle": "Scaffold Frontend",
+      "sectionHeading": "Scaffold Frontend",
+      "url": "/non-coders/skills/scaffold-frontend",
+      "mdUrl": "/non-coders/skills/scaffold-frontend.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/scaffold-backend#intro#0": {
+      "contentHash": "106f688303715ffbfe86afdab981d5594f80d171a18442ee658d9e32807de746",
+      "tokens": 792,
+      "pageTitle": "Scaffold Backend",
+      "sectionHeading": "Scaffold Backend",
+      "url": "/non-coders/skills/scaffold-backend",
+      "mdUrl": "/non-coders/skills/scaffold-backend.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/scaffold-backend#intro#1": {
+      "contentHash": "9dcb77930a5235c33482021b781dddd1b09f8e859c35b5711bc710cb2eea660d",
+      "tokens": 307,
+      "pageTitle": "Scaffold Backend",
+      "sectionHeading": "Scaffold Backend",
+      "url": "/non-coders/skills/scaffold-backend",
+      "mdUrl": "/non-coders/skills/scaffold-backend.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/v0-prompt-crafter#intro#0": {
+      "contentHash": "0b4a673d281738f60f2bfaa3866cfd9de30e56440471d6a6930eedc57d416ad2",
+      "tokens": 675,
+      "pageTitle": "v0 Prompt Crafter",
+      "sectionHeading": "v0 Prompt Crafter",
+      "url": "/non-coders/skills/v0-prompt-crafter",
+      "mdUrl": "/non-coders/skills/v0-prompt-crafter.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/v0-prompt-crafter#intro#1": {
+      "contentHash": "10763cd510d2a31913321d9ee81b04fbd9586e8879cd26ef81cea77234797985",
+      "tokens": 558,
+      "pageTitle": "v0 Prompt Crafter",
+      "sectionHeading": "v0 Prompt Crafter",
+      "url": "/non-coders/skills/v0-prompt-crafter",
+      "mdUrl": "/non-coders/skills/v0-prompt-crafter.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/feature-builder#intro#0": {
+      "contentHash": "b868cd1505613916bd722676915b4b6ef439d2a5fade219f4107087269841394",
+      "tokens": 770,
+      "pageTitle": "Feature Builder",
+      "sectionHeading": "Feature Builder",
+      "url": "/non-coders/skills/feature-builder",
+      "mdUrl": "/non-coders/skills/feature-builder.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/bugfix-doctor#intro#0": {
+      "contentHash": "ce5ab7f3cd361ec308cfe2c93becc15ebce898c3d7637005d8e4b32c751dfeed",
+      "tokens": 637,
+      "pageTitle": "Bugfix Doctor",
+      "sectionHeading": "Bugfix Doctor",
+      "url": "/non-coders/skills/bugfix-doctor",
+      "mdUrl": "/non-coders/skills/bugfix-doctor.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/demo-prep#intro#0": {
+      "contentHash": "cced2e698900cd08e50c85b4048e87476b63179082741429ce4b6bf18061b05f",
+      "tokens": 725,
+      "pageTitle": "Demo Prep",
+      "sectionHeading": "Demo Prep",
+      "url": "/non-coders/skills/demo-prep",
+      "mdUrl": "/non-coders/skills/demo-prep.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/readme-writer#intro#0": {
+      "contentHash": "57e2cd683ac2c9b7b664dac04f38e2f994a1e26541c82caf7067d6599d21b86a",
+      "tokens": 779,
+      "pageTitle": "GitHub Writer",
+      "sectionHeading": "GitHub Writer",
+      "url": "/non-coders/skills/readme-writer",
+      "mdUrl": "/non-coders/skills/readme-writer.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/readme-writer#intro#1": {
+      "contentHash": "cb60a2c8ca9ac2755a7b8ba901be8f6becc589b38ce88c740a76da28214366b9",
+      "tokens": 780,
+      "pageTitle": "GitHub Writer",
+      "sectionHeading": "GitHub Writer",
+      "url": "/non-coders/skills/readme-writer",
+      "mdUrl": "/non-coders/skills/readme-writer.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/readme-writer#intro#2": {
+      "contentHash": "c2eecf23528b23abc059d24592a7dd698b27cf25a47cfcbc4da495b250b51dcc",
+      "tokens": 793,
+      "pageTitle": "GitHub Writer",
+      "sectionHeading": "GitHub Writer",
+      "url": "/non-coders/skills/readme-writer",
+      "mdUrl": "/non-coders/skills/readme-writer.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/readme-writer#intro#3": {
+      "contentHash": "e74378a4801cc2f3aa8f61b53cd37da73194ceb1ba19a6465954670b38c4ac82",
+      "tokens": 648,
+      "pageTitle": "GitHub Writer",
+      "sectionHeading": "GitHub Writer",
+      "url": "/non-coders/skills/readme-writer",
+      "mdUrl": "/non-coders/skills/readme-writer.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/readme-writer#intro#4": {
+      "contentHash": "d91743dea9921f8aef920cbfa4452d5c18a4f9d876dabdf94dde40a982453eeb",
+      "tokens": 800,
+      "pageTitle": "GitHub Writer",
+      "sectionHeading": "GitHub Writer",
+      "url": "/non-coders/skills/readme-writer",
+      "mdUrl": "/non-coders/skills/readme-writer.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/readme-writer#intro#5": {
+      "contentHash": "b152c13d273e5328f0e1232117ea915fc3a56bea1aa4230f7b4b6520830daf98",
+      "tokens": 388,
+      "pageTitle": "GitHub Writer",
+      "sectionHeading": "GitHub Writer",
+      "url": "/non-coders/skills/readme-writer",
+      "mdUrl": "/non-coders/skills/readme-writer.md",
+      "track": "skills"
+    },
+    "/blog#intro#0": {
+      "contentHash": "226518b5d80452057e221e57ef6f2ad0710cc277e3ae4dab801a874266bc1208",
+      "tokens": 768,
+      "pageTitle": "Blog",
+      "sectionHeading": "Blog",
+      "url": "/blog",
+      "mdUrl": "/blog.md",
+      "track": "blog"
+    },
+    "/blog/what-to-do-after-a-hackathon#intro#0": {
+      "contentHash": "97a783adc30c40520e2f51e9084edb13ba191f51e29de6d4563ce1f65c4ea5b7",
+      "tokens": 764,
+      "pageTitle": "What to Do After a Hackathon: Ship 5 Assets That Get You Hired",
+      "sectionHeading": "What to Do After a Hackathon: Ship 5 Assets That Get You Hired",
+      "url": "/blog/what-to-do-after-a-hackathon",
+      "mdUrl": "/blog/what-to-do-after-a-hackathon.md",
+      "track": "blog"
+    },
+    "/blog/what-to-do-after-a-hackathon#intro#1": {
+      "contentHash": "c47e10f4e877f4ac2e83694cbb3a9434efb596a4841af0b11da4fada74e02719",
+      "tokens": 787,
+      "pageTitle": "What to Do After a Hackathon: Ship 5 Assets That Get You Hired",
+      "sectionHeading": "What to Do After a Hackathon: Ship 5 Assets That Get You Hired",
+      "url": "/blog/what-to-do-after-a-hackathon",
+      "mdUrl": "/blog/what-to-do-after-a-hackathon.md",
+      "track": "blog"
+    },
+    "/blog/what-to-do-after-a-hackathon#intro#2": {
+      "contentHash": "0f55544a00adb114dc659b7f6bfab0fc558c5d55012ec3e1d80c153dfd27f5b9",
+      "tokens": 154,
+      "pageTitle": "What to Do After a Hackathon: Ship 5 Assets That Get You Hired",
+      "sectionHeading": "What to Do After a Hackathon: Ship 5 Assets That Get You Hired",
+      "url": "/blog/what-to-do-after-a-hackathon",
+      "mdUrl": "/blog/what-to-do-after-a-hackathon.md",
+      "track": "blog"
+    },
+    "/blog/hackathon-pitch-mistakes-la-hacks#intro#0": {
+      "contentHash": "d58f93d39f2cbe35655b8707da849809d2e8a3d99645b829e5154b95cd394515",
+      "tokens": 794,
+      "pageTitle": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
+      "sectionHeading": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
+      "url": "/blog/hackathon-pitch-mistakes-la-hacks",
+      "mdUrl": "/blog/hackathon-pitch-mistakes-la-hacks.md",
+      "track": "blog"
+    },
+    "/blog/hackathon-pitch-mistakes-la-hacks#intro#1": {
+      "contentHash": "15ca4020997e44a8f10098824d95392e2dc68ee2bfc96c4c9fffc3435265b015",
+      "tokens": 787,
+      "pageTitle": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
+      "sectionHeading": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
+      "url": "/blog/hackathon-pitch-mistakes-la-hacks",
+      "mdUrl": "/blog/hackathon-pitch-mistakes-la-hacks.md",
+      "track": "blog"
+    },
+    "/blog/hackathon-pitch-mistakes-la-hacks#intro#2": {
+      "contentHash": "b8353d0ab05fbf81b6f13ed90d900523f70d754336af63010582287a499cc8a5",
+      "tokens": 801,
+      "pageTitle": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
+      "sectionHeading": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
+      "url": "/blog/hackathon-pitch-mistakes-la-hacks",
+      "mdUrl": "/blog/hackathon-pitch-mistakes-la-hacks.md",
+      "track": "blog"
+    },
+    "/blog/how-to-win-hackathons#intro#0": {
+      "contentHash": "5a63e5096ffcdec0510ab9a9a2ec2d961fcd9e0142d11dbc9ae6bace238cad2c",
+      "tokens": 795,
+      "pageTitle": "How to Win Hackathons: A Complete Guide from 36+ Victories",
+      "sectionHeading": "How to Win Hackathons: A Complete Guide from 36+ Victories",
+      "url": "/blog/how-to-win-hackathons",
+      "mdUrl": "/blog/how-to-win-hackathons.md",
+      "track": "blog"
+    },
+    "/blog/how-to-win-hackathons#intro#1": {
+      "contentHash": "3dd3f540c8c19cafb240109ea9046a3cacbc5277ebdfe40ba6a3c39f4de90108",
+      "tokens": 786,
+      "pageTitle": "How to Win Hackathons: A Complete Guide from 36+ Victories",
+      "sectionHeading": "How to Win Hackathons: A Complete Guide from 36+ Victories",
+      "url": "/blog/how-to-win-hackathons",
+      "mdUrl": "/blog/how-to-win-hackathons.md",
+      "track": "blog"
+    },
+    "/blog/how-to-win-hackathons#intro#2": {
+      "contentHash": "152e4e6895adaf76ec56d9c04d8a8cc118e72e6a82cee5824168828f287de38e",
+      "tokens": 40,
+      "pageTitle": "How to Win Hackathons: A Complete Guide from 36+ Victories",
+      "sectionHeading": "How to Win Hackathons: A Complete Guide from 36+ Victories",
+      "url": "/blog/how-to-win-hackathons",
+      "mdUrl": "/blog/how-to-win-hackathons.md",
+      "track": "blog"
+    },
+    "/blog/best-tech-stack-for-hackathons#intro#0": {
+      "contentHash": "c8f6935366f7ed97be158680dfc87ada0014c16a8b2f98790a32bd4c98875923",
+      "tokens": 798,
+      "pageTitle": "Best Tech Stack for Hackathons in 2026: Tools That Win Prizes",
+      "sectionHeading": "Best Tech Stack for Hackathons in 2026: Tools That Win Prizes",
+      "url": "/blog/best-tech-stack-for-hackathons",
+      "mdUrl": "/blog/best-tech-stack-for-hackathons.md",
+      "track": "blog"
+    },
+    "/blog/best-tech-stack-for-hackathons#intro#1": {
+      "contentHash": "6bbc414ca42918f5fb939a7360e7c2528b05ed5972c6c47b7d550da3a99bfb6d",
+      "tokens": 539,
+      "pageTitle": "Best Tech Stack for Hackathons in 2026: Tools That Win Prizes",
+      "sectionHeading": "Best Tech Stack for Hackathons in 2026: Tools That Win Prizes",
+      "url": "/blog/best-tech-stack-for-hackathons",
+      "mdUrl": "/blog/best-tech-stack-for-hackathons.md",
+      "track": "blog"
+    },
+    "/blog/hackathon-tips-for-beginners#intro#0": {
+      "contentHash": "4a222131843bc0306a06854b55463815a24b6b3f7b4db1a433e4ccbfc8e7f06c",
+      "tokens": 746,
+      "pageTitle": "Hackathon Tips for Beginners: Your First Hackathon Survival Guide",
+      "sectionHeading": "Hackathon Tips for Beginners: Your First Hackathon Survival Guide",
+      "url": "/blog/hackathon-tips-for-beginners",
+      "mdUrl": "/blog/hackathon-tips-for-beginners.md",
+      "track": "blog"
+    },
+    "/blog/hackathon-tips-for-beginners#intro#1": {
+      "contentHash": "f137b9bdcd799dc050678974499497fb679e70acd67f2c6c77e9111218690479",
+      "tokens": 764,
+      "pageTitle": "Hackathon Tips for Beginners: Your First Hackathon Survival Guide",
+      "sectionHeading": "Hackathon Tips for Beginners: Your First Hackathon Survival Guide",
+      "url": "/blog/hackathon-tips-for-beginners",
+      "mdUrl": "/blog/hackathon-tips-for-beginners.md",
+      "track": "blog"
+    },
+    "/blog/hackathon-pitch-guide#intro#0": {
+      "contentHash": "353ace69f12c5e1d4eb1ea8d44c2a93289e9ba5d54b7a04987094bcbcab6c0bf",
+      "tokens": 798,
+      "pageTitle": "Hackathon Pitch Guide: How to Present Your Project and Win Prizes",
+      "sectionHeading": "Hackathon Pitch Guide: How to Present Your Project and Win Prizes",
+      "url": "/blog/hackathon-pitch-guide",
+      "mdUrl": "/blog/hackathon-pitch-guide.md",
+      "track": "blog"
+    },
+    "/blog/hackathon-pitch-guide#intro#1": {
+      "contentHash": "3f457f40c3b232a3107d4e0260866088e13f4e38c42b2d80abe6077f0afdb5fa",
+      "tokens": 327,
+      "pageTitle": "Hackathon Pitch Guide: How to Present Your Project and Win Prizes",
+      "sectionHeading": "Hackathon Pitch Guide: How to Present Your Project and Win Prizes",
+      "url": "/blog/hackathon-pitch-guide",
+      "mdUrl": "/blog/hackathon-pitch-guide.md",
+      "track": "blog"
+    },
+    "/blog/non-coders-winning-hackathons#intro#0": {
+      "contentHash": "29978ff16075b1cb605e6e09cc91bc7dc2adb12ea1c44b39a484b9608626aa96",
+      "tokens": 792,
+      "pageTitle": "Non-Coders Winning Hackathons: How Experts Beat Developers",
+      "sectionHeading": "Non-Coders Winning Hackathons: How Experts Beat Developers",
+      "url": "/blog/non-coders-winning-hackathons",
+      "mdUrl": "/blog/non-coders-winning-hackathons.md",
+      "track": "blog"
+    },
+    "/blog/non-coders-winning-hackathons#intro#1": {
+      "contentHash": "c6338eff6d0ff6d4d467e724fba837460a396ca1062c03a5c3736981971320c5",
+      "tokens": 308,
+      "pageTitle": "Non-Coders Winning Hackathons: How Experts Beat Developers",
+      "sectionHeading": "Non-Coders Winning Hackathons: How Experts Beat Developers",
+      "url": "/blog/non-coders-winning-hackathons",
+      "mdUrl": "/blog/non-coders-winning-hackathons.md",
+      "track": "blog"
+    },
+    "/blog/build-with-elevenlabs-and-cursor#intro#0": {
+      "contentHash": "f51a39913c4ae580e6818d1227fbee50007ba33aac1505b93524d8253e4f3f0d",
+      "tokens": 752,
+      "pageTitle": "How to Build with ElevenLabs and Cursor at a Hackathon",
+      "sectionHeading": "How to Build with ElevenLabs and Cursor at a Hackathon",
+      "url": "/blog/build-with-elevenlabs-and-cursor",
+      "mdUrl": "/blog/build-with-elevenlabs-and-cursor.md",
+      "track": "blog"
+    },
+    "/blog/build-with-elevenlabs-and-cursor#intro#1": {
+      "contentHash": "d03846e692eed482ce44ff94e448e97f6761bab8edf2c5949343585e42c95c0f",
+      "tokens": 761,
+      "pageTitle": "How to Build with ElevenLabs and Cursor at a Hackathon",
+      "sectionHeading": "How to Build with ElevenLabs and Cursor at a Hackathon",
+      "url": "/blog/build-with-elevenlabs-and-cursor",
+      "mdUrl": "/blog/build-with-elevenlabs-and-cursor.md",
+      "track": "blog"
+    },
+    "/blog/build-with-elevenlabs-and-cursor#intro#2": {
+      "contentHash": "f863d494bba7eeeb019f5ab6bd3f7b59c9597073c7e0b2b03d70be16451b2771",
+      "tokens": 480,
+      "pageTitle": "How to Build with ElevenLabs and Cursor at a Hackathon",
+      "sectionHeading": "How to Build with ElevenLabs and Cursor at a Hackathon",
+      "url": "/blog/build-with-elevenlabs-and-cursor",
+      "mdUrl": "/blog/build-with-elevenlabs-and-cursor.md",
+      "track": "blog"
+    }
+  }
+}
