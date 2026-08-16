@@ -25,7 +25,13 @@ export function absoluteUrl(path: string): string {
  * rather than lib/content-pages.ts because proxy.ts needs it and must stay
  * free of Node-only imports.
  */
-export const MARKDOWN_EXCLUDED_PATHS: readonly string[] = ["/terms", "/media-kit"];
+export const MARKDOWN_EXCLUDED_PATHS: readonly string[] = [
+  "/terms",
+  "/media-kit",
+  // Meta page about the agent features; not in the content registry, so it
+  // has no generated .md and must not be advertised or negotiated.
+  "/ai",
+];
 
 /**
  * The alternates.types entry advertising a page's Markdown representation,

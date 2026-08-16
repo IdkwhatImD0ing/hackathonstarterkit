@@ -15,7 +15,7 @@ import {
   isReasoningExempt,
   rejectReasoningModel,
 } from "@/lib/chat/config";
-import { addMonthlyTokens, getMonthlyTokens } from "@/lib/chat/spend";
+import { reserveTokens, settleTokens } from "@/lib/chat/spend";
 import { SYSTEM_PROMPT, contextMessage } from "@/lib/chat/prompt";
 
 /**
@@ -95,14 +95,6 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  if ((await getMonthlyTokens()) >= CHAT_MONTHLY_TOKEN_BUDGET) {
-    return jsonError(
-      503,
-      "budget",
-      "Chat is taking a break for the rest of the month. The playbook itself is all still here.",
-    );
-  }
-
   if ((activeStreams.get(ip) ?? 0) >= MAX_CONCURRENT_STREAMS) {
     return jsonError(429, "rate_limited", "One conversation at a time, hacker.");
   }
@@ -158,6 +150,30 @@ export async function POST(request: NextRequest) {
     (c, i) => citations.findIndex((o) => o.url === c.url) === i,
   );
 
+  // Reserve worst-case tokens against the monthly budget BEFORE calling
+  // OpenAI, atomically, so concurrent requests cannot collectively pass a
+  // stale reading of the counter (reserve/settle semantics in
+  // lib/chat/spend.ts). Estimate errs high: chars/3 overshoots real
+  // tokenization for English, plus the full output cap.
+  const promptChars =
+    SYSTEM_PROMPT.length +
+    contextMessage(results).length +
+    body.messages.reduce((sum, m) => sum + m.content.length, 0);
+  const reservedTokens = Math.ceil(promptChars / 3) + CHAT_MAX_OUTPUT_TOKENS + 200;
+
+  const reservation = await reserveTokens(reservedTokens, CHAT_MONTHLY_TOKEN_BUDGET);
+  if (reservation === "over_budget") {
+    return jsonError(
+      503,
+      "budget",
+      "Chat is taking a break for the rest of the month. The playbook itself is all still here.",
+    );
+  }
+  if (reservation === "unavailable") {
+    // Fail closed: cost controls are unreachable, so no spend happens.
+    return jsonError(503, "api_error", "Chat is briefly unavailable. Try again shortly.");
+  }
+
   const { default: OpenAI } = await import("openai");
   const client = new OpenAI();
 
@@ -190,8 +206,50 @@ export async function POST(request: NextRequest) {
       ],
     });
 
+    // Settlement bookkeeping: exactly one settle per reservation. When the
+    // stream ends without usage (crash, client disconnect, missing terminal
+    // event), the full reservation stands, which errs toward spending less.
+    let settled = false;
+    const settle = (actualTokens: number) => {
+      if (settled) return;
+      settled = true;
+      void settleTokens(reservedTokens, actualTokens);
+    };
+
+    type ResponseUsage = {
+      input_tokens: number;
+      output_tokens: number;
+      total_tokens: number;
+      input_tokens_details?: { cached_tokens?: number };
+      output_tokens_details?: { reasoning_tokens?: number };
+    };
+    const accountUsage = (usage: ResponseUsage, terminal: string) => {
+      const reasoningTokens = usage.output_tokens_details?.reasoning_tokens ?? 0;
+      if (reasoningTokens > 0) {
+        // The guard has been bypassed; surface it immediately.
+        console.error(
+          `chat: reasoning_tokens=${reasoningTokens} on model ${CHAT_MODEL}; ` +
+            "a reasoning model is burning invisible output tokens. See lib/chat/config.ts.",
+        );
+      }
+      // Token counts only; never message content.
+      console.log(
+        `chat: model=${CHAT_MODEL} terminal=${terminal} prompt=${usage.input_tokens} completion=${usage.output_tokens} reasoning=${reasoningTokens} cached=${usage.input_tokens_details?.cached_tokens ?? 0}`,
+      );
+      settle(usage.total_tokens);
+      return reasoningTokens;
+    };
+
     const stream = new ReadableStream({
       async start(controller) {
+        // Exactly one terminal SSE event per response, so the client never
+        // ends ambiguously.
+        let terminalSent = false;
+        const sendTerminal = (event: "done" | "error", data: object) => {
+          if (terminalSent) return;
+          terminalSent = true;
+          send(controller, event, data);
+        };
         try {
           send(controller, "citations", uniqueCitations);
           for await (const part of completion) {
@@ -199,41 +257,43 @@ export async function POST(request: NextRequest) {
               send(controller, null, { delta: part.delta });
             } else if (part.type === "response.failed") {
               console.error("chat: response failed", part.response.error);
-              send(controller, "error", { code: "api_error" });
+              if (part.response.usage) accountUsage(part.response.usage, "failed");
+              sendTerminal("error", { code: "api_error" });
+            } else if (part.type === "response.incomplete") {
+              // Terminates the stream too, e.g. when max_output_tokens is
+              // hit; usage must still be accounted and the client must
+              // still get a terminal event.
+              const usage = part.response.usage;
+              const reasoningTokens = usage ? accountUsage(usage, "incomplete") : 0;
+              sendTerminal("done", {
+                promptTokens: usage?.input_tokens ?? null,
+                completionTokens: usage?.output_tokens ?? null,
+                reasoningTokens,
+                truncated: true,
+              });
             } else if (part.type === "response.completed" && part.response.usage) {
               const usage = part.response.usage;
-              const reasoningTokens =
-                usage.output_tokens_details?.reasoning_tokens ?? 0;
-              if (reasoningTokens > 0) {
-                // The guard has been bypassed; surface it immediately.
-                console.error(
-                  `chat: reasoning_tokens=${reasoningTokens} on model ${CHAT_MODEL}; ` +
-                    "a reasoning model is burning invisible output tokens. See lib/chat/config.ts.",
-                );
-              }
-              // Token counts only; never message content.
-              console.log(
-                `chat: model=${CHAT_MODEL} prompt=${usage.input_tokens} completion=${usage.output_tokens} reasoning=${reasoningTokens} cached=${usage.input_tokens_details?.cached_tokens ?? 0}`,
-              );
-              await addMonthlyTokens(usage.total_tokens);
+              const reasoningTokens = accountUsage(usage, "completed");
               // SSE field names are the route's public contract with the
               // widget; they keep their Chat Completions era names.
-              send(controller, "done", {
+              sendTerminal("done", {
                 promptTokens: usage.input_tokens,
                 completionTokens: usage.output_tokens,
                 reasoningTokens,
               });
             }
           }
+          sendTerminal("done", { promptTokens: null, completionTokens: null, reasoningTokens: 0 });
         } catch (error) {
           console.error("chat: stream failed", error);
-          send(controller, "error", { code: "api_error" });
+          sendTerminal("error", { code: "api_error" });
         } finally {
           release();
           controller.close();
         }
       },
       cancel() {
+        // Client went away mid-stream; usage is unknown, reservation stands.
         release();
       },
     });
@@ -243,6 +303,8 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     release();
+    // The API call never started streaming, so nothing was spent.
+    void settleTokens(reservedTokens, 0);
     console.error("chat: completion failed", error);
     return jsonError(502, "api_error", "The model is unreachable right now. Try again shortly.");
   }

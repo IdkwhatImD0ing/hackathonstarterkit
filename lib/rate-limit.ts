@@ -2,12 +2,16 @@
  * Sliding-window rate limiter for the compute endpoints (/api/chat,
  * /api/mcp), keyed on the real client IP from lib/request-ip.ts.
  *
- * Uses Upstash Redis via REST when UPSTASH_REDIS_REST_URL and
- * UPSTASH_REDIS_REST_TOKEN are set, so the window holds across serverless
- * instances. Falls back to an in-memory window otherwise; documented
+ * With Redis configured (lib/redis-rest.ts), the whole check runs as one
+ * Lua script, so it is atomic across serverless instances: prune expired
+ * hits, count, and only add the hit when the request is allowed. Rejected
+ * requests never extend the window. Falls back to an in-memory window
+ * when Redis was never configured, or during a Redis outage; documented
  * limitation: the in-memory window is per-instance, so bursts that land
- * on different instances each get their own budget. Good enough for
- * previews and local dev, not a substitute for KV in production.
+ * on different instances each get their own budget. (Availability
+ * tradeoff on purpose: a Redis blip degrades rate-limit granularity but
+ * does not take the endpoints down. The monthly budget in lib/chat/spend.ts
+ * is the fail-closed control.)
  */
 
 import { redisRest } from "./redis-rest";
@@ -22,7 +26,7 @@ export interface RateLimitResult {
 
 const memory = new Map<string, number[]>();
 
-function memoryLimit(key: string, max: number): RateLimitResult {
+export function memoryLimit(key: string, max: number): RateLimitResult {
   const now = Date.now();
   const cutoff = now - WINDOW_MS;
   const hits = (memory.get(key) ?? []).filter((t) => t > cutoff);
@@ -45,43 +49,76 @@ function memoryLimit(key: string, max: number): RateLimitResult {
   return { allowed: true, remaining: max - hits.length, retryAfterSeconds: 0 };
 }
 
+/**
+ * Atomic sliding window: prune, count, and conditionally add in one
+ * script. Returns {allowed, count, retryAfterSeconds}; the hit is only
+ * recorded on allow, and retry-after is computed from the oldest
+ * surviving hit rather than a flat guess.
+ */
+const SLIDING_WINDOW_LUA = `
+local key = KEYS[1]
+local now = tonumber(ARGV[1])
+local window = tonumber(ARGV[2])
+local max = tonumber(ARGV[3])
+local member = ARGV[4]
+redis.call('ZREMRANGEBYSCORE', key, 0, now - window)
+local count = redis.call('ZCARD', key)
+if count >= max then
+  local oldest = redis.call('ZRANGE', key, 0, 0, 'WITHSCORES')
+  local retry = math.ceil(window / 1000)
+  if oldest[2] then
+    retry = math.ceil((tonumber(oldest[2]) + window - now) / 1000)
+    if retry < 1 then retry = 1 end
+  end
+  return {0, count, retry}
+end
+redis.call('ZADD', key, now, member)
+redis.call('PEXPIRE', key, window)
+return {1, count + 1, 0}
+`.trim();
+
 async function upstashLimit(
   key: string,
   max: number,
   creds: { url: string; token: string },
 ): Promise<RateLimitResult> {
-  const { url, token } = creds;
   const now = Date.now();
-  const cutoff = now - WINDOW_MS;
-  const redisKey = `rl:${key}`;
+  const member = `${now}:${Math.random().toString(36).slice(2)}`;
 
-  // Atomic-enough pipeline: prune the window, count, add, expire.
-  const response = await fetch(`${url}/pipeline`, {
+  const response = await fetch(creds.url, {
     method: "POST",
-    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    headers: {
+      Authorization: `Bearer ${creds.token}`,
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify([
-      ["ZREMRANGEBYSCORE", redisKey, "0", String(cutoff)],
-      ["ZCARD", redisKey],
-      ["ZADD", redisKey, String(now), `${now}:${Math.random().toString(36).slice(2)}`],
-      ["PEXPIRE", redisKey, String(WINDOW_MS)],
+      "EVAL",
+      SLIDING_WINDOW_LUA,
+      "1",
+      `rl:${key}`,
+      String(now),
+      String(WINDOW_MS),
+      String(max),
+      member,
     ]),
   });
-  if (!response.ok) {
-    // Redis being down must not take the endpoint with it.
-    return memoryLimit(key, max);
+  if (!response.ok) throw new Error(`Upstash ${response.status}`);
+
+  const [allowed, count, retry] = ((await response.json()) as { result: number[] }).result;
+  if (allowed !== 1) {
+    return { allowed: false, remaining: 0, retryAfterSeconds: Number(retry) || 60 };
   }
-  const results = (await response.json()) as { result: unknown }[];
-  const count = Number(results[1]?.result ?? 0);
-  if (count >= max) {
-    return { allowed: false, remaining: 0, retryAfterSeconds: 60 };
-  }
-  return { allowed: true, remaining: max - count - 1, retryAfterSeconds: 0 };
+  return { allowed: true, remaining: Math.max(0, max - Number(count)), retryAfterSeconds: 0 };
 }
 
 export async function rateLimit(key: string, max: number): Promise<RateLimitResult> {
   const creds = redisRest();
   if (creds) {
-    return upstashLimit(key, max, creds);
+    try {
+      return await upstashLimit(key, max, creds);
+    } catch {
+      return memoryLimit(key, max);
+    }
   }
   return memoryLimit(key, max);
 }

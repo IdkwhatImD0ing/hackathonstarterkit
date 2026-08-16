@@ -52,6 +52,13 @@ function prefersMarkdown(request: NextRequest): boolean {
 export default function proxy(request: NextRequest) {
   const host = request.headers.get("host") ?? "";
 
+  // Trust marker for lib/request-ip.ts: ALWAYS strip the inbound value
+  // (clients can send anything), then re-add it only after the Cloudflare
+  // Transform Rule secret validates. Routes may then trust
+  // cf-connecting-ip; without it they fall back to platform-set headers.
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.delete("x-origin-verified");
+
   if (VERCEL_ENV === "production") {
     // Host canonicalization. www is already 301'd by next.config.ts
     // redirects (which run before proxy), so this catches *.vercel.app and
@@ -63,11 +70,11 @@ export default function proxy(request: NextRequest) {
 
     // Origin verification. Only enforced once the Cloudflare Transform Rule
     // and the env var are both configured; see docs/cloudflare-config.md.
-    if (
-      ORIGIN_SHARED_SECRET &&
-      request.headers.get("x-origin-verify") !== ORIGIN_SHARED_SECRET
-    ) {
-      return new NextResponse("Forbidden", { status: 403 });
+    if (ORIGIN_SHARED_SECRET) {
+      if (request.headers.get("x-origin-verify") !== ORIGIN_SHARED_SECRET) {
+        return new NextResponse("Forbidden", { status: 403 });
+      }
+      requestHeaders.set("x-origin-verified", "1");
     }
   }
 
@@ -85,7 +92,9 @@ export default function proxy(request: NextRequest) {
   ) {
     const page = pathname === "/index.md" ? "" : pathname.slice(0, -3);
     if (!MARKDOWN_EXCLUDED_PATHS.includes(page)) {
-      return NextResponse.rewrite(new URL(`/api/md${page}`, request.url));
+      return NextResponse.rewrite(new URL(`/api/md${page}`, request.url), {
+        request: { headers: requestHeaders },
+      });
     }
   }
 
@@ -94,11 +103,10 @@ export default function proxy(request: NextRequest) {
   // must carry Vary: Accept), as opposed to the .md URL (a distinct,
   // Vary-free cacheable artifact).
   if ((request.method === "GET" || request.method === "HEAD") && isContentPath(pathname) && prefersMarkdown(request)) {
-    const headers = new Headers(request.headers);
-    headers.set("x-md-negotiated", "1");
+    requestHeaders.set("x-md-negotiated", "1");
     return NextResponse.rewrite(
       new URL(`/api/md${pathname === "/" ? "" : pathname}`, request.url),
-      { request: { headers } },
+      { request: { headers: requestHeaders } },
     );
   }
 
@@ -107,7 +115,7 @@ export default function proxy(request: NextRequest) {
   // rel="api-catalog" (RFC 9727) are IANA-registered; "llms-txt",
   // "mcp-server-card", and "sitemap" are the extension relations the
   // Cloudflare readiness scanner looks for.
-  const response = NextResponse.next();
+  const response = NextResponse.next({ request: { headers: requestHeaders } });
   const links = [
     // "describedby" is the relation the llms.txt v2 spec recommends;
     // "llms-txt" is what the readiness scanner probes for. Emit both.

@@ -103,7 +103,10 @@ function buildTools(): WebMcpTool[] {
       },
       execute: async (args) => {
         const path = String(args.path ?? "");
-        if (!/^\/[a-z0-9\-/]*$/.test(path)) {
+        // The negative lookahead rejects protocol-relative values like
+        // //evil.example, which window.location.assign would treat as an
+        // off-origin URL.
+        if (!/^\/(?!\/)[a-z0-9\-/]*$/.test(path)) {
           return { content: [{ type: "text", text: "Invalid path." }] };
         }
         window.location.assign(path);

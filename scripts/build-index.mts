@@ -277,7 +277,19 @@ async function buildOnce(options: { force: boolean; dryRun: boolean }): Promise<
   if (options.dryRun) {
     console.log(summary.join("\n"));
     console.log(`Time:   ${((Date.now() - start) / 1000).toFixed(1)}s (dry run, no API calls)`);
-    if (toEmbed.length > 0 || stats.chunks.pruned > 0 || !prev) {
+    // Freshness means the COMMITTED manifest equals the computed one, not
+    // merely that no chunk needs embedding: a page-header edit changes
+    // sourceHash while every body chunk stays cached, which zero-embed
+    // checks would wave through as fresh. Compare the full manifests,
+    // excluding only generatedAt (intentionally volatile).
+    let manifestFresh = false;
+    if (existsSync(MANIFEST_PATH)) {
+      const committed = JSON.parse(readFileSync(MANIFEST_PATH, "utf8")) as IndexManifest;
+      manifestFresh =
+        JSON.stringify({ ...committed, generatedAt: "" }) ===
+        JSON.stringify({ ...next, generatedAt: "" });
+    }
+    if (toEmbed.length > 0 || stats.chunks.pruned > 0 || !prev || !manifestFresh) {
       console.error("Index is stale relative to content. Run `pnpm gen:index` and commit.");
       return 1;
     }
