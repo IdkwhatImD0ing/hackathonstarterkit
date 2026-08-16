@@ -28,7 +28,7 @@ import {
   AGENTS_MD_URL,
   CLAUDE_MD_URL,
   SYSTEM_PROMPT_SETUP_COMMAND,
-} from "@/lib/agent-prompts";
+} from "@/lib/prompts";
 
 export const metadata: Metadata = {
   title: "The System Prompt: CLAUDE.md & AGENTS.md for Non-Coders",

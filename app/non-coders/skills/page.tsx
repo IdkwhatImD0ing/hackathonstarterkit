@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
-import { SKILLS_INSTALL_PROMPT } from "@/lib/agent-prompts";
+import { SKILLS_INSTALL_PROMPT } from "@/lib/prompts";
 import {
   NON_CODER_SKILLS,
   ALL_COMMANDS,

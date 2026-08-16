@@ -34,7 +34,7 @@ import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
   DEVPOST_AGENT_PROMPT as SHARED_DEVPOST_AGENT_PROMPT,
   README_AGENT_PROMPT as SHARED_README_AGENT_PROMPT,
-} from "@/lib/agent-prompts";
+} from "@/lib/prompts";
 import {
   Card,
   CardContent,

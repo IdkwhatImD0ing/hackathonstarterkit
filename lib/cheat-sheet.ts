@@ -14,8 +14,9 @@ import {
   README_AGENT_PROMPT,
   SKILLS_INSTALL_PROMPT,
   SYSTEM_PROMPT_SETUP_COMMAND,
+  YOUTUBE_AGENT_PROMPT,
   skillInstallCommand,
-} from "./agent-prompts";
+} from "./prompts";
 
 /**
  * The during-the-hackathon cheat sheet: paste-ready prompts, grouped by the
@@ -34,7 +35,7 @@ import {
  *    so the card can link there.
  * 3. Skill-first. Where a skill in `skills/` already does the job, the prompt
  *    installs and runs it rather than reinventing the instructions. Prompts
- *    shared with a knowledge page are imported from `lib/agent-prompts.ts`.
+ *    shared with a knowledge page are imported from `lib/prompts/`.
  */
 
 export type CheatAccent = "volt" | "spark" | "primary" | "success";
@@ -78,7 +79,7 @@ export const CHEAT_SECTIONS: CheatSection[] = [
     title: "Set Up the War Room",
     timing: "First 30 minutes",
     subtitle:
-      "Give your agent the context and the skills every later prompt leans on, read the rules before anyone codes, and get an empty app deployed.",
+      "Give your agent the context, the skills, and the docs every later prompt leans on, read the rules before anyone codes, and get an empty app deployed.",
     icon: Terminal,
     accent: "volt",
     prompts: [
@@ -138,6 +139,29 @@ Then extract, in this order:
 Short bullets. No preamble.`,
         note: "Sponsor prizes are the least contested money in the room. Most teams never read past the grand prize.",
         source: { label: "Validation", href: "/playbook/validation" },
+      },
+      {
+        id: "docs-folder",
+        title: "Set up a docs folder your agent actually reads",
+        when: "Right after the rules file exists, and before anyone writes code against an API.",
+        needs: ["system-prompt"],
+        prompt: `Set up a docs folder for this project and wire it into our rules file, so you read real documentation instead of guessing at it.
+
+Ask me first, in one message:
+1. Which APIs, SDKs, or sponsor tools are we using, and what are their docs URLs?
+2. Do we have the hackathon rules and judging criteria somewhere I can paste?
+3. Is there already a CLAUDE.md or AGENTS.md in the repo root? If there is no rules file at all, tell me to run the "Set the rules your agent follows" prompt first.
+
+Then:
+1. Create a docs/ folder in the repo root.
+2. For each API or tool I named, fetch its quickstart and API reference and save a trimmed copy as docs/<tool>.md. Keep the endpoints, parameters, auth, and code samples; drop the marketing. Put the source URL and the date you fetched it at the top of each file.
+3. Save the hackathon rules, judging criteria, and prize list as docs/hackathon.md.
+4. Add a "Docs" section at the TOP of CLAUDE.md listing every file in docs/ with a one-line note on when to read it, plus this rule, in these words: "Read the matching file in docs/ before writing code against that API. Never use an endpoint, parameter, or model name that does not appear in these files."
+5. Make sure AGENTS.md points at CLAUDE.md, so every tool on the team loads the same rules.
+
+Show me the docs/ file list and the new CLAUDE.md section when you are done.`,
+        note: "This is the cheapest fix for hallucinated API calls: local docs the agent must read beat a docs link it might skim.",
+        source: { label: "Using APIs", href: "/non-coders/apis" },
       },
       {
         id: "deploy-skeleton",
@@ -483,7 +507,7 @@ Then recommend one of the three in two sentences. Nobody is reading our source c
     title: "Ship It",
     timing: "Last 3 hours",
     subtitle:
-      "Feature freeze, harden the exact demo path, then write the README and the submission before anyone is allowed to touch code again.",
+      "Feature freeze, harden the exact demo path, then produce the README, the Devpost, and the YouTube copy before anyone is allowed to touch code again.",
     icon: AlarmClock,
     accent: "success",
     prompts: [
@@ -506,9 +530,30 @@ Then walk that exact path on the deployed app, and fix only what breaks it:
 List what you fixed, and anything still broken that I need to route around live.`,
       },
       {
+        id: "ship-everything",
+        title: "Produce the README, Devpost, and YouTube copy in one pass",
+        when: "You have all three to write and under two hours. Start here instead of running the next three prompts separately.",
+        needs: ["harden"],
+        prompt: `Install the Ship It skill and run it:
+
+${skillInstallCommand("ship-it")}
+
+Use the ship-it skill to produce our submission deliverables, but only three of the four: the GitHub README, the Devpost submission, and the YouTube title, description, and chapters. Skip the portfolio site, we are still at the hackathon and it is not due today.
+
+Interview me ONCE for everything all three need: the demo video and its beats, the live URL and Devpost link, the hackathon and any awards, the event details, the team with their GitHub and LinkedIn, and the challenges we hit and what is next. Read the repo first so you only ask for what you cannot find there.
+
+Then generate the three so they tell one consistent story: the same tagline, the same stats, the same award list. Pause after each so I can redirect.
+
+If we have not recorded the demo video yet, say so and write the README and Devpost first, then come back for the YouTube copy once I give you the video.
+
+Do not invent awards, stats, timestamps, or challenges.`,
+        note: "Running the three separately means answering the same questions three times, and the answers drift.",
+        source: { label: "Post-Hackathon", href: "/playbook/post-hackathon" },
+      },
+      {
         id: "readme",
         title: "README a judge will actually skim",
-        when: "Once the app is frozen and deployed.",
+        when: "Once the app is frozen and deployed, if you would rather run one deliverable at a time.",
         prompt: README_AGENT_PROMPT,
         note: "It reads the repo first and only asks for what it cannot find, so answer the questions and let it write.",
         source: { label: "Submission", href: "/playbook/submission" },
@@ -519,6 +564,15 @@ List what you fixed, and anything still broken that I need to route around live.
         when: "After the README, while someone else records the video.",
         prompt: DEVPOST_AGENT_PROMPT,
         source: { label: "Submission", href: "/playbook/submission" },
+      },
+      {
+        id: "youtube",
+        title: "Write the YouTube title, description, and chapters",
+        when: "The demo video is recorded and about to be uploaded.",
+        needs: ["video-shot-list"],
+        prompt: YOUTUBE_AGENT_PROMPT,
+        note: "Judges and recruiters find the video through search long after the event. The first two lines of the description do that work.",
+        source: { label: "Post-Hackathon", href: "/playbook/post-hackathon" },
       },
       {
         id: "submission-audit",
