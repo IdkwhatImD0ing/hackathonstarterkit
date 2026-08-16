@@ -5,19 +5,15 @@ import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { LastUpdated } from "@/components/last-updated";
-import { PromptCard } from "@/components/prompt-card";
-import {
-  CHEAT_PROMPT_COUNT,
-  CHEAT_SECTIONS,
-  CHEAT_SHEET_UPDATED,
-} from "@/lib/cheat-sheet";
+import { CheatSheetBrowser } from "@/components/cheat-sheet-browser";
+import { CHEAT_PROMPT_COUNT, CHEAT_SHEET_UPDATED } from "@/lib/cheat-sheet";
 import { cheatSheetHowToJsonLd } from "@/lib/structured-data";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Hackathon Cheat Sheet — Copy-Paste AI Prompts for Every Phase",
   description:
-    "Copy-paste AI prompts for every phase of a hackathon: setup, scoping, building, debugging, shipping, and pitching. Built for use during the event, not before.",
+    "Copy-paste AI prompts for every phase of a hackathon: setup, scoping, building, debugging, shipping, and pitching. Each one asks you for what it needs, so just paste and go.",
   alternates: {
     canonical: `${SITE_URL}/cheat-sheet`,
   },
@@ -30,51 +26,22 @@ export const metadata: Metadata = {
   twitter: {
     title: "Hackathon Cheat Sheet — Copy-Paste AI Prompts",
     description:
-      "Paste-ready prompts for your AI agent at every phase of a hackathon. Grab one, fill the brackets, get back to building.",
-  },
-};
-
-// Full class names, never interpolated fragments: Tailwind only generates
-// utilities it can find as literal strings in the source.
-const ACCENTS = {
-  volt: {
-    text: "text-volt",
-    border: "border-volt/25",
-    bg: "bg-volt/10",
-    hover: "hover:bg-volt/10 hover:text-volt",
-  },
-  spark: {
-    text: "text-spark",
-    border: "border-spark/25",
-    bg: "bg-spark/10",
-    hover: "hover:bg-spark/10 hover:text-spark",
-  },
-  primary: {
-    text: "text-primary",
-    border: "border-primary/25",
-    bg: "bg-primary/10",
-    hover: "hover:bg-primary/10 hover:text-primary",
-  },
-  success: {
-    text: "text-success",
-    border: "border-success/25",
-    bg: "bg-success/10",
-    hover: "hover:bg-success/10 hover:text-success",
+      "Paste-ready prompts for your AI agent at every phase of a hackathon. Copy one, send it, answer its questions, get back to building.",
   },
 };
 
 const HOW_TO_USE = [
   {
     step: "01",
-    text: "Paste the context primer once per chat. Every prompt below assumes your agent already knows your deadline, stack, and judging criteria.",
+    text: "Copy and send. Nothing to fill in first: each prompt interviews you for what it needs, so answer its questions in the chat instead of editing the text.",
   },
   {
     step: "02",
-    text: "Fill every bracket before you send. A prompt with [HOURS] still in it gets you generic advice.",
+    text: "Start with the context primer in Set Up. Later prompts reuse those answers, so your agent stops asking about your deadline and stack.",
   },
   {
     step: "03",
-    text: "Answer the agent's questions instead of re-pasting. These prompts are written to make it stop and ask when a decision is yours.",
+    text: "Mind the \"run first\" line. A prompt that needs a spec or a deploy links to the prompt that produces it, and tells your agent to send you back if it is missing.",
   },
 ];
 
@@ -83,7 +50,7 @@ export default function CheatSheetPage() {
     <div className="relative min-h-screen">
       <div className="noise pointer-events-none fixed inset-0 z-50" />
 
-      <div className="mx-auto max-w-4xl space-y-12 px-4 py-12 md:px-6 md:py-16">
+      <div className="mx-auto max-w-4xl space-y-10 px-4 py-12 md:px-6 md:py-16">
         <JsonLd data={cheatSheetHowToJsonLd()} />
         <BreadcrumbJsonLd path="/cheat-sheet" />
 
@@ -115,9 +82,9 @@ export default function CheatSheetPage() {
             <span className="font-semibold text-foreground">
               {CHEAT_PROMPT_COUNT} paste-ready prompts
             </span>{" "}
-            for the agent you are already building with. No theory, no reading.
-            Find the moment you are in, copy the prompt, fill the brackets, get
-            back to work.
+            for the agent you are already building with. No theory, no blanks to
+            fill in. Pick the phase you are in, copy the prompt, and answer the
+            questions it asks you.
           </p>
           <LastUpdated date={CHEAT_SHEET_UPDATED} />
         </header>
@@ -145,75 +112,9 @@ export default function CheatSheetPage() {
         </section>
 
         {/* ============================================================
-            JUMP NAV — sticky, so the section list follows you down
+            THE SHEET — tabs by phase, one prompt at a time
             ============================================================ */}
-        <nav
-          aria-label="Cheat sheet sections"
-          className="glass sticky top-4 z-40 rounded-xl border border-primary/15 p-2"
-        >
-          <ul className="flex gap-1.5 overflow-x-auto">
-            {CHEAT_SECTIONS.map((section) => {
-              const a = ACCENTS[section.accent];
-              return (
-                <li key={section.slug}>
-                  <a
-                    href={`#${section.slug}`}
-                    className={`block whitespace-nowrap rounded-lg px-3 py-1.5 font-code text-xs text-muted-foreground transition-colors ${a.hover}`}
-                  >
-                    {section.label}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-
-        {/* ============================================================
-            SECTIONS
-            ============================================================ */}
-        {CHEAT_SECTIONS.map((section) => {
-          const a = ACCENTS[section.accent];
-          const Icon = section.icon;
-          return (
-            <section
-              key={section.slug}
-              id={section.slug}
-              className="scroll-mt-24 space-y-5"
-            >
-              <div className="space-y-3 border-t border-border pt-8">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span
-                    className={`flex size-9 items-center justify-center rounded-lg ${a.bg}`}
-                  >
-                    <Icon className={`size-4 ${a.text}`} />
-                  </span>
-                  <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
-                    {section.title}
-                  </h2>
-                  <Badge
-                    variant="outline"
-                    className={`${a.border} ${a.text} font-code text-[10px]`}
-                  >
-                    {section.timing}
-                  </Badge>
-                </div>
-                <p className="max-w-2xl font-body text-sm text-muted-foreground">
-                  {section.subtitle}
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {section.prompts.map((prompt) => (
-                  <PromptCard
-                    key={prompt.id}
-                    prompt={prompt}
-                    accent={section.accent}
-                  />
-                ))}
-              </div>
-            </section>
-          );
-        })}
+        <CheatSheetBrowser />
 
         {/* ============================================================
             WHERE THE REASONING LIVES
@@ -225,7 +126,8 @@ export default function CheatSheetPage() {
           <p className="mt-2 max-w-2xl font-body text-sm text-muted-foreground">
             This page is the short version, written for someone with hours left
             on the clock. The reasoning behind it, the research, and the parts
-            that are about people rather than code all live in the playbook.
+            that are about people rather than code all live in the playbook. The
+            prompts that run a skill come from the skills library.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link
@@ -236,10 +138,10 @@ export default function CheatSheetPage() {
               <ArrowRight className="size-4" />
             </Link>
             <Link
-              href="/non-coders"
+              href="/non-coders/skills"
               className="glow-hover inline-flex items-center gap-2 rounded-lg border border-spark/30 bg-spark/10 px-5 py-2.5 font-display text-sm font-semibold text-spark transition-all hover:bg-spark/20"
             >
-              First hackathon without code
+              Browse the skills
               <ArrowRight className="size-4" />
             </Link>
           </div>

@@ -9,6 +9,13 @@ import {
   Terminal,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import {
+  DEVPOST_AGENT_PROMPT,
+  README_AGENT_PROMPT,
+  SKILLS_INSTALL_PROMPT,
+  SYSTEM_PROMPT_SETUP_COMMAND,
+  skillInstallCommand,
+} from "./agent-prompts";
 
 /**
  * The during-the-hackathon cheat sheet: paste-ready prompts, grouped by the
@@ -16,12 +23,18 @@ import type { LucideIcon } from "lucide-react";
  *
  * This is the operational twin of the playbook. The playbook teaches; this
  * file assumes you already know and just need the words to hand your agent.
- * Prompt text is deliberately verbose and constraint-heavy: an agent with no
- * context produces generic work, so every prompt carries its own context,
- * its own guardrails, and a required output shape.
+ * Three rules hold for every prompt here:
  *
- * Placeholders use [SCREAMING BRACKETS] so the page can highlight them and
- * a reader can see at a glance what they have to fill in.
+ * 1. Self-collecting. No fill-in-the-blank placeholders. Each prompt opens by
+ *    interviewing the reader for what it needs, and tells the agent to skip
+ *    anything it already knows from earlier in the chat.
+ * 2. Prerequisite-aware. A prompt that assumes an artifact (PRD.md, a demo
+ *    script, a deployed URL) tells the agent to check for it and send the
+ *    reader back to the prompt that produces it. Model that in `needs` too,
+ *    so the card can link there.
+ * 3. Skill-first. Where a skill in `skills/` already does the job, the prompt
+ *    installs and runs it rather than reinventing the instructions. Prompts
+ *    shared with a knowledge page are imported from `lib/agent-prompts.ts`.
  */
 
 export type CheatAccent = "volt" | "spark" | "primary" | "success";
@@ -36,12 +49,16 @@ export interface CheatPrompt {
   prompt: string;
   /** Optional one-line field note shown under the prompt. */
   note?: string;
+  /** Ids of prompts that produce what this one assumes already exists. */
+  needs?: string[];
+  /** The page on this site that explains the thinking behind it. */
+  source?: { label: string; href: string };
 }
 
 export interface CheatSection {
-  /** Anchor id, also the jump-nav target. */
+  /** Anchor id, also the tab target. */
   slug: string;
-  /** Short label for the jump nav. */
+  /** Short label for the tab bar. */
   label: string;
   title: string;
   /** Where you are in the event when this section applies. */
@@ -61,63 +78,81 @@ export const CHEAT_SECTIONS: CheatSection[] = [
     title: "Set Up the War Room",
     timing: "First 30 minutes",
     subtitle:
-      "Give your agent the context every later prompt assumes, read the rules before anyone codes, and get an empty app deployed.",
+      "Give your agent the context and the skills every later prompt leans on, read the rules before anyone codes, and get an empty app deployed.",
     icon: Terminal,
     accent: "volt",
     prompts: [
       {
         id: "pin-context",
         title: "Pin the hackathon context",
-        when: "Paste this first, once per chat session. Every other prompt on this page assumes it.",
-        prompt: `You are my build partner for a hackathon. Save this context and apply it to every answer from now on.
+        when: "Paste this first, once per chat session. It interviews you, and every prompt after it reuses the answers.",
+        prompt: `You are my build partner for this hackathon. Before we start, interview me.
 
-EVENT: [HACKATHON NAME]
-TIME LEFT: [HOURS] hours, submission closes [TIME AND TIMEZONE]
-TEAM: [N] people, skills: [WHO CAN DO WHAT]
-PRIZES WE ARE TARGETING: [TRACK OR SPONSOR PRIZE]
-JUDGING CRITERIA: [PASTE THE CRITERIA]
-STACK WE ALREADY KNOW: [STACK]
-DEMO FORMAT: [LIVE DEMO / RECORDED VIDEO / BOOTH]
+Ask me these in one message, numbered, then wait for my answers:
+1. Which hackathon is this, and exactly when does submission close?
+2. How many people are on the team, and what can each of them do?
+3. Which prizes or tracks are we going after, and what are the judging criteria? Tell me I can paste them raw.
+4. What stack do we already know well?
+5. Is the demo live, a recorded video, or a booth?
 
-Rules for the rest of this hackathon:
+Once I answer, remember all of it and apply it to every reply for the rest of this hackathon, under these rules:
 1. Optimize for a working demo at the deadline, not for clean code.
 2. Never add a library, language, or service outside our stack unless I ask.
 3. When I report a bug, ask for the exact error text before guessing.
 4. Keep answers under 200 words unless I ask for code.
 5. If something will take longer than the time we have left, say so and offer the smaller version instead.
 
-Reply with a one-paragraph summary of our situation and the single biggest risk you see.`,
+Then reply with a one-paragraph summary of our situation and the single biggest risk you see.`,
         note: "Re-paste it after any context reset. An agent that forgets your deadline will happily suggest a two-day refactor.",
+      },
+      {
+        id: "install-skills",
+        title: "Install the hackathon skills",
+        when: "Once per machine. Several prompts here run a skill, and this is what puts them on your laptop.",
+        prompt: SKILLS_INSTALL_PROMPT,
+        note: "Installs every skill in one go: scaffolding, feature building, bug fixing, demo prep, README and Devpost writing.",
+        source: { label: "Skills & Commands", href: "/non-coders/skills" },
+      },
+      {
+        id: "system-prompt",
+        title: "Set the rules your agent follows all weekend",
+        when: "Right after the repo exists, before the first feature.",
+        prompt: SYSTEM_PROMPT_SETUP_COMMAND,
+        note: "CLAUDE.md is read by Claude Code, AGENTS.md by Cursor and Codex. Setting both means one set of rules for the whole team.",
+        source: { label: "The System Prompt", href: "/non-coders/system-prompt" },
       },
       {
         id: "rules-brief",
         title: "Turn the rules into a one-page brief",
         when: "Before you pick an idea. Do this while everyone is still doing icebreakers.",
-        prompt: `Here are the official rules, judging criteria, and sponsor prizes for [HACKATHON NAME]:
+        prompt: `Turn this hackathon's rules into a one-page brief I can act on.
 
-[PASTE THE RULES PAGE, THE DEVPOST DESCRIPTION, AND THE PRIZE LIST]
+First, ask me for the official rules, the judging criteria, and the full prize list. Tell me I can paste the rules page, the Devpost description, and the prize table raw, and that you will read them. Wait until you have all three. If you do not already know our team size and how many hours are left, ask for those too.
 
-Extract, in this order:
+Then extract, in this order:
 1. Hard requirements that disqualify us if we miss them (deadlines, public repo, video length, team size, "must start from scratch" rules).
-2. Every prize with its criteria, ranked by how winnable it looks for [N] people in [HOURS] hours, with one line on why.
+2. Every prize with its criteria, ranked by how winnable it looks for our team in the time we have, with one line on why.
 3. What each judging criterion actually rewards, and what a demo that scores well on it looks like.
 4. Anything ambiguous I should ask an organizer about today.
 
 Short bullets. No preamble.`,
         note: "Sponsor prizes are the least contested money in the room. Most teams never read past the grand prize.",
+        source: { label: "Validation", href: "/playbook/validation" },
       },
       {
         id: "deploy-skeleton",
         title: "Deploy an empty app before you build anything",
         when: "Right after the team agrees on a stack, before the first feature exists.",
-        prompt: `Before we build features, get an empty app deployed and live.
+        prompt: `Before we build any features, get an empty app deployed and live.
 
-STACK: [STACK]
-REPO: [GITHUB URL, OR "create a new one"]
-PROJECT NAME: [NAME]
+Ask me first, in one message:
+1. What is the project called?
+2. What stack are we using?
+3. Do we have a repo already, or should you create one?
+4. Where are we deploying, and am I logged into that CLI yet?
 
-Do this now:
-1. Scaffold the smallest app that renders one page reading "[PROJECT NAME] is live".
+Then:
+1. Scaffold the smallest app that renders one page reading "<project name> is live".
 2. Initialize git, commit, and push.
 3. Deploy it and give me the public URL.
 4. Put the deploy command in the README so any teammate can ship.
@@ -142,52 +177,59 @@ Stop once the URL is live and report it. Do not add features.`,
         id: "ideas-against-prizes",
         title: "Generate ideas aimed at actual prizes",
         when: "Your team is throwing out ideas with no filter and going in circles.",
-        prompt: `Give me 10 project ideas for [HACKATHON NAME] that [N] people can demo in [HOURS] hours.
+        prompt: `Give me project ideas aimed at prizes we can actually win.
 
-Constraints:
-- Each idea maps to at least one of these prizes or tracks: [PASTE PRIZES].
-- Each is demoable live in 3 minutes.
-- Uses only what we already know: [STACK AND APIS].
-- Nothing that needs real users, a trained model, or data we do not have.
+First ask me, in one numbered list, whatever you do not already know from this chat:
+1. Which prizes and tracks are on the table? I can paste the list.
+2. How many hours until submission, and how many people are building?
+3. What stack and APIs do we already know?
+4. Anything we have already ruled out?
 
-For each idea: the one-line pitch, the one demo moment judges will remember, the riskiest technical part, and which prize it targets.
+Then give me 10 ideas. For each: the one-line pitch, the one demo moment judges will remember, the riskiest technical part, and which prize it targets.
+
+Hard constraints: demoable live in 3 minutes, buildable in the time we have, nothing that needs real users, a trained model, or data we do not have.
 
 Then rank all 10 and tell me which one you would build and why.`,
+        source: { label: "Ideation", href: "/playbook/ideation" },
       },
       {
         id: "kill-the-idea",
         title: "Try to kill the idea",
         when: "Everyone loves an idea and nobody has said the scary part out loud yet.",
-        prompt: `Play skeptical judge and senior engineer. Try to kill this idea.
+        prompt: `Play skeptical judge and senior engineer, and try to kill our idea.
 
-IDEA: [ONE PARAGRAPH]
-TIME LEFT: [HOURS] hours. TEAM: [N] people, [SKILLS].
-JUDGING CRITERIA: [PASTE].
+Ask me for the idea in a paragraph, plus anything you still do not know: hours left, team size and skills, and the judging criteria. Wait for my answers.
 
-Answer bluntly:
+Then answer bluntly:
 1. What is the hardest technical piece, and what does the demo look like if it does not work?
 2. What has to be true for this to be finished on time, and which of those is unlikely?
 3. Which judging criterion does this score worst on?
 4. Has this been built at 50 other hackathons? If yes, what one change would make ours different?
-5. Verdict: build it, shrink it, or drop it. If shrink it, give me the smaller version.`,
+5. Verdict: build it, shrink it, or drop it. If shrink it, give me the smaller version.
+
+Do not soften any of it. I would rather hear this now than from a judge.`,
         note: "An idea that survives this at hour 2 is one you are not abandoning at hour 18.",
+        source: { label: "Validation", href: "/playbook/validation" },
       },
       {
         id: "demo-path",
         title: "Cut the idea down to the demo path",
         when: "The idea is locked and someone is about to start building the wrong thing.",
-        prompt: `Turn this idea into the exact demo we will perform for judges, then cut everything else.
+        prompt: `Turn our idea into the exact demo we will perform for judges, then cut everything else.
 
-IDEA: [IDEA]
-DEMO LENGTH: [3] minutes
+Ask me first: the idea, how long our demo slot is, and how many hours we have left to build.
 
+Then:
 1. Write the demo as a numbered, click-by-click script: what I show, in order, and what happens on screen at each step.
 2. List only the features required for those clicks to work. That list is our entire scope.
 3. List everything else we could have built under a heading "NOT BUILDING".
 4. Estimate build time per in-scope feature for someone working with an AI agent, and flag anything over 2 hours.
 
-Be ruthless. If the script cannot be built in [HOURS] hours, cut steps until it can.`,
+If the script cannot be built in the time we have, cut steps until it can and tell me exactly what you cut.
+
+Keep this script in the conversation. Later prompts will ask you for it.`,
         note: "Scope is not what you plan to build. It is the shortest path through the demo, and nothing else.",
+        source: { label: "Execution", href: "/playbook/execution" },
       },
     ],
   },
@@ -197,62 +239,65 @@ Be ruthless. If the script cannot be built in [HOURS] hours, cut steps until it 
     title: "Plan the Build",
     timing: "Before the first feature",
     subtitle:
-      "Write the spec your agent will actually follow, put the schedule on a clock, and split files so nobody overwrites anybody.",
+      "Write the spec every scaffold prompt reads, put the schedule on a clock, and split files so nobody overwrites anybody.",
     icon: Rocket,
     accent: "primary",
     prompts: [
       {
         id: "write-the-spec",
-        title: "Write the spec your agent follows",
-        when: "Before any feature code. Ten minutes here prevents an agent from inventing its own architecture at hour 12.",
-        prompt: `Write two files and put them in the repo root.
+        title: "Write the spec (AGENTS.md and PRD.md)",
+        when: "Before any feature code. The scaffold prompts refuse to run without these two files.",
+        needs: ["demo-path"],
+        prompt: `Install the Domain to Spec skill and run it:
 
-PROJECT: [NAME]
-IDEA: [ONE PARAGRAPH]
-DEMO SCRIPT: [PASTE THE CLICK-BY-CLICK SCRIPT]
-STACK: [STACK]
+${skillInstallCommand("domain-to-spec")}
 
-1. PRD.md: the problem, the demo path, the in-scope feature list, the data models, external APIs and env vars, and an explicit "out of scope" section.
-2. AGENTS.md: how you work in this repo. Include the run and build commands, the folder layout, code style, "never install a dependency without asking", "never refactor working code", and "always leave the app in a state that runs".
+Use the domain-to-spec skill to write AGENTS.md and PRD.md to the repo root for this project.
 
-Keep both under a page. Show me the files and wait for my approval before writing any feature code.`,
+Interview me first, all questions in one message rather than one at a time, because we are on the clock: what we are building, who it is for, the demo we are going to perform, our stack, and how many hours are left. If we have not agreed on a click-by-click demo script yet, say so and tell me to run the "Cut the idea down to the demo path" prompt before this one.
+
+Keep the PRD to one page: the problem, the demo path, the in-scope feature list, the data models, external APIs and env vars, and an explicit "out of scope" section. Do not skip the out-of-scope section, it is the part that stops us building the wrong thing at hour 14.
+
+Show me both files and wait for my approval before writing any feature code.`,
         note: "Point CLAUDE.md at AGENTS.md so every tool on the team loads the same rules.",
+        source: { label: "Domain to Spec skill", href: "/non-coders/skills/domain-to-spec" },
       },
       {
         id: "hour-by-hour",
         title: "Put the build on a clock",
         when: "The plan exists in everyone's head and nowhere else.",
-        prompt: `Build an hour-by-hour plan for the rest of this hackathon.
+        needs: ["demo-path"],
+        prompt: `Put the rest of this hackathon on a clock.
 
-RIGHT NOW: [CURRENT TIME]. SUBMISSION DEADLINE: [TIME].
-TEAM: [NAMES AND SKILLS].
-SCOPE: [PASTE THE IN-SCOPE FEATURE LIST].
+Ask me for whatever you do not already know: the current time, the submission deadline, who is on the team and what each person can do, our in-scope feature list, and whether anyone plans to sleep. If we have not cut the scope to a demo path yet, tell me to do that first, because a schedule over an uncut scope is fiction.
+
+Then give me an hour-by-hour plan as a table: time block, owner, task, what done means.
 
 Rules for the plan:
 - A deployed, working app at every checkpoint. No big-bang integration at the end.
-- Reserve the last [3] hours for the demo video, README, and submission. Nothing new gets built in that window.
+- Reserve the last 3 hours for the demo video, README, and submission. Nothing new gets built in that window.
 - Include a feature freeze time, and a cut-scope decision point at the halfway mark.
-- Every block has one owner and a definition of done.
-- Include sleep and food: [SLEEP PLAN].
-
-Output a table: time block, owner, task, done means.`,
+- Every block has exactly one owner.
+- Include food and sleep.`,
+        source: { label: "Execution", href: "/playbook/execution" },
       },
       {
         id: "split-the-work",
         title: "Split the work so nobody collides",
         when: "Two or more people are about to open the same files.",
-        prompt: `Split this scope across [N] people so we never edit the same file at the same time.
+        needs: ["write-the-spec"],
+        prompt: `Split our scope so nobody overwrites anybody.
 
-SCOPE: [FEATURE LIST]
-PEOPLE AND SKILLS: [LIST]
+Read PRD.md in the repo root first. If it is not there, stop and tell me to run the "Write the spec" prompt before this one, then wait. Ask me who is on the team and what each person can do if you do not already know.
 
-Give me:
+Then give me:
 1. A file and folder ownership map, one owner per area.
 2. The interfaces between areas (API routes, shared types, component props), written out now so both sides can build before either exists.
 3. A branch and merge rule simple enough to follow at 4am.
 4. The three most likely merge conflicts and how we avoid them.
 
 Then write the shared types file first so everyone can start.`,
+        source: { label: "Team Formation", href: "/playbook/team-formation" },
       },
     ],
   },
@@ -268,63 +313,86 @@ Then write the shared types file first so everyone can start.`,
     prompts: [
       {
         id: "scaffold",
-        title: "Scaffold the whole demo path",
+        title: "Scaffold the project from the spec",
         when: "Spec approved, deploy pipeline live, nothing built yet.",
-        prompt: `Scaffold the app now, following PRD.md and AGENTS.md exactly.
+        needs: ["write-the-spec"],
+        prompt: `Install the Quickstart skill and run it:
 
-Work in this order and stop at each checkpoint for my OK:
-1. Every route and page on the demo path, with placeholder content and real navigation between them.
-2. The shared layout, nav, and visual theme: [THEME, OR "dark, high contrast, one accent color"].
-3. Types and API contracts from the PRD, returning mocked data.
-4. Deploy and give me the live URL.
+${skillInstallCommand("quickstart")}
 
-Every step ends with the app running and deployed. No half-finished screens.`,
+Use the quickstart skill to scaffold this project.
+
+Before anything else, check that AGENTS.md and PRD.md exist in the repo root. If either is missing, stop and tell me to run the "Write the spec" prompt from the cheat sheet first: the scaffold skills refuse to run without them, and I would rather fix that now than half way through.
+
+Then chain the steps, pausing for my confirmation between each: domain-to-spec (skip it if the two files are already good), scaffold-frontend, and scaffold-backend. Skip the backend entirely if PRD.md says we do not need one.
+
+When it finishes, deploy and give me the live URL. Placeholder screens that navigate correctly are fine. Half-finished screens are not.`,
         note: "Clickable placeholders mean you always have something to show, even if the last feature never lands.",
+        source: { label: "Quickstart skill", href: "/non-coders/skills/quickstart" },
+      },
+      {
+        id: "v0-prompt",
+        title: "Get a frontend that does not look like a template",
+        when: "The judges will see this on a projector and your UI is the generic AI default.",
+        needs: ["write-the-spec"],
+        prompt: `Install the v0 Prompt Crafter skill and run it:
+
+${skillInstallCommand("v0-prompt-crafter")}
+
+Use the v0-prompt-crafter skill to turn our spec into a Vercel v0 prompt for the frontend.
+
+Read PRD.md in the repo root first. If it is not there, ask me for a one-paragraph description of the product and who it is for, or tell me to run the "Write the spec" prompt if I would rather do this properly.
+
+Commit to one bold aesthetic instead of a safe default, and tell me in one line what look you picked and why it fits this hackathon's judges. Output the final prompt as a single copyable block.`,
+        source: { label: "v0 Prompt Crafter skill", href: "/non-coders/skills/v0-prompt-crafter" },
       },
       {
         id: "one-feature",
         title: "Build one feature end to end",
         when: "The workhorse prompt. Use it once per feature, all day.",
-        prompt: `Build this one feature end to end. Do not touch anything else.
+        needs: ["scaffold"],
+        prompt: `Install the Feature Builder skill and run it:
 
-FEATURE: [WHAT IT DOES, FROM THE USER'S POINT OF VIEW]
-DONE WHEN: [THE EXACT BEHAVIOR I CAN CLICK THROUGH]
+${skillInstallCommand("feature-builder")}
 
-Steps:
-1. Give me your plan in 5 bullets and the files you will touch. Wait for my OK.
-2. Implement it, including the loading state, the empty state, and the error state.
-3. Run it and show me the click path that proves it works.
-4. Commit with a clear message and deploy.
+Use the feature-builder skill to build one feature end to end, and touch nothing else.
+
+Ask me which feature, and what has to be true for it to count as done: the exact behavior I should be able to click through. If my answer is vague, push back until it is specific and observable.
+
+Then give me your plan and the files you will touch, and wait for my OK before writing code. Implement the loading state, the empty state, and the error state, not just the happy path. When it works, show me the click path that proves it, commit with a clear message, and deploy.
 
 If you hit a decision I have not made, stop and ask instead of guessing.`,
+        source: { label: "Feature Builder skill", href: "/non-coders/skills/feature-builder" },
       },
       {
         id: "new-api",
         title: "Wire an API you have never used",
-        when: "Adding a sponsor API or any service the agent might hallucinate parameters for.",
-        prompt: `Add [API OR SERVICE] to the project.
+        when: "Adding a sponsor API, or anything the agent might invent parameters for.",
+        prompt: `Add a new service to the project without hallucinating any of it.
 
-DOCS: [PASTE THE DOCS URL OR THE QUICKSTART SNIPPET]
-WHAT WE NEED FROM IT: [ONE SENTENCE]
-MY KEY: in [.env.local] as [VARIABLE_NAME]
+Ask me first: which service, what I need it to do in one sentence, where the docs are (I can paste a URL or the quickstart snippet), and where my API key lives.
 
-1. Use only endpoints and parameters that appear in the docs I gave you. Do not invent any.
-2. Write the smallest possible call as a standalone script first, run it, and show me the real response.
-3. Only once that response is real, wire it into the app behind [ROUTE OR FUNCTION].
-4. Handle failure with a visible message. A failed call must never crash the demo.`,
+Then:
+1. Read the docs I give you. Use only endpoints and parameters that appear there. If something I asked for is not in the docs, tell me instead of inventing it.
+2. Write the smallest possible call as a standalone script, run it, and show me the real response.
+3. Only once that response is real, wire it into the app.
+4. Store the key in an environment variable, never in the code.
+5. Handle failure with a visible message. A failed call must never crash the demo.`,
         note: "Sponsor booths hand out raised rate limits and free credits to anyone who walks over and asks.",
+        source: { label: "Using APIs", href: "/non-coders/apis" },
       },
       {
         id: "seed-demo-data",
         title: "Seed data that makes the demo sing",
         when: "Your app works but demos on an empty database or a 40-second cold call.",
-        prompt: `Our demo needs data that looks real and loads instantly.
+        needs: ["demo-path"],
+        prompt: `Give our demo data that looks real and loads instantly.
 
-APP: [WHAT IT DOES]
-DEMO SCRIPT: [THE STEPS JUDGES WILL SEE]
+Ask me: what the app does, the steps judges will actually see, and which feature we most want to show off. If we have not written the click-by-click demo script, ask me to walk you through it now and write it down as you go.
 
-1. Create a seed file with [N] realistic records covering exactly the cases in the demo script, including one edge case that shows off [FEATURE].
-2. Add a one-command reset that restores this exact state so I can run the demo twice in a row.
+Then:
+1. Create a seed file with realistic records covering exactly those steps, including one edge case that shows off the feature I named.
+2. Add a one-command reset that restores this exact state, so I can run the demo twice in a row.
 3. Keep the real code path intact: seeded data goes through the same functions as live data. No demo-only branches that hide broken logic.
 4. Tell me in one line each which parts of the demo are real and which are seeded.`,
         note: "Seed the data, never fake the feature. Judges ask, and the room can tell when the answer is rehearsed.",
@@ -345,14 +413,15 @@ DEMO SCRIPT: [THE STEPS JUDGES WILL SEE]
         id: "debug-loop",
         title: "The debug loop",
         when: "Anything is broken and the agent's first three fixes did not work.",
-        prompt: `Debug this with me. Follow the loop and do not skip steps.
+        prompt: `Install the Bugfix Doctor skill and run it:
 
-WHAT I DID: [EXACT STEPS]
-WHAT I EXPECTED: [X]
-WHAT HAPPENED: [Y]
-ERROR, VERBATIM: [PASTE THE FULL ERROR AND STACK TRACE]
+${skillInstallCommand("bugfix-doctor")}
 
-Loop:
+Use the bugfix-doctor skill on this bug.
+
+Ask me first for exactly what I did, what I expected, what happened, and the full error text with the stack trace. Do not start guessing before you have the verbatim error. If I paraphrase it, ask again for the real thing.
+
+Then work the loop and do not skip steps:
 1. Restate the failure in one sentence.
 2. Give me your top 3 hypotheses, ranked, each with the one-line check that proves or kills it.
 3. Run the cheapest check first, or tell me to run it.
@@ -361,18 +430,18 @@ Loop:
 
 No refactors. No "while we are here" changes.`,
         note: "Paste the whole stack trace. Summarizing the error is how people spend an hour on a typo.",
+        source: { label: "Bugfix Doctor skill", href: "/non-coders/skills/bugfix-doctor" },
       },
       {
         id: "works-locally",
         title: "Works locally, breaks in production",
         when: "The deployed URL behaves differently from your machine.",
-        prompt: `It works on my machine and fails when deployed.
+        needs: ["deploy-skeleton"],
+        prompt: `It works on my machine and fails when deployed. Find out why.
 
-LOCAL: works.
-DEPLOYED AT [URL]: [WHAT HAPPENS]
-BUILD OR RUNTIME LOG: [PASTE]
+Ask me for the deployed URL, what happens there versus locally, and the build or runtime log from the host. Wait for the log before theorizing. If we have never deployed successfully, say so and tell me to run the "Deploy an empty app" prompt first, because we are debugging two problems at once otherwise.
 
-Check these in order and report what you find at each: environment variables missing on the host, build-time versus run-time code, case-sensitive file paths, node version, packages missing from the lockfile, API keys restricted to localhost, CORS, and anything writing to the local filesystem.
+Then check these in order and report what you find at each: environment variables missing on the host, build-time versus run-time code, case-sensitive file paths, node version, packages missing from the lockfile, API keys restricted to localhost, CORS, and anything writing to the local filesystem.
 
 Then fix the confirmed cause, redeploy, and give me the working URL.`,
       },
@@ -380,31 +449,31 @@ Then fix the confirmed cause, redeploy, and give me the working URL.`,
         id: "back-to-working",
         title: "Get back to the last working state",
         when: "Something that worked an hour ago is broken and nobody knows what changed.",
-        prompt: `We broke something that used to work and I do not know what.
+        prompt: `Something that used to work is broken and I do not know what changed.
 
-LAST KNOWN GOOD: [WHEN, OR THE COMMIT]
-BROKEN NOW: [BEHAVIOR]
+Ask me roughly when it last worked and what the broken behavior is now. Then inspect the repo yourself instead of asking me to describe the commits.
 
+Then:
 1. Show me the commits since then, one line each.
 2. Tell me which are most likely responsible and why.
 3. Give me the exact commands to get back to the last working state on a new branch, without losing today's work.
 4. Once we are working again, reapply the changes one at a time and test after each.
 
-Do not force push. Do not delete branches.`,
+Do not force push. Do not delete branches. Ask before anything destructive.`,
         note: "Commit every 30 minutes. This prompt is only as good as your last commit.",
       },
       {
         id: "stuck-30",
         title: "Stuck for 30 minutes",
         when: "You have burned half an hour on one problem and the clock is still running.",
-        prompt: `I have been stuck on [PROBLEM] for 30 minutes and we have [HOURS] hours left.
+        prompt: `I am stuck and the clock is running.
 
-1. Give me the fastest workaround that keeps the demo intact, even if it is ugly.
-2. Tell me in one line what we lose by taking it.
-3. Tell me what the demo looks like if we cut this feature entirely.
-4. Recommend one of the three, in two sentences.
+Ask me what I am stuck on and how many hours we have left. Then give me exactly three things:
+1. The fastest workaround that keeps the demo intact, even if it is ugly.
+2. What we lose by taking it, in one line.
+3. What the demo looks like if we cut this feature entirely.
 
-Nobody is reading our source code. Optimize for what judges will see.`,
+Then recommend one of the three in two sentences. Nobody is reading our source code, so optimize for what judges will see.`,
       },
     ],
   },
@@ -414,7 +483,7 @@ Nobody is reading our source code. Optimize for what judges will see.`,
     title: "Ship It",
     timing: "Last 3 hours",
     subtitle:
-      "Feature freeze, harden the exact demo path, then write the README and submission before you are allowed to touch code again.",
+      "Feature freeze, harden the exact demo path, then write the README and the submission before anyone is allowed to touch code again.",
     icon: AlarmClock,
     accent: "success",
     prompts: [
@@ -422,17 +491,17 @@ Nobody is reading our source code. Optimize for what judges will see.`,
         id: "harden",
         title: "Pre-demo hardening pass",
         when: "Feature freeze. Nothing new gets built after this prompt.",
-        prompt: `Features are frozen. Run a hardening pass on the deployed app.
+        needs: ["demo-path", "deploy-skeleton"],
+        prompt: `Features are frozen. Harden the demo path.
 
-DEMO SCRIPT: [PASTE THE CLICK-BY-CLICK SCRIPT]
-PRESENTING ON: [PROJECTOR / LAPTOP / PHONE]
+Ask me for the click-by-click demo script and what we are presenting on: projector, laptop, or phone. If we never wrote a script, ask me to walk you through the demo in order and write it down as you go. If the app is not deployed yet, deploy it first and tell me the URL, because we are not demoing from localhost.
 
-Walk the exact demo path and fix only what breaks it:
+Then walk that exact path on the deployed app, and fix only what breaks it:
 1. Every click works on the deployed URL in a fresh browser with no cache and no login.
 2. A loading state anywhere something takes over 300ms, so it never looks frozen.
 3. No console errors, no placeholder text, no debug output on screen.
 4. It looks right at the resolution we present on.
-5. It survives a bad network: [WHAT SHOULD HAPPEN WHEN AN API CALL FAILS].
+5. It survives a failed API call without crashing.
 
 List what you fixed, and anything still broken that I need to route around live.`,
       },
@@ -440,38 +509,34 @@ List what you fixed, and anything still broken that I need to route around live.
         id: "readme",
         title: "README a judge will actually skim",
         when: "Once the app is frozen and deployed.",
-        prompt: `Write the README for [PROJECT NAME], for a judge who will spend 40 seconds on it.
-
-WHAT IT DOES: [ONE PARAGRAPH]. WHO IT IS FOR: [USER]. THE PROBLEM: [PROBLEM].
-STACK: [STACK]. LIVE URL: [URL]. DEMO VIDEO: [URL].
-SPONSOR TECH USED: [LIST], and how each is actually used.
-
-Structure:
-- One-line description, then the live link and video link at the very top.
-- A screenshot placeholder right after, with the filename to drop in.
-- "What it does" in 3 bullets for a non-technical reader.
-- "How it works": short architecture description plus the one interesting technical decision.
-- "Run it locally": exact commands and required env vars.
-- "What is next" in 3 bullets.
-
-No badge walls, no emoji spam, no filler.`,
+        prompt: README_AGENT_PROMPT,
+        note: "It reads the repo first and only asks for what it cannot find, so answer the questions and let it write.",
+        source: { label: "Submission", href: "/playbook/submission" },
+      },
+      {
+        id: "devpost",
+        title: "Write the Devpost submission",
+        when: "After the README, while someone else records the video.",
+        prompt: DEVPOST_AGENT_PROMPT,
+        source: { label: "Submission", href: "/playbook/submission" },
       },
       {
         id: "submission-audit",
         title: "Audit the submission before the deadline",
         when: "Two hours out. Run it even if you think you are done.",
-        prompt: `We submit to [PLATFORM] in [HOURS] hours. Audit us against the rules.
+        prompt: `Audit our submission before the deadline.
 
-RULES AND REQUIRED FIELDS: [PASTE]
-WHAT WE HAVE: repo [URL], live app [URL], video [URL OR "not recorded"], README [DONE OR NOT].
+Ask me: which platform we submit on, how long we have left, and what we have so far (repo, live app, video, README). Ask me to paste the required fields and rules if you do not already have them from earlier in this chat.
 
+Then:
 1. List every required field and artifact, marked done, missing, or at risk.
 2. Flag anything that disqualifies us: private repo, video too long, wrong track, missing team member, late submission.
 3. Give me the order to finish the missing pieces in, given the time left.
-4. Draft the submission copy: tagline, elevator pitch, what it does, how we built it, challenges, what we learned, what is next. Use: [PROJECT DETAILS].
+4. Draft the submission copy: tagline, elevator pitch, what it does, how we built it, challenges, what we learned, what is next. Ask me for anything you need to write that honestly.
 
 Submission-blocking items first.`,
         note: "Submit a rough draft early. You can edit until the deadline and you cannot submit after it.",
+        source: { label: "Submission", href: "/playbook/submission" },
       },
     ],
   },
@@ -486,57 +551,75 @@ Submission-blocking items first.`,
     accent: "spark",
     prompts: [
       {
+        id: "demo-script",
+        title: "The timed demo script and backup plan",
+        when: "You know what you built and have not decided how to show it.",
+        needs: ["demo-path"],
+        prompt: `Install the Demo Prep skill and run it:
+
+${skillInstallCommand("demo-prep")}
+
+Use the demo-prep skill to write our demo script.
+
+Ask me for the app and what it does, how long our slot is, what is deployed versus mocked, and the order of clicks I plan to show. Read the repo to fill in anything you can find yourself. If we never agreed on a click path, build one with me now rather than assuming.
+
+Give me the timed script, the exact click path, the backup plan for when the live app fails, and a rehearsal checklist. Mark the one moment judges should be impressed by, so I know what not to rush past.`,
+        source: { label: "Demo Prep skill", href: "/non-coders/skills/demo-prep" },
+      },
+      {
         id: "pitch-script",
         title: "The pitch script",
-        when: "You know what you built and have not decided what to say about it.",
-        prompt: `Write our pitch script for [LENGTH] minutes, judged on [PASTE JUDGING CRITERIA].
+        when: "You have the demo and need the words around it.",
+        needs: ["demo-path"],
+        prompt: `Write our pitch script.
 
-PROJECT: [NAME]
-PROBLEM: [WHO HURTS, AND HOW]
-WHAT WE BUILT: [ONE PARAGRAPH]
-THE HARD PART: [THE TECHNICAL THING WE ARE PROUD OF]
-DEMO SCRIPT: [PASTE THE CLICK-BY-CLICK SCRIPT]
+Ask me for whatever you do not already know: how long the pitch is, the judging criteria, what we built, who the problem hurts and how, the technical part we are proud of, and the demo click order.
 
-Structure:
+Then write it in this shape:
 - First 15 seconds: the hook. A concrete moment or a real number, never "in today's world".
 - 20 seconds: the problem, told through one person's version of it.
-- 60 seconds: demo narration tied to the click script.
-- 15 seconds: how it works, naming [SPONSOR TECH] where we genuinely used it.
+- 60 seconds: demo narration tied to the click order I gave you.
+- 15 seconds: how it works, naming sponsor tech only where we genuinely used it.
 - 10 seconds: what is next, then the ask.
 
-Spoken language, short sentences, no jargon. Mark the pauses. Give me the word count and how long it takes to read at a calm pace.`,
+Spoken language, short sentences, no jargon. Mark the pauses. Give me the word count and how long it takes to read at a calm pace, and rescale the sections if it does not fit our slot.`,
         note: "Read it out loud once. Any sentence you stumble on is written wrong, not read wrong.",
+        source: { label: "Pitching", href: "/playbook/pitching" },
       },
       {
         id: "video-shot-list",
         title: "Demo video shot list",
         when: "You have to record and the deadline is close.",
-        prompt: `Turn our demo into a [LENGTH] video I can record in one take.
+        needs: ["demo-path"],
+        prompt: `Turn our demo into a video I can record in one take.
 
-APP: [URL]
-DEMO SCRIPT: [PASTE]
-TOOLS: [SCREEN RECORDER, MIC]
+Ask me: how long the video is allowed to be, the app URL, the demo steps in order, and what I am recording with.
 
-Give me:
+Then give me:
 1. A shot list as a table: timestamp, what is on screen, what I say.
 2. The exact setup before recording: tabs, window size, zoom level, seeded data, notifications off.
 3. The opening sentence, written to be said in under 5 seconds.
 4. Three things that ruin hackathon demo videos, and what to do instead.
 
 Assume no editing beyond trimming the ends.`,
+        source: { label: "Submission", href: "/playbook/submission" },
       },
       {
         id: "judge-qa",
         title: "Judge Q&A drill",
         when: "Twenty minutes before you present, with the team in the room.",
-        prompt: `You are a hackathon judge. Our project: [ONE PARAGRAPH], built in [HOURS] hours on [STACK].
+        prompt: `You are a hackathon judge. Drill me.
 
-1. Ask the 8 questions you would actually ask, hardest first, including the uncomfortable ones: what is real versus mocked, why this is not just a wrapper, what breaks at scale.
-2. For each, give me a two-sentence answer I can say out loud, honest about what [HOURS] hours buys.
+Ask me first: what we built, how long we had, our stack, and which parts are real versus mocked. Push me for an honest answer on that last one.
+
+Then:
+1. Ask the 8 questions you would actually ask, hardest first, including the uncomfortable ones: what is mocked, why this is not just a wrapper, what breaks at scale.
+2. For each, give me a two-sentence answer I can say out loud, honest about what our hours bought.
 3. Tell me the one question that exposes our weakest point, and how to answer it without lying or getting defensive.
 
 Then quiz me one question at a time and score my answers.`,
         note: "The honest answer to \"what is mocked?\" wins more rooms than the impressive one.",
+        source: { label: "Pitching", href: "/playbook/pitching" },
       },
     ],
   },
@@ -546,7 +629,7 @@ Then quiz me one question at a time and score my answers.`,
     title: "Panic Buttons",
     timing: "When it is going wrong",
     subtitle:
-      "Prompts for the last few hours, when the right move is triage, not engineering.",
+      "Prompts for the last few hours, when the right move is triage rather than engineering.",
     icon: Siren,
     accent: "primary",
     prompts: [
@@ -554,65 +637,61 @@ Then quiz me one question at a time and score my answers.`,
         id: "triage",
         title: "Three hours left and it does not work",
         when: "The build is behind and someone needs to make a call.",
-        prompt: `Triage. [HOURS] hours left, submission at [TIME].
+        prompt: `Triage what is left. I need a decision, not options.
 
-WORKS: [WHAT WORKS]
-BROKEN: [WHAT DOES NOT]
-NOT STARTED: [WHAT IS MISSING]
-DEMO SCRIPT: [PASTE]
+Ask me in one message: how long until submission, what currently works, what is broken, what has not been started, and what the demo is supposed to show.
 
+Then:
 1. Tell me the smallest demo we can still deliver using what already works.
 2. List what to cut, in order, and what to say about it if judges ask.
 3. Give me the one thing to fix first, chosen by demo impact per minute of work.
-4. Reserve the last [45] minutes for video and submission, and tell me the hard stop time for coding.
+4. Reserve the last 45 minutes for the video and submission, and tell me the hard stop time for coding.
 
-One plan. No options. I will follow it.`,
+One plan. No alternatives. I will follow it.`,
         note: "A small demo that works beats an ambitious one that does not. Every judge has seen the second kind.",
       },
       {
         id: "api-died",
         title: "The API we depend on just died",
         when: "Rate limited, out of credits, or the service is down and your demo needs it.",
-        prompt: `[SERVICE] is down, rate-limited, or out of credits, and our demo depends on it.
+        prompt: `A service our demo depends on is down, rate-limited, or out of credits.
 
-WHAT IT DOES FOR US: [ONE SENTENCE]
-TIME LEFT: [HOURS]
+Ask me which service it is, what it does for us in one sentence, and how long we have left.
 
+Then:
 1. Give me a drop-in replacement we can wire in under 30 minutes, with the code.
 2. If there is none, add a cached-response fallback: record one real successful response now, serve it when the live call fails, and show a visible "cached response" label so we are not claiming something false.
 3. Make the failure path invisible to the audience and obvious to us.
 
-Implement option 1 if it exists, otherwise option 2.`,
+Do option 1 if it exists, otherwise option 2. Do not make me choose, just tell me which you did.`,
       },
       {
         id: "git-mess",
         title: "The repo is a mess and we are out of time",
         when: "Branches diverged, a merge went wrong, or someone force pushed.",
-        prompt: `Our branches have diverged and we are out of time.
+        prompt: `Our repo is a mess and we are out of time.
 
-WHAT I RAN: [COMMANDS]
-WHAT GIT SAYS: [PASTE THE FULL OUTPUT]
-BRANCHES: [LIST]
-THE VERSION THAT DEMOS CORRECTLY IS: [BRANCH OR COMMIT]
+Ask me what I ran, the full output git gave me, which branches exist, and which version demos correctly. Then inspect the repo yourself.
 
+Then:
 1. Tell me in plain English what state the repo is in.
-2. Give me a safe path to one branch containing the demo-critical work, step by step, with exact commands.
+2. Give me a safe path to one branch containing the demo-critical work, step by step, with the exact commands.
 3. Back everything up first: create a backup branch before any destructive command and tell me its name.
 4. If any work has to be dropped, tell me exactly what and ask me before doing it.
 
-Never force push to [MAIN BRANCH].`,
+Never force push to our main branch.`,
       },
       {
         id: "minutes-out",
         title: "Twenty minutes to demo, something broke",
         when: "You are in line to present.",
-        prompt: `[MINUTES] minutes until we present and [WHAT BROKE] just broke.
+        prompt: `We present in minutes and something just broke.
+
+Ask me only two things: how many minutes I have, and what broke. Then answer in under 100 words.
 
 1. Do not refactor. Give me the ugliest fix that makes the demo path work right now.
-2. If it cannot be fixed in [MINUTES] minutes, give me the exact words to route around it live: what I click instead, and what I say.
-3. Give me the fallback order: live app, then local, then the recorded video, then screenshots.
-
-Under 100 words.`,
+2. If it cannot be fixed in the time I gave you, give me the exact words to route around it live: what I click instead, and what I say.
+3. Give me the fallback order: live app, then local, then the recorded video, then screenshots.`,
         note: "Have the video downloaded on your laptop before you present. Venue wifi fails at every hackathon.",
       },
     ],
@@ -623,3 +702,21 @@ export const CHEAT_PROMPT_COUNT = CHEAT_SECTIONS.reduce(
   (total, section) => total + section.prompts.length,
   0,
 );
+
+/** Where a prompt id sits, for rendering "run this first" links. */
+export function findPrompt(id: string):
+  | { section: CheatSection; sectionIndex: number; prompt: CheatPrompt; promptIndex: number }
+  | undefined {
+  for (const [sectionIndex, section] of CHEAT_SECTIONS.entries()) {
+    const promptIndex = section.prompts.findIndex((p) => p.id === id);
+    if (promptIndex !== -1) {
+      return {
+        section,
+        sectionIndex,
+        prompt: section.prompts[promptIndex],
+        promptIndex,
+      };
+    }
+  }
+  return undefined;
+}
