@@ -4,6 +4,7 @@ import { getClientIp } from "@/lib/request-ip";
 import { rateLimit } from "@/lib/rate-limit";
 import { searchCorpus } from "@/lib/retrieval";
 import {
+  CHAT_MAX_ASSISTANT_CHARS,
   CHAT_MAX_HISTORY,
   CHAT_MAX_MESSAGE_CHARS,
   CHAT_MAX_OUTPUT_TOKENS,
@@ -37,10 +38,16 @@ const MODEL_GUARD_ERROR = rejectReasoningModel(CHAT_MODEL);
 const RequestSchema = z.object({
   messages: z
     .array(
-      z.object({
-        role: z.enum(["user", "assistant"]),
-        content: z.string().min(1).max(CHAT_MAX_MESSAGE_CHARS),
-      }),
+      z.union([
+        z.object({
+          role: z.literal("user"),
+          content: z.string().min(1).max(CHAT_MAX_MESSAGE_CHARS),
+        }),
+        z.object({
+          role: z.literal("assistant"),
+          content: z.string().min(1).max(CHAT_MAX_ASSISTANT_CHARS),
+        }),
+      ]),
     )
     .min(1)
     .max(CHAT_MAX_HISTORY),

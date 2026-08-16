@@ -54,6 +54,16 @@ second content`;
   it("normalizes line endings and trailing whitespace before hashing", () => {
     expect(contentHash(normalizeText("a  \r\nb\t\n"))).toBe(contentHash(normalizeText("a\nb")));
   });
+
+  it("deduplicates ids when headings slugify identically", () => {
+    const body = "## Tips\n\nfirst tips\n\n## Tips\n\nsecond tips\n\n## 🎉\n\nparty\n\n## 🚀\n\nrocket";
+    const ids = chunkPage("/p", "P", body).map((c) => c.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(ids).toContain("/p#tips#0");
+    expect(ids).toContain("/p#tips-2#0");
+    expect(ids).toContain("/p#section#0");
+    expect(ids).toContain("/p#section-2#0");
+  });
 });
 
 describe("stripDocumentHeader", () => {

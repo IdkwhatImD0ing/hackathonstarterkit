@@ -20,7 +20,7 @@ import { countTokens } from "gpt-tokenizer";
  * errors, so the index build detects the mismatch and rebuilds from
  * scratch.
  */
-export const CHUNKER_VERSION = 1;
+export const CHUNKER_VERSION = 2;
 export const NORMALIZER_VERSION = 1;
 
 /** Above this, a section splits into multiple chunks. */
@@ -84,7 +84,17 @@ interface Section {
  */
 function splitSections(body: string, pageTitle: string): Section[] {
   const sections: Section[] = [];
-  let current: Section = { slugPath: "intro", heading: pageTitle, lines: [] };
+  // Two headings can slugify identically (repeated titles, or the "section"
+  // fallback for symbol-only headings). Without deduplication their chunks
+  // share an id, and the embedding index joins vectors by id, so one
+  // section silently shadows the other in retrieval.
+  const used = new Map<string, number>();
+  const unique = (slug: string): string => {
+    const n = (used.get(slug) ?? 0) + 1;
+    used.set(slug, n);
+    return n === 1 ? slug : `${slug}-${n}`;
+  };
+  let current: Section = { slugPath: unique("intro"), heading: pageTitle, lines: [] };
   let h2Slug = "";
   let h2Heading = "";
   let inFence = false;
@@ -97,12 +107,12 @@ function splitSections(body: string, pageTitle: string): Section[] {
       const level = match[1].length;
       const heading = match[2].trim();
       if (level === 2 || !h2Slug) {
-        h2Slug = slugify(heading);
+        h2Slug = unique(slugify(heading));
         h2Heading = heading;
         current = { slugPath: h2Slug, heading, lines: [line] };
       } else {
         current = {
-          slugPath: `${h2Slug}/${slugify(heading)}`,
+          slugPath: unique(`${h2Slug}/${slugify(heading)}`),
           heading: `${h2Heading} > ${heading}`,
           lines: [line],
         };

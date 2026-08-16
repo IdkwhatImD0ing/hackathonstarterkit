@@ -151,17 +151,39 @@ async function embedBatch(inputs: string[]): Promise<Float32Array[]> {
   }
 }
 
-function persist(manifest: IndexManifest, vectors: Map<string, Float32Array>) {
+function persist(
+  manifest: IndexManifest,
+  vectors: Map<string, Float32Array>,
+  opts: { partial?: boolean } = {},
+) {
   mkdirSync(INDEX_DIR, { recursive: true });
-  const ids = Object.keys(manifest.chunks);
-  const out = new Float32Array(ids.length * manifest.embeddingDims);
+  let toWrite = manifest;
+  if (opts.partial) {
+    // Mid-build checkpoint: later batches' vectors do not exist yet, so
+    // write only the chunks that have them, and only pages whose chunks
+    // all survived. A resumed run re-chunks the incomplete pages and
+    // reuses these cached vectors; the final persist is strict.
+    const chunks = Object.fromEntries(
+      Object.entries(manifest.chunks).filter(([, chunk]) =>
+        vectors.has(`${manifest.embeddingModel}:${chunk.contentHash}`),
+      ),
+    );
+    const pages = Object.fromEntries(
+      Object.entries(manifest.pages).filter(([, page]) =>
+        page.chunkIds.every((id) => id in chunks),
+      ),
+    );
+    toWrite = { ...manifest, pages, chunks };
+  }
+  const ids = Object.keys(toWrite.chunks);
+  const out = new Float32Array(ids.length * toWrite.embeddingDims);
   ids.forEach((id, i) => {
-    const key = `${manifest.embeddingModel}:${manifest.chunks[id].contentHash}`;
+    const key = `${toWrite.embeddingModel}:${toWrite.chunks[id].contentHash}`;
     const vector = vectors.get(key);
     if (!vector) throw new Error(`Missing vector for ${id} (${key})`);
-    out.set(vector, i * manifest.embeddingDims);
+    out.set(vector, i * toWrite.embeddingDims);
   });
-  writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + "\n");
+  writeFileSync(MANIFEST_PATH, JSON.stringify(toWrite, null, 2) + "\n");
   writeFileSync(EMBEDDINGS_PATH, Buffer.from(out.buffer));
 }
 
@@ -281,7 +303,7 @@ async function buildOnce(options: { force: boolean; dryRun: boolean }): Promise<
     const embedded = await embedBatch(batch.map((b) => b.chunk.text));
     batch.forEach((item, i) => vectors.set(item.key, embedded[i]));
     next.generatedAt = new Date().toISOString();
-    persist(next, vectors);
+    persist(next, vectors, { partial: true });
     console.log(`  embedded batch of ${batch.length} (${batchTokens.toLocaleString()} tokens)`);
     batch = [];
     batchTokens = 0;

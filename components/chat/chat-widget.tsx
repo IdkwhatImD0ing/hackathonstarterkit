@@ -299,17 +299,25 @@ export function ChatWidget() {
                     ) : null}
                   </div>
                   {message.citations && message.citations.length > 0 ? (
-                    <div className="flex flex-wrap gap-1.5" aria-label="Sources">
-                      {message.citations.map((citation) => (
-                        <a
-                          key={citation.url}
-                          href={citation.url}
-                          className="rounded-full border border-volt/20 bg-volt/5 px-2 py-0.5 font-code text-[10px] text-volt hover:bg-volt/10"
-                        >
-                          {citation.title}
-                        </a>
-                      ))}
-                    </div>
+                    <details className="group">
+                      <summary className="inline-flex cursor-pointer list-none items-center gap-1 font-code text-[10px] text-volt/80 hover:text-volt [&::-webkit-details-marker]:hidden">
+                        <span className="inline-block transition-transform group-open:rotate-90 motion-reduce:transition-none" aria-hidden="true">
+                          ▸
+                        </span>
+                        Sources ({message.citations.length})
+                      </summary>
+                      <div className="mt-1.5 flex flex-wrap gap-1.5" aria-label="Sources">
+                        {message.citations.map((citation) => (
+                          <a
+                            key={citation.url}
+                            href={citation.url}
+                            className="rounded-full border border-volt/20 bg-volt/5 px-2 py-0.5 font-code text-[10px] text-volt hover:bg-volt/10"
+                          >
+                            {citation.title}
+                          </a>
+                        ))}
+                      </div>
+                    </details>
                   ) : null}
                 </div>
               ),

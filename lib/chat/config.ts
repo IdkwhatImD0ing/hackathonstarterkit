@@ -71,6 +71,13 @@ export const CHAT_TEMPERATURE = 0.2;
 
 /** Input caps (abuse control). */
 export const CHAT_MAX_MESSAGE_CHARS = 1500;
+/**
+ * Assistant history turns echo prior answers, whose length is bounded by
+ * CHAT_MAX_OUTPUT_TOKENS (600 tokens ≈ 2-3k chars), not by the user cap;
+ * capping them at CHAT_MAX_MESSAGE_CHARS rejected every follow-up after a
+ * long answer. 8000 covers any real answer while still bounding abuse.
+ */
+export const CHAT_MAX_ASSISTANT_CHARS = 8000;
 export const CHAT_MAX_HISTORY = 10;
 
 export const CHAT_RATE_LIMIT_MAX = Number(process.env.CHAT_RATE_LIMIT_MAX ?? 20);
