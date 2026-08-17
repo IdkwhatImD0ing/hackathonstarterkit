@@ -68,7 +68,7 @@ export function PromptCard({
           <h3 className="font-display text-lg font-bold tracking-tight md:text-xl">
             {prompt.title}
           </h3>
-          <p className="font-body text-sm leading-relaxed text-muted-foreground">
+          <p className="font-body text-sm leading-relaxed text-muted-foreground md:text-base">
             <span
               className={`font-code text-[10px] uppercase tracking-widest ${a.text}`}
             >
@@ -81,7 +81,7 @@ export function PromptCard({
       </div>
 
       {prerequisites.length > 0 ? (
-        <p className="flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-border/60 px-4 py-2.5 font-body text-xs text-muted-foreground md:px-5">
+        <p className="flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-border/60 px-4 py-2.5 font-body text-xs text-muted-foreground md:px-5 md:text-sm">
           <CornerDownRight className="size-3.5 shrink-0" />
           <span>Run first:</span>
           {prerequisites.map((found) => (
@@ -89,7 +89,7 @@ export function PromptCard({
               key={found.prompt.id}
               type="button"
               onClick={() => onJump?.(found.prompt.id)}
-              className={`rounded-md border bg-foreground/[0.03] px-2 py-0.5 font-code text-[11px] transition-colors hover:bg-foreground/[0.08] ${a.chip}`}
+              className={`rounded-md border bg-foreground/[0.03] px-2 py-0.5 font-code text-[11px] transition-colors hover:bg-foreground/[0.08] md:text-xs ${a.chip}`}
             >
               {found.prompt.title}
             </button>
@@ -106,12 +106,12 @@ export function PromptCard({
           #{prompt.id}
         </span>
       </div>
-      <pre className="max-h-[30rem] overflow-auto border-t border-border/40 bg-background/30 p-4 font-code text-[13px] leading-relaxed whitespace-pre-wrap text-foreground/90 md:p-5">
+      <pre className="max-h-[30rem] overflow-auto border-t border-border/40 bg-background/30 p-4 font-code text-[13px] leading-relaxed whitespace-pre-wrap text-foreground/90 md:p-5 md:text-[15px]">
         {prompt.prompt}
       </pre>
 
       {prompt.note ? (
-        <p className="flex items-start gap-2 border-t border-border/60 px-4 py-3 font-body text-xs text-muted-foreground md:px-5">
+        <p className="flex items-start gap-2 border-t border-border/60 px-4 py-3 font-body text-xs text-muted-foreground md:px-5 md:text-sm">
           <CircleAlert className={`mt-0.5 size-3.5 shrink-0 ${a.text}`} />
           {prompt.note}
         </p>
@@ -120,7 +120,7 @@ export function PromptCard({
       {prompt.source ? (
         <Link
           href={prompt.source.href}
-          className="flex items-center gap-1.5 border-t border-border/60 px-4 py-3 font-code text-xs text-muted-foreground transition-colors hover:text-foreground md:px-5"
+          className="flex items-center gap-1.5 border-t border-border/60 px-4 py-3 font-code text-xs text-muted-foreground transition-colors hover:text-foreground md:px-5 md:text-sm"
         >
           <ArrowUpRight className={`size-3.5 ${a.text}`} />
           Where this comes from: {prompt.source.label}
