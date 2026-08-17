@@ -13,8 +13,8 @@ type SearchState =
 /**
  * The prompt finder: describe the situation in a sentence, an agent picks the
  * one card on the sheet built for it. On a match it sets the location hash to
- * the prompt id, which the cheat sheet browser's hashchange listener already
- * treats as a deep link, then scrolls the console into view.
+ * the prompt id, which the cheat sheet browser's hashchange listener treats as
+ * a deep link and centers that card on screen.
  */
 export function CheatSheetSearch() {
   const [query, setQuery] = useState("");
@@ -44,12 +44,6 @@ export function CheatSheetSearch() {
       if (!found) throw new Error("Search is unavailable right now.");
       setState({ status: "done", id, reason });
       window.location.hash = id;
-      // Wait for the browser to switch cards, then bring the console up.
-      setTimeout(() => {
-        document
-          .getElementById(found.section.slug)
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
     } catch (error) {
       setState({
         status: "error",
@@ -108,7 +102,7 @@ export function CheatSheetSearch() {
         </button>
       </form>
 
-      <p className="mt-2.5 min-h-5 font-body text-xs" aria-live="polite">
+      <p className="mt-2.5 min-h-5 font-body text-xs md:text-sm" aria-live="polite">
         {state.status === "idle" ? (
           <span className="text-muted-foreground/60">
             One sentence about where you are stuck, and this jumps you to the

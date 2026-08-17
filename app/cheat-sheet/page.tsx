@@ -115,7 +115,7 @@ export default function CheatSheetPage() {
                 <span className="flex size-6 shrink-0 items-center justify-center rounded-md border border-spark/25 bg-spark/10 font-code text-[10px] text-spark">
                   {rule.step}
                 </span>
-                <p className="font-body text-sm leading-relaxed text-foreground/85">
+                <p className="font-body text-sm leading-relaxed text-foreground/85 md:text-base">
                   {rule.text}
                 </p>
               </div>
@@ -135,7 +135,7 @@ export default function CheatSheetPage() {
           <h2 className="font-display text-xl font-bold tracking-tight md:text-2xl">
             Why any of these prompts say what they say
           </h2>
-          <p className="mt-2 max-w-2xl font-body text-sm text-muted-foreground">
+          <p className="mt-2 max-w-2xl font-body text-sm text-muted-foreground md:text-base">
             This page is the short version, written for someone with hours left
             on the clock. The reasoning behind it, the research, and the parts
             that are about people rather than code all live in the playbook. The

@@ -75,12 +75,22 @@ const SECTION_STARTS = CHEAT_SECTIONS.map((section) =>
 export function CheatSheetBrowser() {
   const [cursor, setCursor] = useState(0);
   const tablistRef = useRef<HTMLDivElement>(null);
+  const shouldCenterRef = useRef(false);
   const active = FLAT[cursor];
 
-  const jumpTo = useCallback((id: string) => {
-    const target = FLAT.findIndex((entry) => entry.prompt.id === id);
-    if (target !== -1) setCursor(target);
+  /** Every jump (tab, chip, prev/next, deep link) recenters the prompt card. */
+  const navigate = useCallback((index: number) => {
+    shouldCenterRef.current = true;
+    setCursor(index);
   }, []);
+
+  const jumpTo = useCallback(
+    (id: string) => {
+      const target = FLAT.findIndex((entry) => entry.prompt.id === id);
+      if (target !== -1) navigate(target);
+    },
+    [navigate],
+  );
 
   // Deep links: /cheat-sheet#ship opens that phase, #readme opens that prompt.
   useEffect(() => {
@@ -89,16 +99,37 @@ export function CheatSheetBrowser() {
       if (!hash) return;
       const byPrompt = FLAT.findIndex((entry) => entry.prompt.id === hash);
       if (byPrompt !== -1) {
-        setCursor(byPrompt);
+        navigate(byPrompt);
         return;
       }
       const bySection = FLAT.findIndex((entry) => entry.section.slug === hash);
-      if (bySection !== -1) setCursor(bySection);
+      if (bySection !== -1) navigate(bySection);
     };
     select();
     window.addEventListener("hashchange", select);
     return () => window.removeEventListener("hashchange", select);
-  }, []);
+  }, [navigate]);
+
+  // Card heights vary, so after a jump the prompt text can land below the
+  // fold. Scroll the freshly shown card to the middle of the viewport (or its
+  // top, when the card is taller than the screen).
+  useEffect(() => {
+    if (!shouldCenterRef.current) return;
+    shouldCenterRef.current = false;
+    const card = document.getElementById(active.prompt.id);
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const top = window.scrollY + rect.top;
+    window.scrollTo({
+      top: Math.max(
+        0,
+        rect.height < window.innerHeight
+          ? top - (window.innerHeight - rect.height) / 2
+          : top - 112,
+      ),
+      behavior: "smooth",
+    });
+  }, [active.prompt.id]);
 
   // Keep the active phase tab in view when the rail scrolls (mobile). Scrolls
   // only the rail itself, never the page.
@@ -161,7 +192,7 @@ export function CheatSheetBrowser() {
                 role="tab"
                 aria-selected={isActive}
                 aria-controls={section.slug}
-                onClick={() => setCursor(SECTION_STARTS[i])}
+                onClick={() => navigate(SECTION_STARTS[i])}
                 className={`group relative flex min-w-[5.5rem] flex-1 flex-col items-center gap-1 whitespace-nowrap px-3 pb-3 pt-2.5 transition-colors ${
                   isActive ? "" : "hover:bg-foreground/[0.03]"
                 }`}
@@ -177,7 +208,7 @@ export function CheatSheetBrowser() {
                   <Icon className="size-3" />
                 </span>
                 <span
-                  className={`font-code text-[11px] uppercase tracking-wider transition-colors ${
+                  className={`font-code text-[11px] uppercase tracking-wider transition-colors md:text-xs ${
                     isActive
                       ? "text-foreground"
                       : "text-muted-foreground group-hover:text-foreground"
@@ -228,7 +259,7 @@ export function CheatSheetBrowser() {
                   {section.title}
                 </h2>
               </div>
-              <p className="max-w-2xl font-body text-sm text-muted-foreground">
+              <p className="max-w-2xl font-body text-sm text-muted-foreground md:text-base">
                 {section.subtitle}
               </p>
             </div>
@@ -248,7 +279,7 @@ export function CheatSheetBrowser() {
                       type="button"
                       onClick={() => jumpTo(prompt.id)}
                       aria-current={isCurrent}
-                      className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-1 font-code text-[11px] transition-colors ${
+                      className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-1 font-code text-[11px] transition-colors md:text-xs ${
                         isCurrent
                           ? a.chip
                           : "text-muted-foreground hover:bg-foreground/[0.04] hover:text-foreground"
@@ -290,7 +321,7 @@ export function CheatSheetBrowser() {
       <div className="flex items-center justify-between gap-3 border-t border-primary/10 bg-background/40 px-3 py-3 md:px-4">
         <button
           type="button"
-          onClick={() => setCursor((c) => Math.max(0, c - 1))}
+          onClick={() => navigate(Math.max(0, cursor - 1))}
           disabled={cursor === 0}
           aria-label="Previous prompt"
           className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-border bg-background/40 px-3 py-2 font-code text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground disabled:pointer-events-none disabled:opacity-30"
@@ -325,7 +356,7 @@ export function CheatSheetBrowser() {
 
         <button
           type="button"
-          onClick={() => setCursor((c) => Math.min(FLAT.length - 1, c + 1))}
+          onClick={() => navigate(Math.min(FLAT.length - 1, cursor + 1))}
           disabled={cursor === FLAT.length - 1}
           aria-label="Next prompt"
           className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-border bg-background/40 px-3 py-2 font-code text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground disabled:pointer-events-none disabled:opacity-30"
