@@ -5,6 +5,7 @@ import { PostHogPageViewTracker } from "@/components/posthog-provider";
 import { WebMcpTools } from "@/components/web-mcp";
 import { ChatWidget } from "@/components/chat/chat-widget";
 import { JsonLd } from "@/components/json-ld";
+import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
 
@@ -137,6 +138,7 @@ export default function RootLayout({
         className={`${fontDisplay.variable} ${fontBody.variable} ${fontCode.variable} antialiased`}
       >
         {children}
+        <SiteFooter />
         <PostHogPageViewTracker />
         <Analytics />
         <WebMcpTools />
