@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Trash2, Send, Sparkles } from "lucide-react";
+import { MessageCircle, X, Trash2, Send, Sparkles, ThumbsUp, ThumbsDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MarkdownLite } from "./markdown-lite";
 
@@ -22,7 +22,12 @@ interface ChatMessage {
   role: "user" | "assistant";
   content: string;
   citations?: Citation[];
+  /** Trace id for this answer, the key a thumbs rating is filed under. */
+  traceId?: string;
+  rating?: Rating;
 }
+
+type Rating = "up" | "down";
 
 interface Citation {
   title: string;
@@ -31,6 +36,7 @@ interface Citation {
 }
 
 const STORAGE_KEY = "playbook-chat";
+const SESSION_KEY = "playbook-chat-session";
 const MAX_MESSAGE_CHARS = 1500;
 const MAX_HISTORY = 10;
 
@@ -56,6 +62,23 @@ function loadSession(): ChatMessage[] {
     return raw ? (JSON.parse(raw) as ChatMessage[]) : [];
   } catch {
     return [];
+  }
+}
+
+/**
+ * Id shared by every turn of one conversation, so the turns group together
+ * in tracing instead of arriving as unrelated one-offs. Lives in
+ * sessionStorage: it dies with the tab and identifies nobody.
+ */
+function conversationId(): string | undefined {
+  try {
+    const existing = sessionStorage.getItem(SESSION_KEY);
+    if (existing) return existing;
+    const fresh = crypto.randomUUID();
+    sessionStorage.setItem(SESSION_KEY, fresh);
+    return fresh;
+  } catch {
+    return undefined;
   }
 }
 
@@ -140,6 +163,7 @@ export function ChatWidget() {
       setMessages(history);
       setStreaming(true);
 
+      const sessionId = conversationId();
       const controller = new AbortController();
       abortRef.current = controller;
       try {
@@ -150,6 +174,7 @@ export function ChatWidget() {
           body: JSON.stringify({
             messages: history.slice(-MAX_HISTORY).map(({ role, content }) => ({ role, content })),
             ...(pageContext ? { pageContext } : {}),
+            ...(sessionId ? { sessionId } : {}),
           }),
         });
 
@@ -181,6 +206,8 @@ export function ChatWidget() {
               const payload = JSON.parse(line.slice(6));
               if (currentEvent === "citations") {
                 assistant = { ...assistant, citations: payload as Citation[] };
+              } else if (currentEvent === "trace") {
+                assistant = { ...assistant, traceId: (payload as { id: string }).id };
               } else if (currentEvent === "error") {
                 setError(ERROR_COPY[(payload as { code?: string }).code ?? "api_error"]);
               } else if (currentEvent === null && payload.delta) {
@@ -203,12 +230,36 @@ export function ChatWidget() {
     [messages, pageContext, streaming],
   );
 
+  /**
+   * Rate one answer. Fire and forget: a rating that fails to send is not
+   * worth an error message, and the button stays pressed either way.
+   */
+  const rate = useCallback(
+    (index: number, rating: Rating) => {
+      const message = messages[index];
+      if (!message?.traceId || message.rating) return;
+      setMessages((current) =>
+        current.map((m, i) => (i === index ? { ...m, rating } : m)),
+      );
+      void fetch("/api/chat/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ traceId: message.traceId, rating }),
+      }).catch(() => {
+        // Nothing to recover; the rating is a nice-to-have signal.
+      });
+    },
+    [messages],
+  );
+
   const clear = () => {
     abortRef.current?.abort();
     setMessages([]);
     setError(null);
     try {
       sessionStorage.removeItem(STORAGE_KEY);
+      // A cleared panel is a new conversation, so it gets a new id.
+      sessionStorage.removeItem(SESSION_KEY);
     } catch {
       // ignore
     }
@@ -318,6 +369,42 @@ export function ChatWidget() {
                         ))}
                       </div>
                     </details>
+                  ) : null}
+                  {message.traceId && !(streaming && i === messages.length - 1) ? (
+                    <div
+                      role="group"
+                      aria-label="Was this answer helpful?"
+                      className="flex items-center gap-1"
+                    >
+                      {(["up", "down"] as const).map((value) => {
+                        const Icon = value === "up" ? ThumbsUp : ThumbsDown;
+                        const active = message.rating === value;
+                        return (
+                          <button
+                            key={value}
+                            type="button"
+                            onClick={() => rate(i, value)}
+                            disabled={Boolean(message.rating)}
+                            aria-pressed={active}
+                            aria-label={
+                              value === "up" ? "This answer helped" : "This answer missed"
+                            }
+                            className={`rounded-md border p-1 transition-colors motion-reduce:transition-none disabled:cursor-default ${
+                              active
+                                ? "border-volt/40 bg-volt/10 text-volt"
+                                : "border-transparent text-muted-foreground/60 hover:border-volt/20 hover:bg-volt/5 hover:text-volt disabled:hover:border-transparent disabled:hover:bg-transparent disabled:hover:text-muted-foreground/60"
+                            }`}
+                          >
+                            <Icon className="size-3" />
+                          </button>
+                        );
+                      })}
+                      {message.rating ? (
+                        <span className="ml-1 font-code text-[10px] text-muted-foreground/70">
+                          Thanks.
+                        </span>
+                      ) : null}
+                    </div>
                   ) : null}
                 </div>
               ),

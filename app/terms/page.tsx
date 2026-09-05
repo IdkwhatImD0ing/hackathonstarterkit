@@ -5,12 +5,12 @@ import { JsonLd } from "@/components/json-ld";
 import { SITE_URL } from "@/lib/site";
 
 const CONTACT_EMAIL = "billzhangsc@gmail.com";
-const LAST_UPDATED = "April 21, 2026";
+const LAST_UPDATED = "September 3, 2026";
 
 export const metadata: Metadata = {
   title: "Terms of Service — Hackathon Playbook",
   description:
-    "Terms of Service for Hackathon Playbook. Review the rules for using the site, affiliate link disclosures, intellectual property, disclaimers, and California governing law.",
+    "Terms of Service for Hackathon Playbook. Review the rules for using the site, affiliate link disclosures, intellectual property, AI chat data handling, disclaimers, and California governing law.",
   alternates: {
     canonical: `${SITE_URL}/terms`,
   },
@@ -39,7 +39,7 @@ const webPageJsonLd = {
     name: "Hackathon Playbook",
     url: SITE_URL,
   },
-  dateModified: "2026-04-21",
+  dateModified: "2026-09-03",
 };
 
 type Section = {
@@ -145,8 +145,20 @@ const SECTIONS: Section[] = [
     ],
   },
   {
+    id: "ai-data",
+    title: "12. AI Chat and Search Data",
+    paragraphs: [
+      "The Site offers an AI assistant (\"Ask the Playbook\") and an AI prompt finder on the cheat sheet. Both send what you type to OpenAI, which generates the response. We instruct OpenAI not to store those requests on their side.",
+      "We do record them. When you use either feature, we store the messages you send, the answer the model returns, which pages of the Site were retrieved as context, the model used, token counts, timings, and whether the request succeeded. That record is kept in our own tracing system and is used to find weak answers, close gaps in the content, and improve the assistant.",
+      "Each conversation carries a random identifier created in your browser tab and discarded when that tab closes, so the turns of one conversation can be read together. It is not tied to your name, your email, or any account, and we do not try to identify you from it.",
+      "If you rate an answer with the thumbs up or thumbs down button, we record that rating against the answer it refers to.",
+      "Because conversations are stored, please do not paste passwords, API keys, personal information, or anything confidential into the chat. It is a public educational assistant, not a private channel.",
+      "We do not sell this data and we do not share it with advertisers. To have a conversation deleted, email the address below.",
+    ],
+  },
+  {
     id: "contact",
-    title: "12. Contact",
+    title: "13. Contact",
     paragraphs: [
       `For questions about these Terms, reach out at ${CONTACT_EMAIL}.`,
     ],

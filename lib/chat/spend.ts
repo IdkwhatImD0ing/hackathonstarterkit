@@ -20,7 +20,8 @@
  * for deployments where Redis was never configured (local dev, previews),
  * and is documented as not a real ceiling there.
  *
- * Only token counts are stored. Never message content.
+ * These counters hold token counts only, never message content. The
+ * conversation itself is recorded separately, in tracing.
  */
 
 import { redisRest } from "../redis-rest";

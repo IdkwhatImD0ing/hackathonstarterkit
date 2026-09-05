@@ -1,5 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { startChildSpan } from "@/lib/tracing/firetrace";
+import { estimateCostUsd } from "@/lib/tracing/pricing";
 import { CHUNKER_VERSION, NORMALIZER_VERSION } from "./chunker";
 import { loadCorpus, type CorpusChunk } from "./corpus";
 import type { SearchResult } from "./search";
@@ -93,8 +95,28 @@ export function loadSemanticIndex(): SemanticIndex | null {
 export async function embedQuery(query: string, model: string, dims: number): Promise<Float32Array> {
   const { default: OpenAI } = await import("openai");
   const client = new OpenAI();
-  const response = await client.embeddings.create({ model, input: query, dimensions: dims });
-  return Float32Array.from(response.data[0].embedding);
+  // Nests under the caller's retrieval span when one is open (the chat
+  // route opens one). A no-op for callers outside a traced request.
+  const span = startChildSpan("openai.embeddings.create", "embedding", {
+    provider: "openai",
+    model,
+    input: query,
+    attributes: { dimensions: dims },
+  });
+  try {
+    const response = await client.embeddings.create({ model, input: query, dimensions: dims });
+    span?.end({
+      usage: {
+        inputTokens: response.usage?.prompt_tokens,
+        totalTokens: response.usage?.total_tokens,
+      },
+      costUsd: estimateCostUsd(model, { inputTokens: response.usage?.prompt_tokens }),
+    });
+    return Float32Array.from(response.data[0].embedding);
+  } catch (error) {
+    span?.end({ status: "error" });
+    throw error;
+  }
 }
 
 /** OpenAI embeddings are unit-normalized, so dot product = cosine. */

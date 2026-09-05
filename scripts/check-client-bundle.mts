@@ -19,6 +19,7 @@ const STATIC_DIR = join(process.cwd(), ".next", "static");
 // are hyphenated lowercase words.
 const PATTERNS: [string, RegExp][] = [
   ["OpenAI key", /(?<![A-Za-z0-9-])sk-(?:proj-)?[A-Za-z0-9_]{20,}/],
+  ["FireTrace key", /ft_live_[0-9a-f]{16}_[0-9a-f]{64}/],
 ];
 
 const SECRET_ENV_VARS = [
@@ -26,6 +27,7 @@ const SECRET_ENV_VARS = [
   "UPSTASH_REDIS_REST_TOKEN",
   "BEEHIIV_API_KEY",
   "ORIGIN_SHARED_SECRET",
+  "FIRETRACE_API_KEY",
 ];
 
 function* walk(dir: string): Generator<string> {
