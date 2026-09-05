@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { BLOG_POSTS } from "@/lib/blog";
+import { BLOG_POSTS, formatPostDate } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
@@ -106,11 +106,7 @@ export default function BlogPage() {
               <CardHeader>
                 <div className="flex flex-wrap items-center gap-3">
                   <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
+                    {formatPostDate(post.date)}
                   </Badge>
                   <span className="flex items-center gap-1 font-code text-xs text-muted-foreground">
                     <Clock className="size-3" />
@@ -120,11 +116,7 @@ export default function BlogPage() {
                     <span className="flex items-center gap-1 font-code text-xs text-volt">
                       <RefreshCw className="size-3" />
                       Updated{" "}
-                      {new Date(post.updatedDate).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
+                      {formatPostDate(post.updatedDate)}
                     </span>
                   ) : null}
                 </div>

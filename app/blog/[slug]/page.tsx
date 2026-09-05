@@ -13,6 +13,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import {
   BLOG_POSTS,
+  formatPostDate,
   getBlogBySlug,
   getRecommendedBlogPosts,
 } from "@/lib/blog";
@@ -165,11 +166,7 @@ export default async function BlogPostPage({
         <header className="space-y-4">
           <div className="flex flex-wrap items-center gap-3">
             <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
-              {new Date(post.date).toLocaleDateString("en-US", {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}
+              {formatPostDate(post.date, "long")}
             </Badge>
             <span className="flex items-center gap-1 font-code text-xs text-muted-foreground">
               <Clock className="size-3" />
@@ -179,11 +176,7 @@ export default async function BlogPostPage({
               <span className="flex items-center gap-1 font-code text-xs text-volt">
                 <RefreshCw className="size-3" />
                 Updated{" "}
-                {new Date(post.updatedDate).toLocaleDateString("en-US", {
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                })}
+                {formatPostDate(post.updatedDate, "long")}
               </span>
             ) : null}
           </div>
@@ -291,14 +284,7 @@ export default async function BlogPostPage({
                     <CardHeader>
                       <div className="flex flex-wrap items-center gap-3">
                         <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
-                          {new Date(recommendedPost.date).toLocaleDateString(
-                            "en-US",
-                            {
-                              month: "short",
-                              day: "numeric",
-                              year: "numeric",
-                            },
-                          )}
+                          {formatPostDate(recommendedPost.date)}
                         </Badge>
                         <span className="flex items-center gap-1 font-code text-xs text-muted-foreground">
                           <Clock className="size-3" />
@@ -308,13 +294,7 @@ export default async function BlogPostPage({
                           <span className="flex items-center gap-1 font-code text-xs text-volt">
                             <RefreshCw className="size-3" />
                             Updated{" "}
-                            {new Date(
-                              recommendedPost.updatedDate,
-                            ).toLocaleDateString("en-US", {
-                              month: "short",
-                              day: "numeric",
-                              year: "numeric",
-                            })}
+                            {formatPostDate(recommendedPost.updatedDate)}
                           </span>
                         ) : null}
                       </div>

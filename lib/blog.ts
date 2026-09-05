@@ -21,6 +21,26 @@ export const BLOG_POSTS: BlogPost[] = [
   buildWithElevenlabsAndCursor,
 ];
 
+/**
+ * Format an authored post date for display.
+ *
+ * Post dates are plain YYYY-MM-DD, which Date parses as UTC midnight.
+ * Formatting those without pinning a time zone renders the previous day
+ * anywhere behind UTC: a reader in California saw a post authored
+ * 2026-06-24 as "Jun 23". It also made the generated Markdown corpus
+ * machine-dependent, so `pnpm gen:md -- --check` failed in CI (UTC)
+ * against a corpus generated on a Pacific machine. Pin the zone to UTC
+ * so the rendered day always matches the authored string.
+ */
+export function formatPostDate(date: string, month: "short" | "long" = "short"): string {
+  return new Date(date).toLocaleDateString("en-US", {
+    month,
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 export function getBlogBySlug(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
 }
