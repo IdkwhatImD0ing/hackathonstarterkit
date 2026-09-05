@@ -15,7 +15,12 @@ export const SITE_NAME = "Hackathon Playbook";
 
 /** Resolve a path like "/playbook/pitching" to an absolute canonical URL. */
 export function absoluteUrl(path: string): string {
-  if (/^https?:\/\//.test(path)) return path;
+  // Anything carrying its own URI scheme is already absolute and must be
+  // left alone. Matching only http(s) sent mailto: and tel: links through
+  // the site-relative branch, which turned the footer's feedback address
+  // into https://thehackathonplaybook.dev/mailto:feedback@... in every
+  // generated Markdown page.
+  if (/^[a-z][a-z0-9+.-]*:/i.test(path)) return path;
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 

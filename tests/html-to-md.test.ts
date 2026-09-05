@@ -45,6 +45,21 @@ npm run dev</pre></main>`;
     expect(md).toContain("![A demo screenshot](https://thehackathonplaybook.dev/blog/demo.png)");
   });
 
+  it("leaves mailto and tel links alone instead of making them site-relative", () => {
+    // The footer's feedback address became
+    // https://thehackathonplaybook.dev/mailto:feedback@... in every
+    // generated page, because only http(s) counted as already absolute.
+    const html = `<main><p>
+      <a href="mailto:feedback@thehackathonplaybook.dev">Email us</a>
+      <a href="tel:+15551234567">Call us</a>
+    </p></main>`;
+    const md = htmlPageToMarkdown(html);
+    expect(md).toContain("(mailto:feedback@thehackathonplaybook.dev)");
+    expect(md).toContain("(tel:+15551234567)");
+    expect(md).not.toContain("/mailto:");
+    expect(md).not.toContain("/tel:");
+  });
+
   it("demotes in-body h1 to h2 and drops the page header block", () => {
     const html = `<main>
       <header><h1>Pitching</h1><p>subtitle</p></header>

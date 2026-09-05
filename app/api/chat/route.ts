@@ -17,9 +17,12 @@ import {
 } from "@/lib/chat/config";
 import { reservationForInput, reserveTokens, settleTokens } from "@/lib/chat/spend";
 import { SYSTEM_PROMPT, contextMessage } from "@/lib/chat/prompt";
+import { startTrace } from "@/lib/tracing/firetrace";
+import { estimateCostUsd } from "@/lib/tracing/pricing";
 
 /**
  * Retrieval-grounded chat over the site's own content. Streams SSE:
+ *   event: trace      -> JSON {id} of this turn's trace, for feedback
  *   event: citations  -> JSON array of {title, heading, url}
  *   data: {"delta"}   -> text chunks
  *   event: done       -> JSON usage summary (token counts only)
@@ -28,7 +31,12 @@ import { SYSTEM_PROMPT, contextMessage } from "@/lib/chat/prompt";
  *
  * Cost controls (non-negotiable): non-reasoning model guard, per-IP rate
  * limit keyed on cf-connecting-ip, input caps, concurrent-stream cap, and
- * a monthly token ceiling. Only token counts are logged, never content.
+ * a monthly token ceiling.
+ *
+ * Every turn is traced to FireTrace (lib/tracing/firetrace.ts): retrieval,
+ * query embedding, and the model call, with the conversation as the
+ * trace's input and output. The trace id is streamed to the client so a
+ * thumbs up or down can be linked back to the answer it judges.
  */
 
 // Loud startup guard: a denylisted model fails every request with the
@@ -55,6 +63,9 @@ const RequestSchema = z.object({
     .string()
     .regex(/^\/[a-z0-9\-/]*$/)
     .optional(),
+  // Client-minted per-conversation id, so the turns of one conversation
+  // group together in tracing. Not an identity: it dies with the tab.
+  sessionId: z.uuid().optional(),
 });
 
 /** Per-instance concurrent stream cap (belt to the rate limiter's braces). */
@@ -130,7 +141,35 @@ export async function POST(request: NextRequest) {
     .map((m) => m.content)
     .join("\n");
 
-  const results = await searchCorpus(retrievalQuery, 8, { pageContext: body.pageContext });
+  const trace = startTrace({
+    name: "chat",
+    provider: "openai",
+    model: CHAT_MODEL,
+    sessionId: body.sessionId,
+    tags: ["chat"],
+    input: body.messages,
+    metadata: {
+      pageContext: body.pageContext ?? null,
+      historyTurns: body.messages.length,
+    },
+  });
+
+  // The embedding call inside searchCorpus attaches itself to this span
+  // through the ambient scope; see lib/retrieval/semantic.ts.
+  const retrievalSpan = trace?.span("retrieval", "retriever", {
+    input: retrievalQuery,
+    attributes: { limit: 8, pageContext: body.pageContext ?? null },
+  });
+  const runRetrieval = () => searchCorpus(retrievalQuery, 8, { pageContext: body.pageContext });
+  const results = retrievalSpan ? await retrievalSpan.run(runRetrieval) : await runRetrieval();
+  retrievalSpan?.end({
+    output: results.map((r) => ({
+      url: r.chunk.url,
+      heading: r.chunk.heading,
+      score: r.score,
+    })),
+    attributes: { resultCount: results.length },
+  });
 
   const encoder = new TextEncoder();
   const send = (controller: ReadableStreamDefaultController, event: string | null, data: object) => {
@@ -142,13 +181,16 @@ export async function POST(request: NextRequest) {
   if (results.length === 0) {
     // No model stream is held open; the slot frees immediately.
     release();
+    const fallback =
+      "The playbook doesn't cover that one. Ask me about team formation, ideas, validation, execution, tech stacks, pitching, submission, or what to do after the hackathon.";
+    // Worth tracing even though no model ran: a question the corpus cannot
+    // answer is the most direct signal of what to write next.
+    trace?.end({ output: fallback, metadata: { outcome: "no_content" } });
     const stream = new ReadableStream({
       start(controller) {
+        if (trace) send(controller, "trace", { id: trace.id });
         send(controller, "citations", []);
-        send(controller, null, {
-          delta:
-            "The playbook doesn't cover that one. Ask me about team formation, ideas, validation, execution, tech stacks, pitching, submission, or what to do after the hackathon.",
-        });
+        send(controller, null, { delta: fallback });
         send(controller, "done", { code: "no_content" });
         controller.close();
       },
@@ -181,8 +223,12 @@ export async function POST(request: NextRequest) {
     reservedTokens,
     CHAT_MONTHLY_TOKEN_BUDGET,
   );
+  // Both refusals below still close the trace. A turn that was refused
+  // before it reached the model is exactly the kind of thing worth seeing
+  // in tracing, and an unclosed trace is never sent at all.
   if (reservation === "over_budget") {
     release();
+    trace?.end({ status: "error", metadata: { outcome: "over_budget" } });
     return jsonError(
       503,
       "budget",
@@ -192,11 +238,27 @@ export async function POST(request: NextRequest) {
   if (reservation === "unavailable") {
     // Fail closed: cost controls are unreachable, so no spend happens.
     release();
+    trace?.end({ status: "error", metadata: { outcome: "budget_unavailable" } });
     return jsonError(503, "api_error", "Chat is briefly unavailable. Try again shortly.");
   }
 
   const { default: OpenAI } = await import("openai");
   const client = new OpenAI();
+
+  const llmSpan = trace?.span("openai.responses.create", "llm", {
+    provider: "openai",
+    model: CHAT_MODEL,
+    input: [
+      { role: "system", content: SYSTEM_PROMPT },
+      { role: "user", content: contextMessage(results) },
+      ...body.messages,
+    ],
+    attributes: {
+      temperature: CHAT_TEMPERATURE,
+      maxOutputTokens: CHAT_MAX_OUTPUT_TOKENS,
+      stream: true,
+    },
+  });
 
   try {
     const completion = await client.responses.create({
@@ -209,8 +271,8 @@ export async function POST(request: NextRequest) {
       // sent when it applies.
       ...(isReasoningExempt(CHAT_MODEL) ? { reasoning: { effort: "none" as const } } : {}),
       stream: true,
-      // Visitor questions must not be persisted on OpenAI's side; this
-      // route's contract is that only token counts outlive the request.
+      // No retention on OpenAI's side. The site's own tracing is the
+      // record of a conversation (privacy section of /terms).
       store: false,
       // Stable prefix first so prompt caching hits it (see lib/chat/prompt.ts).
       instructions: SYSTEM_PROMPT,
@@ -239,7 +301,12 @@ export async function POST(request: NextRequest) {
       input_tokens_details?: { cached_tokens?: number };
       output_tokens_details?: { reasoning_tokens?: number };
     };
+    /** Answer text and final usage, replayed into the trace when it closes. */
+    let answer = "";
+    let finalUsage: ResponseUsage | undefined;
+
     const accountUsage = (usage: ResponseUsage, terminal: string) => {
+      finalUsage = usage;
       const reasoningTokens = usage.output_tokens_details?.reasoning_tokens ?? 0;
       if (reasoningTokens > 0) {
         // The guard has been bypassed; surface it immediately.
@@ -248,12 +315,48 @@ export async function POST(request: NextRequest) {
             "a reasoning model is burning invisible output tokens. See lib/chat/config.ts.",
         );
       }
-      // Token counts only; never message content.
+      // Server logs stay token-only; the conversation itself goes to
+      // tracing, not to stdout.
       console.log(
         `chat: model=${CHAT_MODEL} terminal=${terminal} prompt=${usage.input_tokens} completion=${usage.output_tokens} reasoning=${reasoningTokens} cached=${usage.input_tokens_details?.cached_tokens ?? 0}`,
       );
       settle(usage.total_tokens);
       return reasoningTokens;
+    };
+
+    // Exactly one trace per turn, closed by whichever path ends the
+    // stream: completion, failure, truncation, or a client disconnect.
+    let traceClosed = false;
+    const closeTrace = (status: "ok" | "error" | "unset", outcome: string) => {
+      if (traceClosed) return;
+      traceClosed = true;
+      const usage = finalUsage
+        ? {
+            inputTokens: finalUsage.input_tokens,
+            outputTokens: finalUsage.output_tokens,
+            totalTokens: finalUsage.total_tokens,
+          }
+        : undefined;
+      const cachedTokens = finalUsage?.input_tokens_details?.cached_tokens ?? 0;
+      llmSpan?.end({
+        status,
+        output: answer,
+        usage,
+        costUsd: estimateCostUsd(CHAT_MODEL, { ...usage, cachedTokens }),
+        attributes: {
+          outcome,
+          cachedTokens,
+          reasoningTokens: finalUsage?.output_tokens_details?.reasoning_tokens ?? 0,
+        },
+      });
+      // No costUsd here: the trace total is the sum of its spans, which
+      // picks up the query embedding the route never sees.
+      trace?.end({
+        status,
+        output: answer,
+        usage,
+        metadata: { outcome, citationCount: uniqueCitations.length },
+      });
     };
 
     const stream = new ReadableStream({
@@ -266,14 +369,21 @@ export async function POST(request: NextRequest) {
           terminalSent = true;
           send(controller, event, data);
         };
+        // How this turn ended, recorded on the trace in the finally below.
+        let outcome = "ended_without_usage";
+        let traceStatus: "ok" | "error" | "unset" = "ok";
         try {
+          if (trace) send(controller, "trace", { id: trace.id });
           send(controller, "citations", uniqueCitations);
           for await (const part of completion) {
             if (part.type === "response.output_text.delta" && part.delta) {
+              answer += part.delta;
               send(controller, null, { delta: part.delta });
             } else if (part.type === "response.failed") {
               console.error("chat: response failed", part.response.error);
               if (part.response.usage) accountUsage(part.response.usage, "failed");
+              outcome = "failed";
+              traceStatus = "error";
               sendTerminal("error", { code: "api_error" });
             } else if (part.type === "response.incomplete") {
               // Terminates the stream too, e.g. when max_output_tokens is
@@ -281,6 +391,7 @@ export async function POST(request: NextRequest) {
               // still get a terminal event.
               const usage = part.response.usage;
               const reasoningTokens = usage ? accountUsage(usage, "incomplete") : 0;
+              outcome = "incomplete";
               sendTerminal("done", {
                 promptTokens: usage?.input_tokens ?? null,
                 completionTokens: usage?.output_tokens ?? null,
@@ -290,6 +401,7 @@ export async function POST(request: NextRequest) {
             } else if (part.type === "response.completed" && part.response.usage) {
               const usage = part.response.usage;
               const reasoningTokens = accountUsage(usage, "completed");
+              outcome = "completed";
               // SSE field names are the route's public contract with the
               // widget; they keep their Chat Completions era names.
               sendTerminal("done", {
@@ -302,14 +414,18 @@ export async function POST(request: NextRequest) {
           sendTerminal("done", { promptTokens: null, completionTokens: null, reasoningTokens: 0 });
         } catch (error) {
           console.error("chat: stream failed", error);
+          outcome = "stream_failed";
+          traceStatus = "error";
           sendTerminal("error", { code: "api_error" });
         } finally {
+          closeTrace(traceStatus, outcome);
           release();
           controller.close();
         }
       },
       cancel() {
         // Client went away mid-stream; usage is unknown, reservation stands.
+        closeTrace("unset", "client_disconnected");
         release();
       },
     });
@@ -321,6 +437,8 @@ export async function POST(request: NextRequest) {
     release();
     // The API call never started streaming, so nothing was spent.
     void settleTokens(reservedTokens, 0, spendKey);
+    llmSpan?.end({ status: "error", attributes: { outcome: "request_failed" } });
+    trace?.end({ status: "error", metadata: { outcome: "request_failed" } });
     console.error("chat: completion failed", error);
     return jsonError(502, "api_error", "The model is unreachable right now. Try again shortly.");
   }

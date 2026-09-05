@@ -10,6 +10,8 @@ import {
   rejectReasoningModel,
 } from "@/lib/chat/config";
 import { reservationForInput, reserveTokens, settleTokens } from "@/lib/chat/spend";
+import { startTrace } from "@/lib/tracing/firetrace";
+import { estimateCostUsd } from "@/lib/tracing/pricing";
 
 /**
  * The cheat sheet's prompt finder: the reader describes their situation in a
@@ -20,7 +22,9 @@ import { reservationForInput, reserveTokens, settleTokens } from "@/lib/chat/spe
  *
  * Cost controls mirror /api/chat and share its monthly budget: same model
  * config (non-reasoning guard included), per-IP rate limit, input cap, and
- * reserve/settle accounting. Only token counts are logged, never queries.
+ * reserve/settle accounting. Each match is traced to FireTrace
+ * (lib/tracing/firetrace.ts), which is how a query that keeps landing on
+ * the wrong card gets noticed.
  */
 
 const MODEL_GUARD_ERROR = rejectReasoningModel(CHAT_MODEL);
@@ -122,6 +126,23 @@ export async function POST(request: NextRequest) {
   const { default: OpenAI } = await import("openai");
   const client = new OpenAI();
 
+  const trace = startTrace({
+    name: "cheat-search",
+    provider: "openai",
+    model: CHAT_MODEL,
+    tags: ["cheat-search"],
+    input: body.query,
+  });
+  const llmSpan = trace?.span("openai.responses.create", "llm", {
+    provider: "openai",
+    model: CHAT_MODEL,
+    input: [
+      { role: "system", content: SYSTEM_PROMPT },
+      { role: "user", content: body.query },
+    ],
+    attributes: { temperature: 0, maxOutputTokens: MAX_OUTPUT_TOKENS, structuredOutput: true },
+  });
+
   try {
     const response = await client.responses.create({
       model: CHAT_MODEL,
@@ -147,17 +168,44 @@ export async function POST(request: NextRequest) {
     );
     void settleTokens(reservedTokens, usage?.total_tokens ?? reservedTokens, spendKey);
 
+    const tokens = {
+      inputTokens: usage?.input_tokens,
+      outputTokens: usage?.output_tokens,
+      totalTokens: usage?.total_tokens,
+    };
+    llmSpan?.end({
+      output: response.output_text,
+      usage: tokens,
+      costUsd: estimateCostUsd(CHAT_MODEL, {
+        ...tokens,
+        cachedTokens: usage?.input_tokens_details?.cached_tokens ?? 0,
+      }),
+    });
+
     const parsed = JSON.parse(response.output_text) as { id: string; reason: string };
     // Belt to the schema's braces: never hand the client an unknown id.
     if (!PROMPT_IDS.includes(parsed.id)) {
+      trace?.end({
+        status: "error",
+        output: response.output_text,
+        usage: tokens,
+        metadata: { outcome: "unknown_prompt_id" },
+      });
       return jsonError(502, "api_error", "The model picked an unknown prompt.");
     }
+    trace?.end({
+      output: parsed,
+      usage: tokens,
+      metadata: { outcome: "matched", matchedPromptId: parsed.id },
+    });
     return NextResponse.json(
       { id: parsed.id, reason: parsed.reason },
       { headers: { "Cache-Control": "no-store" } },
     );
   } catch (error) {
     void settleTokens(reservedTokens, 0, spendKey);
+    llmSpan?.end({ status: "error" });
+    trace?.end({ status: "error", metadata: { outcome: "request_failed" } });
     console.error("cheat-search: completion failed", error);
     return jsonError(502, "api_error", "The model is unreachable right now. Try again shortly.");
   }
