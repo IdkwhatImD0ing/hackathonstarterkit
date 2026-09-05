@@ -177,48 +177,47 @@ to be rated badly. That is a quiet bias in the data.
   own collection keyed by `traceId`, a score row that lands before its trace
   may not even be a problem for storage, only for the existence check.
 
-## 6. NEW: no environment concept, and unknown filters are silently ignored
+## 6. RESOLVED: environment separation
 
-There is no way to tell a production trace from a preview or local one.
-Verified:
+Both halves of this are fixed, and the design that shipped is the one worth
+having: the environment lives on the **API key** and is stamped server-side
+at ingest, so a deployment cannot claim an environment whose key it does not
+hold. The body still rejects `environment`, which is the right call.
 
-| Attempt | Result |
+For the record, what was blocked: there was no way to tell a production
+trace from a preview or local one. `environment` on the trace was rejected,
+and `?environment=production` returned `200` with a full unfiltered list, so
+a caller who assumed the filter applied silently read production numbers
+that included local traffic. This integration worked around it with an
+`env:*` tag derived from `VERCEL_ENV`.
+
+That workaround is now removed. Verified after the change:
+
+| Check | Result |
 | --- | --- |
-| `environment` as a trace field | `400 invalid_trace: Unrecognized key: "environment"` |
-| `GET /api/v1/traces?environment=production` | `200`, **unfiltered** |
-| `GET /api/v1/traces?env=production` | `200`, **unfiltered** |
-| `tags: ["env:preview"]` then `?tag=env:preview` | works |
+| `GET /api/v1/key` | returns `environment` (`null` until a key is assigned one) |
+| Trace list and detail | carry `environment` |
+| `?environment=production` | filters, and `unassigned` is queryable |
+| `?bogusparam=1` | `400 invalid_request`, and the message **lists every supported parameter** |
 
-Two separate points here.
+Two things to keep:
 
-**The missing concept.** Every deployed app has at least production, preview,
-and local, and mixing them silently corrupts exactly the numbers people open
-a tracing tool for: error rate, p95 latency, and cost. A developer hammering
-a local build can bury a production regression. Tags carry it fine, and that
-is what this integration does now (`env:production`, `env:preview`,
-`env:local`, from `VERCEL_ENV`), but every user has to independently invent
-the convention, and the dashboard cannot know to group by it. A first-class
-optional `environment` string on the trace, filterable and shown as a
-selector, is a small addition with a large payoff. The alternative you
-already support, one project per environment, means juggling three API keys
-and losing the ability to compare across them.
+- **The strict query string.** The error names the offending parameter and
+  enumerates the valid ones. That turns a silent wrong answer into a
+  five-second fix, and it now matches the strictness of the ingest body,
+  which was the inconsistency worth closing.
+- **Nothing is silently relabelled.** Pre-existing keys and traces stay
+  unassigned rather than being backfilled to `production`. Guessing there
+  would have quietly corrupted the very numbers the feature exists to
+  protect.
 
-A full specification for this, written to be handed to an agent working on
-the FireTrace repo, is in
-[firetrace-environments-prompt.md](./firetrace-environments-prompt.md). It
-puts the environment on the API key so it is stamped server-side and cannot
-be spoofed, and covers migration, the dashboard, and the query-layer fix
-below.
-
-**The silent filter is the more serious bug.** `?environment=production`
-returned `200` and a full, unfiltered list. A caller who assumes it worked
-reads production numbers that silently include preview and local traffic,
-and nothing anywhere indicates a problem. This is inconsistent with the
-ingest path, which is strict and rejects unknown keys with a precise message.
-Please make the query layer match: reject unknown query parameters with
-`400 invalid_request` naming the parameter. Wrong data that looks right is
-worse than an error, and the strictness on ingest is what makes this API
-pleasant to build against in the first place.
+One rough edge left, from your own docs: traces predating environments
+"carry no `environment` field at all, and Firestore cannot query for a
+missing field, so they are invisible to `?environment=unassigned`". So
+history is neither in an environment nor findable as unassigned, which is a
+third state users will trip over. Worth either surfacing it in the dashboard
+("N traces predate environments") or having the backfill stamp them
+`unassigned` explicitly so the filter is total.
 
 ## 7. Documentation gaps, mostly closed
 
@@ -270,7 +269,7 @@ One trace per user-facing LLM interaction:
 
 ```
 trace "chat"                            (provider openai, model, sessionId)
-│                                       tags: env:production | env:preview | env:local
+│                                       environment: from the API key
 ├── span "retrieval"                    kind: retriever
 │   └── span "openai.embeddings.create" kind: embedding
 └── span "openai.responses.create"      kind: llm
@@ -280,10 +279,11 @@ trace "cheat-search"
 └── span "openai.responses.create"      kind: llm
 ```
 
-Every trace is tagged with its deployment environment, and carries
-`metadata.branch` and `metadata.commit` when the platform exposes them, so
-one preview can be told from another. Filter with
-`GET /api/v1/traces?tag=env:production`. See finding 6.
+The environment comes from the API key, so production, preview, and local
+each use their own. Traces also carry `metadata.branch` and
+`metadata.commit` when the platform exposes them, which the environment
+alone does not give you: without them one preview looks like any other.
+Filter with `GET /api/v1/traces?environment=production`. See finding 6.
 
 A real rated turn, read back from the API:
 

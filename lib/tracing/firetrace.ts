@@ -78,26 +78,19 @@ export function isTracingEnabled(): boolean {
 }
 
 /**
- * Which deployment produced a trace, as a tag.
- *
- * FireTrace has no environment field (the ingest schema rejects one) and
- * no environment filter, so this rides on `tags`, which is the filterable
- * axis: GET /api/v1/traces?tag=env:preview. VERCEL_ENV is production,
- * preview, or development on Vercel and absent off it, where "local" is
- * the honest label.
- */
-function environmentTag(): string {
-  return `env:${process.env.VERCEL_ENV ?? "local"}`;
-}
-
-/**
  * Branch and commit behind a trace, when the platform exposes them.
- * Without these every preview deployment looks alike, which defeats the
- * point of tracing previews at all. Absent keys drop out of the JSON.
+ *
+ * The environment is deliberately NOT here. FireTrace stamps it from the
+ * API key's own environment, so a deployment cannot claim to be an
+ * environment whose key it does not hold. That means production, preview,
+ * and local each need their own key; see the FireTrace block in
+ * .env.example. Branch still earns its place, because the platform knows
+ * it and FireTrace cannot: without it one preview looks like any other.
+ *
+ * Absent keys drop out of the JSON.
  */
 function deploymentMetadata(): Record<string, unknown> {
   return {
-    environment: process.env.VERCEL_ENV ?? "local",
     branch: process.env.VERCEL_GIT_COMMIT_REF,
     commit: process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7),
   };
@@ -271,9 +264,7 @@ export class Trace {
       model: options.model,
       sessionId: options.sessionId,
       userId: options.userId,
-      // Applied here rather than at each call site so a new traced route
-      // cannot forget it and land untagged in the same list as production.
-      tags: [environmentTag(), ...(options.tags ?? [])].slice(0, 20),
+      tags: options.tags?.slice(0, 20),
       input: options.input,
       metadata: { ...deploymentMetadata(), ...options.metadata },
     };

@@ -1,5 +1,15 @@
 # Prompt: environment separation in FireTrace
 
+> **SHIPPED, September 5, 2026. This prompt has been fulfilled and is kept
+> only as a record of the reasoning.** FireTrace now carries `environment`
+> on the API key, stamps it onto traces server-side, still rejects it in the
+> ingest body, exposes it on `GET /api/v1/key` and on trace responses,
+> filters with `?environment=` (including `unassigned`), and rejects unknown
+> query parameters with a message listing the supported ones. Nothing was
+> backfilled to `production`. This repo's `env:*` tag workaround has been
+> removed; see finding 6 of
+> [firetrace-feedback.md](./firetrace-feedback.md). Safe to delete.
+
 Paste everything below the divider into an agent working on the **FireTrace
 repo**. It is self-contained: problem, verified evidence, the contract to
 build, migration, and acceptance criteria.

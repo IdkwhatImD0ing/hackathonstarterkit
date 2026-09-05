@@ -158,42 +158,33 @@ describe("firetrace", () => {
     expect(sent).toHaveLength(1);
   });
 
-  it("tags every trace with its deployment environment", async () => {
-    // FireTrace has no environment field or filter, so the environment
-    // rides on tags, which is the one filterable axis.
+  it("never sends an environment, because the key's environment decides it", async () => {
+    // FireTrace stamps environment from the API key server-side and
+    // rejects it in the body, so a deployment cannot claim an environment
+    // whose key it does not hold. Sending one would be a 400.
     vi.stubEnv("VERCEL_ENV", "preview");
-    vi.stubEnv("VERCEL_GIT_COMMIT_REF", "claude/feedback-footer");
-    vi.stubEnv("VERCEL_GIT_COMMIT_SHA", "abc1234def5678");
 
     startTrace({ name: "chat", tags: ["chat"] })!.end();
 
     await flush();
     const stored = sent[0].body.trace;
-    expect(stored.tags).toEqual(["env:preview", "chat"]);
-    expect(stored.metadata).toMatchObject({
-      environment: "preview",
-      branch: "claude/feedback-footer",
-      commit: "abc1234",
-    });
+    expect("environment" in stored).toBe(false);
+    expect(stored.tags).toEqual(["chat"]);
+    expect(stored.metadata).not.toHaveProperty("environment");
     vi.unstubAllEnvs();
   });
 
-  it("labels traces from outside Vercel as local, not production", async () => {
-    // A missing VERCEL_ENV must never be mistaken for production.
-    startTrace({ name: "chat" })!.end();
+  it("records branch and commit, which FireTrace cannot know", async () => {
+    // Environment alone does not separate one preview from another.
+    vi.stubEnv("VERCEL_GIT_COMMIT_REF", "claude/feedback-footer");
+    vi.stubEnv("VERCEL_GIT_COMMIT_SHA", "abc1234def5678");
 
-    await flush();
-    expect(sent[0].body.trace.tags).toEqual(["env:local"]);
-    expect(sent[0].body.trace.metadata).toMatchObject({ environment: "local" });
-  });
-
-  it("keeps caller metadata when it collides with deployment metadata", async () => {
-    vi.stubEnv("VERCEL_ENV", "production");
     startTrace({ name: "chat", metadata: { outcome: "completed" } })!.end();
 
     await flush();
-    expect(sent[0].body.trace.metadata).toMatchObject({
-      environment: "production",
+    expect(sent[0].body.trace.metadata).toEqual({
+      branch: "claude/feedback-footer",
+      commit: "abc1234",
       outcome: "completed",
     });
     vi.unstubAllEnvs();
