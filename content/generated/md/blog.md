@@ -61,3 +61,7 @@ Read article](https://thehackathonplaybook.dev/blog/best-tech-stack-for-hackatho
 How to win hackathons, from 36+ wins and $100K+ in prizes. The 7-phase system covering team, ideation, validation, execution, pitching, and submission.
 
 Read article](https://thehackathonplaybook.dev/blog/how-to-win-hackathons)
+
+© 2026 Hackathon Playbook
+
+[Got feedback? feedback@thehackathonplaybook.dev](mailto:feedback@thehackathonplaybook.dev)
