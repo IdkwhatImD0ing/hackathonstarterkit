@@ -6,7 +6,8 @@
  *   pnpm smoke -- http://localhost:3000         # or any base URL
  *
  * Checks every .md URL from the live sitemap, the negotiation split, the
- * discovery documents, and reads both cache layers' headers on the way.
+ * discovery documents, the DNS-AID records and their DNSSEC validation, and
+ * reads both cache layers' headers on the way.
  * Exits non-zero on any failure.
  */
 const base = (process.argv[2] ?? "https://thehackathonplaybook.dev").replace(/\/$/, "");
@@ -76,6 +77,40 @@ async function checkDocuments() {
   }
 }
 
+type DohAnswer = { AD?: boolean; Answer?: { data: string }[] };
+
+async function doh(name: string, type: string): Promise<DohAnswer> {
+  const response = await fetch(
+    `https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(name)}&type=${type}`,
+    { headers: { accept: "application/dns-json" } },
+  );
+  return (await response.json()) as DohAnswer;
+}
+
+async function checkDnsAid() {
+  const zone = new URL(base).hostname;
+  // DNS records belong to the real zone; skip for localhost and preview hosts.
+  if (zone === "localhost" || zone.endsWith(".vercel.app")) return;
+
+  console.log("DNS-AID discovery records (docs/dns-aid-setup.md):");
+  for (const label of ["_index", "_mcp"]) {
+    const name = `${label}._agents.${zone}`;
+    const record = (await doh(name, "HTTPS")).Answer?.[0]?.data;
+    if (!record) fail(`${name} -> no HTTPS record`);
+    else ok(`${name} -> ${record}`);
+  }
+
+  // Readiness scanners resolve these over DoH and require authenticated data,
+  // so an unvalidated answer fails the check even when the records are perfect.
+  if ((await doh(zone, "SOA")).AD) {
+    ok(`${zone} DNSSEC validates (AD=1)`);
+  } else if ((await doh(zone, "DS")).Answer?.length) {
+    fail(`${zone} has a DS record but answers are not authenticated (AD=0): the DS likely no longer matches the zone's KSK`);
+  } else {
+    fail(`${zone} answers are not authenticated (AD=0) and the registry has no DS record: the chain of trust stops at the parent. See docs/dns-aid-setup.md.`);
+  }
+}
+
 async function checkChatCold() {
   console.log("Chat cold start (catches missing outputFileTracingIncludes):");
   const response = await fetch(`${base}/api/chat`, {
@@ -92,6 +127,7 @@ async function checkChatCold() {
 await checkMarkdownUrls();
 await checkNegotiation();
 await checkDocuments();
+await checkDnsAid();
 await checkChatCold();
 
 if (failures > 0) {
