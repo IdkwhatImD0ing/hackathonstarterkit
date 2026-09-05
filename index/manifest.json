@@ -3,10 +3,10 @@
   "embeddingDims": 1536,
   "chunkerVersion": 2,
   "normalizerVersion": 1,
-  "generatedAt": "2026-08-16T20:35:52.571Z",
+  "generatedAt": "2026-09-05T03:45:36.548Z",
   "pages": {
     "/": {
-      "sourceHash": "93eca5d4bc06188608c162e3385cec39ce17a4f3b51c67bcc565f7c47ee388bc",
+      "sourceHash": "4d69ab546147c7bcd8d160a6c7c78e9b5a7ff1d64cba6855398f456a7819b5fa",
       "chunkIds": [
         "/#hackathon-playbook#0",
         "/#bill-zhang-idkwhatimd0inghttpsgithubcomidkwhatimd0ing#0"
@@ -19,7 +19,7 @@
       ]
     },
     "/playbook/team-formation": {
-      "sourceHash": "984295e16f81f18b695d6f2311a6d0ce78270f8302150532f5923568e141e924",
+      "sourceHash": "42a0b5a6c8cfcddb150f63867c1202142ca713ff0137332a9455e8d24398e0f3",
       "chunkIds": [
         "/playbook/team-formation#find-your-persona#0",
         "/playbook/team-formation#find-your-persona/whats-your-hackathon-persona#0",
@@ -42,7 +42,7 @@
       ]
     },
     "/playbook/ideation": {
-      "sourceHash": "1174911a125ffb9197489abb5f8404c6f19276d1dae44ab52ee0d81b13acac5a",
+      "sourceHash": "939713c05de5929235e45007d8c13beebe81d756bab0f63e041312d657c8a7ad",
       "chunkIds": [
         "/playbook/ideation#the-little-alchemy-method#0",
         "/playbook/ideation#the-little-alchemy-method/your-building-blocks#0",
@@ -74,7 +74,7 @@
       ]
     },
     "/playbook/validation": {
-      "sourceHash": "78255d969a1be8b967adb93e78acc2eaba8022e780656f2c99ef853daf620db2",
+      "sourceHash": "71c3f84a6515a24d48972eda30bb0b1b2c1610a23ee3f133c3d7c3dee209832f",
       "chunkIds": [
         "/playbook/validation#the-lego-method#0",
         "/playbook/validation#the-lego-method/test-one-thing#0",
@@ -116,7 +116,7 @@
       ]
     },
     "/playbook/execution": {
-      "sourceHash": "6294af16e836726bb08f0ebe1e0ad2f9919289084908ab8098f10ff210582e49",
+      "sourceHash": "ade0edec88e75e8476f05f2c2ed80e26d75a76344ab649d7d5ad73acb3f7b2fa",
       "chunkIds": [
         "/playbook/execution#plan-your-24-hours#0",
         "/playbook/execution#the-speed-mindset#0",
@@ -141,7 +141,7 @@
       ]
     },
     "/playbook/pitching": {
-      "sourceHash": "61b671c843f5f6a6c95afed5fd895d1ee39e438bcb4d727e54aa1668aba92563",
+      "sourceHash": "28fa1050be523d6f2edfa5957112e4fb77629f8313c1240a06312b3b215a2cc2",
       "chunkIds": [
         "/playbook/pitching#storytelling-is-the-secret-weapon#0",
         "/playbook/pitching#storytelling-is-the-secret-weapon/sell-the-vision#0",
@@ -154,7 +154,7 @@
         "/playbook/pitching#why-storytelling-works-the-science-of-persuasion/made-to-stick-success#0",
         "/playbook/pitching#anatomy-of-a-winning-pitch#0",
         "/playbook/pitching#winning-pitches-dissected#0",
-        "/playbook/pitching#winning-pitches-dissected/dispatchai-uc-berkeley-ai-hackathon#0",
+        "/playbook/pitching#winning-pitches-dissected/dispatchai-uc-berkeley-ai-hackathon-2024#0",
         "/playbook/pitching#winning-pitches-dissected/talktuahbank-hackutd-2024#0",
         "/playbook/pitching#winning-pitches-dissected/adapted-la-hacks-2024#0",
         "/playbook/pitching#know-your-judges#0",
@@ -178,7 +178,7 @@
       ]
     },
     "/playbook/submission": {
-      "sourceHash": "6b48d92b46ebe30095bc887990171b2daf616bc6850012dff4be4713c25a9f02",
+      "sourceHash": "20b1a7bed3eecf07ee2b255393d00046dfb15c0ed5a826c77b806f9e2fb8c188",
       "chunkIds": [
         "/playbook/submission#the-submission-advantage#0",
         "/playbook/submission#the-submission-advantage/devpost-readme#0",
@@ -212,7 +212,7 @@
       ]
     },
     "/playbook/post-hackathon": {
-      "sourceHash": "f5bf096f1b51b5902278d1038d8e1459f21b0b66da8e428cb2f49f5e96ce2557",
+      "sourceHash": "4dd736f5f5675392f21c01f24cd3f0d5607c64832ec09d7a7ab2b907852d981e",
       "chunkIds": [
         "/playbook/post-hackathon#the-tree-falls-in-a-forest#0",
         "/playbook/post-hackathon#the-tree-falls-in-a-forest/post-your-work#0",
@@ -240,7 +240,7 @@
       ]
     },
     "/non-coders": {
-      "sourceHash": "7fb0546ed4c5c0f388113cabde1317c72216649b38c6965b05d283dda3822876",
+      "sourceHash": "d85a6819caf87c4f1ff4725da4defd076d6ac91fe72e0b525bd7aca7617996d8",
       "chunkIds": [
         "/non-coders#intro#0",
         "/non-coders#choose-your-starting-point#0",
@@ -248,7 +248,7 @@
       ]
     },
     "/non-coders/proof": {
-      "sourceHash": "54eee6f99d68d88abc00c72eff079ca8d4187859f4474e8d9b19f64a939dd632",
+      "sourceHash": "f1cc0ed37a9ddd9ac473a15533fbb1504867b9bd39b5f0bb13f71d932076f533",
       "chunkIds": [
         "/non-coders/proof#intro#0"
       ]
@@ -458,7 +458,7 @@
       ]
     },
     "/blog": {
-      "sourceHash": "d518b1ada4bc9fbf6e86219370316b4177afb7b20f79792af140eadf9ee893c0",
+      "sourceHash": "b5279369d01b66890465794c990cabcba0e4de0b2b136a9456619efcc648d2cc",
       "chunkIds": [
         "/blog#intro#0",
         "/blog#get-new-hackathon-guides-in-your-inbox#0",
@@ -473,7 +473,7 @@
       ]
     },
     "/blog/what-to-do-after-a-hackathon": {
-      "sourceHash": "417de5c8c39655ecf4e0b0aed082a6305670ae80ed65117a7b122f6ec594687d",
+      "sourceHash": "3283801e8bbe954dc59d8a031b5c7b8582a5237ad8cf54cc7d028ed07184a9dd",
       "chunkIds": [
         "/blog/what-to-do-after-a-hackathon#you-shipped-the-project-now-ship-the-proof#0",
         "/blog/what-to-do-after-a-hackathon#every-asset-links-to-every-other-one#0",
@@ -485,7 +485,7 @@
       ]
     },
     "/blog/hackathon-pitch-mistakes-la-hacks": {
-      "sourceHash": "6f219f8d1d6f5db2575cac59bb28f815a229db66355652228976f23eb7557375",
+      "sourceHash": "81af3f0b84d870fbe1e0e47eccbdd146fa91ea3fa85ebaf399899fa956bee31d",
       "chunkIds": [
         "/blog/hackathon-pitch-mistakes-la-hacks#most-teams-lose-points-before-the-demo-even-starts#0",
         "/blog/hackathon-pitch-mistakes-la-hacks#1-you-pitched-every-judge-the-same-way#0",
@@ -501,7 +501,7 @@
       ]
     },
     "/blog/how-to-win-hackathons": {
-      "sourceHash": "1b387d6552e3511e84d05562929124c6149c40216f1dd82cd73ecef2accef771",
+      "sourceHash": "9ab441ff88eb0fcc877f4f8ae99a1fa28b06cda00f958e5179afd7af082f9e46",
       "chunkIds": [
         "/blog/how-to-win-hackathons#most-teams-lose-on-strategy-not-skill#0",
         "/blog/how-to-win-hackathons#phase-1-build-a-team-with-complementary-skills#0",
@@ -539,7 +539,7 @@
       ]
     },
     "/blog/hackathon-pitch-guide": {
-      "sourceHash": "54d7e8b426a119c85ef42dd22b431c6814effa43938abfafde115af76415d2d4",
+      "sourceHash": "6b03c4187286859c04562b8a61cf465faf0b07c1641936dab2a6406ea6a55be5",
       "chunkIds": [
         "/blog/hackathon-pitch-guide#the-3-minute-pitch-structure-that-wins#0",
         "/blog/hackathon-pitch-guide#why-the-pitch-beats-the-code#0",
@@ -550,18 +550,18 @@
       ]
     },
     "/blog/non-coders-winning-hackathons": {
-      "sourceHash": "bfa0b680e9cb4701ec48a3e7361639f9c54974f63223ee4467492e8f74bcf48c",
+      "sourceHash": "65346101d9974d343331c9c0ee61347a7bf1d2c0d992131d55842cf6dced9578",
       "chunkIds": [
         "/blog/non-coders-winning-hackathons#a-lawyer-beat-hundreds-of-developers#0",
         "/blog/non-coders-winning-hackathons#why-domain-expertise-now-beats-coding-skill#0",
         "/blog/non-coders-winning-hackathons#the-tools-cursor-and-claude-code#0",
         "/blog/non-coders-winning-hackathons#the-winning-formula-for-non-coders#0",
-        "/blog/non-coders-winning-hackathons#proof-3-hours-one-app-200-wins#0",
+        "/blog/non-coders-winning-hackathons#proof-3-hours-one-app-200-hackathons#0",
         "/blog/non-coders-winning-hackathons#your-first-hackathon-step-by-step#0"
       ]
     },
     "/blog/build-with-elevenlabs-and-cursor": {
-      "sourceHash": "bda9ccffa32a41d798667175c478b00c4c979b1248d807dcbe506eec15ec554f",
+      "sourceHash": "b8ef5f796e64fb05c327fa18684a1aa1b2eb9d0dc62630a868489cc92c1a3412",
       "chunkIds": [
         "/blog/build-with-elevenlabs-and-cursor#make-your-demo-talk-back#0",
         "/blog/build-with-elevenlabs-and-cursor#step-0-write-the-prd-before-cursor-opens-a-file#0",
@@ -585,8 +585,8 @@
       "track": "home"
     },
     "/#bill-zhang-idkwhatimd0inghttpsgithubcomidkwhatimd0ing#0": {
-      "contentHash": "68bacf8975b10310ed42ddbfae9cf86494e1180712c5d75d1365234b638da72f",
-      "tokens": 640,
+      "contentHash": "0c5cc65fca5343e831e0ce8855d385821cb013725a2047c5808c83b62b5ad566",
+      "tokens": 673,
       "pageTitle": "The Hackathon Playbook",
       "sectionHeading": "Bill Zhang [@IdkwhatImD0ing](https://github.com/IdkwhatImD0ing)",
       "url": "/",
@@ -657,8 +657,8 @@
       "track": "playbook"
     },
     "/playbook/team-formation#the-four-personas/the-strategist#0": {
-      "contentHash": "7c76f50769e5f3127ac46032e896d6bee55d5157cf0ab88db47680a6caa405fe",
-      "tokens": 307,
+      "contentHash": "e26ababb5eecd7b9cdd8815ef9e56e13a4f9d7e8deb4fbee3d089c8a3119a066",
+      "tokens": 313,
       "pageTitle": "Team Formation",
       "sectionHeading": "The Four Personas > The Strategist",
       "url": "/playbook/team-formation",
@@ -666,8 +666,8 @@
       "track": "playbook"
     },
     "/playbook/team-formation#where-to-find-teammates#0": {
-      "contentHash": "acc0d6e823f3e8874c8167b4b713fb852ec4bec38207655771c712412912bb2b",
-      "tokens": 548,
+      "contentHash": "394b1928d9fcfee58a9d8c3e4b2ad1f35b8c49c3e25d0f0bd726b658fdc0161c",
+      "tokens": 567,
       "pageTitle": "Team Formation",
       "sectionHeading": "Where to Find Teammates",
       "url": "/playbook/team-formation",
@@ -711,8 +711,8 @@
       "track": "playbook"
     },
     "/playbook/team-formation#how-serious-are-you-about-hackathons/tuckmans-group-development#0": {
-      "contentHash": "b8717cdef09d12cf88a0a1c64a571b879aafb667c88027ed82ee698e89b6f690",
-      "tokens": 120,
+      "contentHash": "fec3fd462e51a464e50b2f3f7f7339a37c4c7a16a2b73520153b519b8df7e7f4",
+      "tokens": 140,
       "pageTitle": "Team Formation",
       "sectionHeading": "How serious are you about hackathons? > Tuckman's Group Development",
       "url": "/playbook/team-formation",
@@ -756,7 +756,7 @@
       "track": "playbook"
     },
     "/playbook/team-formation#how-serious-are-you-about-hackathons/competitive-hackathons#0": {
-      "contentHash": "591f09960056573349973c34a467d7d1a3c04d8fd29b34b0fee742a3a95ec99c",
+      "contentHash": "fb9364aad90d083d992e18d20af9ac5b7e441037443d6b0716d9b1321aaa13e6",
       "tokens": 220,
       "pageTitle": "Team Formation",
       "sectionHeading": "How serious are you about hackathons? > Competitive Hackathons",
@@ -855,8 +855,8 @@
       "track": "playbook"
     },
     "/playbook/ideation#go-deeper/connecting-things#0": {
-      "contentHash": "c88071fa47ee941baf0ce0fb2870633f1b3472094503739774d77eb142722496",
-      "tokens": 99,
+      "contentHash": "45715ceb4d4b9f470a802f37bdcc5feec17e58a4af530519dcdea1b329768809",
+      "tokens": 107,
       "pageTitle": "Ideation",
       "sectionHeading": "Go Deeper > Connecting Things",
       "url": "/playbook/ideation",
@@ -864,8 +864,8 @@
       "track": "playbook"
     },
     "/playbook/ideation#go-deeper/bisociation#0": {
-      "contentHash": "16328b9d14c7f31c1883b9fb3c888b6bfbee0fac3705176b574854053d0d1bd2",
-      "tokens": 85,
+      "contentHash": "d65819726739b540568dedf38e4305de4a4eeeb3d547a7580e816b9c0bc25f99",
+      "tokens": 103,
       "pageTitle": "Ideation",
       "sectionHeading": "Go Deeper > Bisociation",
       "url": "/playbook/ideation",
@@ -873,8 +873,8 @@
       "track": "playbook"
     },
     "/playbook/ideation#go-deeper/the-adjacent-possible#0": {
-      "contentHash": "4045c423489efaad0d558d2adaf4512b3eeeea2ceec90710d862fd73ed0e4a94",
-      "tokens": 98,
+      "contentHash": "efa51496cf5300eb55a63b9802a5d2e4aba1843847d0b8d22ddf394d22739b2b",
+      "tokens": 138,
       "pageTitle": "Ideation",
       "sectionHeading": "Go Deeper > The Adjacent Possible",
       "url": "/playbook/ideation",
@@ -882,8 +882,8 @@
       "track": "playbook"
     },
     "/playbook/ideation#go-deeper/notice-dont-invent#0": {
-      "contentHash": "9c44574a03b455a70d3e4b2b7d41d71b66e95480b1d4d8f5a37b53fe75acc6a3",
-      "tokens": 93,
+      "contentHash": "b54ba761f9ae34cfb6eb69e8ac4cb985aea1deee301e0c2b504647668ab58976",
+      "tokens": 104,
       "pageTitle": "Ideation",
       "sectionHeading": "Go Deeper > Notice, Don't Invent",
       "url": "/playbook/ideation",
@@ -918,8 +918,8 @@
       "track": "playbook"
     },
     "/playbook/ideation#go-deeper/wild-card-elements#0": {
-      "contentHash": "9dfeea2e4a4ecbd74dd25f6fd862c6dd56c0eecfd1cb848884e895936de3e360",
-      "tokens": 151,
+      "contentHash": "15965e27293001f471e1263d2e5095b172dcb133e341cdb8a9ecd1096d0bc3e1",
+      "tokens": 193,
       "pageTitle": "Ideation",
       "sectionHeading": "Go Deeper > Wild Card Elements",
       "url": "/playbook/ideation",
@@ -945,8 +945,8 @@
       "track": "playbook"
     },
     "/playbook/ideation#go-deeper/focused-vs-diffuse-thinking#0": {
-      "contentHash": "93e28bd94253ff3502d7298f5fb8fb641153fc8a356b9b698f9c9e2eecdad524",
-      "tokens": 109,
+      "contentHash": "a9e5362c621ecf47c651831ddf916bdbafd850e5a9e7f8920af080a902f9cd42",
+      "tokens": 215,
       "pageTitle": "Ideation",
       "sectionHeading": "Go Deeper > Focused vs. Diffuse Thinking",
       "url": "/playbook/ideation",
@@ -972,8 +972,8 @@
       "track": "playbook"
     },
     "/playbook/ideation#the-ideation-toolkit/scamper-method#0": {
-      "contentHash": "08fc1323bf4837fa64af1f8cab8ce614d440a2fd6ec88ddaae5a82a297201e27",
-      "tokens": 110,
+      "contentHash": "bd06c30f7ac9174cb7841f6a404d388a69161083f8d6ce9749cbdede38a0ae9b",
+      "tokens": 136,
       "pageTitle": "Ideation",
       "sectionHeading": "The Ideation Toolkit > SCAMPER Method",
       "url": "/playbook/ideation",
@@ -981,8 +981,8 @@
       "track": "playbook"
     },
     "/playbook/ideation#the-ideation-toolkit/random-input#0": {
-      "contentHash": "6b3b388e4c5d2b84d2dc2a8a7a9824a52a8a1f61b79f5458c4616891d78735df",
-      "tokens": 128,
+      "contentHash": "67db58497284b3a4f1e61a110a6e1b3453ef9bce746e5eb2bdb88df76f949aaa",
+      "tokens": 162,
       "pageTitle": "Ideation",
       "sectionHeading": "The Ideation Toolkit > Random Input",
       "url": "/playbook/ideation",
@@ -990,8 +990,8 @@
       "track": "playbook"
     },
     "/playbook/ideation#the-ideation-toolkit/antidisciplinary-thinking#0": {
-      "contentHash": "8ea3e3a8c083da13d8860cb0b50820cb883ae4cde6314353fe34cbd6d909008f",
-      "tokens": 306,
+      "contentHash": "78ac1b1d09b914a38fbfcdfb71a5a462399ee23b2ee528f0d41cb9cffd8946fe",
+      "tokens": 332,
       "pageTitle": "Ideation",
       "sectionHeading": "The Ideation Toolkit > Antidisciplinary Thinking",
       "url": "/playbook/ideation",
@@ -1224,8 +1224,8 @@
       "track": "playbook"
     },
     "/playbook/validation#spike-solutions-test-the-riskiest-piece-first#0": {
-      "contentHash": "25979bed6880cf95a60033204ee08cdd9ea152002b521cafce061439619717cc",
-      "tokens": 67,
+      "contentHash": "f395b1e265c97a94da821240cf2439f9f9e7146e75f61a41d758304b30d2f681",
+      "tokens": 71,
       "pageTitle": "Validation",
       "sectionHeading": "Spike Solutions — Test the Riskiest Piece First",
       "url": "/playbook/validation",
@@ -1233,8 +1233,8 @@
       "track": "playbook"
     },
     "/playbook/validation#spike-solutions-test-the-riskiest-piece-first/30-60-minutes-that-save-your-hackathon#0": {
-      "contentHash": "7cfe471070790348715efcc6bbe0c3e7a223e393783ebc6af4f72af7ab572128",
-      "tokens": 264,
+      "contentHash": "a62c091200d48ab9edf0aff6f9feec812fdbafc1c1737df3dd3033843a46d207",
+      "tokens": 262,
       "pageTitle": "Validation",
       "sectionHeading": "Spike Solutions — Test the Riskiest Piece First > 30-60 Minutes That Save Your Hackathon",
       "url": "/playbook/validation",
@@ -1251,8 +1251,8 @@
       "track": "playbook"
     },
     "/playbook/validation#spike-solutions-test-the-riskiest-piece-first/build-measure-learn#0": {
-      "contentHash": "5f515d37ba86f0b5b6e55ef463e2c7451c5756a3c652c3443fb9bf11b8b78d31",
-      "tokens": 77,
+      "contentHash": "54482b5d4e778ac4fd516fbce3cd6696683eb831156d64876a35a20123630c1c",
+      "tokens": 84,
       "pageTitle": "Validation",
       "sectionHeading": "Spike Solutions — Test the Riskiest Piece First > Build-Measure-Learn",
       "url": "/playbook/validation",
@@ -1260,8 +1260,8 @@
       "track": "playbook"
     },
     "/playbook/validation#spike-solutions-test-the-riskiest-piece-first/prototype-over-meetings#0": {
-      "contentHash": "710d8825c79c3c80bc77b6fa90165b4d67f7a2f83f5890f7af7da663dd4713e6",
-      "tokens": 69,
+      "contentHash": "dcbe3812499b1f9b6921fab92595d80e93f8c43914db834df612df4e44c18d90",
+      "tokens": 105,
       "pageTitle": "Validation",
       "sectionHeading": "Spike Solutions — Test the Riskiest Piece First > Prototype Over Meetings",
       "url": "/playbook/validation",
@@ -1269,8 +1269,8 @@
       "track": "playbook"
     },
     "/playbook/validation#spike-solutions-test-the-riskiest-piece-first/walking-skeleton#0": {
-      "contentHash": "530917fd9e5a6d3b4ff45e13671d8724f13578a1acdcdd659d751b24e5e04edd",
-      "tokens": 84,
+      "contentHash": "336f1a22df5155126271b418610f9430c8daf5fe95b5199e09cd1ee834badb97",
+      "tokens": 109,
       "pageTitle": "Validation",
       "sectionHeading": "Spike Solutions — Test the Riskiest Piece First > Walking Skeleton",
       "url": "/playbook/validation",
@@ -1296,8 +1296,8 @@
       "track": "playbook"
     },
     "/playbook/validation#two-way-door-decisions#0": {
-      "contentHash": "90886c63f758ec699b702ae6d24bd0bf199fd4450e1319a3fb55008550ecb3d2",
-      "tokens": 123,
+      "contentHash": "ee69ba5d4fa6f231dcf4d293a8270dfc1ba5b67b0c9ade57aeb5b7bf696355ed",
+      "tokens": 144,
       "pageTitle": "Validation",
       "sectionHeading": "Two-Way Door Decisions",
       "url": "/playbook/validation",
@@ -1323,8 +1323,8 @@
       "track": "playbook"
     },
     "/playbook/validation#two-way-door-decisions/8020-decision-time#0": {
-      "contentHash": "3060b9612fc59539d005c299cdffa8fdbdbab2ba522bc4c097f261cbb65a330f",
-      "tokens": 225,
+      "contentHash": "c4fc1fa863bcb6e4767df21e3c6575b77b5089f421445755a48a8e222ffc1c47",
+      "tokens": 239,
       "pageTitle": "Validation",
       "sectionHeading": "Two-Way Door Decisions > 80/20 Decision Time",
       "url": "/playbook/validation",
@@ -1332,8 +1332,8 @@
       "track": "playbook"
     },
     "/playbook/validation#validation-checklist#0": {
-      "contentHash": "892e7060c8025a72f056fb63bcb3379be46ba74d5b8539df7e89cb8ab5d67f7b",
-      "tokens": 284,
+      "contentHash": "ad4b48cfdad8a4273263de848f294f0918246a0b709b1634657cf9215c310502",
+      "tokens": 290,
       "pageTitle": "Validation",
       "sectionHeading": "Validation Checklist",
       "url": "/playbook/validation",
@@ -1413,8 +1413,8 @@
       "track": "playbook"
     },
     "/playbook/execution#the-ai-powered-workflow/claude-artifacts#0": {
-      "contentHash": "e19b8363b7872524d54909c3fbee130e25375d6d3009309614ec81cebb7477a6",
-      "tokens": 157,
+      "contentHash": "6d2f6c9d8da1614d296af8b2d5bc10a64065067c692272afb4fcea982244af1e",
+      "tokens": 178,
       "pageTitle": "Execution",
       "sectionHeading": "The AI-Powered Workflow > Claude Artifacts",
       "url": "/playbook/execution",
@@ -1431,8 +1431,8 @@
       "track": "playbook"
     },
     "/playbook/execution#the-ai-powered-workflow/make-it-work-make-it-right-make-it-fast#0": {
-      "contentHash": "022ada9d08ad3a4e92786dd54f9d1f717a646ad2ae039961741388ccaf022d11",
-      "tokens": 93,
+      "contentHash": "8860185317fe90804b3feddad54806b605a4c92d5be1d5ab7683fe9bdccf9ca0",
+      "tokens": 114,
       "pageTitle": "Execution",
       "sectionHeading": "The AI-Powered Workflow > Make It Work, Make It Right, Make It Fast",
       "url": "/playbook/execution",
@@ -1440,8 +1440,8 @@
       "track": "playbook"
     },
     "/playbook/execution#the-ai-powered-workflow/ship-embarrassingly-early#0": {
-      "contentHash": "3510e624fd297b534d4dd96b05296e4a375c2750158cb1595a55d2582e4abb79",
-      "tokens": 95,
+      "contentHash": "fbcdfa705fd2328d19c9145eae2320f9fe54632f359c88fbedece359e87bd34b",
+      "tokens": 96,
       "pageTitle": "Execution",
       "sectionHeading": "The AI-Powered Workflow > Ship Embarrassingly Early",
       "url": "/playbook/execution",
@@ -1449,8 +1449,8 @@
       "track": "playbook"
     },
     "/playbook/execution#the-ai-powered-workflow/the-8020-rule#0": {
-      "contentHash": "a55ff017e096cb72d0c3b907a9cb0fae391c7b7f22f533208e733fa27cf6ed1b",
-      "tokens": 86,
+      "contentHash": "b035b9c8d5fdd3871ec101eef8cca6e925a697f50efd6e4108a1868bfb00b374",
+      "tokens": 103,
       "pageTitle": "Execution",
       "sectionHeading": "The AI-Powered Workflow > The 80/20 Rule",
       "url": "/playbook/execution",
@@ -1458,8 +1458,8 @@
       "track": "playbook"
     },
     "/playbook/execution#the-ai-powered-workflow/the-5-step-process#0": {
-      "contentHash": "b268af8f73c980037084e6abac5bd4396ed487207094a6ad9aa41f8a55e3d73a",
-      "tokens": 135,
+      "contentHash": "0ce4f3ddd117c0820bf853925929c60c93947f556a44245a3a84c76deb144bec",
+      "tokens": 148,
       "pageTitle": "Execution",
       "sectionHeading": "The AI-Powered Workflow > The 5-Step Process",
       "url": "/playbook/execution",
@@ -1467,8 +1467,8 @@
       "track": "playbook"
     },
     "/playbook/execution#scope-hammering#0": {
-      "contentHash": "2edb82dea0571eba26288e97f6421f95a26f6fc06d8fc7faee99fa1459891016",
-      "tokens": 121,
+      "contentHash": "f273210988c015e060fbb86e58fbb80303008402623295504a7185498fac7692",
+      "tokens": 126,
       "pageTitle": "Execution",
       "sectionHeading": "Scope Hammering",
       "url": "/playbook/execution",
@@ -1485,8 +1485,8 @@
       "track": "playbook"
     },
     "/playbook/execution#scope-hammering/the-comfortable-80#0": {
-      "contentHash": "50374729ba3302c3feace4862323e25f232e9a454fc2a2be32db4631bf9bd734",
-      "tokens": 140,
+      "contentHash": "624f223ae819d196662b6b675ce8d0e367a1197d456e0bd4023361a394731c8e",
+      "tokens": 201,
       "pageTitle": "Execution",
       "sectionHeading": "Scope Hammering > The Comfortable 80%",
       "url": "/playbook/execution",
@@ -1494,8 +1494,8 @@
       "track": "playbook"
     },
     "/playbook/execution#the-hackathon-timeline#0": {
-      "contentHash": "d893bfa04ab153bc294e919b4a7e0f4a8f2f181ec1177baa20f56825736ccc4f",
-      "tokens": 464,
+      "contentHash": "55067be8bf33495ccc2408b6973e7a445c23d85666cea843586a38a4f1e57dcd",
+      "tokens": 507,
       "pageTitle": "Execution",
       "sectionHeading": "The Hackathon Timeline",
       "url": "/playbook/execution",
@@ -1503,8 +1503,8 @@
       "track": "playbook"
     },
     "/playbook/execution#the-leverage-toolkit#0": {
-      "contentHash": "a171d11b2e15b4cec2f6a63785a92971e74c3183bbb67ce9bbc8a331c3dc61f0",
-      "tokens": 488,
+      "contentHash": "ce7fe5195aac33f2a882b6fd3690c3587dc8dbf4203e21dd800f79aea00c0577",
+      "tokens": 562,
       "pageTitle": "Execution",
       "sectionHeading": "The Leverage Toolkit",
       "url": "/playbook/execution",
@@ -1512,8 +1512,8 @@
       "track": "playbook"
     },
     "/playbook/execution#execution-checklist#0": {
-      "contentHash": "93111cb2a123836c1849844eac981d96211e250e1d86e631aab36d97cf4a27a3",
-      "tokens": 219,
+      "contentHash": "a72a40ba4efaa8e26cc5cc16f910b2d85998361bf00fbf19f3a7594271dd19de",
+      "tokens": 232,
       "pageTitle": "Execution",
       "sectionHeading": "Execution Checklist",
       "url": "/playbook/execution",
@@ -1566,8 +1566,8 @@
       "track": "playbook"
     },
     "/playbook/pitching#why-storytelling-works-the-science-of-persuasion/start-with-why#0": {
-      "contentHash": "af4f75bbfe179be231ae7325988558ca2b97ddb2d4a5d9e8d22632cf8332bd94",
-      "tokens": 83,
+      "contentHash": "482587d9d2681ad3bd9ad20f38e2f3560e976a29632832f75061a56f76681deb",
+      "tokens": 93,
       "pageTitle": "Pitching",
       "sectionHeading": "Why Storytelling Works — The Science of Persuasion > Start With Why",
       "url": "/playbook/pitching",
@@ -1575,8 +1575,8 @@
       "track": "playbook"
     },
     "/playbook/pitching#why-storytelling-works-the-science-of-persuasion/what-is-vs-what-could-be#0": {
-      "contentHash": "88cf8bf55b6e1a6c84005f7b9d0100fe46c90a490cc5be324d15aad3347c9a99",
-      "tokens": 85,
+      "contentHash": "5886e12bb6615e6fa673240feef15efd3723fd1c242e57df10e29a5e5425828a",
+      "tokens": 99,
       "pageTitle": "Pitching",
       "sectionHeading": "Why Storytelling Works — The Science of Persuasion > What Is vs. What Could Be",
       "url": "/playbook/pitching",
@@ -1602,8 +1602,8 @@
       "track": "playbook"
     },
     "/playbook/pitching#anatomy-of-a-winning-pitch#0": {
-      "contentHash": "7ba55a63cc6c5e86b29e8f686304db2866ab9e05d18b6255ade01e03428fdc07",
-      "tokens": 480,
+      "contentHash": "9d29d7da2f2967e780000965a606f6d835927ffeee43f9deebf18cc2ee3518fc",
+      "tokens": 514,
       "pageTitle": "Pitching",
       "sectionHeading": "Anatomy of a Winning Pitch",
       "url": "/playbook/pitching",
@@ -1611,26 +1611,26 @@
       "track": "playbook"
     },
     "/playbook/pitching#winning-pitches-dissected#0": {
-      "contentHash": "41cdfc499a679b1887e0c351cb914f6c03bc32508a72ad5a0cc35bc8fc4e6bd1",
-      "tokens": 111,
+      "contentHash": "e415a90048771e4c793166ad03474572c6b43bbb207cd0eb56c34deea5b5685a",
+      "tokens": 127,
       "pageTitle": "Pitching",
       "sectionHeading": "Winning Pitches Dissected",
       "url": "/playbook/pitching",
       "mdUrl": "/playbook/pitching.md",
       "track": "playbook"
     },
-    "/playbook/pitching#winning-pitches-dissected/dispatchai-uc-berkeley-ai-hackathon#0": {
-      "contentHash": "d4ff8087980f01dc97280e31a4340ebde936331cfc833dcad694822a43bd2815",
-      "tokens": 428,
+    "/playbook/pitching#winning-pitches-dissected/dispatchai-uc-berkeley-ai-hackathon-2024#0": {
+      "contentHash": "a33517c7efc1e97b3b5b7f756f969022fba3c4e1cb487b9cb1754a292a27348f",
+      "tokens": 510,
       "pageTitle": "Pitching",
-      "sectionHeading": "Winning Pitches Dissected > DispatchAI — UC Berkeley AI Hackathon",
+      "sectionHeading": "Winning Pitches Dissected > DispatchAI — UC Berkeley AI Hackathon 2024",
       "url": "/playbook/pitching",
       "mdUrl": "/playbook/pitching.md",
       "track": "playbook"
     },
     "/playbook/pitching#winning-pitches-dissected/talktuahbank-hackutd-2024#0": {
-      "contentHash": "a5dd3a4bcd934b45c1118e990aeeb258f46cbb9e1799015342e6c75cebe8d2a6",
-      "tokens": 457,
+      "contentHash": "76009be048555a73cf1781ca7b45caea10b9841dd99bfb25763cc01195480430",
+      "tokens": 524,
       "pageTitle": "Pitching",
       "sectionHeading": "Winning Pitches Dissected > TalkTuahBank — HackUTD 2024",
       "url": "/playbook/pitching",
@@ -1638,8 +1638,8 @@
       "track": "playbook"
     },
     "/playbook/pitching#winning-pitches-dissected/adapted-la-hacks-2024#0": {
-      "contentHash": "8873854af88d0863e1e8521427e2e0ad3b605972c8ffae9a68c0b19dfbab784a",
-      "tokens": 669,
+      "contentHash": "c1f7f95a210d5ee3ef03a4a333378c27b885149e2fea52748005b405e3527875",
+      "tokens": 749,
       "pageTitle": "Pitching",
       "sectionHeading": "Winning Pitches Dissected > AdaptEd — LA Hacks 2024",
       "url": "/playbook/pitching",
@@ -1782,8 +1782,8 @@
       "track": "playbook"
     },
     "/playbook/pitching#the-appendix-strategy/the-power-of-vulnerability#0": {
-      "contentHash": "33c2ebd393195ec2c02f43389542be2fad5faad73a82dd2488a3ec4972fc7c0f",
-      "tokens": 131,
+      "contentHash": "559937dd233f22041c226b67b09f95eed51f61c48f4d36b2b3f944410e908737",
+      "tokens": 175,
       "pageTitle": "Pitching",
       "sectionHeading": "The Appendix Strategy > The Power of Vulnerability",
       "url": "/playbook/pitching",
@@ -1791,8 +1791,8 @@
       "track": "playbook"
     },
     "/playbook/pitching#the-appendix-strategy/talk-with-not-at#0": {
-      "contentHash": "ba506f4bbfb409cc8365e32f6d81e93503f65147cb8efeadfb7ee6f4c33da22a",
-      "tokens": 384,
+      "contentHash": "c44ff6fb3b70e49753cd956530967d442e927b169ab962b4a727dd2851cd9bfd",
+      "tokens": 455,
       "pageTitle": "Pitching",
       "sectionHeading": "The Appendix Strategy > Talk With, Not At",
       "url": "/playbook/pitching",
@@ -1836,8 +1836,8 @@
       "track": "playbook"
     },
     "/playbook/submission#the-submission-advantage/demo-video#0": {
-      "contentHash": "929359c18cf4370ae99022cfe8218ffa73551f8c2f3e279b16caf81899cb573e",
-      "tokens": 146,
+      "contentHash": "f04204efdc4c26120bef62c15f7611b2e7e588501eb10a0c9b13129f63c19977",
+      "tokens": 156,
       "pageTitle": "Submission",
       "sectionHeading": "The Submission Advantage > Demo Video",
       "url": "/playbook/submission",
@@ -1890,8 +1890,8 @@
       "track": "playbook"
     },
     "/playbook/submission#the-github-readme-structure-for-credibility/the-inverted-pyramid#0": {
-      "contentHash": "4c39fc5ee69e35add9efe5e12e9b78c0a2d2e478c8ef4efde7ee1c002c44d4e7",
-      "tokens": 92,
+      "contentHash": "acbc20955099b522f6c45849bf17bdd86c3f5251b24b711db360e62bd8f6aa0b",
+      "tokens": 99,
       "pageTitle": "Submission",
       "sectionHeading": "The GitHub README — Structure for Credibility > The Inverted Pyramid",
       "url": "/playbook/submission",
@@ -1899,8 +1899,8 @@
       "track": "playbook"
     },
     "/playbook/submission#the-github-readme-structure-for-credibility/the-6-page-memo#0": {
-      "contentHash": "4e0bb864f0c4a7fce9a05991eda545f47d5a1e143b787c89e396ab1b6c0107da",
-      "tokens": 92,
+      "contentHash": "2a546022a724999835406b2d86585b11eaec68084c20b0af7c5004695998fe3a",
+      "tokens": 141,
       "pageTitle": "Submission",
       "sectionHeading": "The GitHub README — Structure for Credibility > The 6-Page Memo",
       "url": "/playbook/submission",
@@ -1926,8 +1926,8 @@
       "track": "playbook"
     },
     "/playbook/submission#show-dont-tell#0": {
-      "contentHash": "efd314cd7669f1e0c60a2a0ae84779c4295c5ae20aa3a3fff84339fd98890a96",
-      "tokens": 145,
+      "contentHash": "5f29093cefacd77ba4c5ef8772ee97a77f777b0ed0495486c79c84707d9d826a",
+      "tokens": 215,
       "pageTitle": "Submission",
       "sectionHeading": "Show, Don't Tell",
       "url": "/playbook/submission",
@@ -1971,8 +1971,8 @@
       "track": "playbook"
     },
     "/playbook/submission#common-mistakes#0": {
-      "contentHash": "6e9c645fe6dd0ba4f99d2c9a7fe595418c72bbecd94bf5157c77811b10789545",
-      "tokens": 417,
+      "contentHash": "c2f058bcde8b9e7bbb8687e84e5bd467ab77989a9353930a88f9f2f8486fb196",
+      "tokens": 435,
       "pageTitle": "Submission",
       "sectionHeading": "Common Mistakes",
       "url": "/playbook/submission",
@@ -2097,8 +2097,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#the-tree-falls-in-a-forest/keep-going#0": {
-      "contentHash": "a0b3726726c2a6eeabb4402704e8718020e581a87558c4e04363943e2d3b5c2c",
-      "tokens": 183,
+      "contentHash": "9b95616c33f04dcd5fce3a4498b0dda318ae0f666343a011879eaf5668f3d5fa",
+      "tokens": 217,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "The Tree Falls in a Forest > Keep Going",
       "url": "/playbook/post-hackathon",
@@ -2115,8 +2115,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#luck-surface-area-share-your-work/jason-roberts-luck-surface-area#0": {
-      "contentHash": "fbd04543102d9cb15d1980404a2e81a796753b14bc30716b99fd445f8452ccc8",
-      "tokens": 172,
+      "contentHash": "a82850b7202d06860ae123f5d25e8ba102d84925e2a075ed9ed7c5734eae4e41",
+      "tokens": 212,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "Luck Surface Area — Share Your Work > Jason Roberts' Luck Surface Area",
       "url": "/playbook/post-hackathon",
@@ -2124,8 +2124,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#the-48-hour-follow-up#0": {
-      "contentHash": "68e28f781c8592969b64b96ab9f9727063c389b0ecf11ca08220f6f495adaade",
-      "tokens": 63,
+      "contentHash": "8136302c48ad24f91dd3002bd8b9c7dedc60d4f7653f0583b764c0bc8c26a313",
+      "tokens": 62,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "The 48-Hour Follow-Up",
       "url": "/playbook/post-hackathon",
@@ -2142,8 +2142,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#the-48-hour-follow-up/how-to-follow-up#0": {
-      "contentHash": "aaa6e9cf4fbec31e2b1ae7ab730088ef4369a47a3163ce20be871378b1492d2b",
-      "tokens": 184,
+      "contentHash": "a0576ff57989d7dd8524bff51a463f8d7943a9c24cb047a77b7e705d93fc5422",
+      "tokens": 217,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "The 48-Hour Follow-Up > How to Follow Up",
       "url": "/playbook/post-hackathon",
@@ -2169,8 +2169,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#turn-it-into-a-long-term-project/you-still-have-momentum#0": {
-      "contentHash": "5d927f1adbe76f22489cfeae7cbd4f6d0344ec7efc151f0d6aa15a150c62b585",
-      "tokens": 150,
+      "contentHash": "f4541e1cb62aae1e66c18812c2f624f03338821583547b2f4e0d1b4ccb642b4b",
+      "tokens": 215,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "Turn It Into a Long-Term Project > You Still Have Momentum",
       "url": "/playbook/post-hackathon",
@@ -2187,8 +2187,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#why-this-works-the-science/show-your-work#0": {
-      "contentHash": "eda1eebc0e701b8e63490d3b63a5affae4a0b912e4d7f879d1161fb241cac64e",
-      "tokens": 76,
+      "contentHash": "fd216681d5a06dce67ba7c2b08765c536aaa392a662e06dd47b18181b7862fa1",
+      "tokens": 125,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "Why This Works — The Science > Show Your Work",
       "url": "/playbook/post-hackathon",
@@ -2196,8 +2196,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#why-this-works-the-science/luck-surface-area#0": {
-      "contentHash": "a5065613910e850efc26d77a3886415465e239953ab70fa32bcd999b66c8a23b",
-      "tokens": 87,
+      "contentHash": "5d97dba1bc07d6a642554da15c197119f4daf06175a278ff854737a123c4b338",
+      "tokens": 126,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "Why This Works — The Science > Luck Surface Area",
       "url": "/playbook/post-hackathon",
@@ -2205,8 +2205,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#why-this-works-the-science/strength-of-weak-ties#0": {
-      "contentHash": "1889068943ea2d14f67717deaa4c9a6d79b914c3b0be6deaa77faa3a51d59729",
-      "tokens": 79,
+      "contentHash": "12c146d56ca091a7b03de417347fec341ebbfea97bfe5dcacaa5de703f105ef4",
+      "tokens": 114,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "Why This Works — The Science > Strength of Weak Ties",
       "url": "/playbook/post-hackathon",
@@ -2214,8 +2214,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#why-this-works-the-science/regret-minimization#0": {
-      "contentHash": "4a86b0def30bc88239bce919181becb2c5ebda56c64c17dc3e4e966be1c40e45",
-      "tokens": 77,
+      "contentHash": "6d16d7f35a4b149a4125f625f6e2ab87482363b08ff358f01b2a6338700bc3c8",
+      "tokens": 86,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "Why This Works — The Science > Regret Minimization",
       "url": "/playbook/post-hackathon",
@@ -2259,8 +2259,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#the-ship-it-toolkit/2-write-your-youtube-description#0": {
-      "contentHash": "9e1f449ea0482d1e06dd14c570cb7effc9ea09462ebb3ea908ed8abae47e2c0a",
-      "tokens": 330,
+      "contentHash": "48b0b3cb7464589534ab00f5b33d7346d9c697b40f6f44c1db8ed9ac4b731215",
+      "tokens": 336,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "The Ship-It Toolkit > 2\\. Write Your YouTube Description",
       "url": "/playbook/post-hackathon",
@@ -2268,8 +2268,8 @@
       "track": "playbook"
     },
     "/playbook/post-hackathon#post-hackathon-checklist#0": {
-      "contentHash": "34bc81c6d2077c00de97ccda9aeee572915f8a7d66049dc37195a7e023fa2d0b",
-      "tokens": 213,
+      "contentHash": "9698b455e3adfe35f719e22af11bf8c86d354fd34f383be5f27e4ebfa539e85b",
+      "tokens": 228,
       "pageTitle": "Post-Hackathon",
       "sectionHeading": "Post-Hackathon Checklist",
       "url": "/playbook/post-hackathon",
@@ -2277,8 +2277,8 @@
       "track": "playbook"
     },
     "/non-coders#intro#0": {
-      "contentHash": "5325d31936077ea67ea354b7f252642094375228913bde0c0a0532120d0598a4",
-      "tokens": 146,
+      "contentHash": "43d60fdde19c9d177cce070d421d6bfebe1f9b1b07f97e71a06c66ca5b91927d",
+      "tokens": 244,
       "pageTitle": "Hackathons for Non-Coders",
       "sectionHeading": "Hackathons for Non-Coders",
       "url": "/non-coders",
@@ -2295,8 +2295,8 @@
       "track": "non-coders"
     },
     "/non-coders#sources#0": {
-      "contentHash": "73b4b0a587dc1e3e91cd993a3fdd456baa4bba1b4a57873945ed8716f6bbb513",
-      "tokens": 357,
+      "contentHash": "3b2a086a5240e2b4dacef6ade2afc25e764a2ecaaf4624b2560294302ed48242",
+      "tokens": 382,
       "pageTitle": "Hackathons for Non-Coders",
       "sectionHeading": "Sources",
       "url": "/non-coders",
@@ -2304,8 +2304,8 @@
       "track": "non-coders"
     },
     "/non-coders/proof#intro#0": {
-      "contentHash": "ebb3d55f3c8283fe4ece10c968a43aaf4e5e1c89b2bb84f78e1b39624371aa88",
-      "tokens": 403,
+      "contentHash": "c431178e73955a83606354564869787df501f0db290a8acab93340d93dba69ac",
+      "tokens": 653,
       "pageTitle": "The Proof",
       "sectionHeading": "The Proof",
       "url": "/non-coders/proof",
@@ -3519,8 +3519,8 @@
       "track": "blog"
     },
     "/blog#get-new-hackathon-guides-in-your-inbox/non-coders-winning-hackathons-how-experts-beat-developers#0": {
-      "contentHash": "6a852c572f5d0057e87d60e025cafc8b24c189ffdb3c5f02932fa0fcc853e54f",
-      "tokens": 85,
+      "contentHash": "839a7de6bd6987f40a3eb7da305ea57fa13806ea2945cb4e4d513bedcc76e71e",
+      "tokens": 83,
       "pageTitle": "Blog",
       "sectionHeading": "Get new hackathon guides in your inbox > Non-Coders Winning Hackathons: How Experts Beat Developers",
       "url": "/blog",
@@ -3555,8 +3555,8 @@
       "track": "blog"
     },
     "/blog#get-new-hackathon-guides-in-your-inbox/how-to-win-hackathons-a-complete-guide-from-36-victories#0": {
-      "contentHash": "16b7d99f33d796d83b7bc844db5c29a8381a08a8b66b6dc21ff682f786cf0009",
-      "tokens": 75,
+      "contentHash": "3918cbb79fe8c5422c0bb2c16eca85821893dce17d8d198ba52d44a5815ae598",
+      "tokens": 108,
       "pageTitle": "Blog",
       "sectionHeading": "Get new hackathon guides in your inbox > How to Win Hackathons: A Complete Guide from 36+ Victories",
       "url": "/blog",
@@ -3591,8 +3591,8 @@
       "track": "blog"
     },
     "/blog/what-to-do-after-a-hackathon#why-recruiters-never-read-your-code#0": {
-      "contentHash": "bd73ea5aa93e4def0fbda9f762292f98f60172cd66ce43e6c038753abe3d6f2f",
-      "tokens": 295,
+      "contentHash": "308e52d45f330eeb780353b9a8f830dad7a0a3eae8d03d0ce1bbd5a5d22a0752",
+      "tokens": 297,
       "pageTitle": "What to Do After a Hackathon: Ship 5 Assets That Get You Hired",
       "sectionHeading": "Why Recruiters Never Read Your Code",
       "url": "/blog/what-to-do-after-a-hackathon",
@@ -3663,8 +3663,8 @@
       "track": "blog"
     },
     "/blog/hackathon-pitch-mistakes-la-hacks#4-you-used-slides-as-a-script#0": {
-      "contentHash": "9b009211176404b2f6378d4236f2496fa15c20a6ba4bdaaa21e4f5d3ee7c349a",
-      "tokens": 243,
+      "contentHash": "cff592e2f9affd40f3da1d7ec5139702b1a92224214997cd495ed53616a332a4",
+      "tokens": 276,
       "pageTitle": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
       "sectionHeading": "4. You Used Slides as a Script",
       "url": "/blog/hackathon-pitch-mistakes-la-hacks",
@@ -3789,8 +3789,8 @@
       "track": "blog"
     },
     "/blog/how-to-win-hackathons#phase-7-the-win-is-in-the-follow-up#0": {
-      "contentHash": "9c58ca617c2470e2913d5c63989c08ca3eaff7db07135f812f1a1c3183754b59",
-      "tokens": 235,
+      "contentHash": "40d6cf396e30d7f069e5eadfb0aa680f044b5e40be454dc52600403df6aff56d",
+      "tokens": 283,
       "pageTitle": "How to Win Hackathons: A Complete Guide from 36+ Victories",
       "sectionHeading": "Phase 7: The Win Is in the Follow-Up",
       "url": "/blog/how-to-win-hackathons",
@@ -3951,8 +3951,8 @@
       "track": "blog"
     },
     "/blog/hackathon-pitch-guide#open-with-the-problem-not-the-solution#0": {
-      "contentHash": "906d78013f4129269c9f7566459388290a4bb0d065ce9cf53a67c29ea101e80e",
-      "tokens": 151,
+      "contentHash": "0982b88eda080a9b49c9865c24a561f27a3b1a62d9b2dc0c792eef3a87f2d50b",
+      "tokens": 171,
       "pageTitle": "Hackathon Pitch Guide: How to Present Your Project and Win Prizes",
       "sectionHeading": "Open With the Problem, Not the Solution",
       "url": "/blog/hackathon-pitch-guide",
@@ -3987,8 +3987,8 @@
       "track": "blog"
     },
     "/blog/non-coders-winning-hackathons#a-lawyer-beat-hundreds-of-developers#0": {
-      "contentHash": "2970ab4cf432890b6923c88651ed92bc750afb04937face85af935116001d1fe",
-      "tokens": 204,
+      "contentHash": "9532a731f8b4d0f95d4d82418df01734b17ffb33c94a5bfcdacdd98edeab506c",
+      "tokens": 246,
       "pageTitle": "Non-Coders Winning Hackathons: How Experts Beat Developers",
       "sectionHeading": "A Lawyer Beat Hundreds of Developers",
       "url": "/blog/non-coders-winning-hackathons",
@@ -3996,8 +3996,8 @@
       "track": "blog"
     },
     "/blog/non-coders-winning-hackathons#why-domain-expertise-now-beats-coding-skill#0": {
-      "contentHash": "063e1d70508b559348eb56b20fe48263cfae7da8d2d7c0c621770b3ed2337fe6",
-      "tokens": 166,
+      "contentHash": "5baa7ea52cff27b698965de167a11968f7e653935386d5b01e6bb8c5e3791b08",
+      "tokens": 169,
       "pageTitle": "Non-Coders Winning Hackathons: How Experts Beat Developers",
       "sectionHeading": "Why Domain Expertise Now Beats Coding Skill",
       "url": "/blog/non-coders-winning-hackathons",
@@ -4022,11 +4022,11 @@
       "mdUrl": "/blog/non-coders-winning-hackathons.md",
       "track": "blog"
     },
-    "/blog/non-coders-winning-hackathons#proof-3-hours-one-app-200-wins#0": {
-      "contentHash": "3323055a3dd8223772b3e54db63a1a9df8ad001f2ebb1746bc7ddb3dafe6c821",
-      "tokens": 139,
+    "/blog/non-coders-winning-hackathons#proof-3-hours-one-app-200-hackathons#0": {
+      "contentHash": "9691652d46aa10777cfd71006dc2414963e31c86a5f386a3d1df577a70589544",
+      "tokens": 250,
       "pageTitle": "Non-Coders Winning Hackathons: How Experts Beat Developers",
-      "sectionHeading": "Proof: 3 Hours, One App, 200+ Wins",
+      "sectionHeading": "Proof: 3 Hours, One App, 200+ Hackathons",
       "url": "/blog/non-coders-winning-hackathons",
       "mdUrl": "/blog/non-coders-winning-hackathons.md",
       "track": "blog"
@@ -4095,8 +4095,8 @@
       "track": "blog"
     },
     "/blog/build-with-elevenlabs-and-cursor#the-trick-make-the-agent-test-first#0": {
-      "contentHash": "d5b3146b08837c84b45218704304fc66e2fcb9080f021950555a5cf2e68e943e",
-      "tokens": 243,
+      "contentHash": "fc2dfb5c70e12460e6121ba43db9b08f9505aff4ef867e954b2b78afdf3215a9",
+      "tokens": 255,
       "pageTitle": "How to Build with ElevenLabs and Cursor at a Hackathon",
       "sectionHeading": "The Trick: Make the Agent Test First",
       "url": "/blog/build-with-elevenlabs-and-cursor",
