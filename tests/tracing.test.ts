@@ -61,6 +61,7 @@ afterEach(() => {
   delete process.env.FIRETRACE_API_KEY;
   delete process.env.FIRETRACE_BASE_URL;
   vi.unstubAllGlobals();
+  vi.useRealTimers();
 });
 
 describe("firetrace", () => {
@@ -196,10 +197,10 @@ describe("firetrace", () => {
 
     await flush();
     const stored = sent[0].body.trace;
+    // usage is not in this list: the SDK always sends it, as {} when unset.
     expect("input" in stored).toBe(false);
     expect("output" in stored).toBe(false);
     expect("sessionId" in stored).toBe(false);
-    expect("usage" in stored).toBe(false);
   });
 
   it("records a thumbs rating as a score on the trace it judges", async () => {
@@ -303,20 +304,52 @@ describe("firetrace", () => {
     expect(sent[0].url).toBe("http://localhost:4000/api/v1/traces");
   });
 
-  it("swallows ingest failures instead of breaking the request", async () => {
+  it("treats a blank FIRETRACE_BASE_URL as unset", async () => {
+    process.env.FIRETRACE_BASE_URL = "";
+    startTrace({ name: "chat" })!.end();
+
+    await flush();
+    expect(sent[0].url).toBe("https://tracing.art3m1s.me/api/v1/traces");
+  });
+
+  it("stores the trace on a retry after a network error, without warning", async () => {
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    const recorder = globalThis.fetch;
+    let calls = 0;
     vi.stubGlobal(
       "fetch",
-      vi.fn(async () => {
-        throw new Error("tracing host unreachable");
+      vi.fn(async (url: string, init: RequestInit) => {
+        calls += 1;
+        if (calls === 1) throw new Error("connection reset");
+        return recorder(url, init);
       }),
     );
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+    startTrace({ name: "chat" })!.end();
+
+    await vi.runAllTimersAsync();
+    expect(calls).toBe(2);
+    expect(sent).toHaveLength(1);
+    expect(warn).not.toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
+  it("swallows ingest failures instead of breaking the request", async () => {
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    const unreachable = vi.fn(async () => {
+      throw new Error("tracing host unreachable");
+    });
+    vi.stubGlobal("fetch", unreachable);
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
 
     const trace = startTrace({ name: "chat" })!;
     expect(() => trace.end()).not.toThrow();
 
-    await flush();
-    expect(warn).toHaveBeenCalled();
+    // One retry on a network error, then one warning.
+    await vi.runAllTimersAsync();
+    expect(unreachable).toHaveBeenCalledTimes(2);
+    expect(warn).toHaveBeenCalledTimes(1);
     warn.mockRestore();
   });
 

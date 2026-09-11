@@ -12,6 +12,8 @@ project's key.
 - **September 4, 2026:** re-checked after the scores, metadata patch, and
   read endpoints shipped. Finding 1 below is resolved, findings 2 to 4 stand,
   and one new finding (5, the ingest/score race) came out of adopting scores.
+- **September 11, 2026:** moved to `@firetrace/sdk` 0.2.1 in whole-trace mode
+  (`streaming: false`). Two SDK notes came out of it (finding 9).
 
 ## What worked well
 
@@ -263,6 +265,28 @@ Two shape notes on the read path that are worth a sentence each:
   a clean duplicate.
 - **`schemaVersion` is a good call.** Keep it required.
 
+## 9. NEW: two notes from adopting `@firetrace/sdk` 0.2.1
+
+Both **verified** locally against 0.2.1.
+
+- **ESM-only packaging.** `exports` has only an `import` condition, so
+  `require()` cannot load the SDK. tsx runs `.ts` files as CommonJS in any
+  package without `"type": "module"`, so a script here that imports the
+  tracing module fails with `ERR_PACKAGE_PATH_NOT_EXPORTED`. Next.js and
+  vitest are unaffected. **Suggestion:** add a `"default"` condition pointing
+  at the same file, since Node 22.12 and later can `require()` an ES module.
+- **Span and trace ends can disagree by a millisecond.** Each span's
+  `endedAt` is its `new Date()` start, truncated to the millisecond, plus
+  `performance.now()` elapsed time, which is not truncated. Every span carries
+  its own sub-millisecond offset, and in a stress run one span in five came
+  out 1 ms after the trace containing it. The README's promise that
+  `trace.end()` "uses the same moment for any span that was never ended
+  explicitly" does not quite hold either, because each open span reads the
+  clock on its own. This integration works around it by injecting a `clock`
+  that reads whole milliseconds from one source. **Suggestion:** take wall
+  time from `performance.timeOrigin + performance.now()` so starts are not
+  truncated, and compute one end instant in `trace.end()` for every open span.
+
 ## How this repo uses the API, for reference
 
 One trace per user-facing LLM interaction:
@@ -296,7 +320,10 @@ trace  chat            5314 ms  2017 in / 287 out   costUsd 0.00074796
 ```
 
 `sessionId` is a random per-tab id so the turns of one conversation group
-together. Delivery goes through `after()` from `next/server`, so the POST
-happens once the response is finished and never adds latency to the answer.
-Failures are logged and swallowed. Trace cost is the sum of its spans,
-computed client-side, per finding 3.
+together. Traces are sent with `@firetrace/sdk` in whole-trace mode
+(`streaming: false`): a turn lasts seconds, so streaming would add requests
+for little gain. Delivery goes through `after()` from `next/server`, so the
+POST happens once the response is finished and never adds latency to the
+answer. A send that times out, fails on the network, or gets a 429 or 5xx is
+retried once; failures are then logged and swallowed. Trace cost is the sum
+of its spans, computed client-side, per finding 3.
