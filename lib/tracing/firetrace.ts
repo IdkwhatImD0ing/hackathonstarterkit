@@ -20,11 +20,14 @@ import { after } from "next/server";
  *    timeout. Failures are logged and swallowed: a tracing outage must
  *    not become a site outage.
  *
- * The API stores one immutable trace per request with all of its spans.
- * There is no streaming or batch endpoint, so a trace is buffered in
- * memory and POSTed exactly once, from `end()`. A thumbs rating arrives
- * after that POST and is recorded against the trace it judges, as a
- * score (`recordFeedback`).
+ * A trace is buffered in memory and POSTed exactly once, complete, from
+ * `end()`. FireTrace also offers streaming ingestion (open the trace,
+ * append span batches, then end it), which keeps a partial trace when a
+ * process dies mid-run. It is not used here on purpose: a turn takes
+ * seconds, not minutes, and has at most three spans, so streaming would
+ * turn one request into at least two and move the first one out of
+ * `after()`. A thumbs rating arrives after that POST and is recorded
+ * against the trace it judges, as a score (`recordFeedback`).
  */
 
 const DEFAULT_BASE_URL = "https://tracing.art3m1s.me";
