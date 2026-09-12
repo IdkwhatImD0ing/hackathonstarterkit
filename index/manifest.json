@@ -3,10 +3,10 @@
   "embeddingDims": 1536,
   "chunkerVersion": 2,
   "normalizerVersion": 1,
-  "generatedAt": "2026-09-05T03:45:36.548Z",
+  "generatedAt": "2026-09-12T20:31:51.213Z",
   "pages": {
     "/": {
-      "sourceHash": "4d69ab546147c7bcd8d160a6c7c78e9b5a7ff1d64cba6855398f456a7819b5fa",
+      "sourceHash": "1756d0e90b390cb1c0bd5cf7f8da9a14b2c1cae8e7f8aa2e62eeabba6368aba1",
       "chunkIds": [
         "/#hackathon-playbook#0",
         "/#bill-zhang-idkwhatimd0inghttpsgithubcomidkwhatimd0ing#0"
@@ -585,8 +585,8 @@
       "track": "home"
     },
     "/#bill-zhang-idkwhatimd0inghttpsgithubcomidkwhatimd0ing#0": {
-      "contentHash": "0c5cc65fca5343e831e0ce8855d385821cb013725a2047c5808c83b62b5ad566",
-      "tokens": 673,
+      "contentHash": "fd454ce79a05a5867ab203c1c60ba9a33d1051576c725f97f6a6a3af349ec446",
+      "tokens": 481,
       "pageTitle": "The Hackathon Playbook",
       "sectionHeading": "Bill Zhang [@IdkwhatImD0ing](https://github.com/IdkwhatImD0ing)",
       "url": "/",

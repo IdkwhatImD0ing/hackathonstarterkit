@@ -103,48 +103,50 @@ const CREDENTIALS = [
   },
 ];
 
-const MENTEE_WINS = [
-  {
-    mentee: "Wenqing Li",
-    hackathon: "UC Berkeley AI Hackathon 2026",
-    prize: "Grand Prize + SkyDeck Grand Prize",
-    project: "TheraCat",
-    url: "https://devpost.com/software/theracat",
-    color: "text-volt",
-  },
-  {
-    mentee: "Kevin Wu & Jay Wu",
-    hackathon: "LA Hacks 2026",
-    prize: "1st Overall + Cognition Challenge",
-    project: "Codebreaker",
-    url: "https://devpost.com/software/codebreaker-la",
-    color: "text-spark",
-  },
-  {
-    mentee: "Wenqing Li",
-    hackathon: "HackMerced XI",
-    prize: "1st Place in Track",
-    project: "TheraCaIl",
-    url: "https://devpost.com/software/theracail",
-    color: "text-volt",
-  },
-  {
-    mentee: "Aurelisa Juan & Aurelia Sindhu",
-    hackathon: "AthenaHacks 2025",
-    prize: "1st Place Overall",
-    project: "ETA+",
-    url: "https://devpost.com/software/eta-1ubyla",
-    color: "text-spark",
-  },
-  {
-    mentee: "Jasmine Wu",
-    hackathon: "AthenaHacks 2024 (USC)",
-    prize: "Best Overall",
-    project: "DriveMate",
-    url: "https://devpost.com/software/drivemate",
-    color: "text-volt",
-  },
-];
+// Mentoring content temporarily hidden. To restore, uncomment this and the
+// "Mentoring wins" block in the whoami card below.
+// const MENTEE_WINS = [
+//   {
+//     mentee: "Wenqing Li",
+//     hackathon: "UC Berkeley AI Hackathon 2026",
+//     prize: "Grand Prize + SkyDeck Grand Prize",
+//     project: "TheraCat",
+//     url: "https://devpost.com/software/theracat",
+//     color: "text-volt",
+//   },
+//   {
+//     mentee: "Kevin Wu & Jay Wu",
+//     hackathon: "LA Hacks 2026",
+//     prize: "1st Overall + Cognition Challenge",
+//     project: "Codebreaker",
+//     url: "https://devpost.com/software/codebreaker-la",
+//     color: "text-spark",
+//   },
+//   {
+//     mentee: "Wenqing Li",
+//     hackathon: "HackMerced XI",
+//     prize: "1st Place in Track",
+//     project: "TheraCaIl",
+//     url: "https://devpost.com/software/theracail",
+//     color: "text-volt",
+//   },
+//   {
+//     mentee: "Aurelisa Juan & Aurelia Sindhu",
+//     hackathon: "AthenaHacks 2025",
+//     prize: "1st Place Overall",
+//     project: "ETA+",
+//     url: "https://devpost.com/software/eta-1ubyla",
+//     color: "text-spark",
+//   },
+//   {
+//     mentee: "Jasmine Wu",
+//     hackathon: "AthenaHacks 2024 (USC)",
+//     prize: "Best Overall",
+//     project: "DriveMate",
+//     url: "https://devpost.com/software/drivemate",
+//     color: "text-volt",
+//   },
+// ];
 
 const LINKS = [
   {
@@ -439,7 +441,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* ── Mentoring wins ── */}
+              {/* ── Mentoring wins (temporarily hidden, see MENTEE_WINS) ──
               <div className="space-y-3">
                 <p className="font-code text-sm text-muted-foreground">
                   <span className="text-spark">$</span> ls ./mentee-wins
@@ -477,6 +479,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+              */}
 
               {/* ── Notable wins shelf ── */}
               <div className="space-y-3">
