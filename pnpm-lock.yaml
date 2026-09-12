@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@firetrace/sdk':
+        specifier: ^0.2.1
+        version: 0.2.1
       '@modelcontextprotocol/sdk':
         specifier: ^1.30.0
         version: 1.30.0(zod@4.4.3)
@@ -448,6 +451,10 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@firetrace/sdk@0.2.1':
+    resolution: {integrity: sha512-povS608A8o8Ullx4LQI/ptmhO+WPZtIVEKN2uwGOJ2Y1/IVaTJTN7GErxv0eNlSV+/7rMMthMrm/xGRlfEc9rg==}
+    engines: {node: '>=22'}
 
   '@floating-ui/core@1.7.5':
     resolution: {integrity: sha512-1Ih4WTWyw0+lKyFMcBHGbb5U5FtuHJuujoyyr5zTaWS5EYMeT6Jb2AuDeftsCsEuchO+mM2ij5+q9crhydzLhQ==}
@@ -4855,6 +4862,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.17.0
       levn: 0.4.1
+
+  '@firetrace/sdk@0.2.1': {}
 
   '@floating-ui/core@1.7.5':
     dependencies:

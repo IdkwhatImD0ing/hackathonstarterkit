@@ -19,6 +19,7 @@
     "verify:quotes": "node scripts/verify-quotes.mjs"
   },
   "dependencies": {
+    "@firetrace/sdk": "^0.2.1",
     "@modelcontextprotocol/sdk": "^1.30.0",
     "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.1",

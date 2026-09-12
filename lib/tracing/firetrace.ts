@@ -1,9 +1,26 @@
 import { AsyncLocalStorage } from "node:async_hooks";
-import { randomBytes, randomUUID } from "node:crypto";
+// ESM-only: its exports map has just an "import" condition. Next and vitest
+// load it, but a tsx script importing this module (or lib/retrieval) dies
+// with ERR_PACKAGE_PATH_NOT_EXPORTED, since tsx runs this repo's .ts files
+// as CommonJS. See finding 9 in docs/firetrace-feedback.md.
+import {
+  FireTrace,
+  FireTraceApi,
+  FireTraceError,
+  type EndSpanOptions,
+  type EndTraceOptions,
+  type Span as SdkSpan,
+  type SpanKind,
+  type StartSpanOptions,
+  type StartTraceOptions,
+  type Trace as SdkTrace,
+  type TraceStatus,
+  type Usage,
+} from "@firetrace/sdk";
 import { after } from "next/server";
 
 /**
- * FireTrace tracing for every LLM call the site makes.
+ * FireTrace tracing for every LLM call the site makes, on @firetrace/sdk.
  * Ingestion API: POST {base}/api/v1/traces
  * Docs: https://tracing.art3m1s.me/docs/ingestion-api
  *
@@ -16,22 +33,25 @@ import { after } from "next/server";
  * 1. Off by default. Without FIRETRACE_API_KEY every entry point returns
  *    null and nothing is allocated, computed, or sent.
  * 2. Never throws, never blocks. Delivery is scheduled with next/server
- *    `after()` so it runs once the response is finished, with a hard
- *    timeout. Failures are logged and swallowed: a tracing outage must
- *    not become a site outage.
+ *    `after()` so it runs once the response is finished, with a
+ *    per-attempt timeout and one retry. Failures are logged and swallowed:
+ *    a tracing outage must not become a site outage.
  *
- * A trace is buffered in memory and POSTed exactly once, complete, from
- * `end()`. FireTrace also offers streaming ingestion (open the trace,
- * append span batches, then end it), which keeps a partial trace when a
+ * The SDK runs with `streaming: false`, so a trace is buffered in memory
+ * and POSTed exactly once, complete, after `end()`. Streaming (open the
+ * trace, append span batches, then end it) keeps a partial trace when a
  * process dies mid-run. It is not used here on purpose: a turn takes
  * seconds, not minutes, and has at most three spans, so streaming would
- * turn one request into at least two and move the first one out of
- * `after()`. A thumbs rating arrives after that POST and is recorded
- * against the trace it judges, as a score (`recordFeedback`).
+ * turn one request into at least two for little gain.
+ *
+ * What this module adds on top of the SDK: the off switch, the ambient
+ * span that lets the query embedding nest under retrieval, a clock that
+ * keeps timestamps in call order, the trace's cost as the sum of its
+ * spans, branch and commit metadata, and the thumbs rating, recorded
+ * against the trace it judges as a score (`recordFeedback`).
  */
 
 const DEFAULT_BASE_URL = "https://tracing.art3m1s.me";
-const TRACES_PATH = "/api/v1/traces";
 /** Score name for the chat widget's thumbs rating. */
 const FEEDBACK_SCORE_NAME = "user-feedback";
 /**
@@ -40,28 +60,17 @@ const FEEDBACK_SCORE_NAME = "user-feedback";
  * 404 on this schedule, and only a 404.
  */
 const SCORE_RETRY_DELAYS_MS = [300, 1_200, 4_000];
-/** Ingestion caps, from the docs. Exceeding them rejects the whole trace. */
-const MAX_SPANS = 200;
-const MAX_NAME_CHARS = 500;
-const SEND_TIMEOUT_MS = 3_000;
+/**
+ * Per attempt. Ingest gets SEND_RETRIES more on network errors, timeouts,
+ * 429 and 5xx, so delivery holds the function at most about 8 s past the
+ * response; 4 s gives a cold FireTrace start more room than 3 s did, so a
+ * slow POST that lands is not sent twice. Scores get no SDK retry.
+ */
+const SEND_TIMEOUT_MS = 4_000;
+const SEND_RETRIES = 1;
 
-export type SpanKind =
-  | "llm"
-  | "agent"
-  | "tool"
-  | "chain"
-  | "retriever"
-  | "embedding"
-  | "reranker"
-  | "custom";
-
-export type TraceStatus = "ok" | "error" | "unset";
-
-export interface TokenUsage {
-  inputTokens?: number;
-  outputTokens?: number;
-  totalTokens?: number;
-}
+export type { SpanKind, TraceStatus };
+export type TokenUsage = Usage;
 
 interface Config {
   base: string;
@@ -71,13 +80,75 @@ interface Config {
 function config(): Config | null {
   const apiKey = process.env.FIRETRACE_API_KEY;
   if (!apiKey) return null;
-  const base = (process.env.FIRETRACE_BASE_URL ?? DEFAULT_BASE_URL).replace(/\/+$/, "");
+  // Blank counts as unset, which also keeps the SDK from ever seeing an
+  // empty endpoint (its constructor throws on one).
+  const base = process.env.FIRETRACE_BASE_URL?.replace(/\/+$/, "") || DEFAULT_BASE_URL;
   return { base, apiKey };
 }
 
 /** True when a FIRETRACE_API_KEY is present and traces will be sent. */
 export function isTracingEnabled(): boolean {
   return config() !== null;
+}
+
+/**
+ * The clock a trace's SDK client reads: whole milliseconds since the epoch
+ * from the monotonic clock. The SDK stamps each span as a wall-clock start
+ * plus monotonic elapsed time, and with its own clocks the start is
+ * truncated to the millisecond while the elapsed time is not: in a stress
+ * run one span in five came out 1 ms after its trace. Here a start's wall()
+ * and the now() the SDK takes right after it share one reading, so every
+ * timestamp lands in call order. Frozen when the trace ends, so the payload
+ * the SDK builds later, in after(), carries that moment.
+ */
+class TraceClock {
+  private frozenAt: number | undefined;
+  private startReading: number | undefined;
+
+  wall = (): Date => {
+    this.startReading = this.read();
+    // Only the now() that immediately follows may reuse it.
+    queueMicrotask(() => (this.startReading = undefined));
+    return new Date(this.startReading);
+  };
+
+  now = (): number => {
+    const reading = this.startReading ?? this.read();
+    this.startReading = undefined;
+    return reading;
+  };
+
+  freeze(): void {
+    this.frozenAt = this.read();
+  }
+
+  private read(): number {
+    return this.frozenAt ?? Math.floor(performance.timeOrigin + performance.now());
+  }
+}
+
+/**
+ * A client per trace, so each trace has its own clock. With streaming off
+ * it holds no queue or connection, so there is nothing else to share.
+ */
+function client(cfg: Config, clock: TraceClock): FireTrace {
+  return new FireTrace({
+    endpoint: cfg.base,
+    apiKey: cfg.apiKey,
+    streaming: false,
+    timeoutMs: SEND_TIMEOUT_MS,
+    maxRetries: SEND_RETRIES,
+    clock,
+    onError: (error) => console.warn(`firetrace: ingest failed ${describe(error)}`),
+  });
+}
+
+/** "400 invalid_trace: <server message> (requestId …)", or "timeout: ..." with no response. */
+function describe(error: unknown): string {
+  if (!(error instanceof FireTraceError)) return String(error);
+  const prefix = error.status ? `${error.status} ${error.code}` : error.code;
+  const requestId = error.requestId ? ` (requestId ${error.requestId})` : "";
+  return `${prefix}: ${error.message.slice(0, 300)}${requestId}`;
 }
 
 /**
@@ -99,65 +170,13 @@ function deploymentMetadata(): Record<string, unknown> {
   };
 }
 
-/** 32 lowercase hex characters, as the trace id format requires. */
-function newTraceId(): string {
-  return randomUUID().replace(/-/g, "");
-}
-
-/** 16 lowercase hex characters, as the span id format requires. */
-function newSpanId(): string {
-  return randomBytes(8).toString("hex");
-}
-
-/** The shape `newTraceId` produces, for validating ids sent back by a client. */
+/** The shape of the trace ids the SDK generates, for validating ids sent back by a client. */
 export const TRACE_ID_PATTERN = /^[0-9a-f]{32}$/;
 
-function clampName(name: string): string {
-  return name.length > MAX_NAME_CHARS ? name.slice(0, MAX_NAME_CHARS) : name;
-}
+export type SpanOptions = Omit<StartSpanOptions, "id" | "kind">;
 
-/** Drop undefined keys so the payload stays within the size limits. */
-function compact<T extends object>(value: T): T {
-  for (const key of Object.keys(value) as (keyof T)[]) {
-    if (value[key] === undefined) delete value[key];
-  }
-  return value;
-}
-
-interface SpanPayload {
-  id: string;
-  parentSpanId: string | null;
-  name: string;
-  kind: SpanKind;
-  status: TraceStatus;
-  startedAt: string;
-  endedAt?: string;
-  provider?: string;
-  model?: string;
-  input?: unknown;
-  output?: unknown;
-  attributes?: Record<string, unknown>;
-  usage?: TokenUsage;
-  costUsd?: number;
-}
-
-export interface SpanOptions {
-  provider?: string;
-  model?: string;
-  input?: unknown;
-  attributes?: Record<string, unknown>;
-}
-
-export interface SpanEndOptions {
-  status?: TraceStatus;
-  output?: unknown;
-  usage?: TokenUsage;
-  model?: string;
-  provider?: string;
-  attributes?: Record<string, unknown>;
-  /** Rolls up into the trace total unless the trace sets its own. */
-  costUsd?: number;
-}
+/** `costUsd` rolls up into the trace total unless the trace sets its own. */
+export type SpanEndOptions = Omit<EndSpanOptions, "error">;
 
 /**
  * Ambient span, so a nested LLM call deep in a call stack can attach
@@ -168,38 +187,20 @@ export interface SpanEndOptions {
 const scope = new AsyncLocalStorage<Span>();
 
 export class Span {
-  private readonly payload: SpanPayload;
   private ended = false;
 
   constructor(
     private readonly trace: Trace,
-    name: string,
-    kind: SpanKind,
-    parentSpanId: string | null,
-    options: SpanOptions = {},
-  ) {
-    this.payload = {
-      id: newSpanId(),
-      parentSpanId,
-      name: clampName(name),
-      kind,
-      status: "unset",
-      startedAt: new Date().toISOString(),
-      provider: options.provider,
-      model: options.model,
-      input: options.input,
-      attributes: options.attributes,
-    };
-    trace.addSpan(this.payload);
-  }
+    private readonly sdk: SdkSpan,
+  ) {}
 
   get id(): string {
-    return this.payload.id;
+    return this.sdk.id;
   }
 
   /** Open a child span of this one. */
   child(name: string, kind: SpanKind, options?: SpanOptions): Span {
-    return new Span(this.trace, name, kind, this.payload.id, options);
+    return new Span(this.trace, this.sdk.startSpan(name, { ...options, kind }));
   }
 
   /** Run fn with this span as the ambient parent for nested LLM calls. */
@@ -210,77 +211,28 @@ export class Span {
   end(options: SpanEndOptions = {}): void {
     if (this.ended) return;
     this.ended = true;
-    this.payload.endedAt = new Date().toISOString();
-    this.payload.status = options.status ?? "ok";
-    if (options.model) this.payload.model = options.model;
-    if (options.provider) this.payload.provider = options.provider;
-    if (options.usage) this.payload.usage = compact({ ...options.usage });
-    if (options.attributes) {
-      this.payload.attributes = { ...this.payload.attributes, ...options.attributes };
-    }
-    if (options.output !== undefined) this.payload.output = options.output;
-    if (options.costUsd !== undefined) {
-      this.payload.costUsd = options.costUsd;
-      this.trace.addCost(options.costUsd);
-    }
-    compact(this.payload);
+    this.sdk.end({ ...options, status: options.status ?? "ok" });
+    if (options.costUsd !== undefined) this.trace.addCost(options.costUsd);
   }
 }
 
-export interface TraceOptions {
-  name: string;
-  provider?: string;
-  model?: string;
-  sessionId?: string;
-  userId?: string;
-  tags?: string[];
-  input?: unknown;
-  metadata?: Record<string, unknown>;
-}
+export type TraceOptions = Omit<StartTraceOptions, "id" | "status"> & { name: string };
 
-export interface TraceEndOptions {
-  status?: TraceStatus;
-  output?: unknown;
-  usage?: TokenUsage;
-  metadata?: Record<string, unknown>;
-  /** Overrides the sum of the spans' costs. */
-  costUsd?: number;
-}
+/** `costUsd` overrides the sum of the spans' costs. */
+export type TraceEndOptions = Omit<EndTraceOptions, "error" | "tags">;
 
 export class Trace {
-  private readonly spans: SpanPayload[] = [];
-  private readonly body: Record<string, unknown>;
   private ended = false;
   private spanCostUsd = 0;
   private sawSpanCost = false;
 
   constructor(
-    private readonly cfg: Config,
-    options: TraceOptions,
-  ) {
-    this.body = {
-      id: newTraceId(),
-      name: clampName(options.name),
-      status: "unset" as TraceStatus,
-      startedAt: new Date().toISOString(),
-      provider: options.provider,
-      model: options.model,
-      sessionId: options.sessionId,
-      userId: options.userId,
-      tags: options.tags?.slice(0, 20),
-      input: options.input,
-      metadata: { ...deploymentMetadata(), ...options.metadata },
-    };
-  }
+    private readonly sdk: SdkTrace,
+    private readonly clock: TraceClock,
+  ) {}
 
   get id(): string {
-    return this.body.id as string;
-  }
-
-  /** @internal Called by the Span constructor. */
-  addSpan(span: SpanPayload): void {
-    if (this.spans.length >= MAX_SPANS) return;
-    this.spans.push(span);
+    return this.sdk.id;
   }
 
   /**
@@ -295,38 +247,28 @@ export class Trace {
 
   /** Open a root-level span. */
   span(name: string, kind: SpanKind, options?: SpanOptions): Span {
-    return new Span(this, name, kind, null, options);
+    return new Span(this, this.sdk.startSpan(name, { ...options, kind }));
   }
 
-  /** Close the trace and schedule the single POST that stores it. */
+  /**
+   * Close the trace now and send it once the response is finished. The
+   * clock freezes here, so the payload the SDK builds in after() carries
+   * this moment as endedAt, and any span an early return left open closes
+   * at the same instant: the API rejects a span without endedAt, and the
+   * whole trace with it.
+   */
   end(options: TraceEndOptions = {}): void {
     if (this.ended) return;
     this.ended = true;
-    this.body.endedAt = new Date().toISOString();
-    this.body.status = options.status ?? "ok";
-    if (options.usage) this.body.usage = compact({ ...options.usage });
-    if (options.metadata) {
-      this.body.metadata = { ...(this.body.metadata as object), ...options.metadata };
-    }
-    if (options.output !== undefined) this.body.output = options.output;
-    if (options.costUsd !== undefined) {
-      this.body.costUsd = options.costUsd;
-    } else if (this.sawSpanCost) {
-      this.body.costUsd = Number(this.spanCostUsd.toFixed(10));
-    }
-    // A span left open by an early return would be rejected for a missing
-    // endedAt, taking the whole trace down with it.
-    for (const span of this.spans) {
-      if (!span.endedAt) {
-        span.endedAt = this.body.endedAt as string;
-        span.status = "unset";
-      }
-    }
-    const payload = {
-      schemaVersion: 1,
-      trace: compact({ ...this.body, spans: this.spans }),
-    };
-    schedule(() => post(this.cfg, TRACES_PATH, payload));
+    this.clock.freeze();
+    const costUsd =
+      options.costUsd ??
+      (this.sawSpanCost ? Number(this.spanCostUsd.toFixed(10)) : undefined);
+    schedule(() =>
+      this.sdk
+        .end({ ...options, status: options.status ?? "ok", costUsd })
+        .catch((error) => console.warn(`firetrace: ingest failed ${describe(error)}`)),
+    );
   }
 }
 
@@ -336,7 +278,16 @@ export class Trace {
  */
 export function startTrace(options: TraceOptions): Trace | null {
   const cfg = config();
-  return cfg ? new Trace(cfg, options) : null;
+  if (!cfg) return null;
+  const { name, metadata, ...rest } = options;
+  const clock = new TraceClock();
+  return new Trace(
+    client(cfg, clock).startTrace(name, {
+      ...rest,
+      metadata: { ...deploymentMetadata(), ...metadata },
+    }),
+    clock,
+  );
 }
 
 /**
@@ -378,11 +329,12 @@ export function recordFeedback(options: {
 }
 
 /**
- * Run delivery after the response is finished. Outside a request scope
- * (a background job, a test) after() throws, and a detached promise is
- * the best available fallback.
+ * Hold the function open until delivery finishes: after() runs `send`
+ * once the response is done and waits for it. Outside a request scope (a
+ * background job, a test) after() throws, and a detached promise is the
+ * best available fallback.
  */
-function schedule(send: () => Promise<void>): void {
+function schedule(send: () => Promise<unknown>): void {
   try {
     after(send);
   } catch {
@@ -390,58 +342,36 @@ function schedule(send: () => Promise<void>): void {
   }
 }
 
-function send(cfg: Config, path: string, payload: unknown): Promise<Response> {
-  return fetch(`${cfg.base}${path}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${cfg.apiKey}`,
-    },
-    body: JSON.stringify(payload),
-    signal: AbortSignal.timeout(SEND_TIMEOUT_MS),
-  });
-}
-
-async function post(cfg: Config, path: string, payload: unknown): Promise<void> {
-  try {
-    const response = await send(cfg, path, payload);
-    if (!response.ok) {
-      const detail = await response.text().catch(() => "");
-      console.warn(`firetrace: ingest returned ${response.status} ${detail.slice(0, 300)}`);
-    }
-  } catch (error) {
-    console.warn("firetrace: ingest failed", error);
-  }
-}
-
 async function postScore(
   cfg: Config,
   options: { traceId: string; rating: FeedbackRating; comment?: string },
 ): Promise<void> {
-  const path = `${TRACES_PATH}/${options.traceId}/scores`;
-  const payload = {
+  const api = new FireTraceApi({
+    endpoint: cfg.base,
+    apiKey: cfg.apiKey,
+    timeoutMs: SEND_TIMEOUT_MS,
+  });
+  const score = {
     name: FEEDBACK_SCORE_NAME,
-    dataType: "numeric",
+    dataType: "numeric" as const,
     value: options.rating === "up" ? 1 : 0,
     ...(options.comment ? { comment: options.comment } : {}),
   };
 
   for (let attempt = 0; ; attempt++) {
     try {
-      const response = await send(cfg, path, payload);
-      if (response.ok) return;
+      await api.addScore(options.traceId, score);
+      return;
+    } catch (error) {
       // 404 means the rated trace has not landed yet, which is a race this
-      // client creates by design: the trace ships after its response
-      // finishes. Nothing else is worth retrying.
-      if (response.status === 404 && attempt < SCORE_RETRY_DELAYS_MS.length) {
+      // client creates by design (see SCORE_RETRY_DELAYS_MS). Nothing else
+      // is worth retrying, and the SDK does not retry scores itself.
+      const notYet = error instanceof FireTraceError && error.status === 404;
+      if (notYet && attempt < SCORE_RETRY_DELAYS_MS.length) {
         await sleep(SCORE_RETRY_DELAYS_MS[attempt]);
         continue;
       }
-      const detail = await response.text().catch(() => "");
-      console.warn(`firetrace: score returned ${response.status} ${detail.slice(0, 300)}`);
-      return;
-    } catch (error) {
-      console.warn("firetrace: score failed", error);
+      console.warn(`firetrace: score failed ${describe(error)}`);
       return;
     }
   }
