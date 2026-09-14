@@ -56,7 +56,7 @@ function buildServer(): McpServer {
   server.registerTool(
     "search_playbook",
     {
-      title: "Search the Hackathon Playbook",
+      title: "Search The Hackathon Playbook",
       description:
         "Semantic search over The Hackathon Playbook, a corpus of battle-tested hackathon strategy from 36+ wins: team formation, ideation, validation, execution, tech stack selection, pitching, submission, post-hackathon follow-up, and a non-coder track. Returns the most relevant sections with their page titles, headings, URLs, and full text. Use this first for any question about hackathon strategy; use get_page afterwards when you need a full page.",
       inputSchema: {

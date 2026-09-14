@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { CopyForAi } from "@/components/copy-for-ai";
 
@@ -28,6 +29,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/non-coders/concepts`,
     types: markdownAlternate("/non-coders/concepts"),
   },
+  ...shareMetadata({
+    path: "/non-coders/concepts",
+    title: "Tech Jargon in Plain English, for Non-Coders",
+    description:
+      "GitHub, APIs, deploying, and other tech jargon explained in plain English for non-coders.",
+  }),
 };
 
 const CONCEPTS = [

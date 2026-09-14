@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Home,
@@ -15,29 +16,26 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
-import { SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 const CONTACT_EMAIL = "billzhangsc@gmail.com";
+const HEADSHOT_URL = "/brand/bill-zhang-headshot.jpg";
 
 export const metadata: Metadata = {
-  title:
-    "Media Kit — Hackathon Playbook | Press, Partnerships & Brand Assets",
+  // The layout template appends " | The Hackathon Playbook".
+  title: "Media Kit — Press, Partnerships & Brand Assets",
   description:
-    "Official media kit for Hackathon Playbook: founder bio, stats (36+ wins, $100K+ prizes), brand assets, logo, colors, and press contact for partnerships and affiliate programs.",
+    "Media kit for The Hackathon Playbook: founder bio and headshot, stats (36+ wins, $100K+ in prizes), logos, brand colors, fonts, and a press contact.",
   alternates: {
     canonical: `${SITE_URL}/media-kit`,
   },
-  openGraph: {
-    title: "Media Kit — Hackathon Playbook",
+  ...shareMetadata({
+    path: "/media-kit",
+    title: "Media Kit — The Hackathon Playbook",
     description:
-      "Press, partnerships, and brand assets for Hackathon Playbook. 36+ hackathon wins, $100K+ in prizes.",
-    url: `${SITE_URL}/media-kit`,
-  },
-  twitter: {
-    title: "Media Kit — Hackathon Playbook",
-    description:
-      "Press, partnerships, and brand assets. 36+ hackathon wins, $100K+ in prizes.",
-  },
+      "Press, partnerships, and brand assets for The Hackathon Playbook. 36+ hackathon wins, $100K+ in prizes.",
+  }),
 };
 
 const personJsonLd = {
@@ -45,7 +43,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Bill Zhang",
   url: "https://v2.art3m1s.me/",
-  image: `${SITE_URL}/icon`,
+  image: `${SITE_URL}${HEADSHOT_URL}`,
   jobTitle: "Software Engineer 2",
   worksFor: {
     "@type": "Organization",
@@ -67,18 +65,17 @@ const personJsonLd = {
 const aboutPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  name: "Hackathon Playbook Media Kit",
+  name: `${SITE_NAME} Media Kit`,
   url: `${SITE_URL}/media-kit`,
-  description:
-    "Press, partnerships, and brand assets for Hackathon Playbook.",
+  description: `Press, partnerships, and brand assets for ${SITE_NAME}.`,
   isPartOf: {
     "@type": "WebSite",
-    name: "Hackathon Playbook",
+    name: SITE_NAME,
     url: SITE_URL,
   },
   about: {
     "@type": "Organization",
-    name: "Hackathon Playbook",
+    name: SITE_NAME,
     url: SITE_URL,
     founder: { "@type": "Person", name: "Bill Zhang" },
   },
@@ -147,12 +144,15 @@ const CREDENTIALS = [
   },
 ];
 
+// Hex values are the sRGB conversions of the dark-theme tokens in
+// app/globals.css; keep them in sync if those tokens change.
 const BRAND_COLORS = [
   {
     name: "Volt",
     token: "volt",
     role: "Primary accent",
     swatchClass: "bg-volt",
+    hex: "#00D4D5",
     value: "oklch(0.78 0.15 195)",
   },
   {
@@ -160,6 +160,7 @@ const BRAND_COLORS = [
     token: "spark",
     role: "Secondary accent",
     swatchClass: "bg-spark",
+    hex: "#E6AD00",
     value: "oklch(0.78 0.16 85)",
   },
   {
@@ -167,21 +168,49 @@ const BRAND_COLORS = [
     token: "primary",
     role: "Core brand",
     swatchClass: "bg-primary",
-    value: "CSS var --primary",
+    hex: "#6A45F0",
+    value: "oklch(0.54 0.24 285)",
   },
   {
     name: "Background",
     token: "background",
     role: "Site background",
     swatchClass: "bg-background border border-primary/20",
-    value: "CSS var --background (dark)",
+    hex: "#060613",
+    value: "oklch(0.13 0.03 285)",
   },
 ];
 
 const FONTS = [
-  { label: "Display", className: "font-display", usage: "Headlines, H1/H2" },
-  { label: "Body", className: "font-body", usage: "Paragraphs, long-form" },
-  { label: "Code", className: "font-code", usage: "Terminal UI, stats labels" },
+  {
+    label: "Display",
+    name: "JetBrains Mono",
+    className: "font-display",
+    usage: "Headlines, H1/H2",
+  },
+  {
+    label: "Body",
+    name: "Outfit",
+    className: "font-body",
+    usage: "Paragraphs, long-form",
+  },
+  {
+    label: "Code",
+    name: "Fira Code",
+    className: "font-code",
+    usage: "Terminal UI, stats labels",
+  },
+];
+
+const BRAND_FILES = [
+  { label: "Logo", detail: "PNG, 800×800", href: "/brand/logo.png" },
+  { label: "Logo", detail: "SVG, scalable", href: "/brand/logo.svg" },
+  {
+    label: "Share card",
+    detail: "PNG, 1200×630",
+    href: "/brand/share-card.png",
+  },
+  { label: "Founder headshot", detail: "JPG, 2160×2880", href: HEADSHOT_URL },
 ];
 
 const SECTIONS = [
@@ -234,7 +263,7 @@ const LINKS = [
   },
 ];
 
-const BOILERPLATE = `Hackathon Playbook is the most comprehensive guide to winning hackathons, built by Bill Zhang, a competitor with 36+ hackathon wins and $100K+ in prizes. The site combines a 7-phase playbook, a path for non-coders using AI tools, and a blog with battle-tested strategies from real victories at HackUTD, UC Berkeley AI, LA Hacks, and Google DSC.`;
+const BOILERPLATE = `The Hackathon Playbook is the most comprehensive guide to winning hackathons, built by Bill Zhang, a competitor with 36+ hackathon wins and $100K+ in prizes. The site combines a 7-phase playbook, a path for non-coders using AI tools, and a blog with battle-tested strategies from real victories at HackUTD, UC Berkeley AI, LA Hacks, and Google DSC.`;
 
 export default function MediaKitPage() {
   return (
@@ -263,9 +292,9 @@ export default function MediaKitPage() {
           Media <span className="text-volt">Kit</span>
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          Everything you need to feature, partner with, or affiliate with
-          Hackathon Playbook. Quotes, stats, brand assets, and a direct line
-          to the founder.
+          Everything you need to feature, partner with, or affiliate with The
+          Hackathon Playbook. Stats, a founder headshot, brand assets, and a
+          direct line to the founder.
         </p>
       </header>
 
@@ -315,13 +344,13 @@ export default function MediaKitPage() {
           <div className="space-y-3">
             <h2 className="font-display text-2xl font-bold">About</h2>
             <p className="font-body text-foreground/85 leading-relaxed">
-              Hackathon Playbook (
+              The Hackathon Playbook (
               <span className="font-code text-volt">
                 thehackathonplaybook.dev
               </span>
               ) is an educational platform built by Bill Zhang that distills 36+
               hackathon wins and $100K+ in prizes into a repeatable playbook.
-              The Site is aimed at student hackers, non-coder founders using AI
+              The site is aimed at student hackers, non-coder founders using AI
               tools, and hackathon sponsors looking to understand what wins.
             </p>
           </div>
@@ -331,23 +360,43 @@ export default function MediaKitPage() {
             <h2 className="font-display text-2xl font-bold">
               Founder: Bill Zhang
             </h2>
-            <p className="font-body text-foreground/85 leading-relaxed">
-              Bill Zhang (
-              <a
-                href="https://github.com/IdkwhatImD0ing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-code text-volt hover:underline"
-              >
-                @IdkwhatImD0ing
-              </a>
-              ) is one of the most decorated hackathon competitors in the US
-              college scene. He is a Software Engineer 2 at Pinterest,
-              previously an Applied AI Engineer at Scale AI (Enterprise &
-              Post-Training Research), co-founder of WeCracked (a 4,000+ member
-              hackathon community), and co-founder of Dispatch AI (Berkeley
-              SkyDeck funded, $1M valuation).
-            </p>
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+              <div className="w-40 shrink-0 space-y-2 sm:w-48">
+                <Image
+                  src="/brand/bill-zhang-headshot-720.jpg"
+                  alt="Bill Zhang, founder of The Hackathon Playbook, in Joshua Tree National Park"
+                  width={720}
+                  height={960}
+                  sizes="(min-width: 640px) 192px, 160px"
+                  className="rounded-xl border border-primary/15"
+                />
+                <a
+                  href={HEADSHOT_URL}
+                  download
+                  className="inline-flex items-center gap-1.5 font-code text-xs text-volt hover:underline"
+                >
+                  <Download className="size-3.5" />
+                  Full-size photo
+                </a>
+              </div>
+              <p className="font-body text-foreground/85 leading-relaxed">
+                Bill Zhang (
+                <a
+                  href="https://github.com/IdkwhatImD0ing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-code text-volt hover:underline"
+                >
+                  @IdkwhatImD0ing
+                </a>
+                ) is one of the most decorated hackathon competitors in the US
+                college scene. He is a Software Engineer 2 at Pinterest,
+                previously an Applied AI Engineer at Scale AI (Enterprise &
+                Post-Training Research), co-founder of WeCracked (a 4,000+ member
+                hackathon community), and co-founder of Dispatch AI (Berkeley
+                SkyDeck funded, $1M valuation).
+              </p>
+            </div>
             <div className="space-y-2">
               <p className="font-code text-xs uppercase tracking-widest text-muted-foreground">
                 Credentials
@@ -481,25 +530,43 @@ export default function MediaKitPage() {
 
         <h2 className="font-display text-2xl font-bold">Brand Assets</h2>
 
-        {/* Logo */}
-        <div className="rounded-xl border border-primary/15 bg-card/40 p-5">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="font-display text-sm font-bold">Logo / Icon</p>
-              <p className="font-code text-xs text-muted-foreground">
-                {SITE_URL}/icon
-              </p>
-            </div>
-            <a
-              href={`${SITE_URL}/icon`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-volt/30 bg-volt/10 px-3 py-1.5 font-code text-xs text-volt transition-colors hover:bg-volt/20"
-            >
-              <Download className="size-3.5" />
-              Download
-            </a>
+        {/* Downloads */}
+        <div className="space-y-3">
+          <div className="divide-y divide-primary/10 rounded-xl border border-primary/15 bg-card/40">
+            {BRAND_FILES.map((f) => (
+              <div
+                key={f.href}
+                className="flex items-center justify-between gap-4 p-5"
+              >
+                {/* min-w-0 + break-all: the URL is one unbreakable word and
+                    pushed the button off-screen on phones. */}
+                <div className="min-w-0">
+                  <p className="font-display text-sm font-bold">
+                    {f.label}{" "}
+                    <span className="font-code text-xs font-normal text-muted-foreground">
+                      {f.detail}
+                    </span>
+                  </p>
+                  <p className="break-all font-code text-xs text-muted-foreground">
+                    {SITE_URL}
+                    {f.href}
+                  </p>
+                </div>
+                <a
+                  href={f.href}
+                  download
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-volt/30 bg-volt/10 px-3 py-1.5 font-code text-xs text-volt transition-colors hover:bg-volt/20"
+                >
+                  <Download className="size-3.5" />
+                  Download
+                </a>
+              </div>
+            ))}
           </div>
+          <p className="font-body text-sm text-muted-foreground">
+            These files, the founder photo, and the boilerplate above may be
+            used in editorial coverage of {SITE_NAME}.
+          </p>
         </div>
 
         {/* Colors */}
@@ -517,13 +584,22 @@ export default function MediaKitPage() {
                   <p className="font-code text-[10px] text-muted-foreground">
                     {c.role}
                   </p>
-                  <p className="mt-1 font-code text-[10px] text-foreground/70 break-all">
+                  <p className="mt-1 font-code text-xs text-foreground">
+                    {c.hex}
+                  </p>
+                  <p className="font-code text-[10px] text-foreground/70 break-all">
                     {c.value}
                   </p>
                 </div>
               </div>
             ))}
           </div>
+          <p className="font-body text-sm text-muted-foreground">
+            The logo itself uses{" "}
+            <span className="font-code text-foreground">#A855F7</span> and{" "}
+            <span className="font-code text-foreground">#D4FF00</span> on{" "}
+            <span className="font-code text-foreground">#0A0A0F</span>.
+          </p>
         </div>
 
         {/* Fonts */}
@@ -539,7 +615,7 @@ export default function MediaKitPage() {
                   {f.label}
                 </p>
                 <p className={`${f.className} text-xl text-foreground`}>
-                  The quick fox
+                  {f.name}
                 </p>
                 <p className="font-code text-[10px] text-muted-foreground">
                   {f.usage}

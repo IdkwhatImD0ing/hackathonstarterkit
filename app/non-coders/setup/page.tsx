@@ -19,6 +19,7 @@ import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { CopyForAi } from "@/components/copy-for-ai";
 
@@ -30,6 +31,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/non-coders/setup`,
     types: markdownAlternate("/non-coders/setup"),
   },
+  ...shareMetadata({
+    path: "/non-coders/setup",
+    title: "Getting Started: Build with Cursor as a Non-Coder",
+    description:
+      "The 3 files, 4 shortcuts, and daily workflow you need to start building with Cursor.",
+  }),
 };
 
 const THREE_FILES = [

@@ -6,7 +6,7 @@ Canonical: https://thehackathonplaybook.dev/
 
 ---
 
-## Hackathon Playbook
+## The Hackathon Playbook
 
 Guides, templates, and strategies from 36+ hackathon wins.
 
@@ -74,6 +74,6 @@ Linguify](https://devpost.com/software/linguify-katunw)[+31more winsView on Devp
 
 [Portfolio](https://v2.art3m1s.me/)[GitHub](https://github.com/IdkwhatImD0ing)[LinkedIn](https://www.linkedin.com/in/bill-zhang1/)[Devpost](https://devpost.com/IdkwhatImD0ing)[For AI & Agents](https://thehackathonplaybook.dev/ai)
 
-© 2026 Hackathon Playbook
+© 2026 The Hackathon Playbook
 
 [Got feedback? feedback@thehackathonplaybook.dev](mailto:feedback@thehackathonplaybook.dev)

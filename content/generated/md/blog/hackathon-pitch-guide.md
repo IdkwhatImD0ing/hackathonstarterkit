@@ -3,7 +3,7 @@
 > Master the hackathon pitch with a 3-minute structure from 36+ winning presentations: the hook, the demo, judge Q&A, and the mistakes that cost prizes.
 
 Canonical: https://thehackathonplaybook.dev/blog/hackathon-pitch-guide
-Last updated: 2026-06-24
+Last updated: 2026-09-14
 
 ---
 
@@ -15,6 +15,8 @@ Steal this structure. It's been tested across **36+ winning pitches**, it runs a
 2. **Solution demo (90 seconds)** Show the product live. Walk through it as a user would. Lead with your most impressive feature, not the login screen.
 3. **How it works (30 seconds)** High level only. 'We use Claude's API to analyze medical records in real time.' Stop there.
 4. **Impact and what's next (30 seconds)** Why this matters, who it helps, what you'd build with more time.
+
+Check the judging format first. If Q&A comes out of the same slot, shrink this to about 90 seconds and keep the same order.
 
 > **Note:** I've watched technically inferior projects win because the pitch was captivating. The pitch is your project's marketing. It decides whether judges remember you when they deliberate. The rest of this guide makes each section land.
 

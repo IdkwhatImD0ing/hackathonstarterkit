@@ -52,7 +52,7 @@ That's the whole pattern. The AI reads the docs, figures out how to use the serv
 
 Here's what the prompt looks like when filled in for a real service. This adds a conversational voice AI to your app.
 
-#### [ElevenLabs](https://try.elevenlabs.io/thehackathonplaybook)
+#### [ElevenLabs](https://try.elevenlabs.io/thehackathonplaybook) (affiliate link)
 
 Adds voice conversations to your app. Users click a button, speak, and hear an AI response.
 
@@ -76,11 +76,13 @@ Replace the fake API key with your real one from elevenlabs.io/app/settings/api-
 
 [ElevenLabs
 
-Get the Voice AI Stack the Pros Use
+My pick for voice AI
 
 Free tier covers a hackathon. Sign up, grab your API key, and paste the prompt above into Cursor.
 
-Try ElevenLabs Free](https://try.elevenlabs.io/thehackathonplaybook)
+Affiliate link: I may earn a commission.
+
+Check it out](https://try.elevenlabs.io/thehackathonplaybook)
 
 Power User Tip: ElevenLabs MCP
 

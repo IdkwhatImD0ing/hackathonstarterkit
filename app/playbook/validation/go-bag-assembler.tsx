@@ -288,7 +288,7 @@ function drawShareCard(assignments: Assignments): string {
 
   ctx.textAlign = "right";
   ctx.fillStyle = "rgba(155,109,255,0.35)";
-  ctx.fillText("Hackathon Playbook", W - pad, H - pad);
+  ctx.fillText("The Hackathon Playbook", W - pad, H - pad);
   ctx.textAlign = "left";
 
   return canvas.toDataURL("image/png");

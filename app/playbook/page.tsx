@@ -3,24 +3,26 @@ import Link from "next/link";
 import { Users, Lightbulb, ShieldCheck, Zap, Mic, FileText, Megaphone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title:
-    "Hackathon Playbook — 7-Phase System to Win Any Hackathon",
+  // The layout template appends " | The Hackathon Playbook", so the brand
+  // is not repeated here.
+  title: "The 7-Phase System to Win Any Hackathon",
   description:
     "A battle-tested 7-phase system for winning hackathons: team formation, ideation, validation, execution, pitching, submission, and post-hackathon strategy. Distilled from 36+ victories and $100K+ in prizes.",
   alternates: {
     canonical: `${SITE_URL}/playbook`,
     types: markdownAlternate("/playbook"),
   },
-  openGraph: {
-    title: "Hackathon Playbook — 7-Phase System to Win Any Hackathon",
+  ...shareMetadata({
+    path: "/playbook",
+    title: "The Hackathon Playbook — 7-Phase System to Win Any Hackathon",
     description:
       "A battle-tested 7-phase system for winning hackathons, distilled from 36+ victories and $100K+ in prizes.",
-  },
-  twitter: {
-    title: "Hackathon Playbook — 7-Phase Winning System",
-    description:
-      "Team formation, ideation, validation, execution, pitching, submission, and post-hackathon strategy from 36+ wins.",
-  },
+    twitter: {
+      title: "The Hackathon Playbook — 7-Phase Winning System",
+      description:
+        "Team formation, ideation, validation, execution, pitching, submission, and post-hackathon strategy from 36+ wins.",
+    },
+  }),
 };
 import { PLAYBOOK_SECTIONS } from "@/lib/playbook";
 import {
@@ -33,6 +35,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { playbookHowToJsonLd } from "@/lib/structured-data";

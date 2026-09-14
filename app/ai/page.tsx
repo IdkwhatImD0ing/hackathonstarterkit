@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Bot, FileText, MessageCircle, Search, TerminalSquare } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_URL}/ai`,
   },
+  ...shareMetadata({
+    path: "/ai",
+    title: "AI & Agent Access — Markdown Routes, llms.txt, MCP Server",
+    description:
+      "How AI tools and agents can read The Hackathon Playbook: Markdown versions of every page, llms.txt, a public MCP server with search tools, and a grounded chatbot. No auth required.",
+  }),
 };
 
 const FEATURES = [

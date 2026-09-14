@@ -6,7 +6,7 @@ export const post: BlogPost = {
   description:
     "Build a voice AI hackathon project with ElevenLabs and Cursor in an afternoon. The exact PRD-first, MCP-driven, test-driven workflow Bill uses to ship and win.",
   date: "2026-04-21",
-  updatedDate: "2026-06-24",
+  updatedDate: "2026-09-14",
   readingTime: "5 min read",
   keywords: [
     "build with elevenlabs cursor",
@@ -123,9 +123,9 @@ export const post: BlogPost = {
         { type: "paragraph", text: "Get this loop running once and the voice feature stops being the scary part of your build. It becomes the thirty seconds on stage that judges actually remember." },
         { type: "cta-button",
           tag: "ElevenLabs",
-          title: "Get the Voice AI Stack the Pros Use",
-          description: "Free tier covers a hackathon. Paid plans unlock voice cloning, agents, and longer audio.",
-          label: "Try ElevenLabs Free",
+          title: "My pick for voice AI",
+          description: "ElevenLabs is what I use for voice demos. The free tier covers a hackathon.",
+          label: "Check it out",
           href: "https://try.elevenlabs.io/thehackathonplaybook",
           sponsored: true,
         },

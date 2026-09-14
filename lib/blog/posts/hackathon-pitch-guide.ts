@@ -7,7 +7,7 @@ export const post: BlogPost = {
   description:
     "Master the hackathon pitch with a 3-minute structure from 36+ winning presentations: the hook, the demo, judge Q&A, and the mistakes that cost prizes.",
   date: "2026-04-10",
-  updatedDate: "2026-06-24",
+  updatedDate: "2026-09-14",
   readingTime: "3 min read",
   keywords: [
     "hackathon pitch guide",
@@ -28,6 +28,7 @@ export const post: BlogPost = {
           { title: "How it works (30 seconds)", description: "High level only. 'We use Claude's API to analyze medical records in real time.' Stop there." },
           { title: "Impact and what's next (30 seconds)", description: "Why this matters, who it helps, what you'd build with more time." },
         ]},
+        { type: "paragraph", text: "Check the judging format first. If Q&A comes out of the same slot, shrink this to about 90 seconds and keep the same order." },
         { type: "callout", variant: "info", text: "I've watched technically inferior projects win because the pitch was captivating. The pitch is your project's marketing. It decides whether judges remember you when they deliberate. The rest of this guide makes each section land." },
       ],
     },

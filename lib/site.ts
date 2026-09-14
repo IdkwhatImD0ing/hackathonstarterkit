@@ -11,7 +11,7 @@ export const SITE_URL =
 /** Hostname of the canonical origin, e.g. "thehackathonplaybook.dev". */
 export const CANONICAL_HOST = new URL(SITE_URL).host;
 
-export const SITE_NAME = "Hackathon Playbook";
+export const SITE_NAME = "The Hackathon Playbook";
 
 /** Resolve a path like "/playbook/pitching" to an absolute canonical URL. */
 export function absoluteUrl(path: string): string {
@@ -32,6 +32,7 @@ export function absoluteUrl(path: string): string {
  */
 export const MARKDOWN_EXCLUDED_PATHS: readonly string[] = [
   "/terms",
+  "/privacy",
   "/media-kit",
   // The cheat sheet is a prompt rack, not a document: its value is the copy
   // buttons, and its prompts are already written to be pasted into an agent.

@@ -490,6 +490,13 @@ function BlogCtaButton({
             {description}
           </p>
         )}
+        {/* Visible disclosure: rel="sponsored" alone is invisible to
+            readers, and the Terms promise FTC-style disclosure. */}
+        {sponsored && (
+          <p className="font-code text-xs text-muted-foreground">
+            Affiliate link: I may earn a commission.
+          </p>
+        )}
       </div>
       <span className="inline-flex items-center justify-center gap-2 rounded-lg bg-volt px-4 py-2.5 font-display text-sm font-bold text-volt-foreground shadow-lg shadow-volt/20 transition-all group-hover:shadow-xl group-hover:shadow-volt/30 sm:shrink-0">
         {label}

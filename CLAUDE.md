@@ -79,7 +79,9 @@ Content is **data-driven**: page data lives in `lib/` as typed TypeScript, and r
 - Affiliate or "preferred tool" mentions read soft and casual ("check it out", "my preferred"), never salesy or feature-listy.
 - Embed rich media (demo videos, recordings) on one canonical page only; cross-link from sibling pages instead of duplicating the embed.
 - When the user pastes raw LinkedIn-style copy (bold unicode, emoji bullets), normalize the formatting and integrate it into the site's components rather than pasting verbatim.
-- Personal proof to surface (frame to fit the page): started hackathons looking for an internship, got an interview within the first 4 hackathons, then 2 expedited interviews and 1 direct offer; 60+ hackathons and over $100K in winnings. Owner's GitHub handle is `@IdkwhatImD0ing`.
+- Personal proof to surface (frame to fit the page): started hackathons looking for an internship, got an interview within the first 4 hackathons, then 2 expedited interviews and 1 direct offer; 50+ hackathons, 36+ wins, and over $100K in winnings. Owner's GitHub handle is `@IdkwhatImD0ing`.
+- The brand name is "The Hackathon Playbook" (with "The"), exposed as `SITE_NAME` in `lib/site.ts`. Page titles omit it because the layout's title template appends it.
+- Every page builds its Open Graph and X tags with `shareMetadata()` from `lib/metadata.ts`. Next.js replaces the layout's `openGraph`/`twitter` objects instead of merging them, so a hand-written block silently drops the share image and URL.
 - Plan-driven workflow: multi-step tasks are scoped through plan files in `~/.cursor/plans/<name>.plan.md`. Mark to-dos `in_progress` one at a time; never edit the plan file itself.
 
 ## Guardrails

@@ -10,6 +10,7 @@ import { CheatSheetSearch } from "@/components/cheat-sheet-search";
 import { CHEAT_PROMPT_COUNT, CHEAT_SHEET_UPDATED } from "@/lib/cheat-sheet";
 import { cheatSheetHowToJsonLd } from "@/lib/structured-data";
 import { SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Hackathon Cheat Sheet — Copy-Paste AI Prompts for Every Phase",
@@ -18,17 +19,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_URL}/cheat-sheet`,
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/cheat-sheet",
     title: "Hackathon Cheat Sheet — Copy-Paste AI Prompts",
     description:
       "Paste-ready prompts for your AI agent at every phase of a hackathon: setup, scoping, building, debugging, shipping, and pitching.",
-    url: `${SITE_URL}/cheat-sheet`,
-  },
-  twitter: {
-    title: "Hackathon Cheat Sheet — Copy-Paste AI Prompts",
-    description:
-      "Paste-ready prompts for your AI agent at every phase of a hackathon. Copy one, send it, answer its questions, get back to building.",
-  },
+    twitter: {
+      description:
+        "Paste-ready prompts for your AI agent at every phase of a hackathon. Copy one, send it, answer its questions, get back to building.",
+    },
+  }),
 };
 
 const HOW_TO_USE = [

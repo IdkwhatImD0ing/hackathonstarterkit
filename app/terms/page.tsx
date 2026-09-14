@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
+import type { ReactElement } from "react";
 import Link from "next/link";
 import { Home, Mail, Scale, FileText } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
-import { SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 const CONTACT_EMAIL = "billzhangsc@gmail.com";
-const LAST_UPDATED = "September 3, 2026";
+const LAST_UPDATED = "September 14, 2026";
+
+const DESCRIPTION =
+  "Terms of Service for The Hackathon Playbook: site rules, open AI and crawler access, affiliate disclosures, intellectual property, and AI chat data handling.";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Hackathon Playbook",
-  description:
-    "Terms of Service for Hackathon Playbook. Review the rules for using the site, affiliate link disclosures, intellectual property, AI chat data handling, disclaimers, and California governing law.",
+  // The layout template appends " | The Hackathon Playbook".
+  title: "Terms of Service",
+  description: DESCRIPTION,
   alternates: {
     canonical: `${SITE_URL}/terms`,
   },
-  openGraph: {
-    title: "Terms of Service — Hackathon Playbook",
-    description:
-      "Terms of Service for Hackathon Playbook, including affiliate disclosures, intellectual property, and usage rules.",
-    url: `${SITE_URL}/terms`,
-  },
-  twitter: {
-    title: "Terms of Service — Hackathon Playbook",
-    description:
-      "The rules for using Hackathon Playbook, plus affiliate disclosures and disclaimers.",
-  },
+  ...shareMetadata({
+    path: "/terms",
+    title: `Terms of Service — ${SITE_NAME}`,
+    description: DESCRIPTION,
+  }),
 };
 
 const webPageJsonLd = {
@@ -32,20 +31,19 @@ const webPageJsonLd = {
   "@type": "WebPage",
   name: "Terms of Service",
   url: `${SITE_URL}/terms`,
-  description:
-    "Terms of Service for Hackathon Playbook, including affiliate disclosures, intellectual property rules, and California governing law.",
+  description: DESCRIPTION,
   isPartOf: {
     "@type": "WebSite",
-    name: "Hackathon Playbook",
+    name: SITE_NAME,
     url: SITE_URL,
   },
-  dateModified: "2026-09-03",
+  dateModified: "2026-09-14",
 };
 
 type Section = {
   id: string;
   title: string;
-  paragraphs: (string | string[])[];
+  paragraphs: (string | string[] | ReactElement)[];
 };
 
 const SECTIONS: Section[] = [
@@ -53,7 +51,7 @@ const SECTIONS: Section[] = [
     id: "acceptance",
     title: "1. Acceptance of Terms",
     paragraphs: [
-      "By accessing or using Hackathon Playbook (the website located at thehackathonplaybook.dev, together with any subdomains, hereafter the \"Site\"), you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree with any part of these Terms, you should stop using the Site.",
+      "By accessing or using The Hackathon Playbook (the website located at thehackathonplaybook.dev, together with any subdomains, hereafter the \"Site\"), you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree with any part of these Terms, you should stop using the Site.",
       "These Terms form a binding agreement between you and Bill Zhang, the operator of the Site (\"we\", \"us\", or \"our\").",
     ],
   },
@@ -61,7 +59,7 @@ const SECTIONS: Section[] = [
     id: "about",
     title: "2. About the Site",
     paragraphs: [
-      "Hackathon Playbook publishes educational content about hackathons, including strategy guides, templates, blog posts, and curated resources. The content is informational only. It is not legal, financial, career, or professional advice, and it is not a guarantee of any specific outcome at a hackathon or elsewhere.",
+      "The Hackathon Playbook publishes educational content about hackathons, including strategy guides, templates, blog posts, and curated resources. The content is informational only. It is not legal, financial, career, or professional advice, and it is not a guarantee of any specific outcome at a hackathon or elsewhere.",
       "Your use of anything you read here is at your own discretion and risk.",
     ],
   },
@@ -71,7 +69,8 @@ const SECTIONS: Section[] = [
     paragraphs: [
       "All content on the Site, including text, graphics, logos, icons, images, audio, video, code snippets, page layouts, and the compilation of all of the above, is the property of Bill Zhang or licensors and is protected by copyright, trademark, and other intellectual property laws.",
       "We grant you a limited, personal, non-exclusive, non-transferable, revocable license to access and view the content for your own personal, non-commercial use. You may also share short quotes or excerpts with proper attribution and a link back to the Site.",
-      "You may not reproduce, republish, sell, license, or redistribute significant portions of the content, create derivative works from it, or use it to train machine learning models, without prior written permission.",
+      "Automated access and AI use are welcome. You may crawl the Site with automated tools, have AI tools and agents read it (including through our Markdown pages, llms.txt, and MCP server), and use the content to train, fine-tune, or ground AI models. This permission is in addition to the personal license above. It applies as long as you follow our robots.txt file and the content signals published in it, stay within the rate limits on our API and MCP endpoints, and do not degrade the Site for other visitors.",
+      "You may not sell or license the content, or republish significant portions of it as your own work or under your own name, without prior written permission. Passing the content off as your own is never allowed.",
     ],
   },
   {
@@ -80,7 +79,7 @@ const SECTIONS: Section[] = [
     paragraphs: [
       "When using the Site, you agree not to:",
       [
-        "Scrape, crawl, or bulk-download the Site using automated tools, except for compliant search-engine indexing.",
+        "Attack or overload the Site, including with automated traffic that ignores robots.txt, exceeds our rate limits, or slows the Site down for other visitors.",
         "Attempt to gain unauthorized access to the Site, its servers, or related infrastructure.",
         "Introduce malware, viruses, or any code intended to interfere with the Site.",
         "Use the Site to violate any applicable law or the rights of any third party.",
@@ -118,7 +117,7 @@ const SECTIONS: Section[] = [
     id: "liability",
     title: "8. Limitation of Liability",
     paragraphs: [
-      "To the maximum extent permitted by law, in no event will Bill Zhang, Hackathon Playbook, or any affiliated parties be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, including loss of profits, data, goodwill, or other intangible losses, arising out of or in connection with your use of (or inability to use) the Site, even if we have been advised of the possibility of such damages.",
+      "To the maximum extent permitted by law, in no event will Bill Zhang, The Hackathon Playbook, or any affiliated parties be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, including loss of profits, data, goodwill, or other intangible losses, arising out of or in connection with your use of (or inability to use) the Site, even if we have been advised of the possibility of such damages.",
       "To the extent any liability cannot be excluded, our total cumulative liability to you for any and all claims relating to the Site is limited to one hundred U.S. dollars (USD $100).",
     ],
   },
@@ -154,6 +153,13 @@ const SECTIONS: Section[] = [
       "If you rate an answer with the thumbs up or thumbs down button, we record that rating against the answer it refers to.",
       "Because conversations are stored, please do not paste passwords, API keys, personal information, or anything confidential into the chat. It is a public educational assistant, not a private channel.",
       "We do not sell this data and we do not share it with advertisers. To have a conversation deleted, email the address below.",
+      <>
+        Our{" "}
+        <Link href="/privacy" className="text-volt underline underline-offset-2">
+          Privacy Policy
+        </Link>{" "}
+        covers everything else the Site collects and which services receive it.
+      </>,
     ],
   },
   {
@@ -191,7 +197,7 @@ export default function TermsPage() {
           Terms of <span className="text-primary">Service</span>
         </h1>
         <p className="font-body text-muted-foreground">
-          The rules for using Hackathon Playbook. Plain English, no surprises.
+          The rules for using The Hackathon Playbook. Plain English, no surprises.
         </p>
         <p className="font-code text-xs text-muted-foreground">
           Last updated: {LAST_UPDATED}

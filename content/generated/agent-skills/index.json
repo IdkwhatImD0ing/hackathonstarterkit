@@ -83,7 +83,7 @@
       "type": "skill-md",
       "description": "Prepare a winning hackathon pitch: narrative structure, demo choreography, judge psychology, and Q&A handling. Use when preparing to present a hackathon project.",
       "url": "/.well-known/agent-skills/hackathon-pitch-prep/SKILL.md",
-      "digest": "sha256:7aad8c6a90e31ae9f3ad8931eb35854ada6c0ff0fc86bfb27ac563934e3119f4"
+      "digest": "sha256:da61c5d4bd6412731c8086228cd5bc7e431295b82b655a08bc237c335252e8cb"
     },
     {
       "name": "hackathon-stack-selection",
@@ -97,7 +97,7 @@
       "type": "skill-md",
       "description": "Ship a complete hackathon submission: README, demo video, Devpost write-up, and deliverables judges remember. Use when finalizing a hackathon submission.",
       "url": "/.well-known/agent-skills/hackathon-submission-checklist/SKILL.md",
-      "digest": "sha256:c5c60b2cb4b67e65edff7043d07b88abe8dabf4c73139c91463032c32f383da8"
+      "digest": "sha256:fb73dfdf1858ae6dd633678b54d7a8e5c1990981a82e07dd75e0a14da43b15e9"
     }
   ]
 }

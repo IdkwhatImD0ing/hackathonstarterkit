@@ -3,7 +3,7 @@
 > Hackathon pitch mistakes from the LA Hacks judging floor: tailor the pitch, cut your slides, demo the main flow, and protect Q&A time for higher scores.
 
 Canonical: https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks
-Last updated: 2026-06-24
+Last updated: 2026-09-14
 
 ---
 
@@ -152,7 +152,7 @@ Here is the one almost everyone broke. I had five minutes per team: about 1.5 mi
 
 > When judges cannot ask questions, they cannot score what they never got to understand.
 >
-> Bill Zhang, LA Hacks judge and Hackathon Playbook author
+> Bill Zhang, LA Hacks judge and author of The Hackathon Playbook
 
 That is the dangerous part. **Q&A is where the judge fills in missing rubric information.** If a rubric category never gets answered, the judge may have to give it a low score, or a zero.
 

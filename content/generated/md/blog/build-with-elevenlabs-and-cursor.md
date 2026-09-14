@@ -3,7 +3,7 @@
 > Build a voice AI hackathon project with ElevenLabs and Cursor in an afternoon. The exact PRD-first, MCP-driven, test-driven workflow Bill uses to ship and win.
 
 Canonical: https://thehackathonplaybook.dev/blog/build-with-elevenlabs-and-cursor
-Last updated: 2026-06-24
+Last updated: 2026-09-14
 
 ---
 

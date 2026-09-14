@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { CopyForAi } from "@/components/copy-for-ai";
 
@@ -24,6 +25,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/non-coders/apis`,
     types: markdownAlternate("/non-coders/apis"),
   },
+  ...shareMetadata({
+    path: "/non-coders/apis",
+    title: "Add Any Service to Your App with One Prompt",
+    description:
+      "How to add any service to your app with just an API key and a docs link. The copy-paste pattern for non-coders.",
+  }),
 };
 
 const GENERIC_PROMPT = `I want to use [SERVICE NAME] in my project.
@@ -276,7 +283,10 @@ export default function ApisPage() {
               >
                 ElevenLabs
                 <ExternalLink className="size-4" />
-              </a>
+              </a>{" "}
+              <span className="font-code text-xs font-normal text-muted-foreground">
+                (affiliate link)
+              </span>
             </CardTitle>
             <CardDescription className="font-body">
               Adds voice conversations to your app. Users click a button, speak,
@@ -312,15 +322,18 @@ export default function ApisPage() {
                   ElevenLabs
                 </span>
                 <p className="font-display text-base font-bold text-foreground transition-colors group-hover:text-volt">
-                  Get the Voice AI Stack the Pros Use
+                  My pick for voice AI
                 </p>
                 <p className="font-body text-sm text-muted-foreground">
                   Free tier covers a hackathon. Sign up, grab your API key, and
                   paste the prompt above into Cursor.
                 </p>
+                <p className="font-code text-xs text-muted-foreground">
+                  Affiliate link: I may earn a commission.
+                </p>
               </div>
               <span className="inline-flex items-center justify-center gap-2 rounded-lg bg-volt px-4 py-2.5 font-display text-sm font-bold text-volt-foreground shadow-lg shadow-volt/20 transition-all group-hover:shadow-xl group-hover:shadow-volt/30 sm:shrink-0">
-                Try ElevenLabs Free
+                Check it out
                 <ExternalLink className="size-3.5" />
               </span>
             </a>
