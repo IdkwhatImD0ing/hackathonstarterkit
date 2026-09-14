@@ -1,16 +1,16 @@
 # Scaffold Backend
 
-> PRD-driven FastAPI scaffold into server/ with optional Supabase. One stub route per entry in PRD.md > Backend Routes. Skips automatically if Backend Needed? = No.
+> Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/scaffold-backend
 
 ---
 
-PRD-driven FastAPI scaffold into server/ with optional Supabase. One stub route per entry in PRD.md > Backend Routes. Skips automatically if Backend Needed? = No.
+Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.
 
 Category: Building
 
-Usage: `/scaffold-backend` (Creates server/ from PRD.md (runs only if backend is needed))
+Usage: `/scaffold-backend` (Builds the backend in server/)
 
 Generate a minimal, working backend from the confirmed PRD. The backend should be callable immediately by the frontend, even if persistence is temporary.
 

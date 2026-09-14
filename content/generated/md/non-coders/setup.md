@@ -1,14 +1,14 @@
 # Getting Started
 
-> The 3 files, 4 shortcuts, and daily workflow you need to start building.
+> What to set up before your first prompt, and the five-step loop you'll repeat for every feature.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/setup
 
 ---
 
-## The 3 Files That Matter
+## The 3 Files
 
-Your entire configuration lives in three files. The AI reads these every time it helps you. For the deep dive on the system prompt files (and a one-command setup), see [The System Prompt](https://thehackathonplaybook.dev/non-coders/system-prompt). Don't know what a “file” means in this context? Check [Concepts Explained](https://thehackathonplaybook.dev/non-coders/concepts).
+Cursor reads .cursorrules and AGENTS.md on its own. [AGENTS.md](https://agents.md/) is an open format, so Codex and other AI coding tools read it too. PRD.md is your plan, and you paste it in as your first prompt. The [System Prompt](https://thehackathonplaybook.dev/non-coders/system-prompt) page has a one-command setup, and [Concepts Explained](https://thehackathonplaybook.dev/non-coders/concepts) defines words like commit.
 
 #### .cursorrules
 
@@ -70,7 +70,7 @@ Tells the AI about your project
 
 #### PRD.md
 
-Your plain-English blueprint
+Your plan, in plain English
 
 ```
 # Product Requirements Document
@@ -102,7 +102,7 @@ Your plain-English blueprint
 
 ## The 4 Shortcuts
 
-Memorize these four keyboard shortcuts. They cover 95% of what you need.
+On a Mac, press Cmd wherever you see Ctrl.
 
 Tab
 
@@ -126,65 +126,33 @@ Ctrl+I
 
 Agent mode
 
-Multi-file creation and editing
+Create and edit several files at once
 
 ## The Daily Workflow
 
-Follow this loop every time you sit down to build.
-
 Start a new chat
 
-Open a fresh chat in Cursor for each distinct feature. Long chats degrade AI quality.
+Open a fresh chat for each feature. Long conversations can make the agent lose focus, according to Cursor's post [“Best practices for coding with agents”](https://cursor.com/blog/agent-best-practices) (Lee Robinson, 2026).
 
 Describe the change
 
-Tell the AI what you want in plain language. Be specific about users, actions, and appearance.
+Say who uses it, what they do, what data it shows, and how it should look. "Make it better" gives the AI nothing to go on.
 
 Review the diff
 
-Read the green (added) and red (removed) lines before accepting. Never accept blindly.
+Look at the green (added) and red (removed) lines before you click Accept. The same post warns that AI-written code can look right and still be wrong.
 
-Test locally
+Test it
 
-Check your app in the browser. If something looks wrong, screenshot it and paste into chat.
+Check your app in the browser. If something looks wrong, paste a screenshot into the chat.
 
 Commit
 
-Tell the agent to commit with a descriptive message. This gives you save points to revert to.
+Once it works, tell the AI to commit with a short description. You can go back to that point if something breaks later.
 
-Repeat
-
-Move to the next feature. One feature per chat. Test before building on top.
-
-The mindset: You are not managing code. You are managing intent. Describe what you want, review what the AI produces, test it, save it, move on.
-
-## Common Pitfalls
-
-These mistakes cost non-coders the most time. Every one is avoidable.
-
-Accepting code without reading the diff
-
-Fix: Always review the green/red changes before clicking Accept
-
-Vague prompts like 'make it better'
-
-Fix: Be specific about users, actions, data, and appearance
-
-Building too many features at once
-
-Fix: One feature per chat session, test before moving on
-
-Skipping version control
-
-Fix: Tell the AI to commit after every working change
-
-Learning the tool during the hackathon
-
-Fix: Practice with Cursor for at least a week before the event
+Then repeat. Don't build the next feature on top of one you haven't tested.
 
 ## Getting Started Checklist
-
-Follow these steps and you'll be building within the hour.
 
 Install Cursor from cursor.com and sign in
 
@@ -194,4 +162,4 @@ Fill out PRD.md with what you're building, for whom, and why
 
 Open Cursor Agent mode (Ctrl+I) and paste your PRD as the first prompt
 
-Follow the daily workflow: describe, review, test, commit, repeat
+Practice the daily workflow for at least a week before your hackathon, so you're not learning Cursor at the event

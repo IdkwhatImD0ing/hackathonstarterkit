@@ -1,45 +1,36 @@
 # Hackathon Pitch Guide: How to Present Your Project and Win Prizes
 
-> Master the hackathon pitch with a 3-minute structure from 36+ winning presentations: the hook, the demo, judge Q&A, and the mistakes that cost prizes.
+> A hackathon pitch guide with one 3-minute structure: problem, live demo, how it works, and impact. Plus Q&A prep, and how to cut it down for a shorter slot.
 
 Canonical: https://thehackathonplaybook.dev/blog/hackathon-pitch-guide
-Last updated: 2026-06-24
+Last updated: 2026-09-14
 
 ---
 
-## The 3-Minute Pitch Structure That Wins
+## A 3-Minute Pitch Structure
 
-Steal this structure. It's been tested across **36+ winning pitches**, it runs about three minutes, and you can drop your project into it tonight.
+I've watched technically weaker projects win because their pitch was better. This is the structure I use. It runs about three minutes, and you can drop your project into it tonight.
 
-1. **Problem (30 seconds)** Hook the judges with the pain point. Use a startling statistic, a personal story, or a vivid description. Make them feel it.
-2. **Solution demo (90 seconds)** Show the product live. Walk through it as a user would. Lead with your most impressive feature, not the login screen.
+1. **Problem (30 seconds)** State the pain point before you say anything about your product.
+2. **Solution demo (90 seconds)** Show the product live and walk through it as a user would. Lead with your most impressive feature, not the login screen.
 3. **How it works (30 seconds)** High level only. 'We use Claude's API to analyze medical records in real time.' Stop there.
-4. **Impact and what's next (30 seconds)** Why this matters, who it helps, what you'd build with more time.
+4. **Impact and what's next (30 seconds)** Who it helps, and what you'd build with more time.
 
-> **Note:** I've watched technically inferior projects win because the pitch was captivating. The pitch is your project's marketing. It decides whether judges remember you when they deliberate. The rest of this guide makes each section land.
+## Fit the Structure to Your Slot
 
-## Why the Pitch Beats the Code
+When I judged at LA Hacks, each team had five minutes, and about 3.5 of those were for questions, which is where a judge fills in the rubric. Some teams pitched for all five. Formats vary, so ask how long your slot is and how much of it is Q&A, then shorten each part to fit.
 
-Judges spend three to five minutes with each team. That's the entire window to land what you built, why it matters, and how it works.
+[9 Hackathon Pitch Mistakes I Saw at LA Hacks](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks): What I saw from the judging table.
 
-A great project with a weak pitch loses to a good project with a great pitch. Every time.
+## Open With the Problem
 
-| Per team | Projects judged | To hook them | Tested pitches |
-| --- | --- | --- | --- |
-| 3-5 min | 50+ | 30 sec | 36+ |
-
-## Open With the Problem, Not the Solution
-
-You get about **30 seconds** before a judge decides whether to care. Spend them on the pain, not your tech stack.
-
-One winning opener I watched ran: **240 million 911 calls** are made in the US every year, and dispatchers prioritize them by hand while people are dying on the line. No team name, no tech stack, just the stakes. (That number is the National Emergency Number Association's estimate: nena.org/page/911statistics.)
+A winning team I watched opened with this: **240 million 911 calls** are made in the US every year, and dispatchers prioritize them by hand while people are dying on the line. (That number is the National Emergency Number Association's estimate: nena.org/page/911statistics.)
 
 **Do:**
 
-- Lead with a startling statistic
+- Lead with one statistic that shows the scale
 - Open with a personal story
-- Describe the problem vividly
-- Make the judge feel the pain
+- Describe the problem so the judge can picture it
 
 **Don't:**
 
@@ -50,21 +41,19 @@ One winning opener I watched ran: **240 million 911 calls** are made in the US e
 
 ## Demo Live, and Always Record a Backup
 
-Demo live whenever you can. Slides are backup only. Get the **product on screen within 30 seconds**, walk through it like a first-time user, and show your best feature first.
+Demo live whenever you can. Slides are backup only.
 
-> **Warning:** Pre-load realistic data, never 'test123' or 'lorem ipsum'. Populate the dashboard with believable numbers. Process a real example. These small details make the project feel polished and real.
+> **Warning:** Pre-load realistic data: believable numbers in the dashboard and a real example to process. Never 'test123' or 'lorem ipsum'.
 
-Here's the catch: the Wi-Fi will fail, the API will rate-limit, the laptop will sleep. A pre-recorded video keeps the demo running when the live environment dies. Better still, it follows the judges into deliberation when you can't.
+The Wi-Fi at LA Hacks was spotty while I was judging, and some teams couldn't run their demo at all. Without a backup video, I couldn't see what those projects did. A recording also stays on your Devpost for deliberation.
+
+Here's our TalkTuahBank demo from HackUTD 2024, where we took 1st Overall. The problem gets one statistic and five seconds, and the product is running by 0:14. At 1:20, a $200 transfer goes through on camera.
 
 Video: [TalkTuahBank demo video, 1st Overall at HackUTD 2024](https://www.youtube.com/embed/YsH_z1azXSA)
 
-*The product is on screen within 30 seconds and a real money transfer runs on camera. That's what a backup video should do.*
-
-[More demo video examples](https://thehackathonplaybook.dev/playbook/pitching): Two real demo videos that turned hackathon work into outcomes, plus the recording stack behind them.
+[More demo video examples](https://thehackathonplaybook.dev/playbook/pitching): The TalkTuahBank and SoundSearch demos, broken down.
 
 ## Win the Q&A by Naming Your Limits
-
-Judges ask the same handful of questions at nearly every hackathon. Prep the answers.
 
 **Prepare answers for**
 
@@ -74,26 +63,12 @@ Judges ask the same handful of questions at nearly every hackathon. Prep the ans
 - [ ] How is this different from existing solutions?
 - [ ] What would you build next with more time?
 
-> **Tip:** The counterintuitive move: be honest about what's missing. When asked, say something like 'In a production version we'd add X, but for this demo we focused on Y because it best shows our core value.' Judges respect teams that name limits instead of overselling.
+> **Tip:** When a judge asks what's missing, answer honestly instead of overselling. Something like: 'In a production version we'd add X, but for this demo we focused on Y because it best shows our core value.'
 
-## The Mistakes That Quietly Cost Prizes
+## Delivery: One Speaker, No Apologies
 
-**Do:**
+Have one person talk while another drives the demo, and don't switch speakers mid-pitch. Look at the judges instead of your screen, and keep a measured pace even when you're nervous. Run the whole thing out loud with a timer at least once before you walk up.
 
-- Make eye contact with judges
-- Speak clearly at a measured pace
-- One person talks, another demos
-- Focus entirely on what works
+> **Don't apologize in the pitch:** Don't bring up bugs or say 'we ran out of time.' Judges don't know your original plan, so they can only judge what you show them.
 
-**Don't:**
-
-- Looking at your screen while talking
-- Rushing through nervousness
-- Switching speakers mid-pitch
-- Apologizing for what you didn't finish
-
-> **Never say it:** Never mention bugs or 'we ran out of time.' Judges don't know your original plan, so they can only judge what you show them. Spend every second on what's impressive.
-
-Run your structure end to end out loud at least once before you step up. The team that rehearsed always sounds calmer than the team that wrote better code.
-
-[How to Win Hackathons: The Complete Guide](https://thehackathonplaybook.dev/blog/how-to-win-hackathons): The full 7-phase system, from team formation to post-hackathon strategy.
+[How to Win Hackathons: The Complete Guide](https://thehackathonplaybook.dev/blog/how-to-win-hackathons): All seven phases, from team formation to follow-up.

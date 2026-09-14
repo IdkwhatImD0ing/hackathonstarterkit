@@ -1,15 +1,15 @@
 # Team Formation
 
-> Find the right people, define roles, and create a winning team dynamic.
+> Pick teammates who cover four roles, and build a steady squad if you want to keep winning.
 
 Canonical: https://thehackathonplaybook.dev/playbook/team-formation
-Last updated: 2026-06-24
+Last updated: 2026-09-14
 
 ---
 
 ## Find Your Persona
 
-Which role do you gravitate toward? Take the 8-question quiz.
+Eight questions to find the role you fall into by default.
 
 TL;DR Know your default role so you can recruit teammates who cover the other three.
 
@@ -19,149 +19,121 @@ TL;DR Know your default role so you can recruit teammates who cover the other th
 
 ## The Four Personas
 
-Every winning team needs four roles. You don't need a big team, just the right mix. One person can cover several roles.
+A hackathon team has four jobs. One person can take more than one, so you don't need a big team.
 
-TL;DR Cover four roles (Designer, Pitcher, Architect, Strategist), not four headcount. Composition beats size.
+TL;DR Before you commit to a team, put a name next to each role. If one is blank, recruit for it or make it someone's second job.
 
 #### The Designer
 
-A polished UI signals quality instantly in a sea of terminal demos. The Designer makes your 4AM code look intentional. First impressions decide hackathons.
-
-Traits
+Makes the project look finished before you say a word. A polished UI stands out next to terminal demos, and it makes your 4AM code look intentional.
 
 Strengths
 
--   Buys credibility before you say a word; judges form opinions in seconds
--   Owns online judging: your project IS your screenshots
--   Simplifies complex features into something approachable
+-   Carries online judging, where your screenshots are the project
+-   Simplifies complex features so they're easy to follow
 
 Watch Out For
 
-Over-polishing under pressure when "good enough" ships.
+Polishing past the point where "good enough" would ship.
 
-Like a cinematographer: they define how the world sees the project. Spot them: they open Figma before VS Code.
+Spot them: they open Figma before VS Code.
 
 #### The Pitcher
 
-Can't explain it in 60 seconds? You lose. The Pitcher translates engineering into impact: when to lead with the problem, when to show the demo, how to answer "so what?"
+Explains why the project matters. They decide when to lead with the problem, when to show the demo, and how to answer "so what?"
 
-Traits
+On Dispatch AI, my teammate Spike O'Carroll delivered our whole 4:34 pitch video. It opens on understaffed 911 call centers and saves the live call to our AI dispatcher for the last 77 seconds. [See the breakdown](https://thehackathonplaybook.dev/playbook/pitching).
 
 Strengths
 
--   Maximizes the 2-5 minute demo window; every second counts
--   Handles tough judge Q&A without breaking a sweat
--   Separates "cool project" from "first place"
+-   Fits the story into whatever slot the event gives, sometimes 90 seconds before questions
+-   Takes the hard judge questions in Q&A. When I judged LA Hacks, each team had five minutes, and 3.5 of them were questions.
 
 Watch Out For
 
-Over-promising unbuilt features, or prioritizing pitch prep over helping build.
-
-Like a trial lawyer: they make the case and handle cross-examination. Spot them: they naturally command a room.
+Promising features you haven't built, or prepping the pitch instead of helping build.
 
 #### The Architect
 
-Sees the whole board. While others go deep on features, the Architect makes everything connect (API to frontend, ML model to UI, auth to database). They're the technical glue.
-
-Traits
+Asks "how will this integrate?" before "how will this look?" While others go deep on features, the Architect wires the API to the frontend and the model to the UI.
 
 Strengths
 
--   Prevents integration failure, the #1 killer of hackathon projects
--   Cuts scope ruthlessly to keep the project feasible
--   Connects frontend and backend; unconnected = no demo
+-   Prevents integration failure. If the frontend and backend never connect, there's no demo.
+-   Cuts scope so the project fits the time you have
 
 Watch Out For
 
 Building for scale when you need to build for demo.
 
-Like a city planner: they design how everything connects. Spot them: they ask "how will this integrate?" before "how will this look?"
-
 #### The Strategist
 
-Says "no" to feature creep at 3AM. Runs the check-ins, makes the hard calls on what to cut. Their decisiveness separates a working demo from an unfinished mess.
-
-Traits
+Says "no" to feature creep at 3AM. When someone wants to add something, they're the one asking "What gets cut if we add this?"
 
 Strengths
 
--   Aligns the team on path and timeline via lightweight check-ins
--   Surfaces trade-offs: "What gets cut if we add this?"
--   Buffers builders by owning logistics, submissions, and scope
+-   Runs short check-ins and time-boxes debates, so everyone stays on one plan and timeline
+-   Owns logistics and the submission so the builders can keep building
 
 Watch Out For
 
-Over-planning and rigidity; too much process slows a 48-hour sprint.
-
-Like a film producer: they own the schedule, scope, and ship date. Spot them: they time-box debates and ask "is this in scope?"
+Over-planning and rigidity. Too much process slows a 48-hour sprint.
 
 [Meredith Belbin](https://www.belbin.com/) — management researcher, Henley Management College
 
 > “Nobody is perfect, but a team can be.”
 
-Belbin's research at Henley Management College identified eight team roles (a ninth, the Specialist, was added in Team Roles at Work in 1993), and teams with complementary coverage beat equally talented teams with overlapping strengths. Our four personas map directly: the Designer is Belbin's Plant (creative thinker), the Pitcher is the Resource Investigator (external communicator), the Architect is the Monitor Evaluator (analytical judge), and the Strategist is the Co-ordinator (team leader).
+Belbin identified eight team roles at Henley and found that teams covering different roles beat equally talented teams with overlapping strengths. The personas map loosely onto his roles: the Pitcher to his Resource Investigator, the Architect to the Monitor Evaluator, and the Strategist to the Co-ordinator. The Designer fits least, since his Plant is an idea generator rather than a visual designer.
 
 — Belbin's often-quoted maxim; team roles from [Management Teams: Why They Succeed or Fail, 1981](https://www.belbin.com/)
 
 ## Where to Find Teammates
 
-The best teammates rarely come from a single search. Here's where to look.
+Six places to look. Use more than one.
 
-TL;DR Source teammates from many channels, but the strongest signal is hacking alongside someone at a fun event.
+TL;DR Hack with someone once at a low-stakes event before you team up for one you want to win.
 
 Hackathon Discords
 
-Jump into team-matching channels early; the best teammates get claimed fast.
+Join the event's team-matching channel early. Post which role you cover and which ones you need.
 
 Hackathon Communities
 
-Tap WeCracked (4K+ members), MLH groups, and local clubs for a steady pipeline.
+WeCracked (4K+ members), MLH groups, and local clubs. I co-founded WeCracked, so I'm biased.
 
 University Clubs
 
-CS clubs, ACM chapters, and hackathon orgs are goldmines; the building culture already exists.
+CS clubs, ACM chapters, and hackathon orgs, where people already build things outside class.
 
 Devpost Scouting
 
-Browse past winners and reach out to people whose projects impress you. Most are happy to connect.
+Browse past winners and message the people whose projects impressed you.
 
 Fun Hackathons
 
-Hacking alongside someone is your best pipeline. One "fun" event can reveal a future varsity teammate.
+Build something with someone once and you'll see how they handle a deadline.
 
 Social Media
 
-LinkedIn groups, Twitter/X tech communities, and hackathon subreddits are underrated sources.
+LinkedIn groups, Twitter/X tech communities, and hackathon subreddits.
 
-Remember: Attitude and communication are the foundation of any winning team. You can teach skills, but the willingness to learn, adapt, and support each other under pressure separates good teams from winning ones.
-
-TL;DR Pick attitude over raw skill: a toxic genius costs more than they add under 24-48 hour pressure.
+TL;DR Pick attitude over raw skill. In 24-48 hours, a brilliant teammate who causes friction costs more than they add.
 
 > “Hire character.  
 > Train skill.”
 
 — [Peter Schutz, CEO of Porsche AG from 1981 to 1987](https://en.wikipedia.org/wiki/Peter_Schutz), his often-quoted hiring maxim
 
-A toxic genius is still toxic. However skilled, if they create friction, slow communication, or sour the environment, they're a net loss. Under 24-48 hour pressure, chemistry beats individual brilliance.
-
-The right attitude means
+Look for teammates who
 
 -   Speak up when stuck instead of going silent
 -   Pivot when the plan isn't working
 -   Back the team decision even if it wasn't their first choice
--   Stay positive at 3AM when everything is breaking
-
-Amy Edmondson — Harvard Business School
-
-> “Psychological safety is a belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes.”
-
-Edmondson's research shows teams where members feel safe to take interpersonal risks learn faster and perform better. Her hospital studies famously found the best teams reported the most mistakes, because people felt safe enough to report them.
-
-— [The Fearless Organization, 2018](https://fearlessorganization.com/)
+-   Stay calm when the build breaks late at night
 
 Google Project Aristotle
 
-Across 180+ teams over two years, Google found psychological safety was the #1 predictor of performance, ahead of dependability, structure, meaning, or impact. How members interact matters more than who is on the team.
+Across 180+ teams over two years, Google found that how members interacted mattered more than who was on the team. Psychological safety was the #1 predictor of performance, ahead of dependability, structure, meaning, and impact. It means people can admit a mistake or ask a question without being embarrassed or punished.
 
 — [Google re:Work, 2015](https://rework.withgoogle.com/guides/understanding-team-effectiveness/)
 
@@ -171,18 +143,14 @@ Most people do one or two for fun, and everything above is all you need. The squ
 
 ### 
 
-TL;DR Train rookies on a JV list, then promote proven teammates to varsity for high-stakes wins.
-
-Like a sports team, you train rookies through the season before the championship game. Hackathons work the same way.
+TL;DR Train newer teammates on a JV list, then bring only proven varsity teammates to the events you most want to win.
 
 #### JV Teammates
 
-Your development squad. High-potential teammates you're actively training and building chemistry with.
+Your development squad. People you're still training and learning to work with.
 
--   Proven attitude and work ethic over 1-3 hackathons
+-   Proven attitude and work ethic
 -   Still developing time management, prototyping, and pitching
--   Building chemistry with you at training hackathons
--   One good hackathon usually earns a JV spot
 
 1-3
 
@@ -194,46 +162,19 @@ hackathons to join
 
 #### Varsity Teammates
 
-Your championship squad. Battle-tested over many hackathons, with deep trust and communication shortcuts.
+Your championship squad.
 
--   Deep trust and rhythm from 3-8+ hackathons together
+-   Deep trust, and shortcuts for communication and code review
 -   Self-directed: each person owns their role, no micromanagement
 -   Shared toolkit: templates, favorite APIs, deployment pipeline
--   Reserved for high-stakes competitions where winning is the goal
 
 3-8+
 
 hackathons to earn varsity
 
-The key factor isn't skill level but how well you work together under time pressure. A varsity teammate may be a worse coder than a JV one, yet communicate better, pivot faster, and never go silent at 3AM. This mirrors what psychologist Anders Ericsson calls deliberate practice: improvement needs repeated, structured effort with feedback, not just showing up.
-
-— [Anders Ericsson, Peak: Secrets from the New Science of Expertise, 2016](https://en.wikipedia.org/wiki/Peak:_Secrets_from_the_New_Science_of_Expertise)
-
-#### Tuckman's Group Development
-
-Tuckman found that groups move through forming, storming, norming, and performing, and that every stage is necessary before a team reaches full effectiveness.
-
-Tuckman's 1965 model maps onto JV/Varsity. JV teammates are forming and storming: learning styles, navigating disagreements, building trust. Varsity teammates have reached norming and performing: shared norms, fluid execution, zero coordination overhead.
+What earns a varsity spot is how well you work together under time pressure. A varsity teammate may be a worse coder than a JV one. Psychologist Bruce Tuckman described four stages a group goes through before it works at full strength: forming, storming, norming, and performing. With a new JV teammate you're in the first two. You're still learning how each of you works and how you'll communicate, so expect disagreements about scope and stack. Better to work through those at a training hackathon than at one you want to win.
 
 — Bruce Tuckman, psychologist, U.S. Naval Medical Research Institute, [Developmental Sequence in Small Groups, Psychological Bulletin, 1965](https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development)
-
-#### The Progression Path
-
-Forming → JV List
-
-First hackathon together: learning how each person works and setting communication expectations.
-
-Storming → Training Hackathons
-
-Disagreements over scope, stack, and approach surface. This friction is necessary; working through it builds trust.
-
-Norming → Late JV / Early Varsity
-
-Shared norms emerge. You know who handles what. Code reviews and communication shortcuts develop naturally.
-
-Performing → Varsity
-
-Peak effectiveness. The team executes as a unit: shared toolkits, minimal overhead, maximum output.
 
 ### 
 
@@ -241,15 +182,11 @@ TL;DR Use fun events to scout, training events to build your JV, and competitive
 
 #### Fun Hackathons
 
-Low stakes, high discovery. Team up with people you meet or match with. Less about winning, more about scouting.
+Low stakes. You're there to scout more than to win.
 
 TEAM WITH
 
-New people, team-matching channels, friends trying hackathons
-
-Pro Tip
-
-Treat every fun hackathon as a scouting event. Whoever vibes well here might become your next JV member.
+People you meet or match with at the event, and friends trying hackathons
 
 1 event
 
@@ -257,15 +194,15 @@ to earn JV consideration
 
 #### Training Hackathons
 
-JV list only. Develop technical and soft skills together. Practice the full workflow: ideation, architecture, execution, pitching.
+Practice runs. Go through the full workflow together: ideation, architecture, execution, pitching.
 
 TEAM WITH
 
-JV teammates only; the point is chemistry and shared muscle memory
+JV teammates only
 
 Pro Tip
 
-Simulate competition conditions: set internal deadlines, practice the pitch early, do a full dress rehearsal before submission.
+Run it like a competitive event. Set internal deadlines and rehearse the full pitch before you submit.
 
 2-8+ events
 
@@ -273,24 +210,24 @@ to train a team to varsity
 
 #### Competitive Hackathons
 
-Varsity only. One goal: first place. Backed by extensive training, shared tools, and battle-tested teamwork.
+The events you most want to win.
 
 TEAM WITH
 
-Varsity only: pre-planned roles, shared templates, proven tools and APIs
+Varsity only
 
 Pro Tip
 
-Pre-plan the stack, ready your boilerplates, and assign roles before kickoff. Minimize decisions during the event.
+Pre-plan the stack, ready your boilerplates, and assign roles before kickoff, so you make fewer decisions during the event.
 
 Win mode
 
-first place or bust
+going for first place
 
 [J. Richard Hackman](https://en.wikipedia.org/wiki/J._Richard_Hackman) — Leading Teams
 
-Hackman names a compelling direction, a purpose that is clear, challenging, and consequential, as one of five conditions for team effectiveness.
+Hackman's Harvard research names a compelling direction, a purpose that is clear, challenging, and consequential, as one of five conditions for team effectiveness.
 
-Hackman's Harvard research explains the three categories. Fun hackathons have no shared direction (you're still exploring). Training hackathons have a learning direction (the purpose is growth). Competitive hackathons have a winning direction that is clear, challenging, and consequential. Sharper direction, better performance.
+For your team, that means agreeing before each event on whether you're there to train or to win.
 
 — [Leading Teams: Setting the Stage for Great Performances, 2002](https://en.wikipedia.org/wiki/J._Richard_Hackman)

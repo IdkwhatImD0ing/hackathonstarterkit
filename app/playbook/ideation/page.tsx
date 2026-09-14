@@ -9,12 +9,10 @@ import {
   ArrowRight,
   Equal,
   Trophy,
-  Lightbulb,
   Brain,
   Compass,
   Quote,
   Gamepad2,
-  BookOpen,
   Shuffle,
   Dices,
   Atom,
@@ -180,32 +178,33 @@ export default function IdeationPage() {
             THE LITTLE ALCHEMY METHOD
             ============================================================ */}
         <section className="space-y-8">
+          {/* [CONFIRM: the old subtitle called this "the ideation methodology behind $100K+ in hackathon prizes," which credits every prize to one method. Scoped down for now. Put it back only if every win came from it.] */}
           <SectionHeading
             title="The Little Alchemy Method"
-            subtitle="The ideation methodology behind $100K+ in hackathon prizes. Inspired by the game Little Alchemy, you start with basic elements, combine them, and discover winning ideas."
+            subtitle="Start with basic elements and keep combining them until one result is worth building."
           />
 
-          <KeyTakeaway>Combine technologies with industries the way Little Alchemy combines elements, and winning ideas emerge.</KeyTakeaway>
+          <KeyTakeaway>Pair technologies with industries, many times over, and keep the few pairings that land.</KeyTakeaway>
 
           <p className="font-body text-foreground/80">
-            In Little Alchemy you start with four elements (fire, water, earth,
-            air) and combine them into steam, lava, or life. Keep mixing your
-            discoveries and you unlock hundreds of things, from windmills to the
-            internet.
+            In the game Little Alchemy you combine fire, water, earth, and air
+            into steam, lava, and life, then keep combining the results into
+            hundreds of other things.
           </p>
 
           <p className="font-body text-foreground/80">
-            Hackathon ideation works the same way. Your building blocks are{" "}
+            Hackathon ideas work the same way, with{" "}
             <span className="font-display font-semibold text-volt">
               technologies
             </span>{" "}
             and{" "}
             <span className="font-display font-semibold text-spark">
               industries
-            </span>
-            . Combine them, and winning ideas emerge.
+            </span>{" "}
+            as the elements.
           </p>
 
+          {/* [CONFIRM: model names on this page (OpenAI 4o, GPT-4o, GPT-4V) may be dated. Update them or keep?] */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr]">
             <Card className="glow-hover border-volt/20">
               <CardHeader>
@@ -303,14 +302,14 @@ export default function IdeationPage() {
             </Card>
           </div>
 
+          {/* [NEEDS SPECIFIC: a pairing from one of your hackathons that flopped, so "most pairings flop" has a story behind it.] */}
           <div className="rounded-lg border border-border bg-surface p-4">
             <p className="font-body text-sm text-muted-foreground">
               <span className="font-display font-semibold text-foreground">
-                The method is simple:
+                The method:
               </span>{" "}
-              List 20-30 elements and combine them at random. Most pairings
-              flop, but the magic is in the volume: the ones that land are often
-              brilliant.
+              list 20-30 elements and combine them at random. Most pairings
+              flop, which is why you need a lot of them.
             </p>
           </div>
 
@@ -323,8 +322,7 @@ export default function IdeationPage() {
                 Try It Yourself
               </h3>
               <p className="font-body text-sm text-muted-foreground">
-                Drag elements into the workspace, then drop them onto each other
-                to discover winning hackathon ideas.
+                Drag elements into the workspace and drop one onto another.
               </p>
             </div>
             <AlchemyGame />
@@ -337,10 +335,10 @@ export default function IdeationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Combinations in Action"
-            subtitle="Here's exactly how the Little Alchemy method produced ideas that won major hackathons. Each winning project started as a simple combination."
+            subtitle="How the method produced DispatchAI, our Grand Prize winner at the UC Berkeley AI Hackathon."
           />
 
-          <KeyTakeaway>Every winning project below started as one simple combination, and swapping a single piece spawns a brand-new idea.</KeyTakeaway>
+          <KeyTakeaway>Once you have one combination, swap a single element to get a new idea out of it.</KeyTakeaway>
 
           <Card className="glow-hover border-volt/20">
             <CardHeader>
@@ -356,7 +354,7 @@ export default function IdeationPage() {
                 DispatchAI — UC Berkeley AI Hackathon Grand Prize
               </CardTitle>
               <CardDescription className="font-body text-base">
-                How two simple combinations led to a first-place finish.
+                It started as two combinations.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5">
@@ -387,13 +385,6 @@ export default function IdeationPage() {
                   />
                 </div>
               </div>
-              <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
-                <p className="font-code text-xs text-volt/80">
-                  Seems simple? That&apos;s the point. The best hackathon ideas
-                  aren&apos;t complex. They&apos;re clear combinations nobody
-                  else thought to make.
-                </p>
-              </div>
               <ProjectLinks
                 devpost="https://devpost.com/software/dispatch-ai"
                 github="https://github.com/IdkwhatImD0ing/DispatchAI"
@@ -401,11 +392,6 @@ export default function IdeationPage() {
               />
             </CardContent>
           </Card>
-
-          <p className="font-body text-foreground/80">
-            Swap out a single component and the same base combination spawns
-            entirely different ideas:
-          </p>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
             <Card className="glow-hover border-spark/20">
@@ -426,8 +412,7 @@ export default function IdeationPage() {
                 />
                 <p className="font-body text-sm text-foreground/60">
                   <span className="font-semibold text-foreground">Same tech, different industry.</span>{" "}
-                  One swap turns a 911 dispatcher into a mental health support
-                  line.
+                  The 911 dispatcher becomes a mental health support line.
                 </p>
               </CardContent>
             </Card>
@@ -449,13 +434,14 @@ export default function IdeationPage() {
                   accent="primary"
                 />
                 <p className="font-body text-sm text-foreground/60">
-                  <span className="font-semibold text-foreground">Swap the industry for another tech.</span>{" "}
-                  An LLM directs video generation for rapid ad prototyping.
+                  <span className="font-semibold text-foreground">Swap the industry for another technology.</span>{" "}
+                  An LLM directs video generation to prototype ads fast.
                 </p>
               </CardContent>
             </Card>
           </div>
 
+          {/* [CONFIRM: TalkTuahBank is labeled "1st Overall + Goldman Sachs" here, but the home page says "1st Place Grand Prize" at HackUTD 2024. Which wording do you want?] */}
           <div className="stagger-children grid grid-cols-1 gap-4 sm:grid-cols-3">
             {[
               {
@@ -532,14 +518,13 @@ export default function IdeationPage() {
             })}
           </div>
 
+          {/* [NEEDS SPECIFIC: the AdaptED and TalkTuahBank combinations. Only DispatchAI's is shown, so "all three" rests on your word for now.] */}
           <div className="rounded-lg border border-border bg-surface p-4">
             <p className="font-body text-sm text-muted-foreground">
               <span className="font-display font-semibold text-foreground">
                 All three projects
               </span>{" "}
-              came from the same method: list elements, combine them, let
-              unexpected connections emerge. It works because it forces you to
-              think across boundaries, not within them.
+              came from the same method.
             </p>
           </div>
         </section>
@@ -550,83 +535,18 @@ export default function IdeationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Go Deeper"
-            subtitle="Optional theory and prep for when you want more. The essentials are above; expand only what you need."
+            subtitle="Optional background and prep."
           />
 
           <Disclosure
             title="Why This Works: The Science of Combinatorial Creativity"
-            subtitle="Backed by decades of research from the best thinkers on creativity and innovation."
+            subtitle="The research and essays behind the method."
             badge="The science"
             accent="primary"
           >
-            <KeyTakeaway>Decades of creativity research agree: new ideas are old parts recombined, not invented from scratch.</KeyTakeaway>
+            <KeyTakeaway>Make sure your list has tools that just became possible and problems you&apos;ve had yourself.</KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
-            <Card className="glow-hover border-volt/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
-                    <Lightbulb className="size-5 text-volt" />
-                  </div>
-                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
-                    STEVE JOBS
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-volt">
-                  Connecting Things
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;Creativity is just connecting things. When you ask
-                  creative people how they did something, they feel a little
-                  guilty because they didn&apos;t really do it, they just saw
-                  something. It seemed obvious to them after a while.&rdquo;
-                </blockquote>
-                <p className="font-body text-sm text-foreground/60">
-                  Broader experiences give you more &ldquo;dots&rdquo; to
-                  connect. A more diverse element list makes your combinations
-                  more unexpected and powerful.
-                </p>
-                <p className="font-code text-xs text-volt/60">
-                  — Steve Jobs, co-founder of Apple,{" "}
-                  <a href="https://www.wired.com/1996/02/jobs-2/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Wired interview, 1996</a>
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="glow-hover border-spark/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-spark/10">
-                    <Beaker className="size-5 text-spark" />
-                  </div>
-                  <Badge className="border-spark/20 bg-spark/10 text-spark font-code text-xs">
-                    ARTHUR KOESTLER
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-spark">
-                  Bisociation
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <blockquote className="border-l-2 border-spark/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;The pattern underlying [the creative act] is the
-                  perceiving of a situation or idea in two self-consistent but
-                  habitually incompatible frames of reference.&rdquo;
-                </blockquote>
-                <p className="font-body text-sm text-foreground/60">
-                  &ldquo;Bisociation&rdquo; is creativity as the collision of two
-                  independent mental frameworks. Exactly what happens when you
-                  cross &ldquo;LLMs&rdquo; with &ldquo;Defense.&rdquo;
-                </p>
-                <p className="font-code text-xs text-spark/60">
-                  — Arthur Koestler, Hungarian-British author,{" "}
-                  <a href="https://en.wikipedia.org/wiki/The_Act_of_Creation" target="_blank" rel="noopener noreferrer" className="underline decoration-spark/30 hover:decoration-spark">The Act of Creation, 1964</a>
-                </p>
-              </CardContent>
-            </Card>
-
             <Card className="glow-hover border-primary/20">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -650,12 +570,7 @@ export default function IdeationPage() {
                 <p className="font-body text-sm text-foreground/60">
                   Johnson calls that expanding edge the &ldquo;adjacent
                   possible,&rdquo; a term he borrowed from biologist Stuart
-                  Kauffman. Innovation lives at the edge of what&apos;s feasible.
-                  The best hackathon ideas use tools that{" "}
-                  <span className="font-semibold text-foreground">
-                    just became possible
-                  </span>
-                  : a new API, a fresh model, a just-opened dataset.
+                  Kauffman. Every new API, model, or dataset expands it.
                 </p>
                 <p className="font-code text-xs text-primary/60">
                   — Steven Johnson, science writer,{" "}
@@ -685,11 +600,6 @@ export default function IdeationPage() {
                   ideas is not &lsquo;think up&rsquo; but
                   &lsquo;notice.&rsquo;&rdquo;
                 </blockquote>
-                <p className="font-body text-sm text-foreground/60">
-                  The best ideas come from your own experience. What frustrates
-                  you? What gap do others miss? Combine that personal insight
-                  with your elements.
-                </p>
                 <p className="font-code text-xs text-success/60">
                   — Paul Graham, Y Combinator co-founder,{" "}
                   <a href="https://paulgraham.com/startupideas.html" target="_blank" rel="noopener noreferrer" className="underline decoration-success/30 hover:decoration-success">How to Get Startup Ideas, 2012</a>
@@ -701,11 +611,11 @@ export default function IdeationPage() {
 
           <Disclosure
             title="Building Your Element List"
-            subtitle="Before you can combine, you need inventory: how to assemble 20-30 quality elements before the hackathon starts."
+            subtitle="What goes on the list, and how many of each."
             badge="Preparation"
             accent="volt"
           >
-            <KeyTakeaway>Stock 20-30 elements before the event: 10-15 tech, 5-10 domains, 5+ wild cards.</KeyTakeaway>
+            <KeyTakeaway>If you&apos;re competing to win, build this list before the event starts.</KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
             <Card className="glow-hover border-volt/20">
@@ -722,7 +632,6 @@ export default function IdeationPage() {
                   Tech Elements
                 </CardTitle>
                 <CardDescription className="font-body">
-                  <span className="font-semibold text-foreground">Things that do something.</span>{" "}
                   APIs, AI models, hardware, protocols, research papers.
                 </CardDescription>
               </CardHeader>
@@ -770,7 +679,6 @@ export default function IdeationPage() {
                   Domain Elements
                 </CardTitle>
                 <CardDescription className="font-body">
-                  <span className="font-semibold text-foreground">Things that need something.</span>{" "}
                   Industries, user groups, and problem spaces.
                 </CardDescription>
               </CardHeader>
@@ -782,11 +690,11 @@ export default function IdeationPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Education, tutoring, accessibility
+                    Education and accessibility
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    Finance, banking, insurance
+                    Finance and insurance
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
@@ -818,7 +726,7 @@ export default function IdeationPage() {
                   Wild Card Elements
                 </CardTitle>
                 <CardDescription className="font-body">
-                  <span className="font-semibold text-foreground">Things that add a unique angle.</span>{" "}
+                  <span className="font-semibold text-foreground">Things that add an angle.</span>{" "}
                   Unusual constraints, trends, and sponsor challenges.
                 </CardDescription>
               </CardHeader>
@@ -847,7 +755,7 @@ export default function IdeationPage() {
                     5+
                   </p>
                   <p className="font-code text-xs text-success/70">
-                    wild cards for spice
+                    wild cards
                   </p>
                 </div>
               </CardContent>
@@ -871,12 +779,8 @@ export default function IdeationPage() {
                   — Quoted in Fortune, April 1960
                 </p>
                 <p className="font-body text-sm text-foreground/60">
-                  He filled in the other half on PBS&apos;s NOVA in 1977:
-                  &ldquo;you aren&apos;t going to have good ideas unless you have
-                  lots of ideas and some sort of principle of
-                  selection&hellip;&rdquo; So don&apos;t filter while building
-                  your list. Chase volume now, not quality. You&apos;ll prune
-                  later.
+                  On PBS&apos;s NOVA in 1977 he added the other half: you also
+                  need &ldquo;some sort of principle of selection.&rdquo;
                 </p>
               </div>
             </div>
@@ -885,12 +789,13 @@ export default function IdeationPage() {
 
           <Disclosure
             title="The Wandering Mind"
-            subtitle="The best ideas don't come from staring at a blank screen; they come when you let your brain wander, and there's science behind why."
+            subtitle="Why stepping away from the list helps."
             badge="Mindset"
             accent="spark"
           >
-            <KeyTakeaway>Step away and let your brain wander: diffuse, incubating thinking finds the connections focus can&apos;t.</KeyTakeaway>
+            <KeyTakeaway>After you combine, go do something else and write down whatever comes to mind.</KeyTakeaway>
 
+          {/* [CONFIRM: TFT as your ideation habit, and the Valorant/League comparison. It reads like you, so it stays as written. Keep?] */}
           <Card className="glow-hover border-spark/20">
             <CardHeader>
               <div className="flex items-center gap-3">
@@ -905,8 +810,7 @@ export default function IdeationPage() {
                 TFT Helps Me Win Hackathons
               </CardTitle>
               <CardDescription className="font-body text-base">
-                Yes, Teamfight Tactics by Riot Games. Here&apos;s why
-                it&apos;s a legitimate ideation tool.
+                Yes, Teamfight Tactics by Riot Games.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5">
@@ -915,9 +819,9 @@ export default function IdeationPage() {
                   Rapid Context Switching
                 </p>
                 <p className="font-body text-sm text-foreground/80">
-                  TFT forces you to switch gears constantly: board, then idea
-                  list, then back. That rapid mental shifting sparks the
-                  unexpected connections behind the best hackathon ideas.
+                  TFT keeps you switching between the board and your idea
+                  list, and that back-and-forth is where unexpected pairings
+                  show up.
                 </p>
               </div>
               <div className="space-y-2">
@@ -932,153 +836,67 @@ export default function IdeationPage() {
               </div>
               <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                 <p className="font-code text-xs text-spark/80">
-                  You don&apos;t have to play TFT. Pair ideation with anything
-                  that keeps your hands busy and your brain free: cooking,
-                  cleaning, the gym, a walk. Let your brain wander.
+                  You don&apos;t have to play TFT. Cooking, cleaning, the gym,
+                  or a walk work too. Put the break on your schedule.
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            <Card className="glow-hover border-primary/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
-                    <Brain className="size-5 text-primary" />
-                  </div>
-                  <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
-                    BARBARA OAKLEY
-                  </Badge>
+          <Card className="glow-hover border-primary/20">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                  <Brain className="size-5 text-primary" />
                 </div>
-                <CardTitle className="font-display text-xl text-primary">
-                  Focused vs. Diffuse Thinking
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="font-body text-sm text-foreground/80">
-                  Barbara Oakley, professor of engineering at Oakland University,
-                  popularized two thinking modes in A Mind for Numbers (2014) and
-                  in the Coursera course{" "}
-                  <a href="https://www.coursera.org/learn/learning-how-to-learn" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Learning How to Learn</a>{" "}
-                  (2014), which she teaches with neuroscientist Terrence
-                  Sejnowski:
-                </p>
-                <div className="space-y-3">
-                  <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
-                    <p className="font-display text-sm font-semibold text-primary">
-                      Focused Mode
-                    </p>
-                    <p className="font-body text-xs text-foreground/60">
-                      Concentrated, sequential. Good for executing known
-                      problems. You at the whiteboard forcing ideas.
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
-                    <p className="font-display text-sm font-semibold text-volt">
-                      Diffuse Mode
-                    </p>
-                    <p className="font-body text-xs text-foreground/60">
-                      Relaxed, broad, associative. Surfaces novel connections.
-                      You walking to the coffee shop when the idea hits.
-                    </p>
-                  </div>
-                </div>
-                <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;Sometimes we need to lose concentration so we can think
-                  more clearly.&rdquo;
-                </blockquote>
-                <p className="font-code text-xs text-primary/60">
-                  — Barbara Oakley and Terrence Sejnowski with Alistair
-                  McConville,{" "}
-                  <a href="https://www.penguinrandomhouse.com/books/563935/learning-how-to-learn-by-barbara-oakley-phd-and-terrence-sejnowski-phd-with-alistair-mcconville/" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Learning How to Learn</a>, 2018
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="glow-hover border-volt/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
-                    <BookOpen className="size-5 text-volt" />
-                  </div>
-                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
-                    JAMES WEBB YOUNG
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-volt">
-                  The Five-Step Process
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="font-body text-sm text-foreground/80">
-                  In 1939, advertising pioneer James Webb Young formalized a
-                  repeatable process for ideas that still holds:
-                </p>
-                <ol className="space-y-2 font-body text-sm text-foreground/80">
-                  {[
-                    {
-                      step: "Gather",
-                      desc: "Collect raw material, both problem-specific and general knowledge from other fields",
-                    },
-                    {
-                      step: "Digest",
-                      desc: "Work the material, examine from different angles, try combinations",
-                    },
-                    {
-                      step: "Incubate",
-                      desc: "Set it aside. Let the subconscious work while you do other things",
-                    },
-                    {
-                      step: "Eureka",
-                      desc: "The idea appears, usually when you stop forcing it",
-                    },
-                    {
-                      step: "Verify",
-                      desc: "Test it in reality and refine with feedback",
-                    },
-                  ].map((item, i) => (
-                    <li key={item.step} className="flex items-start gap-3">
-                      <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-volt/10 font-code text-xs text-volt">
-                        {i + 1}
-                      </span>
-                      <div>
-                        <span className="font-display font-semibold text-foreground">
-                          {item.step}
-                        </span>
-                        <span className="text-foreground/60">
-                          {": "}
-                          {item.desc}
-                        </span>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-                <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
-                  <p className="font-code text-xs text-volt/80">
-                    Step 3 is the one most people skip, and the most important.
-                    Building your element list is gathering. Playing TFT is
-                    incubation.
+                <Badge className="border-primary/20 bg-primary/10 text-primary font-code text-xs">
+                  BARBARA OAKLEY
+                </Badge>
+              </div>
+              <CardTitle className="font-display text-xl text-primary">
+                Focused vs. Diffuse Thinking
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="font-body text-sm text-foreground/80">
+                Barbara Oakley, professor of engineering at Oakland University,
+                popularized two thinking modes in A Mind for Numbers (2014) and
+                in the Coursera course{" "}
+                <a href="https://www.coursera.org/learn/learning-how-to-learn" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Learning How to Learn</a>{" "}
+                (2014), which she teaches with neuroscientist Terrence
+                Sejnowski:
+              </p>
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
+                  <p className="font-display text-sm font-semibold text-primary">
+                    Focused Mode
+                  </p>
+                  <p className="font-body text-xs text-foreground/60">
+                    Concentrated work on a known problem, like forcing ideas
+                    at a whiteboard.
                   </p>
                 </div>
-                <p className="font-code text-xs text-volt/60">
-                  —{" "}
-                  <a href="https://en.wikipedia.org/wiki/A_Technique_for_Producing_Ideas" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">A Technique for Producing Ideas, 1939</a>
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                Staring at a blank doc is the worst way to find ideas.
-              </span>{" "}
-              Schedule real breaks: walk, cook, play, hit the gym. Your
-              subconscious keeps working when your conscious mind steps away, and
-              it&apos;s often better at finding non-obvious connections.
-            </p>
-          </div>
+                <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
+                  <p className="font-display text-sm font-semibold text-volt">
+                    Diffuse Mode
+                  </p>
+                  <p className="font-body text-xs text-foreground/60">
+                    Relaxed and associative. It&apos;s why the idea hits on
+                    the walk to get coffee, or between TFT rounds.
+                  </p>
+                </div>
+              </div>
+              <blockquote className="border-l-2 border-primary/30 pl-4 font-body text-sm italic text-foreground/80">
+                &ldquo;Sometimes we need to lose concentration so we can think
+                more clearly.&rdquo;
+              </blockquote>
+              <p className="font-code text-xs text-primary/60">
+                — Barbara Oakley and Terrence Sejnowski with Alistair
+                McConville,{" "}
+                <a href="https://www.penguinrandomhouse.com/books/563935/learning-how-to-learn-by-barbara-oakley-phd-and-terrence-sejnowski-phd-with-alistair-mcconville/" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Learning How to Learn</a>, 2018
+              </p>
+            </CardContent>
+          </Card>
           </Disclosure>
         </section>
 
@@ -1088,10 +906,10 @@ export default function IdeationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Ideation Toolkit"
-            subtitle="Three additional frameworks to break through creative blocks. Use these when random combining stalls or you want to push ideas further."
+            subtitle="For when random combining stops turning up new ideas."
           />
 
-          <KeyTakeaway>When random combining stalls, reach for SCAMPER, random input, or antidisciplinary thinking to break the block.</KeyTakeaway>
+          <KeyTakeaway>Run SCAMPER on your top ideas, or pick a random noun and force a connection to your problem.</KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
             <Card className="glow-hover border-volt/20">
@@ -1146,9 +964,8 @@ export default function IdeationPage() {
                 </div>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
-                    Run each letter on your top idea. &ldquo;Substitute the API?
-                    Combine with another app? Eliminate the most complex
-                    step?&rdquo;
+                    Try each letter on your top ideas. Could you substitute the
+                    API? Could you drop the most complex step?
                   </p>
                 </div>
               </CardContent>
@@ -1194,16 +1011,14 @@ export default function IdeationPage() {
                     <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-spark/10 font-code text-xs text-spark">
                       3
                     </span>
-                    Follow the unexpected links. The weirder the connection, the
-                    more original the idea
+                    Follow the links that come up, even the weird ones
                   </li>
                 </ol>
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
-                    Stuck in a loop of similar ideas? Random input is the fastest
-                    way out, as long as the word is genuinely random. The failure
-                    mode isn&apos;t picking something too random; it&apos;s
-                    quietly picking something already connected to your problem.
+                    Let the word be random. If you pick one that already
+                    relates to your problem, you&apos;ll get the same ideas
+                    back.
                   </p>
                 </div>
               </CardContent>
@@ -1231,10 +1046,11 @@ export default function IdeationPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="font-body text-sm text-foreground/80">
-                  Interdisciplinary work has fields collaborate.
-                  Antidisciplinary thinking creates something that fits no
-                  existing category: the white space between the dots on a map of
-                  knowledge.
+                  Interdisciplinary work has existing fields collaborate.
+                  Antidisciplinary work fits none of them, so don&apos;t drop
+                  an idea just because you can&apos;t say which field it
+                  belongs to. &ldquo;An AI 911 dispatcher?&rdquo; sounded
+                  strange until DispatchAI won the Grand Prize.
                 </p>
                 <div className="space-y-2">
                   <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -1247,21 +1063,10 @@ export default function IdeationPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
-                      Does this idea feel uncategorizable? Good. Pursue it.
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
-                      What would happen if a musician designed this? A chef? A
-                      game designer?
+                      What would a musician, a chef, or a game designer do with
+                      it?
                     </li>
                   </ul>
-                </div>
-                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
-                  <p className="font-code text-xs text-primary/80">
-                    The best projects feel weird at first. &ldquo;An AI 911
-                    dispatcher?&rdquo; sounded strange until it won grand prize.
-                    Lean into the weirdness.
-                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -1288,31 +1093,6 @@ export default function IdeationPage() {
                 — Steve Jobs, co-founder of Apple,{" "}
                 <a href="https://www.wired.com/1996/02/jobs-2/" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Wired interview, 1996</a>
               </p>
-              <Separator className="mx-auto max-w-xs bg-primary/20" />
-              <div className="space-y-4 text-left">
-                <p className="font-body text-foreground/80">
-                  <span className="font-display font-semibold text-foreground">
-                    The best ideas don&apos;t come from staring at a blank
-                    screen.
-                  </span>{" "}
-                  They come from a broad inventory of elements (technologies
-                  you&apos;ve explored, industries you understand, problems
-                  you&apos;ve felt) plus the courage to combine them in ways
-                  nobody else would.
-                </p>
-                <p className="font-body text-foreground/80">
-                  The Little Alchemy method mirrors how creativity actually
-                  works: not a bolt of inspiration from nowhere, but the
-                  systematic collision of ideas from different worlds. Every
-                  element is another dot. Every combination connects them.
-                </p>
-                <p className="font-body text-foreground/80">
-                  <span className="font-display font-semibold text-foreground">
-                    The more dots you collect, the more connections become
-                    possible.
-                  </span>
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -1323,10 +1103,10 @@ export default function IdeationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Ideation Checklist"
-            subtitle="A step-by-step summary you can follow before and during your next hackathon. Print it, screenshot it, or just remember the flow."
+            subtitle="If you're competing to win, finish this before the event. If you're there to learn, you can run it at the event with the people you meet."
           />
 
-          <KeyTakeaway>Build the list, combine, step away, push your top ideas with SCAMPER, then pick the one at the edge of the adjacent possible.</KeyTakeaway>
+          <KeyTakeaway>Combine 20-30 elements into 15-20 candidates, then pick one your team can ship in the time you have.</KeyTakeaway>
 
           <Card className="glow-hover border-volt/20">
             <CardContent className="space-y-4 pt-6">
@@ -1336,28 +1116,24 @@ export default function IdeationPage() {
                   accent: "volt",
                 },
                 {
-                  text: "Combine randomly. No filtering, no judging. Just mix.",
+                  text: "Combine at random without filtering. Aim for 15-20 combinations before you judge any",
                   accent: "spark",
                 },
                 {
-                  text: "Step away and let diffuse thinking work: walk, play, cook, gym",
+                  text: "Take a break and jot down what comes to you",
                   accent: "primary",
                 },
                 {
-                  text: "Chase volume. Aim for 15-20 unique combinations",
+                  text: "Run SCAMPER on your top 3 ideas, all 7 letters",
                   accent: "success",
                 },
                 {
-                  text: "Run SCAMPER on your top 3 ideas, pushing all 7 directions",
+                  text: "Favor ideas that use something that just became possible",
                   accent: "volt",
                 },
                 {
-                  text: "Pick the idea at the edge of the adjacent possible. What just became feasible?",
-                  accent: "spark",
-                },
-                {
                   text: "Validate with your team: does it excite everyone, and can you ship it in 24-48 hours?",
-                  accent: "primary",
+                  accent: "spark",
                 },
               ].map((item) => {
                 const colorMap: Record<string, string> = {
@@ -1382,19 +1158,6 @@ export default function IdeationPage() {
               })}
             </CardContent>
           </Card>
-
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                Remember:
-              </span>{" "}
-              Ideation isn&apos;t about finding{" "}
-              <span className="italic">the</span> perfect idea on the first try.
-              It&apos;s about generating enough raw material that one great idea
-              rises to the surface. Trust the process, the volume, and your
-              subconscious.
-            </p>
-          </div>
         </section>
       </div>
     </SectionTemplate>

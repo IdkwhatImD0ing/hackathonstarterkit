@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Quote, ExternalLink } from "lucide-react";
+import { Quote } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { NON_CODER_SECTIONS } from "@/lib/non-coder-sections";
+import { NON_CODER_SKILLS } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
@@ -66,12 +67,13 @@ export default function NonCodersPage() {
           <br />
           <span className="text-primary">Is the Code</span>
         </h1>
+        {/* [CONFIRM: softened from "Zero programming experience required." One featured winner, Nedoszytko, had spent 20 years building healthcare software. The openGraph description in metadata (off-limits here) still says "No coding experience required."] */}
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          Proven strategies and installable AI skills for doctors, lawyers, and
-          professionals who build with Cursor and Claude Code. Zero programming
-          experience required.
+          Guides and installable AI skills for doctors, lawyers, and other
+          professionals who build with Cursor and Claude Code. You don&apos;t
+          need programming experience to start.
         </p>
-        <LastUpdated date="2026-04-15" />
+        <LastUpdated date="2026-09-14" />
         <div className="flex flex-wrap gap-4">
           <div className="rounded-xl border border-volt/15 bg-volt/5 px-4 py-2 text-center">
             <p className="font-display text-2xl font-bold text-volt">4</p>
@@ -80,7 +82,9 @@ export default function NonCodersPage() {
             </p>
           </div>
           <div className="rounded-xl border border-spark/15 bg-spark/5 px-4 py-2 text-center">
-            <p className="font-display text-2xl font-bold text-spark">6</p>
+            <p className="font-display text-2xl font-bold text-spark">
+              {NON_CODER_SKILLS.length}
+            </p>
             <p className="font-code text-[10px] uppercase tracking-widest text-muted-foreground">
               Installable Skills
             </p>
@@ -121,11 +125,25 @@ export default function NonCodersPage() {
             </p>
             <Separator className="mx-auto max-w-xs bg-primary/20" />
             <p className="font-body text-foreground/80">
-              <span className="font-display font-semibold text-foreground">
-                You don&apos;t need to become a programmer.
-              </span>{" "}
-              You need to be an expert in the problem. Mike Brown, the lawyer
-              who took first place, said in{" "}
+              At the same{" "}
+              <a
+                href="https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+              >
+                hackathon
+              </a>
+              , first place went to{" "}
+              <a
+                href="https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+              >
+                Mike Brown, a personal injury lawyer
+              </a>
+              , who said in{" "}
               <a
                 href="https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon"
                 target="_blank"
@@ -137,10 +155,60 @@ export default function NonCodersPage() {
               that he didn&apos;t write a single line of code. Nedoszytko is a
               different case: Anthropic describes him as a cardiologist who had
               spent 20 years building healthcare software alongside his
-              practice, and he still needed only 7 days to ship PostVisit.ai. He
-              qualifies his own line, too: what you build without programming is
-              a solution, or at least a prototype you can use yourself.
+              practice, and he shipped PostVisit.ai in{" "}
+              <a
+                href="https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+              >
+                7 days
+              </a>
+              . He also qualifies his own line: what you build without
+              programming is a solution, or at least a prototype you can use
+              yourself.
             </p>
+            <p className="font-body text-foreground/80">
+              Only 1 of that event&apos;s 5 winners was a professional
+              developer, according to the{" "}
+              <a
+                href="https://en.sedaily.com/news/2026/02/25/lawyers-doctors-sweep-ai-hackathon-as-builder-era-dawns"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+              >
+                Seoul Economic Daily
+              </a>
+              .{" "}
+              <Link
+                href="/non-coders/proof"
+                className="text-volt underline decoration-volt/30 hover:decoration-volt"
+              >
+                The Proof
+              </Link>{" "}
+              profiles two people from outside software:{" "}
+              <a
+                href="https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+              >
+                Nina Kolari
+              </a>
+              , who built a speech practice app for stroke patients at a
+              3-hour Cursor hackathon, and{" "}
+              <a
+                href="https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+              >
+                Rene Turcios
+              </a>
+              , a former Yu-Gi-Oh! pro.
+            </p>
+            {/* [CONFIRM: the old Sources list titled the SF Standard piece "200+ Hackathon Wins"; the proof page says "200+ Hackathons". Which is right? This page no longer states either number.] */}
+            {/* [NEEDS SPECIFIC: this page has no line from you. Why you built the non-coder guide, or a non-coder you've seen win or judged at LA Hacks 2026, would fit here.] */}
           </div>
         </div>
       </section>
@@ -154,7 +222,30 @@ export default function NonCodersPage() {
             Choose Your Starting Point
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            Each section is self-contained. Start wherever makes sense for you.
+            If you haven&apos;t built anything with Cursor yet,
+            start with Getting Started. It has you open a fresh chat for each
+            feature, which{" "}
+            <a
+              href="https://cursor.com/blog/agent-best-practices"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+            >
+              Cursor&apos;s 2026 guide to coding with agents
+            </a>{" "}
+            also recommends. If you&apos;re already set up, The System Prompt
+            and Skills &amp; Commands take one paste each. The first adds a
+            rules file for each tool:{" "}
+            <a
+              href="https://agents.md/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+            >
+              AGENTS.md
+            </a>{" "}
+            for Cursor, CLAUDE.md for Claude Code. Using APIs can wait until
+            your idea needs a service like voice or payments.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -200,80 +291,6 @@ export default function NonCodersPage() {
               </Link>
             );
           })}
-        </div>
-      </section>
-
-      {/* ============================================================
-          SOURCES
-          ============================================================ */}
-      <section className="space-y-8">
-        <div className="space-y-3">
-          <h2 className="font-display text-3xl font-bold tracking-tight">
-            Sources
-          </h2>
-          <p className="max-w-3xl font-body text-muted-foreground">
-            This guide is built on the articles, blog posts, GitHub repos, and
-            hackathon post-mortems below.
-          </p>
-          <Separator className="bg-primary/20" />
-        </div>
-
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-          {[
-            {
-              title: "NY Post: Vibe Coding Is Here to Stay (2026)",
-              url: "https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/",
-            },
-            {
-              title: "Hadley Lab: The Lawyer Who Won (2026)",
-              url: "https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/",
-            },
-            {
-              title: "TechStory: Cardiologist Builds App in 7 Days (2026)",
-              url: "https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/",
-            },
-            {
-              title: "Nina Kolari: Hackathon Takeaways (2025)",
-              url: "https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/",
-            },
-            {
-              title: "SF Standard: 200+ Hackathon Wins (2025)",
-              url: "https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/",
-            },
-            {
-              title: "Cursor Blog: Agent Best Practices (2026)",
-              url: "https://cursor.com/blog/agent-best-practices",
-            },
-            {
-              title: "AGENTS.md Official Site",
-              url: "https://agents.md/",
-            },
-            {
-              title: "Awesome Cursor Rules (38k+ stars)",
-              url: "https://github.com/PatrickJS/awesome-cursorrules",
-            },
-            {
-              title: "Vibe Coding Lite: Systematic Approach",
-              url: "https://vibecodinglite.dev/quickstart.html",
-            },
-            {
-              title: "Seoul Economic Daily: Builder Era Dawns (2026)",
-              url: "https://en.sedaily.com/news/2026/02/25/lawyers-doctors-sweep-ai-hackathon-as-builder-era-dawns",
-            },
-          ].map((source) => (
-            <a
-              key={source.url}
-              href={source.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-2 rounded-lg border border-border bg-surface p-3 transition-all hover:border-volt/20"
-            >
-              <ExternalLink className="size-3.5 shrink-0 text-muted-foreground transition-colors group-hover:text-volt" />
-              <span className="font-body text-sm text-foreground/80 transition-colors group-hover:text-volt">
-                {source.title}
-              </span>
-            </a>
-          ))}
         </div>
       </section>
     </div>

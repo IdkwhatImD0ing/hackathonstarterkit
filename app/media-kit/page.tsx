@@ -40,6 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
+// [CONFIRM: the JSON-LD description below still calls you "one of the most decorated hackathon competitors in the US college scene". It's unsourced and was cut from the visible bio, but JSON-LD is off-limits in this pass. Cut it here too?]
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -110,6 +111,7 @@ const accentMap = {
 };
 
 const CREDENTIALS = [
+  // [CONFIRM: "1,000+ person events" for HackUTD 2024, UC Berkeley AI Hackathon 2024, and LA Hacks 2024]
   {
     text: "1st place at HackUTD 2024, UC Berkeley AI Hackathon 2024, LA Hacks 2024",
     highlight: "1,000+ person events, plus 33 other hackathon wins",
@@ -120,6 +122,7 @@ const CREDENTIALS = [
     highlight: "Top 10 Global (only US team in 3 years)",
     color: "text-spark",
   },
+  // [CONFIRM: "returning for the LA Hacks AI Hackathon"]
   {
     text: "Hackathon judge at LA Hacks 2026",
     highlight: "returning for the LA Hacks AI Hackathon",
@@ -130,11 +133,13 @@ const CREDENTIALS = [
     highlight: "4,000+ member hackathon community",
     color: "text-spark",
   },
+  // [CONFIRM: "(Enterprise & Post-Training Research)" as your Scale AI team. Moved here from the bio paragraph.]
   {
     text: "Software Engineer 2 at Pinterest",
-    highlight: "ex-Applied AI Engineer at Scale AI",
+    highlight: "ex-Applied AI Engineer at Scale AI (Enterprise & Post-Training Research)",
     color: "text-volt",
   },
+  // [CONFIRM: "$1M valuation, Berkeley SkyDeck funded" for Dispatch AI]
   {
     text: "Co-founder of Dispatch AI",
     highlight: "$1M valuation, Berkeley SkyDeck funded",
@@ -189,7 +194,7 @@ const SECTIONS = [
     href: "/playbook",
     title: "The Playbook",
     description:
-      "7-phase system for winning hackathons: team formation, ideation, validation, execution, pitching, submission, and post-hackathon.",
+      "Seven phases of a hackathon, from forming a team to following up after judging.",
     icon: BookOpen,
     accent: "volt" as const,
   },
@@ -197,7 +202,7 @@ const SECTIONS = [
     href: "/non-coders",
     title: "For Non-Coders",
     description:
-      "How domain experts (lawyers, doctors, founders) win hackathons with AI coding tools, with no programming experience.",
+      "How domain experts (lawyers, doctors, founders) use AI coding tools to build and win at hackathons.",
     icon: Users,
     accent: "spark" as const,
   },
@@ -205,7 +210,7 @@ const SECTIONS = [
     href: "/blog",
     title: "The Blog",
     description:
-      "Deep-dive articles on hackathon strategy, tech stacks, pitching, and case studies from real wins.",
+      "Articles on hackathon strategy, tech stacks, and pitching, plus breakdowns of past wins.",
     icon: Zap,
     accent: "primary" as const,
   },
@@ -234,7 +239,7 @@ const LINKS = [
   },
 ];
 
-const BOILERPLATE = `Hackathon Playbook is the most comprehensive guide to winning hackathons, built by Bill Zhang, a competitor with 36+ hackathon wins and $100K+ in prizes. The site combines a 7-phase playbook, a path for non-coders using AI tools, and a blog with battle-tested strategies from real victories at HackUTD, UC Berkeley AI, LA Hacks, and Google DSC.`;
+const BOILERPLATE = `Hackathon Playbook (thehackathonplaybook.dev) is a guide to winning hackathons by Bill Zhang, who has 36+ hackathon wins and $100K+ in prizes. It includes a 7-phase playbook, a section for non-coders building with AI tools, and a blog of strategies from his wins at HackUTD, the UC Berkeley AI Hackathon, LA Hacks, and the Google Developer Student Challenge.`;
 
 export default function MediaKitPage() {
   return (
@@ -263,9 +268,8 @@ export default function MediaKitPage() {
           Media <span className="text-volt">Kit</span>
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          Everything you need to feature, partner with, or affiliate with
-          Hackathon Playbook. Quotes, stats, brand assets, and a direct line
-          to the founder.
+          For press, partners, and affiliates: stats, a founder bio,
+          copy-paste boilerplate, brand assets, and the founder&apos;s email.
         </p>
       </header>
 
@@ -311,19 +315,24 @@ export default function MediaKitPage() {
           </span>
         </div>
         <div className="space-y-10 p-6 md:p-10">
-          {/* About */}
+          {/* About: the paste-ready boilerplate doubles as the site description */}
           <div className="space-y-3">
-            <h2 className="font-display text-2xl font-bold">About</h2>
-            <p className="font-body text-foreground/85 leading-relaxed">
-              Hackathon Playbook (
-              <span className="font-code text-volt">
-                thehackathonplaybook.dev
-              </span>
-              ) is an educational platform built by Bill Zhang that distills 36+
-              hackathon wins and $100K+ in prizes into a repeatable playbook.
-              The Site is aimed at student hackers, non-coder founders using AI
-              tools, and hackathon sponsors looking to understand what wins.
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="font-display text-2xl font-bold">About</h2>
+              <Badge
+                variant="outline"
+                className="border-spark/30 text-spark font-code text-[10px]"
+              >
+                ~55 words
+              </Badge>
+            </div>
+            <p className="font-body text-sm text-muted-foreground">
+              Copy-paste description for articles, directories, and partner
+              pages.
             </p>
+            <blockquote className="rounded-xl border border-primary/15 bg-primary/5 p-5 font-body text-sm italic leading-relaxed text-foreground/90">
+              {BOILERPLATE}
+            </blockquote>
           </div>
 
           {/* Founder */}
@@ -341,12 +350,13 @@ export default function MediaKitPage() {
               >
                 @IdkwhatImD0ing
               </a>
-              ) is one of the most decorated hackathon competitors in the US
-              college scene. He is a Software Engineer 2 at Pinterest,
-              previously an Applied AI Engineer at Scale AI (Enterprise &
-              Post-Training Research), co-founder of WeCracked (a 4,000+ member
-              hackathon community), and co-founder of Dispatch AI (Berkeley
-              SkyDeck funded, $1M valuation).
+              ) started doing hackathons to land an internship. At LA Hacks
+              2023 he spent the hackathon learning vector databases for a
+              RAG-style chat app and didn&apos;t win, but a LinkedIn post about
+              the project caught the eye of an interviewer who was building the
+              same thing. His first internship offer came a week later. Today
+              he&apos;s a Software Engineer 2 at Pinterest and a co-founder of
+              WeCracked and Dispatch AI.
             </p>
             <div className="space-y-2">
               <p className="font-code text-xs uppercase tracking-widest text-muted-foreground">
@@ -375,28 +385,6 @@ export default function MediaKitPage() {
             </div>
           </div>
 
-          {/* Boilerplate */}
-          <div className="space-y-3">
-            <div className="flex items-center justify-between gap-3">
-              <h2 className="font-display text-2xl font-bold">
-                Copy-Paste Boilerplate
-              </h2>
-              <Badge
-                variant="outline"
-                className="border-spark/30 text-spark font-code text-[10px]"
-              >
-                ~50 words
-              </Badge>
-            </div>
-            <p className="font-body text-sm text-muted-foreground">
-              Ready-to-use description for articles, directories, and partner
-              pages.
-            </p>
-            <blockquote className="rounded-xl border border-primary/15 bg-primary/5 p-5 font-body text-sm italic leading-relaxed text-foreground/90">
-              {BOILERPLATE}
-            </blockquote>
-          </div>
-
           {/* Audience */}
           <div className="space-y-3">
             <h2 className="font-display text-2xl font-bold">Audience</h2>
@@ -404,29 +392,29 @@ export default function MediaKitPage() {
               <li className="flex items-start gap-2.5">
                 <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
                 <span>
-                  <strong>Student hackers</strong> at college and university
-                  hackathons looking for a competitive edge.
+                  <strong>Student hackers</strong> at college hackathons, from
+                  first-timers to veterans.
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
                 <span>
                   <strong>Non-coder founders and domain experts</strong> (lawyers,
-                  doctors, designers) shipping real projects with AI tools.
+                  doctors, designers) building projects with AI tools.
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>Hackathon sponsors and organizers</strong> researching
-                  what resonates with top competitors.
+                  <strong>Hackathon sponsors and organizers</strong> who want to
+                  understand what wins.
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
                 <span>
                   <strong>Early-career engineers and AI builders</strong> using
-                  hackathons as a career-launch strategy.
+                  hackathons to find internships and jobs.
                 </span>
               </li>
             </ul>

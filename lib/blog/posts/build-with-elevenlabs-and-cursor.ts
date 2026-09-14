@@ -3,10 +3,11 @@ import type { BlogPost } from "../types";
 export const post: BlogPost = {
   slug: "build-with-elevenlabs-and-cursor",
   title: "How to Build with ElevenLabs and Cursor at a Hackathon",
+  // [CONFIRM: this used to end "to ship and win." No ElevenLabs win is named anywhere on the site (Dispatch AI used Retell and Hume). If one of your wins used ElevenLabs, name it and "win" can come back.]
   description:
-    "Build a voice AI hackathon project with ElevenLabs and Cursor in an afternoon. The exact PRD-first, MCP-driven, test-driven workflow Bill uses to ship and win.",
+    "My loop for a voice AI hackathon project: write the PRD first, connect ElevenLabs to Cursor through MCP, then have the agent write each test before the feature.",
   date: "2026-04-21",
-  updatedDate: "2026-06-24",
+  updatedDate: "2026-09-14",
   readingTime: "5 min read",
   keywords: [
     "build with elevenlabs cursor",
@@ -21,44 +22,36 @@ export const post: BlogPost = {
       heading: "Make Your Demo Talk Back",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "Judges remember the project that talks. Walk an expo floor and you pass two hundred dashboards and chatbots. The one that answers out loud in a real human voice makes judges stop and lean in. That is the whole trick, and **ElevenLabs plus Cursor gets you there in an afternoon**." },
-        { type: "paragraph", text: "Below is the exact loop I run: write a spec, wire the agent to a live tool, then let it build and test itself while I babysit the spend. The counterintuitive part comes in the middle, where I make the agent write the test **before** the feature." },
+        // [NEEDS SPECIFIC: the opener used to say a voice demo is what gets judges to stop on an expo floor. Nothing on the site backs that, so it's cut. A hackathon where a voice demo got judges to stop (yours, or one you judged at LA Hacks 2026) would bring it back.]
+        { type: "paragraph", text: "This is the loop I run to add a voice to a hackathon project. ElevenLabs generates the speech, and Cursor's agent writes the code around it. I write a spec, connect the agent to ElevenLabs, then let it build and test one feature at a time while I babysit the spend." },
+        // [CONFIRM: source and current values for these four numbers (Flash latency, language count, free characters per month, the MLH offer). "Free for MLH" doesn't say what's free or who qualifies. Spell it out, or cut that stat.]
         { type: "stat-row", stats: [
           { value: "~75ms", label: "Flash Latency" },
           { value: "70+", label: "Languages" },
           { value: "10K", label: "Free Chars/mo" },
           { value: "3 mo", label: "Free for MLH" },
         ]},
-        { type: "callout", variant: "info", title: "What Judges Remember", text: "A demo sticks when it responds in real time, uses more than one modality, and sounds like a person. ElevenLabs is the shortest path to all three, whatever your stack." },
       ],
     },
     {
       heading: "Step 0: Write the PRD Before Cursor Opens a File",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "AI agents write the code. They do not guess what you want. Before Cursor touches a file, write what you are building, who it is for, and what done looks like. Save it as **PRD.md** and **AGENTS.md** at the repo root so every prompt reads the same source of truth." },
+        { type: "paragraph", text: "The agent writes the code, but it can't guess what you want. Before Cursor touches a file, write down what you're building, who it's for, and what done looks like. Save it as **PRD.md** and **AGENTS.md** at the repo root so every prompt reads from the same source." },
         { type: "step-list", steps: [
           { title: "Run the domain-to-spec skill", description: "It interviews you about your profession and goal, then writes AGENTS.md and PRD.md to the repo root." },
           { title: "List routes and components", description: "Under PRD.md > Frontend Pages and Backend Routes, name every screen and endpoint the agent should scaffold." },
-          { title: "Define done", description: "Add an Acceptance Criteria section listing the exact behaviors a working demo must have. This becomes your test plan below." },
+          { title: "Define done", description: "Add an Acceptance Criteria section listing the exact behaviors a working demo must have. It becomes your test plan." },
         ]},
-        { type: "callout", variant: "warning", title: "Do Not Skip This", text: "Skip the PRD and the agent reinvents your data model every other prompt, hallucinates features you never asked for, and burns your API credits chasing its own tail. Twenty minutes on PRD.md saves four hours of debugging." },
-      ],
-    },
-    {
-      heading: "Let the Agent Type the Code",
-      paragraphs: [],
-      blocks: [
-        { type: "paragraph", text: "Nobody on a winning 2026 team types CRUD endpoints by hand. Cursor types them. Your job is the part the agent cannot do: pick the problem, define the interface, decide if the output is good, and pitch it on stage." },
-        { type: "paragraph", text: "Time is the one thing you do not have at a hackathon. **A team that hands implementation to an agent and spends the saved hours on UX, polish, and the pitch beats a team typing every line by hand.** Every time." },
+        { type: "paragraph", text: "Skip the PRD and the agent keeps reinventing your data model and adding features you never asked for, burning API credits on every wrong guess. With it, the agent can type the CRUD endpoints while you decide what the interface looks like and whether the output is any good. Spend the hours you save on UX polish and the pitch." },
       ],
     },
     {
       heading: "Step 1: Check for an MCP First",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "An **MCP (Model Context Protocol) server** hands your agent a menu of typed, callable tools for a service. Instead of pasting docs and hoping, the agent sees real actions like 'generate speech' or 'clone a voice' and gets back structured data it can reason about." },
-        { type: "paragraph", text: "ElevenLabs ships an official one at github.com/elevenlabs/elevenlabs-mcp. Drop this config into Cursor and your agent gets direct text-to-speech, voice cloning, sound effects, transcription, and the ElevenAgents platform." },
+        { type: "paragraph", text: "An **MCP (Model Context Protocol) server** gives your agent a menu of typed tools for a service. Instead of reading pasted docs, the agent sees real actions like 'generate speech' or 'clone a voice' and gets structured data back." },
+        { type: "paragraph", text: "ElevenLabs ships an official one at github.com/elevenlabs/elevenlabs-mcp. Add this to Cursor's MCP config and the agent can call text-to-speech, voice cloning, sound effects, transcription, and the ElevenAgents platform directly." },
         { type: "code-snippet", language: "json", filename: "~/.cursor/mcp.json", code: "{\n  \"mcpServers\": {\n    \"ElevenLabs\": {\n      \"command\": \"uvx\",\n      \"args\": [\"elevenlabs-mcp\"],\n      \"env\": {\n        \"ELEVENLABS_API_KEY\": \"<your-api-key-here>\"\n      }\n    }\n  }\n}" },
       ],
     },
@@ -66,52 +59,51 @@ export const post: BlogPost = {
       heading: "Step 2: No MCP? Paste the Docs URL",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "Some tools have no MCP server yet. The fallback: give Cursor a direct link to the official docs in the prompt. It fetches the page and uses the live API surface instead of the stale version the model remembers from training." },
-        { type: "paragraph", text: "Here is the shape of a prompt I use to build a streaming text-to-speech endpoint with no MCP. Note the **file anchor, behavior spec, constraints, and a 'Done when' section**, so Cursor stops when the conditions are met instead of wandering off." },
+        { type: "paragraph", text: "Some tools don't have an MCP server yet. For those, put a link to the official docs inside the prompt. Cursor fetches the page and works from the live API instead of the stale version the model remembers from training." },
+        { type: "paragraph", text: "Here's the shape of a prompt I use to build a streaming text-to-speech endpoint without the MCP. The **'Done when' section** tells Cursor when to stop, so it doesn't wander off." },
+        // [CONFIRM: this prompt says Next.js 15, but the stack post (best-tech-stack-for-hackathons) says Next.js 16. Which should it be?]
         { type: "code-snippet", language: "markdown", filename: "cursor-prompt.md", code: "Read https://elevenlabs.io/docs/overview/intro and PRD.md > Backend Routes.\n\nCreate app/api/speak/route.ts in Next.js 15 (App Router, TypeScript).\n\nBehavior:\n- POST handler, accepts { text: string } JSON body\n- Calls ElevenLabs text-to-speech with model_id \"eleven_flash_v2_5\"\n- Voice ID and API key come from process.env (already in .env.local)\n- Returns audio as a streaming audio/mpeg response\n\nConstraints:\n- Use the official @elevenlabs/elevenlabs-js SDK (install if needed)\n- No retries, no caching, no logging\n- Do not touch any other route or component\n\nDone when:\n- curl -X POST localhost:3000/api/speak -d '{\"text\":\"hello\"}' returns audio bytes\n- The response Content-Type is audio/mpeg\n- npm run build passes with no new TS errors" },
-        { type: "callout", variant: "tip", text: "Always paste the docs URL inside the prompt. Cursor reads the linked page in real time, far more accurate than asking the model to recall an API from memory." },
       ],
     },
     {
       heading: "Step 3: Key In, Then Build and Test",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "Drop your API key into **.env.local** at the project root. The MCP server and your app code both read this file, so you never think about it again." },
+        // [CONFIRM: the post used to say the MCP server also reads .env.local. The mcp.json above passes the key in its own env block, so the text now says that. Correct?]
+        { type: "paragraph", text: "Put your API key in **.env.local** at the project root, and keep that file out of git. Your app code reads the key from there. The MCP server gets its copy from the env block in mcp.json above." },
         { type: "code-snippet", language: "bash", filename: ".env.local", code: "ELEVENLABS_API_KEY=sk_your_key_here\nELEVENLABS_VOICE_ID=JBFqnCBsd6RMkjVDRZzb\nELEVENLABS_MODEL_ID=eleven_flash_v2_5" },
-        { type: "paragraph", text: "Now hand the agent a clean task: read the PRD, build the next unfinished feature, run the test, stop only when it passes. A good agent reads the docs, scaffolds the files, installs dependencies, hits the live API, and verifies the response. You watch the loop and step in when it goes sideways." },
+        { type: "paragraph", text: "Now hand the agent one clean task: read the PRD, build the next unfinished feature, run the test, and stop only when it passes. You watch the loop and step in when it goes sideways." },
         { type: "pro-con", pros: [
-          "Reference PRD.md and AGENTS.md in every prompt",
-          "Tell the agent which test must pass to finish",
-          "Specify the model (eleven_flash_v2_5 for real-time)",
+          "Reference PRD.md and AGENTS.md",
           "Ask for one feature per prompt",
+          "Name the model (eleven_flash_v2_5 for real-time)",
+          "Say which test has to pass",
         ], cons: [
-          "'Just build the voice feature' (too vague)",
-          "Letting the agent pick the model on its own",
-          "Multiple unrelated features in one prompt",
-          "Skipping the test step to save time",
+          "'Just build the voice feature' (no model, no test)",
+          "Skipping the test to save time",
         ]},
       ],
     },
     {
-      heading: "The Trick: Make the Agent Test First",
+      heading: "Make the Agent Write the Test First",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "Here is the highest-leverage move I have found: **flip the order**. Make the agent write the test first, then build the feature that satisfies it. Classic test-driven development (en.wikipedia.org/wiki/Test-driven_development) pointed at a coding partner that happens to be an LLM." },
+        { type: "paragraph", text: "The most useful habit I've found: the agent writes the **test first**, then builds the feature that makes it pass. That's test-driven development (en.wikipedia.org/wiki/Test-driven_development) with an LLM writing the code." },
         { type: "step-list", steps: [
           { title: "Red", description: "Have the agent read PRD.md > Acceptance Criteria and generate a failing test for the next feature. Run it. Confirm it fails for the right reason." },
           { title: "Green", description: "Have the agent write the minimum code that makes the test pass. Run it. Iterate until green." },
           { title: "Refactor", description: "Have the agent clean up that code without breaking the test. Run it once more to be sure." },
         ]},
+        // [CONFIRM: check this wording against the book. The preface's rule may read "Write new code only if an automated test has failed."]
         { type: "quote", text: "Write new code only if you first have a failing automated test.", attribution: "Kent Beck, creator of Extreme Programming, Test-Driven Development: By Example (Addison-Wesley, 2002)" },
-        { type: "callout", variant: "success", title: "Why It Wins", text: "Tests turn 'looks fine' into 'provably works.' Given a hard pass/fail signal, the agent stops hallucinating and starts converging. You also get a free regression suite, priceless when you swap voices or models five minutes before demo." },
+        { type: "paragraph", text: "A test gives the agent a hard pass/fail signal, so it converges instead of guessing. You also end up with a regression suite, which matters when you swap voices or models five minutes before the demo." },
       ],
     },
     {
       heading: "Babysit the Spend, Then Ship",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "An agent in a tight loop racks up real money fast. Your Cursor subscription and your ElevenLabs credits are both on the line if you walk away from a misbehaving agent at hour 18. So do not walk away." },
-        { type: "callout", variant: "warning", title: "Watch the Loop", text: "Keep the agent chat visible. Watch for runaway retries, infinite tool calls, and the agent re-generating the same audio twenty times. One bad prompt can burn a week of free tier in twenty minutes." },
+        { type: "paragraph", text: "An agent in a tight loop spends real money on your Cursor subscription and your ElevenLabs credits. Runaway retries, endless tool calls, or the same audio regenerated over and over can burn through a free tier, so don't walk away from it at hour 18." },
         { type: "checklist", title: "Pre-Flight Before the Agent Loop", items: [
           "PRD.md and AGENTS.md saved at the repo root",
           "ElevenLabs MCP installed (or docs URL ready to paste)",
@@ -120,17 +112,17 @@ export const post: BlogPost = {
           "ElevenLabs usage dashboard open in a tab",
           "Cursor agent chat visible at all times",
         ]},
-        { type: "paragraph", text: "Get this loop running once and the voice feature stops being the scary part of your build. It becomes the thirty seconds on stage that judges actually remember." },
+        { type: "paragraph", text: "When you pitch it, don't spend your slot explaining the tools. When I judged LA Hacks, a couple of teams spent around 30 seconds explaining what OpenAI Agents or ElevenLabs Agents are. If the judge has used them, that time is gone, so ask whether they're familiar with ElevenLabs before you explain it." },
         { type: "cta-button",
           tag: "ElevenLabs",
-          title: "Get the Voice AI Stack the Pros Use",
-          description: "Free tier covers a hackathon. Paid plans unlock voice cloning, agents, and longer audio.",
+          title: "Try ElevenLabs for your voice feature",
+          description: "It's what this whole loop runs on. There's a free tier to start, and paid plans unlock voice cloning, agents, and longer audio.",
           label: "Try ElevenLabs Free",
           href: "https://try.elevenlabs.io/thehackathonplaybook",
           sponsored: true,
         },
-        { type: "link-card", title: "Non-Coders Winning Hackathons", description: "How professionals with zero coding experience are beating dev teams using AI agents like Cursor.", href: "/blog/non-coders-winning-hackathons", tag: "Related Read" },
-        { type: "link-card", title: "Best Tech Stack for Hackathons in 2026", description: "The full stack winning teams use, from frontend to deployment to AI APIs.", href: "/blog/best-tech-stack-for-hackathons", tag: "Stack Guide" },
+        { type: "link-card", title: "Non-Coders Winning Hackathons", description: "How a lawyer won Anthropic's hackathon without writing code, and what domain experts bring.", href: "/blog/non-coders-winning-hackathons", tag: "Related Read" },
+        { type: "link-card", title: "Best Tech Stack for Hackathons in 2026", description: "The default stack I reach for, from frontend to deployment to AI APIs.", href: "/blog/best-tech-stack-for-hackathons", tag: "Stack Guide" },
       ],
     },
   ],

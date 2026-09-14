@@ -30,6 +30,7 @@ const FEATURES = [
     title: "Agent discovery",
     body: `robots.txt welcomes AI crawlers explicitly with Content Signals. Link headers on every page advertise llms.txt, the API catalog (/.well-known/api-catalog), and the Markdown alternates. Installable skills are published at /.well-known/agent-skills/index.json with sha256 digests. Auth policy (there is none needed) is stated at /auth.md.`,
   },
+  // [CONFIRM: "answers only from this site's content" rests on the system prompt (lib/chat/prompt.ts: "Answer ONLY from the reference sections"), which a model can still stray from. The citation chips come straight from retrieval results, but inline links in the answer are model-written. Keep "answers only" and "can't cite", or soften to "is told to answer only"?]
   {
     icon: MessageCircle,
     title: "Grounded chat",
@@ -51,8 +52,8 @@ export default function AiPage() {
             This site is built to be read by machines too
           </h1>
           <p className="max-w-2xl font-body text-lg text-muted-foreground">
-            The playbook exists to be found and cited. Whether you are a crawler, an agent, or a
-            hacker piping pages into your AI editor at 3am, here is every door in.
+            If you&apos;re a crawler, an agent, or a hacker piping pages into your AI editor at
+            3am, here&apos;s every way in.
           </p>
         </header>
 

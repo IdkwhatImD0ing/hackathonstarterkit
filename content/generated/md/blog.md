@@ -10,55 +10,55 @@ Stay up to date
 
 ## Get new hackathon guides in your inbox
 
-Short, specific strategies from 36+ wins. No fluff, just the ideas that help you build sharper and pitch better.
+Short, specific strategies on building and pitching, from 36+ hackathon wins.
 
-[5 min read
+[4 min readUpdated Sep 14, 2026
 
 #### What to Do After a Hackathon: Ship 5 Assets That Get You Hired
 
-What to do after a hackathon, win or lose: the 5 linked assets that get you hired, and the AI skills that build your README, Devpost, portfolio, and demo copy.
+My first internship came from one LinkedIn post about a hackathon we didn't win. What to do after a hackathon: five linked assets, four written by AI skills.
 
-Read article](https://thehackathonplaybook.dev/blog/what-to-do-after-a-hackathon)[6 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/what-to-do-after-a-hackathon)[6 min readUpdated Sep 14, 2026
 
 #### 9 Hackathon Pitch Mistakes I Saw at LA Hacks
 
-Hackathon pitch mistakes from the LA Hacks judging floor: tailor the pitch, cut your slides, demo the main flow, and protect Q&A time for higher scores.
+Judging LA Hacks, I watched good projects lose points to hackathon pitch mistakes. The one almost every team made was leaving the judges no time for Q&A.
 
-Read article](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks)[5 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks)[5 min readUpdated Sep 14, 2026
 
 #### How to Build with ElevenLabs and Cursor at a Hackathon
 
-Build a voice AI hackathon project with ElevenLabs and Cursor in an afternoon. The exact PRD-first, MCP-driven, test-driven workflow Bill uses to ship and win.
+My loop for a voice AI hackathon project: write the PRD first, connect ElevenLabs to Cursor through MCP, then have the agent write each test before the feature.
 
-Read article](https://thehackathonplaybook.dev/blog/build-with-elevenlabs-and-cursor)[3 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/build-with-elevenlabs-and-cursor)[3 min readUpdated Sep 14, 2026
 
 #### Non-Coders Winning Hackathons: How Experts Beat Developers
 
-Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic's global hackathon, beating developers with Claude Code.
+A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.
 
-Read article](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons)[3 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons)[3 min readUpdated Sep 14, 2026
 
 #### Hackathon Pitch Guide: How to Present Your Project and Win Prizes
 
-Master the hackathon pitch with a 3-minute structure from 36+ winning presentations: the hook, the demo, judge Q&A, and the mistakes that cost prizes.
+A hackathon pitch guide with one 3-minute structure: problem, live demo, how it works, and impact. Plus Q&A prep, and how to cut it down for a shorter slot.
 
-Read article](https://thehackathonplaybook.dev/blog/hackathon-pitch-guide)[4 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/hackathon-pitch-guide)[4 min readUpdated Sep 14, 2026
 
 #### Hackathon Tips for Beginners: Your First Hackathon Survival Guide
 
-First hackathon? This beginner's guide covers what to bring, how to find a team, what to build, the mistakes to avoid, and how to win as a first-timer.
+You don't need an idea or a team to go to your first hackathon. These hackathon tips for beginners cover what to set up at home and how to spend the 24 hours.
 
-Read article](https://thehackathonplaybook.dev/blog/hackathon-tips-for-beginners)[4 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/hackathon-tips-for-beginners)[4 min readUpdated Sep 14, 2026
 
 #### Best Tech Stack for Hackathons in 2026: Tools That Win Prizes
 
-The best tech stack for hackathons in 2026: Next.js, FastAPI, Supabase, Vercel, and an AI API. The exact stack winning teams use, and the rule that beats it.
+The best tech stack for hackathons is the one your team already knows. If you don't have one yet, this is the Next.js, FastAPI, and Supabase default I use.
 
-Read article](https://thehackathonplaybook.dev/blog/best-tech-stack-for-hackathons)[5 min readUpdated Jun 24, 2026
+Read article](https://thehackathonplaybook.dev/blog/best-tech-stack-for-hackathons)[4 min readUpdated Sep 14, 2026
 
 #### How to Win Hackathons: A Complete Guide from 36+ Victories
 
-How to win hackathons, from 36+ wins and $100K+ in prizes. The 7-phase system covering team, ideation, validation, execution, pitching, and submission.
+How to win hackathons, in the seven phases I learned across 50+ events and 36+ wins: from picking your team to following up with people after judging ends.
 
 Read article](https://thehackathonplaybook.dev/blog/how-to-win-hackathons)
 

@@ -8,7 +8,7 @@ Canonical: https://thehackathonplaybook.dev/
 
 ## Hackathon Playbook
 
-Guides, templates, and strategies from 36+ hackathon wins.
+Guides and prompts from 50+ hackathons and 36+ wins.
 
 [Open Playbook →](https://thehackathonplaybook.dev/playbook)[For Non-Coders →](https://thehackathonplaybook.dev/non-coders)[Read the Blog →](https://thehackathonplaybook.dev/blog)
 
@@ -18,7 +18,7 @@ bill@hackathons ~ % whoami
 
 ## Bill Zhang [@IdkwhatImD0ing](https://github.com/IdkwhatImD0ing)
 
-One of the most decorated hackathon competitors in the US college scene.
+I started doing hackathons to land an internship, and got an interview within my first four.
 
 36+
 

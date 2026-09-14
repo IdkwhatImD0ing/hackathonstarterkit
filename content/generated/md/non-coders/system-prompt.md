@@ -8,25 +8,25 @@ Canonical: https://thehackathonplaybook.dev/non-coders/system-prompt
 
 ## What Is a System Prompt?
 
-Think of it as the briefing you give a brand-new assistant on their first day. You tell them how you like to work, what the project is, and what they should never do without asking. A good assistant re-reads that briefing every morning so they never drift.
+It's the briefing you'd give a new assistant on their first day: how you like to work, what the project is, and what they should never do without asking.
 
-That is exactly what a system prompt is. Your AI reads these files at the start of every conversation, before you type a word. It is the standing instruction for how to behave with you. You write it once, and every chat after that gets better.
+Your AI reads these files at the start of every conversation, before you type a word, so you don't have to repeat your rules in each new chat.
 
 ## Two Files, One Set of Rules
 
-Different AI tools look for different filenames. Rather than keep two copies in sync, you put the real rules in one file and make the other point to it. Update one, both tools follow.
+Claude Code looks for CLAUDE.md. Cursor, Codex, and other tools look for AGENTS.md. So the full rules go in CLAUDE.md, and AGENTS.md points to it.
 
 #### CLAUDE.md
 
-The actual rules. How to talk to you, the honesty rules, what you are building, and the guardrails.
+The full rules: how to talk to you, the honesty rules, what you're building, and the guardrails.
 
 #### AGENTS.md
 
-A one-line pointer to CLAUDE.md, so other tools load the exact same rules.
+A one-line pointer that tells other tools to read CLAUDE.md.
 
 ## The One-Command Setup
 
-Copy this and paste it into Cursor (Ctrl+I) or Claude Code. The AI adds the rules to your project (merging with any CLAUDE.md you already have), reads your project to fill in the details, then shows you the result to review. You do not touch any settings.
+Paste this into Cursor's agent chat (Ctrl+I, or Cmd+I on a Mac) or into Claude Code. The AI adds both files without overwriting what you already have. Then it reads your project, drafts the “About this project” section, and checks it with you.
 
 paste this into your AI chat
 
@@ -48,11 +48,11 @@ Set up my project's system prompt. I am a non-coder, so handle the whole thing f
 From now on, follow CLAUDE.md in every chat.
 ```
 
-That's it. The rules always come straight from this site, so you get the latest version. The AI reads your project to fill in the details and shows you everything to confirm before moving on.
+Updates: You get the rules as they are on this site when you run the command. To pick up a newer version later, run it again.
 
 ## What You Get
 
-This is exactly what lands in your project. Prefer to paste it in by hand? Copy either file below, or open the raw text.
+Here's what the command adds, before the AI fills in the About section. You can also copy either file in by hand.
 
 `CLAUDE.md`
 
@@ -119,18 +119,18 @@ See @CLAUDE.md for all project guidance. That file is the single source of truth
 
 ## Why One File and a Pointer?
 
-If you keep the full rules in both files, they drift apart the moment you edit one and forget the other. Then Cursor and Claude give you different behavior and you cannot tell why.
+If you keep the full rules in both files, they drift apart the first time you edit one and forget the other. Then Cursor and Claude behave differently and you can't tell why.
 
-Keeping the rules in `CLAUDE.md` and making `AGENTS.md` a single line that points to it means there is one source of truth. Change it once, every tool follows. One short file is also easier for the AI to actually pay attention to than a long one.
+With the rules only in `CLAUDE.md`, there's one place to edit. This site's own repo is set up the same way: its `AGENTS.md` just points to `CLAUDE.md`.
 
 ## Next Steps
 
 [#### Add Skills & Commands
 
-Now that the rules are set, install the skills that walk your AI through scaffolding, building, and demoing your project.
+With the rules set, add skills that walk your AI through planning, building, and demoing your project.
 
 Open Skills](https://thehackathonplaybook.dev/non-coders/skills)[#### Getting Started
 
-New to all of this? The shortcuts, the daily workflow, and the other files that make up your project setup.
+The Cursor shortcuts, the loop for building each feature, and the other files in a project setup.
 
 Open Getting Started](https://thehackathonplaybook.dev/non-coders/setup)

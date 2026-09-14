@@ -4,7 +4,6 @@ import {
   FileText,
   Keyboard,
   RotateCcw,
-  AlertTriangle,
   CheckCircle2,
 } from "lucide-react";
 import {
@@ -32,6 +31,8 @@ export const metadata: Metadata = {
   },
 };
 
+// [CONFIRM: the audit flags .cursorrules as Cursor's legacy rules format (this repo itself uses .cursor/rules/). Cursor's own post (cursor.com/blog/agent-best-practices, Jan 2026) puts rules in .cursor/rules/, and Awesome Cursor Rules (github.com/PatrickJS/awesome-cursorrules, from the old hub's Sources list) now uses .mdc files there. Keep recommending .cursorrules?]
+// [CONFIRM: the AGENTS.md template below pins "Next.js 15". Still the version you want readers to use?]
 const THREE_FILES = [
   {
     name: ".cursorrules",
@@ -89,7 +90,7 @@ GUARDRAILS
   },
   {
     name: "PRD.md",
-    purpose: "Your plain-English blueprint",
+    purpose: "Your plan, in plain English",
     accent: "primary" as const,
     content: `# Product Requirements Document
 
@@ -119,6 +120,7 @@ GUARDRAILS
   },
 ];
 
+// [CONFIRM: Ctrl+L for chat and Ctrl+I for agent mode may be out of date. Check them against the current Cursor version.]
 const SHORTCUTS = [
   {
     keys: "Tab",
@@ -141,36 +143,8 @@ const SHORTCUTS = [
   {
     keys: "Ctrl+I",
     action: "Agent mode",
-    when: "Multi-file creation and editing",
+    when: "Create and edit several files at once",
     accent: "success" as const,
-  },
-];
-
-const PITFALLS = [
-  {
-    text: "Accepting code without reading the diff",
-    fix: "Always review the green/red changes before clicking Accept",
-    accent: "volt",
-  },
-  {
-    text: "Vague prompts like 'make it better'",
-    fix: "Be specific about users, actions, data, and appearance",
-    accent: "spark",
-  },
-  {
-    text: "Building too many features at once",
-    fix: "One feature per chat session, test before moving on",
-    accent: "primary",
-  },
-  {
-    text: "Skipping version control",
-    fix: "Tell the AI to commit after every working change",
-    accent: "success",
-  },
-  {
-    text: "Learning the tool during the hackathon",
-    fix: "Practice with Cursor for at least a week before the event",
-    accent: "volt",
   },
 ];
 
@@ -196,10 +170,10 @@ export default function SetupPage() {
           Getting Started
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          The 3 files, 4 shortcuts, and daily workflow you need. Nothing else is
-          required.
+          Set up three files, learn four shortcuts, then build each feature
+          with the same five-step loop.
         </p>
-        <LastUpdated date="2026-06-19" />
+        <LastUpdated date="2026-09-14" />
       </header>
 
       <Separator className="bg-primary/20" />
@@ -208,27 +182,35 @@ export default function SetupPage() {
       <section className="space-y-8">
         <div className="space-y-3">
           <h2 className="font-display text-3xl font-bold tracking-tight">
-            The 3 Files That Matter
+            The 3 Files
           </h2>
+          {/* [CONFIRM: this page's setup (.cursorrules + a full AGENTS.md + PRD.md) conflicts with /non-coders/system-prompt, which puts the rules in CLAUDE.md and makes AGENTS.md a one-line pointer. /domain-to-spec also writes its own AGENTS.md. Which setup should non-coders follow? Advice left unchanged until you decide.] */}
           <p className="max-w-3xl font-body text-muted-foreground">
-            Your entire configuration lives in three files. The AI reads these
-            every time it helps you. For the deep dive on the system prompt files
-            (and a one-command setup), see{" "}
+            Cursor reads .cursorrules and AGENTS.md on its own.{" "}
+            <a
+              href="https://agents.md/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+            >
+              AGENTS.md
+            </a>{" "}
+            is an open format, so Codex and other AI coding tools read it too.
+            PRD.md is your plan, and you paste it in as your first prompt. The{" "}
             <Link
               href="/non-coders/system-prompt"
               className="text-volt underline decoration-volt/30 hover:decoration-volt"
             >
-              The System Prompt
-            </Link>
-            . Don&apos;t know what a &ldquo;file&rdquo; means in this context?
-            Check{" "}
+              System Prompt
+            </Link>{" "}
+            page has a one-command setup, and{" "}
             <Link
               href="/non-coders/concepts"
               className="text-volt underline decoration-volt/30 hover:decoration-volt"
             >
               Concepts Explained
-            </Link>
-            .
+            </Link>{" "}
+            defines words like commit.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -283,8 +265,7 @@ export default function SetupPage() {
             The 4 Shortcuts
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            Memorize these four keyboard shortcuts. They cover 95% of what you
-            need.
+            On a Mac, press Cmd wherever you see Ctrl.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -323,20 +304,36 @@ export default function SetupPage() {
           <h2 className="font-display text-3xl font-bold tracking-tight">
             The Daily Workflow
           </h2>
-          <p className="max-w-3xl font-body text-muted-foreground">
-            Follow this loop every time you sit down to build.
-          </p>
           <Separator className="bg-primary/20" />
         </div>
 
+        {/* [NEEDS SPECIFIC: step 3 asks non-coders to review code they may not be able to read. What can a non-coder actually check in a diff? The owner should say; no method has been added.] */}
         <div className="space-y-4">
           {[
-            { step: 1, title: "Start a new chat", description: "Open a fresh chat in Cursor for each distinct feature. Long chats degrade AI quality.", accent: "volt" as const },
-            { step: 2, title: "Describe the change", description: "Tell the AI what you want in plain language. Be specific about users, actions, and appearance.", accent: "spark" as const },
-            { step: 3, title: "Review the diff", description: "Read the green (added) and red (removed) lines before accepting. Never accept blindly.", accent: "primary" as const },
-            { step: 4, title: "Test locally", description: "Check your app in the browser. If something looks wrong, screenshot it and paste into chat.", accent: "success" as const },
-            { step: 5, title: "Commit", description: "Tell the agent to commit with a descriptive message. This gives you save points to revert to.", accent: "volt" as const },
-            { step: 6, title: "Repeat", description: "Move to the next feature. One feature per chat. Test before building on top.", accent: "spark" as const },
+            {
+              step: 1,
+              title: "Start a new chat",
+              description: (
+                <>
+                  Open a fresh chat for each feature. Long conversations can
+                  make the agent lose focus, according to Cursor&apos;s post{" "}
+                  <a
+                    href="https://cursor.com/blog/agent-best-practices"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"
+                  >
+                    &ldquo;Best practices for coding with agents&rdquo;
+                  </a>{" "}
+                  (Lee Robinson, 2026).
+                </>
+              ),
+              accent: "volt" as const,
+            },
+            { step: 2, title: "Describe the change", description: "Say who uses it, what they do, what data it shows, and how it should look. \"Make it better\" gives the AI nothing to go on.", accent: "spark" as const },
+            { step: 3, title: "Review the diff", description: "Look at the green (added) and red (removed) lines before you click Accept. The same post warns that AI-written code can look right and still be wrong.", accent: "primary" as const },
+            { step: 4, title: "Test it", description: "Check your app in the browser. If something looks wrong, paste a screenshot into the chat.", accent: "success" as const },
+            { step: 5, title: "Commit", description: "Once it works, tell the AI to commit with a short description. You can go back to that point if something breaks later.", accent: "volt" as const },
           ].map((item) => {
             const a = accentStyles[item.accent];
             return (
@@ -369,57 +366,13 @@ export default function SetupPage() {
             <RotateCcw className="mt-0.5 size-5 shrink-0 text-volt" />
             <p className="font-body text-sm text-muted-foreground">
               <span className="font-display font-semibold text-foreground">
-                The mindset:
+                Then repeat.
               </span>{" "}
-              You are not managing code. You are managing intent. Describe what
-              you want, review what the AI produces, test it, save it, move on.
+              Don&apos;t build the next feature on top of one you haven&apos;t
+              tested.
             </p>
           </div>
         </div>
-      </section>
-
-      {/* ── COMMON PITFALLS ── */}
-      <section className="space-y-8">
-        <div className="space-y-3">
-          <h2 className="font-display text-3xl font-bold tracking-tight">
-            Common Pitfalls
-          </h2>
-          <p className="max-w-3xl font-body text-muted-foreground">
-            These mistakes cost non-coders the most time. Every one is avoidable.
-          </p>
-          <Separator className="bg-primary/20" />
-        </div>
-
-        <Card className="glow-hover border-volt/20">
-          <CardContent className="space-y-4 pt-6">
-            {PITFALLS.map((pitfall) => {
-              const colorMap: Record<string, string> = {
-                volt: "text-volt",
-                spark: "text-spark",
-                primary: "text-primary",
-                success: "text-success",
-              };
-              return (
-                <div
-                  key={pitfall.text}
-                  className="flex items-start gap-3 rounded-lg border border-border bg-surface p-4 transition-all hover:border-volt/20"
-                >
-                  <AlertTriangle
-                    className={`mt-0.5 size-5 shrink-0 ${colorMap[pitfall.accent]}`}
-                  />
-                  <div className="space-y-1">
-                    <p className="font-body text-sm font-semibold text-foreground">
-                      {pitfall.text}
-                    </p>
-                    <p className="font-body text-xs text-muted-foreground">
-                      Fix: {pitfall.fix}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </CardContent>
-        </Card>
       </section>
 
       {/* ── CHECKLIST ── */}
@@ -428,12 +381,10 @@ export default function SetupPage() {
           <h2 className="font-display text-3xl font-bold tracking-tight">
             Getting Started Checklist
           </h2>
-          <p className="max-w-3xl font-body text-muted-foreground">
-            Follow these steps and you&apos;ll be building within the hour.
-          </p>
           <Separator className="bg-primary/20" />
         </div>
 
+        {/* [NEEDS SPECIFIC: where does "at least a week" come from? A hackathon where you or a teammate had to learn the tool during the event would carry this.] */}
         <Card className="glow-hover border-volt/20">
           <CardContent className="space-y-4 pt-6">
             {[
@@ -441,7 +392,7 @@ export default function SetupPage() {
               { text: "Create your project folder and add the 3 files above (.cursorrules, AGENTS.md, PRD.md)", accent: "spark" },
               { text: "Fill out PRD.md with what you're building, for whom, and why", accent: "primary" },
               { text: "Open Cursor Agent mode (Ctrl+I) and paste your PRD as the first prompt", accent: "success" },
-              { text: "Follow the daily workflow: describe, review, test, commit, repeat", accent: "volt" },
+              { text: "Practice the daily workflow for at least a week before your hackathon, so you're not learning Cursor at the event", accent: "volt" },
             ].map((item) => {
               const colorMap: Record<string, string> = {
                 volt: "text-volt",

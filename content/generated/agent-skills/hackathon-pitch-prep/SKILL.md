@@ -3,123 +3,53 @@ name: hackathon-pitch-prep
 description: "Prepare a winning hackathon pitch: narrative structure, demo choreography, judge psychology, and Q&A handling. Use when preparing to present a hackathon project."
 ---
 
-## Storytelling is the Secret Weapon
+## Pitch What It Could Become
 
-The most valuable skill at hackathons isn't coding. It's storytelling. 36+ hackathon wins and $100K+ in prizes later, the secret weapon has always been narrative.
+My 36+ wins and $100K+ in prizes look like a lot of code. What usually set those projects apart was the story.
 
-TL;DR You're not selling 24 hours of code. You're selling the dream of what it could become.
-
-The real edge was never technical. A stack of wins looks like a lot of code. It was always the ability to craft a compelling narrative. You sell the dream of what it could become, not what you shipped.
+TL;DR Spend your pitch on the problem and what the project could become, not on the feature list.
 
 #### Sell the Vision
 
-Pitch potential, not a finished product. The backend can be duct tape and hope. If your story of how it changes the world is irresistible, judges lean in.
+Pitch the potential. The backend can be duct tape and hope. If the story of what it could do is convincing, and you sound like you care about it, judges lean in.
 
-Focus on the problem, not just the solution. Judges buy visions, not feature lists.
+#### It Carries Over
 
-#### Read Your Judges
-
-Judges aren't a monolith. One project, pitched three ways to three judges: tech for the engineer, market for the VC, UX for the designer. First place.
-
-Show genuine passion. Enthusiasm is contagious. Pivot your story to judges' reactions in real time.
-
-#### Career Multiplier
-
-Storytelling transfers everywhere: startup pitches, product management, technical interviews. One job came from telling the story of a project that won nothing. The story mattered more than the result.
-
-Use analogies to make complex tech relatable. If a judge can't explain your project to the next judge, you lose.
-
-## Why Storytelling Works — The Science of Persuasion
-
-The best pitchers don't just wing it. They use frameworks refined over thousands of years of human rhetoric and modern communication research.
-
-TL;DR Winning pitches layer four proven frameworks: Sinek's why, Duarte's tension, Aristotle's appeals, and the Heaths' stickiness.
-
-#### Start With Why
-
-> “People don't buy what you do, they buy why you do it.”
-
-Most teams pitch outside-in: “We built an app that…” Winners pitch inside-out: start with why you care, then how, then what. The Golden Circle turns passive listeners into invested supporters.
-
-— Simon Sinek, author and TEDx speaker, [Start With Why, 2009](https://simonsinek.com/books/start-with-why/)
-
-#### What Is vs. What Could Be
-
-> “You are not the hero who will save the audience; the audience is your hero.”
-
-Duarte's Sparkline alternates between current reality (“what is”) and desired future (“what could be”). The tension builds, then resolves with your solution. Oscillate between both, never camp on one.
-
-— Nancy Duarte, CEO of Duarte, Inc., [Resonate, 2010](https://www.duarte.com/resonate/)
-
-#### Ethos, Pathos, Logos
-
-2,400 years old, still the foundation of every winning pitch:
-
-Ethos: Credibility
-
-Quick team intro, domain experience, why you're the right people to solve this.
-
-Pathos: Emotion
-
-A real story, a user who suffers, a vision that matters. “Imagine a world where…”
-
-Logos: Logic
-
-Architecture, metrics, validation, tech decisions: proof your vision is achievable.
-
-— [Rhetoric, 4th century BCE](https://en.wikipedia.org/wiki/Rhetoric_(Aristotle))
-
-#### Made to Stick — SUCCESs
-
-Six principles from Chip and Dan Heath that make ideas stick, exactly what you need when judges recall your project hours later in deliberation:
-
-Simple: One core message, one sentence
-
-Unexpected: Surprise them by violating expectations
-
-Concrete: Specific, sensory language
-
-Credible: Proof through demos, not claims
-
-Emotional: Appeal to identity and values
-
-Stories: Show how change happens
-
-— [Made to Stick, 2007](https://heathbrothers.com/made-to-stick/)
+The story can matter more than the result. At LA Hacks 2023 we didn't win, but I posted about the project on LinkedIn and it caught an interviewer who was building the exact same thing. A week later I had [my first internship offer](https://thehackathonplaybook.dev/playbook/post-hackathon). Telling a project's story well also carries over to startup pitches, product work, and technical interviews.
 
 ## Anatomy of a Winning Pitch
 
-A battle-tested pitch structure that works whether you have 2 minutes or 10. Based on Andy Raskin's strategic narrative framework from 'The Greatest Sales Deck I've Ever Seen' (Medium, 2016), adapted for hackathons.
+Five parts, adapted for hackathons from Andy Raskin's strategic narrative framework in 'The Greatest Sales Deck I've Ever Seen' (Medium, 2016). The sample lines use a 911-dispatch idea.
 
-TL;DR Open with a shift, show the stakes, then spend most of your time on a working live demo.
+TL;DR Open with a change in the world, show what's at stake, then show the product working live.
 
 Name the Big Shift
 
-Don't open with your product or team. Name the change in the world that creates stakes. Assert a problem and judges resist. Describe a shift and they open up.
+Skip the product and team intro. Name a change in the world that raises the stakes. People argue with a problem you assert, but they're open to a shift that's already happening.
 
-"Every year, 240 million 911 calls are placed in the US, yet dispatcher shortages mean some go unanswered."
+"Every year, 240 million 911 calls are placed in the US, yet dispatcher shortages mean some go unanswered." (240 million is the National Emergency Number Association's estimate.)
 
 Show the Stakes
 
-Paint two futures: the losing path if nothing changes versus what becomes possible. Lean into loss aversion. People fear losing more than they want gaining.
+Paint two futures: what's lost if nothing changes, and what becomes possible.
 
 "Lives are lost to hold music. But what if every call was answered instantly, by an AI that never sleeps?"
 
-Live Demo — The Main Event
+Live Demo
 
-This is what judges care about most. Show it working: let them see it, feel it, believe it. A working demo beats a thousand slides. Judges remember what they saw, not what they heard.
+Show the main flow working, live. The labeled demo took 28% of our Dispatch AI pitch and 42% of TalkTuahBank's, and TalkTuahBank kept the product working on screen after that too.
 
 Call the Twilio number live. Let judges hear the AI dispatcher triage a simulated emergency in real time.
 
 The Magic — How It Works
 
-Brief technical overview. You're the guide, not the hero. Your product is the "magic gift" that gets users to the promised land. Tech is the enabler, not the star.
+Keep it short. Show what the tech does for the user, and save the architecture for Q&A.
 
 "Under the hood: GPT-4 for triage, Twilio for telephony, and a custom priority queue that routes by severity."
 
 Vision and Close
 
-End with where this goes. Skip the feature roadmap. Offer a glimpse of the future your project enables. Leave judges with a feeling, not a feature list.
+End with where this could go. Skip the feature roadmap.
 
 "Imagine a world where no 911 call goes unanswered. We built the first step."
 
@@ -127,23 +57,21 @@ End with where this goes. Skip the feature roadmap. Offer a glimpse of the futur
 
 > “Your prospect is Luke, and you're Obi Wan, furnishing a lightsaber to help him defeat the Empire.”
 
-Raskin's fourth element is to introduce features as magic gifts for overcoming obstacles to the promised land. Judges are the heroes. Your project is the lightsaber. Frame it that way.
+His fourth element introduces features as magic gifts that get the hero past obstacles. In a hackathon pitch, the judges are Luke and your project is the lightsaber.
 
-## Winning Pitches Dissected
+## Three of Our Winning Pitches, Dissected
 
-Theory is great, but seeing real pitches broken down is better. Here are three hackathon-winning pitches analyzed against the frameworks above, with timestamps, exact quotes, and AI-powered structural analysis.
+Dispatch AI and TalkTuahBank are transcribed from the pitch videos, and AdaptEd is rebuilt from its Devpost writeup. The phase labels and technique notes come from a GPT-5 analysis run in March 2026.
 
-TL;DR Three real winners, transcribed and analyzed: all opened with a number, demoed live, and aligned with sponsors.
+TL;DR All three put a number on the problem early and tied the project to a sponsor's challenge.
 
-These are real pitches that won real prizes. Two were transcribed from their presentation videos and the third reconstructed from its Devpost writeup, then analyzed with GPT-5 in March 2026 to surface structural phases, techniques, and the moments that won judges over.
+#### Dispatch AI — UC Berkeley AI Hackathon 2024
 
-#### DispatchAI — UC Berkeley AI Hackathon 2024
-
-Grand Prize ($25K SkyDeck investment) + AI For Good ($25K) + Best Use of Intel AI (1st, roughly $14K in hardware). The largest AI hackathon in the US.
+Grand Prize ($25K SkyDeck investment) + AI For Good ($25K) + Best Use of Intel AI (1st, roughly $14K in hardware).
 
 Pitch Structure Breakdown (4 min 34 sec)
 
-Quotes below are transcribed from the team's pitch video (DispatchAI, UC Berkeley AI Hackathon 2024, recorded June 2024), narrated throughout by team member Spike O'Carroll. Spoken audio is lightly cleaned for repeated words.
+Transcribed from our pitch video, recorded June 2024. My teammate Spike O'Carroll delivered the whole pitch. Repeated words are cleaned up.
 
 0:00 – 0:3914% of pitch
 
@@ -161,7 +89,7 @@ Technique: Loss aversion, moral clarity
 
 > “The voice AI will step into calls when all human agents are busy.”
 
-Technique: Concrete mechanism walkthrough with human-centered safety framing
+Technique: Walks through how it works, with humans kept in the loop
 
 2:55 – 3:178% of pitch
 
@@ -175,59 +103,55 @@ Technique: Mission statement tying product to social impact
 
 Technique: Live phone call to AI dispatcher with real-time UI
 
-Frameworks Identified
-
 Strongest Moment
 
-Spike O'Carroll, DispatchAI pitch video, UC Berkeley AI Hackathon 2024 @ 3:43 – 3:50
+Spike O'Carroll, Dispatch AI pitch video, UC Berkeley AI Hackathon 2024 @ 3:43 – 3:50
 
 > “See, you can see that our call updates in real time on the dashboard, and our transcription is on the right.”
 
-The demo makes it tangible. Real-time transcription plus a live dashboard turns abstract claims into observable behavior. A small glitch and quick recovery even boosted authenticity.
+The call lands on the dashboard while the transcript fills in, so the claim happens in front of the judges. A small glitch and a quick recovery made it more believable.
 
-Why it won: A quantifiable problem (80%+ understaffed centers) met concrete execution (voice AI, live triage dashboard, fine-tuning on real 911 data) and a clear human-in-the-loop safety posture. Tightly aligned with AI For Good, Best Use of Intel AI, and investment readiness.
+Why it won: A sourced number (the understaffing figure comes from the 2023 NENA and Carbyne survey), a working build (voice AI, a live triage dashboard, a model fine-tuned on real 911 data), and a human kept in the loop for safety. It fit AI For Good, Best Use of Intel AI, and investment readiness at once.
 
 [View on Devpost](https://devpost.com/software/dispatch-ai)[Watch pitch](https://www.youtube.com/watch?v=hdpdgxrilQM)
 
 #### TalkTuahBank — HackUTD 2024
 
-1st Overall + Goldman Sachs Challenge Winner. The largest 24-hour hackathon in the US.
+1st Overall + Goldman Sachs Challenge Winner.
 
 Pitch Structure Breakdown (2 min 11 sec)
 
-Quotes below are transcribed from the TalkTuahBank team's demo video (HackUTD 2024, November 2024). The Big Shift and Stakes lines are the team's narrator; the Live Demo, How It Works, and Vision lines are spoken by the product's AI agent during the recorded call. Spoken audio is lightly cleaned for repeated words.
+Transcribed from our demo video, November 2024. The first two lines are our narrator; the rest are the product's AI agent during the recorded call. Repeated words are cleaned up.
 
 0:00 – 0:054% of pitch
 
 > “Did you know that over 1.7 billion adults worldwide don't have access to traditional banking services?”
 
-Technique: Statistic hook to establish global scale and urgency
+Technique: A statistic that shows the scale
 
 0:05 – 0:147% of pitch
 
 > “It's an AI-powered telephonic banking service that brings financial management to anyone with a phone, no internet, or smartphone needed.”
 
-Technique: Low-barrier access framing to maximize perceived impact
+Technique: Stresses how little you need to use it
 
 0:14 – 1:1042% of pitch
 
 > “Hey, I can help with things like checking your account balance, transferring funds, and even getting you started on a loan application.”
 
-Technique: Show-don't-tell role-play demo with concrete details
+Technique: Role-play demo with concrete details
 
 1:10 – 1:4930% of pitch
 
 > “Awesome, you've successfully transferred $200 to account ACC 456.”
 
-Technique: Tangible proof point: completed real transaction
+Technique: A completed transfer as proof
 
 1:49 – 2:1117% of pitch
 
 > “If there's anything else you need, feel free to let me know.”
 
-Technique: Always-on service vision, normalizing conversational banking
-
-Frameworks Identified
+Technique: Banking by phone, available any time
 
 Strongest Moment
 
@@ -235,9 +159,9 @@ TalkTuahBank AI agent, demo video, HackUTD 2024 @ 1:20
 
 > “Awesome, you've successfully transferred $200 to account ACC 456.”
 
-One line converts the concept into a verifiable outcome: money moved. It turns abstract “voice banking” claims into a believable, tangible result.
+Money moves on camera. That one line turns “voice banking” from a claim into something judges watched happen.
 
-Why it won: A high-impact problem (1.7B unbanked) met a low-cost channel (phone calls) and a working demo that executes real financial operations. Credible details (account IDs, dollar amounts, a “loan for college” micro-story) proved feasibility and matched Goldman Sachs' financial inclusion brief.
+Why it won: It works over a plain phone call, so it reaches people with no internet or smartphone. Specific details (account IDs, dollar amounts, a “loan for college” story) made the demo believable and matched Goldman Sachs' financial inclusion brief.
 
 [View on Devpost](https://devpost.com/software/talktuahbank)[Watch pitch](https://www.youtube.com/watch?v=YsH_z1azXSA)
 
@@ -247,29 +171,27 @@ Google Company Challenge Winner. First place among 142 projects.
 
 Pitch Structure (Reconstructed from Devpost)
 
-These lines come from the AdaptEd team's own Devpost writeup (LA Hacks 2024), not from a recorded pitch. Lines in quotation marks are verbatim; the rest are condensed summaries of longer passages. The statistics are the team's own claims and carry no citation on Devpost.
+From our Devpost writeup, not a recorded pitch. Lines in quotation marks are verbatim; the rest are condensed. The statistics are our own claims and have no citation on Devpost.
 
 > “Instead of students adapting to the system, our AI lecturer adapts to students.”
 
-Technique: Contrarian, single-line reframe that reverses expectations
+Technique: A one-line reframe
 
 > 50% of 16M US university students are falling behind. Less than 3% have access to quality tutoring.
 
-Technique: Quantified pain + inequity framing with both percentage and population
+Technique: Two numbers: how many fall behind, and how few get tutoring
 
 > Responsive AI conversation, dynamic slide and whiteboard content, emotion detection.
 
-Technique: Show-don't-tell micro-scenario mapping features to outcomes
+Technique: Features described by what the student gets
 
 > Gemini 1.5 Pro for multi-source aggregation, Fetch.ai agents, Intel Developer Cloud for fine-tuning, Hume for emotion detection.
 
-Technique: Technical transparency: each component assigned a clear role
+Technique: Each tool gets one clear job
 
 > “AdaptEd: interactive and personalized lectures through conversational voice AI.”
 
-Technique: Concise product vision paired with scale implication
-
-Frameworks Identified
+Technique: A one-line product vision
 
 Strongest Moment
 
@@ -277,84 +199,74 @@ AdaptEd team, Devpost writeup, LA Hacks 2024 (reconstructed, not a recorded pitc
 
 > “Instead of students adapting to the system, our AI lecturer adapts to students.”
 
-A crisp, counterintuitive reframe that signals differentiation and mission at once. It gives judges a single mental image to hold, the memorable positioning that wins short-form competitions.
+One sentence that flips the usual setup and gives judges a single picture to remember.
 
-Why it won: An urgent, measurable problem (large population, inequitable tutoring access) met a productized solution and explicit sponsor alignment (heavy Gemini use). It opened with a human story for empathy, quantified scale for impact, demoed a believable workflow, and listed exact integrations to prove execution.
+Why it won: Heavy use of Gemini for the Google challenge, a believable workflow, and a list of exact integrations that showed it was really built.
 
 [View on Devpost](https://devpost.com/software/teachme-3p7bw1)
 
 Patterns Across Winners
 
+Three pitches is a small sample, so treat these as a starting point.
+
 Lead With a Number
 
-All three pitches opened with a concrete statistic or quantified problem: "80% understaffed," "1.7 billion unbanked," "50% falling behind." Numbers create immediate scale and urgency.
+All three put a number on the problem early: "80% understaffed," "1.7 billion unbanked," "50% falling behind." Then they said what it costs people, like "the difference between life and death."
 
-Demo is the Main Event
+Show It Working
 
-DispatchAI allocated 28% and TalkTuahBank allocated 44% of total pitch time to live demo. Judges remember what they saw, not what they heard.
+Dispatch AI made a live phone call to its AI agent. TalkTuahBank moved $200 on camera.
 
 Align With Sponsors
 
-Each winning project explicitly used sponsor technology and called it out: Intel Dev Cloud, Goldman Sachs financial inclusion, Google Gemini. Sponsor alignment is a multiplier.
-
-Emotional Stakes
-
-"Life and death" (DispatchAI), "1.7B excluded" (TalkTuahBank), "students falling behind" (AdaptEd). Every winning pitch converted data into human cost.
+Each one used a sponsor's tech or brief and said so: Intel Dev Cloud, Goldman Sachs' financial inclusion challenge, Google Gemini.
 
 One-Line Reframe
 
-Each pitch had a single sentence that encapsulated the entire vision: "world's first AI 911 operator," "talk to your own personalized bank," "AI lecturer adapts to students."
-
-All 5 Frameworks Present
-
-All five persuasion frameworks (Sinek, Duarte, Aristotle, Heath, Raskin) are visible in each of these three pitches. Winning pitches don't use one framework; they layer all of them.
-
-The pattern is clear: Winning pitches follow a formula. Open with a quantified problem, reframe with a one-liner, spend most of the time on a working demo, align with sponsor priorities, and close with a vision that makes judges feel something. The frameworks above aren't theory. They are what winners use.
+Each had one sentence that held the whole idea: "world's first AI 911 operator," "talk to your own personalized bank," "AI lecturer adapts to students."
 
 ## Know Your Judges
 
-Not all prizes are judged the same way. Track prizes and sponsor prizes reward completely different things. Understanding who's evaluating you and what they care about is the difference between a good pitch and a winning one.
+Track prizes and sponsor prizes are judged by different people, and they want different things.
 
-TL;DR Track prizes reward impact and vision; sponsor prizes reward creative, deep use of their tech. Pitch each differently.
+TL;DR For a track prize, lead with who it helps. For a sponsor prize, put their tech at the center of the demo.
 
-The same pitch wins one prize and loses another. That's not bad luck. It's a failure to read the room. Every category has a different audience with different values. Identify what each cares about and adjust.
+The same pitch can win one prize and miss another. Find out who's judging each prize you're going for, and adjust.
 
-#### Sell the Vision, Tug the Heartstrings
+#### Lead With Who It Helps
 
-Track prizes (“Best AI for Good,” “Best Sustainability Hack”) are judged on impact, vision, and societal benefit. Judges are often academics, nonprofit leaders, or organizers who care about the “why” over the “how.”
+Track prizes (“Best AI for Good,” “Best Sustainability Hack”) are judged on impact, vision, and societal benefit. The judges are often academics, nonprofit leaders, or organizers who care more about why than how. Make them care before you explain how it works.
 
 What Track Judges Want to Hear
 
 -   Bigger picture: who this benefits (society, underserved communities, children, the environment)
--   Human stories that make judges feel the problem, not just understand it
--   Scale vision: the world where your project reaches millions
--   Equity by design: sustainability and accessibility, not afterthoughts
+-   Human stories that make judges feel the problem
+-   Scale: what changes if your project reaches millions of people
+-   Equity by design: accessibility and sustainability built in from the start
 
-Lead with pathos. Make them care before you explain how it works. Technical depth supports the story, it isn't the headline.
+#### Think Like Their Stockholder
 
-#### Showcase Their Software, Think Like a Stockholder
-
-Sponsor prizes are judged by company employees thinking about their product. They want creative, deep usage of their platform, something they can point to internally: “look what someone built with our tech.”
+Sponsor prizes are judged by company employees thinking about their product. They want a creative, deep use of their platform they can point to internally. The question in their head is “does this project show our software can do something valuable?”
 
 What Sponsor Judges Want to See
 
--   Unexpected usage: their tech in a way they hadn't considered, not a “hello world” integration
--   New market: a use case that shows a novel monetization path for their product
--   Center stage: their platform as the centerpiece of your demo, not a footnote
--   Real depth: proof you read the docs and pushed past the quickstart
-
-Think like a stockholder. The question in their head is “does this project show our software can do something valuable?” Make the answer obvious.
+-   Unexpected usage: their tech used in a way they hadn't considered, well past a “hello world” integration
+-   New market: a use case that could make them money
+-   Center stage: their platform at the center of your demo
+-   Real depth: proof you read the docs and went past the quickstart
 
 #### Read the Room
 
-The best pitchers don't deliver the same pitch every time. They adapt in real time based on who's sitting in front of them.
+Adjust the pitch to whoever's sitting in front of you, while you're giving it.
 
-If the format allows, ask one question up front: “Are you all in the engineering field?” Their answer tells you how to weight your pitch.
+One project was pitched three ways to three judges: tech for the engineer, market for the VC, UX for the designer. It took first place.
+
+If the format allows, ask one question up front: “Are you all in the engineering field?” Their answer tells you how to weight your pitch. When I [judged LA Hacks](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks), a couple of teams spent around 30 seconds explaining what OpenAI Agents or ElevenLabs Agents are. The same kind of question fixes that: “Are you familiar with ElevenLabs Agents?” If they are, skip the definition.
 
 Engineers
 
 -   Lead with architecture and system design
--   Highlight novel algorithms or clever technical tradeoffs
+-   Point out clever algorithms or tradeoffs
 -   Talk scalability, latency, and edge cases
 -   Show the code if they want to see it
 
@@ -362,145 +274,161 @@ Non-Technical
 
 -   Lead with the human problem and who it helps
 -   Emphasize UX, market opportunity, and user stories
--   Use analogies to make the tech feel intuitive
--   Focus on what it does, not how it works
+-   Give them an analogy they can repeat to the other judges
+-   Show what it does and skip how it works
 
 Unknown / Mixed
 
--   Lead with impact and vision (universally resonant)
--   Let the demo speak for itself
--   Pivot to technical depth only if follow-up questions go that direction
--   Have both versions rehearsed so you can switch mid-pitch
+-   Lead with impact and vision
+-   Let the demo do the explaining
+-   Go technical only if their questions do
 
-This is rehearsed, not improvised. Practice two versions: one leading with technical depth, one with impact. Switch based on who you're talking to.
+Rehearse both versions before judging, one that leads with technical depth and one that leads with impact, so you can switch mid-pitch.
 
-The meta-skill: Winning teams prepare a pitch that bends. The core story stays the same; the emphasis shifts to the audience. A 30-second tweak in framing separates “interesting project” from first place.
+## The Appendix Strategy
+
+Leave things out of the main pitch on purpose, and have a slide ready for each one a judge might ask about.
+
+TL;DR Keep the main pitch short and build a backup slide for each question you expect in Q&A.
+
+Pitches are short and judges are tired. At LA Hacks I had five minutes per team: about 1.5 for the pitch and demo, then 3.5 for questions. Some teams spent all five pitching. Check how your event splits the time and plan where you'll stop.
+
+#### The Essentials
+
+What every judge sees.
+
+-   Problem: why this matters
+-   Solution: what you built
+-   Live demo: the main flow, working
+-   Impact: what could be
+
+Q&A triggers
+
+Q&A triggers
+
+#### The Backup Slides
+
+Opened only when a judge asks.
+
+-   Architecture: how it actually works
+-   Tradeoffs: what you chose and why
+-   Edge cases: what breaks at scale
+-   Cost: what it takes to run at scale
+-   What's next: roadmap beyond the hackathon
+
+Why It Helps
+
+Keeps the Pitch Short
+
+Everything you move to the appendix frees time for the demo and for questions.
+
+Wins the Q&A
+
+Q&A is where judges fill in the rubric categories your pitch skipped and find out whether you understand what you built. A category that never comes up may get a low score, or a zero.
+
+Looks Like Confidence
+
+Pulling up a slide for a follow-up shows you thought past the pitch. It's really just preparation, done while sleep-deprived.
 
 ## The Demo Video
 
-A polished demo video can be the difference between walking away empty-handed and pocketing serious cash. It's the secret weapon most teams neglect.
+Live demos fail, and judges forget projects more than you'd expect.
 
-TL;DR A demo video puts your project on stage and follows judges into deliberation when you can't.
+TL;DR Record a demo video. It's your backup when the live demo dies, and judges can rewatch it in deliberation.
 
-#### Your Show-and-Tell
+#### When the Demo Dies
 
-A video puts your project on stage. Code hidden behind a repo or README rarely stands out. Judges see it, feel it, and remember it.
-
-Visual proof
-
-beats any description
+The Wi-Fi at LA Hacks was spotty, and some teams couldn't run their demo at all. Without a backup video, I had no clear way to see what those projects did.
 
 #### Follows the Judges
 
-A video follows judges into deliberation. Live presentations get rushed and forgotten. Judges forget projects more than you'd expect; your video is the visual reminder.
+Judges revisit submissions during deliberation. A live pitch gets rushed and forgotten, and code sitting in a repo rarely stands out. The video is still there.
 
-Persists
+### A demo video worth copying
 
-after you leave the room
-
-#### Recording Tools
-
-On Mac, I reach for [Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R). CanVid covers the same ground on Windows. Both handle auto-zoom, instant editing, effects, and selfie overlays, saving hours when every hackathon hour matters.
-
-My pick: Screen Studio. Auto-zoom and cursor smoothing alone make a 60 second demo look like a product launch. Worth a look on Mac.
-
-Key Features
-
--   Automatic zoom on cursor movements
--   Built-in webcam overlay for personality
--   Effects baked in seconds, not hours
-
-### A demo video that turned work into an outcome
-
-Notice how it gets the product on screen fast, narrates what the viewer is seeing, and lets the actual interaction do the convincing.
+The product is on screen right away, and the narration tells you what you're looking at.
 
 #### SoundSearch — AIATL Hackathon
 
-A solo first-place accessibility tool that guides users through complex websites via real-time voice over a phone call. Built with NLX.ai and AWS, demoed on Google Flights. The recording reached a recruiter and turned into an internship offer.
+A solo first-place accessibility tool that guides users through complex websites with real-time voice over a phone call. Built with NLX.ai and AWS, demoed on Google Flights. The recording reached a recruiter and turned into an internship offer.
 
-Why it works: The embed skips the problem-framing intro, so the product is on screen in the first beat. No setup to sit through: the recruiter hears the voice assistant walk Google Flights end to end and gets it instantly. The video became the portfolio piece, not the repo.
+Why it works: The embed starts at 0:22, after the problem intro, so the voice assistant is already walking through Google Flights in the first beat.
 
 [Watch on YouTube](https://youtu.be/RgH-i9SYj-o?t=22)[View on Devpost](https://devpost.com/software/maybe-zc19va)
 
 ### Screen Studio
 
-The screen recorder I use for every hackathon demo. Auto-zoom and cursor smoothing make a 60-second demo look like a product launch, with basically no editing time. Worth a look if you're on Mac.
+The screen recorder I use for every hackathon demo. Auto-zoom and cursor smoothing make a 60-second demo look polished, with basically no editing time. Worth a look if you're on Mac. On Windows, CanVid covers the same ground.
 
 Automatic cursor zoomSmooth cursor glideWebcam overlay1-click export presets
 
 [Check it out](https://screenstudio.lemonsqueezy.com?aff=LpD9R)
 
-The hack: Never underestimate a good show-and-tell. Code makes your project great, but a compelling demo video and pitch seal the deal. Don't let weak presentation overshadow your work.
+### 
 
-## The Appendix Strategy
+TL;DR Start with why the problem matters to you, then keep switching between how things are and how they could be.
 
-Assume your pitch will be incomplete. Design it that way on purpose. This counterintuitive technique is what separates good pitchers from great ones.
+#### Start With Why
 
-TL;DR Put 90% in the main pitch; pre-build appendix slides to win the Q&A where projects are actually decided.
+> “People don't buy what you do, they buy why you do it.”
 
-Be selective. Pitches are short and judges are tired. You can't explain everything in 3 minutes and still keep the room.
+Pitching outside-in sounds like “We built an app that…” Sinek's Golden Circle runs the other way: start with why you care, then how, then what.
 
-#### The 90% Slides
+— Simon Sinek, author and TEDx speaker, [Start With Why, 2009](https://simonsinek.com/books/start-with-why/)
 
-The essentials ~90% of judges care about: problem, solution, demo, and impact.
+#### What Is vs. What Could Be
 
--   Problem: why this matters
--   Solution: what you built
--   Live demo: the main event
--   Impact: what could be
+> “You are not the hero who will save the audience; the audience is your hero.”
 
-60-70%
+Her Sparkline swings between what is and what could be, then resolves the tension with your solution.
 
-of your time on the live demo
+— Nancy Duarte, CEO of Duarte, Inc., [Resonate, 2010](https://www.duarte.com/resonate/)
 
-Q&A triggers
+#### Ethos, Pathos, Logos
 
-Q&A triggers
+Three appeals, about 2,400 years old:
 
-#### The 20% Slides
+Ethos: Credibility
 
-Pre-built answers you don't show unless asked, ready for the questions judges are likely to raise.
+Your domain experience, and why your team is the right one to solve this.
 
--   Architecture: how it actually works
--   Tradeoffs: what you chose and why
--   Edge cases: what breaks at scale
--   What's next: roadmap beyond the hackathon
+Pathos: Emotion
 
-Instant
+A real user who suffers. “Imagine a world where…”
 
-navigate to the right slide when asked
+Logos: Logic
 
-Why This Works
+Architecture, metrics, validation, and tech decisions that prove it can work.
 
-Shows Extra Preparation
+— [Rhetoric, 4th century BCE](https://en.wikipedia.org/wiki/Rhetoric_(Aristotle))
 
-Pull up a prepared slide for a follow-up and judges notice. It signals you thought deeper than the pitch.
+#### Made to Stick — SUCCESs
 
-Keeps the Pitch Short
+Chip and Dan Heath's six principles for ideas judges still remember hours later in deliberation:
 
-A shorter main pitch frees more time for the live demo. Judges would rather see it work than hear you describe it.
+Simple: One core message, one sentence
 
-Wins the Q&A
+Unexpected: Surprise them by violating expectations
 
-Real evaluation happens in the follow-up questions. The last 1-2 minutes reveal whether you understand what you built.
+Concrete: Specific, sensory language
 
-Looks Like Confidence
+Credible: Proof through demos, not claims
 
-It looks like confidence. It's really just preparation while sleep-deprived. Navigate to the slide, answer, move on.
+Emotional: Appeal to identity and values
 
-The failure pattern: Strong projects lose in Q&A every hackathon. A fair question. A pause. “Good question.” Time's up. Prep answers, not just a pitch. The conversation after is where winners are decided.
+Stories: Show how change happens
+
+— [Made to Stick, 2007](https://heathbrothers.com/made-to-stick/)
 
 ### 
 
-TL;DR Pitching on no sleep strips the polish: be vulnerable, talk with judges not at them, and rehearse until it's muscle memory.
+TL;DR Rehearse until the pitch is muscle memory, and be upfront about what's still rough.
 
 #### The Power of Vulnerability
 
 > “In order for connection to happen, we have to allow ourselves to be seen, really seen.”
 
-Later in the same talk, Brown describes what the people she calls wholehearted had in common: “these folks had, very simply, the courage to be imperfect.” No sleep strips away the polish. You explain what you built honestly, flaws included. You stop trying to impress and start trying to communicate. That makes you more convincing.
-
-Share a real setback: “We thought X, then talked to users and learned Y.” Admitting what you didn't know makes you more human and credible.
+Later in the talk, Brown says the people she calls wholehearted had “the courage to be imperfect.” No sleep strips the polish anyway, so explain what you built honestly, flaws included, and aim to be understood instead of impressive. Share a real setback: “We thought X, then talked to users and learned Y.”
 
 — Brené Brown, research professor, University of Houston Graduate College of Social Work, [The Power of Vulnerability, TEDxHouston 2010](https://www.ted.com/talks/brene_brown_the_power_of_vulnerability)
 
@@ -508,7 +436,7 @@ Share a real setback: “We thought X, then talked to users and learned Y.” Ad
 
 > “Speakers who talk about what life has taught them never fail to keep the attention of their listeners.”
 
-Carnegie's principle: speak with judges, not at them. The most powerful moments come from genuine stories: the 3AM breakthrough, the pivot that saved the project, the user interview that changed everything.
+Speak with judges, not at them. A real moment from your weekend holds attention better than a feature list.
 
 The Carnegie Structure
 
@@ -516,56 +444,38 @@ The Carnegie Structure
 2.  Say it
 3.  Tell them what you said
 
+In a 1.5-minute slot, keep the first and last steps to one sentence each.
+
 — Dale Carnegie, American writer and lecturer, [The Quick and Easy Way to Effective Speaking, 1962](https://www.simonandschuster.com/books/The-Quick-and-Easy-Way-to-Effective-Speaking/Dorothy-Carnegie/Dale-Carnegie-Books/9780671724009)
 
 Practice = Code
 
-Rehearse your pitch as much as you code. Most teams rehearse once. Winners rehearse until it's muscle memory.
-
-Prep for Q&A
-
-Anticipate every question: architecture, tradeoffs, edge cases, cost, scale, what's next. Have an appendix slide for each.
+Rehearse your pitch as much as you code, until it's muscle memory.
 
 Record Yourself
 
-Watch yourself pitch. You'll catch filler words, pacing, and missed beats you'd never notice live.
+Record a practice run and watch it. You'll catch filler words, pacing, and missed beats you won't notice live.
 
 > “Your purpose is to make your audience see what you saw, hear what you heard, feel what you felt.”
 
 — Dale Carnegie, American writer and lecturer, [The Quick and Easy Way to Effective Speaking, 1962](https://www.simonandschuster.com/books/The-Quick-and-Easy-Way-to-Effective-Speaking/Dorothy-Carnegie/Dale-Carnegie-Books/9780671724009)
 
-Winning isn't about cramming more tech into the pitch. It's about being ready for the conversation after. Winning teams aren't always the most technical. They make judges feel something, believe the vision, and think “that team gets it.”
-
-Practice your pitch as much as your code. Use analogies to make tech relatable. Show passion; enthusiasm is contagious. Above all, pivot to judges' reactions. The best pitchers don't recite. They converse.
-
-In hackathons and in life, it's not just about what you build. It's about the story you tell.
-
 ## Pitching Checklist
 
-A step-by-step summary for crafting your next hackathon pitch. Follow this before every demo day.
+Run through this before judging starts.
 
-TL;DR Lead with why, build around the 90%, match the prize, spend 60-70% on the demo, and prep the Q&A.
+TL;DR Find out how your slot splits between pitch and Q&A, and rehearse a pitch that stops in time for questions.
 
-Start with WHY: lead with the problem and why it matters to you, not what you built
+Open with the problem and why it matters to you
 
-Build the main pitch around the 90%: problem, solution, live demo, impact
+Main pitch: problem, what you built, a live demo of the main flow, where it could go
 
-Identify the prize type (track or sponsor) and adjust your emphasis to match
+Match the prize: impact for a track prize, their tech at the center for a sponsor prize
 
-Track prizes: lead with impact and the bigger picture. Sponsor prizes: make their tech the hero
+Rehearse a technical and an impact version, then ask judges their background
 
-Ask judges their background, then adapt live: technical depth for engineers, vision for everyone else
+Build appendix slides for likely questions (architecture, tradeoffs, edge cases, roadmap, cost) and know where each one is
 
-Prep appendix slides: architecture, tradeoffs, edge cases, roadmap, cost at scale
+Check how the slot splits between pitch and Q&A, and plan where you'll stop
 
-Spend 60-70% of pitch time on the live demo so judges see it working
-
-Record a demo video. It follows judges into deliberation when you can't
-
-Practice Q&A: anticipate each question, prep an answer, know which slide to open
-
-Rehearse two versions (technical depth and impact) so you can switch mid-pitch
-
-End with the vision. Leave judges with a feeling, not a feature list
-
-Remember: The pitch isn't a summary of what you built. It's a performance that makes judges believe what you could build. Master storytelling and you win hackathons, hearts, minds, and maybe your dream job.
+Record a backup demo video

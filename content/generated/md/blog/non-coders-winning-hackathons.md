@@ -1,74 +1,59 @@
 # Non-Coders Winning Hackathons: How Experts Beat Developers
 
-> Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic's global hackathon, beating developers with Claude Code.
+> A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.
 
 Canonical: https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons
-Last updated: 2026-06-24
+Last updated: 2026-09-14
 
 ---
 
-## A Lawyer Beat Hundreds of Developers
+## A Lawyer Won Anthropic's Hackathon Without Writing Code
 
-A non-coder won.
+Mike Brown, a personal injury lawyer, took 1st place at **Anthropic's Built with Opus 4.6 hackathon**, a global virtual event held February 10 to 16, 2026. Co-host Cerebral Valley puts the applicant count at 13,000. According to Anthropic's winners post, 500 were selected and only 1 of the 5 winners was a professional developer. In the same post, **Brown says he didn't write a single line of code, or even read one.**
 
-At **Anthropic's Built with Opus 4.6 hackathon**, a global virtual event held February 10 to 16, 2026, a personal injury lawyer named Mike Brown took 1st place, ahead of hundreds of experienced developers. A cardiologist, Dr. Michal Nedoszytko, placed 3rd. 13,000 people applied, 500 were selected, and most of them were developers. **Brown says he did not write, or even read, a single line of code.**
+His project, **CrossBeam**, reads California ADU building-permit plan sets and correction letters, cross-references city and state code, and returns an action plan in about 20 minutes instead of weeks. He built it with Claude Code, drawing on years of legal experience.
 
-| Lawyer, no code | Doctor, 7 days | Hackathons entered | To ship an app |
-| --- | --- | --- | --- |
-| 1st | 3rd | 200+ | 3 hrs |
+## Two More Non-Coders Who Won
 
-Not a fluke. Across major hackathons in 2025 and 2026, non-coders with deep domain expertise keep outperforming technical teams. AI coding tools (Cursor, Claude Code, ChatGPT) erased the coding barrier, and that flipped the whole game. The one thing that now wins is hidden in plain sight, and most developer teams do not have it.
+Nina Kolari, a non-technical entrepreneur who learned iOS development with AI tools, built **Aphasio**, an iPhone communication app for people with aphasia, in **3 hours** and beat 27 other teams at the Cursor hackathon in Chiang Mai (her write-up on ninakolari.com, December 2025).
 
-## Why Domain Expertise Now Beats Coding Skill
+Rene Turcios, a self-described 'vibe coder' who doesn't know how to code, has competed in **200+ hackathons** since 2023 and keeps winning prizes (The San Francisco Standard, July 2025).
 
-Judges do not award prizes for clean code. They award prizes for **solving a real problem**. That is the edge developers cannot fake.
+These three show that AI coding tools like Cursor, Claude Code, and ChatGPT can get someone who knows a problem well to a working prototype. They aren't enough to say non-coders usually beat developers.
 
-A cardiologist knows exactly which patient-monitoring data matters. He describes the app in plain English, the AI builds it, and the result is more useful than what most developers would even think to make.
+## What Domain Experts Bring
 
-> You don't have to know programming to create solutions.
+Judges reward projects that solve a real problem, and a lawyer or a doctor starts out knowing which problems in their field are real. Kolari's write-up says much the same about her win: she built something simple that solved a specific, painful problem, and the judges responded to clarity.
+
+Dr. Michal Nedoszytko, who placed 3rd at the Anthropic event, is a different case. Anthropic describes him as a cardiologist who had spent 20 years building healthcare software alongside his practice, and he built PostVisit.ai in 7 days. He scopes his own claim:
+
+> Currently, you don't have to know programming to create solutions, or at least prototypes of solutions, for something that you can use personally.
 >
 > Dr. Michal Nedoszytko, interventional cardiologist and creator of PostVisit.ai, 3rd place at Anthropic's Built with Opus 4.6 hackathon (ReachMD, The Convergence, 2026)
 
-> **Win:** The playing field is level. When the code writes itself, the person who understands the problem best wins.
-
-## The Tools: Cursor and Claude Code
-
-**Cursor** is an AI code editor: describe what you want in plain English, it writes the code. **Claude Code** is Anthropic's AI coding assistant. Together they enable **vibe coding**, where you describe features and the AI builds them.
-
-1. **Describe it** Tell the AI what to build in plain English. Be specific about the problem and the user experience.
-2. **Test it** Look at what it made. You don't need to read the code, just check that it works.
-3. **Iterate** Say what to change: 'make the button bigger,' 'add a loading state,' 'fix the mobile layout.'
-4. **Ship it** Deploy with one command. Your project is live.
-
-> **Note:** You don't need to understand the code. You need to understand the problem and describe what you want clearly. The AI handles the rest.
-
-## The Winning Formula for Non-Coders
-
-Start with a problem you know cold from your own work. Then **compete where you have the advantage**, not where developers do.
+So coding skill still helps. If you don't have it, compete on what you know.
 
 **Do:**
 
-- Win on problem understanding and UX
-- Build from deep professional experience
-- Tell an authentic story about the pain
-- Solve one thing extremely well
+- Win on the problem and the user experience
+- Pick one specific problem and keep the build simple
 
 **Don't:**
 
 - Competing on technical complexity
-- Building outside your expertise
 - Copying what developer teams build
 - Padding it with extra features
 
-When judges see a product built by someone who truly lives the problem, it stands out from the generic 'cool tech demo' most developer teams ship.
+## The Tools: Cursor and Claude Code
 
-## Proof: 3 Hours, One App, 200+ Hackathons
+**Cursor** is an AI code editor, and **Claude Code**, which Brown used, is Anthropic's AI coding assistant. In both, you describe what you want in plain English and the AI writes the code. People call this **vibe coding**.
 
-Mike Brown's 1st-place project at Anthropic's Built with Opus 4.6 hackathon (February 2026) was **CrossBeam**, an AI tool that reads California ADU building-permit plan sets and correction letters, cross-references city and state code, and returns an action plan in about 20 minutes instead of weeks. He built the whole app with Claude Code, leaning on years of legal experience to make something developers would not have imagined.
+1. **Describe it** Say what to build. Be specific about the problem and what the user sees.
+2. **Try it** Use what it made. You don't have to read the code to check that it works.
+3. **Say what to change** 'Make the button bigger,' 'add a loading state,' 'fix the mobile layout.'
+4. **Deploy** Ship it with one command when it's ready.
 
-Here's how fast this moves: Nina Kolari, a non-technical entrepreneur who learned iOS development with AI tools, built **Aphasio**, a working iPhone communication app for people with aphasia, in **3 hours** at the Cursor hackathon in Chiang Mai, and won against 27 other teams (her write-up on ninakolari.com, December 2025).
-
-> **Tip:** Rene Turcios, a self-described 'vibe coder' who does not know how to code, has competed in 200+ hackathons since 2023 and keeps winning prizes (The San Francisco Standard, July 2025). Consistency and strategy beat raw coding ability.
+> **Two Things to Do Yourself:** Keep API keys (the passwords your app uses to reach services like OpenAI) out of your code and off GitHub: put them in a .env.local file yourself, not in the chat. And before you share the link, open the live site and try it the way a judge would.
 
 ## Your First Hackathon, Step by Step
 
@@ -79,8 +64,6 @@ Here's how fast this moves: Nina Kolari, a non-technical entrepreneur who learne
 - [ ] Find a hackathon with a beginner track and mentors
 - [ ] Lead your pitch with the problem and your expertise, not the tech
 
-The barrier you were worried about is gone. The expertise you already have is the part that wins. **Go enter one.**
-
-[Non-Coder Hackathon Section](https://thehackathonplaybook.dev/non-coders): Installable AI skills, setup guides, and strategies for professionals with zero coding experience.
+[Non-Coder Hackathon Section](https://thehackathonplaybook.dev/non-coders): Installable AI skills, setup guides, and strategies for professionals who don't code.
 
 [Hackathon Tips for Beginners](https://thehackathonplaybook.dev/blog/hackathon-tips-for-beginners): Everything you need for your first hackathon, from prep to pitch.

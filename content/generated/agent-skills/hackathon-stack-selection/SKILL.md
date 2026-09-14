@@ -3,9 +3,9 @@ name: hackathon-stack-selection
 description: "Choose a hackathon tech stack optimized for shipping in 24-48 hours. Use when picking frameworks, hosting, and AI tooling at the start of a hackathon."
 ---
 
-## The Stack That Wins, In One Glance
+## The Default Stack, In One Glance
 
-Skip the research. After 50+ hackathons, here's the default stack I reach for and recommend to every team I mentor.
+After 50+ hackathons, this is the default stack I reach for and recommend to teams I mentor.
 
 1. **Frontend** Next.js 16 + Tailwind CSS + shadcn/ui
 2. **Backend** Python FastAPI, or Next.js API routes if you want one language
@@ -13,11 +13,11 @@ Skip the research. After 50+ hackathons, here's the default stack I reach for an
 4. **Deployment** Vercel for the frontend, Railway for the backend
 5. **AI** OpenAI or Claude API, plus whatever the sponsor wants
 
-> **The short version:** The best hackathon stack isn't the most impressive one. It's the one that gets a polished, deployed demo done in 24-48 hours. There's one rule at the end of this post that beats every tool choice above, and most teams ignore it.
+> **Use what your team knows:** If you're going for the win and your team is faster in something else, use that instead. The goal is a polished, deployed demo in 24-48 hours, and a team that writes Vue shouldn't spend those hours learning React.
 
-## Frontend: Next.js, Every Time
+## Frontend: Next.js
 
-**Next.js with React is the most popular frontend at hackathons**, and it earns the spot. Server-side rendering for fast demos, file-based routing for new pages in seconds, and a massive component ecosystem you can paste from.
+I default to **Next.js with React**. Each page is just a file, and server rendering is built in. For UI, shadcn/ui copies ready-made components into your project as code you can edit.
 
 `terminal`:
 
@@ -42,7 +42,7 @@ npm run dev
 
 ## Backend: Python or Node, Nothing Exotic
 
-**Python (FastAPI or Flask) and Node.js (Express) cover almost every hackathon backend.** Python wins for AI and ML work thanks to its libraries. Node wins when your frontend is already JavaScript and you want one language across the stack.
+Pick **Python (FastAPI or Flask)** or **Node.js (Express)**. Python fits AI and ML work better because of its libraries. Node makes sense when your frontend is already JavaScript and you want one language.
 
 `main.py`:
 
@@ -58,39 +58,40 @@ def health():
     return {"status": "ready to hack"}
 ```
 
-> **Tip:** Better still, skip the server. Serverless functions on Vercel or AWS Lambda remove server management entirely, and Railway and Render do one-click deploys that save you hours.
+> **Tip:** If your backend is a few simple endpoints, serverless functions on Vercel or AWS Lambda mean no server to manage. For anything heavier, run FastAPI on Railway or Render, which both do one-click deploys.
 
 ## Database and Auth: Firebase or Supabase
 
-**Firebase and Supabase are the go-to picks**, and the reason is speed: instant setup, real-time data, auth out of the box, and free tiers that easily cover a weekend.
+Both come with sign-up and login built in. Pick between them by how you want to store data.
 
 **Do:**
 
 - Firebase for NoSQL and real-time features
 - Supabase for PostgreSQL and SQL
-- Both configured in under 10 minutes
-- Free tiers that cover a hackathon with room to spare
+- Free tiers that cover a typical hackathon
 
 **Don't:**
 
 - Self-hosted databases (too much setup time)
 - Complex ORM configurations
 - Rolling your own auth from scratch
-- Any database without built-in auth
+- A database without built-in auth, if your app needs logins
+
+All of this assumes you're there to win. If you're there to learn, a new tool can be worth the whole weekend. At LA Hacks 2023 I spent the hackathon learning vector databases for a RAG-style chat app, and we didn't win. I posted about it on LinkedIn anyway, and that post led to my first internship. The vector database knowledge also landed me a full-time job.
 
 ## AI APIs: Read the Docs Before You Arrive
 
-AI APIs are now table stakes. **Most sponsor challenges involve AI in some way**, so pick a model and learn its docs cold.
+Pick one model provider and make a test call to its API before you arrive. Keys and rate limits are easier to sort out at home.
 
 | OpenAI | Anthropic | Google | Fast Inference |
 | --- | --- | --- | --- |
 | GPT-4o | Claude 4 | Gemini | Groq |
 
-> **The #1 time-saver:** Check the sponsor list and pre-read their API docs before the event starts. Winning projects often integrate 2-3 sponsor APIs, and walking in already knowing them is the single biggest hour-saver of the weekend.
+> **Read sponsor docs early:** If you're going for sponsor prizes, check the sponsor list and read their API docs before the event starts too.
 
-## Deployment: A Live URL Beats Localhost
+## Deployment: Ship a Live URL
 
-Judges want to see a real URL, not your laptop. **A deployed project beats a localhost-only demo every time**, and it costs one command.
+Deploy so judges can open a real URL instead of watching localhost on your laptop. It's one command.
 
 `terminal`:
 
@@ -102,11 +103,11 @@ npx vercel deploy
 railway up
 ```
 
-> **Warning:** Building mobile? Use Expo for React Native and test instantly with a QR code. Building hardware? Record a working video demo as backup, because live hardware fails at the worst moment.
+> **Warning:** For mobile, use Expo for React Native and test on your phone with a QR code. For hardware, record a working video demo as a backup in case the live hardware fails.
 
-## The Demo Video Outlives Your Whole Team
+## Record the Demo Video
 
-Here's the part most teams skip. **The demo video is the only piece of your submission that keeps working after you leave the room.** Judges rewatch it during deliberation, recruiters find it on YouTube, and sponsors clip it for their own posts. Skipping it is the highest-cost mistake you can make.
+The demo video keeps working after you leave the table: judges revisit submissions during deliberation, and recruiters can find it on YouTube. Lock the tools fast so the weekend goes to building, then put your last hours into the video.
 
 **Do:**
 
@@ -118,14 +119,8 @@ Here's the part most teams skip. **The demo video is the only piece of your subm
 **Don't:**
 
 - QuickTime and built-in recorders (no zoom, no polish)
-- 5-minute recordings (judges scrub, not watch)
+- 5-minute recordings (judges skip through them)
 - Slide-only videos that never show the product
 - No voiceover or captions
 
-## The One Rule That Beats Every Tool
-
-> **The golden rule:** The best stack is the one your team already knows. Don't learn React if your team writes Vue. Don't pick Rust if your team writes Python. Speed of execution beats technical novelty, always.
-
-That's the rule I promised up top. The stack in this post is a strong default, but if your team is faster in something else, **use that instead and ship more in less time.** Lock the tools fast so you can spend the weekend building, then put your last hours into the demo video.
-
-[Hackathon Submission Playbook](https://thehackathonplaybook.dev/playbook/submission): Demo video examples that won the largest 24-hour hackathon in the US and landed an internship offer.
+[Hackathon Submission Playbook](https://thehackathonplaybook.dev/playbook/submission): Demo video examples and the recording setup I use.

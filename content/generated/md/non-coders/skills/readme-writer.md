@@ -1,16 +1,16 @@
-# GitHub Writer
+# README Writer
 
-> Turns your finished project into a winner-grade GitHub README: a centered hero, badges, a clickable demo video, an architecture diagram, and team cards, then sets the repo's About description, website, and topics so recruiters and judges can find it.
+> Writes your README (your repo's front page) with badges, a demo video, a how-it-works diagram, and team cards. It also fills in the repo's description, website, and topics so judges and recruiters can find it.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/readme-writer
 
 ---
 
-Turns your finished project into a winner-grade GitHub README: a centered hero, badges, a clickable demo video, an architecture diagram, and team cards, then sets the repo's About description, website, and topics so recruiters and judges can find it.
+Writes your README (your repo's front page) with badges, a demo video, a how-it-works diagram, and team cards. It also fills in the repo's description, website, and topics so judges and recruiters can find it.
 
 Category: Shipping
 
-Usage: `/readme-writer [your project name or repo]` (Writes a polished GitHub README for your hackathon project)
+Usage: `/readme-writer [your project name or repo]` (Writes your GitHub README)
 
 Write the README a recruiter or judge sees first. For a hackathon project the README is a landing page, not API docs: it leads with proof (demo, awards, the result), stays scannable, and is honest about what a weekend build is and is not. Aim for the bar set by repos like DispatcherAI, TalkTuahBank, and AdaptEd: a centered hero, real badges, a clickable demo poster, and tables instead of walls of text.
 

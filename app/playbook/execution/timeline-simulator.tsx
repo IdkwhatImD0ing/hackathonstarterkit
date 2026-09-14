@@ -76,7 +76,7 @@ const PHASES: Phase[] = [
     textClass: "text-spark",
     borderClass: "border-spark/30",
     barColor: "oklch(0.78 0.16 85)",
-    description: "End-to-end flow working. Ugly is fine. Prove the concept.",
+    description: "Get the flow working end to end, however ugly.",
   },
   {
     id: "build",
@@ -172,7 +172,7 @@ function generateFeedback(hours: Record<PhaseId, number>): Feedback[] {
     results.push({
       type: "warning",
       icon: Mic,
-      message: `You're burning ${hours.demo}h of build time on demo prep. The optimal answer is 0: submit your code first, then prep your pitch and record your demo in the gap between submission and judging. Don't waste build hours on something you can do after code freeze.`,
+      message: `You're spending ${hours.demo}h of build time on demo prep. If your event has a gap between submission and judging, you can drop this to 0h: submit your code, then record the demo and prep the pitch in that gap. Check the rules before you plan on it, since many events need the video link at submission.`,
     });
   }
 
@@ -180,7 +180,7 @@ function generateFeedback(hours: Record<PhaseId, number>): Feedback[] {
     results.push({
       type: "warning",
       icon: Send,
-      message: `You're spending ${hours.submit}h on rehearsal during the build window. The optimal answer is 0: submit early, then use the time between submission and demos to rehearse your pitch. Every hour here is an hour stolen from building.`,
+      message: `You're spending ${hours.submit}h on rehearsal during the build window. If there's time between submission and judging, submit early, rehearse then, and keep this at 0h.`,
     });
   }
 
@@ -188,16 +188,16 @@ function generateFeedback(hours: Record<PhaseId, number>): Feedback[] {
     results.push({
       type: "warning",
       icon: Lightbulb,
-      message: `You're spending ${hours.ideation}h on ideation during the hackathon. The optimal answer is 0: finalize your idea, assign roles, and sketch architecture async before the event starts. When the clock starts, you should already know what you're building.`,
+      message: `You're spending ${hours.ideation}h on ideation during the hackathon. If you're going for the win, this should be 0h: have the idea, roles, and architecture sketch done before the event starts. If you're there to learn and meet people, brainstorming at the event is fine.`,
     });
   }
 
-  if (hours.ideation === 0 && hours.demo === 0 && hours.submit === 0 && total > 0) {
+  if (hours.ideation === 0 && hours.demo === 0 && hours.submit === 0 && total > 0 && total <= TOTAL_HOURS) {
     results.push({
       type: "success",
       icon: Trophy,
       message:
-        "Smart. Ideation happens before the hackathon, demo prep and pitch rehearsal happen after code freeze. Every hackathon hour goes to building.",
+        "This is the plan for competing to win: pick the idea before the event, and do the demo and rehearsal after you submit if your event allows it. That leaves the event hours for building.",
     });
   }
 
@@ -206,7 +206,7 @@ function generateFeedback(hours: Record<PhaseId, number>): Feedback[] {
       type: "tip",
       icon: Rocket,
       message:
-        "Consider at least 2h for the core pipeline. Proving the concept works end-to-end before investing more time saves you from hour-18 disasters.",
+        "Give the core pipeline at least 2h so you find out early whether the flow works end to end.",
     });
   }
 
@@ -214,7 +214,7 @@ function generateFeedback(hours: Record<PhaseId, number>): Feedback[] {
     results.push({
       type: "warning",
       icon: Moon,
-      message: `${hours.build}h of building with no breaks? Exhaustion kills productivity faster than lost hours. Sleep in shifts.`,
+      message: `That's ${hours.build}h of building with no breaks. Plan to sleep in shifts.`,
     });
   }
 
@@ -223,7 +223,7 @@ function generateFeedback(hours: Record<PhaseId, number>): Feedback[] {
       type: "tip",
       icon: Sparkles,
       message:
-        "Less than 2h for polish means judges will see rough edges. First impressions are everything.",
+        "With less than 2h for polish, expect judges to see rough edges in the demo.",
     });
   }
 
@@ -233,7 +233,7 @@ function generateFeedback(hours: Record<PhaseId, number>): Feedback[] {
       type: "success",
       icon: Zap,
       message:
-        "Solid allocation. Ideation was done before the event, all hackathon hours go to building, and demo/pitch prep happens after submission. Maximum output.",
+        "Core, build, and polish get at least 8h between them, and the plan fits in 24h.",
     });
   }
 
@@ -242,7 +242,7 @@ function generateFeedback(hours: Record<PhaseId, number>): Feedback[] {
     results.push({
       type: "tip",
       icon: Moon,
-      message: `${slack}h unallocated. Use it for sleep, breaks, or buffer. Planned rest beats accidental burnout.`,
+      message: `${slack}h unallocated. Use it for sleep or as buffer.`,
     });
   }
 
@@ -578,7 +578,7 @@ export function TimelineSimulator() {
                 {overBudget
                   ? `${total - TOTAL_HOURS}h over budget`
                   : total === TOTAL_HOURS
-                    ? "Perfectly allocated"
+                    ? "All 24h allocated"
                     : `${TOTAL_HOURS - total}h unallocated`}
               </p>
             </div>

@@ -34,15 +34,15 @@ export const metadata: Metadata = {
 const HOW_TO_USE = [
   {
     step: "01",
-    text: "Copy and send. Nothing to fill in first: each prompt interviews you for what it needs, so answer its questions in the chat instead of editing the text.",
+    text: "Copy a prompt and send it as-is. It asks you for what it needs, so answer in the chat instead of editing the text.",
   },
   {
     step: "02",
-    text: "Start with the context primer in Set Up. Later prompts reuse those answers, so your agent stops asking about your deadline and stack.",
+    text: "Start with \"Pin the hackathon context\" in Set Up. Later prompts reuse your answers, so the agent stops asking for your deadline and stack.",
   },
   {
     step: "03",
-    text: "Mind the \"run first\" line. A prompt that needs a spec or a deploy links to the prompt that produces it, and tells your agent to send you back if it is missing.",
+    text: "Check a card's \"Run first\" line. It links to the prompt that produces what this card needs, like a spec or a deploy. If that's missing, the agent will send you back to it.",
   },
 ];
 
@@ -83,9 +83,8 @@ export default function CheatSheetPage() {
             <span className="font-semibold text-foreground">
               {CHEAT_PROMPT_COUNT} paste-ready prompts
             </span>{" "}
-            for the agent you are already building with. No theory, no blanks to
-            fill in. Pick the phase you are in, copy the prompt, and answer the
-            questions it asks you.
+            for the AI agent you&apos;re already building with, grouped by where
+            you are in the hackathon.
           </p>
           <p className="font-code text-xs text-muted-foreground">
             <span className="text-volt">$</span> pick a phase → copy → paste →
@@ -136,10 +135,9 @@ export default function CheatSheetPage() {
             Why any of these prompts say what they say
           </h2>
           <p className="mt-2 max-w-2xl font-body text-sm text-muted-foreground md:text-base">
-            This page is the short version, written for someone with hours left
-            on the clock. The reasoning behind it, the research, and the parts
-            that are about people rather than code all live in the playbook. The
-            prompts that run a skill come from the skills library.
+            This page is the short version. The reasoning behind the prompts,
+            including the parts about people rather than code, is in the
+            playbook. The prompts that run a skill come from the skills library.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link

@@ -2,12 +2,13 @@ import type { BlogPost } from "../types";
 
 export const post: BlogPost = {
   slug: "non-coders-winning-hackathons",
+  // [CONFIRM: the title ("How Experts Beat Developers") now overclaims relative to the body, which says three winners don't show that non-coders usually beat developers. The description was rewritten to match the body; the title wasn't touched. Soften it?]
   title:
     "Non-Coders Winning Hackathons: How Experts Beat Developers",
   description:
-    "Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic's global hackathon, beating developers with Claude Code.",
+    "A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.",
   date: "2026-04-12",
-  updatedDate: "2026-06-24",
+  updatedDate: "2026-09-14",
   readingTime: "3 min read",
   keywords: [
     "non-coders winning hackathons",
@@ -19,70 +20,54 @@ export const post: BlogPost = {
   ],
   content: [
     {
-      heading: "A Lawyer Beat Hundreds of Developers",
+      heading: "A Lawyer Won Anthropic's Hackathon Without Writing Code",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "A non-coder won." },
-        { type: "paragraph", text: "At **Anthropic's Built with Opus 4.6 hackathon**, a global virtual event held February 10 to 16, 2026, a personal injury lawyer named Mike Brown took 1st place, ahead of hundreds of experienced developers. A cardiologist, Dr. Michal Nedoszytko, placed 3rd. 13,000 people applied, 500 were selected, and most of them were developers. **Brown says he did not write, or even read, a single line of code.**" },
-        { type: "stat-row", stats: [
-          { value: "1st", label: "Lawyer, no code" },
-          { value: "3rd", label: "Doctor, 7 days" },
-          { value: "200+", label: "Hackathons entered" },
-          { value: "3 hrs", label: "To ship an app" },
-        ]},
-        { type: "paragraph", text: "Not a fluke. Across major hackathons in 2025 and 2026, non-coders with deep domain expertise keep outperforming technical teams. AI coding tools (Cursor, Claude Code, ChatGPT) erased the coding barrier, and that flipped the whole game. The one thing that now wins is hidden in plain sight, and most developer teams do not have it." },
+        { type: "paragraph", text: "Mike Brown, a personal injury lawyer, took 1st place at **Anthropic's Built with Opus 4.6 hackathon**, a global virtual event held February 10 to 16, 2026. Co-host Cerebral Valley puts the applicant count at 13,000. According to Anthropic's winners post, 500 were selected and only 1 of the 5 winners was a professional developer. In the same post, **Brown says he didn't write a single line of code, or even read one.**" },
+        { type: "paragraph", text: "His project, **CrossBeam**, reads California ADU building-permit plan sets and correction letters, cross-references city and state code, and returns an action plan in about 20 minutes instead of weeks. He built it with Claude Code, drawing on years of legal experience." },
       ],
     },
     {
-      heading: "Why Domain Expertise Now Beats Coding Skill",
+      heading: "Two More Non-Coders Who Won",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "Judges do not award prizes for clean code. They award prizes for **solving a real problem**. That is the edge developers cannot fake." },
-        { type: "paragraph", text: "A cardiologist knows exactly which patient-monitoring data matters. He describes the app in plain English, the AI builds it, and the result is more useful than what most developers would even think to make." },
-        { type: "quote", text: "You don't have to know programming to create solutions.", attribution: "Dr. Michal Nedoszytko, interventional cardiologist and creator of PostVisit.ai, 3rd place at Anthropic's Built with Opus 4.6 hackathon (ReachMD, The Convergence, 2026)" },
-        { type: "callout", variant: "success", text: "The playing field is level. When the code writes itself, the person who understands the problem best wins." },
+        { type: "paragraph", text: "Nina Kolari, a non-technical entrepreneur who learned iOS development with AI tools, built **Aphasio**, an iPhone communication app for people with aphasia, in **3 hours** and beat 27 other teams at the Cursor hackathon in Chiang Mai (her write-up on ninakolari.com, December 2025)." },
+        { type: "paragraph", text: "Rene Turcios, a self-described 'vibe coder' who doesn't know how to code, has competed in **200+ hackathons** since 2023 and keeps winning prizes (The San Francisco Standard, July 2025)." },
+        // [NEEDS SPECIFIC: have you seen a non-coder win, or judged one at LA Hacks 2026? One line from your own hackathons would ground this post.]
+        { type: "paragraph", text: "These three show that AI coding tools like Cursor, Claude Code, and ChatGPT can get someone who knows a problem well to a working prototype. They aren't enough to say non-coders usually beat developers." },
+      ],
+    },
+    {
+      heading: "What Domain Experts Bring",
+      paragraphs: [],
+      blocks: [
+        { type: "paragraph", text: "Judges reward projects that solve a real problem, and a lawyer or a doctor starts out knowing which problems in their field are real. Kolari's write-up says much the same about her win: she built something simple that solved a specific, painful problem, and the judges responded to clarity." },
+        // [CONFIRM: this post used to present Nedoszytko as a non-coder. The "20 years building healthcare software" detail comes from app/non-coders/page.tsx, which credits Anthropic's winners write-up. Keep?]
+        { type: "paragraph", text: "Dr. Michal Nedoszytko, who placed 3rd at the Anthropic event, is a different case. Anthropic describes him as a cardiologist who had spent 20 years building healthcare software alongside his practice, and he built PostVisit.ai in 7 days. He scopes his own claim:" },
+        { type: "quote", text: "Currently, you don't have to know programming to create solutions, or at least prototypes of solutions, for something that you can use personally.", attribution: "Dr. Michal Nedoszytko, interventional cardiologist and creator of PostVisit.ai, 3rd place at Anthropic's Built with Opus 4.6 hackathon (ReachMD, The Convergence, 2026)" },
+        { type: "paragraph", text: "So coding skill still helps. If you don't have it, compete on what you know." },
+        { type: "pro-con", pros: [
+          "Win on the problem and the user experience",
+          "Pick one specific problem and keep the build simple",
+        ], cons: [
+          "Competing on technical complexity",
+          "Copying what developer teams build",
+          "Padding it with extra features",
+        ]},
       ],
     },
     {
       heading: "The Tools: Cursor and Claude Code",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "**Cursor** is an AI code editor: describe what you want in plain English, it writes the code. **Claude Code** is Anthropic's AI coding assistant. Together they enable **vibe coding**, where you describe features and the AI builds them." },
+        { type: "paragraph", text: "**Cursor** is an AI code editor, and **Claude Code**, which Brown used, is Anthropic's AI coding assistant. In both, you describe what you want in plain English and the AI writes the code. People call this **vibe coding**." },
         { type: "step-list", steps: [
-          { title: "Describe it", description: "Tell the AI what to build in plain English. Be specific about the problem and the user experience." },
-          { title: "Test it", description: "Look at what it made. You don't need to read the code, just check that it works." },
-          { title: "Iterate", description: "Say what to change: 'make the button bigger,' 'add a loading state,' 'fix the mobile layout.'" },
-          { title: "Ship it", description: "Deploy with one command. Your project is live." },
+          { title: "Describe it", description: "Say what to build. Be specific about the problem and what the user sees." },
+          { title: "Try it", description: "Use what it made. You don't have to read the code to check that it works." },
+          { title: "Say what to change", description: "'Make the button bigger,' 'add a loading state,' 'fix the mobile layout.'" },
+          { title: "Deploy", description: "Ship it with one command when it's ready." },
         ]},
-        { type: "callout", variant: "info", text: "You don't need to understand the code. You need to understand the problem and describe what you want clearly. The AI handles the rest." },
-      ],
-    },
-    {
-      heading: "The Winning Formula for Non-Coders",
-      paragraphs: [],
-      blocks: [
-        { type: "paragraph", text: "Start with a problem you know cold from your own work. Then **compete where you have the advantage**, not where developers do." },
-        { type: "pro-con", pros: [
-          "Win on problem understanding and UX",
-          "Build from deep professional experience",
-          "Tell an authentic story about the pain",
-          "Solve one thing extremely well",
-        ], cons: [
-          "Competing on technical complexity",
-          "Building outside your expertise",
-          "Copying what developer teams build",
-          "Padding it with extra features",
-        ]},
-        { type: "paragraph", text: "When judges see a product built by someone who truly lives the problem, it stands out from the generic 'cool tech demo' most developer teams ship." },
-      ],
-    },
-    {
-      heading: "Proof: 3 Hours, One App, 200+ Hackathons",
-      paragraphs: [],
-      blocks: [
-        { type: "paragraph", text: "Mike Brown's 1st-place project at Anthropic's Built with Opus 4.6 hackathon (February 2026) was **CrossBeam**, an AI tool that reads California ADU building-permit plan sets and correction letters, cross-references city and state code, and returns an action plan in about 20 minutes instead of weeks. He built the whole app with Claude Code, leaning on years of legal experience to make something developers would not have imagined." },
-        { type: "paragraph", text: "Here's how fast this moves: Nina Kolari, a non-technical entrepreneur who learned iOS development with AI tools, built **Aphasio**, a working iPhone communication app for people with aphasia, in **3 hours** at the Cursor hackathon in Chiang Mai, and won against 27 other teams (her write-up on ninakolari.com, December 2025)." },
-        { type: "callout", variant: "tip", text: "Rene Turcios, a self-described 'vibe coder' who does not know how to code, has competed in 200+ hackathons since 2023 and keeps winning prizes (The San Francisco Standard, July 2025). Consistency and strategy beat raw coding ability." },
+        { type: "callout", variant: "warning", title: "Two Things to Do Yourself", text: "Keep API keys (the passwords your app uses to reach services like OpenAI) out of your code and off GitHub: put them in a .env.local file yourself, not in the chat. And before you share the link, open the live site and try it the way a judge would." },
       ],
     },
     {
@@ -95,8 +80,7 @@ export const post: BlogPost = {
           "Find a hackathon with a beginner track and mentors",
           "Lead your pitch with the problem and your expertise, not the tech",
         ]},
-        { type: "paragraph", text: "The barrier you were worried about is gone. The expertise you already have is the part that wins. **Go enter one.**" },
-        { type: "link-card", title: "Non-Coder Hackathon Section", description: "Installable AI skills, setup guides, and strategies for professionals with zero coding experience.", href: "/non-coders", tag: "Get Started" },
+        { type: "link-card", title: "Non-Coder Hackathon Section", description: "Installable AI skills, setup guides, and strategies for professionals who don't code.", href: "/non-coders", tag: "Get Started" },
         { type: "link-card", title: "Hackathon Tips for Beginners", description: "Everything you need for your first hackathon, from prep to pitch.", href: "/blog/hackathon-tips-for-beginners", tag: "Beginner Guide" },
       ],
     },

@@ -78,15 +78,16 @@ const accentStyles = {
 const FILES = [
   {
     name: "CLAUDE.md",
-    purpose: "The actual rules. How to talk to you, the honesty rules, what you are building, and the guardrails.",
+    purpose: "The full rules: how to talk to you, the honesty rules, what you're building, and the guardrails.",
     reads: "Read by Claude Code",
     accent: "spark" as const,
     url: CLAUDE_URL,
     content: CLAUDE_TXT,
   },
+  // [CONFIRM: "See @CLAUDE.md" is Claude Code's import syntax. It's unverified whether Cursor and Codex follow it and load CLAUDE.md. The downloaded file (public/system-prompt/non-coder-agents.txt) promises they "load the exact same rules"; that text is agent-facing and wasn't changed.]
   {
     name: "AGENTS.md",
-    purpose: "A one-line pointer to CLAUDE.md, so other tools load the exact same rules.",
+    purpose: "A one-line pointer that tells other tools to read CLAUDE.md.",
     reads: "Read by Cursor, Codex, and others",
     accent: "primary" as const,
     url: AGENTS_URL,
@@ -112,13 +113,12 @@ export default function SystemPromptPage() {
           <span className="text-spark">Standing Orders</span>
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          The rules your AI follows in every single chat live in two files: your{" "}
+          The rules your AI follows in every chat live in two files,{" "}
           <code className="font-code text-base text-spark">CLAUDE.md</code> and{" "}
           <code className="font-code text-base text-primary">AGENTS.md</code>.
-          Write them once and every conversation gets better. Here is the one
-          command that downloads both straight into your project.
+          One command sets up both in your project.
         </p>
-        <LastUpdated date="2026-08-16" />
+        <LastUpdated date="2026-09-14" />
       </header>
 
       <Separator className="bg-primary/20" />
@@ -135,23 +135,17 @@ export default function SystemPromptPage() {
         <div className="glass rounded-2xl border border-spark/10 p-8 md:p-10">
           <div className="max-w-3xl space-y-4">
             <p className="font-body text-foreground/80">
-              Think of it as the briefing you give a brand-new assistant on their
-              first day. You tell them how you like to work, what the project is,
-              and what they should never do without asking. A good assistant
-              re-reads that briefing every morning so they never drift.
+              It&apos;s the briefing you&apos;d give a new assistant on their
+              first day: how you like to work, what the project is, and what
+              they should never do without asking.
             </p>
             <p className="font-body text-foreground/80">
-              That is exactly what a system prompt is. Your AI reads these files
-              at the start of{" "}
+              Your AI reads these files at the start of{" "}
               <span className="font-display font-semibold text-foreground">
                 every conversation
               </span>
-              , before you type a word. It is the standing instruction for how
-              to behave with{" "}
-              <span className="font-display font-semibold text-foreground">
-                you
-              </span>
-              . You write it once, and every chat after that gets better.
+              , before you type a word, so you don&apos;t have to repeat your
+              rules in each new chat.
             </p>
           </div>
         </div>
@@ -163,10 +157,11 @@ export default function SystemPromptPage() {
           <h2 className="font-display text-3xl font-bold tracking-tight">
             Two Files, One Set of Rules
           </h2>
+          {/* [CONFIRM: this page conflicts with /non-coders/setup, which says your setup is .cursorrules + a full AGENTS.md + PRD.md. /domain-to-spec also writes its own AGENTS.md. Which setup should non-coders follow? Advice left unchanged until you decide.] */}
           <p className="max-w-3xl font-body text-muted-foreground">
-            Different AI tools look for different filenames. Rather than keep two
-            copies in sync, you put the real rules in one file and make the other
-            point to it. Update one, both tools follow.
+            Claude Code looks for CLAUDE.md. Cursor, Codex, and other tools look
+            for AGENTS.md. So the full rules go in CLAUDE.md, and AGENTS.md
+            points to it.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -209,10 +204,10 @@ export default function SystemPromptPage() {
             The One-Command Setup
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            Copy this and paste it into Cursor (Ctrl+I) or Claude Code. The AI
-            adds the rules to your project (merging with any CLAUDE.md you
-            already have), reads your project to fill in the details, then shows
-            you the result to review. You do not touch any settings.
+            Paste this into Cursor&apos;s agent chat (Ctrl+I, or Cmd+I on a Mac)
+            or into Claude Code. The AI adds both files without overwriting what
+            you already have. Then it reads your project, drafts the &ldquo;About
+            this project&rdquo; section, and checks it with you.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -238,11 +233,10 @@ export default function SystemPromptPage() {
         <div className="rounded-lg border border-border bg-surface p-4">
           <p className="font-body text-sm text-muted-foreground">
             <span className="font-display font-semibold text-foreground">
-              That&apos;s it.
+              Updates:
             </span>{" "}
-            The rules always come straight from this site, so you get the latest
-            version. The AI reads your project to fill in the details and shows
-            you everything to confirm before moving on.
+            You get the rules as they are on this site when you run the
+            command. To pick up a newer version later, run it again.
           </p>
         </div>
       </section>
@@ -254,8 +248,8 @@ export default function SystemPromptPage() {
             What You Get
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            This is exactly what lands in your project. Prefer to paste it in by
-            hand? Copy either file below, or open the raw text.
+            Here&apos;s what the command adds, before the AI fills in the About
+            section. You can also copy either file in by hand.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -309,19 +303,18 @@ export default function SystemPromptPage() {
           <div className="max-w-3xl space-y-4">
             <p className="font-body text-foreground/80">
               If you keep the full rules in both files, they drift apart the
-              moment you edit one and forget the other. Then Cursor and Claude
-              give you different behavior and you cannot tell why.
+              first time you edit one and forget the other. Then Cursor and
+              Claude behave differently and you can&apos;t tell why.
             </p>
             <p className="font-body text-foreground/80">
-              Keeping the rules in{" "}
-              <code className="font-code text-spark">CLAUDE.md</code> and making{" "}
-              <code className="font-code text-primary">AGENTS.md</code> a single
-              line that points to it means there is{" "}
+              With the rules only in{" "}
+              <code className="font-code text-spark">CLAUDE.md</code>, there&apos;s{" "}
               <span className="font-display font-semibold text-foreground">
-                one source of truth
+                one place to edit
               </span>
-              . Change it once, every tool follows. One short file is also easier
-              for the AI to actually pay attention to than a long one.
+              . This site&apos;s own repo is set up the same way: its{" "}
+              <code className="font-code text-primary">AGENTS.md</code> just
+              points to <code className="font-code text-spark">CLAUDE.md</code>.
             </p>
           </div>
         </div>
@@ -352,8 +345,8 @@ export default function SystemPromptPage() {
                   Add Skills &amp; Commands
                 </CardTitle>
                 <CardDescription className="font-body">
-                  Now that the rules are set, install the skills that walk your AI
-                  through scaffolding, building, and demoing your project.
+                  With the rules set, add skills that walk your AI through
+                  planning, building, and demoing your project.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -379,8 +372,8 @@ export default function SystemPromptPage() {
                   Getting Started
                 </CardTitle>
                 <CardDescription className="font-body">
-                  New to all of this? The shortcuts, the daily workflow, and the
-                  other files that make up your project setup.
+                  The Cursor shortcuts, the loop for building each feature, and
+                  the other files in a project setup.
                 </CardDescription>
               </CardHeader>
               <CardContent>

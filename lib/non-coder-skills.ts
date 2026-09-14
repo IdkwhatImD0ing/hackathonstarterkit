@@ -65,130 +65,130 @@ const SKILL_META: SkillMeta[] = [
     slug: "non-coder-mode",
     title: "Non-Coder Mode",
     description:
-      "Core guardrails for non-coders. Tells the AI to explain everything in plain English, break tasks into small steps, and never assume coding knowledge.",
+      "The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.",
     category: "foundation",
     icon: Shield,
     command: {
       name: "/non-coder-mode",
       usage: "/non-coder-mode",
-      hint: "Activates non-coder guardrails for the session",
+      hint: "Plain-English mode for the session",
     },
   },
   {
     slug: "domain-to-spec",
     title: "Domain to Spec",
     description:
-      "Run this FIRST. Captures your domain expertise and writes AGENTS.md and PRD.md to the repo root. Every other scaffold skill reads these files.",
+      "Interviews you about your field and your idea, then writes AGENTS.md (rules for the AI) and PRD.md (the plan for your app).",
     category: "foundation",
     icon: Compass,
     command: {
       name: "/domain-to-spec",
       usage: "/domain-to-spec [your profession] [what you want to build]",
-      hint: "Writes AGENTS.md and PRD.md from your domain expertise",
+      hint: "Writes AGENTS.md and PRD.md",
     },
   },
   {
     slug: "quickstart",
     title: "Quickstart",
     description:
-      "One-shot project bootstrapper. Chains domain-to-spec, scaffold-frontend, and scaffold-backend (if needed) with user confirmation between steps.",
+      "Runs /domain-to-spec, /scaffold-frontend, and /scaffold-backend (if needed) in one go, pausing once so you can approve the plan.",
     category: "foundation",
     icon: Zap,
     command: {
       name: "/quickstart",
       usage: "/quickstart",
-      hint: "Runs the full scaffold pipeline end-to-end",
+      hint: "Runs the setup steps in one go",
     },
   },
   {
     slug: "scaffold-frontend",
     title: "Scaffold Frontend",
     description:
-      "PRD-driven Next.js scaffold into clients/. Reads AGENTS.md and PRD.md, generates pages, layout, types, and an API client. Refuses to run without both files.",
+      "Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.",
     category: "building",
     icon: MonitorSmartphone,
     command: {
       name: "/scaffold-frontend",
       usage: "/scaffold-frontend",
-      hint: "Creates clients/ from PRD.md (requires domain-to-spec first)",
+      hint: "Builds your pages in client/",
     },
   },
   {
     slug: "scaffold-backend",
     title: "Scaffold Backend",
     description:
-      "PRD-driven FastAPI scaffold into server/ with optional Supabase. One stub route per entry in PRD.md > Backend Routes. Skips automatically if Backend Needed? = No.",
+      "Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.",
     category: "building",
     icon: Server,
     command: {
       name: "/scaffold-backend",
       usage: "/scaffold-backend",
-      hint: "Creates server/ from PRD.md (runs only if backend is needed)",
+      hint: "Builds the backend in server/",
     },
   },
   {
     slug: "v0-prompt-crafter",
     title: "v0 Prompt Crafter",
     description:
-      "Turn a PRD or product description into a production-grade Vercel v0 prompt. Researches the industry, commits to a bold aesthetic, picks fancy UI libraries (shadcn, Aceternity, Magic UI, Motion), and assembles a copy-paste prompt.",
+      "Use this instead of /scaffold-frontend if you want Vercel v0 to design your screens. It turns PRD.md or a one-line idea into a paste-ready v0 prompt, with a visual style researched for your industry and named UI libraries (shadcn, Aceternity, Magic UI, Motion).",
     category: "building",
     icon: Sparkles,
     command: {
       name: "/v0-prompt-crafter",
       usage: "/v0-prompt-crafter [paste your PRD or one-line product description]",
-      hint: "Turns a PRD into a production-grade Vercel v0 prompt",
+      hint: "Writes a Vercel v0 design prompt",
     },
   },
   {
     slug: "feature-builder",
     title: "Feature Builder",
     description:
-      "Structured workflow for implementing a new feature. Returns a plan, files list, commands, test steps, and rollback plan.",
+      "Run it once for each feature. It shows you the plan first: the files and commands it will use, how to test the result, and how to undo it.",
     category: "building",
     icon: Hammer,
     command: {
       name: "/feature-builder",
       usage: "/feature-builder [describe the feature you want]",
-      hint: "Structured feature implementation workflow",
+      hint: "Adds one feature, with an undo plan",
     },
   },
   {
     slug: "bugfix-doctor",
     title: "Bugfix Doctor",
     description:
-      "Systematic bug-fixing workflow. Walks through reproduce, isolate, fix, test, and verify. Explains all errors in plain English.",
+      "Translates the error into plain English, then finds what caused it. It makes the smallest fix it can and checks that the fix worked.",
     category: "fixing",
     icon: Bug,
     command: {
       name: "/bugfix-doctor",
       usage: "/bugfix-doctor [paste the error or describe the symptom]",
-      hint: "Systematic bug-fixing with plain English explanations",
+      hint: "Explains and fixes an error",
     },
   },
   {
     slug: "demo-prep",
     title: "Demo Prep",
     description:
-      "Produces a step-by-step live demo script for hackathon presentations. Covers the problem, walkthrough, and outcome with a backup plan.",
+      "A timed demo script from problem to result, with a backup plan if the app breaks and the questions judges will likely ask.",
     category: "shipping",
     icon: Presentation,
     command: {
       name: "/demo-prep",
       usage: "/demo-prep [app name or description]",
-      hint: "Generates a timed demo script with backup plan",
+      hint: "A timed demo script with a backup plan",
     },
   },
   {
     slug: "readme-writer",
-    title: "GitHub Writer",
+    title: "README Writer",
     description:
-      "Turns your finished project into a winner-grade GitHub README: a centered hero, badges, a clickable demo video, an architecture diagram, and team cards, then sets the repo's About description, website, and topics so recruiters and judges can find it.",
+      "Writes your README (your repo's front page) with badges, a demo video, a how-it-works diagram, and team cards. It also fills in the repo's description, website, and topics so judges and recruiters can find it.",
     category: "shipping",
     icon: Github,
     command: {
       name: "/readme-writer",
       usage: "/readme-writer [your project name or repo]",
-      hint: "Writes a polished GitHub README for your hackathon project",
+      hint: "Writes your GitHub README",
     },
   },
 ];
@@ -207,16 +207,12 @@ export const NON_CODER_SKILLS: NonCoderSkill[] = SKILL_META.map((meta) => ({
 }));
 
 export const STANDALONE_COMMANDS: SkillCommand[] = [
+  // [CONFIRM: /explain lives in .agents/commands/explain.md, not skills/. Does the install prompt (npx skills add) actually install it? If not, readers who follow this page won't have it.]
   {
     name: "/explain",
     usage: "/explain [paste code, an error, or describe what you want to understand]",
-    hint: "Explains code or errors in plain English for non-coders",
+    hint: "Use it whenever something on screen doesn't make sense. The AI explains it in plain English and defines every technical term it uses.",
   },
-];
-
-export const ALL_COMMANDS: SkillCommand[] = [
-  ...NON_CODER_SKILLS.map((s) => s.command),
-  ...STANDALONE_COMMANDS,
 ];
 
 export function getSkillBySlug(slug: string): NonCoderSkill | undefined {
@@ -240,8 +236,8 @@ export function getSkillsByCategory(
  *
  * `v0-prompt-crafter` is also NOT in this list because it is an alternative
  * path to `scaffold-frontend` (generate a UI via Vercel v0 instead of
- * scaffolding locally) rather than a pipeline step. It still appears in
- * the "All Skills" grid.
+ * scaffolding locally) rather than a pipeline step. Skills left out of this
+ * list appear in the skills page's "Other Commands" section instead.
  */
 export const RECOMMENDED_ORDER: string[] = [
   "non-coder-mode",
@@ -256,6 +252,6 @@ export const RECOMMENDED_ORDER: string[] = [
 
 /**
  * Skills that act as shortcuts over the RECOMMENDED_ORDER pipeline.
- * Shown in their own section on the skills page.
+ * Shown with a SHORTCUT badge in the skills page's "Other Commands" section.
  */
 export const SHORTCUT_SKILLS: string[] = ["quickstart"];

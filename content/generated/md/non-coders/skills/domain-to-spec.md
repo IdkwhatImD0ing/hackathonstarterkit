@@ -1,16 +1,16 @@
 # Domain to Spec
 
-> Run this FIRST. Captures your domain expertise and writes AGENTS.md and PRD.md to the repo root. Every other scaffold skill reads these files.
+> Interviews you about your field and your idea, then writes AGENTS.md (rules for the AI) and PRD.md (the plan for your app).
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/domain-to-spec
 
 ---
 
-Run this FIRST. Captures your domain expertise and writes AGENTS.md and PRD.md to the repo root. Every other scaffold skill reads these files.
+Interviews you about your field and your idea, then writes AGENTS.md (rules for the AI) and PRD.md (the plan for your app).
 
 Category: Foundation
 
-Usage: `/domain-to-spec [your profession] [what you want to build]` (Writes AGENTS.md and PRD.md from your domain expertise)
+Usage: `/domain-to-spec [your profession] [what you want to build]` (Writes AGENTS.md and PRD.md)
 
 This is the first skill for a new project. It converts the user's domain knowledge into two repo-root files:
 

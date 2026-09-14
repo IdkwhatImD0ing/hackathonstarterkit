@@ -1,16 +1,16 @@
 # Quickstart
 
-> One-shot project bootstrapper. Chains domain-to-spec, scaffold-frontend, and scaffold-backend (if needed) with user confirmation between steps.
+> Runs /domain-to-spec, /scaffold-frontend, and /scaffold-backend (if needed) in one go, pausing once so you can approve the plan.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/quickstart
 
 ---
 
-One-shot project bootstrapper. Chains domain-to-spec, scaffold-frontend, and scaffold-backend (if needed) with user confirmation between steps.
+Runs /domain-to-spec, /scaffold-frontend, and /scaffold-backend (if needed) in one go, pausing once so you can approve the plan.
 
 Category: Foundation
 
-Usage: `/quickstart` (Runs the full scaffold pipeline end-to-end)
+Usage: `/quickstart` (Runs the setup steps in one go)
 
 Run the foundational project setup in the right order. This skill coordinates other skills; it should not skip their safety checks.
 
