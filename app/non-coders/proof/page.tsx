@@ -18,17 +18,24 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "The Proof",
   description:
-    "Real professionals with zero coding backgrounds who beat thousands of developers at major hackathons.",
+    "Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.",
   alternates: {
     canonical: `${SITE_URL}/non-coders/proof`,
     types: markdownAlternate("/non-coders/proof"),
   },
+  ...shareMetadata({
+    path: "/non-coders/proof",
+    title: "Non-Coders Are Winning Hackathons: The Proof",
+    description:
+      "Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.",
+  }),
 };
 
 type Winner = {
@@ -96,7 +103,7 @@ const OTHER_WINNERS: Winner[] = [
       "Product sense beats coding skill. […] I built something simple that solved a specific, painful problem. The judges responded to clarity.",
     source: "ninakolari.com, December 9, 2025",
     accent: "primary" as const,
-    url: "https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/",
+    url: "https://ninakolari.com/blog/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/",
   },
   {
     name: "Rene Turcios",
@@ -202,7 +209,6 @@ export default function ProofPage() {
         <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">
           Non-Coders Are Winning
         </h1>
-        {/* [CONFIRM: the metadata description (off-limits here) still says "zero coding backgrounds who beat thousands of developers". The Anthropic event accepted 500, and Nedoszytko had 20 years of building software.] */}
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
           Four people from outside software who built hackathon projects with
           AI. The cardiologist is a partial exception: he&apos;d spent 20 years

@@ -364,6 +364,8 @@ Why it works: The embed starts at 0:22, after the problem intro, so the voice as
 
 The screen recorder I use for every hackathon demo. Auto-zoom and cursor smoothing make a 60-second demo look polished, with basically no editing time. Worth a look if you're on Mac. On Windows, CanVid covers the same ground.
 
+Affiliate link: I may earn a commission.
+
 Automatic cursor zoomSmooth cursor glideWebcam overlay1-click export presets
 
 [Check it out](https://screenstudio.lemonsqueezy.com?aff=LpD9R)

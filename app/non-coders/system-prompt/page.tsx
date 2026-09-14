@@ -22,6 +22,7 @@ import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { CopyForAi } from "@/components/copy-for-ai";
 import {
@@ -38,17 +39,17 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/non-coders/system-prompt`,
     types: markdownAlternate("/non-coders/system-prompt"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/non-coders/system-prompt",
     title: "The System Prompt: CLAUDE.md & AGENTS.md for Non-Coders",
     description:
       "One copy-paste command downloads a non-coder CLAUDE.md and AGENTS.md into your project, so Cursor and Claude follow the same rules every session.",
-    url: `${SITE_URL}/non-coders/system-prompt`,
-  },
-  twitter: {
-    title: "Set Your AI's Rules Once: CLAUDE.md & AGENTS.md",
-    description:
-      "The system prompt is the file your AI reads every session. Here is the one command that sets it up for non-coders.",
-  },
+    twitter: {
+      title: "Set Your AI's Rules Once: CLAUDE.md & AGENTS.md",
+      description:
+        "The system prompt is the file your AI reads every session. Here is the one command that sets it up for non-coders.",
+    },
+  }),
 };
 
 // Read the downloadable system-prompt files at build time so the on-page

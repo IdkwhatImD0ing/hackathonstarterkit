@@ -18,7 +18,7 @@ I've watched technically weaker projects win because their pitch was better. Thi
 
 ## Fit the Structure to Your Slot
 
-When I judged at LA Hacks, each team had five minutes, and about 3.5 of those were for questions, which is where a judge fills in the rubric. Some teams pitched for all five. Formats vary, so ask how long your slot is and how much of it is Q&A, then shorten each part to fit.
+When I judged at LA Hacks, each team had five minutes, and about 3.5 of those were for questions, which is where a judge fills in the rubric. Some teams pitched for all five. Formats vary, so ask how long your slot is and how much of it is Q&A. If Q&A comes out of the same slot, shrink this structure to about 90 seconds and keep the same order.
 
 [9 Hackathon Pitch Mistakes I Saw at LA Hacks](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks): What I saw from the judging table.
 

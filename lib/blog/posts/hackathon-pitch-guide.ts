@@ -36,7 +36,7 @@ export const post: BlogPost = {
       heading: "Fit the Structure to Your Slot",
       paragraphs: [],
       blocks: [
-        { type: "paragraph", text: "When I judged at LA Hacks, each team had five minutes, and about 3.5 of those were for questions, which is where a judge fills in the rubric. Some teams pitched for all five. Formats vary, so ask how long your slot is and how much of it is Q&A, then shorten each part to fit." },
+        { type: "paragraph", text: "When I judged at LA Hacks, each team had five minutes, and about 3.5 of those were for questions, which is where a judge fills in the rubric. Some teams pitched for all five. Formats vary, so ask how long your slot is and how much of it is Q&A. If Q&A comes out of the same slot, shrink this structure to about 90 seconds and keep the same order." },
         { type: "link-card", title: "9 Hackathon Pitch Mistakes I Saw at LA Hacks", description: "What I saw from the judging table.", href: "/blog/hackathon-pitch-mistakes-la-hacks", tag: "Related" },
       ],
     },

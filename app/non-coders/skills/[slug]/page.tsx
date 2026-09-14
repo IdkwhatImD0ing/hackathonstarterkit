@@ -14,6 +14,7 @@ import { CopyButton } from "@/components/copy-button";
 import { NON_CODER_SKILLS, getSkillBySlug } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { CopyForAi } from "@/components/copy-for-ai";
 
@@ -67,10 +68,11 @@ export async function generateMetadata({
       canonical: `${SITE_URL}/non-coders/skills/${skill.slug}`,
       types: markdownAlternate(`/non-coders/skills/${skill.slug}`),
     },
-    openGraph: {
+    ...shareMetadata({
+      path: `/non-coders/skills/${skill.slug}`,
       title: `${skill.title} | For Non-Coders`,
       description: skill.description,
-    },
+    }),
   };
 }
 

@@ -113,7 +113,7 @@ export function GET() {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>Hackathon Playbook Blog</title>
+    <title>The Hackathon Playbook Blog</title>
     <link>${escapeXml(`${SITE_URL}/blog`)}</link>
     <atom:link href="${escapeXml(FEED_URL)}" rel="self" type="application/rss+xml" />
     <description>Expert hackathon guides, strategies, and tips from 36+ victories.</description>

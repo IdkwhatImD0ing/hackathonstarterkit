@@ -159,7 +159,7 @@ Label the key flows with callouts and arrows. Then add a design-process image, t
 
 Recording Tools
 
-[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (Mac, my pick) or CanVid (Windows). Auto-zoom and webcam overlay mean editing takes minutes.
+[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (affiliate link) (Mac, my pick) or CanVid (Windows). Auto-zoom and webcam overlay mean editing takes minutes.
 
 Video Length
 

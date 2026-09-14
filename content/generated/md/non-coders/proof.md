@@ -52,7 +52,7 @@ iPhone speech practice app for stroke patients
 
 Nina Kolari, Entrepreneur, 51. ninakolari.com, December 9, 2025
 
-Read the full story →](https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[#### Rene Turcios
+Read the full story →](https://ninakolari.com/blog/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[#### Rene Turcios
 
 Former Yu-Gi-Oh! Pro · Competing since 2023
 

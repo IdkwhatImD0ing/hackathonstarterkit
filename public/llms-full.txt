@@ -6,7 +6,7 @@ Canonical: https://thehackathonplaybook.dev/
 
 ---
 
-## Hackathon Playbook
+## The Hackathon Playbook
 
 Guides and prompts from 50+ hackathons and 36+ wins.
 
@@ -74,7 +74,7 @@ Linguify](https://devpost.com/software/linguify-katunw)[+31more winsView on Devp
 
 [Portfolio](https://v2.art3m1s.me/)[GitHub](https://github.com/IdkwhatImD0ing)[LinkedIn](https://www.linkedin.com/in/bill-zhang1/)[Devpost](https://devpost.com/IdkwhatImD0ing)[For AI & Agents](https://thehackathonplaybook.dev/ai)
 
-© 2026 Hackathon Playbook
+© 2026 The Hackathon Playbook
 
 [Got feedback? feedback@thehackathonplaybook.dev](mailto:feedback@thehackathonplaybook.dev)
 
@@ -1166,7 +1166,7 @@ A 24-hour plan for when everything happens at the event. For 36 or 48 hours, sca
 
 TL;DR Have the core flow working by hour 4 and add no new features after hour 16.
 
-The simulator above assumes you picked the idea before the event and will record the demo and rehearse between submission and judging. If both are true, most of steps 1, 5, and 6 move outside the 24 hours.
+This is the safe default for a team starting cold. The planner at the top of the page rewards a more aggressive version: settle the idea before the event starts, then do demo prep and rehearsal in the gap between the code deadline and judging, so every hackathon hour goes to building. Use that version when your event has that gap.
 
 Ideation and Architecture
 
@@ -1711,6 +1711,8 @@ Why it works: The embed starts at 0:22, after the problem intro, so the voice as
 
 The screen recorder I use for every hackathon demo. Auto-zoom and cursor smoothing make a 60-second demo look polished, with basically no editing time. Worth a look if you're on Mac. On Windows, CanVid covers the same ground.
 
+Affiliate link: I may earn a commission.
+
 Automatic cursor zoomSmooth cursor glideWebcam overlay1-click export presets
 
 [Check it out](https://screenstudio.lemonsqueezy.com?aff=LpD9R)
@@ -1998,7 +2000,7 @@ Label the key flows with callouts and arrows. Then add a design-process image, t
 
 Recording Tools
 
-[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (Mac, my pick) or CanVid (Windows). Auto-zoom and webcam overlay mean editing takes minutes.
+[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (affiliate link) (Mac, my pick) or CanVid (Windows). Auto-zoom and webcam overlay mean editing takes minutes.
 
 Video Length
 
@@ -2526,7 +2528,7 @@ Canonical: https://thehackathonplaybook.dev/non-coders
 
 At the same [hackathon](https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/), first place went to [Mike Brown, a personal injury lawyer](https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/), who said in [Anthropic's winners write-up](https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon) that he didn't write a single line of code. Nedoszytko is a different case: Anthropic describes him as a cardiologist who had spent 20 years building healthcare software alongside his practice, and he shipped PostVisit.ai in [7 days](https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/). He also qualifies his own line: what you build without programming is a solution, or at least a prototype you can use yourself.
 
-Only 1 of that event's 5 winners was a professional developer, according to the [Seoul Economic Daily](https://en.sedaily.com/news/2026/02/25/lawyers-doctors-sweep-ai-hackathon-as-builder-era-dawns). [The Proof](https://thehackathonplaybook.dev/non-coders/proof) profiles two people from outside software: [Nina Kolari](https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/), who built a speech practice app for stroke patients at a 3-hour Cursor hackathon, and [Rene Turcios](https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/), a former Yu-Gi-Oh! pro.
+Only 1 of that event's 5 winners was a professional developer, according to the [Seoul Economic Daily](https://en.sedaily.com/news/2026/02/25/lawyers-doctors-sweep-ai-hackathon-as-builder-era-dawns). [The Proof](https://thehackathonplaybook.dev/non-coders/proof) profiles two people from outside software: [Nina Kolari](https://ninakolari.com/blog/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/), who built a speech practice app for stroke patients at a 3-hour Cursor hackathon, and [Rene Turcios](https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/), a former Yu-Gi-Oh! pro.
 
 ## Choose Your Starting Point
 
@@ -2614,7 +2616,7 @@ iPhone speech practice app for stroke patients
 
 Nina Kolari, Entrepreneur, 51. ninakolari.com, December 9, 2025
 
-Read the full story →](https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[#### Rene Turcios
+Read the full story →](https://ninakolari.com/blog/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[#### Rene Turcios
 
 Former Yu-Gi-Oh! Pro · Competing since 2023
 
@@ -2935,7 +2937,7 @@ Why the prompt says “server-side”: .env.local keeps the key out of your code
 
 Here's the template filled in for a real service.
 
-#### [ElevenLabs](https://try.elevenlabs.io/thehackathonplaybook)
+#### [ElevenLabs](https://try.elevenlabs.io/thehackathonplaybook) (affiliate link)
 
 Adds voice conversations to your app.
 
@@ -2958,11 +2960,13 @@ Get your key from elevenlabs.io/app/settings/api-keys and paste it into .env.loc
 
 [ElevenLabs
 
-Try the Example on ElevenLabs
+My pick for voice AI
 
 There's a free tier if you want to check it out. See how much usage it includes before you count on it for a live demo.
 
-Try ElevenLabs Free](https://try.elevenlabs.io/thehackathonplaybook)
+Affiliate link: I may earn a commission.
+
+Check it out](https://try.elevenlabs.io/thehackathonplaybook)
 
 ## Example: Supabase Database
 
@@ -4573,7 +4577,7 @@ How to win hackathons, in the seven phases I learned across 50+ events and 36+ w
 
 Read article](https://thehackathonplaybook.dev/blog/how-to-win-hackathons)
 
-© 2026 Hackathon Playbook
+© 2026 The Hackathon Playbook
 
 [Got feedback? feedback@thehackathonplaybook.dev](mailto:feedback@thehackathonplaybook.dev)
 
@@ -4825,7 +4829,7 @@ I had five minutes per team: about 1.5 minutes for pitch and demo, then 3.5 for 
 
 > When judges cannot ask questions, they cannot score what they never got to understand.
 >
-> Bill Zhang, LA Hacks judge and Hackathon Playbook author
+> Bill Zhang, LA Hacks judge and author of The Hackathon Playbook
 
 **Q&A is where the judge fills in missing rubric information.** If a rubric category never gets answered, the judge may have to give it a low score, or a zero. Leave room for questions, even if it means cutting the demo short.
 
@@ -5191,7 +5195,7 @@ I've watched technically weaker projects win because their pitch was better. Thi
 
 ## Fit the Structure to Your Slot
 
-When I judged at LA Hacks, each team had five minutes, and about 3.5 of those were for questions, which is where a judge fills in the rubric. Some teams pitched for all five. Formats vary, so ask how long your slot is and how much of it is Q&A, then shorten each part to fit.
+When I judged at LA Hacks, each team had five minutes, and about 3.5 of those were for questions, which is where a judge fills in the rubric. Some teams pitched for all five. Formats vary, so ask how long your slot is and how much of it is Q&A. If Q&A comes out of the same slot, shrink this structure to about 90 seconds and keep the same order.
 
 [9 Hackathon Pitch Mistakes I Saw at LA Hacks](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks): What I saw from the judging table.
 

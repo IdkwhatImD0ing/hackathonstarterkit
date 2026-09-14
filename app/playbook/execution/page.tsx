@@ -32,6 +32,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { TimelineSimulator } from "./timeline-simulator";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 const section = PLAYBOOK_SECTIONS[3];
 
@@ -43,11 +44,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/playbook/execution`,
     types: markdownAlternate("/playbook/execution"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/playbook/execution",
     title: "Hackathon Execution: Best Tech Stack & MVP Strategy",
     description:
       "Time management, tech stack selection, MVP strategy, and team coordination for hackathons. From the 36-win playbook.",
-  },
+  }),
 };
 
 function SectionHeading({
@@ -107,12 +109,13 @@ export default function ExecutionPage() {
 
           <KeyTakeaway>Have the core flow working by hour 4 and add no new features after hour 16.</KeyTakeaway>
 
-          {/* [CONFIRM: The simulator gives ideation, demo prep, and rehearsal 0h; this timeline gives them hours 0-2 and 20-24. They're now reconciled by scope: the simulator is the competing-to-win plan (idea picked before the event, demo and rehearsal after submission), and this timeline is the do-everything-at-the-event plan. OK as is, or do you want one plan?] */}
           <p className="font-body text-foreground/80">
-            The simulator above assumes you picked the idea before the event
-            and will record the demo and rehearse between submission and
-            judging. If both are true, most of steps 1, 5, and 6 move outside
-            the 24 hours.
+            This is the safe default for a team starting cold. The planner at
+            the top of the page rewards a more aggressive version: settle the
+            idea before the event starts, then do demo prep and rehearsal in
+            the gap between the code deadline and judging, so every hackathon
+            hour goes to building. Use that version when your event has that
+            gap.
           </p>
 
           {/* [NEEDS SPECIFIC: how did the 24 hours actually go at one of your wins (Dispatch AI, TalkTuahBank, AdaptED)? One real schedule would ground this timeline.] */}

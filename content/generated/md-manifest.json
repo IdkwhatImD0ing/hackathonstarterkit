@@ -1,7 +1,7 @@
 {
   "/": {
     "file": "md/index.md",
-    "tokens": 652,
+    "tokens": 654,
     "title": "The Hackathon Playbook",
     "description": "Battle-tested hackathon strategy from 36+ wins and $100K+ in prizes, by Bill Zhang. Team formation, ideation, execution, pitching, and submission.",
     "track": "home"
@@ -39,7 +39,7 @@
   },
   "/playbook/execution": {
     "file": "md/playbook/execution.md",
-    "tokens": 1954,
+    "tokens": 1974,
     "title": "Execution",
     "description": "How to spend your hours so you finish with a working demo.",
     "track": "playbook",
@@ -47,7 +47,7 @@
   },
   "/playbook/pitching": {
     "file": "md/playbook/pitching.md",
-    "tokens": 4610,
+    "tokens": 4619,
     "title": "Pitching",
     "description": "Build your pitch around the demo, and get ready for judge questions.",
     "track": "playbook",
@@ -55,7 +55,7 @@
   },
   "/playbook/submission": {
     "file": "md/playbook/submission.md",
-    "tokens": 4551,
+    "tokens": 4555,
     "title": "Submission",
     "description": "What to put in your Devpost, README, and demo video, and when to submit.",
     "track": "playbook",
@@ -71,14 +71,14 @@
   },
   "/non-coders": {
     "file": "md/non-coders.md",
-    "tokens": 944,
+    "tokens": 945,
     "title": "Hackathons for Non-Coders",
     "description": "How non-coders win hackathons with AI tools: the proof it works, the setup, the concepts, and the installable AI skills.",
     "track": "non-coders"
   },
   "/non-coders/proof": {
     "file": "md/non-coders/proof.md",
-    "tokens": 720,
+    "tokens": 721,
     "title": "The Proof",
     "description": "The lawyer who won Anthropic's 500-person hackathon, and three others who build with AI.",
     "track": "non-coders"
@@ -99,7 +99,7 @@
   },
   "/non-coders/apis": {
     "file": "md/non-coders/apis.md",
-    "tokens": 1419,
+    "tokens": 1430,
     "title": "Using APIs",
     "description": "How to add a service to your app, with worked examples for ElevenLabs voice and a Supabase database.",
     "track": "non-coders"
@@ -190,7 +190,7 @@
   },
   "/blog": {
     "file": "md/blog.md",
-    "tokens": 785,
+    "tokens": 786,
     "title": "Blog",
     "description": "Hackathon strategy write-ups: how to win, pick a stack, pitch, and turn weekend projects into career wins.",
     "track": "blog"
@@ -205,7 +205,7 @@
   },
   "/blog/hackathon-pitch-mistakes-la-hacks": {
     "file": "md/blog/hackathon-pitch-mistakes-la-hacks.md",
-    "tokens": 2022,
+    "tokens": 2024,
     "title": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
     "description": "Judging LA Hacks, I watched good projects lose points to hackathon pitch mistakes. The one almost every team made was leaving the judges no time for Q&A.",
     "track": "blog",
@@ -237,7 +237,7 @@
   },
   "/blog/hackathon-pitch-guide": {
     "file": "md/blog/hackathon-pitch-guide.md",
-    "tokens": 968,
+    "tokens": 985,
     "title": "Hackathon Pitch Guide: How to Present Your Project and Win Prizes",
     "description": "A hackathon pitch guide with one 3-minute structure: problem, live demo, how it works, and impact. Plus Q&A prep, and how to cut it down for a shorter slot.",
     "track": "blog",

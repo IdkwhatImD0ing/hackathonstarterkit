@@ -22,7 +22,8 @@ import { BlogBlock } from "@/components/blog-blocks";
 import { BlogAnalytics } from "@/components/blog-analytics";
 import { CopyForAi } from "@/components/copy-for-ai";
 import { NewsletterSignup } from "@/components/newsletter-signup";
-import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { markdownAlternate, SITE_NAME, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
@@ -45,21 +46,17 @@ export async function generateMetadata({
       canonical: `${SITE_URL}/blog/${post.slug}`,
       types: markdownAlternate(`/blog/${post.slug}`),
     },
-    openGraph: {
-      type: "article",
+    ...shareMetadata({
+      path: `/blog/${post.slug}`,
       title: post.title,
       description: post.description,
-      url: `${SITE_URL}/blog/${post.slug}`,
-      publishedTime: post.date,
-      modifiedTime: post.updatedDate ?? post.date,
-      authors: ["Bill Zhang"],
-      tags: post.keywords,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.description,
-    },
+      article: {
+        publishedTime: post.date,
+        modifiedTime: post.updatedDate ?? post.date,
+        authors: ["Bill Zhang"],
+        tags: post.keywords,
+      },
+    }),
   };
 }
 
@@ -96,7 +93,7 @@ export default async function BlogPostPage({
     },
     publisher: {
       "@type": "Organization",
-      name: "Hackathon Playbook",
+      name: SITE_NAME,
       url: SITE_URL,
     },
     mainEntityOfPage: {

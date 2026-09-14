@@ -69,7 +69,7 @@ A 24-hour plan for when everything happens at the event. For 36 or 48 hours, sca
 
 TL;DR Have the core flow working by hour 4 and add no new features after hour 16.
 
-The simulator above assumes you picked the idea before the event and will record the demo and rehearse between submission and judging. If both are true, most of steps 1, 5, and 6 move outside the 24 hours.
+This is the safe default for a team starting cold. The planner at the top of the page rewards a more aggressive version: settle the idea before the event starts, then do demo prep and rehearsal in the gap between the code deadline and judging, so every hackathon hour goes to building. Use that version when your event has that gap.
 
 Ideation and Architecture
 

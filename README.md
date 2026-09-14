@@ -196,9 +196,9 @@ The site is machine-readable by design: every content page has a Markdown twin (
 - **36+ wins** across 50+ hackathons attended, **$100K+** in total prizes
 - **First place at 1,000+ person events**: HackUTD (largest 24hr hackathon in the US), UC Berkeley AI Hackathon (largest AI hackathon in the US), LA Hacks
 - **Google Developer Student Challenge** Top 10 Global Finalist (only US team in the top 10 across three years)
-- Co-founder of [WeCracked](https://wecracked.com/), a 4,000+ member hackathon community
+- Co-founder of WeCracked, a 4,000+ member hackathon community
 - Co-founder of Dispatch AI, an AI-powered 911 system funded by Berkeley SkyDeck
-- Applied AI Engineer at [Scale AI](https://scale.com/); USC MS in Computer Science (AI), UCSC undergrad
+- Software Engineer 2 at Pinterest, previously Applied AI Engineer at [Scale AI](https://scale.com/); USC MS in Computer Science (AI), UCSC undergrad
 
 | Hackathon | Result | Project | Year |
 | :-- | :-- | :-- | :-- |

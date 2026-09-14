@@ -42,6 +42,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 const section = PLAYBOOK_SECTIONS[2];
 
@@ -53,11 +54,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/playbook/validation`,
     types: markdownAlternate("/playbook/validation"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/playbook/validation",
     title: "How to Validate Your Hackathon Idea Fast",
     description:
       "Quick validation techniques for hackathon ideas against time constraints and judging criteria. From the 36-win playbook.",
-  },
+  }),
 };
 
 function SectionHeading({

@@ -62,6 +62,6 @@ How to win hackathons, in the seven phases I learned across 50+ events and 36+ w
 
 Read article](https://thehackathonplaybook.dev/blog/how-to-win-hackathons)
 
-© 2026 Hackathon Playbook
+© 2026 The Hackathon Playbook
 
 [Got feedback? feedback@thehackathonplaybook.dev](mailto:feedback@thehackathonplaybook.dev)

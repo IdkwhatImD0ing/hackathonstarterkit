@@ -144,7 +144,7 @@ I had five minutes per team: about 1.5 minutes for pitch and demo, then 3.5 for 
 
 > When judges cannot ask questions, they cannot score what they never got to understand.
 >
-> Bill Zhang, LA Hacks judge and Hackathon Playbook author
+> Bill Zhang, LA Hacks judge and author of The Hackathon Playbook
 
 **Q&A is where the judge fills in missing rubric information.** If a rubric category never gets answered, the judge may have to give it a low score, or a zero. Leave room for questions, even if it means cutting the demo short.
 

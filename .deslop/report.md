@@ -1,6 +1,6 @@
 # De-slop report
 
-**Run:** first full run, 2026-09-14. **Scope:** all 28 reader-facing pages. **Status:** rewritten and verified, but not committed.
+**Run:** first full run, 2026-09-14. **Scope:** all 28 reader-facing pages. **Status:** rewritten, verified, merged with main, and opened as a pull request.
 
 Future runs of the skill should read `.deslop/voice-profile.md` first and audit only the files changed since this report.
 
@@ -9,7 +9,7 @@ Future runs of the skill should read `.deslop/voice-profile.md` first and audit 
 - **Every page improved.** The median page went from 30 to 44 out of 60, and the average went from 31.7 to 43.6.
 - **13 of 28 pages now pass the skill's 45-point bar.** Before the rewrite, two pages passed: the AI access page (50) and the home page (45).
 - **The other 15 are still under 45.** Reviewers in both rounds pointed to Authenticity and Specificity: those lessons have no hackathon story from you behind them. The rewrite didn't invent stories, so those pages are waiting on the 41 NEEDS SPECIFIC flags below.
-- **The pages are shorter.** Readers now see 20% fewer words: 34,007 before, 27,356 after. The source files lost 2,235 lines net, with 2,826 added and 5,061 removed across 34 files.
+- **The pages are shorter.** Readers now see 19% fewer words: 34,007 before, 27,419 after, counted after merging main. The rewrite commit itself removed 2,235 source lines net, with 2,826 added and 5,061 removed across 34 files.
 - **Nothing is broken.** The build passes, and so do the unit tests, the markdown, llms.txt and skills freshness checks, JSON-LD validation, and the client bundle secret check. Lint warnings are unchanged at 15 before and 15 after. No flag text reaches any rendered page.
 - **One thing is left:** the search index. It's stale because the text changed, and rebuilding it needs your OpenAI key. Do it once, after you've answered the flags.
 
@@ -22,7 +22,7 @@ Future runs of the skill should read `.deslop/voice-profile.md` first and audit 
 
 Treat any single score as plus or minus 3. The same page drew scores up to 3 points apart from different reviewers.
 
-## Before you commit
+## Before this ships
 
 1. **Work through the flags.** They're listed at the end of this report, grouped by file. They're code comments, so the site is safe to ship with them in place. Each one marks a spot where only you know the answer.
 2. **Regenerate the derived files.** Run these after any edit to a page:
@@ -37,7 +37,7 @@ Treat any single score as plus or minus 3. The same page drew scores up to 3 poi
    pnpm gen:index
    ```
 
-4. **Commit `.deslop/` too.** It holds the voice profile the next run reads. The repo is public, so the profile's short quotes from your fiction and its note on luck become public with it.
+4. **Keep `.deslop/` in the repo.** It holds the voice profile the next run reads. The repo is public, so the profile's short quotes from your fiction and its note on luck are public with it.
 
 ## Scores
 
@@ -72,18 +72,18 @@ Treat any single score as plus or minus 3. The same page drew scores up to 3 poi
 | Home | 45 | 46 | Unconfirmed credentials |
 | AI access page | 50 | 51 | The chat's "answers only from this site" claim |
 
-Word counts per page are in the table below. The biggest cuts were on the non-coder skills page (36%), execution (35%), ideation (33%) and validation (27%). A few pages grew slightly, because safety notes, sources, or your stories added words.
+Word counts per page are in the table below. The biggest cuts were on the non-coder skills page (36%), execution (34%), ideation (33%) and validation (27%). A few pages grew slightly, because safety notes, sources, or your stories added words.
 
 | Page | Words before | Words after |
 |---|---|---|
-| Pitching | 4,065 | 3,172 |
-| Submission | 3,623 | 2,985 |
+| Pitching | 4,065 | 3,179 |
+| Submission | 3,623 | 2,987 |
 | Validation | 2,864 | 2,080 |
 | Post-hackathon | 2,421 | 1,781 |
 | Ideation | 2,068 | 1,392 |
-| Execution | 2,059 | 1,340 |
+| Execution | 2,059 | 1,363 |
 | Team formation | 1,646 | 1,261 |
-| All 25 generated pages | 34,007 | 27,356 |
+| All 25 generated pages | 34,007 | 27,419 |
 
 ## Corrections made
 
@@ -140,7 +140,7 @@ These sources are gone from the pages, because each repeated a point another sou
 
 ## Outside this pass: flagged, not changed
 
-- **CLAUDE.md** still says "60+ hackathons" (50+ is correct) and puts the frontend in `clients/` (the skills use `client/`).
+- **CLAUDE.md** puts the frontend in `clients/`, but the skills use `client/`. Main has since corrected its hackathon count to 50+.
 - **AGENTS.md:** the setup page gives a full AGENTS.md template, the system-prompt page makes AGENTS.md a one-line pointer to CLAUDE.md, and /domain-to-spec writes its own. Readers who follow all three end up with a mixed file. Your call on which is right.
 - **Metadata and JSON-LD** were off-limits in this pass. They still say "battle-tested", "ultimate playbook", "career-changing" and "hooks judges in 30 seconds". So does the HowTo description in `lib/structured-data.ts`.
 - **Blog titles** were off-limits too. "How Experts Beat Developers" now contradicts its own post.
@@ -169,32 +169,31 @@ It's installed at `.git/hooks/pre-commit`, which the main checkout and every wor
 
 ## Flag checklist
 
-Every flag is a code comment that doesn't render on the site.
+Every flag is a code comment that doesn't render on the site. Merging main resolved two of the original 111: the execution timeline question and the proof page's metadata note.
 - **CONFIRM:** a claim that needs your yes.
 - **NEEDS SPECIFIC:** a spot that needs a story or detail only you have.
 - **NEEDS SOURCE:** a quote or number that needs a citation.
 
 Line numbers are approximate. Search the file for the flag text.
 
-Total: 111 flags.
+Total: 109 flags.
 
-### app/playbook/execution/page.tsx (6)
+### app/playbook/execution/page.tsx (5)
 
-- L110: [CONFIRM: The simulator gives ideation, demo prep, and rehearsal 0h; this timeline gives them hours 0-2 and 20-24. They're now reconciled by scope: the simulator is the competing-to-win plan (idea picked before the event, demo and rehearsal after submission), and this timeline is the do-everything-at-the-event plan. OK as is, or do you want one plan?]
-- L118: [NEEDS SPECIFIC: how did the 24 hours actually go at one of your wins (Dispatch AI, TalkTuahBank, AdaptED)? One real schedule would ground this timeline.]
-- L240: [NEEDS SPECIFIC: where does the 2-hour rule come from? A hackathon where a feature ran long, and whether you cut it.]
-- L323: [NEEDS SPECIFIC: what did you actually cut, and at which hackathon?]
-- L426: [NEEDS SPECIFIC: which of these tools did you actually use, and on which win?]
-- L732: [NEEDS SPECIFIC: "Winners don't have the cleanest code" was cut as unsourced. If you've seen this judging LA Hacks 2026 or on your own wins, tell that story here.]
+- L121: [NEEDS SPECIFIC: how did the 24 hours actually go at one of your wins (Dispatch AI, TalkTuahBank, AdaptED)? One real schedule would ground this timeline.]
+- L243: [NEEDS SPECIFIC: where does the 2-hour rule come from? A hackathon where a feature ran long, and whether you cut it.]
+- L326: [NEEDS SPECIFIC: what did you actually cut, and at which hackathon?]
+- L429: [NEEDS SPECIFIC: which of these tools did you actually use, and on which win?]
+- L735: [NEEDS SPECIFIC: "Winners don't have the cleanest code" was cut as unsourced. If you've seen this judging LA Hacks 2026 or on your own wins, tell that story here.]
 
 ### app/playbook/ideation/page.tsx (6)
 
-- L181: [CONFIRM: the old subtitle called this "the ideation methodology behind $100K+ in hackathon prizes," which credits every prize to one method. Scoped down for now. Put it back only if every win came from it.]
-- L207: [CONFIRM: model names on this page (OpenAI 4o, GPT-4o, GPT-4V) may be dated. Update them or keep?]
-- L305: [NEEDS SPECIFIC: a pairing from one of your hackathons that flopped, so "most pairings flop" has a story behind it.]
-- L444: [CONFIRM: TalkTuahBank is labeled "1st Overall + Goldman Sachs" here, but the home page says "1st Place Grand Prize" at HackUTD 2024. Which wording do you want?]
-- L521: [NEEDS SPECIFIC: the AdaptED and TalkTuahBank combinations. Only DispatchAI's is shown, so "all three" rests on your word for now.]
-- L798: [CONFIRM: TFT as your ideation habit, and the Valorant/League comparison. It reads like you, so it stays as written. Keep?]
+- L183: [CONFIRM: the old subtitle called this "the ideation methodology behind $100K+ in hackathon prizes," which credits every prize to one method. Scoped down for now. Put it back only if every win came from it.]
+- L209: [CONFIRM: model names on this page (OpenAI 4o, GPT-4o, GPT-4V) may be dated. Update them or keep?]
+- L307: [NEEDS SPECIFIC: a pairing from one of your hackathons that flopped, so "most pairings flop" has a story behind it.]
+- L446: [CONFIRM: TalkTuahBank is labeled "1st Overall + Goldman Sachs" here, but the home page says "1st Place Grand Prize" at HackUTD 2024. Which wording do you want?]
+- L523: [NEEDS SPECIFIC: the AdaptED and TalkTuahBank combinations. Only DispatchAI's is shown, so "all three" rests on your word for now.]
+- L800: [CONFIRM: TFT as your ideation habit, and the Valorant/League comparison. It reads like you, so it stays as written. Keep?]
 
 ### app/playbook/page.tsx (1)
 
@@ -202,46 +201,46 @@ Total: 111 flags.
 
 ### app/playbook/pitching/page.tsx (9)
 
-- L144: [CONFIRM: this card used to say "One job came from telling the story of a project that won nothing." I've told it as the LA Hacks 2023 internship. Same story?]
-- L556: [CONFIRM: three phase labels don't fit their quotes. "Stakes" (0:05-0:14) is the product description, and "How It Works" (1:10-1:49) and "Vision" (1:49-2:11) are the AI agent mid-call. Rewatch and relabel. If 1:10-2:11 is all demo, the 42% demo share used elsewhere on this page goes up too.]
-- L816: [CONFIRM: the old "Why it won" said AdaptEd "opened with a human story for empathy," but the breakdown above opens with the reframe line. Which is right? I dropped the human-story line until you say.]
-- L939: [NEEDS SPECIFIC: which hackathon taught you to pitch track and sponsor prizes differently? Dispatch AI won AI For Good and Best Use of Intel AI at Berkeley. If you pitched those judges differently, that's the story.]
-- L1073: [CONFIRM: whose project was pitched three ways to three judges, and at which hackathon? If it was yours, tell it in first person and name the event.]
-- L1198: [CONFIRM: which year you judged LA Hacks. The home page lists LA Hacks 2026; add the year here if that's the one.]
-- L1446: [CONFIRM: is SoundSearch yours (solo 1st at AIATL)? If so, tell it in first person. Also confirm the recording reached a recruiter and led to an internship offer.]
-- L1799: [NEEDS SPECIFIC: a pitch where you admitted a flaw or setback on stage, or told a real story from the weekend, and how the judges took it. The two cards below have only generic examples.]
-- L1861: [CONFIRM: the "tell them what you're going to say" structure is credited to Carnegie's 1962 book, but that's unverified and the saying has several attributions. Find the page, or drop the Carnegie credit.]
+- L147: [CONFIRM: this card used to say "One job came from telling the story of a project that won nothing." I've told it as the LA Hacks 2023 internship. Same story?]
+- L559: [CONFIRM: three phase labels don't fit their quotes. "Stakes" (0:05-0:14) is the product description, and "How It Works" (1:10-1:49) and "Vision" (1:49-2:11) are the AI agent mid-call. Rewatch and relabel. If 1:10-2:11 is all demo, the 42% demo share used elsewhere on this page goes up too.]
+- L819: [CONFIRM: the old "Why it won" said AdaptEd "opened with a human story for empathy," but the breakdown above opens with the reframe line. Which is right? I dropped the human-story line until you say.]
+- L942: [NEEDS SPECIFIC: which hackathon taught you to pitch track and sponsor prizes differently? Dispatch AI won AI For Good and Best Use of Intel AI at Berkeley. If you pitched those judges differently, that's the story.]
+- L1076: [CONFIRM: whose project was pitched three ways to three judges, and at which hackathon? If it was yours, tell it in first person and name the event.]
+- L1201: [CONFIRM: which year you judged LA Hacks. The home page lists LA Hacks 2026; add the year here if that's the one.]
+- L1449: [CONFIRM: is SoundSearch yours (solo 1st at AIATL)? If so, tell it in first person. Also confirm the recording reached a recruiter and led to an internship offer.]
+- L1803: [NEEDS SPECIFIC: a pitch where you admitted a flaw or setback on stage, or told a real story from the weekend, and how the judges took it. The two cards below have only generic examples.]
+- L1865: [CONFIRM: the "tell them what you're going to say" structure is credited to Carnegie's 1962 book, but that's unverified and the saying has several attributions. Find the page, or drop the Carnegie credit.]
 
 ### app/playbook/post-hackathon/page.tsx (1)
 
-- L148: [CONFIRM: The old "proof" box also said this came "without job searching after that." Add it back only if it's true.]
+- L150: [CONFIRM: The old "proof" box also said this came "without job searching after that." Add it back only if it's true.]
 
 ### app/playbook/submission/page.tsx (7)
 
-- L280: [NEEDS SPECIFIC: what judges actually looked at while deliberating, e.g. something you saw judging LA Hacks 2026. This page's main claim has no story behind it.]
-- L362: [CONFIRM: 82% is now cited with the source the pitching page uses ("the 2023 NENA and Carbyne survey"). lib/blog/posts/hackathon-pitch-mistakes-la-hacks.ts names it in full and also says 82%; the spoken pitch rounded to "over 80%". Check the quoted wording matches your slide.]
-- L363: [NEEDS SOURCE: TalkTuahBank's "1.7 billion adults without access to a bank" opener was cut from this step because nothing on the site sources it. Add it back with a citation if you have one.]
-- L793: [NEEDS SPECIFIC: the old line said every winning Devpost "in the examples above" had a diagram, but the page shows none. Which of your winning Devposts had one? Second pass: the card now points to the Dispatch AI pitch's architecture slide (lib/blog/posts/hackathon-pitch-mistakes-la-hacks.ts). Did the same diagram go on the Devpost?]
-- L828: [CONFIRM: is DoggoAI yours? PLAN.md lists it among your notable projects, but the page never introduces it. If it is, tell it in first person and name the hackathon. Second pass cut the verdict "its submission was much stronger for it" because nothing backs it; put it back with what actually changed if you know.]
-- L945: [NEEDS SPECIFIC: which hackathon did you first record the video in this gap?]
-- L996: [NEEDS SPECIFIC: have you seen a team miss the deadline because Devpost lagged? The old line said it happens "every hackathon," which I cut.]
+- L283: [NEEDS SPECIFIC: what judges actually looked at while deliberating, e.g. something you saw judging LA Hacks 2026. This page's main claim has no story behind it.]
+- L365: [CONFIRM: 82% is now cited with the source the pitching page uses ("the 2023 NENA and Carbyne survey"). lib/blog/posts/hackathon-pitch-mistakes-la-hacks.ts names it in full and also says 82%; the spoken pitch rounded to "over 80%". Check the quoted wording matches your slide.]
+- L366: [NEEDS SOURCE: TalkTuahBank's "1.7 billion adults without access to a bank" opener was cut from this step because nothing on the site sources it. Add it back with a citation if you have one.]
+- L796: [NEEDS SPECIFIC: the old line said every winning Devpost "in the examples above" had a diagram, but the page shows none. Which of your winning Devposts had one? Second pass: the card now points to the Dispatch AI pitch's architecture slide (lib/blog/posts/hackathon-pitch-mistakes-la-hacks.ts). Did the same diagram go on the Devpost?]
+- L831: [CONFIRM: is DoggoAI yours? PLAN.md lists it among your notable projects, but the page never introduces it. If it is, tell it in first person and name the hackathon. Second pass cut the verdict "its submission was much stronger for it" because nothing backs it; put it back with what actually changed if you know.]
+- L946: [NEEDS SPECIFIC: which hackathon did you first record the video in this gap?]
+- L997: [NEEDS SPECIFIC: have you seen a team miss the deadline because Devpost lagged? The old line said it happens "every hackathon," which I cut.]
 
 ### app/playbook/team-formation/page.tsx (5)
 
-- L112: [NEEDS SPECIFIC: a team of yours that was missing one of these roles, and what it cost you. Which hackathon?]
-- L435: [NEEDS SPECIFIC: where did you find your own teammates, and which of these channels actually worked for you?]
-- L544: [NEEDS SPECIFIC: a hackathon where a teammate's attitude, good or bad, decided how the weekend went.]
-- L645: [CONFIRM: this subtitle used to say "The method behind $100K+ in prizes." Did you use the JV/varsity system for those wins? If so, say it here in first person.]
-- L657: [NEEDS SPECIFIC: someone on your own squad who went from JV to varsity, and roughly how many hackathons it took. No names needed.]
+- L114: [NEEDS SPECIFIC: a team of yours that was missing one of these roles, and what it cost you. Which hackathon?]
+- L437: [NEEDS SPECIFIC: where did you find your own teammates, and which of these channels actually worked for you?]
+- L546: [NEEDS SPECIFIC: a hackathon where a teammate's attitude, good or bad, decided how the weekend went.]
+- L647: [CONFIRM: this subtitle used to say "The method behind $100K+ in prizes." Did you use the JV/varsity system for those wins? If so, say it here in first person.]
+- L659: [NEEDS SPECIFIC: someone on your own squad who went from JV to varsity, and roughly how many hackathons it took. No names needed.]
 
 ### app/playbook/validation/page.tsx (6)
 
-- L102: [NEEDS SPECIFIC: a time an untested API broke late in one of your hackathons (the first draft said "hour 18"). Did this happen to you or a team you saw? Which hackathon?]
-- L609: [CONFIRM: "fewer teams submit" to sponsor prizes is unsourced. Is that what you've seen? If so, a sponsor win of yours (e.g. AdaptED, 1st Place Google at LA Hacks 2024) could show it.]
-- L684: [NEEDS SPECIFIC: did you target the Intel prize on purpose at Berkeley? If so, say so in a sentence. If not, this example only shows that both can be won.]
-- L719: [NEEDS SPECIFIC: what's actually in your own go bag, and which hackathon made you start one?]
-- L995: [NEEDS SPECIFIC: were the first two spikes (GPT-4 triaging 911 calls, Twilio audio to an LLM) from Dispatch AI? If so, tell it in first person with the hackathon.]
-- L1410: [NEEDS SPECIFIC: the 2-hour framework debate. Have you watched a team do this? Which hackathon?]
+- L104: [NEEDS SPECIFIC: a time an untested API broke late in one of your hackathons (the first draft said "hour 18"). Did this happen to you or a team you saw? Which hackathon?]
+- L611: [CONFIRM: "fewer teams submit" to sponsor prizes is unsourced. Is that what you've seen? If so, a sponsor win of yours (e.g. AdaptED, 1st Place Google at LA Hacks 2024) could show it.]
+- L686: [NEEDS SPECIFIC: did you target the Intel prize on purpose at Berkeley? If so, say so in a sentence. If not, this example only shows that both can be won.]
+- L721: [NEEDS SPECIFIC: what's actually in your own go bag, and which hackathon made you start one?]
+- L997: [NEEDS SPECIFIC: were the first two spikes (GPT-4 triaging 911 calls, Twilio audio to an LLM) from Dispatch AI? If so, tell it in first person with the hackathon.]
+- L1412: [NEEDS SPECIFIC: the 2-hour framework debate. Have you watched a team do this? Which hackathon?]
 
 ### lib/blog/posts/best-tech-stack-for-hackathons.ts (3)
 
@@ -299,49 +298,48 @@ Total: 111 flags.
 
 ### app/non-coders/apis/page.tsx (3)
 
-- L243: [NEEDS SPECIFIC: a hackathon where you, or a non-coder you worked with or judged, wired in a service this way. One line would ground this page.]
-- L367: [CONFIRM: is this dashboard path still current? Newer Supabase projects may label the anon key as the "publishable" key.]
-- L417: [CONFIRM: the ElevenLabs repo URL below comes from lib/blog/posts/build-with-elevenlabs-and-cursor.ts. OK to use it here? No official Supabase MCP link exists on this site, so that prompt points the AI to Supabase's docs instead. Link the official servers if you want.]
+- L251: [NEEDS SPECIFIC: a hackathon where you, or a non-coder you worked with or judged, wired in a service this way. One line would ground this page.]
+- L373: [CONFIRM: is this dashboard path still current? Newer Supabase projects may label the anon key as the "publishable" key.]
+- L423: [CONFIRM: the ElevenLabs repo URL below comes from lib/blog/posts/build-with-elevenlabs-and-cursor.ts. OK to use it here? No official Supabase MCP link exists on this site, so that prompt points the AI to Supabase's docs instead. Link the official servers if you want.]
 
 ### app/non-coders/concepts/page.tsx (2)
 
-- L78: [NEEDS SPECIFIC: have you seen a team leak a key, or had one break a demo, at a hackathon? One line would ground this card.]
-- L198: [CONFIRM: /explain comes from .agents/commands/explain.md, not skills/. It's unverified that the skills install prompt installs it.]
+- L85: [NEEDS SPECIFIC: have you seen a team leak a key, or had one break a demo, at a hackathon? One line would ground this card.]
+- L205: [CONFIRM: /explain comes from .agents/commands/explain.md, not skills/. It's unverified that the skills install prompt installs it.]
 
 ### app/non-coders/page.tsx (3)
 
-- L70: [CONFIRM: softened from "Zero programming experience required." One featured winner, Nedoszytko, had spent 20 years building healthcare software. The openGraph description in metadata (off-limits here) still says "No coding experience required."]
-- L210: [CONFIRM: the old Sources list titled the SF Standard piece "200+ Hackathon Wins"; the proof page says "200+ Hackathons". Which is right? This page no longer states either number.]
-- L211: [NEEDS SPECIFIC: this page has no line from you. Why you built the non-coder guide, or a non-coder you've seen win or judged at LA Hacks 2026, would fit here.]
+- L72: [CONFIRM: softened from "Zero programming experience required." One featured winner, Nedoszytko, had spent 20 years building healthcare software. The openGraph description in metadata (off-limits here) still says "No coding experience required."]
+- L212: [CONFIRM: the old Sources list titled the SF Standard piece "200+ Hackathon Wins"; the proof page says "200+ Hackathons". Which is right? This page no longer states either number.]
+- L213: [NEEDS SPECIFIC: this page has no line from you. Why you built the non-coder guide, or a non-coder you've seen win or judged at LA Hacks 2026, would fit here.]
 
-### app/non-coders/proof/page.tsx (7)
+### app/non-coders/proof/page.tsx (6)
 
-- L89: [CONFIRM: "1st Place" at the Cursor hackathon. Nothing on this page sources the placement. lib/blog/posts/non-coders-winning-hackathons.ts says she "won against 27 other teams", citing her write-up.]
-- L105: [CONFIRM: "200+ Hackathons". The hub's old Sources list titled the same SF Standard piece "200+ Hackathon Wins". Which is right?]
-- L108: [CONFIRM: this line comes from lib/blog/posts/non-coders-winning-hackathons.ts, which cites the SF Standard piece. It replaced "Zero lines of code written, ever", an absolute. Does the piece support either?]
-- L205: [CONFIRM: the metadata description (off-limits here) still says "zero coding backgrounds who beat thousands of developers". The Anthropic event accepted 500, and Nedoszytko had 20 years of building software.]
-- L226: [NEEDS SOURCE: the 13,000 applicant count is credited to Cerebral Valley, but no Cerebral Valley link exists anywhere on the site. Add the URL or cut the number.]
-- L269: [CONFIRM: "the lawyer for a friend's business." None of the quotes or sources on this page say this.]
-- L270: [NEEDS SPECIFIC: every story here is third-party. Have you seen a non-coder win, or judged one at LA Hacks 2026? One line from you would fit after this paragraph.]
+- L96: [CONFIRM: "1st Place" at the Cursor hackathon. Nothing on this page sources the placement. lib/blog/posts/non-coders-winning-hackathons.ts says she "won against 27 other teams", citing her write-up.]
+- L112: [CONFIRM: "200+ Hackathons". The hub's old Sources list titled the same SF Standard piece "200+ Hackathon Wins". Which is right?]
+- L115: [CONFIRM: this line comes from lib/blog/posts/non-coders-winning-hackathons.ts, which cites the SF Standard piece. It replaced "Zero lines of code written, ever", an absolute. Does the piece support either?]
+- L232: [NEEDS SOURCE: the 13,000 applicant count is credited to Cerebral Valley, but no Cerebral Valley link exists anywhere on the site. Add the URL or cut the number.]
+- L275: [CONFIRM: "the lawyer for a friend's business." None of the quotes or sources on this page say this.]
+- L276: [NEEDS SPECIFIC: every story here is third-party. Have you seen a non-coder win, or judged one at LA Hacks 2026? One line from you would fit after this paragraph.]
 
 ### app/non-coders/setup/page.tsx (6)
 
-- L34: [CONFIRM: the audit flags .cursorrules as Cursor's legacy rules format (this repo itself uses .cursor/rules/). Cursor's own post (cursor.com/blog/agent-best-practices, Jan 2026) puts rules in .cursor/rules/, and Awesome Cursor Rules (github.com/PatrickJS/awesome-cursorrules, from the old hub's Sources list) now uses .mdc files there. Keep recommending .cursorrules?]
-- L35: [CONFIRM: the AGENTS.md template below pins "Next.js 15". Still the version you want readers to use?]
-- L123: [CONFIRM: Ctrl+L for chat and Ctrl+I for agent mode may be out of date. Check them against the current Cursor version.]
-- L187: [CONFIRM: this page's setup (.cursorrules + a full AGENTS.md + PRD.md) conflicts with /non-coders/system-prompt, which puts the rules in CLAUDE.md and makes AGENTS.md a one-line pointer. /domain-to-spec also writes its own AGENTS.md. Which setup should non-coders follow? Advice left unchanged until you decide.]
-- L310: [NEEDS SPECIFIC: step 3 asks non-coders to review code they may not be able to read. What can a non-coder actually check in a diff? The owner should say; no method has been added.]
-- L387: [NEEDS SPECIFIC: where does "at least a week" come from? A hackathon where you or a teammate had to learn the tool during the event would carry this.]
+- L41: [CONFIRM: the audit flags .cursorrules as Cursor's legacy rules format (this repo itself uses .cursor/rules/). Cursor's own post (cursor.com/blog/agent-best-practices, Jan 2026) puts rules in .cursor/rules/, and Awesome Cursor Rules (github.com/PatrickJS/awesome-cursorrules, from the old hub's Sources list) now uses .mdc files there. Keep recommending .cursorrules?]
+- L42: [CONFIRM: the AGENTS.md template below pins "Next.js 15". Still the version you want readers to use?]
+- L130: [CONFIRM: Ctrl+L for chat and Ctrl+I for agent mode may be out of date. Check them against the current Cursor version.]
+- L194: [CONFIRM: this page's setup (.cursorrules + a full AGENTS.md + PRD.md) conflicts with /non-coders/system-prompt, which puts the rules in CLAUDE.md and makes AGENTS.md a one-line pointer. /domain-to-spec also writes its own AGENTS.md. Which setup should non-coders follow? Advice left unchanged until you decide.]
+- L317: [NEEDS SPECIFIC: step 3 asks non-coders to review code they may not be able to read. What can a non-coder actually check in a diff? The owner should say; no method has been added.]
+- L394: [NEEDS SPECIFIC: where does "at least a week" come from? A hackathon where you or a teammate had to learn the tool during the event would carry this.]
 
 ### app/non-coders/skills/page.tsx (2)
 
-- L108: [CONFIRM: Ctrl+I / Cmd+I still opens Cursor's agent chat in the current Cursor version.]
-- L221: [CONFIRM: skills/ also has devpost-writer, portfolio-builder, ship-it, and youtube-writer, which the install prompt pulls in but this page doesn't list. List them here, or leave them off on purpose?]
+- L115: [CONFIRM: Ctrl+I / Cmd+I still opens Cursor's agent chat in the current Cursor version.]
+- L228: [CONFIRM: skills/ also has devpost-writer, portfolio-builder, ship-it, and youtube-writer, which the install prompt pulls in but this page doesn't list. List them here, or leave them off on purpose?]
 
 ### app/non-coders/system-prompt/page.tsx (2)
 
-- L87: [CONFIRM: "See @CLAUDE.md" is Claude Code's import syntax. It's unverified whether Cursor and Codex follow it and load CLAUDE.md. The downloaded file (public/system-prompt/non-coder-agents.txt) promises they "load the exact same rules"; that text is agent-facing and wasn't changed.]
-- L160: [CONFIRM: this page conflicts with /non-coders/setup, which says your setup is .cursorrules + a full AGENTS.md + PRD.md. /domain-to-spec also writes its own AGENTS.md. Which setup should non-coders follow? Advice left unchanged until you decide.]
+- L88: [CONFIRM: "See @CLAUDE.md" is Claude Code's import syntax. It's unverified whether Cursor and Codex follow it and load CLAUDE.md. The downloaded file (public/system-prompt/non-coder-agents.txt) promises they "load the exact same rules"; that text is agent-facing and wasn't changed.]
+- L161: [CONFIRM: this page conflicts with /non-coders/setup, which says your setup is .cursorrules + a full AGENTS.md + PRD.md. /domain-to-spec also writes its own AGENTS.md. Which setup should non-coders follow? Advice left unchanged until you decide.]
 
 ### lib/non-coder-skills.ts (1)
 
@@ -349,15 +347,15 @@ Total: 111 flags.
 
 ### app/ai/page.tsx (1)
 
-- L33: [CONFIRM: "answers only from this site's content" rests on the system prompt (lib/chat/prompt.ts: "Answer ONLY from the reference sections"), which a model can still stray from. The citation chips come straight from retrieval results, but inline links in the answer are model-written. Keep "answers only" and "can't cite", or soften to "is told to answer only"?]
+- L40: [CONFIRM: "answers only from this site's content" rests on the system prompt (lib/chat/prompt.ts: "Answer ONLY from the reference sections"), which a model can still stray from. The citation chips come straight from retrieval results, but inline links in the answer are model-written. Keep "answers only" and "can't cite", or soften to "is told to answer only"?]
 
 ### app/media-kit/page.tsx (5)
 
-- L43: [CONFIRM: the JSON-LD description below still calls you "one of the most decorated hackathon competitors in the US college scene". It's unsourced and was cut from the visible bio, but JSON-LD is off-limits in this pass. Cut it here too?]
-- L114: [CONFIRM: "1,000+ person events" for HackUTD 2024, UC Berkeley AI Hackathon 2024, and LA Hacks 2024]
-- L125: [CONFIRM: "returning for the LA Hacks AI Hackathon"]
-- L136: [CONFIRM: "(Enterprise & Post-Training Research)" as your Scale AI team. Moved here from the bio paragraph.]
-- L142: [CONFIRM: "$1M valuation, Berkeley SkyDeck funded" for Dispatch AI]
+- L40: [CONFIRM: the JSON-LD description below still calls you "one of the most decorated hackathon competitors in the US college scene". It's unsourced and was cut from the visible bio, but JSON-LD is off-limits in this pass. Cut it here too?]
+- L110: [CONFIRM: "1,000+ person events" for HackUTD 2024, UC Berkeley AI Hackathon 2024, and LA Hacks 2024]
+- L121: [CONFIRM: "returning for the LA Hacks AI Hackathon"]
+- L132: [CONFIRM: "(Enterprise & Post-Training Research)" as your Scale AI team. Moved here from the bio paragraph.]
+- L138: [CONFIRM: "$1M valuation, Berkeley SkyDeck funded" for Dispatch AI]
 
 ### app/page.tsx (4)
 

@@ -157,7 +157,7 @@ export const post: BlogPost = {
       blocks: [
         { type: "paragraph", text: "I had five minutes per team: about 1.5 minutes for pitch and demo, then 3.5 for questions. Teams rarely hit it. Some spent the entire five minutes pitching." },
         // [CONFIRM: this pull-quote quotes you (Bill Zhang). Keep it?]
-        { type: "quote", text: "When judges cannot ask questions, they cannot score what they never got to understand.", attribution: "Bill Zhang, LA Hacks judge and Hackathon Playbook author" },
+        { type: "quote", text: "When judges cannot ask questions, they cannot score what they never got to understand.", attribution: "Bill Zhang, LA Hacks judge and author of The Hackathon Playbook" },
         { type: "paragraph", text: "**Q&A is where the judge fills in missing rubric information.** If a rubric category never gets answered, the judge may have to give it a low score, or a zero. Leave room for questions, even if it means cutting the demo short." },
       ],
     },

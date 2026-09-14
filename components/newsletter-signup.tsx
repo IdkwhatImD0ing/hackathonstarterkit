@@ -1,6 +1,7 @@
 "use client";
 
 import { type FormEvent, useState } from "react";
+import Link from "next/link";
 import { AlertCircle, CheckCircle2, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -147,7 +148,10 @@ export function NewsletterSignup({
             </p>
           ) : (
             <p className="font-code text-[10px] uppercase tracking-wider text-muted-foreground">
-              No spam. Unsubscribe anytime.
+              No spam. Unsubscribe anytime.{" "}
+              <Link href="/privacy" className="underline hover:text-volt">
+                Privacy
+              </Link>
             </p>
           )}
         </form>

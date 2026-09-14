@@ -60,7 +60,7 @@ Use these where they'd fall naturally. Don't sprinkle them in to sound casual. T
 2. **Every lesson is grounded in a hackathon the owner was at.** The owner: "Why should someone care about lessons that aren't grounded in anything?" A lesson with no story behind it gets `[NEEDS SPECIFIC: which hackathon taught you this?]`, never a made-up example. Named research (CLAUDE.md rule 3) still belongs, as support for a story, not in place of one.
 3. **Losing doesn't make it a bad project.** The owner: "Just cause you lost at a hackathon doesn't mean it's a bad project." SlugLoop losing to a calculator app is the example.
 4. **Luck is real, and it stays off the site as a thesis.** The owner believes a big share of results comes down to luck: which judge you get, which teammates you find, whether your bugs happen to get fixed in time. The site never says "hackathons are mostly luck," because that discourages people. Variance shows up only through the owner's own stories: a good project losing, then what the owner did next. The owner calls SlugLoop "an example of being unlucky."
-5. **Algorithms still matter.** Hackathons can open doors, but never frame them as the reason to skip algorithms or interview prep. Known tension: the post-hackathon page ends the career story with "All from visibility, not LeetCode." Flag it in the audit.
+5. **Algorithms still matter.** Hackathons can open doors, but never frame them as the reason to skip algorithms or interview prep. The post-hackathon page used to end the career story with "All from visibility, not LeetCode." The 2026-09-14 rewrite removed it.
 
 ## Audience floor
 
@@ -82,7 +82,7 @@ Only facts the owner stated, or that appear on the site. Never add details to th
 - Dispatch AI won the Grand Prize ($64K) at the UC Berkeley AI Hackathon 2024, the year after the graduation-day no-win.
 - Other wins: 1st Place Grand Prize at HackUTD 2024 (TalkTuahBank), 1st Place Google at LA Hacks 2024 (AdaptED), Best Startup Award at VTHacks 12 (Linguify).
 - Judge at LA Hacks 2026.
-- 50+ hackathons, 36+ wins, $100K+ in prizes. (CLAUDE.md still says 60+. 50+ is correct.)
+- 50+ hackathons, 36+ wins, $100K+ in prizes.
 - Started doing hackathons to land an internship. Got an interview within the first four, then two expedited interviews and one direct offer. (Source: CLAUDE.md.) Also got hundreds of recruiting DMs (owner confirmed, 2026-09-14).
 - Co-founder of WeCracked, a hackathon community of 4,000+ members. Co-founder of Dispatch AI.
 

@@ -9,6 +9,8 @@
  * discovery documents, and reads both cache layers' headers on the way.
  * Exits non-zero on any failure.
  */
+import { MARKDOWN_EXCLUDED_PATHS } from "../lib/site";
+
 const base = (process.argv[2] ?? "https://thehackathonplaybook.dev").replace(/\/$/, "");
 
 let failures = 0;
@@ -24,10 +26,9 @@ async function checkMarkdownUrls() {
   const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   if (urls.length === 0) return fail("sitemap.xml contained no URLs");
 
-  const excluded = ["/terms", "/media-kit", "/ai"];
   for (const url of urls) {
     const path = new URL(url).pathname;
-    if (excluded.includes(path)) continue;
+    if (MARKDOWN_EXCLUDED_PATHS.includes(path)) continue;
     const mdUrl = `${base}${path === "/" ? "/index.md" : `${path}.md`}`;
     const response = await fetch(mdUrl);
     const type = response.headers.get("content-type") ?? "";

@@ -41,6 +41,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
+import { AffiliateLink } from "@/components/affiliate-link";
 
 const section = PLAYBOOK_SECTIONS[5];
 
@@ -52,11 +54,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/playbook/submission`,
     types: markdownAlternate("/playbook/submission"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/playbook/submission",
     title: "How to Write a Winning Hackathon Submission",
     description:
       "README templates, demo video tips, and submission strategies that win hackathon prizes. From the 36-win playbook.",
-  },
+  }),
 };
 
 function SectionHeading({
@@ -843,14 +846,12 @@ export default function SubmissionPage() {
                 title: "Recording Tools",
                 descriptionNode: (
                   <>
-                    <a
+                    <AffiliateLink
                       href="https://screenstudio.lemonsqueezy.com?aff=LpD9R"
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="font-semibold text-volt underline decoration-volt/30 hover:decoration-volt"
                     >
                       Screen Studio
-                    </a>{" "}
+                    </AffiliateLink>{" "}
                     (Mac, my pick) or CanVid (Windows). Auto-zoom and webcam
                     overlay mean editing takes minutes.
                   </>

@@ -39,6 +39,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { AlchemyGame } from "./alchemy-game";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 const section = PLAYBOOK_SECTIONS[1];
 
@@ -50,11 +51,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/playbook/ideation`,
     types: markdownAlternate("/playbook/ideation"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/playbook/ideation",
     title: "How to Come Up With Winning Hackathon Ideas",
     description:
       "Frameworks for brainstorming and selecting hackathon ideas that impress judges. From the 36-win playbook.",
-  },
+  }),
 };
 
 function SectionHeading({

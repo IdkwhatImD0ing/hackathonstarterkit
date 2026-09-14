@@ -14,6 +14,7 @@ import { NON_CODER_SECTIONS } from "@/lib/non-coder-sections";
 import { NON_CODER_SKILLS } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
@@ -24,16 +25,17 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/non-coders`,
     types: markdownAlternate("/non-coders"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/non-coders",
     title: "Hackathons for Non-Coders — Win Without Coding Experience",
     description:
       "Proven strategies and installable AI skills for professionals who build with Cursor and Claude Code. No coding experience required.",
-  },
-  twitter: {
-    title: "Non-Coders Are Winning Hackathons — Here's How",
-    description:
-      "Doctors, lawyers, and professionals are beating developers at hackathons using AI tools. Learn the strategies.",
-  },
+    twitter: {
+      title: "Non-Coders Are Winning Hackathons — Here's How",
+      description:
+        "Doctors, lawyers, and professionals are beating developers at hackathons using AI tools. Learn the strategies.",
+    },
+  }),
 };
 
 const accentStyles = {
@@ -188,7 +190,7 @@ export default function NonCodersPage() {
               </Link>{" "}
               profiles two people from outside software:{" "}
               <a
-                href="https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/"
+                href="https://ninakolari.com/blog/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground"

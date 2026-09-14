@@ -36,6 +36,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 const section = PLAYBOOK_SECTIONS[0];
 
@@ -47,11 +48,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/playbook/team-formation`,
     types: markdownAlternate("/playbook/team-formation"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/playbook/team-formation",
     title: "How to Build a Winning Hackathon Team",
     description:
       "Find the right people, define roles, and create a winning hackathon team dynamic. From the 36-win playbook.",
-  },
+  }),
 };
 
 function SectionHeading({

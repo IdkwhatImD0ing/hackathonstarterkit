@@ -49,7 +49,7 @@ Why the prompt says “server-side”: .env.local keeps the key out of your code
 
 Here's the template filled in for a real service.
 
-#### [ElevenLabs](https://try.elevenlabs.io/thehackathonplaybook)
+#### [ElevenLabs](https://try.elevenlabs.io/thehackathonplaybook) (affiliate link)
 
 Adds voice conversations to your app.
 
@@ -72,11 +72,13 @@ Get your key from elevenlabs.io/app/settings/api-keys and paste it into .env.loc
 
 [ElevenLabs
 
-Try the Example on ElevenLabs
+My pick for voice AI
 
 There's a free tier if you want to check it out. See how much usage it includes before you count on it for a live demo.
 
-Try ElevenLabs Free](https://try.elevenlabs.io/thehackathonplaybook)
+Affiliate link: I may earn a commission.
+
+Check it out](https://try.elevenlabs.io/thehackathonplaybook)
 
 ## Example: Supabase Database
 

@@ -15,6 +15,7 @@ import {
 import type { SkillCategory } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { CopyForAi } from "@/components/copy-for-ai";
 
@@ -26,6 +27,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/non-coders/skills`,
     types: markdownAlternate("/non-coders/skills"),
   },
+  ...shareMetadata({
+    path: "/non-coders/skills",
+    title: "Installable AI Skills for Non-Coders",
+    description:
+      "Installable AI skills and slash commands that teach your AI assistant how to work with non-coders.",
+  }),
 };
 
 const accentStyles = {
