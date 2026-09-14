@@ -50,7 +50,7 @@ const STARTERS = [
 
 const ERROR_COPY: Record<string, string> = {
   rate_limited: "You're moving faster than the rate limit. Give it a minute, then ask again.",
-  budget: "Chat is taking a break for the rest of the month. Every answer it gives is on the site itself, start at /playbook.",
+  budget: "Chat is taking a break for now. Every answer it gives is on the site itself, start at /playbook.",
   disabled: "Chat isn't switched on for this deployment. The whole playbook is still one click away at /playbook.",
   api_error: "The model behind this chat is unreachable right now. Try again in a bit, or read the playbook directly.",
   invalid: "That message didn't go through. Shorten it and try again.",
@@ -330,6 +330,17 @@ export function ChatWidget() {
                     </button>
                   ))}
                 </div>
+                <p className="text-xs text-muted-foreground">
+                  Chats are stored to improve answers. Don&apos;t paste secrets.{" "}
+                  <a
+                    href="/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-volt underline underline-offset-2 hover:text-volt/80"
+                  >
+                    Privacy
+                  </a>
+                </p>
               </div>
             ) : null}
 

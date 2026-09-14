@@ -75,14 +75,51 @@ export const CHAT_MAX_MESSAGE_CHARS = 1500;
  * Assistant history turns echo prior answers, whose length is bounded by
  * CHAT_MAX_OUTPUT_TOKENS (600 tokens ≈ 2-3k chars), not by the user cap;
  * capping them at CHAT_MAX_MESSAGE_CHARS rejected every follow-up after a
- * long answer. 8000 covers any real answer while still bounding abuse.
+ * long answer. Every allowed char is reserved against the budget, so the
+ * cap sits just above what the model can actually produce.
  */
-export const CHAT_MAX_ASSISTANT_CHARS = 8000;
+// 6 chars/token = 3,600: 600-token windows of the site's own Markdown top out at 2,923 chars (4.9/token, o200k), ~23% headroom.
+export const CHAT_MAX_ASSISTANT_CHARS = CHAT_MAX_OUTPUT_TOKENS * 6;
 export const CHAT_MAX_HISTORY = 10;
 
-export const CHAT_RATE_LIMIT_MAX = Number(process.env.CHAT_RATE_LIMIT_MAX ?? 20);
+/**
+ * A numeric env var, or `fallback` when it is unset or blank. A malformed
+ * value would otherwise remove the cap it sets: Number("20_000_000") is
+ * NaN, and `total > NaN` is always false. So a bad value is logged loudly
+ * and replaced by the documented default. Zero is only valid where it has
+ * a documented meaning (a budget of 0 switches chat off).
+ */
+export function envNumber(
+  name: string,
+  fallback: number,
+  { allowZero = false }: { allowZero?: boolean } = {},
+): number {
+  const raw = process.env[name]?.trim();
+  if (!raw) return fallback;
+  const value = Number(raw);
+  if (Number.isFinite(value) && (value > 0 || (allowZero && value === 0))) return value;
+  console.error(
+    `config: ${name}="${raw}" is not a valid ${allowZero ? "number >= 0" : "positive number"} ` +
+      `(no underscores or commas); falling back to the default, ${fallback}.`,
+  );
+  return fallback;
+}
+
+export const CHAT_RATE_LIMIT_MAX = envNumber("CHAT_RATE_LIMIT_MAX", 20);
 
 /** Monthly output+input token ceiling across all users; 0 disables chat. */
-export const CHAT_MONTHLY_TOKEN_BUDGET = Number(
-  process.env.CHAT_MONTHLY_TOKEN_BUDGET ?? 20_000_000,
+export const CHAT_MONTHLY_TOKEN_BUDGET = envNumber("CHAT_MONTHLY_TOKEN_BUDGET", 20_000_000, {
+  allowZero: true,
+});
+
+/**
+ * Daily ceiling (UTC day) under the monthly one, so one bad day cannot
+ * empty the month. Default: a tenth of the monthly budget, three average
+ * days' worth, so a launch-day spike still has room while sustained abuse
+ * needs ten days, not hours, to exhaust the month. 0 disables chat.
+ */
+export const CHAT_DAILY_TOKEN_BUDGET = envNumber(
+  "CHAT_DAILY_TOKEN_BUDGET",
+  Math.floor(CHAT_MONTHLY_TOKEN_BUDGET / 10),
+  { allowZero: true },
 );

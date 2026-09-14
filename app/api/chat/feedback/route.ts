@@ -3,6 +3,7 @@ import { z } from "zod";
 import { getClientIp } from "@/lib/request-ip";
 import { rateLimit } from "@/lib/rate-limit";
 import { TRACE_ID_PATTERN, recordFeedback } from "@/lib/tracing/firetrace";
+import { envNumber } from "@/lib/chat/config";
 
 /**
  * Thumbs up or down on one chat answer, keyed by the trace id /api/chat
@@ -19,7 +20,7 @@ import { TRACE_ID_PATTERN, recordFeedback } from "@/lib/tracing/firetrace";
  * caps how fast one client can vote.
  */
 
-const RATE_LIMIT_MAX = Number(process.env.CHAT_FEEDBACK_RATE_LIMIT_MAX ?? 60);
+const RATE_LIMIT_MAX = envNumber("CHAT_FEEDBACK_RATE_LIMIT_MAX", 60);
 
 const RequestSchema = z.object({
   traceId: z.string().regex(TRACE_ID_PATTERN),

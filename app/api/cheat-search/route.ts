@@ -4,8 +4,10 @@ import { getClientIp } from "@/lib/request-ip";
 import { rateLimit } from "@/lib/rate-limit";
 import { CHEAT_SECTIONS } from "@/lib/cheat-sheet";
 import {
+  CHAT_DAILY_TOKEN_BUDGET,
   CHAT_MODEL,
   CHAT_MONTHLY_TOKEN_BUDGET,
+  envNumber,
   isReasoningExempt,
   rejectReasoningModel,
 } from "@/lib/chat/config";
@@ -20,9 +22,9 @@ import { estimateCostUsd } from "@/lib/tracing/pricing";
  * output schema, so the response is always a real card or an error, never
  * free text.
  *
- * Cost controls mirror /api/chat and share its monthly budget: same model
- * config (non-reasoning guard included), per-IP rate limit, input cap, and
- * reserve/settle accounting. Each match is traced to FireTrace
+ * Cost controls mirror /api/chat and share its daily and monthly budgets:
+ * same model config (non-reasoning guard included), per-IP rate limit,
+ * input cap, and reserve/settle accounting. Each match is traced to FireTrace
  * (lib/tracing/firetrace.ts), which is how a query that keeps landing on
  * the wrong card gets noticed.
  */
@@ -31,7 +33,7 @@ const MODEL_GUARD_ERROR = rejectReasoningModel(CHAT_MODEL);
 
 const MAX_QUERY_CHARS = 300;
 const MAX_OUTPUT_TOKENS = 150;
-const RATE_LIMIT_MAX = Number(process.env.CHEAT_SEARCH_RATE_LIMIT_MAX ?? 30);
+const RATE_LIMIT_MAX = envNumber("CHEAT_SEARCH_RATE_LIMIT_MAX", 30);
 
 const RequestSchema = z.object({
   query: z.string().trim().min(3).max(MAX_QUERY_CHARS),
@@ -112,12 +114,22 @@ export async function POST(request: NextRequest) {
     [SYSTEM_PROMPT, body.query],
     MAX_OUTPUT_TOKENS,
   );
-  const { result: reservation, key: spendKey } = await reserveTokens(
-    reservedTokens,
-    CHAT_MONTHLY_TOKEN_BUDGET,
-  );
+  const {
+    result: reservation,
+    exceeded,
+    keys: spendKeys,
+  } = await reserveTokens(reservedTokens, {
+    monthly: CHAT_MONTHLY_TOKEN_BUDGET,
+    daily: CHAT_DAILY_TOKEN_BUDGET,
+  });
   if (reservation === "over_budget") {
-    return jsonError(503, "budget", "Search is taking a break for the rest of the month.");
+    return jsonError(
+      503,
+      "budget",
+      exceeded === "daily"
+        ? "Search is taking a break until tomorrow (UTC)."
+        : "Search is taking a break for the rest of the month.",
+    );
   }
   if (reservation === "unavailable") {
     return jsonError(503, "api_error", "Search is briefly unavailable. Try again shortly.");
@@ -143,6 +155,15 @@ export async function POST(request: NextRequest) {
     attributes: { temperature: 0, maxOutputTokens: MAX_OUTPUT_TOKENS, structuredOutput: true },
   });
 
+  // Exactly one settle per reservation, as in /api/chat: a throw after the
+  // usage was settled (an unparseable reply, say) must not refund it again.
+  let settled = false;
+  const settle = (actualTokens: number) => {
+    if (settled) return;
+    settled = true;
+    void settleTokens(reservedTokens, actualTokens, spendKeys);
+  };
+
   try {
     const response = await client.responses.create({
       model: CHAT_MODEL,
@@ -166,7 +187,7 @@ export async function POST(request: NextRequest) {
     console.log(
       `cheat-search: model=${CHAT_MODEL} prompt=${usage?.input_tokens ?? "?"} completion=${usage?.output_tokens ?? "?"}`,
     );
-    void settleTokens(reservedTokens, usage?.total_tokens ?? reservedTokens, spendKey);
+    settle(usage?.total_tokens ?? reservedTokens);
 
     const tokens = {
       inputTokens: usage?.input_tokens,
@@ -203,7 +224,8 @@ export async function POST(request: NextRequest) {
       { headers: { "Cache-Control": "no-store" } },
     );
   } catch (error) {
-    void settleTokens(reservedTokens, 0, spendKey);
+    // Nothing was spent if the call itself failed; a no-op if it was settled above.
+    settle(0);
     llmSpan?.end({ status: "error" });
     trace?.end({ status: "error", metadata: { outcome: "request_failed" } });
     console.error("cheat-search: completion failed", error);

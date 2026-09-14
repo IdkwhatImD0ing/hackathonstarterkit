@@ -1,9 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { z } from "zod";
 import { getClientIp } from "@/lib/request-ip";
 import { rateLimit } from "@/lib/rate-limit";
 import { searchCorpus } from "@/lib/retrieval";
 import {
+  CHAT_DAILY_TOKEN_BUDGET,
   CHAT_MAX_ASSISTANT_CHARS,
   CHAT_MAX_HISTORY,
   CHAT_MAX_MESSAGE_CHARS,
@@ -31,7 +32,7 @@ import { estimateCostUsd } from "@/lib/tracing/pricing";
  *
  * Cost controls (non-negotiable): non-reasoning model guard, per-IP rate
  * limit keyed on cf-connecting-ip, input caps, concurrent-stream cap, and
- * a monthly token ceiling.
+ * daily and monthly token ceilings.
  *
  * Every turn is traced to FireTrace (lib/tracing/firetrace.ts): retrieval,
  * query embedding, and the model call, with the conversation as the
@@ -210,19 +211,23 @@ export async function POST(request: NextRequest) {
     (c, i) => citations.findIndex((o) => o.url === c.url) === i,
   );
 
-  // Reserve worst-case tokens against the monthly budget BEFORE calling
-  // OpenAI, atomically, so concurrent requests cannot collectively pass a
-  // stale reading of the counter (reserve/settle semantics and the
+  // Reserve worst-case tokens against the daily and monthly budgets BEFORE
+  // calling OpenAI, atomically, so concurrent requests cannot collectively
+  // pass a stale reading of the counters (reserve/settle semantics and the
   // tokenizer-based worst-case estimate both live in lib/chat/spend.ts).
   const reservedTokens = reservationForInput(
     [SYSTEM_PROMPT, contextMessage(results), ...body.messages.map((m) => m.content)],
     CHAT_MAX_OUTPUT_TOKENS,
   );
 
-  const { result: reservation, key: spendKey } = await reserveTokens(
-    reservedTokens,
-    CHAT_MONTHLY_TOKEN_BUDGET,
-  );
+  const {
+    result: reservation,
+    exceeded,
+    keys: spendKeys,
+  } = await reserveTokens(reservedTokens, {
+    monthly: CHAT_MONTHLY_TOKEN_BUDGET,
+    daily: CHAT_DAILY_TOKEN_BUDGET,
+  });
   // Both refusals below still close the trace. A turn that was refused
   // before it reached the model is exactly the kind of thing worth seeing
   // in tracing, and an unclosed trace is never sent at all.
@@ -232,7 +237,9 @@ export async function POST(request: NextRequest) {
     return jsonError(
       503,
       "budget",
-      "Chat is taking a break for the rest of the month. The playbook itself is all still here.",
+      exceeded === "daily"
+        ? "Chat is taking a break until tomorrow (UTC). The playbook itself is all still here."
+        : "Chat is taking a break for the rest of the month. The playbook itself is all still here.",
     );
   }
   if (reservation === "unavailable") {
@@ -283,15 +290,14 @@ export async function POST(request: NextRequest) {
     });
 
     // Settlement bookkeeping: exactly one settle per reservation, against
-    // the month key that took it (a stream can straddle the boundary).
-    // When the stream ends without usage (crash, client disconnect,
+    // the keys that took it (a stream can straddle a day or month
+    // boundary). The promise doubles as the settled flag, and after()
+    // below waits for it. When the stream ends without usage (crash,
     // missing terminal event), the full reservation stands, which errs
     // toward spending less.
-    let settled = false;
+    let settlement: Promise<void> | undefined;
     const settle = (actualTokens: number) => {
-      if (settled) return;
-      settled = true;
-      void settleTokens(reservedTokens, actualTokens, spendKey);
+      settlement ??= settleTokens(reservedTokens, actualTokens, spendKeys);
     };
 
     type ResponseUsage = {
@@ -359,26 +365,39 @@ export async function POST(request: NextRequest) {
       });
     };
 
+    // Set by cancel() when the client disconnects mid-stream. The model
+    // stream keeps draining anyway (output is capped at
+    // CHAT_MAX_OUTPUT_TOKENS, so this is bounded), so the reservation
+    // settles to real usage instead of standing at its worst case.
+    let clientGone = false;
+    let finishDrain!: () => void;
+    const drained = new Promise<void>((resolve) => (finishDrain = resolve));
+
     const stream = new ReadableStream({
       async start(controller) {
+        // Once the client is gone the stream is closed and enqueue would
+        // throw, ending the drain; writes just stop instead.
+        const emit = (event: string | null, data: object) => {
+          if (!clientGone) send(controller, event, data);
+        };
         // Exactly one terminal SSE event per response, so the client never
         // ends ambiguously.
         let terminalSent = false;
         const sendTerminal = (event: "done" | "error", data: object) => {
           if (terminalSent) return;
           terminalSent = true;
-          send(controller, event, data);
+          emit(event, data);
         };
         // How this turn ended, recorded on the trace in the finally below.
         let outcome = "ended_without_usage";
         let traceStatus: "ok" | "error" | "unset" = "ok";
         try {
-          if (trace) send(controller, "trace", { id: trace.id });
-          send(controller, "citations", uniqueCitations);
+          if (trace) emit("trace", { id: trace.id });
+          emit("citations", uniqueCitations);
           for await (const part of completion) {
             if (part.type === "response.output_text.delta" && part.delta) {
               answer += part.delta;
-              send(controller, null, { delta: part.delta });
+              emit(null, { delta: part.delta });
             } else if (part.type === "response.failed") {
               console.error("chat: response failed", part.response.error);
               if (part.response.usage) accountUsage(part.response.usage, "failed");
@@ -418,17 +437,29 @@ export async function POST(request: NextRequest) {
           traceStatus = "error";
           sendTerminal("error", { code: "api_error" });
         } finally {
-          closeTrace(traceStatus, outcome);
+          if (clientGone) closeTrace("unset", "client_disconnected");
+          else closeTrace(traceStatus, outcome);
           release();
-          controller.close();
+          if (!clientGone) controller.close();
+          finishDrain();
         }
       },
       cancel() {
-        // Client went away mid-stream; usage is unknown, reservation stands.
-        closeTrace("unset", "client_disconnected");
+        // Client went away mid-stream: stop writing, keep draining (see
+        // clientGone). The trace closes, with usage, when the drain ends.
+        clientGone = true;
         release();
       },
     });
+
+    // Hold the function open until the drain and its settlement finish, so
+    // a disconnect cannot cut them short. after() throws outside a request
+    // scope (tests), where the drain simply runs detached.
+    try {
+      after(drained.then(() => settlement));
+    } catch {
+      // No request scope to extend.
+    }
 
     return new Response(stream, {
       headers: { "Content-Type": "text/event-stream", "Cache-Control": "no-store" },
@@ -436,7 +467,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     release();
     // The API call never started streaming, so nothing was spent.
-    void settleTokens(reservedTokens, 0, spendKey);
+    void settleTokens(reservedTokens, 0, spendKeys);
     llmSpan?.end({ status: "error", attributes: { outcome: "request_failed" } });
     trace?.end({ status: "error", metadata: { outcome: "request_failed" } });
     console.error("chat: completion failed", error);

@@ -23,12 +23,24 @@
                     "type": "array",
                     "maxItems": 10,
                     "items": {
-                      "type": "object",
-                      "required": ["role", "content"],
-                      "properties": {
-                        "role": { "type": "string", "enum": ["user", "assistant"] },
-                        "content": { "type": "string", "maxLength": 1500 }
-                      }
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "required": ["role", "content"],
+                          "properties": {
+                            "role": { "type": "string", "const": "user" },
+                            "content": { "type": "string", "maxLength": 1500 }
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "required": ["role", "content"],
+                          "properties": {
+                            "role": { "type": "string", "const": "assistant" },
+                            "content": { "type": "string", "maxLength": 3600 }
+                          }
+                        }
+                      ]
                     }
                   },
                   "pageContext": {
@@ -50,7 +62,7 @@
           "403": { "description": "Cross-origin browser request (code: forbidden)." },
           "429": { "description": "Rate limited, see Retry-After (code: rate_limited)." },
           "502": { "description": "Upstream model unreachable (code: api_error)." },
-          "503": { "description": "Chat disabled or monthly budget reached (code: disabled | budget)." }
+          "503": { "description": "Chat disabled or daily/monthly token budget reached (code: disabled | budget)." }
         }
       }
     },
