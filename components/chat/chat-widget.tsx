@@ -50,7 +50,7 @@ const STARTERS = [
 
 const ERROR_COPY: Record<string, string> = {
   rate_limited: "You're moving faster than the rate limit. Give it a minute, then ask again.",
-  budget: "Chat is taking a break for the rest of the month. Every answer it gives is on the site itself, start at /playbook.",
+  budget: "Chat is taking a break for now. Every answer it gives is on the site itself, start at /playbook.",
   disabled: "Chat isn't switched on for this deployment. The whole playbook is still one click away at /playbook.",
   api_error: "The model behind this chat is unreachable right now. Try again in a bit, or read the playbook directly.",
   invalid: "That message didn't go through. Shorten it and try again.",
@@ -179,8 +179,16 @@ export function ChatWidget() {
         });
 
         if (!response.ok || !response.body) {
-          const data = (await response.json().catch(() => ({}))) as { code?: string };
-          setError(ERROR_COPY[data.code ?? "api_error"] ?? ERROR_COPY.api_error);
+          const data = (await response.json().catch(() => ({}))) as {
+            code?: string;
+            error?: string;
+          };
+          // Budget errors carry the server's copy, which says whether chat
+          // is back tomorrow (daily cap) or next month (monthly cap).
+          setError(
+            (data.code === "budget" && data.error) ||
+              (ERROR_COPY[data.code ?? "api_error"] ?? ERROR_COPY.api_error),
+          );
           setStreaming(false);
           return;
         }
@@ -288,7 +296,10 @@ export function ChatWidget() {
           aria-modal="true"
           aria-label="Ask the Playbook"
           onKeyDown={onKeyDown}
-          className="glass fixed inset-0 z-50 flex flex-col border-primary/15 bg-background/95 backdrop-blur-xl sm:inset-auto sm:right-5 sm:bottom-21 sm:h-[36rem] sm:max-h-[75vh] sm:w-105 sm:rounded-xl sm:border sm:shadow-2xl"
+          // ph-no-capture: PostHog session replay is on and masks only form
+          // inputs, so without this the conversation text would be recorded.
+          // app/privacy/page.tsx promises the chat is excluded.
+          className="ph-no-capture glass fixed inset-0 z-50 flex flex-col border-primary/15 bg-background/95 backdrop-blur-xl sm:inset-auto sm:right-5 sm:bottom-21 sm:h-[36rem] sm:max-h-[75vh] sm:w-105 sm:rounded-xl sm:border sm:shadow-2xl"
         >
           <header className="flex items-center justify-between border-b border-primary/10 px-4 py-3">
             <div className="flex items-center gap-2">
@@ -330,6 +341,17 @@ export function ChatWidget() {
                     </button>
                   ))}
                 </div>
+                <p className="text-xs text-muted-foreground">
+                  Chats are stored to improve answers. Don&apos;t paste secrets.{" "}
+                  <a
+                    href="/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-volt underline underline-offset-2 hover:text-volt/80"
+                  >
+                    Privacy
+                  </a>
+                </p>
               </div>
             ) : null}
 

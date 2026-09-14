@@ -40,6 +40,7 @@ import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import NextLink from "next/link";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 const section = PLAYBOOK_SECTIONS[6];
 
@@ -71,11 +72,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/playbook/post-hackathon`,
     types: markdownAlternate("/playbook/post-hackathon"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/playbook/post-hackathon",
     title: "Post-Hackathon: Turn Projects into Career Opportunities",
     description:
       "Follow up with contacts and turn weekend hackathon projects into career-changing portfolio pieces. From the 36-win playbook.",
-  },
+  }),
 };
 
 function SectionHeading({

@@ -13,6 +13,8 @@ import { Separator } from "@/components/ui/separator";
 import { CopyButton } from "@/components/copy-button";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
+import { AffiliateLink, AffiliateDisclosure } from "@/components/affiliate-link";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { CopyForAi } from "@/components/copy-for-ai";
 
@@ -24,6 +26,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/non-coders/apis`,
     types: markdownAlternate("/non-coders/apis"),
   },
+  ...shareMetadata({
+    path: "/non-coders/apis",
+    title: "Add Any Service to Your App with One Prompt",
+    description:
+      "How to add any service to your app with just an API key and a docs link. The copy-paste pattern for non-coders.",
+  }),
 };
 
 const GENERIC_PROMPT = `I want to use [SERVICE NAME] in my project.
@@ -268,15 +276,13 @@ export default function ApisPage() {
               </Badge>
             </div>
             <CardTitle className="font-display text-xl text-volt">
-              <a
+              <AffiliateLink
                 href="https://try.elevenlabs.io/thehackathonplaybook"
-                target="_blank"
-                rel="sponsored noopener noreferrer"
                 className="inline-flex items-center gap-1.5 transition-colors hover:text-volt/80"
               >
                 ElevenLabs
                 <ExternalLink className="size-4" />
-              </a>
+              </AffiliateLink>
             </CardTitle>
             <CardDescription className="font-body">
               Adds voice conversations to your app. Users click a button, speak,
@@ -301,10 +307,9 @@ export default function ApisPage() {
                 elevenlabs.io/app/settings/api-keys
               </p>
             </div>
-            <a
+            <AffiliateLink
               href="https://try.elevenlabs.io/thehackathonplaybook"
-              target="_blank"
-              rel="sponsored noopener noreferrer"
+              label={false}
               className="group glow-hover relative flex flex-col gap-4 overflow-hidden rounded-xl border border-volt/30 bg-gradient-to-br from-volt/10 via-volt/5 to-transparent p-5 transition-all hover:border-volt/60 sm:flex-row sm:items-center"
             >
               <div className="flex-1 space-y-1.5">
@@ -312,18 +317,19 @@ export default function ApisPage() {
                   ElevenLabs
                 </span>
                 <p className="font-display text-base font-bold text-foreground transition-colors group-hover:text-volt">
-                  Get the Voice AI Stack the Pros Use
+                  My pick for voice AI
                 </p>
                 <p className="font-body text-sm text-muted-foreground">
                   Free tier covers a hackathon. Sign up, grab your API key, and
                   paste the prompt above into Cursor.
                 </p>
+                <AffiliateDisclosure />
               </div>
               <span className="inline-flex items-center justify-center gap-2 rounded-lg bg-volt px-4 py-2.5 font-display text-sm font-bold text-volt-foreground shadow-lg shadow-volt/20 transition-all group-hover:shadow-xl group-hover:shadow-volt/30 sm:shrink-0">
-                Try ElevenLabs Free
+                Check it out
                 <ExternalLink className="size-3.5" />
               </span>
-            </a>
+            </AffiliateLink>
           </CardContent>
         </Card>
       </section>

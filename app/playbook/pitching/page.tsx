@@ -46,6 +46,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
+import { AffiliateLink, AffiliateDisclosure } from "@/components/affiliate-link";
 
 const section = PLAYBOOK_SECTIONS[4];
 
@@ -57,11 +59,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/playbook/pitching`,
     types: markdownAlternate("/playbook/pitching"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/playbook/pitching",
     title: "How to Pitch at a Hackathon and Win",
     description:
       "Pitch structure, demo techniques, and storytelling frameworks that win hackathon prizes. From the 36-win playbook.",
-  },
+  }),
 };
 
 function SectionHeading({
@@ -1191,7 +1194,7 @@ export default function PitchingPage() {
                   icon: Monitor,
                   title: "Demo is the Main Event",
                   description:
-                    "DispatchAI allocated 28% and TalkTuahBank allocated 44% of total pitch time to live demo. Judges remember what they saw, not what they heard.",
+                    "DispatchAI allocated 28% and TalkTuahBank allocated 42% of total pitch time to live demo. Judges remember what they saw, not what they heard.",
                   accent: "spark" as const,
                 },
                 {
@@ -1646,14 +1649,12 @@ export default function PitchingPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   On Mac, I reach for{" "}
-                  <a
+                  <AffiliateLink
                     href="https://screenstudio.lemonsqueezy.com?aff=LpD9R"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="font-semibold text-primary underline decoration-primary/30 hover:decoration-primary"
                   >
                     Screen Studio
-                  </a>
+                  </AffiliateLink>
                   . CanVid covers the same ground on Windows. Both handle
                   auto-zoom, instant editing, effects, and selfie overlays,
                   saving hours when every hackathon hour matters.
@@ -1800,6 +1801,7 @@ export default function PitchingPage() {
                   launch, with basically no editing time. Worth a look if
                   you&apos;re on Mac.
                 </p>
+                <AffiliateDisclosure />
                 <div className="flex flex-wrap gap-3">
                   {[
                     "Automatic cursor zoom",
@@ -1817,15 +1819,15 @@ export default function PitchingPage() {
                   ))}
                 </div>
               </div>
-              <a
+              {/* The card's <AffiliateDisclosure /> above labels this button. */}
+              <AffiliateLink
                 href="https://screenstudio.lemonsqueezy.com?aff=LpD9R"
-                target="_blank"
-                rel="noopener noreferrer"
+                label={false}
                 className="inline-flex items-center justify-center gap-2 self-start rounded-lg border border-volt/40 px-5 py-2.5 font-display text-sm font-semibold text-volt transition-all hover:border-volt hover:bg-volt/10 md:self-center"
               >
                 Check it out
                 <ExternalLink className="size-3.5" />
-              </a>
+              </AffiliateLink>
             </div>
           </div>
 

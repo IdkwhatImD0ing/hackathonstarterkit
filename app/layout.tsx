@@ -7,14 +7,15 @@ import { ChatWidget } from "@/components/chat/chat-widget";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
-import { SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Hackathon Playbook — How to Win Hackathons | Guides, Templates & Strategies",
-    template: "%s | Hackathon Playbook",
+      "The Hackathon Playbook — How to Win Hackathons | Guides, Templates & Strategies",
+    template: `%s | ${SITE_NAME}`,
   },
   description:
     "Learn how to win hackathons with battle-tested strategies from 36+ victories and $100K+ in prizes. Guides on team formation, ideation, pitching, the best tech stack for hackathons, and tips for beginners.",
@@ -42,26 +43,22 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Bill Zhang", url: "https://v2.art3m1s.me/" }],
   creator: "Bill Zhang",
-  publisher: "Hackathon Playbook",
+  publisher: SITE_NAME,
   alternates: {
     canonical: SITE_URL,
   },
-  openGraph: {
-    type: "website",
-    siteName: "Hackathon Playbook",
-    locale: "en_US",
-    url: SITE_URL,
+  ...shareMetadata({
+    path: "/",
     title:
-      "Hackathon Playbook — How to Win Hackathons | Guides & Strategies",
+      "The Hackathon Playbook — How to Win Hackathons | Guides & Strategies",
     description:
       "Learn how to win hackathons with battle-tested strategies from 36+ victories and $100K+ in prizes. The ultimate playbook for hackathon success.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Hackathon Playbook — How to Win Hackathons",
-    description:
-      "Battle-tested strategies from 36+ hackathon wins. Guides on team formation, ideation, pitching, best tech stack, and tips for beginners.",
-  },
+    twitter: {
+      title: "The Hackathon Playbook — How to Win Hackathons",
+      description:
+        "Battle-tested strategies from 36+ hackathon wins. Guides on team formation, ideation, pitching, best tech stack, and tips for beginners.",
+    },
+  }),
   robots: {
     index: true,
     follow: true,
@@ -79,7 +76,7 @@ export const metadata: Metadata = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Hackathon Playbook",
+  name: SITE_NAME,
   url: SITE_URL,
   description:
     "Learn how to win hackathons with battle-tested strategies from 36+ victories and $100K+ in prizes.",
@@ -108,9 +105,9 @@ const websiteJsonLd = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Hackathon Playbook",
+  name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/icon`,
+  logo: `${SITE_URL}/brand/logo.png`,
   description:
     "The ultimate hackathon resource with guides, templates, and strategies from 36+ wins.",
   founder: {

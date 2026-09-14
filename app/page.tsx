@@ -4,27 +4,27 @@ import { Trophy, ExternalLink, Github, Linkedin, Bot, Terminal } from "lucide-re
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title:
-    "Hackathon Playbook — How to Win Hackathons | Complete Guide from 36+ Wins",
+    "The Hackathon Playbook — How to Win Hackathons | Complete Guide from 36+ Wins",
   description:
     "Learn how to win hackathons with the ultimate playbook from 36+ victories and $100K+ in prizes. Battle-tested guides on team formation, ideation, the best tech stack, pitching, and submission strategies.",
   alternates: {
     canonical: SITE_URL,
     types: markdownAlternate("/"),
   },
-  openGraph: {
-    title: "Hackathon Playbook — How to Win Hackathons",
+  ...shareMetadata({
+    path: "/",
+    title: "The Hackathon Playbook — How to Win Hackathons",
     description:
       "The ultimate hackathon playbook with battle-tested guides, templates, and strategies from 36+ wins and $100K+ in prizes.",
-    url: SITE_URL,
-  },
-  twitter: {
-    title: "Hackathon Playbook — How to Win Hackathons",
-    description:
-      "Battle-tested strategies from 36+ hackathon victories. Learn team formation, ideation, best tech stack, pitching, and more.",
-  },
+    twitter: {
+      description:
+        "Battle-tested strategies from 36+ hackathon victories. Learn team formation, ideation, best tech stack, pitching, and more.",
+    },
+  }),
 };
 
 const NOTABLE_WINS = [
@@ -305,7 +305,7 @@ export default function Home() {
       <section className="flex min-h-[70vh] items-center justify-center">
         <div className="text-center space-y-6">
           <h1 className="font-display text-4xl font-bold md:text-5xl">
-            Hackathon <span className="text-primary">Playbook</span>
+            The Hackathon <span className="text-primary">Playbook</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground">
             Guides, templates, and strategies from 36+ hackathon wins.
@@ -387,7 +387,10 @@ export default function Home() {
               </div>
 
               {/* ── Stats readout ── */}
-              <div className="grid grid-cols-3 gap-4">
+              {/* Stacks below sm: three columns leave ~53px per stat on a
+                  phone, and the shimmer (background-clip: text) makes any
+                  overflow invisible, so "$100K+" read as "$10". */}
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div className="rounded-xl border border-volt/15 bg-volt/5 p-4 text-center">
                   <p className="font-display text-3xl font-bold text-volt md:text-4xl">
                     36+

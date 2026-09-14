@@ -295,7 +295,7 @@ All three pitches opened with a concrete statistic or quantified problem: "80% u
 
 Demo is the Main Event
 
-DispatchAI allocated 28% and TalkTuahBank allocated 44% of total pitch time to live demo. Judges remember what they saw, not what they heard.
+DispatchAI allocated 28% and TalkTuahBank allocated 42% of total pitch time to live demo. Judges remember what they saw, not what they heard.
 
 Align With Sponsors
 
@@ -404,7 +404,7 @@ after you leave the room
 
 #### Recording Tools
 
-On Mac, I reach for [Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R). CanVid covers the same ground on Windows. Both handle auto-zoom, instant editing, effects, and selfie overlays, saving hours when every hackathon hour matters.
+On Mac, I reach for [Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (affiliate link). CanVid covers the same ground on Windows. Both handle auto-zoom, instant editing, effects, and selfie overlays, saving hours when every hackathon hour matters.
 
 My pick: Screen Studio. Auto-zoom and cursor smoothing alone make a 60 second demo look like a product launch. Worth a look on Mac.
 
@@ -429,6 +429,8 @@ Why it works: The embed skips the problem-framing intro, so the product is on sc
 ### Screen Studio
 
 The screen recorder I use for every hackathon demo. Auto-zoom and cursor smoothing make a 60-second demo look like a product launch, with basically no editing time. Worth a look if you're on Mac.
+
+Affiliate link: I may earn a commission.
 
 Automatic cursor zoomSmooth cursor glideWebcam overlay1-click export presets
 

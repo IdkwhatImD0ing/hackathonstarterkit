@@ -6,7 +6,7 @@ export const post: BlogPost = {
   description:
     "Hackathon pitch mistakes from the LA Hacks judging floor: tailor the pitch, cut your slides, demo the main flow, and protect Q&A time for higher scores.",
   date: "2026-04-30",
-  updatedDate: "2026-06-24",
+  updatedDate: "2026-09-14",
   readingTime: "6 min read",
   keywords: [
     "hackathon pitch mistakes",
@@ -154,7 +154,7 @@ export const post: BlogPost = {
       paragraphs: [],
       blocks: [
         { type: "paragraph", text: "Here is the one almost everyone broke. I had five minutes per team: about 1.5 minutes for pitch and demo, then 3.5 for questions. Teams rarely hit it. Some spent the entire five minutes pitching." },
-        { type: "quote", text: "When judges cannot ask questions, they cannot score what they never got to understand.", attribution: "Bill Zhang, LA Hacks judge and Hackathon Playbook author" },
+        { type: "quote", text: "When judges cannot ask questions, they cannot score what they never got to understand.", attribution: "Bill Zhang, LA Hacks judge and author of The Hackathon Playbook" },
         { type: "paragraph", text: "That is the dangerous part. **Q&A is where the judge fills in missing rubric information.** If a rubric category never gets answered, the judge may have to give it a low score, or a zero." },
         { type: "callout", variant: "warning", title: "Protect Question Time", text: "Always leave room for questions, even if it means cutting the demo short. Q&A is not an interruption. It is part of the scoring process." },
       ],
@@ -164,7 +164,7 @@ export const post: BlogPost = {
       paragraphs: [],
       blocks: [
         { type: "paragraph", text: "Run this next time: read the judge, pick the clearest speaker, bring energy, use slides only to frame the problem, skip what the judge already knows, demo the main flow, keep a video backup, prep appendix slides, and protect Q&A." },
-        { type: "image", src: "/blog/la-hacks-pitch-flow.svg", alt: "A visual flow for a stronger LA Hacks pitch: read the judge, lead clearly, frame the problem, demo the main flow, and protect Q&A time.", caption: "A simple flow keeps the judge focused on the scoreable parts of your project.", credit: "Original illustration by Hackathon Playbook." },
+        { type: "image", src: "/blog/la-hacks-pitch-flow.svg", alt: "A visual flow for a stronger LA Hacks pitch: read the judge, lead clearly, frame the problem, demo the main flow, and protect Q&A time.", caption: "A simple flow keeps the judge focused on the scoreable parts of your project.", credit: "Original illustration by The Hackathon Playbook." },
         { type: "checklist", title: "Before You Walk Up to the Judge", items: [
           "Know the judge's role, or ask for their background",
           "Pick one lead speaker",

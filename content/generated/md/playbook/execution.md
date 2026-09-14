@@ -248,6 +248,8 @@ A battle-tested breakdown of how to allocate 24 hours. Adapt the ratios for 36- 
 
 TL;DR Get a working flow by hour 4, stop building by hour 16, and spend the last 4 hours on demo and pitch.
 
+This is the safe default for a team starting cold. The planner at the top of the page rewards a more aggressive version: settle the idea before the event starts, then do demo prep and rehearsal in the gap between the code deadline and judging, so every hackathon hour goes to building. Use that version when your event has that gap.
+
 Ideation and Architecture
 
 Finalize the idea, assign roles, and sketch the architecture. Set up the repo with a boilerplate and deploy to staging so you can demo 'hello world' within the first hour.

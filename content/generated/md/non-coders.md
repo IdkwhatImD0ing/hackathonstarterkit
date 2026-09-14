@@ -18,7 +18,7 @@ Each section is self-contained. Start wherever makes sense for you.
 
 [#### The Proof
 
-Real professionals who beat thousands of developers at major hackathons.
+Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.
 
 Enter section →](https://thehackathonplaybook.dev/non-coders/proof)[#### Getting Started
 
@@ -46,4 +46,4 @@ Enter section →](https://thehackathonplaybook.dev/non-coders/skills)
 
 This guide is built on the articles, blog posts, GitHub repos, and hackathon post-mortems below.
 
-[NY Post: Vibe Coding Is Here to Stay (2026)](https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/)[Hadley Lab: The Lawyer Who Won (2026)](https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/)[TechStory: Cardiologist Builds App in 7 Days (2026)](https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/)[Nina Kolari: Hackathon Takeaways (2025)](https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[SF Standard: 200+ Hackathon Wins (2025)](https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/)[Cursor Blog: Agent Best Practices (2026)](https://cursor.com/blog/agent-best-practices)[AGENTS.md Official Site](https://agents.md/)[Awesome Cursor Rules (38k+ stars)](https://github.com/PatrickJS/awesome-cursorrules)[Vibe Coding Lite: Systematic Approach](https://vibecodinglite.dev/quickstart.html)[Seoul Economic Daily: Builder Era Dawns (2026)](https://en.sedaily.com/news/2026/02/25/lawyers-doctors-sweep-ai-hackathon-as-builder-era-dawns)
+[NY Post: Vibe Coding Is Here to Stay (2026)](https://nypost.com/2026/02/27/business/anthropic-hackathon-proves-vibe-coding-is-here-to-stay/)[Hadley Lab: The Lawyer Who Won (2026)](https://hadleylab.org/blogs/2026-03-22-the-lawyer-who-won/)[TechStory: Cardiologist Builds App in 7 Days (2026)](https://techstory.in/cardiologist-builds-patient-care-app-in-7-days-places-third-at-anthropic-hackathon/)[Nina Kolari: Hackathon Takeaways (2025)](https://ninakolari.com/blog/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[SF Standard: 200+ Hackathon Wins (2025)](https://sfstandard.com/2025/07/05/rene-turcios-hackathon-labubu-vibe-coding-chatgpt/)[Cursor Blog: Agent Best Practices (2026)](https://cursor.com/blog/agent-best-practices)[AGENTS.md Official Site](https://agents.md/)[Awesome Cursor Rules (38k+ stars)](https://github.com/PatrickJS/awesome-cursorrules)[Vibe Coding Lite: Systematic Approach](https://vibecodinglite.dev/quickstart.html)[Seoul Economic Daily: Builder Era Dawns (2026)](https://en.sedaily.com/news/2026/02/25/lawyers-doctors-sweep-ai-hackathon-as-builder-era-dawns)

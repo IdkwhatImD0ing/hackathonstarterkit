@@ -40,6 +40,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { TimelineSimulator } from "./timeline-simulator";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
 const section = PLAYBOOK_SECTIONS[3];
 
@@ -51,11 +52,12 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/playbook/execution`,
     types: markdownAlternate("/playbook/execution"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/playbook/execution",
     title: "Hackathon Execution: Best Tech Stack & MVP Strategy",
     description:
       "Time management, tech stack selection, MVP strategy, and team coordination for hackathons. From the 36-win playbook.",
-  },
+  }),
 };
 
 function SectionHeading({
@@ -785,6 +787,15 @@ export default function ExecutionPage() {
           />
 
           <KeyTakeaway>Get a working flow by hour 4, stop building by hour 16, and spend the last 4 hours on demo and pitch.</KeyTakeaway>
+
+          <p className="font-body text-foreground/80">
+            This is the safe default for a team starting cold. The planner at
+            the top of the page rewards a more aggressive version: settle the
+            idea before the event starts, then do demo prep and rehearsal in
+            the gap between the code deadline and judging, so every hackathon
+            hour goes to building. Use that version when your event has that
+            gap.
+          </p>
 
           <div className="space-y-4">
             {[

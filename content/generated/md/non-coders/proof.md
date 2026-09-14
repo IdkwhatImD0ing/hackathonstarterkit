@@ -1,6 +1,6 @@
 # The Proof
 
-> Real professionals who beat thousands of developers at major hackathons.
+> Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/proof
 
@@ -46,7 +46,7 @@ Speech practice app for stroke patients
 
 Nina Kolari, Entrepreneur, 51. ninakolari.com, December 9, 2025
 
-Read the full story →](https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[#### Rene Turcios
+Read the full story →](https://ninakolari.com/blog/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/)[#### Rene Turcios
 
 Former Yu-Gi-Oh! Pro · Various Hackathons
 

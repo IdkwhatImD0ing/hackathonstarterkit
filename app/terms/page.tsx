@@ -1,30 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Home, Mail, Scale, FileText } from "lucide-react";
-import { JsonLd } from "@/components/json-ld";
-import { SITE_URL } from "@/lib/site";
+import { LegalPage, type LegalSection } from "@/components/legal-page";
+import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 
-const CONTACT_EMAIL = "billzhangsc@gmail.com";
-const LAST_UPDATED = "September 3, 2026";
+const LAST_UPDATED = "September 14, 2026";
+
+const DESCRIPTION =
+  "Terms of Service for The Hackathon Playbook: site rules, open AI and crawler access, affiliate disclosures, intellectual property, and AI chat data handling.";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Hackathon Playbook",
-  description:
-    "Terms of Service for Hackathon Playbook. Review the rules for using the site, affiliate link disclosures, intellectual property, AI chat data handling, disclaimers, and California governing law.",
+  // The layout template appends " | The Hackathon Playbook".
+  title: "Terms of Service",
+  description: DESCRIPTION,
   alternates: {
     canonical: `${SITE_URL}/terms`,
   },
-  openGraph: {
-    title: "Terms of Service — Hackathon Playbook",
-    description:
-      "Terms of Service for Hackathon Playbook, including affiliate disclosures, intellectual property, and usage rules.",
-    url: `${SITE_URL}/terms`,
-  },
-  twitter: {
-    title: "Terms of Service — Hackathon Playbook",
-    description:
-      "The rules for using Hackathon Playbook, plus affiliate disclosures and disclaimers.",
-  },
+  ...shareMetadata({
+    path: "/terms",
+    title: `Terms of Service — ${SITE_NAME}`,
+    description: DESCRIPTION,
+  }),
 };
 
 const webPageJsonLd = {
@@ -32,28 +28,21 @@ const webPageJsonLd = {
   "@type": "WebPage",
   name: "Terms of Service",
   url: `${SITE_URL}/terms`,
-  description:
-    "Terms of Service for Hackathon Playbook, including affiliate disclosures, intellectual property rules, and California governing law.",
+  description: DESCRIPTION,
   isPartOf: {
     "@type": "WebSite",
-    name: "Hackathon Playbook",
+    name: SITE_NAME,
     url: SITE_URL,
   },
-  dateModified: "2026-09-03",
+  dateModified: "2026-09-14",
 };
 
-type Section = {
-  id: string;
-  title: string;
-  paragraphs: (string | string[])[];
-};
-
-const SECTIONS: Section[] = [
+const SECTIONS: LegalSection[] = [
   {
     id: "acceptance",
     title: "1. Acceptance of Terms",
     paragraphs: [
-      "By accessing or using Hackathon Playbook (the website located at thehackathonplaybook.dev, together with any subdomains, hereafter the \"Site\"), you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree with any part of these Terms, you should stop using the Site.",
+      "By accessing or using The Hackathon Playbook (the website located at thehackathonplaybook.dev, together with any subdomains, hereafter the \"Site\"), you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree with any part of these Terms, you should stop using the Site.",
       "These Terms form a binding agreement between you and Bill Zhang, the operator of the Site (\"we\", \"us\", or \"our\").",
     ],
   },
@@ -61,7 +50,7 @@ const SECTIONS: Section[] = [
     id: "about",
     title: "2. About the Site",
     paragraphs: [
-      "Hackathon Playbook publishes educational content about hackathons, including strategy guides, templates, blog posts, and curated resources. The content is informational only. It is not legal, financial, career, or professional advice, and it is not a guarantee of any specific outcome at a hackathon or elsewhere.",
+      "The Hackathon Playbook publishes educational content about hackathons, including strategy guides, templates, blog posts, and curated resources. The content is informational only. It is not legal, financial, career, or professional advice, and it is not a guarantee of any specific outcome at a hackathon or elsewhere.",
       "Your use of anything you read here is at your own discretion and risk.",
     ],
   },
@@ -71,7 +60,16 @@ const SECTIONS: Section[] = [
     paragraphs: [
       "All content on the Site, including text, graphics, logos, icons, images, audio, video, code snippets, page layouts, and the compilation of all of the above, is the property of Bill Zhang or licensors and is protected by copyright, trademark, and other intellectual property laws.",
       "We grant you a limited, personal, non-exclusive, non-transferable, revocable license to access and view the content for your own personal, non-commercial use. You may also share short quotes or excerpts with proper attribution and a link back to the Site.",
-      "You may not reproduce, republish, sell, license, or redistribute significant portions of the content, create derivative works from it, or use it to train machine learning models, without prior written permission.",
+      "Automated access and AI use are welcome. You may crawl the Site with automated tools, have AI tools and agents read it (including through our Markdown pages, llms.txt, and MCP server), and use the content to train, fine-tune, or ground AI models. This permission is in addition to the personal license above. It applies as long as you follow our robots.txt file and the content signals published in it, stay within the rate limits on our API and MCP endpoints, and do not degrade the Site for other visitors.",
+      "Apart from the AI use described above, you may not reproduce, republish, sell, license, or redistribute significant portions of the content, or create derivative works from it, without prior written permission. Passing the content off as your own is never allowed.",
+      <>
+        Press and publications may use the logo, share card, founder photo,
+        and boilerplate from our{" "}
+        <Link href="/media-kit" className="text-volt underline underline-offset-2">
+          Media Kit
+        </Link>{" "}
+        in editorial coverage of the Site.
+      </>,
     ],
   },
   {
@@ -80,7 +78,7 @@ const SECTIONS: Section[] = [
     paragraphs: [
       "When using the Site, you agree not to:",
       [
-        "Scrape, crawl, or bulk-download the Site using automated tools, except for compliant search-engine indexing.",
+        "Attack or overload the Site, including with automated traffic that ignores robots.txt, exceeds our rate limits, or slows the Site down for other visitors.",
         "Attempt to gain unauthorized access to the Site, its servers, or related infrastructure.",
         "Introduce malware, viruses, or any code intended to interfere with the Site.",
         "Use the Site to violate any applicable law or the rights of any third party.",
@@ -118,7 +116,7 @@ const SECTIONS: Section[] = [
     id: "liability",
     title: "8. Limitation of Liability",
     paragraphs: [
-      "To the maximum extent permitted by law, in no event will Bill Zhang, Hackathon Playbook, or any affiliated parties be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, including loss of profits, data, goodwill, or other intangible losses, arising out of or in connection with your use of (or inability to use) the Site, even if we have been advised of the possibility of such damages.",
+      "To the maximum extent permitted by law, in no event will Bill Zhang, The Hackathon Playbook, or any affiliated parties be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, including loss of profits, data, goodwill, or other intangible losses, arising out of or in connection with your use of (or inability to use) the Site, even if we have been advised of the possibility of such damages.",
       "To the extent any liability cannot be excluded, our total cumulative liability to you for any and all claims relating to the Site is limited to one hundred U.S. dollars (USD $100).",
     ],
   },
@@ -149,11 +147,18 @@ const SECTIONS: Section[] = [
     title: "12. AI Chat and Search Data",
     paragraphs: [
       "The Site offers an AI assistant (\"Ask the Playbook\") and an AI prompt finder on the cheat sheet. Both send what you type to OpenAI, which generates the response. We instruct OpenAI not to store those requests on their side.",
-      "We do record them. When you use either feature, we store the messages you send, the answer the model returns, which pages of the Site were retrieved as context, the model used, token counts, timings, and whether the request succeeded. That record is kept in our own tracing system and is used to find weak answers, close gaps in the content, and improve the assistant.",
+      "We do record them. When you use either feature, we store the messages you send, the answer the model returns, which pages of the Site were retrieved as context, the model used, token counts, timings, and whether the request succeeded. That record is kept in FireTrace, the tracing service we use, and is used to find weak answers, close gaps in the content, and improve the assistant.",
       "Each conversation carries a random identifier created in your browser tab and discarded when that tab closes, so the turns of one conversation can be read together. It is not tied to your name, your email, or any account, and we do not try to identify you from it.",
       "If you rate an answer with the thumbs up or thumbs down button, we record that rating against the answer it refers to.",
       "Because conversations are stored, please do not paste passwords, API keys, personal information, or anything confidential into the chat. It is a public educational assistant, not a private channel.",
       "We do not sell this data and we do not share it with advertisers. To have a conversation deleted, email the address below.",
+      <>
+        Our{" "}
+        <Link href="/privacy" className="text-volt underline underline-offset-2">
+          Privacy Policy
+        </Link>{" "}
+        covers everything else the Site collects and which services receive it.
+      </>,
     ],
   },
   {
@@ -167,120 +172,18 @@ const SECTIONS: Section[] = [
 
 export default function TermsPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 space-y-10">
-      <JsonLd data={webPageJsonLd} />
-
-      <nav className="flex items-center gap-3">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 font-code text-xs text-muted-foreground transition-colors hover:text-volt"
-        >
-          <Home className="size-3" />
-          Home
-        </Link>
-        <span className="font-code text-xs text-muted-foreground/40">/</span>
-        <span className="font-code text-xs text-foreground">Terms</span>
-      </nav>
-
-      <header className="space-y-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 font-code text-[10px] uppercase tracking-widest text-primary">
-          <Scale className="size-3" />
-          Legal
-        </div>
-        <h1 className="font-display text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+    <LegalPage
+      breadcrumb="Terms"
+      heading={
+        <>
           Terms of <span className="text-primary">Service</span>
-        </h1>
-        <p className="font-body text-muted-foreground">
-          The rules for using Hackathon Playbook. Plain English, no surprises.
-        </p>
-        <p className="font-code text-xs text-muted-foreground">
-          Last updated: {LAST_UPDATED}
-        </p>
-      </header>
-
-      <section className="glass glow rounded-2xl overflow-hidden">
-        <div className="flex items-center gap-2 border-b border-primary/10 px-5 py-3">
-          <span className="size-3 rounded-full bg-destructive/70" />
-          <span className="size-3 rounded-full bg-spark/70" />
-          <span className="size-3 rounded-full bg-success/70" />
-          <span className="ml-3 font-code text-xs text-muted-foreground">
-            bill@hackathons ~ % cat ./terms.txt
-          </span>
-        </div>
-
-        <div className="space-y-10 p-6 md:p-10">
-          <nav aria-label="Table of contents" className="space-y-3">
-            <p className="font-code text-sm text-muted-foreground">
-              <span className="text-volt">$</span> ls ./sections
-            </p>
-            <ol className="grid grid-cols-1 gap-x-6 gap-y-1.5 font-code text-xs text-muted-foreground sm:grid-cols-2">
-              {SECTIONS.map((s) => (
-                <li key={s.id}>
-                  <a
-                    href={`#${s.id}`}
-                    className="transition-colors hover:text-volt"
-                  >
-                    {s.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
-
-          <div className="space-y-10">
-            {SECTIONS.map((section) => (
-              <section
-                key={section.id}
-                id={section.id}
-                className="scroll-mt-24 space-y-3"
-              >
-                <h2 className="font-display text-xl font-bold text-foreground md:text-2xl">
-                  {section.title}
-                </h2>
-                {section.paragraphs.map((p, i) => {
-                  if (Array.isArray(p)) {
-                    return (
-                      <ul
-                        key={i}
-                        className="ml-1 space-y-1.5 font-body text-sm text-foreground/85 md:text-base"
-                      >
-                        {p.map((item, j) => (
-                          <li key={j} className="flex items-start gap-2.5">
-                            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    );
-                  }
-                  return (
-                    <p
-                      key={i}
-                      className="font-body text-sm leading-relaxed text-foreground/85 md:text-base"
-                    >
-                      {p}
-                    </p>
-                  );
-                })}
-              </section>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-3 border-t border-primary/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-2 font-code text-xs text-muted-foreground">
-              <FileText className="size-3.5 text-primary" />
-              Effective as of {LAST_UPDATED}
-            </div>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex items-center gap-1.5 font-code text-xs text-muted-foreground transition-colors hover:text-volt"
-            >
-              <Mail className="size-3.5" />
-              {CONTACT_EMAIL}
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
+        </>
+      }
+      intro="The rules for using The Hackathon Playbook. Plain English, no surprises."
+      file="terms.txt"
+      lastUpdated={LAST_UPDATED}
+      jsonLd={webPageJsonLd}
+      sections={SECTIONS}
+    />
   );
 }

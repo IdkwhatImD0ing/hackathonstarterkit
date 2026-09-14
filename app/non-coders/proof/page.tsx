@@ -17,17 +17,24 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { CopyForAi } from "@/components/copy-for-ai";
 
 export const metadata: Metadata = {
   title: "The Proof",
   description:
-    "Real professionals with zero coding backgrounds who beat thousands of developers at major hackathons.",
+    "Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.",
   alternates: {
     canonical: `${SITE_URL}/non-coders/proof`,
     types: markdownAlternate("/non-coders/proof"),
   },
+  ...shareMetadata({
+    path: "/non-coders/proof",
+    title: "Non-Coders Are Winning Hackathons: The Proof",
+    description:
+      "Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.",
+  }),
 };
 
 const WINNERS = [
@@ -75,7 +82,7 @@ const WINNERS = [
       "Product sense beats coding skill. […] I built something simple that solved a specific, painful problem. The judges responded to clarity.",
     source: "ninakolari.com, December 9, 2025",
     accent: "primary" as const,
-    url: "https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/",
+    url: "https://ninakolari.com/blog/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/",
   },
   {
     name: "Rene Turcios",
@@ -115,8 +122,9 @@ export default function ProofPage() {
           Non-Coders Are Winning
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          These are real professionals with zero coding backgrounds who beat
-          thousands of developers at major hackathons.
+          These are real professionals, most with little or no coding
+          background, who won against developer-heavy fields at major
+          hackathons.
         </p>
         <LastUpdated date="2026-04-06" />
       </header>

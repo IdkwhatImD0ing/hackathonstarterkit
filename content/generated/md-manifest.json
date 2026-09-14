@@ -1,7 +1,7 @@
 {
   "/": {
     "file": "md/index.md",
-    "tokens": 646,
+    "tokens": 648,
     "title": "The Hackathon Playbook",
     "description": "Battle-tested hackathon strategy from 36+ wins and $100K+ in prizes, by Bill Zhang. Team formation, ideation, execution, pitching, and submission.",
     "track": "home"
@@ -39,7 +39,7 @@
   },
   "/playbook/execution": {
     "file": "md/playbook/execution.md",
-    "tokens": 3198,
+    "tokens": 3266,
     "title": "Execution",
     "description": "Time management, tech stack selection, MVP strategy, and team coordination.",
     "track": "playbook",
@@ -47,7 +47,7 @@
   },
   "/playbook/pitching": {
     "file": "md/playbook/pitching.md",
-    "tokens": 5916,
+    "tokens": 5929,
     "title": "Pitching",
     "description": "Craft a pitch that wins judges over in the first 30 seconds.",
     "track": "playbook",
@@ -55,7 +55,7 @@
   },
   "/playbook/submission": {
     "file": "md/playbook/submission.md",
-    "tokens": 5467,
+    "tokens": 5470,
     "title": "Submission",
     "description": "Write READMEs, record demos, and submit deliverables that make judges remember you.",
     "track": "playbook",
@@ -71,16 +71,16 @@
   },
   "/non-coders": {
     "file": "md/non-coders.md",
-    "tokens": 938,
+    "tokens": 949,
     "title": "Hackathons for Non-Coders",
     "description": "How non-coders win hackathons with AI tools: the proof it works, the setup, the concepts, and the installable AI skills.",
     "track": "non-coders"
   },
   "/non-coders/proof": {
     "file": "md/non-coders/proof.md",
-    "tokens": 687,
+    "tokens": 698,
     "title": "The Proof",
-    "description": "Real professionals who beat thousands of developers at major hackathons.",
+    "description": "Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.",
     "track": "non-coders"
   },
   "/non-coders/setup": {
@@ -99,7 +99,7 @@
   },
   "/non-coders/apis": {
     "file": "md/non-coders/apis.md",
-    "tokens": 1390,
+    "tokens": 1399,
     "title": "Using APIs",
     "description": "How to add any service to your app with just a key and a docs link.",
     "track": "non-coders"
@@ -190,7 +190,7 @@
   },
   "/blog": {
     "file": "md/blog.md",
-    "tokens": 799,
+    "tokens": 800,
     "title": "Blog",
     "description": "Hackathon strategy write-ups: how to win, pick a stack, pitch, and turn weekend projects into career wins.",
     "track": "blog"
@@ -205,11 +205,11 @@
   },
   "/blog/hackathon-pitch-mistakes-la-hacks": {
     "file": "md/blog/hackathon-pitch-mistakes-la-hacks.md",
-    "tokens": 2416,
+    "tokens": 2418,
     "title": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
     "description": "Hackathon pitch mistakes from the LA Hacks judging floor: tailor the pitch, cut your slides, demo the main flow, and protect Q&A time for higher scores.",
     "track": "blog",
-    "updated": "2026-06-24"
+    "updated": "2026-09-14"
   },
   "/blog/how-to-win-hackathons": {
     "file": "md/blog/how-to-win-hackathons.md",
@@ -237,11 +237,11 @@
   },
   "/blog/hackathon-pitch-guide": {
     "file": "md/blog/hackathon-pitch-guide.md",
-    "tokens": 1146,
+    "tokens": 1175,
     "title": "Hackathon Pitch Guide: How to Present Your Project and Win Prizes",
     "description": "Master the hackathon pitch with a 3-minute structure from 36+ winning presentations: the hook, the demo, judge Q&A, and the mistakes that cost prizes.",
     "track": "blog",
-    "updated": "2026-06-24"
+    "updated": "2026-09-14"
   },
   "/blog/non-coders-winning-hackathons": {
     "file": "md/blog/non-coders-winning-hackathons.md",
@@ -253,10 +253,10 @@
   },
   "/blog/build-with-elevenlabs-and-cursor": {
     "file": "md/blog/build-with-elevenlabs-and-cursor.md",
-    "tokens": 2006,
+    "tokens": 2009,
     "title": "How to Build with ElevenLabs and Cursor at a Hackathon",
     "description": "Build a voice AI hackathon project with ElevenLabs and Cursor in an afternoon. The exact PRD-first, MCP-driven, test-driven workflow Bill uses to ship and win.",
     "track": "blog",
-    "updated": "2026-06-24"
+    "updated": "2026-09-14"
   }
 }

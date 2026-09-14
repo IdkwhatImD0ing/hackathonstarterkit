@@ -14,6 +14,7 @@ import { BLOG_POSTS, formatPostDate } from "@/lib/blog";
 import { JsonLd } from "@/components/json-ld";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 const POSTS_BY_DATE_DESC = [...BLOG_POSTS].sort((a, b) =>
@@ -31,17 +32,16 @@ export const metadata: Metadata = {
       ...markdownAlternate("/blog"),
     },
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/blog",
     title: "Hackathon Blog — Tips, Strategies & Guides",
     description:
       "Expert guides on winning hackathons, the best tech stack, pitching, and more from 36+ victories.",
-    url: `${SITE_URL}/blog`,
-  },
-  twitter: {
-    title: "Hackathon Blog — Tips, Strategies & Guides",
-    description:
-      "Expert guides on winning hackathons from 36+ victories and $100K+ in prizes.",
-  },
+    twitter: {
+      description:
+        "Expert guides on winning hackathons from 36+ victories and $100K+ in prizes.",
+    },
+  }),
 };
 
 const blogListJsonLd = {

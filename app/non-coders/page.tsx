@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { NON_CODER_SECTIONS } from "@/lib/non-coder-sections";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
+import { shareMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
@@ -23,16 +24,17 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/non-coders`,
     types: markdownAlternate("/non-coders"),
   },
-  openGraph: {
+  ...shareMetadata({
+    path: "/non-coders",
     title: "Hackathons for Non-Coders — Win Without Coding Experience",
     description:
       "Proven strategies and installable AI skills for professionals who build with Cursor and Claude Code. No coding experience required.",
-  },
-  twitter: {
-    title: "Non-Coders Are Winning Hackathons — Here's How",
-    description:
-      "Doctors, lawyers, and professionals are beating developers at hackathons using AI tools. Learn the strategies.",
-  },
+    twitter: {
+      title: "Non-Coders Are Winning Hackathons — Here's How",
+      description:
+        "Doctors, lawyers, and professionals are beating developers at hackathons using AI tools. Learn the strategies.",
+    },
+  }),
 };
 
 const accentStyles = {
@@ -234,7 +236,7 @@ export default function NonCodersPage() {
             },
             {
               title: "Nina Kolari: Hackathon Takeaways (2025)",
-              url: "https://ninakolari.com/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/",
+              url: "https://ninakolari.com/blog/i-joined-a-3-hour-hackathon-and-build-an-iphone-app-here-are-my-biggest-takeaways/",
             },
             {
               title: "SF Standard: 200+ Hackathon Wins (2025)",
