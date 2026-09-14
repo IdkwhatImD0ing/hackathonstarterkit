@@ -256,8 +256,8 @@ describe("envNumber", () => {
     vi.resetModules();
     const config = await import("@/lib/chat/config");
     expect(config.CHAT_MONTHLY_TOKEN_BUDGET).toBe(20_000_000);
-    // Unset daily defaults to a tenth of the monthly budget.
-    expect(config.CHAT_DAILY_TOKEN_BUDGET).toBe(2_000_000);
+    // Unset daily falls back to its fixed default (~2,000 heavy turns).
+    expect(config.CHAT_DAILY_TOKEN_BUDGET).toBe(8_400_000);
   });
 });
 

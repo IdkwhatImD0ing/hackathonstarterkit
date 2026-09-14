@@ -3,12 +3,12 @@
   "embeddingDims": 1536,
   "chunkerVersion": 2,
   "normalizerVersion": 1,
-  "generatedAt": "2026-09-12T20:31:51.213Z",
+  "generatedAt": "2026-09-14T07:43:11.308Z",
   "pages": {
     "/": {
-      "sourceHash": "1756d0e90b390cb1c0bd5cf7f8da9a14b2c1cae8e7f8aa2e62eeabba6368aba1",
+      "sourceHash": "b4734b87278aebd3b13552476c4e90fc02253ff3f2a6b3b4706f627a99a556d6",
       "chunkIds": [
-        "/#hackathon-playbook#0",
+        "/#the-hackathon-playbook#0",
         "/#bill-zhang-idkwhatimd0inghttpsgithubcomidkwhatimd0ing#0"
       ]
     },
@@ -116,7 +116,7 @@
       ]
     },
     "/playbook/execution": {
-      "sourceHash": "ade0edec88e75e8476f05f2c2ed80e26d75a76344ab649d7d5ad73acb3f7b2fa",
+      "sourceHash": "e302618e27c6e1c2ab3a9a98f6fa2e5fd6b85c50a3e591706ae0e000fde6d809",
       "chunkIds": [
         "/playbook/execution#plan-your-24-hours#0",
         "/playbook/execution#the-speed-mindset#0",
@@ -141,7 +141,7 @@
       ]
     },
     "/playbook/pitching": {
-      "sourceHash": "28fa1050be523d6f2edfa5957112e4fb77629f8313c1240a06312b3b215a2cc2",
+      "sourceHash": "e6c83b602dd7bfe2405557c690555ff53ef27e4f849320a86a8640f6f0e8499c",
       "chunkIds": [
         "/playbook/pitching#storytelling-is-the-secret-weapon#0",
         "/playbook/pitching#storytelling-is-the-secret-weapon/sell-the-vision#0",
@@ -178,7 +178,7 @@
       ]
     },
     "/playbook/submission": {
-      "sourceHash": "20b1a7bed3eecf07ee2b255393d00046dfb15c0ed5a826c77b806f9e2fb8c188",
+      "sourceHash": "d3492b60d4665bd324b3e1ffd2f33131bdb6db65b8ce4b2e7a9fe7468e9f4f3f",
       "chunkIds": [
         "/playbook/submission#the-submission-advantage#0",
         "/playbook/submission#the-submission-advantage/devpost-readme#0",
@@ -240,7 +240,7 @@
       ]
     },
     "/non-coders": {
-      "sourceHash": "d85a6819caf87c4f1ff4725da4defd076d6ac91fe72e0b525bd7aca7617996d8",
+      "sourceHash": "0334d0616cc4aea5bd207a42d979f54a37cdc1c53aa55c5a1916b85dd764964a",
       "chunkIds": [
         "/non-coders#intro#0",
         "/non-coders#choose-your-starting-point#0",
@@ -248,7 +248,7 @@
       ]
     },
     "/non-coders/proof": {
-      "sourceHash": "f1cc0ed37a9ddd9ac473a15533fbb1504867b9bd39b5f0bb13f71d932076f533",
+      "sourceHash": "1631506d66d17563b2ccbfc7dd3fa1de70c28c94386307f848e99575fd8afd02",
       "chunkIds": [
         "/non-coders/proof#intro#0"
       ]
@@ -284,13 +284,13 @@
       ]
     },
     "/non-coders/apis": {
-      "sourceHash": "2fff2f9a80db29032387766501bbed48332e9ad9d069e12f35de9a94d2b3fd9a",
+      "sourceHash": "0d516b5906593a6dd98303e3e394f69180b6072af63609e2c8a64a66dd4aa723",
       "chunkIds": [
         "/non-coders/apis#what-is-an-api#0",
         "/non-coders/apis#the-pattern#0",
         "/non-coders/apis#the-prompt-template#0",
         "/non-coders/apis#example-elevenlabs-voice-agent#0",
-        "/non-coders/apis#example-elevenlabs-voice-agent/elevenlabshttpstryelevenlabsiothehackathonplaybook#0",
+        "/non-coders/apis#example-elevenlabs-voice-agent/elevenlabshttpstryelevenlabsiothehackathonplaybook-affiliate-link#0",
         "/non-coders/apis#example-supabase-database#0",
         "/non-coders/apis#example-supabase-database/supabase#0",
         "/non-coders/apis#what-is-an-mcp#0"
@@ -458,7 +458,7 @@
       ]
     },
     "/blog": {
-      "sourceHash": "b5279369d01b66890465794c990cabcba0e4de0b2b136a9456619efcc648d2cc",
+      "sourceHash": "a4bf48cc596610e2f42480a0487baa0586136a9671f3c7c659f8128b4e8b7ed3",
       "chunkIds": [
         "/blog#intro#0",
         "/blog#get-new-hackathon-guides-in-your-inbox#0",
@@ -485,7 +485,7 @@
       ]
     },
     "/blog/hackathon-pitch-mistakes-la-hacks": {
-      "sourceHash": "81af3f0b84d870fbe1e0e47eccbdd146fa91ea3fa85ebaf399899fa956bee31d",
+      "sourceHash": "9b603e9a25241cef46ae612c9ef24ed088f9346883fad9647081f780720c197b",
       "chunkIds": [
         "/blog/hackathon-pitch-mistakes-la-hacks#most-teams-lose-points-before-the-demo-even-starts#0",
         "/blog/hackathon-pitch-mistakes-la-hacks#1-you-pitched-every-judge-the-same-way#0",
@@ -539,7 +539,7 @@
       ]
     },
     "/blog/hackathon-pitch-guide": {
-      "sourceHash": "6b03c4187286859c04562b8a61cf465faf0b07c1641936dab2a6406ea6a55be5",
+      "sourceHash": "b690235081a84e4ca4bcdbc3ea645bb333a8d8cb8373ac16a8e7ee22632e004f",
       "chunkIds": [
         "/blog/hackathon-pitch-guide#the-3-minute-pitch-structure-that-wins#0",
         "/blog/hackathon-pitch-guide#why-the-pitch-beats-the-code#0",
@@ -561,7 +561,7 @@
       ]
     },
     "/blog/build-with-elevenlabs-and-cursor": {
-      "sourceHash": "b8ef5f796e64fb05c327fa18684a1aa1b2eb9d0dc62630a868489cc92c1a3412",
+      "sourceHash": "6b103c3aa936c8c1c0e4110e525723a6e8daa53399ba89fadc53cddb38f47b08",
       "chunkIds": [
         "/blog/build-with-elevenlabs-and-cursor#make-your-demo-talk-back#0",
         "/blog/build-with-elevenlabs-and-cursor#step-0-write-the-prd-before-cursor-opens-a-file#0",
@@ -575,18 +575,18 @@
     }
   },
   "chunks": {
-    "/#hackathon-playbook#0": {
-      "contentHash": "18e02a115fa9136375b38d7e1f934d74bd14e81fcd4c418c9607c88ade1a267b",
-      "tokens": 109,
+    "/#the-hackathon-playbook#0": {
+      "contentHash": "2f62f5a0087fbcc0480f338af35f170cf4956cc6b1130d2d9a8bd536e18d36ac",
+      "tokens": 110,
       "pageTitle": "The Hackathon Playbook",
-      "sectionHeading": "Hackathon Playbook",
+      "sectionHeading": "The Hackathon Playbook",
       "url": "/",
       "mdUrl": "/index.md",
       "track": "home"
     },
     "/#bill-zhang-idkwhatimd0inghttpsgithubcomidkwhatimd0ing#0": {
-      "contentHash": "fd454ce79a05a5867ab203c1c60ba9a33d1051576c725f97f6a6a3af349ec446",
-      "tokens": 481,
+      "contentHash": "627844f095a0cb7c29d6a45f9b3be85f8d23336519922e6e2e4aa85fd218deca",
+      "tokens": 482,
       "pageTitle": "The Hackathon Playbook",
       "sectionHeading": "Bill Zhang [@IdkwhatImD0ing](https://github.com/IdkwhatImD0ing)",
       "url": "/",
@@ -1494,8 +1494,8 @@
       "track": "playbook"
     },
     "/playbook/execution#the-hackathon-timeline#0": {
-      "contentHash": "55067be8bf33495ccc2408b6973e7a445c23d85666cea843586a38a4f1e57dcd",
-      "tokens": 507,
+      "contentHash": "b01a886b000f126a99d4ad5018e23733fb3333487acfb55c410227761239063e",
+      "tokens": 575,
       "pageTitle": "Execution",
       "sectionHeading": "The Hackathon Timeline",
       "url": "/playbook/execution",
@@ -1638,7 +1638,7 @@
       "track": "playbook"
     },
     "/playbook/pitching#winning-pitches-dissected/adapted-la-hacks-2024#0": {
-      "contentHash": "c1f7f95a210d5ee3ef03a4a333378c27b885149e2fea52748005b405e3527875",
+      "contentHash": "0f02292e2f13b0a4e680a92b0c86328e7e0f21a5a46ac5c9c17aa77796d4a483",
       "tokens": 749,
       "pageTitle": "Pitching",
       "sectionHeading": "Winning Pitches Dissected > AdaptEd — LA Hacks 2024",
@@ -1710,8 +1710,8 @@
       "track": "playbook"
     },
     "/playbook/pitching#the-demo-video/recording-tools#0": {
-      "contentHash": "2e0d8bc412f7b5cd99e1b546b74ff4d208f3e3082fc3d9174d6b62c701d3f876",
-      "tokens": 125,
+      "contentHash": "400878cfb819b8638eb9dc531068b4c3726d032414f576f270e6aa95eb883adf",
+      "tokens": 129,
       "pageTitle": "Pitching",
       "sectionHeading": "The Demo Video > Recording Tools",
       "url": "/playbook/pitching",
@@ -1737,8 +1737,8 @@
       "track": "playbook"
     },
     "/playbook/pitching#the-demo-video/screen-studio#0": {
-      "contentHash": "5ec383d0d0180d15705d8f51d944877b86c0c25186c3998ed992b8c9fa72be72",
-      "tokens": 121,
+      "contentHash": "d6212c0ff79e2d78b45e913fe7d9925a40e881bfefdacb3d6bedab84f0c5520a",
+      "tokens": 130,
       "pageTitle": "Pitching",
       "sectionHeading": "The Demo Video > Screen Studio",
       "url": "/playbook/pitching",
@@ -1944,8 +1944,8 @@
       "track": "playbook"
     },
     "/playbook/submission#show-dont-tell/annotated-screenshots#0": {
-      "contentHash": "37e0cab9f5381c52d51016e8d8f6faca7780f998a4ffcb2791108f1067221bae",
-      "tokens": 182,
+      "contentHash": "7f5bc1e003963f182723d190cbc4ee61fc660cec66d4753c634da6e3a08d4c6f",
+      "tokens": 185,
       "pageTitle": "Submission",
       "sectionHeading": "Show, Don't Tell > Annotated Screenshots",
       "url": "/playbook/submission",
@@ -2295,8 +2295,8 @@
       "track": "non-coders"
     },
     "/non-coders#sources#0": {
-      "contentHash": "3b2a086a5240e2b4dacef6ade2afc25e764a2ecaaf4624b2560294302ed48242",
-      "tokens": 382,
+      "contentHash": "d53df20f3736b3d6fc3138a131842e5fda18fae2067320576e2adea9fd1668d4",
+      "tokens": 383,
       "pageTitle": "Hackathons for Non-Coders",
       "sectionHeading": "Sources",
       "url": "/non-coders",
@@ -2304,8 +2304,8 @@
       "track": "non-coders"
     },
     "/non-coders/proof#intro#0": {
-      "contentHash": "c431178e73955a83606354564869787df501f0db290a8acab93340d93dba69ac",
-      "tokens": 653,
+      "contentHash": "9a0374db9d19e69867decaa2326dd979740bb3b41723dadbca830a0f9985b9f8",
+      "tokens": 654,
       "pageTitle": "The Proof",
       "sectionHeading": "The Proof",
       "url": "/non-coders/proof",
@@ -2528,11 +2528,11 @@
       "mdUrl": "/non-coders/apis.md",
       "track": "non-coders"
     },
-    "/non-coders/apis#example-elevenlabs-voice-agent/elevenlabshttpstryelevenlabsiothehackathonplaybook#0": {
-      "contentHash": "e274c2a94bb1b3c54ac974e2f98038529bc923511552da939b43c79b28d09320",
-      "tokens": 337,
+    "/non-coders/apis#example-elevenlabs-voice-agent/elevenlabshttpstryelevenlabsiothehackathonplaybook-affiliate-link#0": {
+      "contentHash": "e6de4ffa750dd6ae970ac19d14ecfb00e923e0f648f137a8163ae8041ef716fb",
+      "tokens": 346,
       "pageTitle": "Using APIs",
-      "sectionHeading": "Example: ElevenLabs Voice Agent > [ElevenLabs](https://try.elevenlabs.io/thehackathonplaybook)",
+      "sectionHeading": "Example: ElevenLabs Voice Agent > [ElevenLabs](https://try.elevenlabs.io/thehackathonplaybook) (affiliate link)",
       "url": "/non-coders/apis",
       "mdUrl": "/non-coders/apis.md",
       "track": "non-coders"
@@ -3492,7 +3492,7 @@
       "track": "blog"
     },
     "/blog#get-new-hackathon-guides-in-your-inbox/what-to-do-after-a-hackathon-ship-5-assets-that-get-you-hired#0": {
-      "contentHash": "5e8376cbc60cf36c86ceb29b9c325dc88bd1239f5249705e196df23f48a56c61",
+      "contentHash": "866d8518c6292a6784edc0eaabfa5510840de1ceaca9abdfc2f363b0d6edd43a",
       "tokens": 92,
       "pageTitle": "Blog",
       "sectionHeading": "Get new hackathon guides in your inbox > What to Do After a Hackathon: Ship 5 Assets That Get You Hired",
@@ -3501,7 +3501,7 @@
       "track": "blog"
     },
     "/blog#get-new-hackathon-guides-in-your-inbox/9-hackathon-pitch-mistakes-i-saw-at-la-hacks#0": {
-      "contentHash": "050185333f21d052e760d3a04860861a493eceaacd94c73c04ce8cd9c1997d68",
+      "contentHash": "b29fe2535add2ff9592e926bdf25448d106c923258956d4dcf186eba8e5d39bc",
       "tokens": 82,
       "pageTitle": "Blog",
       "sectionHeading": "Get new hackathon guides in your inbox > 9 Hackathon Pitch Mistakes I Saw at LA Hacks",
@@ -3519,7 +3519,7 @@
       "track": "blog"
     },
     "/blog#get-new-hackathon-guides-in-your-inbox/non-coders-winning-hackathons-how-experts-beat-developers#0": {
-      "contentHash": "839a7de6bd6987f40a3eb7da305ea57fa13806ea2945cb4e4d513bedcc76e71e",
+      "contentHash": "9cf26f8b741221286f77caf41bb5fa2abd17e975b428647c29f245e18177df71",
       "tokens": 83,
       "pageTitle": "Blog",
       "sectionHeading": "Get new hackathon guides in your inbox > Non-Coders Winning Hackathons: How Experts Beat Developers",
@@ -3555,8 +3555,8 @@
       "track": "blog"
     },
     "/blog#get-new-hackathon-guides-in-your-inbox/how-to-win-hackathons-a-complete-guide-from-36-victories#0": {
-      "contentHash": "3918cbb79fe8c5422c0bb2c16eca85821893dce17d8d198ba52d44a5815ae598",
-      "tokens": 108,
+      "contentHash": "a13added8028e8ec90b64ebfbe9115702ad7f4a80928a7d059013bf456a5a677",
+      "tokens": 109,
       "pageTitle": "Blog",
       "sectionHeading": "Get new hackathon guides in your inbox > How to Win Hackathons: A Complete Guide from 36+ Victories",
       "url": "/blog",
@@ -3708,8 +3708,8 @@
       "track": "blog"
     },
     "/blog/hackathon-pitch-mistakes-la-hacks#9-you-left-no-time-for-qa#0": {
-      "contentHash": "50f9c9d10fb178e7f99c9a30213930a0740b482654ffdd4b89171c827554f35e",
-      "tokens": 170,
+      "contentHash": "9bb9fef1606b6e2776958111c2449b22a46380967bd322b7085f2d61aebfbf31",
+      "tokens": 172,
       "pageTitle": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
       "sectionHeading": "9. You Left No Time for Q&A",
       "url": "/blog/hackathon-pitch-mistakes-la-hacks",
@@ -3933,8 +3933,8 @@
       "track": "blog"
     },
     "/blog/hackathon-pitch-guide#the-3-minute-pitch-structure-that-wins#0": {
-      "contentHash": "d106e54bdabce40c49e5ca6d0e78ac395882029d4dcbed6f9c94a421e878eafa",
-      "tokens": 211,
+      "contentHash": "ed6137414542263f149aba5aaa9847d95579470835717109af07f5b3f066e796",
+      "tokens": 240,
       "pageTitle": "Hackathon Pitch Guide: How to Present Your Project and Win Prizes",
       "sectionHeading": "The 3-Minute Pitch Structure That Wins",
       "url": "/blog/hackathon-pitch-guide",

@@ -288,7 +288,10 @@ export function ChatWidget() {
           aria-modal="true"
           aria-label="Ask the Playbook"
           onKeyDown={onKeyDown}
-          className="glass fixed inset-0 z-50 flex flex-col border-primary/15 bg-background/95 backdrop-blur-xl sm:inset-auto sm:right-5 sm:bottom-21 sm:h-[36rem] sm:max-h-[75vh] sm:w-105 sm:rounded-xl sm:border sm:shadow-2xl"
+          // ph-no-capture: PostHog session replay is on and masks only form
+          // inputs, so without this the conversation text would be recorded.
+          // app/privacy/page.tsx promises the chat is excluded.
+          className="ph-no-capture glass fixed inset-0 z-50 flex flex-col border-primary/15 bg-background/95 backdrop-blur-xl sm:inset-auto sm:right-5 sm:bottom-21 sm:h-[36rem] sm:max-h-[75vh] sm:w-105 sm:rounded-xl sm:border sm:shadow-2xl"
         >
           <header className="flex items-center justify-between border-b border-primary/10 px-4 py-3">
             <div className="flex items-center gap-2">

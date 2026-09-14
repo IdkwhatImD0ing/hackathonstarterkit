@@ -148,7 +148,7 @@ const SECTIONS: Section[] = [
     title: "12. AI Chat and Search Data",
     paragraphs: [
       "The Site offers an AI assistant (\"Ask the Playbook\") and an AI prompt finder on the cheat sheet. Both send what you type to OpenAI, which generates the response. We instruct OpenAI not to store those requests on their side.",
-      "We do record them. When you use either feature, we store the messages you send, the answer the model returns, which pages of the Site were retrieved as context, the model used, token counts, timings, and whether the request succeeded. That record is kept in our own tracing system and is used to find weak answers, close gaps in the content, and improve the assistant.",
+      "We do record them. When you use either feature, we store the messages you send, the answer the model returns, which pages of the Site were retrieved as context, the model used, token counts, timings, and whether the request succeeded. That record is kept in FireTrace, the tracing service we use, and is used to find weak answers, close gaps in the content, and improve the assistant.",
       "Each conversation carries a random identifier created in your browser tab and discarded when that tab closes, so the turns of one conversation can be read together. It is not tied to your name, your email, or any account, and we do not try to identify you from it.",
       "If you rate an answer with the thumbs up or thumbs down button, we record that rating against the answer it refers to.",
       "Because conversations are stored, please do not paste passwords, API keys, personal information, or anything confidential into the chat. It is a public educational assistant, not a private channel.",

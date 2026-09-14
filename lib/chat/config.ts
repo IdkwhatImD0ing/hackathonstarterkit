@@ -114,12 +114,12 @@ export const CHAT_MONTHLY_TOKEN_BUDGET = envNumber("CHAT_MONTHLY_TOKEN_BUDGET", 
 
 /**
  * Daily ceiling (UTC day) under the monthly one, so one bad day cannot
- * empty the month. Default: a tenth of the monthly budget, three average
- * days' worth, so a launch-day spike still has room while sustained abuse
- * needs ten days, not hours, to exhaust the month. 0 disables chat.
+ * empty the month. Default: 8.4M tokens, sized for about 2,000 chat turns
+ * a day at the heavy end of real usage (~4.2K tokens per turn), which is
+ * roughly $3/day at the lib/tracing/pricing.ts rates. It sits well above a
+ * tenth of the default monthly budget on purpose, for launch traffic; a
+ * full day at this cap spends about 40% of a 20M month. 0 disables chat.
  */
-export const CHAT_DAILY_TOKEN_BUDGET = envNumber(
-  "CHAT_DAILY_TOKEN_BUDGET",
-  Math.floor(CHAT_MONTHLY_TOKEN_BUDGET / 10),
-  { allowZero: true },
-);
+export const CHAT_DAILY_TOKEN_BUDGET = envNumber("CHAT_DAILY_TOKEN_BUDGET", 8_400_000, {
+  allowZero: true,
+});

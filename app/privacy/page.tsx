@@ -83,7 +83,7 @@ const SECTIONS: Section[] = [
         "Standard details PostHog adds to every event: the page address, the site that sent you here, and your browser, operating system, device type, and screen size.",
       ],
       "PostHog gives your browser a random ID so it can tell repeat visits apart. We never give PostHog your name or email address, and we do not build a profile of who you are. PostHog also receives your IP address as part of each request, as any web service does.",
-      "PostHog may also record session replays, which are playbacks of how a page was scrolled and clicked. They help us find the spots where readers get stuck.",
+      "PostHog also records session replays, which are playbacks of how a page was scrolled and clicked, including the text shown on the page and the page's technical console messages. They help us find the spots where readers get stuck. Anything you type into a form field is masked in replays, and the AI chat window is left out of them entirely.",
     ],
   },
   {
@@ -144,7 +144,7 @@ const SECTIONS: Section[] = [
       "These services receive data from the Site. Each one has its own privacy policy.",
       [
         "Vercel: hosts the Site and runs Vercel Web Analytics. Receives every request you make, including your IP address.",
-        "PostHog (US cloud): product analytics. Receives the events described in the Analytics section, your browser's random ID, and your IP address.",
+        "PostHog (US cloud): product analytics and session replays. Receives the events and replays described in the Analytics section, your browser's random ID, and your IP address.",
         "Beehiiv: sends the newsletter. Receives your email address and the page you signed up on, only if you subscribe.",
         "OpenAI: writes the AI chat and prompt finder answers and matches searches to Site content. Receives what you type into those features, the Site content used to answer, and search text from the MCP server.",
         "FireTrace (tracing.art3m1s.me): stores the AI request records and ratings described in the AI Chat section. Records are sent from our servers, not your browser, and do not include your IP address.",
