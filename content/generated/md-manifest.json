@@ -71,16 +71,16 @@
   },
   "/non-coders": {
     "file": "md/non-coders.md",
-    "tokens": 939,
+    "tokens": 949,
     "title": "Hackathons for Non-Coders",
     "description": "How non-coders win hackathons with AI tools: the proof it works, the setup, the concepts, and the installable AI skills.",
     "track": "non-coders"
   },
   "/non-coders/proof": {
     "file": "md/non-coders/proof.md",
-    "tokens": 688,
+    "tokens": 698,
     "title": "The Proof",
-    "description": "Real professionals who beat thousands of developers at major hackathons.",
+    "description": "Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.",
     "track": "non-coders"
   },
   "/non-coders/setup": {
@@ -253,7 +253,7 @@
   },
   "/blog/build-with-elevenlabs-and-cursor": {
     "file": "md/blog/build-with-elevenlabs-and-cursor.md",
-    "tokens": 2006,
+    "tokens": 2009,
     "title": "How to Build with ElevenLabs and Cursor at a Hackathon",
     "description": "Build a voice AI hackathon project with ElevenLabs and Cursor in an afternoon. The exact PRD-first, MCP-driven, test-driven workflow Bill uses to ship and win.",
     "track": "blog",

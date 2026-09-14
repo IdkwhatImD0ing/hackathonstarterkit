@@ -76,7 +76,8 @@ export const CHAT_MAX_MESSAGE_CHARS = 1500;
  * CHAT_MAX_OUTPUT_TOKENS (600 tokens ≈ 2-3k chars), not by the user cap;
  * capping them at CHAT_MAX_MESSAGE_CHARS rejected every follow-up after a
  * long answer. Every allowed char is reserved against the budget, so the
- * cap sits just above what the model can actually produce.
+ * cap sits just above what the model can actually produce; the chat route
+ * truncates longer assistant turns to it rather than rejecting them.
  */
 // 6 chars/token = 3,600: 600-token windows of the site's own Markdown top out at 2,923 chars (4.9/token, o200k), ~23% headroom.
 export const CHAT_MAX_ASSISTANT_CHARS = CHAT_MAX_OUTPUT_TOKENS * 6;
@@ -87,7 +88,7 @@ export const CHAT_MAX_HISTORY = 10;
  * value would otherwise remove the cap it sets: Number("20_000_000") is
  * NaN, and `total > NaN` is always false. So a bad value is logged loudly
  * and replaced by the documented default. Zero is only valid where it has
- * a documented meaning (a budget of 0 switches chat off).
+ * a documented meaning (a budget or rate limit of 0 switches the feature off).
  */
 export function envNumber(
   name: string,
@@ -105,10 +106,15 @@ export function envNumber(
   return fallback;
 }
 
-export const CHAT_RATE_LIMIT_MAX = envNumber("CHAT_RATE_LIMIT_MAX", 20);
+/** Per-IP requests per 10-minute window; 0 refuses every request (kill switch). */
+export const CHAT_RATE_LIMIT_MAX = envNumber("CHAT_RATE_LIMIT_MAX", 20, { allowZero: true });
 
-/** Monthly output+input token ceiling across all users; 0 disables chat. */
-export const CHAT_MONTHLY_TOKEN_BUDGET = envNumber("CHAT_MONTHLY_TOKEN_BUDGET", 20_000_000, {
+/**
+ * Monthly output+input token ceiling across all users; 0 disables chat.
+ * Default: ten days at the daily cap below (~$29/month at most at the
+ * lib/tracing/pricing.ts rates), so one bad day cannot empty the month.
+ */
+export const CHAT_MONTHLY_TOKEN_BUDGET = envNumber("CHAT_MONTHLY_TOKEN_BUDGET", 84_000_000, {
   allowZero: true,
 });
 
@@ -116,9 +122,8 @@ export const CHAT_MONTHLY_TOKEN_BUDGET = envNumber("CHAT_MONTHLY_TOKEN_BUDGET", 
  * Daily ceiling (UTC day) under the monthly one, so one bad day cannot
  * empty the month. Default: 8.4M tokens, sized for about 2,000 chat turns
  * a day at the heavy end of real usage (~4.2K tokens per turn), which is
- * roughly $3/day at the lib/tracing/pricing.ts rates. It sits well above a
- * tenth of the default monthly budget on purpose, for launch traffic; a
- * full day at this cap spends about 40% of a 20M month. 0 disables chat.
+ * roughly $3/day at the lib/tracing/pricing.ts rates; a full day at this
+ * cap spends a tenth of the default month. 0 disables chat.
  */
 export const CHAT_DAILY_TOKEN_BUDGET = envNumber("CHAT_DAILY_TOKEN_BUDGET", 8_400_000, {
   allowZero: true,

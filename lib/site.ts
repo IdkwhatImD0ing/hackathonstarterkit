@@ -13,6 +13,9 @@ export const CANONICAL_HOST = new URL(SITE_URL).host;
 
 export const SITE_NAME = "The Hackathon Playbook";
 
+/** Press, legal, and privacy contact shown on /media-kit, /terms, and /privacy. */
+export const CONTACT_EMAIL = "billzhangsc@gmail.com";
+
 /** Resolve a path like "/playbook/pitching" to an absolute canonical URL. */
 export function absoluteUrl(path: string): string {
   // Anything carrying its own URI scheme is already absolute and must be

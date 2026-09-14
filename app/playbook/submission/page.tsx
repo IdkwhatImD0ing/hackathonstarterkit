@@ -46,6 +46,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { shareMetadata } from "@/lib/metadata";
+import { AffiliateLink } from "@/components/affiliate-link";
 
 const section = PLAYBOOK_SECTIONS[5];
 
@@ -915,15 +916,13 @@ export default function SubmissionPage() {
                 title: "Recording Tools",
                 descriptionNode: (
                   <>
-                    <a
+                    <AffiliateLink
                       href="https://screenstudio.lemonsqueezy.com?aff=LpD9R"
-                      target="_blank"
-                      rel="sponsored noopener noreferrer"
                       className="font-semibold text-volt underline decoration-volt/30 hover:decoration-volt"
                     >
                       Screen Studio
-                    </a>{" "}
-                    (Mac, my pick, affiliate link) or CanVid (Windows). Auto-zoom, instant
+                    </AffiliateLink>
+                    , my pick on Mac, or CanVid on Windows. Auto-zoom, instant
                     effects, webcam overlay. Minutes, not hours.
                   </>
                 ),

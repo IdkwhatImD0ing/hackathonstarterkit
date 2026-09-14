@@ -3,7 +3,7 @@
   "embeddingDims": 1536,
   "chunkerVersion": 2,
   "normalizerVersion": 1,
-  "generatedAt": "2026-09-14T07:43:11.308Z",
+  "generatedAt": "2026-09-14T17:31:51.128Z",
   "pages": {
     "/": {
       "sourceHash": "b4734b87278aebd3b13552476c4e90fc02253ff3f2a6b3b4706f627a99a556d6",
@@ -178,7 +178,7 @@
       ]
     },
     "/playbook/submission": {
-      "sourceHash": "d3492b60d4665bd324b3e1ffd2f33131bdb6db65b8ce4b2e7a9fe7468e9f4f3f",
+      "sourceHash": "7e75cbe8d033f0c58469708bef27a40fe11913fedeb6f4ef0b591557a1ff63e3",
       "chunkIds": [
         "/playbook/submission#the-submission-advantage#0",
         "/playbook/submission#the-submission-advantage/devpost-readme#0",
@@ -240,7 +240,7 @@
       ]
     },
     "/non-coders": {
-      "sourceHash": "0334d0616cc4aea5bd207a42d979f54a37cdc1c53aa55c5a1916b85dd764964a",
+      "sourceHash": "beca97d966c545b6880a0ade12bbc65d0b64829498dc81c7143fc13347894126",
       "chunkIds": [
         "/non-coders#intro#0",
         "/non-coders#choose-your-starting-point#0",
@@ -248,7 +248,7 @@
       ]
     },
     "/non-coders/proof": {
-      "sourceHash": "1631506d66d17563b2ccbfc7dd3fa1de70c28c94386307f848e99575fd8afd02",
+      "sourceHash": "a375fcc31b8f171314cb5f214b2fbbcae7c07e9c887af6489a3fab83da588ba1",
       "chunkIds": [
         "/non-coders/proof#intro#0"
       ]
@@ -561,7 +561,7 @@
       ]
     },
     "/blog/build-with-elevenlabs-and-cursor": {
-      "sourceHash": "6b103c3aa936c8c1c0e4110e525723a6e8daa53399ba89fadc53cddb38f47b08",
+      "sourceHash": "a014ebeb304db33b7dab672c890f33e2c156b8eb6203ab546667a2d9374f8c42",
       "chunkIds": [
         "/blog/build-with-elevenlabs-and-cursor#make-your-demo-talk-back#0",
         "/blog/build-with-elevenlabs-and-cursor#step-0-write-the-prd-before-cursor-opens-a-file#0",
@@ -1944,7 +1944,7 @@
       "track": "playbook"
     },
     "/playbook/submission#show-dont-tell/annotated-screenshots#0": {
-      "contentHash": "7f5bc1e003963f182723d190cbc4ee61fc660cec66d4753c634da6e3a08d4c6f",
+      "contentHash": "af17f7edd8dcb04d49b913f51b9e0fb7e752a5edcbb8267312953ca02aeb890e",
       "tokens": 185,
       "pageTitle": "Submission",
       "sectionHeading": "Show, Don't Tell > Annotated Screenshots",
@@ -2286,8 +2286,8 @@
       "track": "non-coders"
     },
     "/non-coders#choose-your-starting-point#0": {
-      "contentHash": "b48e2a1a5d50c5733694244ac03f74338301609e9f543d662a0d49ea3c4438ee",
-      "tokens": 259,
+      "contentHash": "c1cbd56a9dc306430566b5267da4dea3a7da57558b5b8b30b04e3fd96712b95a",
+      "tokens": 269,
       "pageTitle": "Hackathons for Non-Coders",
       "sectionHeading": "Choose Your Starting Point",
       "url": "/non-coders",
@@ -4104,8 +4104,8 @@
       "track": "blog"
     },
     "/blog/build-with-elevenlabs-and-cursor#babysit-the-spend-then-ship#0": {
-      "contentHash": "8ace9a3c5742d29bde1b7022f41347853dc5f99fb3c098d250055f4976ce4a29",
-      "tokens": 307,
+      "contentHash": "7fb2be56c22f57f0d345b86f516b1ad78ce710c2ec781ed5086e86675a693b70",
+      "tokens": 310,
       "pageTitle": "How to Build with ElevenLabs and Cursor at a Hackathon",
       "sectionHeading": "Babysit the Spend, Then Ship",
       "url": "/blog/build-with-elevenlabs-and-cursor",

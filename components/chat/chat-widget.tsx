@@ -179,8 +179,16 @@ export function ChatWidget() {
         });
 
         if (!response.ok || !response.body) {
-          const data = (await response.json().catch(() => ({}))) as { code?: string };
-          setError(ERROR_COPY[data.code ?? "api_error"] ?? ERROR_COPY.api_error);
+          const data = (await response.json().catch(() => ({}))) as {
+            code?: string;
+            error?: string;
+          };
+          // Budget errors carry the server's copy, which says whether chat
+          // is back tomorrow (daily cap) or next month (monthly cap).
+          setError(
+            (data.code === "budget" && data.error) ||
+              (ERROR_COPY[data.code ?? "api_error"] ?? ERROR_COPY.api_error),
+          );
           setStreaming(false);
           return;
         }

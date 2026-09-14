@@ -97,7 +97,7 @@
       "type": "skill-md",
       "description": "Ship a complete hackathon submission: README, demo video, Devpost write-up, and deliverables judges remember. Use when finalizing a hackathon submission.",
       "url": "/.well-known/agent-skills/hackathon-submission-checklist/SKILL.md",
-      "digest": "sha256:fb73dfdf1858ae6dd633678b54d7a8e5c1990981a82e07dd75e0a14da43b15e9"
+      "digest": "sha256:39990860d6068034476e9907d3253c9f7c387a81482f8798b9f086b8ec1b4381"
     }
   ]
 }

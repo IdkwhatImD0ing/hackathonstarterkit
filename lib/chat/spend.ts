@@ -15,8 +15,8 @@
  * quietly extend its budget. If usage is unknown (crash, incomplete
  * stream), the full reservation stands, which errs toward spending less.
  *
- * Counters live in Redis (spend:tokens:YYYY-MM and spend:tokens:YYYY-MM-DD,
- * both UTC; lib/redis-rest.ts). When Redis is configured but unreachable,
+ * Counters live in Redis (spend:tokens:YYYY-MM and
+ * {spend:tokens:YYYY-MM}:YYYY-MM-DD, both UTC; lib/redis-rest.ts). When Redis is configured but unreachable,
  * reservation FAILS CLOSED: each serverless instance would otherwise see a
  * near-zero local counter and keep spending precisely during the outage.
  * The in-memory path is only for deployments where Redis was never
@@ -94,10 +94,16 @@ const memory = new Map<string, number>();
 const MONTH_TTL_SECONDS = 60 * 60 * 24 * 45;
 const DAY_TTL_SECONDS = 60 * 60 * 24 * 2;
 
-/** Month and UTC-day keys from one clock reading, so they agree at midnight. */
+/**
+ * Month and UTC-day keys from one clock reading, so they agree at midnight.
+ * The day key's hash tag is the month key, so both land in one cluster
+ * slot and the two-key EVALs below cannot fail CROSSSLOT on a sharded
+ * Redis; the month key keeps its original name, so its count carries over.
+ */
 function spendKeys(): SpendKeys {
   const now = new Date().toISOString();
-  return { month: `spend:tokens:${now.slice(0, 7)}`, day: `spend:tokens:${now.slice(0, 10)}` };
+  const month = `spend:tokens:${now.slice(0, 7)}`;
+  return { month, day: `{${month}}:${now.slice(0, 10)}` };
 }
 
 /**

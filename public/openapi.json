@@ -37,7 +37,7 @@
                           "required": ["role", "content"],
                           "properties": {
                             "role": { "type": "string", "const": "assistant" },
-                            "content": { "type": "string", "maxLength": 3600 }
+                            "content": { "type": "string", "description": "Echo of an earlier answer. Content past 3600 characters is truncated server-side, not rejected." }
                           }
                         }
                       ]

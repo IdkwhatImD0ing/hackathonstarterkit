@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import type { ReactElement } from "react";
 import Link from "next/link";
-import { Home, Mail, Scale, FileText } from "lucide-react";
-import { JsonLd } from "@/components/json-ld";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { LegalPage, type LegalSection } from "@/components/legal-page";
+import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/site";
 import { shareMetadata } from "@/lib/metadata";
 
-const CONTACT_EMAIL = "billzhangsc@gmail.com";
 const LAST_UPDATED = "September 14, 2026";
 
 const DESCRIPTION =
@@ -40,13 +37,7 @@ const webPageJsonLd = {
   dateModified: "2026-09-14",
 };
 
-type Section = {
-  id: string;
-  title: string;
-  paragraphs: (string | string[] | ReactElement)[];
-};
-
-const SECTIONS: Section[] = [
+const SECTIONS: LegalSection[] = [
   {
     id: "acceptance",
     title: "1. Acceptance of Terms",
@@ -70,7 +61,15 @@ const SECTIONS: Section[] = [
       "All content on the Site, including text, graphics, logos, icons, images, audio, video, code snippets, page layouts, and the compilation of all of the above, is the property of Bill Zhang or licensors and is protected by copyright, trademark, and other intellectual property laws.",
       "We grant you a limited, personal, non-exclusive, non-transferable, revocable license to access and view the content for your own personal, non-commercial use. You may also share short quotes or excerpts with proper attribution and a link back to the Site.",
       "Automated access and AI use are welcome. You may crawl the Site with automated tools, have AI tools and agents read it (including through our Markdown pages, llms.txt, and MCP server), and use the content to train, fine-tune, or ground AI models. This permission is in addition to the personal license above. It applies as long as you follow our robots.txt file and the content signals published in it, stay within the rate limits on our API and MCP endpoints, and do not degrade the Site for other visitors.",
-      "You may not sell or license the content, or republish significant portions of it as your own work or under your own name, without prior written permission. Passing the content off as your own is never allowed.",
+      "Apart from the AI use described above, you may not reproduce, republish, sell, license, or redistribute significant portions of the content, or create derivative works from it, without prior written permission. Passing the content off as your own is never allowed.",
+      <>
+        Press and publications may use the logo, share card, founder photo,
+        and boilerplate from our{" "}
+        <Link href="/media-kit" className="text-volt underline underline-offset-2">
+          Media Kit
+        </Link>{" "}
+        in editorial coverage of the Site.
+      </>,
     ],
   },
   {
@@ -173,120 +172,18 @@ const SECTIONS: Section[] = [
 
 export default function TermsPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 space-y-10">
-      <JsonLd data={webPageJsonLd} />
-
-      <nav className="flex items-center gap-3">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 font-code text-xs text-muted-foreground transition-colors hover:text-volt"
-        >
-          <Home className="size-3" />
-          Home
-        </Link>
-        <span className="font-code text-xs text-muted-foreground/40">/</span>
-        <span className="font-code text-xs text-foreground">Terms</span>
-      </nav>
-
-      <header className="space-y-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 font-code text-[10px] uppercase tracking-widest text-primary">
-          <Scale className="size-3" />
-          Legal
-        </div>
-        <h1 className="font-display text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+    <LegalPage
+      breadcrumb="Terms"
+      heading={
+        <>
           Terms of <span className="text-primary">Service</span>
-        </h1>
-        <p className="font-body text-muted-foreground">
-          The rules for using The Hackathon Playbook. Plain English, no surprises.
-        </p>
-        <p className="font-code text-xs text-muted-foreground">
-          Last updated: {LAST_UPDATED}
-        </p>
-      </header>
-
-      <section className="glass glow rounded-2xl overflow-hidden">
-        <div className="flex items-center gap-2 border-b border-primary/10 px-5 py-3">
-          <span className="size-3 rounded-full bg-destructive/70" />
-          <span className="size-3 rounded-full bg-spark/70" />
-          <span className="size-3 rounded-full bg-success/70" />
-          <span className="ml-3 font-code text-xs text-muted-foreground">
-            bill@hackathons ~ % cat ./terms.txt
-          </span>
-        </div>
-
-        <div className="space-y-10 p-6 md:p-10">
-          <nav aria-label="Table of contents" className="space-y-3">
-            <p className="font-code text-sm text-muted-foreground">
-              <span className="text-volt">$</span> ls ./sections
-            </p>
-            <ol className="grid grid-cols-1 gap-x-6 gap-y-1.5 font-code text-xs text-muted-foreground sm:grid-cols-2">
-              {SECTIONS.map((s) => (
-                <li key={s.id}>
-                  <a
-                    href={`#${s.id}`}
-                    className="transition-colors hover:text-volt"
-                  >
-                    {s.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
-
-          <div className="space-y-10">
-            {SECTIONS.map((section) => (
-              <section
-                key={section.id}
-                id={section.id}
-                className="scroll-mt-24 space-y-3"
-              >
-                <h2 className="font-display text-xl font-bold text-foreground md:text-2xl">
-                  {section.title}
-                </h2>
-                {section.paragraphs.map((p, i) => {
-                  if (Array.isArray(p)) {
-                    return (
-                      <ul
-                        key={i}
-                        className="ml-1 space-y-1.5 font-body text-sm text-foreground/85 md:text-base"
-                      >
-                        {p.map((item, j) => (
-                          <li key={j} className="flex items-start gap-2.5">
-                            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    );
-                  }
-                  return (
-                    <p
-                      key={i}
-                      className="font-body text-sm leading-relaxed text-foreground/85 md:text-base"
-                    >
-                      {p}
-                    </p>
-                  );
-                })}
-              </section>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-3 border-t border-primary/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-2 font-code text-xs text-muted-foreground">
-              <FileText className="size-3.5 text-primary" />
-              Effective as of {LAST_UPDATED}
-            </div>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex items-center gap-1.5 font-code text-xs text-muted-foreground transition-colors hover:text-volt"
-            >
-              <Mail className="size-3.5" />
-              {CONTACT_EMAIL}
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
+        </>
+      }
+      intro="The rules for using The Hackathon Playbook. Plain English, no surprises."
+      file="terms.txt"
+      lastUpdated={LAST_UPDATED}
+      jsonLd={webPageJsonLd}
+      sections={SECTIONS}
+    />
   );
 }

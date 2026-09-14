@@ -25,7 +25,7 @@ A read-only MCP server exposing search over this content lives at https://thehac
 
 ## For Non-Coders
 
-- [The Proof](https://thehackathonplaybook.dev/non-coders/proof.md): Real professionals who beat thousands of developers at major hackathons.
+- [The Proof](https://thehackathonplaybook.dev/non-coders/proof.md): Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.
 - [Getting Started](https://thehackathonplaybook.dev/non-coders/setup.md): The 3 files, 4 shortcuts, and daily workflow you need to start building.
 - [Concepts Explained](https://thehackathonplaybook.dev/non-coders/concepts.md): GitHub, APIs, deploying, and other jargon explained in plain English.
 - [Using APIs](https://thehackathonplaybook.dev/non-coders/apis.md): How to add any service to your app with just a key and a docs link.

@@ -148,6 +148,6 @@ An agent in a tight loop racks up real money fast. Your Cursor subscription and 
 
 Get this loop running once and the voice feature stops being the scary part of your build. It becomes the thirty seconds on stage that judges actually remember.
 
-[Non-Coders Winning Hackathons](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons): How professionals with zero coding experience are beating dev teams using AI agents like Cursor.
+[Non-Coders Winning Hackathons](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons): How professionals with little or no coding experience are winning against dev teams using AI agents like Cursor.
 
 [Best Tech Stack for Hackathons in 2026](https://thehackathonplaybook.dev/blog/best-tech-stack-for-hackathons): The full stack winning teams use, from frontend to deployment to AI APIs.

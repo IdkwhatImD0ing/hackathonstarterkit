@@ -16,10 +16,9 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/site";
 import { shareMetadata } from "@/lib/metadata";
 
-const CONTACT_EMAIL = "billzhangsc@gmail.com";
 const HEADSHOT_URL = "/brand/bill-zhang-headshot.jpg";
 
 export const metadata: Metadata = {

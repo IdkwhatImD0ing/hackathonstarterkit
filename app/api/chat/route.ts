@@ -54,7 +54,13 @@ const RequestSchema = z.object({
         }),
         z.object({
           role: z.literal("assistant"),
-          content: z.string().min(1).max(CHAT_MAX_ASSISTANT_CHARS),
+          // Truncated, not rejected: the widget resends prior answers
+          // verbatim, so rejecting one long answer would fail every
+          // follow-up in that conversation.
+          content: z
+            .string()
+            .min(1)
+            .transform((s) => s.slice(0, CHAT_MAX_ASSISTANT_CHARS)),
         }),
       ]),
     )
@@ -72,6 +78,9 @@ const RequestSchema = z.object({
 /** Per-instance concurrent stream cap (belt to the rate limiter's braces). */
 const activeStreams = new Map<string, number>();
 const MAX_CONCURRENT_STREAMS = 2;
+
+/** A 600-token answer streams in well under this even on a slow provider. */
+const MODEL_STREAM_TIMEOUT_MS = 60_000;
 
 function jsonError(status: number, code: string, message: string, extra?: HeadersInit) {
   return NextResponse.json({ code, error: message }, { status, headers: extra });
@@ -109,9 +118,10 @@ export async function POST(request: NextRequest) {
 
   // Acquire the concurrency slot synchronously at the check: check and
   // increment with no await between them, so parallel requests cannot all
-  // pass a stale count. Release is idempotent (per-request flag) because
-  // both the stream's finally and cancel() may call it, and every early
-  // return below must call it too.
+  // pass a stale count. Release is idempotent (per-request flag), and every
+  // early return below must call it too. A streamed turn releases only in
+  // the stream's finally, after the model stream has drained, so a client
+  // that disconnects cannot free its slot while generation still runs.
   const heldStreams = activeStreams.get(ip) ?? 0;
   if (heldStreams >= MAX_CONCURRENT_STREAMS) {
     return jsonError(429, "rate_limited", "One conversation at a time, hacker.");
@@ -268,26 +278,33 @@ export async function POST(request: NextRequest) {
   });
 
   try {
-    const completion = await client.responses.create({
-      model: CHAT_MODEL,
-      temperature: CHAT_TEMPERATURE,
-      max_output_tokens: CHAT_MAX_OUTPUT_TOKENS,
-      // The condition under which a reasoning-capable model is allowed at
-      // all (lib/chat/config.ts): effort "none" bills zero reasoning
-      // tokens. Non-exempt models reject the parameter, so it is only
-      // sent when it applies.
-      ...(isReasoningExempt(CHAT_MODEL) ? { reasoning: { effort: "none" as const } } : {}),
-      stream: true,
-      // No retention on OpenAI's side. The site's own tracing is the
-      // record of a conversation (privacy section of /terms).
-      store: false,
-      // Stable prefix first so prompt caching hits it (see lib/chat/prompt.ts).
-      instructions: SYSTEM_PROMPT,
-      input: [
-        { role: "user", content: contextMessage(results) },
-        ...body.messages,
-      ],
-    });
+    const completion = await client.responses.create(
+      {
+        model: CHAT_MODEL,
+        temperature: CHAT_TEMPERATURE,
+        max_output_tokens: CHAT_MAX_OUTPUT_TOKENS,
+        // The condition under which a reasoning-capable model is allowed at
+        // all (lib/chat/config.ts): effort "none" bills zero reasoning
+        // tokens. Non-exempt models reject the parameter, so it is only
+        // sent when it applies.
+        ...(isReasoningExempt(CHAT_MODEL) ? { reasoning: { effort: "none" as const } } : {}),
+        stream: true,
+        // No retention on OpenAI's side. The site's own tracing is the
+        // record of a conversation (privacy section of /terms).
+        store: false,
+        // Stable prefix first so prompt caching hits it (see lib/chat/prompt.ts).
+        instructions: SYSTEM_PROMPT,
+        input: [
+          { role: "user", content: contextMessage(results) },
+          ...body.messages,
+        ],
+      },
+      // Bounds the whole stream in time, not just in tokens: the SDK's own
+      // timeout stops at the response headers and defaults to 10 minutes,
+      // and after() below would otherwise hold the function open for a
+      // stalled stream until maxDuration, losing the trace and settlement.
+      { signal: AbortSignal.timeout(MODEL_STREAM_TIMEOUT_MS) },
+    );
 
     // Settlement bookkeeping: exactly one settle per reservation, against
     // the keys that took it (a stream can straddle a day or month
@@ -446,9 +463,9 @@ export async function POST(request: NextRequest) {
       },
       cancel() {
         // Client went away mid-stream: stop writing, keep draining (see
-        // clientGone). The trace closes, with usage, when the drain ends.
+        // clientGone). The trace closes, with usage, and the concurrency
+        // slot is released when the drain ends (finally above).
         clientGone = true;
-        release();
       },
     });
 

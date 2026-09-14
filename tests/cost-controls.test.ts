@@ -179,7 +179,8 @@ describe("reserveTokens / settleTokens (Redis path, fetch faked)", () => {
     const reservation = await reserveTokens(500, budgets);
     expect(reservation).toMatchObject({
       result: "ok",
-      keys: { month: "spend:tokens:2032-09", day: "spend:tokens:2032-09-14" },
+      // The day key's hash tag is the month key: one cluster slot for both.
+      keys: { month: "spend:tokens:2032-09", day: "{spend:tokens:2032-09}:2032-09-14" },
     });
     await settleTokens(500, 120, reservation.keys);
 
@@ -188,12 +189,17 @@ describe("reserveTokens / settleTokens (Redis path, fetch faked)", () => {
     expect(reserve.slice(2, 8)).toEqual([
       "2",
       "spend:tokens:2032-09",
-      "spend:tokens:2032-09-14",
+      "{spend:tokens:2032-09}:2032-09-14",
       "500",
       "20000000",
       "2000000",
     ]);
-    expect(settle.slice(2)).toEqual(["2", "spend:tokens:2032-09", "spend:tokens:2032-09-14", "-380"]);
+    expect(settle.slice(2)).toEqual([
+      "2",
+      "spend:tokens:2032-09",
+      "{spend:tokens:2032-09}:2032-09-14",
+      "-380",
+    ]);
   });
 
   it("refuses with the budget Redis reports and logs its counter", async () => {
@@ -245,7 +251,7 @@ describe("envNumber", () => {
     expect(envNumber("TEST_LIMIT", 123, { allowZero: true })).toBe(0);
     expect(console.error).not.toHaveBeenCalled();
 
-    // A rate limit of 0 would refuse everyone: invalid, so the default.
+    // Without allowZero, 0 is invalid and falls back to the default.
     expect(envNumber("TEST_LIMIT", 123)).toBe(123);
     expect(console.error).toHaveBeenCalledTimes(1);
   });
@@ -255,8 +261,9 @@ describe("envNumber", () => {
     vi.stubEnv("CHAT_DAILY_TOKEN_BUDGET", "");
     vi.resetModules();
     const config = await import("@/lib/chat/config");
-    expect(config.CHAT_MONTHLY_TOKEN_BUDGET).toBe(20_000_000);
-    // Unset daily falls back to its fixed default (~2,000 heavy turns).
+    expect(config.CHAT_MONTHLY_TOKEN_BUDGET).toBe(84_000_000);
+    // Unset daily falls back to its fixed default (~2,000 heavy turns),
+    // a tenth of the default month.
     expect(config.CHAT_DAILY_TOKEN_BUDGET).toBe(8_400_000);
   });
 });

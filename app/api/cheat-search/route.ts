@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { z } from "zod";
 import { getClientIp } from "@/lib/request-ip";
 import { rateLimit } from "@/lib/rate-limit";
@@ -33,7 +33,7 @@ const MODEL_GUARD_ERROR = rejectReasoningModel(CHAT_MODEL);
 
 const MAX_QUERY_CHARS = 300;
 const MAX_OUTPUT_TOKENS = 150;
-const RATE_LIMIT_MAX = envNumber("CHEAT_SEARCH_RATE_LIMIT_MAX", 30);
+const RATE_LIMIT_MAX = envNumber("CHEAT_SEARCH_RATE_LIMIT_MAX", 30, { allowZero: true });
 
 const RequestSchema = z.object({
   query: z.string().trim().min(3).max(MAX_QUERY_CHARS),
@@ -157,11 +157,20 @@ export async function POST(request: NextRequest) {
 
   // Exactly one settle per reservation, as in /api/chat: a throw after the
   // usage was settled (an unparseable reply, say) must not refund it again.
+  // after() keeps the function alive until the settle lands, so the
+  // instance cannot freeze once the response is sent and leave the full
+  // reservation counted. It throws outside a request scope (tests), where
+  // the settle simply runs detached.
   let settled = false;
   const settle = (actualTokens: number) => {
     if (settled) return;
     settled = true;
-    void settleTokens(reservedTokens, actualTokens, spendKeys);
+    const settlement = settleTokens(reservedTokens, actualTokens, spendKeys);
+    try {
+      after(settlement);
+    } catch {
+      // No request scope to extend.
+    }
   };
 
   try {

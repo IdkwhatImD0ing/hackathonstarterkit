@@ -189,7 +189,7 @@ Include: user personas, wireframes, high-fidelity mockups, and the final product
 
 Recording Tools
 
-[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (Mac, my pick, affiliate link) or CanVid (Windows). Auto-zoom, instant effects, webcam overlay. Minutes, not hours.
+[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (affiliate link), my pick on Mac, or CanVid on Windows. Auto-zoom, instant effects, webcam overlay. Minutes, not hours.
 
 Video Length
 

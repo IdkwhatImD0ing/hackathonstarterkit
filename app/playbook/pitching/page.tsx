@@ -47,6 +47,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { shareMetadata } from "@/lib/metadata";
+import { AffiliateLink, AffiliateDisclosure } from "@/components/affiliate-link";
 
 const section = PLAYBOOK_SECTIONS[4];
 
@@ -1648,15 +1649,13 @@ export default function PitchingPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   On Mac, I reach for{" "}
-                  <a
+                  <AffiliateLink
                     href="https://screenstudio.lemonsqueezy.com?aff=LpD9R"
-                    target="_blank"
-                    rel="sponsored noopener noreferrer"
                     className="font-semibold text-primary underline decoration-primary/30 hover:decoration-primary"
                   >
                     Screen Studio
-                  </a>{" "}
-                  (affiliate link). CanVid covers the same ground on Windows. Both handle
+                  </AffiliateLink>
+                  . CanVid covers the same ground on Windows. Both handle
                   auto-zoom, instant editing, effects, and selfie overlays,
                   saving hours when every hackathon hour matters.
                 </p>
@@ -1802,9 +1801,7 @@ export default function PitchingPage() {
                   launch, with basically no editing time. Worth a look if
                   you&apos;re on Mac.
                 </p>
-                <p className="font-code text-xs text-muted-foreground">
-                  Affiliate link: I may earn a commission.
-                </p>
+                <AffiliateDisclosure />
                 <div className="flex flex-wrap gap-3">
                   {[
                     "Automatic cursor zoom",
@@ -1822,15 +1819,15 @@ export default function PitchingPage() {
                   ))}
                 </div>
               </div>
-              <a
+              {/* The card's <AffiliateDisclosure /> above labels this button. */}
+              <AffiliateLink
                 href="https://screenstudio.lemonsqueezy.com?aff=LpD9R"
-                target="_blank"
-                rel="sponsored noopener noreferrer"
+                label={false}
                 className="inline-flex items-center justify-center gap-2 self-start rounded-lg border border-volt/40 px-5 py-2.5 font-display text-sm font-semibold text-volt transition-all hover:border-volt hover:bg-volt/10 md:self-center"
               >
                 Check it out
                 <ExternalLink className="size-3.5" />
-              </a>
+              </AffiliateLink>
             </div>
           </div>
 

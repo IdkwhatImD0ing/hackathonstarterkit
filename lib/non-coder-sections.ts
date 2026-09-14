@@ -14,7 +14,7 @@ export const NON_CODER_SECTIONS: NonCoderSection[] = [
     slug: "proof",
     title: "The Proof",
     subtitle:
-      "Real professionals who beat thousands of developers at major hackathons.",
+      "Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.",
     icon: Trophy,
     accent: "volt",
   },

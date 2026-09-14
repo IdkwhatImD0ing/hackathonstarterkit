@@ -129,7 +129,7 @@ export const post: BlogPost = {
           href: "https://try.elevenlabs.io/thehackathonplaybook",
           sponsored: true,
         },
-        { type: "link-card", title: "Non-Coders Winning Hackathons", description: "How professionals with zero coding experience are beating dev teams using AI agents like Cursor.", href: "/blog/non-coders-winning-hackathons", tag: "Related Read" },
+        { type: "link-card", title: "Non-Coders Winning Hackathons", description: "How professionals with little or no coding experience are winning against dev teams using AI agents like Cursor.", href: "/blog/non-coders-winning-hackathons", tag: "Related Read" },
         { type: "link-card", title: "Best Tech Stack for Hackathons in 2026", description: "The full stack winning teams use, from frontend to deployment to AI APIs.", href: "/blog/best-tech-stack-for-hackathons", tag: "Stack Guide" },
       ],
     },

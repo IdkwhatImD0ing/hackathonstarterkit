@@ -20,7 +20,7 @@ import { envNumber } from "@/lib/chat/config";
  * caps how fast one client can vote.
  */
 
-const RATE_LIMIT_MAX = envNumber("CHAT_FEEDBACK_RATE_LIMIT_MAX", 60);
+const RATE_LIMIT_MAX = envNumber("CHAT_FEEDBACK_RATE_LIMIT_MAX", 60, { allowZero: true });
 
 const RequestSchema = z.object({
   traceId: z.string().regex(TRACE_ID_PATTERN),

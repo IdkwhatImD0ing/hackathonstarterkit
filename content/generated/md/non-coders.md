@@ -18,7 +18,7 @@ Each section is self-contained. Start wherever makes sense for you.
 
 [#### The Proof
 
-Real professionals who beat thousands of developers at major hackathons.
+Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.
 
 Enter section →](https://thehackathonplaybook.dev/non-coders/proof)[#### Getting Started
 

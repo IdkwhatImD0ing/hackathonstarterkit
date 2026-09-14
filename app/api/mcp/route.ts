@@ -4,6 +4,7 @@ import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/
 import { z } from "zod";
 import { getClientIp } from "@/lib/request-ip";
 import { rateLimit } from "@/lib/rate-limit";
+import { envNumber } from "@/lib/chat/config";
 import { searchCorpus } from "@/lib/retrieval";
 import { loadManifest, loadPageMarkdown } from "@/lib/retrieval/corpus";
 
@@ -17,7 +18,7 @@ import { loadManifest, loadPageMarkdown } from "@/lib/retrieval/corpus";
  * Local testing: docs/mcp.md (MCP Inspector against localhost).
  */
 
-const RATE_LIMIT_MAX = Number(process.env.MCP_RATE_LIMIT_MAX ?? 60);
+const RATE_LIMIT_MAX = envNumber("MCP_RATE_LIMIT_MAX", 60, { allowZero: true });
 
 const CHECKLIST_PHASES = {
   ideation: "/playbook/ideation",

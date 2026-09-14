@@ -2424,7 +2424,7 @@ Include: user personas, wireframes, high-fidelity mockups, and the final product
 
 Recording Tools
 
-[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (Mac, my pick, affiliate link) or CanVid (Windows). Auto-zoom, instant effects, webcam overlay. Minutes, not hours.
+[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (affiliate link), my pick on Mac, or CanVid on Windows. Auto-zoom, instant effects, webcam overlay. Minutes, not hours.
 
 Video Length
 
@@ -3061,7 +3061,7 @@ Each section is self-contained. Start wherever makes sense for you.
 
 [#### The Proof
 
-Real professionals who beat thousands of developers at major hackathons.
+Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.
 
 Enter section →](https://thehackathonplaybook.dev/non-coders/proof)[#### Getting Started
 
@@ -3095,7 +3095,7 @@ This guide is built on the articles, blog posts, GitHub repos, and hackathon pos
 
 # The Proof
 
-> Real professionals who beat thousands of developers at major hackathons.
+> Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/proof
 
@@ -6256,6 +6256,6 @@ An agent in a tight loop racks up real money fast. Your Cursor subscription and 
 
 Get this loop running once and the voice feature stops being the scary part of your build. It becomes the thirty seconds on stage that judges actually remember.
 
-[Non-Coders Winning Hackathons](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons): How professionals with zero coding experience are beating dev teams using AI agents like Cursor.
+[Non-Coders Winning Hackathons](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons): How professionals with little or no coding experience are winning against dev teams using AI agents like Cursor.
 
 [Best Tech Stack for Hackathons in 2026](https://thehackathonplaybook.dev/blog/best-tech-stack-for-hackathons): The full stack winning teams use, from frontend to deployment to AI APIs.
