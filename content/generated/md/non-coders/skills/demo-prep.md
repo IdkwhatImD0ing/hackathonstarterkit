@@ -1,16 +1,16 @@
 # Demo Prep
 
-> Produces a step-by-step live demo script for hackathon presentations. Covers the problem, walkthrough, and outcome with a backup plan.
+> A timed demo script from problem to result, with a backup plan if the app breaks and the questions judges will likely ask.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/demo-prep
 
 ---
 
-Produces a step-by-step live demo script for hackathon presentations. Covers the problem, walkthrough, and outcome with a backup plan.
+A timed demo script from problem to result, with a backup plan if the app breaks and the questions judges will likely ask.
 
 Category: Shipping
 
-Usage: `/demo-prep [app name or description]` (Generates a timed demo script with backup plan)
+Usage: `/demo-prep [app name or description]` (A timed demo script with a backup plan)
 
 Help the user turn a project into a polished demo story. Prioritize clarity, timing, and resilience over clever wording.
 

@@ -1,16 +1,16 @@
 # Bugfix Doctor
 
-> Systematic bug-fixing workflow. Walks through reproduce, isolate, fix, test, and verify. Explains all errors in plain English.
+> Translates the error into plain English, then finds what caused it. It makes the smallest fix it can and checks that the fix worked.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/bugfix-doctor
 
 ---
 
-Systematic bug-fixing workflow. Walks through reproduce, isolate, fix, test, and verify. Explains all errors in plain English.
+Translates the error into plain English, then finds what caused it. It makes the smallest fix it can and checks that the fix worked.
 
 Category: Fixing
 
-Usage: `/bugfix-doctor [paste the error or describe the symptom]` (Systematic bug-fixing with plain English explanations)
+Usage: `/bugfix-doctor [paste the error or describe the symptom]` (Explains and fixes an error)
 
 Use a calm, evidence-first debugging workflow. The user may not know programming terms, so translate errors before diving into implementation.
 

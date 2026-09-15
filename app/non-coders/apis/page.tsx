@@ -36,15 +36,13 @@ export const metadata: Metadata = {
 
 const GENERIC_PROMPT = `I want to use [SERVICE NAME] in my project.
 
-Here is my API key: [paste your key here]
 Here are the docs: [paste the docs URL here]
 
 Build [describe what you want] using this service.
-Store the API key in an environment variable, not in the code.`;
+I'll put the API key in .env.local myself, so don't ask me to paste it here. Create .env.local with a placeholder for the key, check that .gitignore covers it, and tell me which line to fill in. Keep secret keys in server-side code, never in code that runs in the browser.`;
 
 const ELEVENLABS_PROMPT = `I want to use ElevenLabs in my project to create a voice agent that can have conversations.
 
-Here is my API key: sk-abc123...
 Here are the docs: https://elevenlabs.io/docs/api-reference
 
 Build a conversational voice agent that:
@@ -52,12 +50,10 @@ Build a conversational voice agent that:
 - Sends their speech to ElevenLabs for processing
 - Plays the AI response back as audio
 
-Store the API key in an environment variable called ELEVENLABS_API_KEY.`;
+I'll put my API key in .env.local myself as ELEVENLABS_API_KEY, so don't ask me to paste it here. Create .env.local with a placeholder, check that .gitignore covers it, and only use the key in server-side code so it never reaches the browser.`;
 
 const SUPABASE_PROMPT = `I want to use Supabase as my database.
 
-Here is my project URL: https://abc123.supabase.co
-Here is my anon key: eyJhbGci...
 Here are the docs: https://supabase.com/docs/reference/javascript/introduction
 
 Create a simple database setup that:
@@ -65,7 +61,14 @@ Create a simple database setup that:
 - Shows all posts on the main page
 - Has a form to create a new post
 
-Store the Supabase URL and key in environment variables.`;
+I'll put my Supabase project URL and anon key in .env.local myself, so don't ask me to paste them here. Create .env.local with placeholders and check that .gitignore covers it.
+Turn on Row Level Security for the posts table, and only allow what this app needs: reading posts and adding new ones.`;
+
+const ELEVENLABS_MCP_PROMPT = `Install the official ElevenLabs MCP server (github.com/elevenlabs/elevenlabs-mcp) so you can use their voice AI tools directly. Add it to my project's MCP configuration. If it needs my API key, tell me which file to put it in so I can add it myself, and make sure that file stays out of GitHub.`;
+
+const SUPABASE_MCP_PROMPT = `Install the official Supabase MCP server, the one linked from Supabase's own docs, so you can manage my database directly. Add it to my project's MCP configuration. If it needs a key or token, tell me which file to put it in so I can add it myself, and make sure that file stays out of GitHub.`;
+
+const GENERIC_MCP_PROMPT = `Find the official MCP server for [SERVICE NAME], the one linked from its own docs, and install it. If there isn't an official one, ask me before installing anything. Add it to my project's MCP configuration so you can use it in future conversations. If it needs a key or token, tell me which file to put it in so I can add it myself, and make sure that file stays out of GitHub.`;
 
 export default function ApisPage() {
   return (
@@ -84,11 +87,11 @@ export default function ApisPage() {
           <span className="text-success">With One Prompt</span>
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          Want to add voice AI, a database, payments, or text messaging to your
-          app? You don&apos;t need to understand how they work. You just need
-          two things: a key and a docs link.
+          You can add voice AI, a database, payments, or text messaging to your
+          app without knowing how any of them work. You need an API key, the
+          service&apos;s docs link, and a sentence about what you want.
         </p>
-        <LastUpdated date="2026-04-21" />
+        <LastUpdated date="2026-09-14" />
       </header>
 
       <Separator className="bg-primary/20" />
@@ -109,23 +112,14 @@ export default function ApisPage() {
             </div>
             <div className="space-y-3">
               <p className="font-body text-foreground/80">
-                An API is like a{" "}
-                <span className="font-display font-semibold text-foreground">
-                  restaurant menu
-                </span>
-                . You (your app) look at the menu (the documentation), place an
-                order (send a request), and the kitchen (the service) prepares
-                your food (the response). You never go into the kitchen
-                yourself.
-              </p>
-              <p className="font-body text-foreground/80">
-                Companies like ElevenLabs, Supabase, Twilio, and Stripe all
-                offer APIs. They let your app use their services (voice AI,
-                databases, phone calls, payments) without you building those
-                things from scratch.
+                An API is how your app uses another company&apos;s service.
+                ElevenLabs, Supabase, Twilio, and Stripe all offer one, so your
+                app can use their voice AI, databases, phone calls, and payments
+                without you building any of that from scratch.
               </p>
               <p className="font-body text-sm text-muted-foreground">
-                Not sure what an API key or environment variable is? Check{" "}
+                For the longer explanation, plus what an API key and an
+                environment variable are, see{" "}
                 <Link
                   href="/non-coders/concepts"
                   className="text-volt underline decoration-volt/30 hover:decoration-volt"
@@ -146,7 +140,7 @@ export default function ApisPage() {
             The Pattern
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            This works for almost any service. Three steps, every time.
+            This works for almost any service.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -155,9 +149,9 @@ export default function ApisPage() {
           {[
             {
               step: 1,
-              title: "Sign up and copy your API key",
+              title: "Sign up and find your API key",
               description:
-                "Go to the service's website (e.g., elevenlabs.io), create a free account, and find your API key in the dashboard or settings. Copy it.",
+                "Create a free account on the service's website (for example, elevenlabs.io) and find your API key in the dashboard or settings.",
               accent: "volt" as const,
               icon: KeyRound,
             },
@@ -165,15 +159,15 @@ export default function ApisPage() {
               step: 2,
               title: "Find the docs link",
               description:
-                "Every service has a documentation page (usually at docs.servicename.com or servicename.com/docs). Copy the URL. This is the \"menu\" your AI reads to understand how the service works.",
+                "Copy the URL of the service's documentation, usually at docs.servicename.com or servicename.com/docs. The AI reads it to learn how the service works.",
               accent: "spark" as const,
               icon: FileText,
             },
             {
               step: 3,
-              title: "Paste this prompt into your AI chat",
+              title: "Paste the prompt, then add your key",
               description:
-                "Give the AI your key, the docs link, and describe what you want. The AI reads the docs, writes the code, and stores your key safely. You don't touch any of it.",
+                "Paste the prompt below into your AI chat. The AI writes the code and creates a file called .env.local with a blank spot for your key, which you fill in yourself. Never paste a key into the chat: the AI can copy it straight into your code, and the chat history keeps it.",
               accent: "success" as const,
               icon: ArrowRight,
             },
@@ -217,8 +211,8 @@ export default function ApisPage() {
             The Prompt Template
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            Copy this, fill in the blanks, and paste it into Cursor (Ctrl+I).
-            Works for any service.
+            Fill in the brackets and paste it into Cursor (Ctrl+I, or Cmd+I on
+            Mac).
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -243,24 +237,25 @@ export default function ApisPage() {
         <div className="rounded-lg border border-border bg-surface p-4">
           <p className="font-body text-sm text-muted-foreground">
             <span className="font-display font-semibold text-foreground">
-              That&apos;s the whole pattern.
+              Why the prompt says &ldquo;server-side&rdquo;:
             </span>{" "}
-            The AI reads the docs, figures out how to use the service, writes
-            the code, and stores your key safely. You describe what you want in
-            plain English.
+            .env.local keeps the key out of your code, but it can&apos;t stop
+            the app from sending the key to the browser, where anyone using your
+            app can read it. Server-side code runs on your server instead of in
+            your users&apos; browsers, so the key stays hidden.
           </p>
         </div>
       </section>
 
       {/* ── EXAMPLE: ELEVENLABS ── */}
+      {/* [NEEDS SPECIFIC: a hackathon where you, or a non-coder you worked with or judged, wired in a service this way. One line would ground this page.] */}
       <section className="space-y-8">
         <div className="space-y-3">
           <h2 className="font-display text-3xl font-bold tracking-tight">
             Example: ElevenLabs Voice Agent
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            Here&apos;s what the prompt looks like when filled in for a real
-            service. This adds a conversational voice AI to your app.
+            Here&apos;s the template filled in for a real service.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -285,8 +280,7 @@ export default function ApisPage() {
               </AffiliateLink>
             </CardTitle>
             <CardDescription className="font-body">
-              Adds voice conversations to your app. Users click a button, speak,
-              and hear an AI response.
+              Adds voice conversations to your app.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -303,8 +297,8 @@ export default function ApisPage() {
             </div>
             <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
               <p className="font-code text-xs text-volt/80">
-                Replace the fake API key with your real one from
-                elevenlabs.io/app/settings/api-keys
+                Get your key from elevenlabs.io/app/settings/api-keys and paste
+                it into .env.local once the AI has created the file.
               </p>
             </div>
             <AffiliateLink
@@ -320,8 +314,8 @@ export default function ApisPage() {
                   My pick for voice AI
                 </p>
                 <p className="font-body text-sm text-muted-foreground">
-                  Free tier covers a hackathon. Sign up, grab your API key, and
-                  paste the prompt above into Cursor.
+                  There&apos;s a free tier if you want to check it out. See how
+                  much usage it includes before you count on it for a live demo.
                 </p>
                 <AffiliateDisclosure />
               </div>
@@ -334,37 +328,6 @@ export default function ApisPage() {
         </Card>
       </section>
 
-      {/* ── MCP TIP: ELEVENLABS ── */}
-      <div className="rounded-xl border border-volt/10 bg-card p-5">
-        <div className="flex items-start gap-4">
-          <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-volt/10">
-            <Zap className="size-4 text-volt" />
-          </div>
-          <div className="space-y-2">
-            <p className="font-display text-sm font-semibold">
-              Power User Tip: ElevenLabs MCP
-            </p>
-            <p className="font-body text-sm text-foreground/60">
-              For even deeper integration, ElevenLabs offers an MCP server that
-              gives your AI direct access to their API without you pasting docs
-              each time. Paste this into your AI chat:
-            </p>
-            <div className="rounded-lg border border-volt/20 bg-volt/5 p-3">
-              <pre className="overflow-x-auto font-code text-xs leading-relaxed text-foreground/70 whitespace-pre-wrap">{`Search for and install the ElevenLabs MCP server so you can use their voice AI tools directly. Add it to my project's MCP configuration.`}</pre>
-            </div>
-            <CopyButton
-              text="Search for and install the ElevenLabs MCP server so you can use their voice AI tools directly. Add it to my project's MCP configuration."
-            />
-            <p className="font-body text-xs text-muted-foreground">
-              An MCP (Model Context Protocol) server lets the AI talk to a
-              service directly, without you copying docs or keys into every
-              prompt. Think of it as giving the AI a permanent phone line to
-              that service.
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* ── EXAMPLE: SUPABASE ── */}
       <section className="space-y-8">
         <div className="space-y-3">
@@ -372,8 +335,7 @@ export default function ApisPage() {
             Example: Supabase Database
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            Same pattern, different service. This adds a database so your app
-            can save and display data.
+            Same pattern, different service.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -392,8 +354,7 @@ export default function ApisPage() {
               Supabase
             </CardTitle>
             <CardDescription className="font-body">
-              Adds a database to your app. Store data, display lists, create
-              forms.
+              Adds a database so your app can save data and show it.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -408,40 +369,21 @@ export default function ApisPage() {
               </div>
               <CopyButton text={SUPABASE_PROMPT} />
             </div>
-            <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
+            <div className="rounded-lg border border-spark/10 bg-spark/5 p-3 space-y-2">
+              {/* [CONFIRM: is this dashboard path still current? Newer Supabase projects may label the anon key as the "publishable" key.] */}
               <p className="font-code text-xs text-spark/80">
                 Get your URL and anon key from supabase.com/dashboard &gt;
                 Settings &gt; API
+              </p>
+              <p className="font-body text-xs text-foreground/70">
+                The anon key is meant to be public, so apps usually send it to
+                the browser. Row Level Security limits what anyone holding it
+                can do to your data, so keep that line in the prompt.
               </p>
             </div>
           </CardContent>
         </Card>
       </section>
-
-      {/* ── MCP TIP: SUPABASE ── */}
-      <div className="rounded-xl border border-spark/10 bg-card p-5">
-        <div className="flex items-start gap-4">
-          <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-spark/10">
-            <Zap className="size-4 text-spark" />
-          </div>
-          <div className="space-y-2">
-            <p className="font-display text-sm font-semibold">
-              Power User Tip: Supabase MCP
-            </p>
-            <p className="font-body text-sm text-foreground/60">
-              Supabase also has an MCP server. Once installed, the AI can
-              create tables, run queries, and manage your database directly
-              without you pasting credentials into every prompt.
-            </p>
-            <div className="rounded-lg border border-spark/20 bg-spark/5 p-3">
-              <pre className="overflow-x-auto font-code text-xs leading-relaxed text-foreground/70 whitespace-pre-wrap">{`Search for and install the Supabase MCP server so you can manage my database directly. Add it to my project's MCP configuration.`}</pre>
-            </div>
-            <CopyButton
-              text="Search for and install the Supabase MCP server so you can manage my database directly. Add it to my project's MCP configuration."
-            />
-          </div>
-        </div>
-      </div>
 
       {/* ── WHAT IS AN MCP ── */}
       <section className="space-y-8">
@@ -450,8 +392,7 @@ export default function ApisPage() {
             What Is an MCP?
           </h2>
           <p className="max-w-3xl font-body text-muted-foreground">
-            For power users who want the AI to remember how to use a service
-            permanently.
+            Optional. The pattern above is all you need to start.
           </p>
           <Separator className="bg-primary/20" />
         </div>
@@ -466,31 +407,46 @@ export default function ApisPage() {
                 <span className="font-display font-semibold text-foreground">
                   MCP stands for Model Context Protocol.
                 </span>{" "}
-                It&apos;s a way to give your AI a permanent connection to a
-                service. Instead of pasting your API key and docs link every
-                time, you install an MCP server once and the AI can use that
-                service whenever it needs to.
+                An MCP server gives your AI a standing connection to one
+                service. Install it once and the AI can keep using that service
+                without a docs link each time. The Supabase one, for example,
+                lets the AI create tables and run queries on your database
+                itself. Supabase, GitHub, ElevenLabs, Stripe, and Figma all
+                offer one.
               </p>
               <p className="font-body text-foreground/80">
-                Think of the difference like this: the API prompt pattern is
-                like giving someone a recipe card each time you want them to
-                cook. An MCP is like hiring a chef who already knows the
-                recipe.
+                Install the official server, the one the service links from its
+                own docs. Anyone can publish an MCP server, and whichever one you
+                install gets your key and access to your account, so a fake one
+                could misuse both.
               </p>
-              <p className="font-body text-foreground/80">
-                You don&apos;t need MCPs to get started. The API key + docs
-                pattern works perfectly. But as you get comfortable, MCPs make
-                repeated tasks faster. Many popular services (Supabase, GitHub,
-                ElevenLabs, Stripe, Figma) offer MCP servers.
-              </p>
+              {/* [CONFIRM: the ElevenLabs repo URL below comes from lib/blog/posts/build-with-elevenlabs-and-cursor.ts. OK to use it here? No official Supabase MCP link exists on this site, so that prompt points the AI to Supabase's docs instead. Link the official servers if you want.] */}
+              <div className="rounded-lg border border-volt/20 bg-volt/5 p-3 space-y-2">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  ElevenLabs
+                </p>
+                <pre className="overflow-x-auto font-code text-xs leading-relaxed text-foreground/70 whitespace-pre-wrap">
+                  {ELEVENLABS_MCP_PROMPT}
+                </pre>
+                <CopyButton text={ELEVENLABS_MCP_PROMPT} />
+              </div>
+              <div className="rounded-lg border border-spark/20 bg-spark/5 p-3 space-y-2">
+                <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Supabase
+                </p>
+                <pre className="overflow-x-auto font-code text-xs leading-relaxed text-foreground/70 whitespace-pre-wrap">
+                  {SUPABASE_MCP_PROMPT}
+                </pre>
+                <CopyButton text={SUPABASE_MCP_PROMPT} />
+              </div>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 space-y-2">
                 <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                  To find and install any MCP
+                  Any other service
                 </p>
-                <pre className="overflow-x-auto font-code text-xs leading-relaxed text-foreground/70 whitespace-pre-wrap">{`Search for an MCP server for [SERVICE NAME] and install it. Add it to my project's MCP configuration so you can use it in future conversations.`}</pre>
-                <CopyButton
-                  text={`Search for an MCP server for [SERVICE NAME] and install it. Add it to my project's MCP configuration so you can use it in future conversations.`}
-                />
+                <pre className="overflow-x-auto font-code text-xs leading-relaxed text-foreground/70 whitespace-pre-wrap">
+                  {GENERIC_MCP_PROMPT}
+                </pre>
+                <CopyButton text={GENERIC_MCP_PROMPT} />
               </div>
             </div>
           </div>
@@ -506,20 +462,12 @@ export default function ApisPage() {
             </div>
             <div className="space-y-2">
               <p className="font-display font-semibold">
-                The Key Insight
+                Same Prompt, Other Services
               </p>
               <p className="font-body text-sm text-foreground/80">
-                You don&apos;t need to understand how an API works. You need to
-                give the AI three things: your key, the docs link, and a
-                description of what you want. The AI reads the documentation
-                (which is written for programmers) and translates it into
-                working code. You just describe the outcome in plain English.
-              </p>
-              <p className="font-body text-sm text-foreground/80">
-                This pattern works for voice AI (ElevenLabs), databases
-                (Supabase), payments (Stripe), text messaging (Twilio), image
-                generation (Replicate), email (Resend), and hundreds of other
-                services.
+                The template works the same way for payments (Stripe), text
+                messages (Twilio), image generation (Replicate), email (Resend),
+                and most other services that publish API docs.
               </p>
             </div>
           </div>

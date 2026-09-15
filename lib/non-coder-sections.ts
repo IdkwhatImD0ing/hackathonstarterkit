@@ -14,7 +14,7 @@ export const NON_CODER_SECTIONS: NonCoderSection[] = [
     slug: "proof",
     title: "The Proof",
     subtitle:
-      "Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.",
+      "The lawyer who won Anthropic's 500-person hackathon, and three others who build with AI.",
     icon: Trophy,
     accent: "volt",
   },
@@ -22,7 +22,7 @@ export const NON_CODER_SECTIONS: NonCoderSection[] = [
     slug: "setup",
     title: "Getting Started",
     subtitle:
-      "The 3 files, 4 shortcuts, and daily workflow you need to start building.",
+      "What to set up before your first prompt, and the five-step loop you'll repeat for every feature.",
     icon: Settings,
     accent: "spark",
   },
@@ -38,7 +38,7 @@ export const NON_CODER_SECTIONS: NonCoderSection[] = [
     slug: "apis",
     title: "Using APIs",
     subtitle:
-      "How to add any service to your app with just a key and a docs link.",
+      "How to add a service to your app, with worked examples for ElevenLabs voice and a Supabase database.",
     icon: Plug,
     accent: "success",
   },
@@ -54,7 +54,7 @@ export const NON_CODER_SECTIONS: NonCoderSection[] = [
     slug: "skills",
     title: "Skills & Commands",
     subtitle:
-      "Installable AI skills and slash commands that teach your AI to work with non-coders.",
+      "Slash commands for each stage of a hackathon build, from planning your app to writing its README.",
     icon: Sparkles,
     accent: "volt",
   },

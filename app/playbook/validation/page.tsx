@@ -5,10 +5,7 @@ import {
   Puzzle,
   Shield,
   Combine,
-  Quote,
   ArrowRight,
-  Lightbulb,
-  Rocket,
   Footprints,
   Crosshair,
   Calendar,
@@ -97,24 +94,22 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Lego Method"
-            subtitle="Don't try to validate the whole idea at once. Build small, tested building blocks, just like Legos, and snap them together into a winning project."
+            subtitle="Build the project out of small blocks you've each tested, the way you'd build with Legos."
           />
 
           <KeyTakeaway>
-            Validate one piece at a time in isolation. Solid blocks snap together into a winning project.
+            Test one integration at a time, on its own, before you connect anything.
           </KeyTakeaway>
 
+          {/* [NEEDS SPECIFIC: a time an untested API broke late in one of your hackathons (the first draft said "hour 18"). Did this happen to you or a team you saw? Which hackathon?] */}
           <p className="font-body text-foreground/80">
-            The biggest mistake teams make:{" "}
+            Wire untested pieces together and, when something breaks, you
+            can&apos;t tell which piece it was. Every block you test also goes
+            into{" "}
             <span className="font-display font-semibold text-foreground">
-              building the entire project in one shot,
+              your Lego library,
             </span>{" "}
-            then discovering at hour 18 that a critical API doesn&apos;t work as
-            assumed. The fix:{" "}
-            <span className="font-display font-semibold text-foreground">
-              validate one piece at a time, in isolation.
-            </span>{" "}
-            Make each block solid, and the project assembles itself.
+            so at the next hackathon it&apos;s already working.
           </p>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -135,17 +130,11 @@ export default function ValidationPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   <span className="font-semibold text-foreground">
-                    One integration, one API, one flow at a time.
+                    Give each integration its own small test.
                   </span>{" "}
-                  Can you stream a response from OpenAI? Trigger a Twilio call
-                  from Python? Output text-to-speech audio in a browser?
+                  Stream a response from OpenAI. Trigger a Twilio call from
+                  Python. Play text-to-speech audio in a browser.
                 </p>
-                <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
-                  <p className="font-code text-xs text-volt/80">
-                    Each question gets its own isolated experiment. No
-                    dependencies, no distractions.
-                  </p>
-                </div>
               </CardContent>
             </Card>
 
@@ -166,18 +155,11 @@ export default function ValidationPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   <span className="font-semibold text-foreground">
-                    Once a block works, make it reliable.
+                    Once a block works, find out how it fails.
                   </span>{" "}
-                  Handle the failure modes. Know the rate limits and latency. A
-                  block battle-tested in a side project is one you can trust at
-                  3AM.
+                  Learn its rate limits and latency, and handle the errors it
+                  throws. Then it&apos;s less likely to break during the demo.
                 </p>
-                <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
-                  <p className="font-code text-xs text-spark/80">
-                    A solid block never breaks during the demo. That&apos;s the
-                    whole point.
-                  </p>
-                </div>
               </CardContent>
             </Card>
 
@@ -198,31 +180,14 @@ export default function ValidationPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   <span className="font-semibold text-foreground">
-                    Proven blocks combine fast.
+                    OpenAI streaming + Twilio voice + a React frontend = a voice
+                    AI agent.
                   </span>{" "}
-                  OpenAI streaming + Twilio voice + a React frontend = a voice
-                  AI agent. The architecture emerges from blocks you already
-                  trust.
+                  When each piece already works, connecting them is the fast
+                  part.
                 </p>
-                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
-                  <p className="font-code text-xs text-primary/80">
-                    Composition is fast when every piece already works. The
-                    project assembles itself.
-                  </p>
-                </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                Think of it like actual Legos:
-              </span>{" "}
-              you don&apos;t mold custom plastic at build time. You snap pre-made
-              blocks together. The more blocks you test beforehand, the faster
-              you build at the event.
-            </p>
           </div>
         </section>
 
@@ -232,21 +197,21 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Pre-Hackathon Validation"
-            subtitle="Critical: validation happens BEFORE the hackathon, not during it. Your side projects are your lab. Use them to build a library of proven blocks."
+            subtitle="What to test in side projects before a hackathon, and what's left for the weekend itself."
           />
 
           <KeyTakeaway>
-            Validate tools weeks ahead in side projects. The event is for combining, not discovering broken APIs.
+            If you&apos;re going for a prize, test your tools in side projects in the weeks before the event.
           </KeyTakeaway>
 
           <p className="font-body text-foreground/80">
-            The hackathon is for{" "}
+            At the event you want to spend your hours{" "}
             <span className="font-display font-semibold text-foreground">
-              combining and creating
-            </span>
-            , not discovering that an API doesn&apos;t work. Every hour debugging
-            a basic integration is an hour stolen from building the thing that
-            wins.
+              combining pieces you&apos;ve already tested.
+            </span>{" "}
+            If you&apos;re going to learn or have fun, you can skip the prep and
+            still get a lot out of the weekend: brainstorm with people you meet,
+            build something on the spot, and find teammates there.
           </p>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr]">
@@ -259,7 +224,7 @@ export default function ValidationPage() {
                   Build Your Lego Library
                 </CardTitle>
                 <CardDescription className="font-body text-base">
-                  Side projects and experiments are your testing ground.
+                  Blocks worth testing in side projects:
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -301,14 +266,6 @@ export default function ValidationPage() {
                     </span>
                   </li>
                 </ul>
-                <div className="rounded-lg bg-volt/5 p-3 text-center">
-                  <p className="font-display text-2xl font-bold text-volt">
-                    Weeks before
-                  </p>
-                  <p className="font-code text-xs text-volt/70">
-                    validate tools during side projects
-                  </p>
-                </div>
               </CardContent>
             </Card>
 
@@ -344,8 +301,7 @@ export default function ValidationPage() {
                   Combine and Create
                 </CardTitle>
                 <CardDescription className="font-body text-base">
-                  Snap pre-validated blocks together. Only validate what&apos;s
-                  genuinely new and risky.
+                  Your time goes to the part that&apos;s new.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -354,60 +310,24 @@ export default function ValidationPage() {
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
                     <span>
                       <span className="font-semibold text-foreground">
-                        Combine proven blocks
+                        Combine blocks you&apos;ve tested,
                       </span>{" "}
-                      and focus on the novel integration
+                      and spike only the piece you haven&apos;t (see Spike
+                      Solutions below)
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
                     <span>
                       <span className="font-semibold text-foreground">
-                        Spike only the one NEW risky piece,
+                        Spend the saved hours
                       </span>{" "}
-                      never tested before
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Skip re-validating proven tools;
-                      </span>{" "}
-                      trust your library
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Spend saved hours
-                      </span>{" "}
-                      on polish, pitch, and demo prep
+                      on the demo and the pitch
                     </span>
                   </li>
                 </ul>
-                <div className="rounded-lg bg-spark/5 p-3 text-center">
-                  <p className="font-display text-2xl font-bold text-spark">
-                    Day of
-                  </p>
-                  <p className="font-code text-xs text-spark/70">
-                    validate only the new and risky
-                  </p>
-                </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                Pro tip:
-              </span>{" "}
-              Research sponsor APIs before the event and build small experiments
-              with their tools. By kickoff, you already know what works, what
-              breaks, and where the free credits run out.
-            </p>
           </div>
         </section>
 
@@ -417,22 +337,19 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Sponsor Recon"
-            subtitle="Before the hackathon, research every sponsor. Visit their docs, sign up for their APIs, and run a quick validation. The teams that win sponsor prizes are the ones who showed up already knowing the tech."
+            subtitle="Sponsor lists usually go up before the event. Use that window."
           />
 
           <KeyTakeaway>
-            Sponsor lists drop weeks early. Read the docs and validate each API before kickoff, not at 2AM.
+            If you want a sponsor prize, get that sponsor&apos;s API working before kickoff.
           </KeyTakeaway>
 
           <p className="font-body text-foreground/80">
-            Sponsor lists publish weeks before the event. That&apos;s your
-            window.{" "}
             <span className="font-display font-semibold text-foreground">
-              Every sponsor is a prize category, free credits, and tech you
-              might build on.
+              Each sponsor can mean a prize category and free credits.
             </span>{" "}
-            Teams that walk in cold, reading docs for the first time, are already
-            behind.
+            Some judges are sponsor employees scoring how deeply you used their
+            platform, and they can tell when you already know it well.
           </p>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -455,14 +372,13 @@ export default function ValidationPage() {
                   <span className="font-semibold text-foreground">
                     Sign up and run the quickstart.
                   </span>{" "}
-                  Can you get a &ldquo;hello world&rdquo; running in 30 minutes?
-                  If not, that&apos;s a red flag to learn before the event, not
-                  during it.
+                  You should have a &ldquo;hello world&rdquo; running within 30
+                  minutes.
                 </p>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
-                    If the docs are bad or the API requires manual approval, plan
-                    around it.
+                    If it takes longer, or the API requires manual approval,
+                    plan around it.
                   </p>
                 </div>
               </CardContent>
@@ -485,18 +401,12 @@ export default function ValidationPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   <span className="font-semibold text-foreground">
-                    Hunt the project-killers:
+                    Look for what could stop you:
                   </span>{" "}
-                  rate limits, approval waits, missing SDKs, deprecated
-                  endpoints, pricing tiers that cap out mid-demo. Find them in
-                  advance.
+                  rate limits, missing SDKs, deprecated endpoints, and free
+                  tiers or credits that run out mid-demo. The marketing page
+                  won&apos;t list them, so you find them by calling the API.
                 </p>
-                <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
-                  <p className="font-code text-xs text-spark/80">
-                    Run the API end-to-end in a throwaway project. Trust working
-                    code, not marketing pages.
-                  </p>
-                </div>
               </CardContent>
             </Card>
 
@@ -517,29 +427,14 @@ export default function ValidationPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   <span className="font-semibold text-foreground">
-                    Build a tiny proof-of-concept.
+                    Build a tiny proof of concept
                   </span>{" "}
-                  If it works, you have a validated Lego block for hackathon day.
-                  If it fails, you dodged building on a broken foundation.
+                  that calls the API end to end. If it works, it goes in your
+                  library for hackathon day. If it fails, you know before the
+                  event starts.
                 </p>
-                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
-                  <p className="font-code text-xs text-primary/80">
-                    A 30-minute test now saves 3 hours of debugging at the event.
-                  </p>
-                </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                Bonus:
-              </span>{" "}
-              Some judges are sponsor employees scoring how deeply you used their
-              platform. Showing up already fluent in their API signals
-              you&apos;re serious.
-            </p>
           </div>
         </section>
 
@@ -549,20 +444,19 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Pick Your Stack"
-            subtitle="Lock in your tech stack before the hackathon. Your default should be tools you've used before. Only swap components when a sponsor makes it worth it."
+            subtitle="Lock in your stack before the hackathon, using tools you've already built with."
           />
 
           <KeyTakeaway>
-            Default to the stack you build fastest with. Only swap a component when a sponsor prize justifies it.
+            Default to the stack you build fastest with. Swap a piece only for a sponsor prize or a real project need.
           </KeyTakeaway>
 
           <p className="font-body text-foreground/80">
-            The best stack isn&apos;t the most cutting-edge.{" "}
             <span className="font-display font-semibold text-foreground">
-              It&apos;s the one you build fastest with.
+              My default is Next.js, FastAPI, and Supabase.
             </span>{" "}
-            Keep a battle-tested default and deviate only for a strategic reason
-            (like a sponsor prize).
+            If your team is faster in something else, use that instead. Just
+            don&apos;t swap in a tool because it&apos;s new and trendy.
           </p>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -585,12 +479,13 @@ export default function ValidationPage() {
                   <span className="font-semibold text-foreground">
                     App Router, React 19, TypeScript.
                   </span>{" "}
-                  Server components for speed, client for interactivity. Pair
-                  with shadcn/ui and Tailwind for a polished UI in minutes.
+                  Server components for speed, client components for
+                  interactivity. Add shadcn/ui and Tailwind and the UI looks
+                  finished in minutes.
                 </p>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
-                    Swap when: The hackathon requires a specific framework, or
+                    Swap when: the hackathon requires a specific framework, or
                     you&apos;re building a mobile app (use React Native or
                     Flutter).
                   </p>
@@ -617,13 +512,14 @@ export default function ValidationPage() {
                   <span className="font-semibold text-foreground">
                     Async Python, auto OpenAPI docs,
                   </span>{" "}
-                  first-class with every AI/ML library. Most AI sponsor SDKs ship
-                  Python-first, so your backend should too.
+                  and direct access to Python&apos;s AI and ML libraries.
                 </p>
                 <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
                   <p className="font-code text-xs text-spark/80">
-                    Swap when: You need real-time WebSockets at scale (use Node),
-                    or the project is frontend-only (use Next.js API routes).
+                    Swap when: the project is frontend-only (use Next.js API
+                    routes), or you want one language across the stack (use
+                    Node). FastAPI supports WebSockets, so real-time alone
+                    isn&apos;t a reason to switch.
                   </p>
                 </div>
               </CardContent>
@@ -648,8 +544,8 @@ export default function ValidationPage() {
                   <span className="font-semibold text-foreground">
                     Postgres, auth, storage, real-time
                   </span>{" "}
-                  in one service. The free tier covers any hackathon. Set up auth
-                  in 10 minutes instead of building it from scratch.
+                  in one service. The free tier is usually enough for a weekend,
+                  and auth takes about 10 minutes to set up.
                 </p>
                 <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
                   <p className="font-code text-xs text-primary/80">
@@ -664,12 +560,11 @@ export default function ValidationPage() {
           <div className="rounded-lg border border-border bg-surface p-4">
             <p className="font-body text-sm text-muted-foreground">
               <span className="font-display font-semibold text-foreground">
-                The swap rule:
+                Learning a new tool at the event:
               </span>{" "}
-              Replace a default component only if (1) you&apos;re targeting a
-              sponsor prize for that tech, or (2) the project genuinely requires
-              it. Never swap for trendiness. The hackathon is not the time to
-              learn a new database.
+              If you&apos;re trying to win, a hackathon is a bad place to learn
+              a new database. If you&apos;re there to learn, it can pay off in
+              other ways.
             </p>
           </div>
         </section>
@@ -680,22 +575,21 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Target Your Prize"
-            subtitle="Before the hackathon starts, study the prize categories and pick 1-2 to aim for. This decision shapes your idea, your tech stack, and your pitch."
+            subtitle="If you're competing, pick 1-2 prizes before the event. That choice shapes what you build and how you pitch it."
           />
 
           <KeyTakeaway>
-            Pick your target prize first, then reverse-engineer the project from its description. Read it like a rubric.
+            Pick your target prize before your idea, then work backward from its description.
           </KeyTakeaway>
 
           <p className="font-body text-foreground/80">
-            Most teams build something cool, then pick a prize at the end.
-            That&apos;s backwards.{" "}
+            If you build something cool and look for a prize at the end,
+            you&apos;re fitting the project to a category it wasn&apos;t built
+            for. The prize description is{" "}
             <span className="font-display font-semibold text-foreground">
-              Winning teams pick the target prize first and reverse-engineer from
-              there.
-            </span>{" "}
-            The prize description tells you exactly what judges want. Read it like
-            a rubric.
+              the closest thing you&apos;ll get to the judges&apos; rubric
+            </span>
+            , so read it like one.
           </p>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -714,31 +608,23 @@ export default function ValidationPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
+                {/* [CONFIRM: "fewer teams submit" to sponsor prizes is unsourced. Is that what you've seen? If so, a sponsor win of yours (e.g. AdaptED, 1st Place Google at LA Hacks 2024) could show it.] */}
                 <p className="font-body text-sm text-foreground/80">
                   <span className="font-semibold text-foreground">
-                    Fewer teams submit
+                    Fewer teams go for them,
                   </span>{" "}
-                  because sponsor prizes require specific-API research and
-                  integration. If you&apos;ve already validated the tech (see
-                  Sponsor Recon), you have a real edge.
+                  because they need a specific sponsor&apos;s API. If
+                  you&apos;ve already got that API working (see Sponsor Recon),
+                  you start ahead.
                 </p>
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
                     <span>
                       <span className="font-semibold text-foreground">
-                        Read the prize
+                        Make the sponsor&apos;s tech central
                       </span>{" "}
-                      like a scoring rubric
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-volt" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Make the tech central
-                      </span>{" "}
-                      to your demo, not a side feature
+                      to your demo
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -771,10 +657,10 @@ export default function ValidationPage() {
               <CardContent className="space-y-3">
                 <p className="font-body text-sm text-foreground/80">
                   <span className="font-semibold text-foreground">
-                    The hardest prize to win:
+                    The hardest prize to win,
                   </span>{" "}
-                  every team competes for it. To win, be impressive across the
-                  board: technical depth, polished UI, strong pitch, compelling
+                  because every team is in the running. You need technical
+                  depth, a polished UI, a strong pitch, and a compelling
                   problem.
                 </p>
                 <ul className="space-y-2 font-body text-sm text-foreground/80">
@@ -796,16 +682,13 @@ export default function ValidationPage() {
                       every judge sees it
                     </span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-spark" />
-                    <span>
-                      <span className="font-semibold text-foreground">
-                        Polish matters more
-                      </span>{" "}
-                      than in sponsor categories
-                    </span>
-                  </li>
                 </ul>
+                {/* [NEEDS SPECIFIC: did you target the Intel prize on purpose at Berkeley? If so, say so in a sentence. If not, this example only shows that both can be won.] */}
+                <p className="font-body text-sm text-foreground/80">
+                  One project can take both kinds of prize. Dispatch AI won the
+                  Grand Prize at the UC Berkeley AI Hackathon 2024 and Best Use
+                  of Intel AI.
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -817,7 +700,7 @@ export default function ValidationPage() {
               </span>{" "}
               Make one sponsor prize your primary and &ldquo;Best Overall&rdquo;
               your stretch. Build for the sponsor category, then polish enough to
-              compete overall. Doubles your chances without splitting effort.
+              compete overall.
             </p>
           </div>
         </section>
@@ -828,21 +711,21 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Go Bag"
-            subtitle="A curated set of pre-built, pre-validated components you bring to every hackathon. These are the Lego blocks you've already tested, ready to snap in on day one."
+            subtitle="The scaffolds and configs you've already tested, kept in one place and brought to every hackathon."
           />
 
           <KeyTakeaway>
-            Bring a go bag of battle-tested scaffolds and configs so you start day one on the common infrastructure.
+            Keep auth, UI, AI scaffolds, and deploy config in a private repo so you don&apos;t rebuild them at the event.
           </KeyTakeaway>
 
+          {/* [NEEDS SPECIFIC: what's actually in your own go bag, and which hackathon made you start one?] */}
           <p className="font-body text-foreground/80">
-            Experienced teams don&apos;t start from scratch.{" "}
+            Fill it from your side projects, and{" "}
             <span className="font-display font-semibold text-foreground">
-              They bring a go bag of reusable scaffolds, configs, and components
+              only with things you&apos;ve used in a real project.
             </span>{" "}
-            already battle-tested in side projects. It&apos;s not pre-built
-            features; it&apos;s the infrastructure every project needs, already
-            solved.
+            Add to it after each hackathon. It only covers setup; you still
+            build the features at the event.
           </p>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -891,8 +774,8 @@ export default function ValidationPage() {
                 </ul>
                 <div className="rounded-lg border border-volt/10 bg-volt/5 p-3">
                   <p className="font-code text-xs text-volt/80">
-                    Auth is the #1 time sink at hackathons. Never build it from
-                    scratch.
+                    Don&apos;t build auth from scratch at a hackathon. It takes
+                    hours, and Supabase Auth takes about 10 minutes.
                   </p>
                 </div>
               </CardContent>
@@ -942,12 +825,6 @@ export default function ValidationPage() {
                     </span>
                   </li>
                 </ul>
-                <div className="rounded-lg border border-spark/10 bg-spark/5 p-3">
-                  <p className="font-code text-xs text-spark/80">
-                    A polished UI in the first hour makes the whole project feel
-                    real.
-                  </p>
-                </div>
               </CardContent>
             </Card>
 
@@ -995,12 +872,6 @@ export default function ValidationPage() {
                     </span>
                   </li>
                 </ul>
-                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
-                  <p className="font-code text-xs text-primary/80">
-                    Most hackathon projects now involve AI. Have the plumbing
-                    ready.
-                  </p>
-                </div>
               </CardContent>
             </Card>
 
@@ -1050,24 +921,12 @@ export default function ValidationPage() {
                 </ul>
                 <div className="rounded-lg border border-success/10 bg-success/5 p-3">
                   <p className="font-code text-xs text-success/80">
-                    Deploy in the first hour. A live URL makes everything feel
+                    Deploy in the first hour. A live URL makes the project feel
                     real to judges.
                   </p>
                 </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                Build your go bag during side projects, not the night before.
-              </span>{" "}
-              Every component should be something you&apos;ve used in a real
-              project. Untested means it&apos;s not a Lego block, it&apos;s an
-              unknown. Keep it in a private repo and update it after every
-              hackathon.
-            </p>
           </div>
 
           <div className="space-y-4">
@@ -1094,7 +953,7 @@ export default function ValidationPage() {
           />
 
           <KeyTakeaway>
-            Spike the one assumption that could kill your idea before writing real code. 30-60 minutes de-risks the project.
+            Before writing real code, spend 30-60 minutes testing the one assumption most likely to kill the idea.
           </KeyTakeaway>
 
           <Card className="glow-hover border-volt/20">
@@ -1108,12 +967,8 @@ export default function ValidationPage() {
                 </Badge>
               </div>
               <CardTitle className="font-display text-2xl text-volt">
-                30-60 Minutes That Save Your Hackathon
+                What a Spike Looks Like
               </CardTitle>
-              <CardDescription className="font-body text-base">
-                Identify the riskiest technical assumption and spike it before
-                writing a single line of real code.
-              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5">
               <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
@@ -1132,14 +987,14 @@ export default function ValidationPage() {
                 </p>
                 <p className="font-body text-sm text-foreground/80">
                   <span className="font-semibold text-foreground">
-                    Every idea has one piece that could kill it.
+                    If the spike fails, change the plan
                   </span>{" "}
-                  Find it and test it first. If the spike fails, pivot before
-                  investing more time. If it works, the whole project is
-                  de-risked.
+                  before you sink more time into it. If it works, the biggest
+                  risk is gone.
                 </p>
               </div>
 
+              {/* [NEEDS SPECIFIC: were the first two spikes (GPT-4 triaging 911 calls, Twilio audio to an LLM) from Dispatch AI? If so, tell it in first person with the hackathon.] */}
               <div className="space-y-2">
                 <p className="font-display text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                   Example Spikes
@@ -1201,27 +1056,6 @@ export default function ValidationPage() {
               </div>
             </CardContent>
           </Card>
-
-          <div className="animate-glow-pulse glass rounded-xl border border-primary/10 p-6">
-            <div className="flex items-start gap-4">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <Lightbulb className="size-5 text-primary" />
-              </div>
-              <div className="space-y-1">
-                <p className="font-display font-semibold">
-                  <a href="https://en.wikiquote.org/wiki/Richard_Feynman" target="_blank" rel="noopener noreferrer" className="underline decoration-foreground/30 hover:decoration-foreground">Richard Feynman</a> — Nobel Laureate in Physics
-                </p>
-                <blockquote className="font-body text-sm italic text-foreground/80">
-                  &ldquo;What I cannot create, I do not understand.&rdquo;
-                </blockquote>
-                <p className="font-body text-sm text-foreground/60">
-                  Can&apos;t build the smallest version of the riskiest piece?
-                  You don&apos;t fully understand the problem yet. The spike earns
-                  that understanding fast.
-                </p>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* ============================================================
@@ -1230,46 +1064,15 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <Disclosure
             title="Why This Works: The Science of Rapid Validation"
-            subtitle="Optional theory: decades of engineering and design research back the Lego method. Expand it if you want the why."
+            subtitle="Optional: the engineering and design ideas this page borrows from."
             badge="Optional: the science"
             accent="primary"
           >
             <KeyTakeaway>
-              Decades of engineering research back the Lego method: build small, test end-to-end, and learn before you commit.
+              IDEO in design and Alistair Cockburn in software both find out whether something works by building a tiny version of it early.
             </KeyTakeaway>
 
           <div className="stagger-children grid grid-cols-1 gap-5 md:grid-cols-2">
-            <Card className="glow-hover border-volt/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-volt/10">
-                    <Rocket className="size-5 text-volt" />
-                  </div>
-                  <Badge className="border-volt/20 bg-volt/10 text-volt font-code text-xs">
-                    ERIC RIES
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-volt">
-                  Build-Measure-Learn
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <blockquote className="border-l-2 border-volt/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;The goal of the MVP is to begin the process of
-                  learning, not end it.&rdquo;
-                </blockquote>
-                <p className="font-body text-sm text-foreground/60">
-                  Each Lego block is a mini MVP cycle: build the smallest
-                  testable version, measure, learn, repeat. By the time you
-                  combine them, you&apos;ve learned what matters.
-                </p>
-                <p className="font-code text-xs text-volt/60">
-                  —{" "}
-                  <a href="http://theleanstartup.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-volt/30 hover:decoration-volt">Eric Ries, entrepreneur and author, The Lean Startup, 2011</a>
-                </p>
-              </CardContent>
-            </Card>
-
             <Card className="glow-hover border-spark/20">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -1290,9 +1093,8 @@ export default function ValidationPage() {
                   worth a thousand meetings.&rdquo;
                 </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  IDEO&apos;s philosophy: stop debating whether something works
-                  and build it. Our own rule of thumb: a 30-minute prototype
-                  answers more than a 2-hour whiteboard session.
+                  My rule of thumb: a 30-minute prototype answers more than a
+                  2-hour whiteboard session.
                 </p>
                 <p className="font-code text-xs text-spark/60">
                   —{" "}
@@ -1322,46 +1124,12 @@ export default function ValidationPage() {
                   use the final architecture, but it should link together the
                   main architectural components.&rdquo;
                 </blockquote>
-                <p className="font-body text-sm text-foreground/60">
-                  Before adding features, get one path working from UI to logic
-                  to data. The skeleton proves your architecture. Once it walks,
-                  flesh it out. Never start with the flesh.
-                </p>
                 <p className="font-code text-xs text-primary/60">
                   —{" "}
                   <a href="https://wiki.c2.com/?WalkingSkeleton" target="_blank" rel="noopener noreferrer" className="underline decoration-primary/30 hover:decoration-primary">Alistair Cockburn, Agile Manifesto co-author, Crystal Clear, 2004</a>
                 </p>
-              </CardContent>
-            </Card>
-
-            <Card className="glow-hover border-success/20">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-success/10">
-                    <Crosshair className="size-5 text-success" />
-                  </div>
-                  <Badge className="border-success/20 bg-success/10 text-success font-code text-xs">
-                    THOMAS &amp; HUNT
-                  </Badge>
-                </div>
-                <CardTitle className="font-display text-xl text-success">
-                  Tracer Bullet Development
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <blockquote className="border-l-2 border-success/30 pl-4 font-body text-sm italic text-foreground/80">
-                  &ldquo;Tracer bullets show what you&apos;re hitting. This may
-                  not always be the target. You then adjust your aim until
-                  they&apos;re on target. That&apos;s the point.&rdquo;
-                </blockquote>
                 <p className="font-body text-sm text-foreground/60">
-                  Like tracer rounds showing where shots land, tracer code runs
-                  one narrow path through all layers. Real feedback on your
-                  architecture before you commit to building everything.
-                </p>
-                <p className="font-code text-xs text-success/60">
-                  —{" "}
-                  <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/" target="_blank" rel="noopener noreferrer" className="underline decoration-success/30 hover:decoration-success">The Pragmatic Programmer, 1999</a>
+                  Step 2 of the Validation Ladder below is built on this.
                 </p>
               </CardContent>
             </Card>
@@ -1375,11 +1143,11 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="The Validation Ladder"
-            subtitle="A four-step progression from 'can we technically do it?' to 'can a judge use it and understand it?' Each step builds on the last."
+            subtitle="Four stages, from 'can we technically do it?' to 'can a judge use it and understand it?'"
           />
 
           <KeyTakeaway>
-            Climb four rungs: proof of concept, walking skeleton, prototype, demo-ready MVP. A strong Lego library lets you start higher.
+            With tested blocks from side projects, you can start day one at step 2 or 3.
           </KeyTakeaway>
 
           <div className="space-y-4">
@@ -1389,7 +1157,7 @@ export default function ValidationPage() {
                 title: "Proof of Concept",
                 question: "Can we technically do it?",
                 description:
-                  "One person, 1-2 hours. Test the hardest integration, the piece most likely to kill the idea. Throwaway code is fine. You're testing feasibility, not building product.",
+                  "One person runs the spikes from Spike Solutions above. Throwaway code is fine.",
                 time: "1-2 hours",
                 accent: "volt" as const,
               },
@@ -1398,7 +1166,7 @@ export default function ValidationPage() {
                 title: "Walking Skeleton",
                 question: "Can we connect all the pieces?",
                 description:
-                  "The tiniest end-to-end path through UI, logic, and data. Click a button, backend processes, result shows on screen. Not pretty, but connected.",
+                  "The smallest end-to-end path: click a button, the backend processes it, the result shows on screen. It doesn't have to look good.",
                 time: "2-4 hours",
                 accent: "spark" as const,
               },
@@ -1407,7 +1175,7 @@ export default function ValidationPage() {
                 title: "Prototype",
                 question: "Does the flow feel right?",
                 description:
-                  "Clickable and interactive, showing the user journey. Test it with a teammate: can they use it without explanation? If they're confused, fix the flow before adding features.",
+                  "Clickable, with the whole user journey. Hand it to a teammate without explaining anything. If they get confused, fix the flow before adding features.",
                 time: "4-8 hours",
                 accent: "primary" as const,
               },
@@ -1416,7 +1184,7 @@ export default function ValidationPage() {
                 title: "Demo-Ready MVP",
                 question: "Can a judge use it and understand it?",
                 description:
-                  "A polished happy path. The core flow is smooth, the main screens are clean, and the demo tells a story. Edge cases don't matter. The golden path does.",
+                  "Polish only the path you'll demo, until the core flow runs smoothly and the main screens look clean. Edge cases can wait.",
                 time: "By submission",
                 accent: "success" as const,
               },
@@ -1481,17 +1249,6 @@ export default function ValidationPage() {
               );
             })}
           </div>
-
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                You don&apos;t have to climb every rung at the hackathon.
-              </span>{" "}
-              A strong Lego library lets you start at step 2 or 3 on day one.
-              Pre-validation compresses the ladder, and that&apos;s the whole
-              advantage.
-            </p>
-          </div>
         </section>
 
         {/* ============================================================
@@ -1500,7 +1257,7 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Two-Way Door Decisions"
-            subtitle="Most hackathon decisions are reversible. Make them fast. Save your deliberation for the few choices you can't undo."
+            subtitle="Sort each decision by whether you can undo it. Most of what you decide at a hackathon, you can."
           />
 
           <KeyTakeaway>
@@ -1578,14 +1335,6 @@ export default function ValidationPage() {
                     </span>
                   </li>
                 </ul>
-                <div className="rounded-lg bg-volt/5 p-3 text-center">
-                  <p className="font-display text-lg font-bold text-volt">
-                    &lt; 5 min
-                  </p>
-                  <p className="font-code text-xs text-volt/70">
-                    decide and move on
-                  </p>
-                </div>
               </CardContent>
             </Card>
 
@@ -1620,7 +1369,7 @@ export default function ValidationPage() {
                       <span className="font-semibold text-foreground">
                         Team composition:
                       </span>{" "}
-                      roles set the trajectory
+                      roles are hard to change once you start
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -1629,7 +1378,7 @@ export default function ValidationPage() {
                       <span className="font-semibold text-foreground">
                         The problem you solve:
                       </span>{" "}
-                      it shapes everything
+                      everything else depends on it
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -1638,18 +1387,10 @@ export default function ValidationPage() {
                       <span className="font-semibold text-foreground">
                         Prize track:
                       </span>{" "}
-                      it determines your constraints
+                      it sets your constraints
                     </span>
                   </li>
                 </ul>
-                <div className="rounded-lg bg-spark/5 p-3 text-center">
-                  <p className="font-display text-lg font-bold text-spark">
-                    Take your time
-                  </p>
-                  <p className="font-code text-xs text-spark/70">
-                    these decisions are hard to undo
-                  </p>
-                </div>
               </CardContent>
             </Card>
 
@@ -1668,72 +1409,16 @@ export default function ValidationPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
+                {/* [NEEDS SPECIFIC: the 2-hour framework debate. Have you watched a team do this? Which hackathon?] */}
                 <p className="font-body text-sm text-foreground/80">
                   <span className="font-semibold text-foreground">
                     Spend 80% of your decision energy on one-way doors.
                   </span>{" "}
-                  Make two-way doors in under 5 minutes. Losing teams don&apos;t
-                  pick the wrong framework; they spend 2 hours debating which one
-                  to use.
+                  A slightly wrong framework costs you less than 2 hours spent
+                  debating which one to use.
                 </p>
-                <div className="rounded-lg border border-primary/10 bg-primary/5 p-3">
-                  <p className="font-code text-xs text-primary/80">
-                    Reid Hoffman, LinkedIn co-founder, in his 2017 post on
-                    Twitter:
-                    &ldquo;If you&apos;re not embarrassed by the first version
-                    of your product, you&apos;ve launched too late.&rdquo;
-                    Perfect decisions aren&apos;t the goal. Fast, reversible
-                    decisions are.
-                  </p>
-                </div>
               </CardContent>
             </Card>
-          </div>
-        </section>
-
-        {/* ============================================================
-            GOLDEN RULE — FEYNMAN QUOTE
-            ============================================================ */}
-        <section className="space-y-8">
-          <div className="animate-glow-pulse glass rounded-2xl border border-primary/10 p-8 md:p-12">
-            <div className="mx-auto max-w-3xl space-y-6 text-center">
-              <Quote className="mx-auto size-10 text-spark/40" />
-              <blockquote className="font-display text-2xl font-bold italic tracking-tight md:text-4xl">
-                &ldquo;What I cannot create,
-                <br />
-                <span className="animate-shimmer">
-                  I do not understand.
-                </span>
-                &rdquo;
-              </blockquote>
-              <p className="font-body text-sm text-muted-foreground">
-                —{" "}
-                <a href="https://en.wikiquote.org/wiki/Richard_Feynman" target="_blank" rel="noopener noreferrer" className="underline decoration-muted-foreground/30 hover:decoration-muted-foreground">Richard Feynman, Nobel Laureate in Physics</a>
-              </p>
-              <Separator className="mx-auto max-w-xs bg-primary/20" />
-              <div className="space-y-4 text-left">
-                <p className="font-body text-foreground/80">
-                  <span className="font-display font-semibold text-foreground">
-                    In hackathons, validation IS creation.
-                  </span>{" "}
-                  Build the smallest version of each piece. If it won&apos;t work
-                  in isolation, it won&apos;t work in the full project.
-                  Don&apos;t assume. Prove it with code.
-                </p>
-                <p className="font-body text-foreground/80">
-                  Your Lego library is your competitive advantage. Every
-                  pre-tested block is hours saved. While other teams debug their
-                  first API call at hour 4, you&apos;re composing proven blocks
-                  into something that already works.
-                </p>
-                <p className="font-body text-foreground/80">
-                  <span className="font-display font-semibold text-foreground">
-                    The team with the most pre-validated blocks wins because
-                    they spend the hackathon creating, not discovering.
-                  </span>
-                </p>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -1743,59 +1428,51 @@ export default function ValidationPage() {
         <section className="space-y-8">
           <SectionHeading
             title="Validation Checklist"
-            subtitle="A step-by-step summary for de-risking your hackathon project. Follow this before and during every event."
+            subtitle="The whole page, as one list."
           />
 
           <KeyTakeaway>
-            Run this list before and during every event: test early, test in isolation, and trust only proven blocks.
+            If you&apos;re competing, do the first five in the weeks before the event and the rest once it starts.
           </KeyTakeaway>
 
           <Card className="glow-hover border-volt/20">
             <CardContent className="space-y-4 pt-6">
               {[
                 {
-                  text: "Build a \"Lego library\" of tested blocks during side projects",
+                  text: "Build a library of tested blocks during side projects",
                   accent: "volt",
                 },
                 {
-                  text: "Research every sponsor's API and docs, and run one validation test per sponsor",
+                  text: "Read each sponsor's docs and run one test per sponsor API",
                   accent: "spark",
                 },
                 {
-                  text: "Lock in a default stack (Next.js + FastAPI + Supabase); swap only for a sponsor prize",
+                  text: "Lock in a default stack (Next.js + FastAPI + Supabase); swap only for a sponsor prize or a real need",
                   accent: "primary",
                 },
                 {
-                  text: "Pick your target prize and reverse-engineer the judging criteria from its description",
+                  text: "Pick your target prize and read its description like a rubric",
                   accent: "success",
                 },
                 {
-                  text: "Pack your go bag: pre-validated auth, UI, agent scaffolds, and deployment configs",
+                  text: "Pack your go bag: the auth, UI, agent scaffolds, and deploy config you've already tested",
                   accent: "volt",
                 },
                 {
-                  text: "Spike the riskiest technical assumption first, in 30-60 minutes",
+                  text: "Spike the riskiest technical assumption first, in 30-60 minutes. If it fails, change the plan",
                   accent: "spark",
                 },
                 {
-                  text: "Get a walking skeleton working in the first 2 hours, one path from UI to data",
+                  text: "Get a walking skeleton working in the first 2-4 hours, one path from UI to data",
                   accent: "primary",
                 },
                 {
-                  text: "Validate each block in isolation before combining; never test two unknowns at once",
+                  text: "Test each new block by itself before you connect it to another",
                   accent: "success",
                 },
                 {
                   text: "Make two-way door decisions in under 5 minutes; save deliberation for one-way doors",
                   accent: "volt",
-                },
-                {
-                  text: "If the spike fails, pivot immediately instead of sinking time into a broken assumption",
-                  accent: "spark",
-                },
-                {
-                  text: "\"What I cannot create, I do not understand.\" (Richard Feynman) Can't build the smallest version? Rethink the approach",
-                  accent: "primary",
                 },
               ].map((item) => {
                 const colorMap: Record<string, string> = {
@@ -1820,17 +1497,6 @@ export default function ValidationPage() {
               })}
             </CardContent>
           </Card>
-
-          <div className="rounded-lg border border-border bg-surface p-4">
-            <p className="font-body text-sm text-muted-foreground">
-              <span className="font-display font-semibold text-foreground">
-                Remember:
-              </span>{" "}
-              Validation isn&apos;t about proving your idea is perfect. It finds
-              what&apos;s broken before you&apos;re 18 hours deep with no backup
-              plan. Test early, test in isolation, trust only proven blocks.
-            </p>
-          </div>
         </section>
       </div>
     </SectionTemplate>

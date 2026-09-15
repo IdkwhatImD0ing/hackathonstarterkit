@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Users, Lightbulb, ShieldCheck, Zap, Mic, FileText, Megaphone } from "lucide-react";
 
+// [CONFIRM: the SEO title "7-Phase System to Win Any Hackathon" overclaims, since no system wins any hackathon, and the descriptions below still say "battle-tested" and "distilled". Left as is because it's metadata; soften if you want.]
 export const metadata: Metadata = {
   // The layout template appends " | The Hackathon Playbook", so the brand
   // is not repeated here.
@@ -59,11 +60,12 @@ export default function PlaybookPage() {
           </span>
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          A battle-tested system for winning hackathons, distilled from{" "}
-          <span className="animate-shimmer font-semibold">36+ victories</span>{" "}
-          and $100K+ in prizes.
+          A guide to winning hackathons, in the order things happen.
+          It&apos;s what I&apos;ve learned across 50+ hackathons, with{" "}
+          <span className="animate-shimmer font-semibold">36+ wins</span> and
+          $100K+ in prizes along the way.
         </p>
-        <LastUpdated date="2026-04-15" />
+        <LastUpdated date="2026-09-14" />
       </header>
 
       <div className="relative h-12">

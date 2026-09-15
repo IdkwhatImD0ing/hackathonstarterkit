@@ -8,30 +8,30 @@ Canonical: https://thehackathonplaybook.dev/playbook
 
 [#### Team Formation
 
-Find the right people, define roles, and create a winning team dynamic.
+Pick teammates who cover four roles, and build a steady squad if you want to keep winning.
 
 Enter section →](https://thehackathonplaybook.dev/playbook/team-formation)[#### Ideation
 
-Brainstorm, evaluate, and select ideas that judges love and you can actually build.
+Combine tools and problems you already know into an idea you can build in time.
 
 Enter section →](https://thehackathonplaybook.dev/playbook/ideation)[#### Validation
 
-Validate your idea quickly against real constraints and judging criteria.
+Test the riskiest part of your idea early, and prep your stack if you're competing to win.
 
 Enter section →](https://thehackathonplaybook.dev/playbook/validation)[#### Execution
 
-Time management, tech stack selection, MVP strategy, and team coordination.
+How to spend your hours so you finish with a working demo.
 
 Enter section →](https://thehackathonplaybook.dev/playbook/execution)[#### Pitching
 
-Craft a pitch that wins judges over in the first 30 seconds.
+Build your pitch around the demo, and get ready for judge questions.
 
 Enter section →](https://thehackathonplaybook.dev/playbook/pitching)[#### Submission
 
-Write READMEs, record demos, and submit deliverables that make judges remember you.
+What to put in your Devpost, README, and demo video, and when to submit.
 
 Enter section →](https://thehackathonplaybook.dev/playbook/submission)[#### Post-Hackathon
 
-Share your work, follow up with contacts, and turn weekend projects into career-changing portfolio pieces.
+Post your project and follow up with people you met, so it keeps helping you after judging.
 
 Enter section →](https://thehackathonplaybook.dev/playbook/post-hackathon)

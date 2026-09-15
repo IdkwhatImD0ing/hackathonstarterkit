@@ -1,16 +1,16 @@
 # Feature Builder
 
-> Structured workflow for implementing a new feature. Returns a plan, files list, commands, test steps, and rollback plan.
+> Run it once for each feature. It shows you the plan first: the files and commands it will use, how to test the result, and how to undo it.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/feature-builder
 
 ---
 
-Structured workflow for implementing a new feature. Returns a plan, files list, commands, test steps, and rollback plan.
+Run it once for each feature. It shows you the plan first: the files and commands it will use, how to test the result, and how to undo it.
 
 Category: Building
 
-Usage: `/feature-builder [describe the feature you want]` (Structured feature implementation workflow)
+Usage: `/feature-builder [describe the feature you want]` (Adds one feature, with an undo plan)
 
 Build one feature at a time. The user may not code, so keep the work visible, bounded, and reversible.
 

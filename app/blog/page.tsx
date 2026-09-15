@@ -90,9 +90,9 @@ export default function BlogPage() {
           <span className="text-primary">Guides & Tips</span>
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          Expert strategies and in-depth guides from 36+ hackathon wins and
-          $100K+ in prizes. Whether you&apos;re a beginner or veteran, find
-          actionable advice to win your next hackathon.
+          What I&apos;ve learned from 50+ hackathons (36+ wins) and from
+          judging LA Hacks. Some posts are for your first hackathon, and some
+          assume you&apos;ve done a few.
         </p>
         <Separator className="bg-primary/20" />
       </header>

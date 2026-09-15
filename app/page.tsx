@@ -66,6 +66,7 @@ const NOTABLE_WINS = [
 ];
 
 const CREDENTIALS = [
+  // [CONFIRM: "1,000+ person events" for HackUTD 2024, UC Berkeley AI Hackathon 2024, and LA Hacks 2024]
   {
     text: "1st place at HackUTD 2024, UC Berkeley AI Hackathon 2024, LA Hacks 2024",
     highlight: "1,000+ person events, plus 33 other hackathon wins",
@@ -76,6 +77,7 @@ const CREDENTIALS = [
     highlight: "Top 10 Global (only US team in 3 years)",
     color: "text-spark",
   },
+  // [CONFIRM: "returning for the LA Hacks AI Hackathon"]
   {
     text: "Hackathon judge at LA Hacks 2026",
     highlight: "returning for the LA Hacks AI Hackathon",
@@ -91,6 +93,7 @@ const CREDENTIALS = [
     highlight: "ex-Applied AI Engineer at Scale AI",
     color: "text-volt",
   },
+  // [CONFIRM: "$1M valuation, Berkeley SkyDeck funded" for Dispatch AI]
   {
     text: "Co-founder of Dispatch AI",
     highlight: "$1M valuation, Berkeley SkyDeck funded",
@@ -192,6 +195,7 @@ const accentMap = {
   },
 };
 
+// [CONFIRM: metadata and the FAQ/HowTo JSON-LD below still say "ultimate playbook", "battle-tested", "ideas that judges love", "career-changing", and "hooks judges in 30 seconds". Left as is because they're off-limits in this pass. Soften them if you want them to match the rewritten pages.]
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -308,7 +312,7 @@ export default function Home() {
             The Hackathon <span className="text-primary">Playbook</span>
           </h1>
           <p className="font-body text-lg text-muted-foreground">
-            Guides, templates, and strategies from 36+ hackathon wins.
+            Guides and prompts from 50+ hackathons and 36+ wins.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -381,8 +385,8 @@ export default function Home() {
                   </a>
                 </h2>
                 <p className="font-body text-muted-foreground">
-                  One of the most decorated hackathon competitors in the US
-                  college scene.
+                  I started doing hackathons to land an internship, and got an
+                  interview within my first four.
                 </p>
               </div>
 

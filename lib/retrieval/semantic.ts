@@ -73,7 +73,11 @@ export function loadSemanticIndex(): SemanticIndex | null {
     const entries: SemanticIndex["entries"] = [];
     for (const chunk of corpus) {
       const vector = byId.get(chunk.id);
-      if (vector) entries.push({ chunk, vector });
+      // Ids survive edits, so a matching id can still carry a vector embedded
+      // from the section's old text. Only count vectors for unchanged content.
+      if (vector && manifest.chunks[chunk.id].contentHash === chunk.contentHash) {
+        entries.push({ chunk, vector });
+      }
     }
 
     // A stale index silently degrades retrieval; below 80% coverage of the

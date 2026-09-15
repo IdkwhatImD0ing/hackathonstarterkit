@@ -15,46 +15,46 @@ A read-only MCP server exposing search over this content lives at https://thehac
 
 ## Playbook
 
-- [Team Formation](https://thehackathonplaybook.dev/playbook/team-formation.md): Find the right people, define roles, and create a winning team dynamic.
-- [Ideation](https://thehackathonplaybook.dev/playbook/ideation.md): Brainstorm, evaluate, and select ideas that judges love and you can actually build.
-- [Validation](https://thehackathonplaybook.dev/playbook/validation.md): Validate your idea quickly against real constraints and judging criteria.
-- [Execution](https://thehackathonplaybook.dev/playbook/execution.md): Time management, tech stack selection, MVP strategy, and team coordination.
-- [Pitching](https://thehackathonplaybook.dev/playbook/pitching.md): Craft a pitch that wins judges over in the first 30 seconds.
-- [Submission](https://thehackathonplaybook.dev/playbook/submission.md): Write READMEs, record demos, and submit deliverables that make judges remember you.
-- [Post-Hackathon](https://thehackathonplaybook.dev/playbook/post-hackathon.md): Share your work, follow up with contacts, and turn weekend projects into career-changing portfolio pieces.
+- [Team Formation](https://thehackathonplaybook.dev/playbook/team-formation.md): Pick teammates who cover four roles, and build a steady squad if you want to keep winning.
+- [Ideation](https://thehackathonplaybook.dev/playbook/ideation.md): Combine tools and problems you already know into an idea you can build in time.
+- [Validation](https://thehackathonplaybook.dev/playbook/validation.md): Test the riskiest part of your idea early, and prep your stack if you're competing to win.
+- [Execution](https://thehackathonplaybook.dev/playbook/execution.md): How to spend your hours so you finish with a working demo.
+- [Pitching](https://thehackathonplaybook.dev/playbook/pitching.md): Build your pitch around the demo, and get ready for judge questions.
+- [Submission](https://thehackathonplaybook.dev/playbook/submission.md): What to put in your Devpost, README, and demo video, and when to submit.
+- [Post-Hackathon](https://thehackathonplaybook.dev/playbook/post-hackathon.md): Post your project and follow up with people you met, so it keeps helping you after judging.
 
 ## For Non-Coders
 
-- [The Proof](https://thehackathonplaybook.dev/non-coders/proof.md): Real professionals, most with little or no coding background, who won against developer-heavy fields at major hackathons.
-- [Getting Started](https://thehackathonplaybook.dev/non-coders/setup.md): The 3 files, 4 shortcuts, and daily workflow you need to start building.
+- [The Proof](https://thehackathonplaybook.dev/non-coders/proof.md): The lawyer who won Anthropic's 500-person hackathon, and three others who build with AI.
+- [Getting Started](https://thehackathonplaybook.dev/non-coders/setup.md): What to set up before your first prompt, and the five-step loop you'll repeat for every feature.
 - [Concepts Explained](https://thehackathonplaybook.dev/non-coders/concepts.md): GitHub, APIs, deploying, and other jargon explained in plain English.
-- [Using APIs](https://thehackathonplaybook.dev/non-coders/apis.md): How to add any service to your app with just a key and a docs link.
+- [Using APIs](https://thehackathonplaybook.dev/non-coders/apis.md): How to add a service to your app, with worked examples for ElevenLabs voice and a Supabase database.
 - [The System Prompt](https://thehackathonplaybook.dev/non-coders/system-prompt.md): The CLAUDE.md and AGENTS.md files that set the rules your AI follows every session. One command sets up both.
-- [Skills & Commands](https://thehackathonplaybook.dev/non-coders/skills.md): Installable AI skills and slash commands that teach your AI to work with non-coders.
+- [Skills & Commands](https://thehackathonplaybook.dev/non-coders/skills.md): Slash commands for each stage of a hackathon build, from planning your app to writing its README.
 
 ## AI Skills
 
-- [Non-Coder Mode](https://thehackathonplaybook.dev/non-coders/skills/non-coder-mode.md): Core guardrails for non-coders. Tells the AI to explain everything in plain English, break tasks into small steps, and never assume coding knowledge.
-- [Domain to Spec](https://thehackathonplaybook.dev/non-coders/skills/domain-to-spec.md): Run this FIRST. Captures your domain expertise and writes AGENTS.md and PRD.md to the repo root. Every other scaffold skill reads these files.
-- [Quickstart](https://thehackathonplaybook.dev/non-coders/skills/quickstart.md): One-shot project bootstrapper. Chains domain-to-spec, scaffold-frontend, and scaffold-backend (if needed) with user confirmation between steps.
-- [Scaffold Frontend](https://thehackathonplaybook.dev/non-coders/skills/scaffold-frontend.md): PRD-driven Next.js scaffold into clients/. Reads AGENTS.md and PRD.md, generates pages, layout, types, and an API client. Refuses to run without both files.
-- [Scaffold Backend](https://thehackathonplaybook.dev/non-coders/skills/scaffold-backend.md): PRD-driven FastAPI scaffold into server/ with optional Supabase. One stub route per entry in PRD.md > Backend Routes. Skips automatically if Backend Needed? = No.
-- [v0 Prompt Crafter](https://thehackathonplaybook.dev/non-coders/skills/v0-prompt-crafter.md): Turn a PRD or product description into a production-grade Vercel v0 prompt. Researches the industry, commits to a bold aesthetic, picks fancy UI libraries (shadcn, Aceternity, Magic UI, Motion), and assembles a copy-paste prompt.
-- [Feature Builder](https://thehackathonplaybook.dev/non-coders/skills/feature-builder.md): Structured workflow for implementing a new feature. Returns a plan, files list, commands, test steps, and rollback plan.
-- [Bugfix Doctor](https://thehackathonplaybook.dev/non-coders/skills/bugfix-doctor.md): Systematic bug-fixing workflow. Walks through reproduce, isolate, fix, test, and verify. Explains all errors in plain English.
-- [Demo Prep](https://thehackathonplaybook.dev/non-coders/skills/demo-prep.md): Produces a step-by-step live demo script for hackathon presentations. Covers the problem, walkthrough, and outcome with a backup plan.
-- [GitHub Writer](https://thehackathonplaybook.dev/non-coders/skills/readme-writer.md): Turns your finished project into a winner-grade GitHub README: a centered hero, badges, a clickable demo video, an architecture diagram, and team cards, then sets the repo's About description, website, and topics so recruiters and judges can find it.
+- [Non-Coder Mode](https://thehackathonplaybook.dev/non-coders/skills/non-coder-mode.md): The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
+- [Domain to Spec](https://thehackathonplaybook.dev/non-coders/skills/domain-to-spec.md): Interviews you about your field and your idea, then writes AGENTS.md (rules for the AI) and PRD.md (the plan for your app).
+- [Quickstart](https://thehackathonplaybook.dev/non-coders/skills/quickstart.md): Runs /domain-to-spec, /scaffold-frontend, and /scaffold-backend (if needed) in one go, pausing once so you can approve the plan.
+- [Scaffold Frontend](https://thehackathonplaybook.dev/non-coders/skills/scaffold-frontend.md): Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.
+- [Scaffold Backend](https://thehackathonplaybook.dev/non-coders/skills/scaffold-backend.md): Builds a FastAPI backend in a server/ folder, with sample data for each route PRD.md lists and optional Supabase. Skips itself if PRD.md says no backend.
+- [v0 Prompt Crafter](https://thehackathonplaybook.dev/non-coders/skills/v0-prompt-crafter.md): An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.
+- [Feature Builder](https://thehackathonplaybook.dev/non-coders/skills/feature-builder.md): Run it once for each feature. It shows you the plan first: the files and commands it will use, how to test the result, and how to undo it.
+- [Bugfix Doctor](https://thehackathonplaybook.dev/non-coders/skills/bugfix-doctor.md): Translates the error into plain English, then finds what caused it. It makes the smallest fix it can and checks that the fix worked.
+- [Demo Prep](https://thehackathonplaybook.dev/non-coders/skills/demo-prep.md): A timed demo script from problem to result, with a backup plan if the app breaks and the questions judges will likely ask.
+- [README Writer](https://thehackathonplaybook.dev/non-coders/skills/readme-writer.md): Writes your README (your repo's front page) with badges, a demo video, a how-it-works diagram, and team cards. It also fills in the repo's description, website, and topics so judges and recruiters can find it.
 
 ## Blog
 
-- [What to Do After a Hackathon: Ship 5 Assets That Get You Hired](https://thehackathonplaybook.dev/blog/what-to-do-after-a-hackathon.md): What to do after a hackathon, win or lose: the 5 linked assets that get you hired, and the AI skills that build your README, Devpost, portfolio, and demo copy.
-- [9 Hackathon Pitch Mistakes I Saw at LA Hacks](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks.md): Hackathon pitch mistakes from the LA Hacks judging floor: tailor the pitch, cut your slides, demo the main flow, and protect Q&A time for higher scores.
-- [How to Win Hackathons: A Complete Guide from 36+ Victories](https://thehackathonplaybook.dev/blog/how-to-win-hackathons.md): How to win hackathons, from 36+ wins and $100K+ in prizes. The 7-phase system covering team, ideation, validation, execution, pitching, and submission.
-- [Best Tech Stack for Hackathons in 2026: Tools That Win Prizes](https://thehackathonplaybook.dev/blog/best-tech-stack-for-hackathons.md): The best tech stack for hackathons in 2026: Next.js, FastAPI, Supabase, Vercel, and an AI API. The exact stack winning teams use, and the rule that beats it.
-- [Hackathon Tips for Beginners: Your First Hackathon Survival Guide](https://thehackathonplaybook.dev/blog/hackathon-tips-for-beginners.md): First hackathon? This beginner's guide covers what to bring, how to find a team, what to build, the mistakes to avoid, and how to win as a first-timer.
-- [Hackathon Pitch Guide: How to Present Your Project and Win Prizes](https://thehackathonplaybook.dev/blog/hackathon-pitch-guide.md): Master the hackathon pitch with a 3-minute structure from 36+ winning presentations: the hook, the demo, judge Q&A, and the mistakes that cost prizes.
-- [Non-Coders Winning Hackathons: How Experts Beat Developers](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons.md): Non-coders winning hackathons is real in 2026. A lawyer took 1st and a doctor 3rd at Anthropic's global hackathon, beating developers with Claude Code.
-- [How to Build with ElevenLabs and Cursor at a Hackathon](https://thehackathonplaybook.dev/blog/build-with-elevenlabs-and-cursor.md): Build a voice AI hackathon project with ElevenLabs and Cursor in an afternoon. The exact PRD-first, MCP-driven, test-driven workflow Bill uses to ship and win.
+- [What to Do After a Hackathon: Ship 5 Assets That Get You Hired](https://thehackathonplaybook.dev/blog/what-to-do-after-a-hackathon.md): My first internship came from one LinkedIn post about a hackathon we didn't win. What to do after a hackathon: five linked assets, four written by AI skills.
+- [9 Hackathon Pitch Mistakes I Saw at LA Hacks](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks.md): Judging LA Hacks, I watched good projects lose points to hackathon pitch mistakes. The one almost every team made was leaving the judges no time for Q&A.
+- [How to Win Hackathons: A Complete Guide from 36+ Victories](https://thehackathonplaybook.dev/blog/how-to-win-hackathons.md): How to win hackathons, in the seven phases I learned across 50+ events and 36+ wins: from picking your team to following up with people after judging ends.
+- [Best Tech Stack for Hackathons in 2026: Tools That Win Prizes](https://thehackathonplaybook.dev/blog/best-tech-stack-for-hackathons.md): The best tech stack for hackathons is the one your team already knows. If you don't have one yet, this is the Next.js, FastAPI, and Supabase default I use.
+- [Hackathon Tips for Beginners: Your First Hackathon Survival Guide](https://thehackathonplaybook.dev/blog/hackathon-tips-for-beginners.md): You don't need an idea or a team to go to your first hackathon. These hackathon tips for beginners cover what to set up at home and how to spend the 24 hours.
+- [Hackathon Pitch Guide: How to Present Your Project and Win Prizes](https://thehackathonplaybook.dev/blog/hackathon-pitch-guide.md): A hackathon pitch guide with one 3-minute structure: problem, live demo, how it works, and impact. Plus Q&A prep, and how to cut it down for a shorter slot.
+- [Non-Coders Winning Hackathons: What Domain Experts Bring](https://thehackathonplaybook.dev/blog/non-coders-winning-hackathons.md): A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.
+- [How to Build with ElevenLabs and Cursor at a Hackathon](https://thehackathonplaybook.dev/blog/build-with-elevenlabs-and-cursor.md): My loop for a voice AI hackathon project: write the PRD first, connect ElevenLabs to Cursor through MCP, then have the agent write each test before the feature.
 
 ## Optional
 

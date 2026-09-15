@@ -1,16 +1,16 @@
 # v0 Prompt Crafter
 
-> Turn a PRD or product description into a production-grade Vercel v0 prompt. Researches the industry, commits to a bold aesthetic, picks fancy UI libraries (shadcn, Aceternity, Magic UI, Motion), and assembles a copy-paste prompt.
+> An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/v0-prompt-crafter
 
 ---
 
-Turn a PRD or product description into a production-grade Vercel v0 prompt. Researches the industry, commits to a bold aesthetic, picks fancy UI libraries (shadcn, Aceternity, Magic UI, Motion), and assembles a copy-paste prompt.
+An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.
 
 Category: Building
 
-Usage: `/v0-prompt-crafter [paste your PRD or one-line product description]` (Turns a PRD into a production-grade Vercel v0 prompt)
+Usage: `/v0-prompt-crafter [paste your PRD or one-line product description]` (Writes a Vercel v0 design prompt)
 
 Produce a copy-paste-ready prompt for Vercel v0 that is specific enough to generate a memorable interface. The deliverable is the prompt, not application code.
 

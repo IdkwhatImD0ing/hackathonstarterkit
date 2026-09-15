@@ -1,101 +1,87 @@
 # Submission
 
-> Write READMEs, record demos, and submit deliverables that make judges remember you.
+> What to put in your Devpost, README, and demo video, and when to submit.
 
 Canonical: https://thehackathonplaybook.dev/playbook/submission
-Last updated: 2026-06-24
+Last updated: 2026-09-14
 
 ---
 
 ## The Submission Advantage
 
-Your submission is the artifact that outlives your pitch. Judges deliberate without you, so your Devpost, README, and demo video speak on your behalf.
+Judges pick winners after you've left the room. When they can't remember a project, the Devpost, repo, and demo video are the tiebreaker.
 
-TL;DR Judges deliberate without you, so your Devpost, README, and demo video are what win the room.
-
-Treat the submission as a first-class deliverable, not a last-30-minutes rush. Your Devpost README, GitHub repo, and demo video are what judges reference during deliberation. When they can't remember your project, the submission is the tiebreaker.
+TL;DR Set aside 1-2 hours before the deadline for the Devpost, the README, and the demo video.
 
 #### Devpost README
 
-Most judges read this during deliberation. It frames your project for everyone, including those who never saw your live demo. Tell the full story: problem, solution, tech, and vision.
-
-Most hackathon winners allocate 1-2 hours specifically for writing this. It's not an afterthought.
+For judges who missed your live demo, this is the project. Tell the whole story: problem, solution, tech, and what's next.
 
 #### GitHub README
 
-Technical judges will click your repo link. Clean code, clear structure, and a README with architecture diagrams separate serious teams from weekend projects.
+Technical judges click through to your repo to see how it works.
 
-The GitHub README is for developers. The Devpost is for everyone. Write both.
+The Devpost is for every judge and the README is for the developers, so you need both.
 
 #### Demo Video
 
-Visual proof that persists into deliberation. When judges forget your project (it happens often), the demo video is the reminder. Nothing beats seeing it actually work.
+The only part of your demo that's still there at deliberation. If a judge has forgotten your project, the video is how they see it working again.
 
 Devpost calls the demo video [one of the most important elements](https://help.devpost.com/article/84-video-making-best-practices) of your submission.
 
-[Tom Preston-Werner](https://tom.preston-werner.com/2010/08/23/readme-driven-development) — GitHub Co-founder, “Readme Driven Development,” 2010
-
-> “Until you've written about your software, you have no idea what you'll be coding.”
-
-Writing the README forces you to understand what you built. Documenting is clarifying, for yourself and for judges.
-
 ## The Devpost README — Section by Section
 
-Every Devpost submission follows the same template. Here's how to write each section so judges remember your project during deliberation.
+Devpost gives every project the same seven sections, in this order.
 
-TL;DR Lead every section with the point: a striking stat, a concrete feature, a named sponsor API.
+TL;DR Open every section with its most concrete line, like a number or a named sponsor API.
 
 Inspiration
 
-Open with a striking stat that makes judges feel the problem. "82% of emergency call centers are understaffed." "1.7 billion adults remain unbanked." Make them care before you describe the solution.
+Start with a number that makes the judge feel the problem. Our Dispatch AI opener (UC Berkeley AI Hackathon 2024) was "82% of emergency call centers are understaffed," from the 2023 NENA and Carbyne survey.
 
-Skip vague openers like "We wanted to help people." Concrete numbers stick in judges' minds during deliberation.
+Skip "We wanted to help people." If you don't have a number you can source, open with a concrete scenario instead.
 
 What It Does
 
-2-3 sentences max, then bullet the key features. Be concrete and specific: "Users check balances, transfer funds, and pay bills using voice commands" beats "An AI-powered banking solution."
+Two or three sentences, then bullet the features. "Users check balances, transfer funds, and pay bills using voice commands" says something. "An AI-powered banking solution" doesn't.
 
-Name the user. Name the action. Name the outcome. Judges should be able to repeat your pitch to another judge from this section alone.
+The test: could a judge explain your project to another judge from this section alone?
 
 How We Built It
 
-Architecture diagram first, then bullet every API, framework, and service. One system design image explains what 500 words cannot. Group by Frontend, Backend, AI/ML, and Infrastructure.
+Diagram first, then every API, framework, and service, grouped by frontend, backend, AI/ML, and infrastructure.
 
-Name-drop sponsor tech prominently. Used Intel Dev Cloud, Hume, or Retell? Make it impossible to miss.
+Sponsor judges want to see how you used their tech, so name it (Intel Dev Cloud, Hume, Retell) where they can't miss it.
 
 Challenges We Ran Into
 
-Be honest and specific. "Integrating multiple APIs" or "fine-tuning the model for edge cases" reads as real. "We didn't have any challenges" signals you didn't push hard enough.
-
-Challenges show maturity. Judges want real problems solved, not a project where everything went perfectly.
+Name the ones that actually slowed you down. "Integrating multiple real-time APIs with different auth patterns" tells a judge what was hard. "We didn't have any challenges" reads like you didn't push.
 
 Accomplishments
 
-Tie wins back to the original problem. "Fine-tuned Mistral for emergency response" closes the loop on the 82% understaffing stat. Connect problem to proof.
+Tie them back to the problem you opened with. On Dispatch AI, "fine-tuned Mistral for emergency response" answered the understaffing stat.
 
-Quantify: "80% decrease in processing time," "support for 6 languages," "functional prototype in 18 hours."
+If you measured something, put the number in, like "80% decrease in processing time" or "support for 6 languages."
 
 What We Learned
 
-Show growth, not just output. "How to design multi-agent systems" or "the importance of multi-layered security" prove depth of understanding beyond the code.
+Name the specific thing you learned, like "how to design multi-agent systems" or "the importance of multi-layered security."
 
-Especially important for educational and "best beginner" tracks. It proves the hackathon taught you something.
+This one matters more on educational and "best beginner" tracks.
 
 What's Next
 
-Prove the idea has legs beyond the weekend. "Expand training data," "partner with local emergency services for testing," "mobile app integration." Show this isn't a throwaway.
-
-List 2-4 concrete next steps. Skip pie-in-the-sky claims; judges spot the line between ambition and delusion.
+Two to four concrete steps, like "expand training data" or "partner with local emergency services for testing." Leave out the pie-in-the-sky stuff.
 
 ## The GitHub README — Structure for Credibility
 
-Technical judges will click your repo link. A clean GitHub README with architecture diagrams and install instructions separates serious teams from weekend projects.
+Technical judges open this one. Write it for someone who wants to know how it works and how to run it.
 
-TL;DR A clean repo README with badges, a diagram, and install steps is your technical credibility signal.
+TL;DR Get the seven essentials into your repo README before you touch any of the extras.
 
 #### Essential Elements
 
-Every winning GitHub README includes these. No exceptions.
+Do these first.
 
 -   Project title + one-line description
 -   Prize/award badge at the top (shields.io)
@@ -105,17 +91,13 @@ Every winning GitHub README includes these. No exceptions.
 -   Getting started / installation steps
 -   Key features list
 
-Non-negotiable
-
-these make or break technical credibility
-
 bonus points
 
 bonus points
 
 #### Bonus Elements
 
-Extra polish that signals you care about quality beyond the hackathon.
+Worth adding if you have time, or if the project will keep going after the hackathon.
 
 -   Contributing guide
 -   Detailed API documentation
@@ -123,21 +105,15 @@ Extra polish that signals you care about quality beyond the hackathon.
 -   Deployment instructions
 -   License file
 
-Extra credit
-
-separates good from great
-
-Remember: The GitHub README is for developers and technical judges. The Devpost is for everyone. Write both, and tailor each to its reader.
-
 ### 
 
-TL;DR Lead with impact, cut every spare word, and show readers depth only when they ask for it.
+TL;DR Put the point in the first line and move the detail further down.
 
 #### The Inverted Pyramid
 
-Put the most important information first. Judges skim, so your opening line decides whether they keep reading or move on to the next project.
+Put the most important information first. Judges skim, so your first line decides whether they keep reading.
 
-Lead with impact, not backstory. “82% of call centers are understaffed” hooks instantly. “We're a team of four students who…” does not.
+Opening with “We're a team of four students who…” spends that line on you instead of the problem.
 
 — [Inverted pyramid, in widespread newspaper use since the early 1900s](https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism))
 
@@ -145,7 +121,7 @@ Lead with impact, not backstory. “82% of call centers are understaffed” hook
 
 > “The reason writing a good 4 page memo is harder than ‘writing’ a 20 page powerpoint is because the narrative structure of a good memo forces better thought and better understanding of what's more important than what, and how things are related.”
 
-Bezos banned PowerPoint at Amazon in 2004 in favor of structured narrative memos. Same idea for your Devpost: writing a coherent story forces you to understand what you built and why it matters.
+Bezos banned PowerPoint at Amazon in 2004 in favor of narrative memos. On a Devpost, “how things are related” is step 5: tying what you built back to the problem you opened with.
 
 — [Jeff Bezos, Amazon founder and CEO, email to Amazon's S-Team, June 9, 2004](https://slab.com/blog/jeff-bezos-writing-management-strategy/)
 
@@ -153,141 +129,111 @@ Bezos banned PowerPoint at Amazon in 2004 in favor of structured narrative memos
 
 > “If it is possible to cut a word out, always cut it out.”
 
-Orwell's 1946 rules fit hackathon submissions: never use a long word where a short one will do, never use the passive where you can use the active, and break any rule sooner than say anything barbarous.
+The same essay says to use the short word over the long one and the active voice over the passive.
 
-— [Politics and the English Language, 1946](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
+— [George Orwell, English novelist and essayist, “Politics and the English Language,” 1946](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
 
 #### Progressive Disclosure
 
-Show essentials first, let readers drill deeper. Stripe's docs, the gold standard, do exactly this: quickstart at the top, architecture further down.
+Show essentials first, let readers drill deeper. Stripe's docs put the quickstart at the top and the architecture further down.
 
-Apply to your README: hero screenshot and one-liner first. Architecture and install instructions for those who want depth.
-
-## Show, Don't Tell
-
-A screenshot is worth a thousand words. An architecture diagram is worth a thousand meetings. A demo video is worth a thousand Devpost entries.
-
-TL;DR Don't describe your app, show it: diagram the architecture and record it working.
+In your README: hero screenshot and one-liner first, architecture and install steps after.
 
 > “In descriptions of Nature one must seize on small details, grouping them so that when the reader closes his eyes he gets a picture. For instance, you'll have a moonlit night if you write that on the mill dam a piece of glass from a broken bottle glittered like a bright little star…”
 
 — [Anton Chekhov, Russian playwright and short-story writer, letter to his brother Alexander, May 1886 (trans. Avrahm Yarmolinsky, The Unknown Chekhov, 1954)](https://en.wikipedia.org/wiki/Show,_don%27t_tell)
 
-Chekhov's principle for fiction applies perfectly to hackathon submissions. Don't describe your app; show it. Don't explain your architecture; diagram it. Don't claim it works; record it working.
+In a Devpost, the small detail is a screenshot or a clip of the app working.
+
+## Show, Don't Tell
+
+What to put in the Devpost besides text, and how much of each.
+
+TL;DR Add an architecture diagram, 4-6 annotated screenshots, and a 60-90 second demo video.
 
 #### Architecture Diagrams
 
-One image beats 500 words of “How We Built It.” Show the flow: user action → frontend → API → AI model → response. Use Excalidraw, Figma, or a whiteboard photo.
+Draw the flow: user action → frontend → API → AI model → response. Put it at the top of “How We Built It.” The [architecture slide from our Dispatch AI pitch](https://thehackathonplaybook.dev/blog/hackathon-pitch-mistakes-la-hacks) showed the 911 call audio pipeline, the fine-tuned model, the dashboard, and where Twilio, Retell, and Hume fit in.
 
-Every winning Devpost in the examples above included an architecture diagram. It's not optional.
+A diagram in Excalidraw takes about 15 minutes. Figma or a whiteboard photo works too.
 
 #### Annotated Screenshots
 
-4-6 annotated shots of key flows, not raw captures. Add callouts, arrows, and labels that guide the reader. DoggoAI added design-process images that dramatically elevated its submission.
-
-Include: user personas, wireframes, high-fidelity mockups, and the final product side-by-side. Show the journey.
+Label the key flows with callouts and arrows. Then add a design-process image, the way DoggoAI's submission did: user personas, wireframes, and high-fidelity mockups next to the final product.
 
 Recording Tools
 
-[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (affiliate link), my pick on Mac, or CanVid on Windows. Auto-zoom, instant effects, webcam overlay. Minutes, not hours.
+[Screen Studio](https://screenstudio.lemonsqueezy.com?aff=LpD9R) (affiliate link) (Mac, my pick) or CanVid (Windows). Auto-zoom and webcam overlay mean editing takes minutes.
 
 Video Length
 
-60-90 seconds. Long enough to show the flow, short enough to hold attention. One take is fine; authenticity beats polish.
+60-90 seconds: the main flow, once. One take is fine.
 
 Screenshot Count
 
-4-6 annotated images. Hero shot, architecture diagram, 2-3 key flow screenshots, and one design process image.
+4-6 images: hero shot, architecture diagram, 2-3 key flows, one design-process image.
 
 ## The Demo Video
 
-Your demo video is part of the submission: record it, link it on Devpost, and let the product on screen do the talking.
+The video goes on the Devpost with everything else. The question is when you record it.
 
-TL;DR Record a tight demo, link it on Devpost, and use the deadline gap so it never costs you build time.
+TL;DR If your event lets you edit the Devpost after the deadline, record the video in the gap before judging.
 
-### The demo video does not have to come out of your coding hours
+### The demo video doesn't have to come out of your coding hours
 
-Deadlines freeze the code, not the listing. Devpost entries (including the YouTube link) usually stay editable after the deadline, and judging rarely starts for another 1 to 2 hours. Lock the repo, submit the Devpost, then record and paste the link in that gap. You get a polished demo without losing build time.
+At a lot of events the deadline freezes your code but not the Devpost entry, and judging often starts 1 to 2 hours later. If so, lock the repo, submit, then record the video and paste the YouTube link in that gap, so it doesn't eat 2 hours of feature work.
 
-Confirm your hackathon's post-submission edit window before relying on it. The point: never let “I have to record a video” cost you 2 hours of feature work.
+Check your event's rules first. Some count any edit after the deadline as a violation, or require the video link to submit. In that case, record before the deadline.
 
 [See two winning demo videos broken down, plus the recorder I use
 
-On the pitching page: the TalkTuahBank and SoundSearch demos, why they work, and the screen recorder for a polished demo.](https://thehackathonplaybook.dev/playbook/pitching#the-demo-video)
+On the pitching page: the TalkTuahBank and SoundSearch demos, and why they work.](https://thehackathonplaybook.dev/playbook/pitching#the-demo-video)
 
 ## Common Mistakes
 
-These six submission mistakes kill otherwise strong projects. Avoid them and you're already ahead of 80% of teams.
+A README nobody can skim, and a submission that lands a minute late.
 
-TL;DR Avoiding these six errors puts you ahead of 80% of teams before judging starts.
-
-No Demo Video
-
-Instant disadvantage. Judges can't remember what they can't see. A 60-second recording is your highest-ROI activity.
+TL;DR Submit 30 minutes before the deadline, with a README a judge can skim.
 
 Wall of Text
 
-Nobody reads a 2000-word README with no images. Break it up with screenshots, diagrams, and headers. Make judges scroll to find the point and you've lost them.
-
-Vague Inspiration
-
-"We wanted to help people" vs "82% of call centers are understaffed." The second makes judges care. The first makes them yawn.
-
-Missing Tech Details
-
-Sponsor judges want HOW you built it, not just WHAT. Name every API, framework, and service. Include the architecture diagram.
-
-No Architecture Diagram
-
-Makes the project feel unplanned and thrown together. One Excalidraw diagram takes 15 minutes and completely changes the perception of technical depth.
+A 2,000-word README with no images is hard to skim. Add headers, and put each screenshot beside the paragraph it illustrates.
 
 Late Submission
 
-Devpost deadlines are hard cutoffs. Submit 30 minutes early. Teams lose every hackathon because they hit "submit" at 11:59 and Devpost lagged.
-
-> “…the narrative structure of a good memo forces better thought and better understanding of what's more important than what, and how things are related.”
-
-— [Jeff Bezos, Amazon founder and CEO, email to Amazon's S-Team, June 9, 2004](https://slab.com/blog/jeff-bezos-writing-management-strategy/)
-
-Your submission isn't an afterthought; it's the document that represents your project when you're not in the room. Teams that write great Devpost READMEs aren't adding fluff. They're forcing themselves to understand what they built, why it matters, and how to make someone else care.
-
-Every section is an act of clarity. Inspiration forces you to articulate the problem. “How We Built It” forces you to understand your architecture. “What's Next” forces you to think beyond the weekend.
-
-The best submission doesn't describe the project; it makes the reader wish they had built it.
+Devpost deadlines are hard cutoffs. If you hit "submit" at 11:59 and Devpost lags, you're out.
 
 ## Submission Checklist
 
-A step-by-step summary for crafting your submission. Allocate 1-2 hours before the deadline: this is not optional.
+The whole page as a list, in the order you'd do it.
 
-TL;DR Block 1-2 hours before the deadline and work this list top to bottom.
+TL;DR Work this list top to bottom in the 1-2 hours you blocked off before the deadline.
 
-Write the Devpost README BEFORE the hackathon ends. Allocate 1-2 dedicated hours.
+Write the Devpost README before the hackathon ends
 
-Lead Inspiration with a striking stat or scenario, not "we wanted to help people"
+Open Inspiration with a sourced number or a concrete scenario
 
 Include an architecture diagram and 4-6 annotated screenshots in the submission
 
-Record a 60-90 second demo video with Screen Studio or CanVid, with webcam overlay for personality
+Record a 60-90 second demo video with a webcam overlay (Screen Studio or CanVid)
 
 Write a separate GitHub README with tech badges, install instructions, and the architecture diagram
 
-Name-drop every sponsor technology prominently in "How We Built It"; make it impossible to miss
+Name every sponsor technology in "How We Built It"
 
-Submit to Devpost 30 minutes before the deadline; never cut it close
+Submit to Devpost 30 minutes before the deadline
 
-Proofread once for Orwell: cut every word that doesn't earn its place
-
-Remember: Judges deliberate without you. Your Devpost README, demo video, and GitHub repo are your advocates, the difference between “I think that project was good” and “I remember exactly why we should pick that one.”
+Proofread once and cut every word you don't need
 
 ## AI Prompt Templates
 
-Copy these prompts into Claude, ChatGPT, or any AI tool along with your project details. They're designed to generate submission-ready READMEs that follow every principle on this page.
+Paste one into Claude, ChatGPT, or any AI tool, then fill in your project details at the bottom.
 
-TL;DR Paste these prompts plus your project details to generate a README that follows every rule above.
+TL;DR Paste messy, detailed notes into the project section, then check every number in the output against them.
 
 #### Devpost README Generator
 
-Generates a complete Devpost submission using this page's winning patterns. Paste the prompt into any AI tool, then add your project details where indicated.
+Writes all seven Devpost sections using the rules on this page, and only uses numbers you give it.
 
 What to Paste Along With the Prompt
 
@@ -297,9 +243,9 @@ You are a hackathon submission expert. Generate a Devpost README for my hackatho
 Follow these rules strictly:
 
 INSPIRATION SECTION:
-- Open with a striking statistic, vivid scenario, or concrete number that makes the reader feel the problem BEFORE describing any solution
-- Use bold markdown for key stats (e.g., **82% of call centers are understaffed**)
-- Do NOT start with "We wanted to..." or "Our team decided to..." — lead with the problem, not yourself
+- Open with a striking statistic, vivid scenario, or concrete number that makes the reader feel the problem BEFORE describing any solution. Only use numbers that appear in my project information; if there are none, open with a scenario
+- Use bold markdown for key stats
+- Do NOT start with "We wanted to..." or "Our team decided to...". Lead with the problem, not yourself
 - 2-3 short paragraphs maximum. Make every sentence earn its place.
 
 WHAT IT DOES SECTION:
@@ -310,19 +256,19 @@ WHAT IT DOES SECTION:
 
 HOW WE BUILT IT SECTION:
 - Group technologies by category: Frontend, Backend, AI/ML, Infrastructure, APIs
-- Name EVERY API, framework, library, and service used — especially sponsor technologies
+- Name EVERY API, framework, library, and service used, especially sponsor technologies
 - Describe the architecture briefly (e.g., "User speaks → Twilio captures audio → GPT-4 processes → response streamed back")
 - If there's a system design or architecture image, reference it with ![Architecture](URL)
 - Mention any custom datasets, fine-tuned models, or novel technical approaches
 
 CHALLENGES WE RAN INTO SECTION:
-- List 3-5 real, specific challenges — NOT generic ones
+- List 3-5 real, specific challenges, NOT generic ones
 - Be honest. "Integrating multiple real-time APIs with different auth patterns" is good. "Time management" is lazy.
 - Briefly mention how you overcame each challenge or what you learned from it
 
 ACCOMPLISHMENTS THAT WE'RE PROUD OF SECTION:
 - Tie accomplishments back to the original problem statement
-- Include quantitative results where possible (e.g., "80% reduction in inference time", "supports 6 languages")
+- Include quantitative results only if I gave them to you (e.g., "80% reduction in inference time", "supports 6 languages")
 - Mention any technical firsts or novel approaches
 
 WHAT WE LEARNED SECTION:
@@ -340,6 +286,7 @@ GENERAL RULES:
 - Follow the inverted pyramid: most important information first in every section
 - Apply Orwell's rule: if a word can be cut without losing meaning, cut it
 - Write in first person plural ("we") with energy and confidence
+- Never invent statistics, metrics, awards, or quotes. Every number must come from my project information below.
 - Total length: 800-1500 words. Comprehensive but not bloated.
 
 ---
@@ -351,17 +298,17 @@ Hackathon: [HACKATHON NAME]
 Problem/Inspiration: [Describe the problem you're solving and why it matters]
 What it does: [Describe what your project does from the user's perspective]
 Tech stack: [List all technologies, APIs, frameworks, and services used]
-Sponsor technologies: [List any sponsor APIs or tools you used — these are critical]
+Sponsor technologies: [List any sponsor APIs or tools you used; these are critical]
 Challenges: [List the main challenges you faced]
 Accomplishments: [What went well? Any metrics or quantitative results?]
-What you learned: [Genuine learnings — technical and personal]
+What you learned: [Genuine learnings, technical and personal]
 What's next: [Future plans for the project]
-Additional context: [Any other details — team background, special features, design process, etc.]
+Additional context: [Any other details: team background, special features, design process, etc.]
 ```
 
 #### GitHub README Generator
 
-Generates a polished GitHub README with badges, architecture placeholders, and install instructions. Paste into any AI tool with your project details.
+Writes a GitHub README with badges, architecture placeholders, and install instructions.
 
 What to Paste Along With the Prompt
 
@@ -461,17 +408,15 @@ License: [MIT / Apache 2.0 / etc.]
 Additional Context: [Architecture details, special setup, hardware requirements, etc.]
 ```
 
-Pro tip: These prompts work best with raw, detailed input, even messy bullets. The AI structures it. Then proofread with Orwell's rule: cut every word that doesn't earn its place.
-
 ## Generate It With a Skill
 
-Prefer an agent that reads your repo and does the work? Install these two skills to draft your GitHub README and Devpost writeup. They are part of the Ship-It Toolkit.
+If you'd rather have an agent read your repo and draft both, install these two skills from the Ship-It Toolkit.
 
-TL;DR Install the readme-writer and devpost-writer skills to draft both submission deliverables straight from your repo.
+TL;DR Install the readme-writer and devpost-writer skills to draft the GitHub README and the Devpost from your repo.
 
 #### 1\. Write Your GitHub README
 
-Writes a README with a centered hero, badges, a clickable demo video, an architecture diagram, and team cards, then sets the repo's About description, website, and topics to match. Reads your repo first, asks for facts it can't find, and never invents awards or stats.
+Reads your repo, asks for what it can't find, and writes the README (hero, badges, demo video, architecture diagram, team cards) plus the repo's About section. It won't invent awards or stats.
 
 ```
 Install the GitHub Writer skill from https://github.com/IdkwhatImD0ing/hackathonstarterkit by running this in your terminal:
@@ -485,7 +430,7 @@ Then use the readme-writer skill to write a winner-grade README for this hackath
 
 #### 2\. Write Your Devpost
 
-Writes the Devpost story section by section (inspiration, what it does, how you built it, challenges, what's next), plus the Built With tags and Try it out links. Reads your repo first and keeps every section honest.
+Reads your repo and writes the Devpost section by section, plus the Built With tags and Try it out links. It won't invent awards, stats, or challenges.
 
 ```
 Install the Devpost Writer skill and run it:

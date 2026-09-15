@@ -20,7 +20,7 @@ export function NewsletterSignup({
   className,
   eyebrow = "Stay up to date",
   title = "Get new hackathon guides in your inbox",
-  description = "Short, specific strategies from 36+ wins. No fluff, just the ideas that help you build sharper and pitch better.",
+  description = "Short, specific strategies on building and pitching, from 36+ hackathon wins.",
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");

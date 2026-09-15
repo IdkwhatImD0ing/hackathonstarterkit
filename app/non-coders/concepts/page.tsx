@@ -41,81 +41,17 @@ const CONCEPTS = [
   {
     term: "GitHub / Repository",
     icon: FolderGit2,
-    oneLiner: "A shared folder for your project that remembers every change.",
+    oneLiner: "Your project's folder, plus a saved snapshot of every version. Each snapshot is called a commit.",
     analogy:
-      "Think of it like a Google Drive folder, but with a built-in time machine. Every time you save (\"commit\"), it takes a snapshot. You can go back to any snapshot if something breaks. Your AI assistant uses this to keep your work safe.",
+      "If something breaks, your AI can take the project back to any earlier commit. That history only lives on your computer until it's pushed (uploaded) to GitHub, the website that keeps a copy online.",
     accent: "volt" as const,
   },
   {
     term: "Git Commit",
     icon: Save,
-    oneLiner: "Pressing \"Save\" with a note about what you changed.",
+    oneLiner: "A checkpoint of your whole project, with a note about what changed.",
     analogy:
-      "When you edit a Word document, you might save versions like \"draft_v2_final_FINAL.docx\". A commit is the same idea, but organized. Each save has a short description like \"added login page\" so you can find it later. Tell your AI: \"commit this with a descriptive message.\"",
-    accent: "spark" as const,
-  },
-  {
-    term: "API",
-    icon: UtensilsCrossed,
-    oneLiner: "A menu that lets your app order services from other companies.",
-    analogy:
-      "Imagine a restaurant. You (your app) look at the menu (the API documentation), place an order (send a request), and the kitchen (the server) prepares your food (the response). You never go into the kitchen yourself. APIs let your app use services like sending texts (Twilio), generating speech (ElevenLabs), or storing data (Supabase) without building those things from scratch.",
-    accent: "primary" as const,
-  },
-  {
-    term: "API Key",
-    icon: KeyRound,
-    oneLiner: "Your membership card that proves you're allowed to use a service.",
-    analogy:
-      "When you sign up for a service like ElevenLabs, they give you a long string of letters and numbers. This is your API key. It's like a membership card: you show it every time your app talks to their service, and they know it's you. Never share it publicly (that's like leaving your credit card on a park bench).",
-    accent: "success" as const,
-  },
-  {
-    term: "Deploy",
-    icon: Globe,
-    oneLiner: "Publishing your app so anyone with the link can use it.",
-    analogy:
-      "Right now your app only runs on your computer. Deploying is like publishing a Google Doc with \"anyone with the link can view.\" After deploying, your app gets a real URL (like myapp.vercel.app) that anyone in the world can visit. Tell your AI: \"deploy this to Vercel.\"",
-    accent: "volt" as const,
-  },
-  {
-    term: "Vercel",
-    icon: Server,
-    oneLiner: "The service that hosts your app on the internet.",
-    analogy:
-      "If your app is a document, Vercel is the printer and distributor. It takes your project, puts it on a fast server, and gives it a public URL. It's free for small projects. Think of it like Squarespace, but for apps instead of websites. You connect it to your GitHub, and it automatically publishes every time you save.",
-    accent: "spark" as const,
-  },
-  {
-    term: "Terminal / Command Line",
-    icon: TerminalSquare,
-    oneLiner: "A text-based way to give instructions to your computer.",
-    analogy:
-      "Instead of clicking buttons, you type commands. It looks intimidating (a black screen with blinking text), but here's the good news: your AI assistant types the commands for you. When it says \"run this in the terminal,\" just let it do its thing. You rarely need to type terminal commands yourself.",
-    accent: "primary" as const,
-  },
-  {
-    term: "localhost:3000",
-    icon: Monitor,
-    oneLiner: "Your app running on your own computer, visible only to you.",
-    analogy:
-      "When you're building, your app runs locally (on your machine) at an address like localhost:3000. Open your browser and go to that address to see it. Nobody else can see it yet. It's your private preview. Once you deploy, it gets a real public URL.",
-    accent: "success" as const,
-  },
-  {
-    term: "Environment Variable",
-    icon: Lock,
-    oneLiner: "A secret value stored safely outside your code.",
-    analogy:
-      "Your API keys need to be kept secret. An environment variable is like a locked drawer in your desk: the key is inside, your app knows where to find it, but nobody looking at your code can see it. Your AI will create a file called .env.local to store these. Never share this file.",
-    accent: "volt" as const,
-  },
-  {
-    term: "npm / pnpm",
-    icon: Package,
-    oneLiner: "An app store for code libraries.",
-    analogy:
-      "When your app needs a feature (like a date picker or a chart), instead of building it from scratch, you install a pre-made library. npm and pnpm are the stores where these libraries live. Your AI runs commands like \"npm install\" to add them. You don't need to browse the store yourself.",
+      "It's the tidy version of naming files draft_v2_final_FINAL.docx. Saving a file doesn't make a commit, though. Once a feature works, tell your AI \"commit this with a descriptive message.\" The note it writes, like \"added login page,\" is how you find that version later.",
     accent: "spark" as const,
   },
   {
@@ -123,15 +59,80 @@ const CONCEPTS = [
     icon: GitBranch,
     oneLiner: "A separate copy of your project where you can experiment safely.",
     analogy:
-      "Imagine you're writing a report and want to try a completely different introduction without losing the original. A branch is a parallel copy. You make changes on the branch, and if you like them, you merge them back. If not, you delete the branch and the original is untouched.",
+      "Say you want to try a new home page design without losing the one that works. Your AI makes the changes on a branch. If you like them, it merges them back into the main version. If not, it deletes the branch and the original is untouched.",
+    accent: "primary" as const,
+  },
+  {
+    term: "API",
+    icon: UtensilsCrossed,
+    oneLiner: "A menu that lets your app order services from other companies.",
+    analogy:
+      "Your app sends a request, like \"read this sentence out loud,\" and the other company's server sends back a response, like an audio file. The API's documentation lists the requests you can make. That's how your app can send texts (Twilio), generate speech (ElevenLabs), or store data (Supabase) without you building any of it.",
+    accent: "success" as const,
+  },
+  {
+    term: "API Key",
+    icon: KeyRound,
+    oneLiner: "A code that proves your app is allowed to use a service.",
+    analogy:
+      "Services like ElevenLabs give you one when you sign up: a long string of letters and numbers. Your app sends it with every request so the service knows it's you. Anyone who has your key can use the service as you, so keep it private unless the service says it's meant to be public.",
+    accent: "volt" as const,
+  },
+  {
+    term: "Environment Variable",
+    icon: Lock,
+    oneLiner: "A setting, like an API key, that's kept outside your code.",
+    // [NEEDS SPECIFIC: have you seen a team leak a key, or had one break a demo, at a hackathon? One line would ground this card.]
+    analogy:
+      "Your AI puts these settings in a file called .env.local so keys stay out of your code files. Never commit that file. The file keeps a key out of your code, but your app can still send that key to visitors' browsers. So tell your AI to use secret keys (like an ElevenLabs key) only in server code, the part of your app that runs on a server instead of in the visitor's browser. Supabase's anon key is an exception: it's meant to be public, but only once Row Level Security is turned on for your tables. The Supabase prompt on the APIs page turns it on.",
+    accent: "spark" as const,
+  },
+  {
+    term: "localhost:3000",
+    icon: Monitor,
+    oneLiner: "Your app running on your own computer, visible only to you.",
+    analogy:
+      "Type it into your browser while your AI has the app running. It's where you test each feature before you commit it.",
+    accent: "primary" as const,
+  },
+  {
+    term: "Deploy",
+    icon: Globe,
+    oneLiner: "Publishing your app so anyone with the link can use it.",
+    analogy:
+      "Deploying puts your app on the internet at a real URL, like myapp.vercel.app. At a hackathon, do it in the first hour so you can always demo from a live URL instead of localhost. Tell your AI: \"deploy this to Vercel.\"",
+    accent: "success" as const,
+  },
+  {
+    term: "Vercel",
+    icon: Server,
+    oneLiner: "The service that hosts your app on the internet.",
+    analogy:
+      "It puts your project on a server and gives it a public URL, free for small projects. Connect it to your GitHub repository once, and it publishes a new version every time new commits are pushed there.",
+    accent: "volt" as const,
+  },
+  {
+    term: "Terminal / Command Line",
+    icon: TerminalSquare,
+    oneLiner: "A text-based way to give instructions to your computer.",
+    analogy:
+      "It's the black window with blinking text. Your AI types and runs most commands in it for you. If you've added this guide's system prompt, it asks before anything hard to undo, like deleting files or deploying.",
+    accent: "spark" as const,
+  },
+  {
+    term: "npm / pnpm",
+    icon: Package,
+    oneLiner: "An app store for code libraries.",
+    analogy:
+      "When your app needs something common, like a date picker or a chart, your AI installs a library someone else already built. That's what the \"npm install\" lines in the terminal are doing. npm and pnpm are two tools for the same job.",
     accent: "primary" as const,
   },
   {
     term: "TypeScript / JavaScript",
     icon: FileCode,
-    oneLiner: "The programming language your app is written in.",
+    oneLiner: "The programming language your app's pages are written in.",
     analogy:
-      "TypeScript is the language the AI writes your app in. You don't need to learn it. Think of it like the language a contractor uses to write building plans: you describe what you want the house to look like, and they translate it into technical blueprints. The AI is your contractor.",
+      "TypeScript is JavaScript with extra checks for mistakes. This guide's skills write your app's pages in TypeScript and any backend (the part users don't see) in Python. You don't need to learn either one.",
     accent: "success" as const,
   },
 ];
@@ -160,11 +161,10 @@ export default function ConceptsPage() {
           <span className="text-primary">In Plain English</span>
         </h1>
         <p className="max-w-2xl font-body text-lg text-muted-foreground">
-          Every technical term you&apos;ll encounter while building with AI,
-          explained using analogies from everyday life. No code. No jargon in
-          the explanations.
+          The words you&apos;ll run into while building with AI, explained
+          without code.
         </p>
-        <LastUpdated date="2026-04-06" />
+        <LastUpdated date="2026-09-14" />
       </header>
 
       <Separator className="bg-primary/20" />
@@ -202,15 +202,15 @@ export default function ConceptsPage() {
         })}
       </div>
 
+      {/* [CONFIRM: /explain comes from .agents/commands/explain.md, not skills/. It's unverified that the skills install prompt installs it.] */}
       <div className="rounded-lg border border-border bg-surface p-4">
         <p className="font-body text-sm text-muted-foreground">
           <span className="font-display font-semibold text-foreground">
             Don&apos;t memorize these.
           </span>{" "}
-          Bookmark this page and come back when you hit a term you don&apos;t
-          recognize. The AI will also explain things if you ask it: just type{" "}
-          <code className="font-code text-xs text-volt">/explain</code>{" "}
-          followed by whatever confuses you.
+          Come back when you hit a word you don&apos;t recognize, or type{" "}
+          <code className="font-code text-xs text-volt">/explain</code> in your
+          AI chat followed by whatever confuses you.
         </p>
       </div>
     </div>

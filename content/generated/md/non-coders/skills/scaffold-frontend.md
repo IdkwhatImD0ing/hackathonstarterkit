@@ -1,16 +1,16 @@
 # Scaffold Frontend
 
-> PRD-driven Next.js scaffold into clients/. Reads AGENTS.md and PRD.md, generates pages, layout, types, and an API client. Refuses to run without both files.
+> Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/scaffold-frontend
 
 ---
 
-PRD-driven Next.js scaffold into clients/. Reads AGENTS.md and PRD.md, generates pages, layout, types, and an API client. Refuses to run without both files.
+Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.
 
 Category: Building
 
-Usage: `/scaffold-frontend` (Creates clients/ from PRD.md (requires domain-to-spec first))
+Usage: `/scaffold-frontend` (Builds your pages in client/)
 
 Create the frontend scaffold only after the repo has `AGENTS.md` and `PRD.md`. The PRD is the source of truth for pages, navigation, data types, and backend wiring.
 

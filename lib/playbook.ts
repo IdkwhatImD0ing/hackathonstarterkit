@@ -1,59 +1,59 @@
 export const PLAYBOOK_SECTIONS = [
   {
     step: 1,
-    updated: "2026-06-24",
+    updated: "2026-09-14",
     slug: "team-formation",
     title: "Team Formation",
     subtitle:
-      "Find the right people, define roles, and create a winning team dynamic.",
+      "Pick teammates who cover four roles, and build a steady squad if you want to keep winning.",
   },
   {
     step: 2,
-    updated: "2026-06-24",
+    updated: "2026-09-14",
     slug: "ideation",
     title: "Ideation",
     subtitle:
-      "Brainstorm, evaluate, and select ideas that judges love and you can actually build.",
+      "Combine tools and problems you already know into an idea you can build in time.",
   },
   {
     step: 3,
-    updated: "2026-06-24",
+    updated: "2026-09-14",
     slug: "validation",
     title: "Validation",
     subtitle:
-      "Validate your idea quickly against real constraints and judging criteria.",
+      "Test the riskiest part of your idea early, and prep your stack if you're competing to win.",
   },
   {
     step: 4,
-    updated: "2026-06-24",
+    updated: "2026-09-14",
     slug: "execution",
     title: "Execution",
     subtitle:
-      "Time management, tech stack selection, MVP strategy, and team coordination.",
+      "How to spend your hours so you finish with a working demo.",
   },
   {
     step: 5,
-    updated: "2026-06-24",
+    updated: "2026-09-14",
     slug: "pitching",
     title: "Pitching",
     subtitle:
-      "Craft a pitch that wins judges over in the first 30 seconds.",
+      "Build your pitch around the demo, and get ready for judge questions.",
   },
   {
     step: 6,
-    updated: "2026-06-24",
+    updated: "2026-09-14",
     slug: "submission",
     title: "Submission",
     subtitle:
-      "Write READMEs, record demos, and submit deliverables that make judges remember you.",
+      "What to put in your Devpost, README, and demo video, and when to submit.",
   },
   {
     step: 7,
-    updated: "2026-06-24",
+    updated: "2026-09-14",
     slug: "post-hackathon",
     title: "Post-Hackathon",
     subtitle:
-      "Share your work, follow up with contacts, and turn weekend projects into career-changing portfolio pieces.",
+      "Post your project and follow up with people you met, so it keeps helping you after judging.",
   },
 ] as const;
 

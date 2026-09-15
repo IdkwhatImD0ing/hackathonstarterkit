@@ -1,16 +1,16 @@
 # Non-Coder Mode
 
-> Core guardrails for non-coders. Tells the AI to explain everything in plain English, break tasks into small steps, and never assume coding knowledge.
+> The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/non-coder-mode
 
 ---
 
-Core guardrails for non-coders. Tells the AI to explain everything in plain English, break tasks into small steps, and never assume coding knowledge.
+The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
 
 Category: Foundation
 
-Usage: `/non-coder-mode` (Activates non-coder guardrails for the session)
+Usage: `/non-coder-mode` (Plain-English mode for the session)
 
 Treat the user as a domain expert who may be new to programming. The goal is not to oversimplify the work; it is to make the work legible and safe.
 
