@@ -23,7 +23,7 @@ curl -sIL --max-redirs 3 https://www.thehackathonplaybook.dev/ | grep -iE "^(HTT
    - Section 3: the zone is opted out of the September 15 default blocking (`ai_bots_migration_opt_out: true`), AI Labyrinth (`crawler_protection`) is disabled, Bot Fight Mode is off, and `ai_bots_protection`, `content_bots_protection`, and the Search/Agent/Training category policies are all non-blocking.
    - Section 4: managed robots.txt confirmed off (`is_robots_txt_managed: false`).
    - Section 6 (origin lock): deliberately skipped while grey-cloud.
-   - `docs/dns-aid-setup.md`: both `_agents` HTTPS records are live (verified against 1.1.1.1), and DNSSEC is enabled and pending registry propagation (the domain is on Cloudflare Registrar, so the DS record is submitted automatically).
+   - `docs/dns-aid-setup.md`: both `_agents` HTTPS records are live (verified against 1.1.1.1). DNSSEC was assumed to complete on its own because the domain is on Cloudflare Registrar; it did not. **Corrected 2026-08-16: the zone is signed but the delegation is not** (`.dev` RDAP reports `delegationSigned: false`, and both public resolvers return `AD: false`), so no validating resolver can authenticate these records. The DS record still has to reach the registry; steps and verification are in `docs/dns-aid-setup.md`.
 
 ## 1. Canonical host redirect (Phase 1)
 
@@ -188,4 +188,4 @@ This can be wired as a Vercel deploy hook later; with one-hour edge TTLs it is a
 
 ## 9. DNS records for agent discovery
 
-See `docs/dns-aid-setup.md` for the `_agents` SVCB records and the DNSSEC toggle. They are listed separately because they are copy-paste DNS records rather than settings to audit.
+See `docs/dns-aid-setup.md` for the `_agents` discovery records and DNSSEC. They are listed separately because they are copy-paste DNS records rather than settings to audit. The records are live; the DS record reaching the `.dev` registry is the one outstanding item, and it is a registrar action rather than a zone setting.

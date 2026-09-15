@@ -22,7 +22,7 @@ Every content page has a canonical Markdown representation, generated at build t
 | WebMCP | `components/web-mcp.tsx` | Feature-detected, both draft shapes, no-op elsewhere |
 | Chatbot | `scripts/build-index.mts`, `app/api/chat`, `components/chat/` | Incremental index, grounded answers, citations, hard cost rails |
 | Copy for AI | `components/copy-for-ai.tsx` | On every content page next to the title |
-| DNS discovery | `docs/dns-aid-setup.md` | Manual records for `_index._agents` and `_mcp._agents` |
+| DNS discovery | `docs/dns-aid-setup.md` | Manual records for `_index._agents` and `_mcp._agents`; both live, DNSSEC delegation still unsigned |
 
 ## Design decisions worth remembering
 
@@ -50,7 +50,7 @@ These could not be verified from the authoring environment (network egress was r
 
 1. **MCP server card schema** (SEP-1649 / modelcontextprotocol PR #2127): the card uses the fields the SEP is known to define (serverInfo, transport, capabilities) but the canonical schema was unreachable. Compare `app/.well-known/mcp/server-card.json/route.ts` against the merged SEP.
 2. **RFC 9727 api-catalog**: the linkset structure follows RFC 9264; verify field naming against RFC 9727 itself.
-3. **DNS-AID draft parameters**: record names follow what the scanner probes; check the current draft before applying `docs/dns-aid-setup.md`.
+3. ~~**DNS-AID draft parameters**~~ **Resolved 2026-08-16.** Checked against `draft-mozleywilliams-dnsop-dnsaid-02`: the `_index._agents` naming is correct, HTTPS records are accepted in place of the draft's SVCB, and the draft's richer parameters (`cap`, `well-known`, …) are unregistered and cannot be published interoperably yet. The records are live; DNSSEC validation is the open half, and it is a registrar action. See `docs/dns-aid-setup.md`.
 4. **Model pricing**: `lib/chat/config.ts` and `scripts/build-index.mts` embed last-known prices with "unverified" comments; check https://platform.openai.com/docs/pricing.
 5. **Production headers**: run `pnpm smoke` against the production domain after deploy; some behaviors (Link header survival, negotiation at the edge, HEAD requests through the full stack) can only be proven there.
 
