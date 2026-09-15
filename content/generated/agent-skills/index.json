@@ -4,7 +4,7 @@
     {
       "name": "non-coder-mode",
       "type": "skill-md",
-      "description": "The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.",
+      "description": "The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.",
       "url": "/.well-known/agent-skills/non-coder-mode/SKILL.md",
       "digest": "sha256:eae5a7f4fd3993cf3b2e15ca04177324a1359de7931c8450628c142513558666"
     },
@@ -25,21 +25,21 @@
     {
       "name": "scaffold-frontend",
       "type": "skill-md",
-      "description": "Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.",
+      "description": "Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.",
       "url": "/.well-known/agent-skills/scaffold-frontend/SKILL.md",
       "digest": "sha256:89180294e6478cf29e751ce2df554777fb3cf5932a353d99e3e9a4e11b7d20b7"
     },
     {
       "name": "scaffold-backend",
       "type": "skill-md",
-      "description": "Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.",
+      "description": "Builds a FastAPI backend in a server/ folder, with sample data for each route PRD.md lists and optional Supabase. Skips itself if PRD.md says no backend.",
       "url": "/.well-known/agent-skills/scaffold-backend/SKILL.md",
       "digest": "sha256:dc503e0fd95ce46ff8d64f89664464d4881459c580bd74cf95153b95b8b99cd7"
     },
     {
       "name": "v0-prompt-crafter",
       "type": "skill-md",
-      "description": "Use this instead of /scaffold-frontend if you want Vercel v0 to design your screens. It turns PRD.md or a one-line idea into a paste-ready v0 prompt, with a visual style researched for your industry and named UI libraries (shadcn, Aceternity, Magic UI, Motion).",
+      "description": "An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.",
       "url": "/.well-known/agent-skills/v0-prompt-crafter/SKILL.md",
       "digest": "sha256:45f6cf732ea61610964e118d80c758de6342ea8b94ec1cc6ea5b8f9ae47c6b9e"
     },

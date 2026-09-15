@@ -12,7 +12,6 @@ import {
   SHORTCUT_SKILLS,
   getSkillBySlug,
 } from "@/lib/non-coder-skills";
-import type { SkillCategory } from "@/lib/non-coder-skills";
 import { LastUpdated } from "@/components/last-updated";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { shareMetadata } from "@/lib/metadata";
@@ -44,16 +43,6 @@ const accentStyles = {
 
 // Shared with /cheat-sheet, so both offer the identical install prompt.
 const INSTALL_PROMPT = SKILLS_INSTALL_PROMPT;
-
-// When in a hackathon build each category runs. Shown above the first
-// run-order step of each category. Grounded in the pipeline order in
-// CLAUDE.md and each skill's own "use this when" description.
-const STAGE_WHEN: Record<SkillCategory, string> = {
-  foundation: "Before you write any code",
-  building: "While you build",
-  fixing: "When you hit an error",
-  shipping: "Before judging",
-};
 
 // Skills that stand in for run-order steps (quickstart, v0-prompt-crafter),
 // so every skill appears exactly once on the page.
@@ -183,7 +172,7 @@ export default function SkillsPage() {
                       {skill.categoryLabel.toUpperCase()}
                     </Badge>
                     <span className="font-display text-sm font-semibold">
-                      {STAGE_WHEN[skill.category]}
+                      {skill.categoryWhen}
                     </span>
                   </div>
                 )}

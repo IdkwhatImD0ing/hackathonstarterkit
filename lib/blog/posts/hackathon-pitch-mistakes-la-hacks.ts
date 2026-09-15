@@ -165,6 +165,7 @@ export const post: BlogPost = {
       heading: "A Checklist for Your Next Pitch",
       paragraphs: [],
       blocks: [
+        { type: "image", src: "/blog/la-hacks-pitch-flow.svg", alt: "A visual flow for a stronger LA Hacks pitch: read the judge, lead clearly, frame the problem, demo the main flow, and protect Q&A time.", caption: "A simple flow keeps the judge focused on the scoreable parts of your project.", credit: "Original illustration by The Hackathon Playbook." },
         { type: "checklist", title: "Before You Walk Up to the Judge", items: [
           "Know the judge's role, or ask for their background",
           "Pick one lead speaker",

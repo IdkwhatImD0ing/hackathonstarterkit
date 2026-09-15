@@ -1,12 +1,12 @@
 # Non-Coder Mode
 
-> The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
+> The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/non-coder-mode
 
 ---
 
-The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
+The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
 
 Category: Foundation
 

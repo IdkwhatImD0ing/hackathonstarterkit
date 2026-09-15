@@ -29,6 +29,8 @@ export interface NonCoderSkill {
   description: string;
   category: SkillCategory;
   categoryLabel: string;
+  /** When in a hackathon build this category's skills run. */
+  categoryWhen: string;
   icon: LucideIcon;
   accent: "volt" | "spark" | "primary" | "success";
   command: SkillCommand;
@@ -37,12 +39,12 @@ export interface NonCoderSkill {
 
 const CATEGORY_META: Record<
   SkillCategory,
-  { label: string; accent: "volt" | "spark" | "primary" | "success" }
+  { label: string; when: string; accent: "volt" | "spark" | "primary" | "success" }
 > = {
-  foundation: { label: "Foundation", accent: "volt" },
-  building: { label: "Building", accent: "spark" },
-  fixing: { label: "Fixing", accent: "primary" },
-  shipping: { label: "Shipping", accent: "success" },
+  foundation: { label: "Foundation", when: "Before you write any code", accent: "volt" },
+  building: { label: "Building", when: "While you build", accent: "spark" },
+  fixing: { label: "Fixing", when: "When you hit an error", accent: "primary" },
+  shipping: { label: "Shipping", when: "Before judging", accent: "success" },
 };
 
 const SKILLS_DIR = join(process.cwd(), "skills");
@@ -65,7 +67,7 @@ const SKILL_META: SkillMeta[] = [
     slug: "non-coder-mode",
     title: "Non-Coder Mode",
     description:
-      "The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.",
+      "The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.",
     category: "foundation",
     icon: Shield,
     command: {
@@ -104,7 +106,7 @@ const SKILL_META: SkillMeta[] = [
     slug: "scaffold-frontend",
     title: "Scaffold Frontend",
     description:
-      "Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.",
+      "Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.",
     category: "building",
     icon: MonitorSmartphone,
     command: {
@@ -117,7 +119,7 @@ const SKILL_META: SkillMeta[] = [
     slug: "scaffold-backend",
     title: "Scaffold Backend",
     description:
-      "Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.",
+      "Builds a FastAPI backend in a server/ folder, with sample data for each route PRD.md lists and optional Supabase. Skips itself if PRD.md says no backend.",
     category: "building",
     icon: Server,
     command: {
@@ -130,7 +132,7 @@ const SKILL_META: SkillMeta[] = [
     slug: "v0-prompt-crafter",
     title: "v0 Prompt Crafter",
     description:
-      "Use this instead of /scaffold-frontend if you want Vercel v0 to design your screens. It turns PRD.md or a one-line idea into a paste-ready v0 prompt, with a visual style researched for your industry and named UI libraries (shadcn, Aceternity, Magic UI, Motion).",
+      "An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.",
     category: "building",
     icon: Sparkles,
     command: {
@@ -200,6 +202,7 @@ export const NON_CODER_SKILLS: NonCoderSkill[] = SKILL_META.map((meta) => ({
   description: meta.description,
   category: meta.category,
   categoryLabel: CATEGORY_META[meta.category].label,
+  categoryWhen: CATEGORY_META[meta.category].when,
   accent: CATEGORY_META[meta.category].accent,
   icon: meta.icon,
   command: meta.command,

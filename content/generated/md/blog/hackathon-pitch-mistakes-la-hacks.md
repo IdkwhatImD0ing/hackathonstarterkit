@@ -150,6 +150,10 @@ I had five minutes per team: about 1.5 minutes for pitch and demo, then 3.5 for 
 
 ## A Checklist for Your Next Pitch
 
+![A visual flow for a stronger LA Hacks pitch: read the judge, lead clearly, frame the problem, demo the main flow, and protect Q&A time.](https://thehackathonplaybook.dev/blog/la-hacks-pitch-flow.svg)
+
+*A simple flow keeps the judge focused on the scoreable parts of your project.*
+
 **Before You Walk Up to the Judge**
 
 - [ ] Know the judge's role, or ask for their background

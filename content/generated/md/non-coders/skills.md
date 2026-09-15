@@ -31,7 +31,7 @@ For a new project, run them in this order. /non-coder-mode goes first so the AI 
 
     [`/non-coder-mode`
 
-    The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
+    The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
 
     Open →](https://thehackathonplaybook.dev/non-coders/skills/non-coder-mode)
 2.  [`/domain-to-spec [your profession] [what you want to build]`
@@ -43,12 +43,12 @@ For a new project, run them in this order. /non-coder-mode goes first so the AI 
 
     [`/scaffold-frontend`
 
-    Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.
+    Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.
 
     Open →](https://thehackathonplaybook.dev/non-coders/skills/scaffold-frontend)
 4.  [`/scaffold-backend`
 
-    Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.
+    Builds a FastAPI backend in a server/ folder, with sample data for each route PRD.md lists and optional Supabase. Skips itself if PRD.md says no backend.
 
     Open →](https://thehackathonplaybook.dev/non-coders/skills/scaffold-backend)
 5.  [`/feature-builder [describe the feature you want]`
@@ -84,7 +84,7 @@ Runs /domain-to-spec, /scaffold-frontend, and /scaffold-backend (if needed) in o
 
 Open →](https://thehackathonplaybook.dev/non-coders/skills/quickstart)[`/v0-prompt-crafter [paste your PRD or one-line product description]`
 
-Use this instead of /scaffold-frontend if you want Vercel v0 to design your screens. It turns PRD.md or a one-line idea into a paste-ready v0 prompt, with a visual style researched for your industry and named UI libraries (shadcn, Aceternity, Magic UI, Motion).
+An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.
 
 Open →](https://thehackathonplaybook.dev/non-coders/skills/v0-prompt-crafter)
 

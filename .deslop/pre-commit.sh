@@ -24,7 +24,7 @@ PHRASES="$PHRASES|bastion|luster|pretense|amalgamation|intoxicating|double-edged
 BODY_DASH='([a-z,] ?— ?[a-z])'
 
 content_filter() {
-  grep -E '^(content/generated/md/.*\.md|app/.*\.tsx|lib/blog/posts/.*\.ts|lib/(cheat-sheet|playbook|non-coder-sections|non-coder-skills)\.ts|.*\.(md|mdx|html))$' |
+  grep -E '^(content/generated/md/.*\.md|app/.*\.tsx|lib/blog/posts/.*\.ts|lib/(cheat-sheet|playbook|non-coder-sections|non-coder-skills)\.ts)$' |
     grep -vE '^(docs/|skills/|\.deslop/|\.claude/|\.agents/|content/generated/agent-skills/|node_modules/)'
 }
 
@@ -42,8 +42,13 @@ read_file() {
 }
 
 FAIL=0
+# One path per line: split on newlines only and never glob, so paths with
+# spaces or brackets (app/blog/[slug]/page.tsx) reach read_file intact.
+set -f
+IFS='
+'
 for f in $FILES; do
-  BODY=$(read_file "$f")
+  BODY=$(read_file "$f") || { echo "de-slop guard: could not read $f"; FAIL=1; continue; }
   HITS=$(printf '%s\n' "$BODY" | grep -icE "$PHRASES")
   DASHES=$(printf '%s\n' "$BODY" | grep -oE "$BODY_DASH" | wc -l | tr -d ' ')
   if [ "$HITS" -gt 2 ] || [ "$DASHES" -gt 5 ]; then

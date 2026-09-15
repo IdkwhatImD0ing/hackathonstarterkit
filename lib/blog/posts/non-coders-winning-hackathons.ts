@@ -2,9 +2,8 @@ import type { BlogPost } from "../types";
 
 export const post: BlogPost = {
   slug: "non-coders-winning-hackathons",
-  // [CONFIRM: the title ("How Experts Beat Developers") now overclaims relative to the body, which says three winners don't show that non-coders usually beat developers. The description was rewritten to match the body; the title wasn't touched. Soften it?]
   title:
-    "Non-Coders Winning Hackathons: How Experts Beat Developers",
+    "Non-Coders Winning Hackathons: What Domain Experts Bring",
   description:
     "A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.",
   date: "2026-04-12",

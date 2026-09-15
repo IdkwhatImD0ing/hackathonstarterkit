@@ -11,7 +11,7 @@ Future runs of the skill should read `.deslop/voice-profile.md` first and audit 
 - **The other 15 are still under 45.** Reviewers in both rounds pointed to Authenticity and Specificity: those lessons have no hackathon story from you behind them. The rewrite didn't invent stories, so those pages are waiting on the 41 NEEDS SPECIFIC flags below.
 - **The pages are shorter.** Readers now see 19% fewer words: 34,007 before, 27,419 after, counted after merging main. The rewrite commit itself removed 2,235 source lines net, with 2,826 added and 5,061 removed across 34 files.
 - **Nothing is broken.** The build passes, and so do the unit tests, the markdown, llms.txt and skills freshness checks, JSON-LD validation, and the client bundle secret check. Lint warnings are unchanged at 15 before and 15 after. No flag text reaches any rendered page.
-- **One thing is left:** the search index. It's stale because the text changed, and rebuilding it needs your OpenAI key. Do it once, after you've answered the flags.
+- **The search index is rebuilt** for the current text, so CI passes. Answering the flags changes the text again, so rebuild it once more after that.
 
 ## How the scores were produced
 
@@ -31,7 +31,7 @@ Treat any single score as plus or minus 3. The same page drew scores up to 3 poi
    pnpm build && pnpm gen:md && pnpm gen:llms && pnpm gen:skills
    ```
 
-3. **Rebuild the search index.** This step needs `OPENAI_API_KEY`, and CI fails until it's done.
+3. **Rebuild the search index** after answering the flags. This step needs `OPENAI_API_KEY`, and CI fails while the index is stale.
 
    ```bash
    pnpm gen:index
@@ -143,7 +143,7 @@ These sources are gone from the pages, because each repeated a point another sou
 - **CLAUDE.md** puts the frontend in `clients/`, but the skills use `client/`. Main has since corrected its hackathon count to 50+.
 - **AGENTS.md:** the setup page gives a full AGENTS.md template, the system-prompt page makes AGENTS.md a one-line pointer to CLAUDE.md, and /domain-to-spec writes its own. Readers who follow all three end up with a mixed file. Your call on which is right.
 - **Metadata and JSON-LD** were off-limits in this pass. They still say "battle-tested", "ultimate playbook", "career-changing" and "hooks judges in 30 seconds". So does the HowTo description in `lib/structured-data.ts`.
-- **Blog titles** were off-limits too. "How Experts Beat Developers" now contradicts its own post.
+- **Blog titles** were off-limits too, except one: the non-coders post is now "What Domain Experts Bring", because "How Experts Beat Developers" contradicted its own body.
 - **The TalkTuahBank video** is embedded on four pages. CLAUDE.md says to embed media on one page and link to it from the others.
 - **`lib/persona-quiz-data.ts`** repeats unsourced lines that were cut from the team-formation page.
 - **`lib/prompts/readme-agent.ts`** still says "GitHub Writer", has an em dash, and has no rule against inventing stats.
@@ -169,14 +169,14 @@ It's installed at `.git/hooks/pre-commit`, which the main checkout and every wor
 
 ## Flag checklist
 
-Every flag is a code comment that doesn't render on the site. Merging main resolved two of the original 111: the execution timeline question and the proof page's metadata note.
+Every flag is a code comment that doesn't render on the site. Merging main resolved two of the original 111: the execution timeline question and the proof page's metadata note. Retitling the non-coders post resolved a third.
 - **CONFIRM:** a claim that needs your yes.
 - **NEEDS SPECIFIC:** a spot that needs a story or detail only you have.
 - **NEEDS SOURCE:** a quote or number that needs a citation.
 
 Line numbers are approximate. Search the file for the flag text.
 
-Total: 109 flags.
+Total: 108 flags.
 
 ### app/playbook/execution/page.tsx (5)
 
@@ -285,11 +285,10 @@ Total: 109 flags.
 - L36: [NEEDS SPECIFIC: how the TalkTuahBank or Dispatch AI team split the work. It would replace the cut claim about "the strongest teams at HackUTD, LA Hacks, and TreeHacks."]
 - L59: [NEEDS SPECIFIC: a hackathon where testing an API in the first hours saved you, or where skipping it cost you.]
 
-### lib/blog/posts/non-coders-winning-hackathons.ts (3)
+### lib/blog/posts/non-coders-winning-hackathons.ts (2)
 
-- L5: [CONFIRM: the title ("How Experts Beat Developers") now overclaims relative to the body, which says three winners don't show that non-coders usually beat developers. The description was rewritten to match the body; the title wasn't touched. Soften it?]
-- L36: [NEEDS SPECIFIC: have you seen a non-coder win, or judged one at LA Hacks 2026? One line from your own hackathons would ground this post.]
-- L45: [CONFIRM: this post used to present Nedoszytko as a non-coder. The "20 years building healthcare software" detail comes from app/non-coders/page.tsx, which credits Anthropic's winners write-up. Keep?]
+- L35: [NEEDS SPECIFIC: have you seen a non-coder win, or judged one at LA Hacks 2026? One line from your own hackathons would ground this post.]
+- L44: [CONFIRM: this post used to present Nedoszytko as a non-coder. The "20 years building healthcare software" detail comes from app/non-coders/page.tsx, which credits Anthropic's winners write-up. Keep?]
 
 ### lib/blog/posts/what-to-do-after-a-hackathon.ts (2)
 
@@ -333,8 +332,8 @@ Total: 109 flags.
 
 ### app/non-coders/skills/page.tsx (2)
 
-- L115: [CONFIRM: Ctrl+I / Cmd+I still opens Cursor's agent chat in the current Cursor version.]
-- L228: [CONFIRM: skills/ also has devpost-writer, portfolio-builder, ship-it, and youtube-writer, which the install prompt pulls in but this page doesn't list. List them here, or leave them off on purpose?]
+- L104: [CONFIRM: Ctrl+I / Cmd+I still opens Cursor's agent chat in the current Cursor version.]
+- L217: [CONFIRM: skills/ also has devpost-writer, portfolio-builder, ship-it, and youtube-writer, which the install prompt pulls in but this page doesn't list. List them here, or leave them off on purpose?]
 
 ### app/non-coders/system-prompt/page.tsx (2)
 
@@ -343,7 +342,7 @@ Total: 109 flags.
 
 ### lib/non-coder-skills.ts (1)
 
-- L210: [CONFIRM: /explain lives in .agents/commands/explain.md, not skills/. Does the install prompt (npx skills add) actually install it? If not, readers who follow this page won't have it.]
+- L213: [CONFIRM: /explain lives in .agents/commands/explain.md, not skills/. Does the install prompt (npx skills add) actually install it? If not, readers who follow this page won't have it.]
 
 ### app/ai/page.tsx (1)
 

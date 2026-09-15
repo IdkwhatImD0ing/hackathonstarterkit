@@ -40,7 +40,7 @@ Services like ElevenLabs give you one when you sign up: a long string of letters
 
 A setting, like an API key, that's kept outside your code.
 
-Your AI puts these settings in a file called .env.local so keys stay out of your code files. Never commit that file. The file keeps a key out of your code, but your app can still send that key to visitors' browsers. So tell your AI to use secret keys (like an ElevenLabs key) only in server code, the part of your app that runs on a server instead of in the visitor's browser. Supabase's anon key is an exception. It's meant to be public.
+Your AI puts these settings in a file called .env.local so keys stay out of your code files. Never commit that file. The file keeps a key out of your code, but your app can still send that key to visitors' browsers. So tell your AI to use secret keys (like an ElevenLabs key) only in server code, the part of your app that runs on a server instead of in the visitor's browser. Supabase's anon key is an exception: it's meant to be public, but only once Row Level Security is turned on for your tables. The Supabase prompt on the APIs page turns it on.
 
 ### localhost:3000
 

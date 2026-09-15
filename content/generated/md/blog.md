@@ -32,7 +32,7 @@ My loop for a voice AI hackathon project: write the PRD first, connect ElevenLab
 
 Read article](https://thehackathonplaybook.dev/blog/build-with-elevenlabs-and-cursor)[3 min readUpdated Sep 14, 2026
 
-#### Non-Coders Winning Hackathons: How Experts Beat Developers
+#### Non-Coders Winning Hackathons: What Domain Experts Bring
 
 A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.
 

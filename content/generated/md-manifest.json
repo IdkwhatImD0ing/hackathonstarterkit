@@ -92,7 +92,7 @@
   },
   "/non-coders/concepts": {
     "file": "md/non-coders/concepts.md",
-    "tokens": 928,
+    "tokens": 953,
     "title": "Concepts Explained",
     "description": "GitHub, APIs, deploying, and other jargon explained in plain English.",
     "track": "non-coders"
@@ -113,16 +113,16 @@
   },
   "/non-coders/skills": {
     "file": "md/non-coders/skills.md",
-    "tokens": 1070,
+    "tokens": 1038,
     "title": "Skills & Commands",
     "description": "Slash commands for each stage of a hackathon build, from planning your app to writing its README.",
     "track": "non-coders"
   },
   "/non-coders/skills/non-coder-mode": {
     "file": "md/non-coders/skills/non-coder-mode.md",
-    "tokens": 531,
+    "tokens": 529,
     "title": "Non-Coder Mode",
-    "description": "The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.",
+    "description": "The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.",
     "track": "skills"
   },
   "/non-coders/skills/domain-to-spec": {
@@ -141,23 +141,23 @@
   },
   "/non-coders/skills/scaffold-frontend": {
     "file": "md/non-coders/skills/scaffold-frontend.md",
-    "tokens": 910,
+    "tokens": 932,
     "title": "Scaffold Frontend",
-    "description": "Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.",
+    "description": "Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.",
     "track": "skills"
   },
   "/non-coders/skills/scaffold-backend": {
     "file": "md/non-coders/skills/scaffold-backend.md",
-    "tokens": 1120,
+    "tokens": 1093,
     "title": "Scaffold Backend",
-    "description": "Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.",
+    "description": "Builds a FastAPI backend in a server/ folder, with sample data for each route PRD.md lists and optional Supabase. Skips itself if PRD.md says no backend.",
     "track": "skills"
   },
   "/non-coders/skills/v0-prompt-crafter": {
     "file": "md/non-coders/skills/v0-prompt-crafter.md",
-    "tokens": 1248,
+    "tokens": 1192,
     "title": "v0 Prompt Crafter",
-    "description": "Use this instead of /scaffold-frontend if you want Vercel v0 to design your screens. It turns PRD.md or a one-line idea into a paste-ready v0 prompt, with a visual style researched for your industry and named UI libraries (shadcn, Aceternity, Magic UI, Motion).",
+    "description": "An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.",
     "track": "skills"
   },
   "/non-coders/skills/feature-builder": {
@@ -205,7 +205,7 @@
   },
   "/blog/hackathon-pitch-mistakes-la-hacks": {
     "file": "md/blog/hackathon-pitch-mistakes-la-hacks.md",
-    "tokens": 2024,
+    "tokens": 2091,
     "title": "9 Hackathon Pitch Mistakes I Saw at LA Hacks",
     "description": "Judging LA Hacks, I watched good projects lose points to hackathon pitch mistakes. The one almost every team made was leaving the judges no time for Q&A.",
     "track": "blog",
@@ -246,7 +246,7 @@
   "/blog/non-coders-winning-hackathons": {
     "file": "md/blog/non-coders-winning-hackathons.md",
     "tokens": 1077,
-    "title": "Non-Coders Winning Hackathons: How Experts Beat Developers",
+    "title": "Non-Coders Winning Hackathons: What Domain Experts Bring",
     "description": "A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.",
     "track": "blog",
     "updated": "2026-09-14"

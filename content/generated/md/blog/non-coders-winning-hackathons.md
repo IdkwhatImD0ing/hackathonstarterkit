@@ -1,4 +1,4 @@
-# Non-Coders Winning Hackathons: How Experts Beat Developers
+# Non-Coders Winning Hackathons: What Domain Experts Bring
 
 > A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.
 

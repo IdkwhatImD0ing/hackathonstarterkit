@@ -1,12 +1,12 @@
 # Scaffold Frontend
 
-> Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.
+> Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/scaffold-frontend
 
 ---
 
-Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.
+Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.
 
 Category: Building
 

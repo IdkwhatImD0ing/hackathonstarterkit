@@ -2844,7 +2844,7 @@ Services like ElevenLabs give you one when you sign up: a long string of letters
 
 A setting, like an API key, that's kept outside your code.
 
-Your AI puts these settings in a file called .env.local so keys stay out of your code files. Never commit that file. The file keeps a key out of your code, but your app can still send that key to visitors' browsers. So tell your AI to use secret keys (like an ElevenLabs key) only in server code, the part of your app that runs on a server instead of in the visitor's browser. Supabase's anon key is an exception. It's meant to be public.
+Your AI puts these settings in a file called .env.local so keys stay out of your code files. Never commit that file. The file keeps a key out of your code, but your app can still send that key to visitors' browsers. So tell your AI to use secret keys (like an ElevenLabs key) only in server code, the part of your app that runs on a server instead of in the visitor's browser. Supabase's anon key is an exception: it's meant to be public, but only once Row Level Security is turned on for your tables. The Supabase prompt on the APIs page turns it on.
 
 ### localhost:3000
 
@@ -3200,7 +3200,7 @@ For a new project, run them in this order. /non-coder-mode goes first so the AI 
 
     [`/non-coder-mode`
 
-    The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
+    The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
 
     Open →](https://thehackathonplaybook.dev/non-coders/skills/non-coder-mode)
 2.  [`/domain-to-spec [your profession] [what you want to build]`
@@ -3212,12 +3212,12 @@ For a new project, run them in this order. /non-coder-mode goes first so the AI 
 
     [`/scaffold-frontend`
 
-    Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.
+    Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.
 
     Open →](https://thehackathonplaybook.dev/non-coders/skills/scaffold-frontend)
 4.  [`/scaffold-backend`
 
-    Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.
+    Builds a FastAPI backend in a server/ folder, with sample data for each route PRD.md lists and optional Supabase. Skips itself if PRD.md says no backend.
 
     Open →](https://thehackathonplaybook.dev/non-coders/skills/scaffold-backend)
 5.  [`/feature-builder [describe the feature you want]`
@@ -3253,7 +3253,7 @@ Runs /domain-to-spec, /scaffold-frontend, and /scaffold-backend (if needed) in o
 
 Open →](https://thehackathonplaybook.dev/non-coders/skills/quickstart)[`/v0-prompt-crafter [paste your PRD or one-line product description]`
 
-Use this instead of /scaffold-frontend if you want Vercel v0 to design your screens. It turns PRD.md or a one-line idea into a paste-ready v0 prompt, with a visual style researched for your industry and named UI libraries (shadcn, Aceternity, Magic UI, Motion).
+An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.
 
 Open →](https://thehackathonplaybook.dev/non-coders/skills/v0-prompt-crafter)
 
@@ -3265,13 +3265,13 @@ Use it whenever something on screen doesn't make sense. The AI explains it in pl
 
 # Non-Coder Mode
 
-> The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
+> The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/non-coder-mode
 
 ---
 
-The AI works in small steps and explains each one in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
+The AI works in small steps and explains each in plain English. It asks before anything risky, like deleting files, and stays on for the rest of the session.
 
 Category: Foundation
 
@@ -3605,13 +3605,13 @@ Return:
 
 # Scaffold Frontend
 
-> Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.
+> Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/scaffold-frontend
 
 ---
 
-Turns PRD.md into the first version of your app's pages, built with Next.js in a client/ folder.
+Turns PRD.md into the first version of your app's frontend in a client/ folder: Next.js pages, navigation, types, and an optional client for your backend.
 
 Category: Building
 
@@ -3722,13 +3722,13 @@ Return:
 
 # Scaffold Backend
 
-> Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.
+> Builds a FastAPI backend in a server/ folder, with sample data for each route PRD.md lists and optional Supabase. Skips itself if PRD.md says no backend.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/scaffold-backend
 
 ---
 
-Skips itself if PRD.md says your app doesn't need a backend (the part users don't see). Otherwise it builds one with FastAPI in a server/ folder, with sample data for each route PRD.md lists and an optional Supabase database.
+Builds a FastAPI backend in a server/ folder, with sample data for each route PRD.md lists and optional Supabase. Skips itself if PRD.md says no backend.
 
 Category: Building
 
@@ -3879,13 +3879,13 @@ Return:
 
 # v0 Prompt Crafter
 
-> Use this instead of /scaffold-frontend if you want Vercel v0 to design your screens. It turns PRD.md or a one-line idea into a paste-ready v0 prompt, with a visual style researched for your industry and named UI libraries (shadcn, Aceternity, Magic UI, Motion).
+> An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.
 
 Canonical: https://thehackathonplaybook.dev/non-coders/skills/v0-prompt-crafter
 
 ---
 
-Use this instead of /scaffold-frontend if you want Vercel v0 to design your screens. It turns PRD.md or a one-line idea into a paste-ready v0 prompt, with a visual style researched for your industry and named UI libraries (shadcn, Aceternity, Magic UI, Motion).
+An alternative to /scaffold-frontend. It turns PRD.md or a one-line idea into a paste-ready Vercel v0 prompt, with a visual style researched for your industry.
 
 Category: Building
 
@@ -4547,7 +4547,7 @@ My loop for a voice AI hackathon project: write the PRD first, connect ElevenLab
 
 Read article](https://thehackathonplaybook.dev/blog/build-with-elevenlabs-and-cursor)[3 min readUpdated Sep 14, 2026
 
-#### Non-Coders Winning Hackathons: How Experts Beat Developers
+#### Non-Coders Winning Hackathons: What Domain Experts Bring
 
 A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.
 
@@ -4834,6 +4834,10 @@ I had five minutes per team: about 1.5 minutes for pitch and demo, then 3.5 for 
 **Q&A is where the judge fills in missing rubric information.** If a rubric category never gets answered, the judge may have to give it a low score, or a zero. Leave room for questions, even if it means cutting the demo short.
 
 ## A Checklist for Your Next Pitch
+
+![A visual flow for a stronger LA Hacks pitch: read the judge, lead clearly, frame the problem, demo the main flow, and protect Q&A time.](https://thehackathonplaybook.dev/blog/la-hacks-pitch-flow.svg)
+
+*A simple flow keeps the judge focused on the scoreable parts of your project.*
 
 **Before You Walk Up to the Judge**
 
@@ -5252,7 +5256,7 @@ Have one person talk while another drives the demo, and don't switch speakers mi
 
 ---
 
-# Non-Coders Winning Hackathons: How Experts Beat Developers
+# Non-Coders Winning Hackathons: What Domain Experts Bring
 
 > A personal injury lawyer took 1st at Anthropic's hackathon without writing code. What that says about non-coders winning hackathons, and where coding helps.
 
