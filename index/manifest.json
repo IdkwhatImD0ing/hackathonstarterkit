@@ -3,7 +3,7 @@
   "embeddingDims": 1536,
   "chunkerVersion": 2,
   "normalizerVersion": 1,
-  "generatedAt": "2026-09-15T07:02:48.004Z",
+  "generatedAt": "2026-10-02T10:41:32.102Z",
   "pages": {
     "/": {
       "sourceHash": "20b7c3f7fd65a4c3650a4b1cc368d016f7c470f99afd69f23ec906d1197357cf",
@@ -439,10 +439,11 @@
       ]
     },
     "/blog": {
-      "sourceHash": "37b98596512b3cef34abc313fdf0740742f0d4619746fd7b51480bd25b83f20f",
+      "sourceHash": "08fb851b70b6dd18cbc14477d418675204fc1c32fb06517e63d1eee288d371d1",
       "chunkIds": [
         "/blog#intro#0",
         "/blog#get-new-hackathon-guides-in-your-inbox#0",
+        "/blog#get-new-hackathon-guides-in-your-inbox/how-i-fine-tune-llms-at-hackathons-on-rented-cloud-gpus#0",
         "/blog#get-new-hackathon-guides-in-your-inbox/what-to-do-after-a-hackathon-ship-5-assets-that-get-you-hired#0",
         "/blog#get-new-hackathon-guides-in-your-inbox/9-hackathon-pitch-mistakes-i-saw-at-la-hacks#0",
         "/blog#get-new-hackathon-guides-in-your-inbox/how-to-build-with-elevenlabs-and-cursor-at-a-hackathon#0",
@@ -451,6 +452,17 @@
         "/blog#get-new-hackathon-guides-in-your-inbox/hackathon-tips-for-beginners-your-first-hackathon-survival-guide#0",
         "/blog#get-new-hackathon-guides-in-your-inbox/best-tech-stack-for-hackathons-in-2026-tools-that-win-prizes#0",
         "/blog#get-new-hackathon-guides-in-your-inbox/how-to-win-hackathons-a-complete-guide-from-36-victories#0"
+      ]
+    },
+    "/blog/fine-tune-llms-at-hackathons-cloud-gpu": {
+      "sourceHash": "f2cb63b47459badd79b499f2239d54a3a3c764b7609e38d6f12ad62d7eb4fb17",
+      "chunkIds": [
+        "/blog/fine-tune-llms-at-hackathons-cloud-gpu#my-laptop-doesnt-train-the-model-a-rented-h100-does#0",
+        "/blog/fine-tune-llms-at-hackathons-cloud-gpu#why-a-rented-gpu-beats-the-other-options#0",
+        "/blog/fine-tune-llms-at-hackathons-cloud-gpu#the-agent-does-the-babysitting-now#0",
+        "/blog/fine-tune-llms-at-hackathons-cloud-gpu#every-failure-was-a-number-that-stopped-moving#0",
+        "/blog/fine-tune-llms-at-hackathons-cloud-gpu#paste-this-prompt-into-your-agent#0",
+        "/blog/fine-tune-llms-at-hackathons-cloud-gpu#spend-the-saved-hours-on-the-demo#0"
       ]
     },
     "/blog/what-to-do-after-a-hackathon": {
@@ -3288,10 +3300,19 @@
       "track": "blog"
     },
     "/blog#get-new-hackathon-guides-in-your-inbox#0": {
-      "contentHash": "cec7268eaa7d81a9bfea8cafcdb97de7aac9b783f9c89727d51c32370ae9a38f",
+      "contentHash": "399a7ab4067b43bd902464478791fda65f1cc28d22849b4da497afd1564e0938",
       "tokens": 39,
       "pageTitle": "Blog",
       "sectionHeading": "Get new hackathon guides in your inbox",
+      "url": "/blog",
+      "mdUrl": "/blog.md",
+      "track": "blog"
+    },
+    "/blog#get-new-hackathon-guides-in-your-inbox/how-i-fine-tune-llms-at-hackathons-on-rented-cloud-gpus#0": {
+      "contentHash": "ed5029442987aaeaefe875a0c94c84728546fa61f014fefe31d1632e11991318",
+      "tokens": 100,
+      "pageTitle": "Blog",
+      "sectionHeading": "Get new hackathon guides in your inbox > How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs",
       "url": "/blog",
       "mdUrl": "/blog.md",
       "track": "blog"
@@ -3366,6 +3387,60 @@
       "sectionHeading": "Get new hackathon guides in your inbox > How to Win Hackathons: A Complete Guide from 36+ Victories",
       "url": "/blog",
       "mdUrl": "/blog.md",
+      "track": "blog"
+    },
+    "/blog/fine-tune-llms-at-hackathons-cloud-gpu#my-laptop-doesnt-train-the-model-a-rented-h100-does#0": {
+      "contentHash": "950e8ca3cc019b76e0bc3f843e11b474f3c9e0520f4cb8ba4e3de42518f4accc",
+      "tokens": 424,
+      "pageTitle": "How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs",
+      "sectionHeading": "My Laptop Doesn't Train the Model. A Rented H100 Does.",
+      "url": "/blog/fine-tune-llms-at-hackathons-cloud-gpu",
+      "mdUrl": "/blog/fine-tune-llms-at-hackathons-cloud-gpu.md",
+      "track": "blog"
+    },
+    "/blog/fine-tune-llms-at-hackathons-cloud-gpu#why-a-rented-gpu-beats-the-other-options#0": {
+      "contentHash": "7cbc4cb92f4318428b63449cbbd9e4860df0c39b18540ad6c0ebbc7224835032",
+      "tokens": 281,
+      "pageTitle": "How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs",
+      "sectionHeading": "Why a Rented GPU Beats the Other Options",
+      "url": "/blog/fine-tune-llms-at-hackathons-cloud-gpu",
+      "mdUrl": "/blog/fine-tune-llms-at-hackathons-cloud-gpu.md",
+      "track": "blog"
+    },
+    "/blog/fine-tune-llms-at-hackathons-cloud-gpu#the-agent-does-the-babysitting-now#0": {
+      "contentHash": "bc17974103ca59c3d1abf430ef7a61110d92f1c3ac4e499f684e32bc6f85f5dc",
+      "tokens": 397,
+      "pageTitle": "How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs",
+      "sectionHeading": "The Agent Does the Babysitting Now",
+      "url": "/blog/fine-tune-llms-at-hackathons-cloud-gpu",
+      "mdUrl": "/blog/fine-tune-llms-at-hackathons-cloud-gpu.md",
+      "track": "blog"
+    },
+    "/blog/fine-tune-llms-at-hackathons-cloud-gpu#every-failure-was-a-number-that-stopped-moving#0": {
+      "contentHash": "443d0274b3c17aec3eac8c62e29b48f732fa9bd6ca38aaa549ad75d9a0fe7972",
+      "tokens": 567,
+      "pageTitle": "How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs",
+      "sectionHeading": "Every Failure Was a Number That Stopped Moving",
+      "url": "/blog/fine-tune-llms-at-hackathons-cloud-gpu",
+      "mdUrl": "/blog/fine-tune-llms-at-hackathons-cloud-gpu.md",
+      "track": "blog"
+    },
+    "/blog/fine-tune-llms-at-hackathons-cloud-gpu#paste-this-prompt-into-your-agent#0": {
+      "contentHash": "4a835543fd4ed3b38f9f263dc497ca30851d995dc26893b5edaaf68fdd455b07",
+      "tokens": 420,
+      "pageTitle": "How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs",
+      "sectionHeading": "Paste This Prompt Into Your Agent",
+      "url": "/blog/fine-tune-llms-at-hackathons-cloud-gpu",
+      "mdUrl": "/blog/fine-tune-llms-at-hackathons-cloud-gpu.md",
+      "track": "blog"
+    },
+    "/blog/fine-tune-llms-at-hackathons-cloud-gpu#spend-the-saved-hours-on-the-demo#0": {
+      "contentHash": "83418c327d9938b4144a09893a55a056d34b5bc72610bf7b7f4ea1a85edadaf8",
+      "tokens": 172,
+      "pageTitle": "How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs",
+      "sectionHeading": "Spend the Saved Hours on the Demo",
+      "url": "/blog/fine-tune-llms-at-hackathons-cloud-gpu",
+      "mdUrl": "/blog/fine-tune-llms-at-hackathons-cloud-gpu.md",
       "track": "blog"
     },
     "/blog/what-to-do-after-a-hackathon#ship-five-linked-assets-win-or-lose#0": {
