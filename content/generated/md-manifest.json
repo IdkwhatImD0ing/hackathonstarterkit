@@ -190,10 +190,18 @@
   },
   "/blog": {
     "file": "md/blog.md",
-    "tokens": 786,
+    "tokens": 879,
     "title": "Blog",
     "description": "Hackathon strategy write-ups: how to win, pick a stack, pitch, and turn weekend projects into career wins.",
     "track": "blog"
+  },
+  "/blog/fine-tune-llms-at-hackathons-cloud-gpu": {
+    "file": "md/blog/fine-tune-llms-at-hackathons-cloud-gpu.md",
+    "tokens": 2236,
+    "title": "How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs",
+    "description": "How I fine-tune LLMs at hackathons: rent an A100 or H100 on Vast.ai by the hour, then let an AI agent set up, watch, and debug the machine while you build.",
+    "track": "blog",
+    "updated": "2026-10-02"
   },
   "/blog/what-to-do-after-a-hackathon": {
     "file": "md/blog/what-to-do-after-a-hackathon.md",
