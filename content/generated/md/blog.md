@@ -12,7 +12,7 @@ Stay up to date
 
 Short, specific strategies on building and pitching, from 36+ hackathon wins.
 
-[5 min read
+[5 min readUpdated Oct 2, 2026
 
 #### How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs
 

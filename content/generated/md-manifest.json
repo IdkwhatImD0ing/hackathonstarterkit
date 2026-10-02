@@ -190,7 +190,7 @@
   },
   "/blog": {
     "file": "md/blog.md",
-    "tokens": 879,
+    "tokens": 887,
     "title": "Blog",
     "description": "Hackathon strategy write-ups: how to win, pick a stack, pitch, and turn weekend projects into career wins.",
     "track": "blog"

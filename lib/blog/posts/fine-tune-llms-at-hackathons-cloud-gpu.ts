@@ -6,6 +6,7 @@ export const post: BlogPost = {
   description:
     "How I fine-tune LLMs at hackathons: rent an A100 or H100 on Vast.ai by the hour, then let an AI agent set up, watch, and debug the machine while you build.",
   date: "2026-10-02",
+  updatedDate: "2026-10-02",
   readingTime: "5 min read",
   keywords: [
     "fine-tune llm at a hackathon",
@@ -23,6 +24,7 @@ export const post: BlogPost = {
         // [NEEDS SPECIFIC: name a hackathon where you fine-tuned on a rented GPU, and what you trained. Dispatch AI's architecture slide shows a fine-tuned model; if that ran on Vast, say so here.]
         { type: "paragraph", text: "People ask me how I fine-tune LLMs and other big models during a hackathon when their own laptops take all weekend. I don't train on my laptop. I rent an **A100 or H100 by the hour** on Vast.ai, train there, copy the weights back, and shut the machine down." },
         { type: "paragraph", text: "That part isn't new. What changed is who runs the machine. These days an AI agent rents it, sets it up, watches it, and fixes it when it breaks. The best proof I have isn't even a training run. It's a 4K music video an agent rendered on 11 rented GPUs, driven from one terminal on the same PC I game on." },
+        { type: "video", src: "https://www.youtube.com/embed/Hu3Gupp-wKc", title: "P(doom) · Tabletop, a Blender music video rendered on rented Vast.ai GPUs", caption: "The finished video. Every scene is a Python script, rendered at 4K 60 fps on rented RTX 5090s. The song, \"I'm Upping My P(doom)\", isn't mine; full credits are in the repo linked below.", credit: "Video by Bill Zhang, built and rendered by Claude." },
         { type: "stat-row", stats: [
           { value: "11", label: "Rented RTX 5090s" },
           { value: "9,400", label: "4K Frames" },
@@ -76,6 +78,13 @@ export const post: BlogPost = {
         { type: "paragraph", text: "The rent call itself is short:" },
         { type: "code-snippet", language: "json", filename: "PUT /asks/<offer id>/", code: "{\"client_id\": \"me\", \"image\": \"vastai/base-image:@vastai-automatic-tag\", \"disk\": 80,\n \"runtype\": \"ssh_direct\", \"env\": \"-e NVIDIA_DRIVER_CAPABILITIES=all\"}" },
         { type: "callout", variant: "info", title: "Rendering needs one extra flag", text: "That **NVIDIA_DRIVER_CAPABILITIES=all** line matters for anything that uses graphics libraries, like Blender. Without it the container never got NVIDIA's EGL and Vulkan libraries, and Blender quietly rendered on the CPU, about 20 times slower." },
+        { type: "cta-button",
+          tag: "GitHub",
+          title: "The full pipeline is open source",
+          description: "Every scene script, the puppet rigs, and the tools/cloud scripts the agent used on Vast.ai (setup, parallel builds, collector, remote check renders) are in the repo.",
+          label: "See the code",
+          href: "https://github.com/IdkwhatImD0ing/pdoom-tabletop",
+        },
       ],
     },
     {
