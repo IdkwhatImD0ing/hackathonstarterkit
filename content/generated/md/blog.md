@@ -12,7 +12,13 @@ Stay up to date
 
 Short, specific strategies on building and pitching, from 36+ hackathon wins.
 
-[4 min readUpdated Sep 14, 2026
+[5 min read
+
+#### How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs
+
+How I fine-tune LLMs at hackathons: rent an A100 or H100 on Vast.ai by the hour, then let an AI agent set up, watch, and debug the machine while you build.
+
+Read article](https://thehackathonplaybook.dev/blog/fine-tune-llms-at-hackathons-cloud-gpu)[4 min readUpdated Sep 14, 2026
 
 #### What to Do After a Hackathon: Ship 5 Assets That Get You Hired
 

@@ -9,8 +9,10 @@ import { post as nonCodersWinningHackathons } from "./blog/posts/non-coders-winn
 import { post as buildWithElevenlabsAndCursor } from "./blog/posts/build-with-elevenlabs-and-cursor";
 import { post as hackathonPitchMistakesLaHacks } from "./blog/posts/hackathon-pitch-mistakes-la-hacks";
 import { post as whatToDoAfterAHackathon } from "./blog/posts/what-to-do-after-a-hackathon";
+import { post as fineTuneLlmsAtHackathonsCloudGpu } from "./blog/posts/fine-tune-llms-at-hackathons-cloud-gpu";
 
 export const BLOG_POSTS: BlogPost[] = [
+  fineTuneLlmsAtHackathonsCloudGpu,
   whatToDoAfterAHackathon,
   hackathonPitchMistakesLaHacks,
   howToWinHackathons,
