@@ -6,6 +6,7 @@ export const post: BlogPost = {
   description:
     "How I fine-tune LLMs at hackathons: rent an A100 or H100 on Vast.ai by the hour, then let an AI agent set up, watch, and debug the machine while you build.",
   date: "2026-10-02",
+  updatedDate: "2026-10-02",
   readingTime: "5 min read",
   keywords: [
     "fine-tune llm at a hackathon",
@@ -76,6 +77,13 @@ export const post: BlogPost = {
         { type: "paragraph", text: "The rent call itself is short:" },
         { type: "code-snippet", language: "json", filename: "PUT /asks/<offer id>/", code: "{\"client_id\": \"me\", \"image\": \"vastai/base-image:@vastai-automatic-tag\", \"disk\": 80,\n \"runtype\": \"ssh_direct\", \"env\": \"-e NVIDIA_DRIVER_CAPABILITIES=all\"}" },
         { type: "callout", variant: "info", title: "Rendering needs one extra flag", text: "That **NVIDIA_DRIVER_CAPABILITIES=all** line matters for anything that uses graphics libraries, like Blender. Without it the container never got NVIDIA's EGL and Vulkan libraries, and Blender quietly rendered on the CPU, about 20 times slower." },
+        { type: "cta-button",
+          tag: "GitHub",
+          title: "The full pipeline is open source",
+          description: "Every scene script, the puppet rigs, and the tools/cloud scripts the agent used on Vast.ai (setup, parallel builds, collector, remote check renders) are in the repo.",
+          label: "See the code",
+          href: "https://github.com/IdkwhatImD0ing/pdoom-tabletop",
+        },
       ],
     },
     {
