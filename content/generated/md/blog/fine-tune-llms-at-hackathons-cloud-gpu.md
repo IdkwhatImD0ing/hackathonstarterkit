@@ -15,6 +15,10 @@ People ask me how I fine-tune LLMs and other big models during a hackathon when 
 
 That part isn't new. What changed is who runs the machine. These days an AI agent rents it, sets it up, watches it, and fixes it when it breaks. The best proof I have isn't even a training run. It's a 4K music video an agent rendered on 11 rented GPUs, driven from one terminal on the same PC I game on.
 
+Video: [P(doom) · Tabletop, a Blender music video rendered on rented Vast.ai GPUs](https://www.youtube.com/embed/Hu3Gupp-wKc)
+
+*The finished video. Every scene is a Python script, rendered at 4K 60 fps on rented RTX 5090s. The song isn't mine: "I'm Upping My P(doom)" has lyrics by osmarks, built on an opening verse and chorus by MusicPerson, and this is the Suno "Claude-Pop" version posted by deckard (@slimer48484). Full credits are in the repo linked below.*
+
 | Rented RTX 5090s | 4K Frames | Three Render Runs | Remote Desktops Opened |
 | --- | --- | --- | --- |
 | 11 | 9,400 | ~$18 | 0 |
