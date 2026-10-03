@@ -197,7 +197,7 @@
   },
   "/blog/fine-tune-llms-at-hackathons-cloud-gpu": {
     "file": "md/blog/fine-tune-llms-at-hackathons-cloud-gpu.md",
-    "tokens": 2236,
+    "tokens": 2363,
     "title": "How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs",
     "description": "How I fine-tune LLMs at hackathons: rent an A100 or H100 on Vast.ai by the hour, then let an AI agent set up, watch, and debug the machine while you build.",
     "track": "blog",
