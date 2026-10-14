@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Trophy, ExternalLink, Github, Linkedin, Bot, Terminal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
+import { AddToAgent } from "@/components/add-to-agent";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { shareMetadata } from "@/lib/metadata";
 
@@ -26,6 +27,8 @@ export const metadata: Metadata = {
     },
   }),
 };
+
+const CURSOR_INSTALL_URL = `cursor://anysphere.cursor-deeplink/mcp/install?name=hackathon-playbook&config=${encodeURIComponent(Buffer.from(JSON.stringify({ url: `${SITE_URL}/api/mcp` })).toString("base64"))}`;
 
 const NOTABLE_WINS = [
   {
@@ -347,6 +350,12 @@ export default function Home() {
               <Terminal className="size-4" />
               Cheat Sheet: copy-paste prompts →
             </Link>
+          </div>
+          <div className="space-y-2 pt-2">
+            <p className="font-body text-sm text-muted-foreground">
+              Bring the Playbook into your AI agent via MCP.
+            </p>
+            <AddToAgent cursorInstallUrl={CURSOR_INSTALL_URL} />
           </div>
         </div>
       </section>

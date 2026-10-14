@@ -14,6 +14,8 @@ Guides and prompts from 50+ hackathons and 36+ wins.
 
 In a hackathon right now?[Cheat Sheet: copy-paste prompts →](https://thehackathonplaybook.dev/cheat-sheet)
 
+Bring the Playbook into your AI agent via MCP.
+
 bill@hackathons ~ % whoami
 
 ## Bill Zhang [@IdkwhatImD0ing](https://github.com/IdkwhatImD0ing)
