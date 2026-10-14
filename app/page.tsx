@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Trophy, ExternalLink, Github, Linkedin, Bot, Terminal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/json-ld";
+import { CopyButton } from "@/components/copy-button";
 import { markdownAlternate, SITE_URL } from "@/lib/site";
 import { shareMetadata } from "@/lib/metadata";
 
@@ -26,6 +27,8 @@ export const metadata: Metadata = {
     },
   }),
 };
+
+const MCP_SETUP_PROMPT = `Add The Hackathon Playbook as a remote MCP server named hackathon-playbook at ${SITE_URL}/api/mcp using Streamable HTTP. No authentication is required. If you cannot configure MCP connections directly, show me the setup steps for this client. Once connected, call list_topics to verify access.`;
 
 const NOTABLE_WINS = [
   {
@@ -346,6 +349,28 @@ export default function Home() {
             >
               <Terminal className="size-4" />
               Cheat Sheet: copy-paste prompts →
+            </Link>
+          </div>
+          <div className="mx-auto max-w-xl rounded-xl border border-primary/15 bg-primary/5 p-4 text-left">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <h2 className="flex items-center gap-2 font-display text-sm font-semibold">
+                <Bot className="size-4 text-primary" aria-hidden="true" />
+                Add the Playbook to your AI agent
+              </h2>
+              <CopyButton text={MCP_SETUP_PROMPT} />
+            </div>
+            <p className="mt-2 font-body text-sm text-muted-foreground">
+              Give your agent access to the guides and checklists via MCP.
+              Copy this prompt and paste it into your MCP-capable agent.
+            </p>
+            <p className="mt-3 rounded-lg bg-background/50 p-3 font-code text-xs leading-relaxed break-words text-foreground/85">
+              {MCP_SETUP_PROMPT}
+            </p>
+            <Link
+              href="/ai"
+              className="mt-3 inline-block font-code text-xs text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+            >
+              Connection details →
             </Link>
           </div>
         </div>
