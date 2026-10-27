@@ -1186,6 +1186,137 @@ export default function PitchingPage() {
         </section>
 
         {/* ============================================================
+            TABLE JUDGING
+            ============================================================ */}
+        <section className="space-y-8">
+          <SectionHeading
+            title="Table Judging: When the Judge Walks Up"
+            subtitle="Science-fair rounds give you a few minutes at your table and no stage. Most of what went wrong in mine was communication, not code."
+          />
+
+          <KeyTakeaway>Be ready when the judge arrives, say what it does in two sentences, and put one slide in front of them.</KeyTakeaway>
+
+          <p className="font-body text-foreground/80">
+            <span className="font-semibold text-foreground">
+              I judged Round 1 at the LA Hacks AI Hackathon in October 2026.
+            </span>{" "}
+            It was science-fair style: 5 to 7 minutes per table, about 15
+            tables per judge, and a ranking at the end. Four of the first five
+            teams I took notes on had no slide or visual of any kind. Here&apos;s
+            what I saw and what I&apos;d tell each of them.
+          </p>
+
+          <div className="stagger-children grid grid-cols-1 gap-4 md:grid-cols-2">
+            {[
+              {
+                icon: Clock,
+                title: "Be Ready Before They Arrive",
+                saw: "One team asked me to wait while they finished eating.",
+                fix: "Have the laptop open, the demo loaded, and a slide up before judging starts. Your few minutes begin when the judge walks up.",
+                accent: "volt" as const,
+              },
+              {
+                icon: MessageSquare,
+                title: "Say What It Does in Two Sentences",
+                saw: "Two of the five left me unsure what the project did or what problem it solved. One went straight to a demo, the other talked until I was lost.",
+                fix: "Describe the product in one or two sentences, and keep the whole pitch to three or four. If you can't yet, fix that before judging starts.",
+                accent: "spark" as const,
+              },
+              {
+                icon: Presentation,
+                title: "Bring at Least One Slide",
+                saw: "The room was so loud I missed about half of one spoken-only pitch. A deck to follow along with would have made it 100 to 200% better.",
+                fix: "Put up one slide that says what it is and who it's for. Judges can read what they can't hear.",
+                accent: "primary" as const,
+              },
+              {
+                icon: Layers,
+                title: "Have the Follow-Up Answers Ready",
+                saw: "A technically interesting project had no backup slides. The team answered off the cuff and looked things up by hand while I waited.",
+                fix: "Build appendix slides for the questions you expect (see the appendix strategy below), so a follow-up gets an organized answer.",
+                accent: "success" as const,
+              },
+              {
+                icon: Compass,
+                title: "Never Say “Out of Scope”",
+                saw: "Asked about the future, one team said it was “out of scope.” Asked about production, another said it was “just a proof of concept.”",
+                fix: "Have one slide on how you'd take it to production and what comes next. “Out of scope” and “we'd never consider that” tell a judge you have no view of where the project goes next.",
+                accent: "volt" as const,
+              },
+              {
+                icon: Eye,
+                title: "Leave Room for Questions",
+                saw: "One team had a very good product and demo. How they delivered it was the problem: little eye contact, and answers so long I couldn't get my questions in.",
+                fix: "Look at the judge, keep each answer short, then stop. Their questions are how they find out what to score.",
+                accent: "spark" as const,
+              },
+            ].map((item) => {
+              const colors = {
+                volt: {
+                  bg: "bg-volt/10",
+                  text: "text-volt",
+                  border: "border-volt/20",
+                },
+                spark: {
+                  bg: "bg-spark/10",
+                  text: "text-spark",
+                  border: "border-spark/20",
+                },
+                primary: {
+                  bg: "bg-primary/10",
+                  text: "text-primary",
+                  border: "border-primary/20",
+                },
+                success: {
+                  bg: "bg-success/10",
+                  text: "text-success",
+                  border: "border-success/20",
+                },
+              };
+              const c = colors[item.accent];
+              return (
+                <div
+                  key={item.title}
+                  className={`glow-hover rounded-xl border ${c.border} bg-card p-5 transition-all`}
+                >
+                  <div className="flex items-start gap-3">
+                    <div
+                      className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${c.bg}`}
+                    >
+                      <item.icon className={`size-4 ${c.text}`} />
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="font-display text-sm font-semibold">
+                        {item.title}
+                      </h3>
+                      <p className="font-body text-sm text-muted-foreground">
+                        <span className="font-semibold text-foreground">What I saw:</span>{" "}
+                        {item.saw}
+                      </p>
+                      <p className="font-body text-sm text-foreground/80">
+                        <span className={`font-semibold ${c.text}`}>Do this:</span>{" "}
+                        {item.fix}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <p className="font-body text-foreground/80">
+            <span className="font-semibold text-foreground">
+              The rubric scored four things:
+            </span>{" "}
+            Technical Depth, Product Thinking &amp; Impact, Originality &amp;
+            Insight, and Execution &amp; Polish. It was a guide, and each
+            judge made the final call. Delivery shows up directly only under
+            Execution &amp; Polish, but a judge who can&apos;t tell what you
+            built has a hard time scoring the other three.
+          </p>
+        </section>
+
+        {/* ============================================================
             THE APPENDIX STRATEGY
             ============================================================ */}
         <section className="space-y-8">
@@ -1995,6 +2126,10 @@ export default function PitchingPage() {
             <CardContent className="space-y-4 pt-6">
               {[
                 {
+                  text: "Describe the product in one or two sentences, and keep a table pitch to three or four",
+                  accent: "success",
+                },
+                {
                   text: "Open with the problem and why it matters to you",
                   accent: "volt",
                 },
@@ -2011,8 +2146,16 @@ export default function PitchingPage() {
                   accent: "success",
                 },
                 {
+                  text: "Bring at least one slide, even to a table round in a loud room",
+                  accent: "primary",
+                },
+                {
                   text: "Build appendix slides for likely questions (architecture, tradeoffs, edge cases, roadmap, cost) and know where each one is",
                   accent: "volt",
+                },
+                {
+                  text: "Prepare a slide on how you'd take it to production, and never answer “what's next” with “out of scope”",
+                  accent: "success",
                 },
                 {
                   text: "Check how the slot splits between pitch and Q&A, and plan where you'll stop",
@@ -2021,6 +2164,10 @@ export default function PitchingPage() {
                 {
                   text: "Record a backup demo video",
                   accent: "primary",
+                },
+                {
+                  text: "Be at your table with the demo loaded before judging starts",
+                  accent: "spark",
                 },
               ].map((item) => {
                 const colorMap: Record<string, string> = {

@@ -71,7 +71,7 @@ export interface CheatSection {
   prompts: CheatPrompt[];
 }
 
-export const CHEAT_SHEET_UPDATED = "2026-09-14";
+export const CHEAT_SHEET_UPDATED = "2026-10-27";
 
 export const CHEAT_SECTIONS: CheatSection[] = [
   {
@@ -638,9 +638,11 @@ Give me the timed script, the exact click path, the backup plan for when the liv
         needs: ["demo-path"],
         prompt: `Write our pitch script.
 
-Ask me for whatever you do not already know: how long the pitch is, the judging criteria, what we built, who the problem hurts and how, the technical part we are proud of, and the demo click order.
+Ask me for whatever you do not already know: how long the pitch is, whether it is on a stage or at our table with judges walking up, the judging criteria, what we built, who the problem hurts and how, the technical part we are proud of, and the demo click order.
 
-Then write it in this shape:
+First, write what the product is in one or two sentences. If you cannot make it that short and obvious, work it out with me before anything else. For table judging, the whole spoken pitch is three or four sentences, then the demo, so write that version and stop there.
+
+For a stage pitch, write it in this shape:
 - First 15 seconds: the hook. A concrete moment or a real number, never "in today's world".
 - 20 seconds: the problem, told through one person's version of it.
 - 60 seconds: demo narration tied to the click order I gave you.
@@ -678,11 +680,11 @@ Assume no editing beyond trimming the ends.`,
 Ask me first: what we built, how long we had, our stack, and which parts are real versus mocked. Push me for an honest answer on that last one.
 
 Then:
-1. Ask the 8 questions you would actually ask, hardest first, including the uncomfortable ones: what is mocked, why this is not just a wrapper, what breaks at scale.
+1. Ask the 8 questions you would actually ask, hardest first, including the uncomfortable ones: what is mocked, why this is not just a wrapper, what breaks at scale, and what is next or how we would take it to production. If I answer that last one with "out of scope" or "just a proof of concept", stop me and help me give a real plan.
 2. For each, give me a two-sentence answer I can say out loud, honest about what our hours bought.
 3. Tell me the one question that exposes our weakest point, and how to answer it without lying or getting defensive.
 
-Then quiz me one question at a time and score my answers.`,
+Then quiz me one question at a time and score my answers. Flag any answer that runs long, because a long answer leaves the judge no room to ask the next question.`,
         note: "When a judge asks what's mocked, give the honest answer, even if it's less impressive.",
         source: { label: "Pitching", href: "/playbook/pitching" },
       },

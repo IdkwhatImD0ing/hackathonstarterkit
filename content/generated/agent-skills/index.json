@@ -62,7 +62,7 @@
       "type": "skill-md",
       "description": "A timed demo script from problem to result, with a backup plan if the app breaks and the questions judges will likely ask.",
       "url": "/.well-known/agent-skills/demo-prep/SKILL.md",
-      "digest": "sha256:ac1230239fab1cf8c6d5c2950dd874cdb89d365cb8866ac71b0bca6af22da856"
+      "digest": "sha256:9ede52904176cbeb132dd163f8c1ba0566860790f28bdf52a12dc8f38145d777"
     },
     {
       "name": "readme-writer",
@@ -83,7 +83,7 @@
       "type": "skill-md",
       "description": "Prepare a winning hackathon pitch: narrative structure, demo choreography, judge psychology, and Q&A handling. Use when preparing to present a hackathon project.",
       "url": "/.well-known/agent-skills/hackathon-pitch-prep/SKILL.md",
-      "digest": "sha256:a911b958d2ee833953298ac2c008daf1771a18eef3a4b147234aafac8cf48f55"
+      "digest": "sha256:e57d5cedc931518f4d9dc02df2847400dbf55c26efc7548255ed279bcac8617c"
     },
     {
       "name": "hackathon-stack-selection",

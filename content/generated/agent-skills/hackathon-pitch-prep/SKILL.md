@@ -285,6 +285,52 @@ Unknown / Mixed
 
 Rehearse both versions before judging, one that leads with technical depth and one that leads with impact, so you can switch mid-pitch.
 
+## Table Judging: When the Judge Walks Up
+
+Science-fair rounds give you a few minutes at your table and no stage. Most of what went wrong in mine was communication, not code.
+
+TL;DR Be ready when the judge arrives, say what it does in two sentences, and put one slide in front of them.
+
+I judged Round 1 at the LA Hacks AI Hackathon in October 2026. It was science-fair style: 5 to 7 minutes per table, about 15 tables per judge, and a ranking at the end. Four of the first five teams I took notes on had no slide or visual of any kind. Here's what I saw and what I'd tell each of them.
+
+### Be Ready Before They Arrive
+
+What I saw: One team asked me to wait while they finished eating.
+
+Do this: Have the laptop open, the demo loaded, and a slide up before judging starts. Your few minutes begin when the judge walks up.
+
+### Say What It Does in Two Sentences
+
+What I saw: Two of the five left me unsure what the project did or what problem it solved. One went straight to a demo, the other talked until I was lost.
+
+Do this: Describe the product in one or two sentences, and keep the whole pitch to three or four. If you can't yet, fix that before judging starts.
+
+### Bring at Least One Slide
+
+What I saw: The room was so loud I missed about half of one spoken-only pitch. A deck to follow along with would have made it 100 to 200% better.
+
+Do this: Put up one slide that says what it is and who it's for. Judges can read what they can't hear.
+
+### Have the Follow-Up Answers Ready
+
+What I saw: A technically interesting project had no backup slides. The team answered off the cuff and looked things up by hand while I waited.
+
+Do this: Build appendix slides for the questions you expect (see the appendix strategy below), so a follow-up gets an organized answer.
+
+### Never Say “Out of Scope”
+
+What I saw: Asked about the future, one team said it was “out of scope.” Asked about production, another said it was “just a proof of concept.”
+
+Do this: Have one slide on how you'd take it to production and what comes next. “Out of scope” and “we'd never consider that” tell a judge you have no view of where the project goes next.
+
+### Leave Room for Questions
+
+What I saw: One team had a very good product and demo. How they delivered it was the problem: little eye contact, and answers so long I couldn't get my questions in.
+
+Do this: Look at the judge, keep each answer short, then stop. Their questions are how they find out what to score.
+
+The rubric scored four things: Technical Depth, Product Thinking & Impact, Originality & Insight, and Execution & Polish. It was a guide, and each judge made the final call. Delivery shows up directly only under Execution & Polish, but a judge who can't tell what you built has a hard time scoring the other three.
+
 ## The Appendix Strategy
 
 Leave things out of the main pitch on purpose, and have a slide ready for each one a judge might ask about.
@@ -468,6 +514,8 @@ Run through this before judging starts.
 
 TL;DR Find out how your slot splits between pitch and Q&A, and rehearse a pitch that stops in time for questions.
 
+Describe the product in one or two sentences, and keep a table pitch to three or four
+
 Open with the problem and why it matters to you
 
 Main pitch: problem, what you built, a live demo of the main flow, where it could go
@@ -476,8 +524,14 @@ Match the prize: impact for a track prize, their tech at the center for a sponso
 
 Rehearse a technical and an impact version, then ask judges their background
 
+Bring at least one slide, even to a table round in a loud room
+
 Build appendix slides for likely questions (architecture, tradeoffs, edge cases, roadmap, cost) and know where each one is
+
+Prepare a slide on how you'd take it to production, and never answer “what's next” with “out of scope”
 
 Check how the slot splits between pitch and Q&A, and plan where you'll stop
 
 Record a backup demo video
+
+Be at your table with the demo loaded before judging starts
