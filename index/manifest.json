@@ -3,7 +3,7 @@
   "embeddingDims": 1536,
   "chunkerVersion": 2,
   "normalizerVersion": 1,
-  "generatedAt": "2026-10-14T16:59:20.287Z",
+  "generatedAt": "2026-10-28T21:16:07.341Z",
   "pages": {
     "/": {
       "sourceHash": "bdc226fe6b7c250e0dcb31c790907a4173c8f79c5fab6ff47ed89d309cef4fe6",
@@ -131,7 +131,7 @@
       ]
     },
     "/playbook/pitching": {
-      "sourceHash": "f3a002f97f304abe99b909aae67322c8ca8cf638191ac99f71ea546a91dfc4a4",
+      "sourceHash": "184e0af0aaec906efd33dc1cdaa85f3133117f8a1fce7cdee3014d39542b3ca7",
       "chunkIds": [
         "/playbook/pitching#pitch-what-it-could-become#0",
         "/playbook/pitching#pitch-what-it-could-become/sell-the-vision#0",
@@ -145,6 +145,13 @@
         "/playbook/pitching#know-your-judges/lead-with-who-it-helps#0",
         "/playbook/pitching#know-your-judges/think-like-their-stockholder#0",
         "/playbook/pitching#know-your-judges/read-the-room#0",
+        "/playbook/pitching#table-judging-when-the-judge-walks-up#0",
+        "/playbook/pitching#table-judging-when-the-judge-walks-up/be-ready-before-they-arrive#0",
+        "/playbook/pitching#table-judging-when-the-judge-walks-up/say-what-it-does-in-two-sentences#0",
+        "/playbook/pitching#table-judging-when-the-judge-walks-up/bring-at-least-one-slide#0",
+        "/playbook/pitching#table-judging-when-the-judge-walks-up/have-the-follow-up-answers-ready#0",
+        "/playbook/pitching#table-judging-when-the-judge-walks-up/never-say-out-of-scope#0",
+        "/playbook/pitching#table-judging-when-the-judge-walks-up/leave-room-for-questions#0",
         "/playbook/pitching#the-appendix-strategy#0",
         "/playbook/pitching#the-appendix-strategy/the-essentials#0",
         "/playbook/pitching#the-appendix-strategy/the-backup-slides#0",
@@ -410,11 +417,13 @@
       ]
     },
     "/non-coders/skills/demo-prep": {
-      "sourceHash": "e56cac55badddc1ea4637073812f26d582571801ce7fcff2eea3adab0c47ceb8",
+      "sourceHash": "1f58c340926c1665c891b345fb2aa73a6b76bb1fd3165c6b4f6b3da839b8133f",
       "chunkIds": [
         "/non-coders/skills/demo-prep#intro#0",
         "/non-coders/skills/demo-prep#gather-the-demo-facts#0",
         "/non-coders/skills/demo-prep#shape-the-story#0",
+        "/non-coders/skills/demo-prep#table-judging#0",
+        "/non-coders/skills/demo-prep#slides#0",
         "/non-coders/skills/demo-prep#write-the-demo#0",
         "/non-coders/skills/demo-prep#backup-plan#0",
         "/non-coders/skills/demo-prep#rehearsal-checklist#0",
@@ -1526,6 +1535,69 @@
       "mdUrl": "/playbook/pitching.md",
       "track": "playbook"
     },
+    "/playbook/pitching#table-judging-when-the-judge-walks-up#0": {
+      "contentHash": "ee2001c9263c13a10cc7600610ee89e690f2d4a083b1b1b988ed3598bac16ce3",
+      "tokens": 147,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Table Judging: When the Judge Walks Up",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#table-judging-when-the-judge-walks-up/be-ready-before-they-arrive#0": {
+      "contentHash": "a8819e3a9adc3152eba8ddb8e10f3005861c29d99633439fc86515ab7a756f7f",
+      "tokens": 53,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Table Judging: When the Judge Walks Up > Be Ready Before They Arrive",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#table-judging-when-the-judge-walks-up/say-what-it-does-in-two-sentences#0": {
+      "contentHash": "715918359d9b4ab15a93bfd3822861edad5773602fe91dfc9e83b5c3f87bf2c2",
+      "tokens": 79,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Table Judging: When the Judge Walks Up > Say What It Does in Two Sentences",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#table-judging-when-the-judge-walks-up/bring-at-least-one-slide#0": {
+      "contentHash": "a2fd24f9c1a640d054e65a1415b601f3f764990392ce4501f8f7868d4233c23f",
+      "tokens": 69,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Table Judging: When the Judge Walks Up > Bring at Least One Slide",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#table-judging-when-the-judge-walks-up/have-the-follow-up-answers-ready#0": {
+      "contentHash": "6c591e3ba46b94e847b9709802cec6b852760b7d580d2c023642456d159e9218",
+      "tokens": 64,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Table Judging: When the Judge Walks Up > Have the Follow-Up Answers Ready",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#table-judging-when-the-judge-walks-up/never-say-out-of-scope#0": {
+      "contentHash": "77f8fdc0214be8ec5b5baaaed9049d38b60d34fac207523adf70f48df77b62d0",
+      "tokens": 87,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Table Judging: When the Judge Walks Up > Never Say “Out of Scope”",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
+    "/playbook/pitching#table-judging-when-the-judge-walks-up/leave-room-for-questions#0": {
+      "contentHash": "58a857ee097e9e42910d8fc7516867e8e23332d94131fecd4e8199585060024f",
+      "tokens": 135,
+      "pageTitle": "Pitching",
+      "sectionHeading": "Table Judging: When the Judge Walks Up > Leave Room for Questions",
+      "url": "/playbook/pitching",
+      "mdUrl": "/playbook/pitching.md",
+      "track": "playbook"
+    },
     "/playbook/pitching#the-appendix-strategy#0": {
       "contentHash": "d921566869645e2a336e2663c7f965f27765b4b98baa0fd8fb884eb717906444",
       "tokens": 109,
@@ -1680,8 +1752,8 @@
       "track": "playbook"
     },
     "/playbook/pitching#pitching-checklist#0": {
-      "contentHash": "0aa1c6edf913c2b70ba71730d7a8f9ef5302e9d2dd58e11d7fb31376a5541ce1",
-      "tokens": 156,
+      "contentHash": "6996743d0f32e8d9223fb726385116de37529154866b84c2f7f46c142a60f3fa",
+      "tokens": 228,
       "pageTitle": "Pitching",
       "sectionHeading": "Pitching Checklist",
       "url": "/playbook/pitching",
@@ -3129,8 +3201,8 @@
       "track": "skills"
     },
     "/non-coders/skills/demo-prep#gather-the-demo-facts#0": {
-      "contentHash": "d861be5a4ecae96873bb8a1efdbdce63485e9f18e5631d7108b5376ae3360b50",
-      "tokens": 109,
+      "contentHash": "6d6c6b5b9bda167c8f7a7119948b33b180bc9512a942f7544ad5d5ac011891d2",
+      "tokens": 121,
       "pageTitle": "Demo Prep",
       "sectionHeading": "Gather The Demo Facts",
       "url": "/non-coders/skills/demo-prep",
@@ -3138,10 +3210,28 @@
       "track": "skills"
     },
     "/non-coders/skills/demo-prep#shape-the-story#0": {
-      "contentHash": "3e5765202cfdc722a5ca8aab52e526e9813be82932eafa91b323030d3288b497",
-      "tokens": 144,
+      "contentHash": "da8e077efb19d836e33950acd44a81cf61cd2dec196811ff3afcabb10979da79",
+      "tokens": 228,
       "pageTitle": "Demo Prep",
       "sectionHeading": "Shape The Story",
+      "url": "/non-coders/skills/demo-prep",
+      "mdUrl": "/non-coders/skills/demo-prep.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/demo-prep#table-judging#0": {
+      "contentHash": "ca5b659050d9f4486edb7a2662f4d5a6b751f20978f8cb490cb280e156b49059",
+      "tokens": 162,
+      "pageTitle": "Demo Prep",
+      "sectionHeading": "Table Judging",
+      "url": "/non-coders/skills/demo-prep",
+      "mdUrl": "/non-coders/skills/demo-prep.md",
+      "track": "skills"
+    },
+    "/non-coders/skills/demo-prep#slides#0": {
+      "contentHash": "139599f79c71f7aeb851da4001c2a079d956f44c344fa498cd3ca783936ac97a",
+      "tokens": 151,
+      "pageTitle": "Demo Prep",
+      "sectionHeading": "Slides",
       "url": "/non-coders/skills/demo-prep",
       "mdUrl": "/non-coders/skills/demo-prep.md",
       "track": "skills"
@@ -3165,8 +3255,8 @@
       "track": "skills"
     },
     "/non-coders/skills/demo-prep#rehearsal-checklist#0": {
-      "contentHash": "3766a9310c0d27395473d09f8dc774d36d934401d2f11c004d4013ddaa8834ce",
-      "tokens": 64,
+      "contentHash": "3d85287fb220419bbe8441c2d8e1618ac50068b0811f437203dc4f618302f8c5",
+      "tokens": 83,
       "pageTitle": "Demo Prep",
       "sectionHeading": "Rehearsal Checklist",
       "url": "/non-coders/skills/demo-prep",
@@ -3174,8 +3264,8 @@
       "track": "skills"
     },
     "/non-coders/skills/demo-prep#final-output#0": {
-      "contentHash": "288d98efd3132a9c7dc80010080ef9c07aa5a69441afe1bab1871f803b9fb223",
-      "tokens": 101,
+      "contentHash": "af2713b93986e52bfe4fd58f629a195c7f5a25edffff2020355f947c74e333cd",
+      "tokens": 177,
       "pageTitle": "Demo Prep",
       "sectionHeading": "Final Output",
       "url": "/non-coders/skills/demo-prep",

@@ -117,7 +117,7 @@ flowchart TD
 | **`devpost-writer`** | The full Devpost submission: tagline, story sections, Built With tags, and links. |
 | **`youtube-writer`** | The demo video's title and description, tuned for recruiters and search. |
 
-**`blog-writer`** sits outside the loop. It publishes write-ups to *this* site using the rich blog blocks.
+**`blog-writer`** sits outside the loop. It publishes write-ups to *this* site using the rich blog blocks. **`kit-maintainer`** is the maintainer's procedure for folding new feedback into the kit. Both are marked internal, so a normal `npx skills add` skips them.
 
 ## Tech stack
 

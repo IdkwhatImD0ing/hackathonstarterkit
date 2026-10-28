@@ -39,7 +39,7 @@ want to pause between steps or only run a subset.
 
 `v0-prompt-crafter` is an **alternative path** to `scaffold-frontend`: instead of scaffolding a Next.js app locally, it reads the PRD and produces a single copy-paste prompt for [Vercel v0](https://v0.dev) to generate a production-grade UI. Use one or the other, not both for the same product surface.
 
-`blog-writer` is separate from the hackathon pipeline. It is used to publish write-ups to this site's blog, and is marked `metadata.internal: true` so the skills CLI does not install it during normal repo installs.
+`blog-writer` is separate from the hackathon pipeline. It is used to publish write-ups to this site's blog, and is marked `metadata.internal: true` so the skills CLI does not install it during normal repo installs. `kit-maintainer` is internal the same way: it is the owner's procedure for folding new feedback (judging notes, hackathon lessons, reader feedback) into the site and the skills.
 
 ## Skill-by-Skill Contract
 
@@ -106,7 +106,7 @@ want to pause between steps or only run a subset.
 
 - **When**: Before presenting.
 - **Reads**: User's answers about the app, the slot length, and the format.
-- **Writes**: A 3-act script, a click path, a backup plan, and Q&A prep. Does not modify code.
+- **Writes**: A one-liner and short pitch, a 3-act script, a click path, a slide plan (framing, appendix, and "what's next"), a backup plan, and Q&A prep. Covers stage pitches and table (science-fair) judging. Does not modify code.
 
 ### `blog-writer` (Shipping, site-internal)
 
@@ -114,6 +114,13 @@ want to pause between steps or only run a subset.
 - **Reads**: User's topic, `lib/blog.ts > BLOG_POSTS` to avoid overlap.
 - **Writes**: A new entry in `lib/blog.ts`.
 - **Install visibility**: Hidden from normal `npx skills add IdkwhatImD0ing/hackathonstarterkit` installs with `metadata.internal: true`. It can still be listed or installed by setting `INSTALL_INTERNAL_SKILLS=1`.
+
+### `kit-maintainer` (Maintenance, site-internal)
+
+- **When**: The owner has new feedback for the kit: judging notes, lessons from a hackathon, reader feedback, or a skill that misbehaved.
+- **Reads**: The feedback, `CLAUDE.md`, and the existing page, skill, or prompt that already covers the topic.
+- **Writes**: Edits in place to the topic's canonical home (playbook page, skill and its evals, cheat-sheet prompt, or blog post), regenerated artifacts, and a pull request for the owner to merge.
+- **Install visibility**: Hidden from normal installs with `metadata.internal: true`, like `blog-writer`.
 
 ## Repo Layout After Running the Pipeline
 

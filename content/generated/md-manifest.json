@@ -47,11 +47,11 @@
   },
   "/playbook/pitching": {
     "file": "md/playbook/pitching.md",
-    "tokens": 4619,
+    "tokens": 5325,
     "title": "Pitching",
     "description": "Build your pitch around the demo, and get ready for judge questions.",
     "track": "playbook",
-    "updated": "2026-09-14"
+    "updated": "2026-10-27"
   },
   "/playbook/submission": {
     "file": "md/playbook/submission.md",
@@ -176,7 +176,7 @@
   },
   "/non-coders/skills/demo-prep": {
     "file": "md/non-coders/skills/demo-prep.md",
-    "tokens": 721,
+    "tokens": 1225,
     "title": "Demo Prep",
     "description": "A timed demo script from problem to result, with a backup plan if the app breaks and the questions judges will likely ask.",
     "track": "skills"

@@ -22,6 +22,18 @@
         "The output includes a minimal click path or slide path.",
         "The output includes a specific fallback for bad Wi-Fi."
       ]
+    },
+    {
+      "id": 3,
+      "prompt": "Judging tomorrow is science-fair style: judges walk up to our table and we get about 5 minutes each. Our app turns lecture recordings into flashcards. We were just going to talk and show the app, no slides. Help us prep.",
+      "expected_output": "A table-judging plan that opens with a one-to-two sentence description, keeps the spoken pitch to three or four sentences, adds at least one slide plus appendix and what's-next slides, and prepares short answers that leave the judge room to ask questions.",
+      "files": [],
+      "expectations": [
+        "The output gives a one-liner of one or two sentences and a spoken pitch of three or four sentences.",
+        "The output recommends at least one slide despite the team planning to use none.",
+        "The output prepares an answer to a future or production question that does not say \"out of scope\" or \"just a proof of concept\".",
+        "The output tells the team to be set up before the judge arrives and to keep answers short."
+      ]
     }
   ]
 }

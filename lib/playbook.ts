@@ -33,7 +33,7 @@ export const PLAYBOOK_SECTIONS = [
   },
   {
     step: 5,
-    updated: "2026-09-14",
+    updated: "2026-10-27",
     slug: "pitching",
     title: "Pitching",
     subtitle:
