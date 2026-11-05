@@ -12,7 +12,13 @@ Stay up to date
 
 Short, specific strategies on building and pitching, from 36+ hackathon wins.
 
-[5 min readUpdated Oct 2, 2026
+[5 min read
+
+#### Hackathon Judging Feedback: 5 Teams I Judged at LA Hacks AI
+
+My hackathon judging feedback from Round 1 of the LA Hacks AI Hackathon 2026: five teams, four with no slides, and what each one should have done instead.
+
+Read article](https://thehackathonplaybook.dev/blog/hackathon-judging-feedback-la-hacks-ai)[5 min readUpdated Oct 2, 2026
 
 #### How I Fine-Tune LLMs at Hackathons on Rented Cloud GPUs
 
