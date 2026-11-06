@@ -190,10 +190,18 @@
   },
   "/blog": {
     "file": "md/blog.md",
-    "tokens": 887,
+    "tokens": 970,
     "title": "Blog",
     "description": "Hackathon strategy write-ups: how to win, pick a stack, pitch, and turn weekend projects into career wins.",
     "track": "blog"
+  },
+  "/blog/hackathon-judging-feedback-la-hacks-ai": {
+    "file": "md/blog/hackathon-judging-feedback-la-hacks-ai.md",
+    "tokens": 1728,
+    "title": "Hackathon Judging Feedback: 5 Teams I Judged at LA Hacks AI",
+    "description": "My hackathon judging feedback from Round 1 of the LA Hacks AI Hackathon 2026: five teams, four with no slides, and what each one should have done instead.",
+    "track": "blog",
+    "updated": "2026-11-05"
   },
   "/blog/fine-tune-llms-at-hackathons-cloud-gpu": {
     "file": "md/blog/fine-tune-llms-at-hackathons-cloud-gpu.md",
